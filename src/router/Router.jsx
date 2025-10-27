@@ -3,9 +3,10 @@ import App from "../App";
 import Home from "../pages/Home/page.jsx";
 import About from "../pages/About/page.jsx";
 import Contact from "../pages/Contact/page.jsx";
-import Candidates from "../pages/Candidates/page.jsx";
 import Campaigns from "../pages/Campaigns/page.jsx";
 import News from "../pages/News/page.jsx";
+import Candidates from "../pages/Candidates/page.jsx";
+import CandidateDetails from "../pages/Candidates/CandidateDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         index: true,
         path: "/candidates",
         Component: Candidates,
+      },
+      {
+        index: true,
+        path: "/candidates/:id",
+        Component: CandidateDetails,
       },
       {
         index: true,
