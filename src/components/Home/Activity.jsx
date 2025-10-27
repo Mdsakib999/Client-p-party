@@ -1,45 +1,25 @@
 import { Link } from "react-router";
+import activitiesData from "../../data/activities.json";
 
 const Activity = () => {
-  const activities = [
-    {
-      id: 1,
-      title: "Underdog Triumph: Unexpected Victory at the Championship",
-      author: "GARY NEVILLE",
-      date: "TODAY",
-      image: "/activity1.jpg",
-    },
-    {
-      id: 2,
-      title: "Reliving the Most Iconic Moments on Ice",
-      author: "JOHN MOON",
-      date: "TODAY",
-      image: "/activity2.jpg",
-    },
-    {
-      id: 3,
-      title: "From Amateur to Pro: The Journey of Aspiring Boxers",
-      author: "MIKE CHANDLER",
-      date: "TODAY",
-      image: "/activity3.jpg",
-    },
-    {
-      id: 4,
-      title: "Olympic Dreams: Athletes Prepare for Paris 2024",
-      author: "JOHN WHITE",
-      date: "YESTERDAY",
-      image: "/activity4.jpg",
-    },
-  ];
+// Use activities data
+const activities = activitiesData.slice(0, 4).map(activity => ({
+  id: activity.id,
+  title: activity.title,
+  author: activity.category,
+  date: activity.date,
+  image: activity.featuredImage,
+  slug: activity.slug,
+}));
 
-  const featured = {
-    id: 5,
-    category: "Sports",
-    title: "Underdog Triumph: Unexpected Victory at the Championship",
-    description:
-      "Against all odds, the underdog team delivered an astonishing performance, unexpected victory at the championship, leaving fans and critics alike in awe determination and skill.",
-    image: "/activity-featured.jpg",
-  };
+const featured = {
+  id: activitiesData[4].id,
+  category: activitiesData[4].category,
+  title: activitiesData[4].title,
+  description: activitiesData[4].excerpt,
+  image: activitiesData[4].featuredImage,
+  slug: activitiesData[4].slug,
+};
 
   return (
     <section className="py-16 px-6 bg-green-50">
@@ -52,7 +32,7 @@ const Activity = () => {
               {activities.map((activity) => (
                 <Link
                   key={activity.id}
-                  to={`/activity/${activity.id}`}
+                  to={`/news/${activity.slug}`}
                   className="flex gap-3 group"
                 >
                   <div className="w-24 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200">
@@ -82,7 +62,7 @@ const Activity = () => {
           </div>
 
           {/* Right - Featured Card */}
-          <Link to={`/activity/${featured.id}`} className="block group">
+          <Link to={`/news/${featured.slug}`} className="block group">
             <div className="relative h-[400px] rounded-3xl overflow-hidden">
               <img
                 src={featured.image}

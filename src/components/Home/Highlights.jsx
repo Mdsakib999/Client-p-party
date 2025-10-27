@@ -1,43 +1,11 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router";
+import newsArticles from "../../data/newsArticles.json";
 
-const News = () => {
-  const featuredNews = {
-    id: 1,
-    category: "Politics",
-    title: "Protests Breaks Out In Dhaka",
-    description:
-      "Protests broke out in California as thousands took to the streets to oppose recent policy changes, leading to clashes with law enforcement and a state of emergency declared in several cities.",
-    image: "./src/assets/activities/news-1.jpg",
-  };
-
-  const newsItems = [
-    {
-      id: 2,
-      title: "Protests Breaks Out In California",
-      image: "./src/assets/activities/news-2.jpg",
-    },
-    {
-      id: 3,
-      title: "Elections Underway: Issues and Candidates to Watch",
-      image: "./src/assets/activities/news-3.jpg",
-    },
-    {
-      id: 4,
-      title: "Nationwide Political Action Means for Democracy",
-      image: "./src/assets/activities/news-4.jpg",
-    },
-    {
-      id: 5,
-      title: "New Legislation Sparks Debate Among Lawmakers",
-      image: "./src/assets/activities/news-5.jpg",
-    },
-    {
-      id: 6,
-      title: "New Legislation Sparks Debate Among Lawmakers",
-      image: "./src/assets/activities/news-6.jpg",
-    },
-  ];
+const Highlights = () => {
+// Use the latest articles for highlights
+const featuredNews = newsArticles[0]; // First article as featured
+const newsItems = newsArticles.slice(1, 6); // Next 5 articles for grid
 
   return (
     <section className="py-16 px-6 bg-gray-50">
@@ -63,10 +31,10 @@ const News = () => {
 
         {/* Featured News Card */}
         <div className="mb-6">
-          <Link to={`/news/${featuredNews.id}`} className="block">
+          <Link to={`/news/${featuredNews.slug}`} className="block">
             <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden group">
               <img
-                src={featuredNews.image}
+                src={featuredNews.featuredImage}
                 alt={featuredNews.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -79,7 +47,7 @@ const News = () => {
                   {featuredNews.title}
                 </h3>
                 <p className="text-gray-200 text-lg max-w-3xl">
-                  {featuredNews.description}
+                  {featuredNews.excerpt}
                 </p>
               </div>
             </div>
@@ -89,10 +57,10 @@ const News = () => {
         {/* News Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {newsItems.map((news) => (
-            <Link key={news.id} to={`/news/${news.id}`} className="block group">
+            <Link key={news.id} to={`/news/${news.slug}`} className="block group">
               <div className="relative h-[200px] rounded-2xl overflow-hidden">
                 <img
-                  src={news.image}
+                  src={news.featuredImage}
                   alt={news.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -111,4 +79,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Highlights;

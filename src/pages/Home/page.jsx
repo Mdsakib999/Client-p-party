@@ -3,8 +3,8 @@ import Activity from "../../components/Home/Activity";
 import { Candidates } from "../../components/Home/Candidates";
 import Hero from "../../components/Home/Hero";
 import Legacy from "../../components/Home/Legacy";
-import News from "../../components/Home/News";
-import NewsActivities from "../../components/Home/NewsActivities";
+import Highlights from "../../components/Home/Highlights";
+import NewsSection from "../../components/Home/NewsSection";
 
 const page = () => {
   return (
@@ -13,9 +13,9 @@ const page = () => {
       <Legacy />
       <About />
       <Candidates />
-      <News />
+      <Highlights />
       <Activity />
-      <NewsActivities />
+      <NewsSection />
     </div>
   );
 };
