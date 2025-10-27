@@ -168,7 +168,7 @@ const Candidates = () => {
                           setIsMobileExpanded(true);
                         }
                       }}
-                      className={`flex-1 px-4 md:px-6 py-3 md:py-2 rounded-xl transition cursor-pointer ${
+                      className={`flex-1 px-4 md:px-6 py-3 md:py-2 rounded-xl transition ${
                         selectedDivision
                           ? "hover:bg-gray-50"
                           : "opacity-60 cursor-not-allowed"
@@ -397,6 +397,7 @@ const Candidates = () => {
             <CandidateCard key={candidate._id} candidate={candidate} />
           ))}
         </section>
+        <p className="text-center font-bold mt-8">Load on scroll...</p>
       </div>
     </div>
   );

@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "slug": "bnp-rally-dhaka-division",
+    "title": "BNP Rally in Dhaka Division",
+    "category": "RALLY",
+    "date": "October 2025",
+    "excerpt": "Thousands gather for BNP's massive rally in Dhaka, demanding democratic reforms and fair elections.",
+    "featuredImage": "/activity-1.jpg",
+    "content": [
+      {
+        "type": "text",
+        "text": "The Bangladesh Nationalist Party (BNP) organized a massive public rally in Dhaka division, drawing thousands of supporters who voiced their demands for democratic reforms."
+      },
+      {
+        "type": "text",
+        "text": "Party leaders addressed the crowd, highlighting the importance of free and fair elections and the restoration of democratic institutions."
+      },
+      {
+        "type": "quote",
+        "text": "This rally demonstrates the unwavering commitment of our people to democracy and justice.",
+        "author": "BNP Chairperson"
+      },
+      {
+        "type": "text",
+        "text": "The event concluded with a pledge to continue the struggle for democratic rights."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "bnp-youth-conference-chittagong",
+    "title": "BNP Youth Conference in Chittagong",
+    "category": "CONFERENCE",
+    "date": "October 2025",
+    "excerpt": "Young BNP activists convene in Chittagong for a conference on future political strategies and leadership development.",
+    "featuredImage": "/activity-2.jpg",
+    "content": [
+      {
+        "type": "text",
+        "text": "The BNP Youth Wing hosted a dynamic conference in Chittagong, bringing together young activists from across the region."
+      },
+      {
+        "type": "text",
+        "text": "Discussions focused on modern campaigning techniques, digital engagement, and developing future leaders for the party."
+      },
+      {
+        "type": "quote",
+        "text": "Our youth are the torchbearers of change and progress for Bangladesh.",
+        "author": "Youth Wing President"
+      },
+      {
+        "type": "text",
+        "text": "The conference ended with resolutions for enhanced youth participation in party activities."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "bnp-membership-drive-khulna",
+    "title": "BNP Membership Drive in Khulna",
+    "category": "MEMBERSHIP",
+    "date": "September 2025",
+    "excerpt": "BNP launches intensive membership drive in Khulna, aiming to expand grassroots support ahead of elections.",
+    "featuredImage": "/activity-3.jpg",
+    "content": [
+      {
+        "type": "text",
+        "text": "BNP initiated a comprehensive membership drive in Khulna division to strengthen its grassroots network."
+      },
+      {
+        "type": "text",
+        "text": "Volunteers went door-to-door, explaining party policies and encouraging community participation."
+      },
+      {
+        "type": "quote",
+        "text": "Strong grassroots support is the foundation of our electoral success.",
+        "author": "Local Party Organizer"
+      },
+      {
+        "type": "text",
+        "text": "The drive resulted in significant new enrollments and renewed commitment from existing members."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "bnp-women-empowerment-seminar",
+    "title": "BNP Women Empowerment Seminar",
+    "category": "SEMINAR",
+    "date": "September 2025",
+    "excerpt": "BNP organizes seminar on women's political participation and leadership development.",
+    "featuredImage": "/activity-4.jpg",
+    "content": [
+      {
+        "type": "text",
+        "text": "The BNP Women's Wing conducted an empowering seminar focused on enhancing women's role in politics."
+      },
+      {
+        "type": "text",
+        "text": "Speakers discussed strategies for increasing female representation and addressing gender-related challenges in politics."
+      },
+      {
+        "type": "quote",
+        "text": "Women are the backbone of our society and must be equally represented in decision-making.",
+        "author": "Women's Wing Leader"
+      },
+      {
+        "type": "text",
+        "text": "Participants gained valuable insights and committed to greater involvement in party activities."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "bnp-agricultural-policy-meeting",
+    "title": "BNP Agricultural Policy Meeting",
+    "category": "MEETING",
+    "date": "August 2025",
+    "excerpt": "BNP holds consultative meeting with farmers to develop comprehensive agricultural policies for rural development.",
+    "featuredImage": "/activity-5.jpg",
+    "content": [
+      {
+        "type": "text",
+        "text": "BNP organized a consultative meeting with farmers and agricultural experts to formulate effective policies for the sector."
+      },
+      {
+        "type": "text",
+        "text": "Discussions covered issues like crop subsidies, irrigation improvements, and market access for farmers."
+      },
+      {
+        "type": "quote",
+        "text": "Agriculture is the lifeline of our economy, and farmers deserve policies that ensure their prosperity.",
+        "author": "BNP Agriculture Secretary"
+      },
+      {
+        "type": "text",
+        "text": "The meeting resulted in concrete policy recommendations for the party's agricultural agenda."
+      }
+    ]
+  }
+]

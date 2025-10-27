@@ -7,6 +7,7 @@ import Campaigns from "../pages/Campaigns/page.jsx";
 import News from "../pages/News/page.jsx";
 import Candidates from "../pages/Candidates/page.jsx";
 import CandidateDetails from "../pages/Candidates/CandidateDetails.jsx";
+import NewsDetail from "../pages/NewsDetail/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         index: true,
         path: "/news",
         Component: News,
+      },
+      {
+        path: "/news/:slug",
+        Component: NewsDetail,
       },
       {
         index: true,
