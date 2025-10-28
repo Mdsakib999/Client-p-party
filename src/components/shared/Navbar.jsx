@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
-import { Link, NavLink, useLocation } from "react-router";
+import { NavLink } from "react-router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
-            src="/src/assets/logo.png"
+            src="/logo.png"
             alt="BNP Logo"
             className="w-20 h-15 object-contain"
           />
