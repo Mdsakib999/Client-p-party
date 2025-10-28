@@ -85,9 +85,35 @@
       "https://api.bnpbd.org/api/upload/images/bnp-chief-khaleda-zia-release-9244.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Khaleda_Zia_former_Prime_Minister_of_Bangladesh_%285732764967%29.jpg/220px-Khaleda_Zia_former_Prime_Minister_of_Bangladesh_%285732764967%29.jpg"
     ],
-    "overallSummary": "Begum Khaleda Zia, born 15 August 1945 in Jalpaiguri (now Dinajpur, Bangladesh), is the Chairperson of BNP and former Prime Minister (1991-1996, 2001-2006). Educated at Dinajpur Girls' School and Surendranath College without a formal degree, she joined BNP in 1982 after her husband Ziaur Rahman's assassination, becoming Chairperson in 1984. She led anti-Ershad movements in the 1980, implemented educational reform, and guided BNP to electoral wins in 1991 (140 seats from Dinajpur-3) and 2001 (193 seats). Widowed with two children, she faced corruption controversies like Zia Orphanage Trust case, imprisoned 2018-2024, released amid 2024 changes. Highlights include being Bangladesh's first woman PM and 'Mother of Democracy'; recent activities involve 2025 election talks.",
+    "overallSummary": "Begum Khaleda Zia, born 15 August 1945 inота Jalpaiguri (now Dinajpur, Bangladesh), is the Chairperson of BNP and former Prime Minister (1991-1996, 2001-2006). Educated at Dinajpur Girls' School and Surendranath College without a formal degree, she joined BNP in 1982 after her husband Ziaur Rahman's assassination, becoming Chairperson in 1984. She led anti-Ershad movements in the 1980, implemented educational reform, and guided BNP to electoral wins in 1991 (140 seats from Dinajpur-3) and 2001 (193 seats). Widowed with two children, she faced corruption controversies like Zia Orphanage Trust case, imprisoned 2018-2024, released amid 2024 changes. Highlights include being Bangladesh's first woman PM and 'Mother of Democracy'; recent activities involve 2025 election talks.",
     "source_url": "https://en.wikipedia.org/wiki/Khaleda_Zia",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://api.bnpbd.org/api/upload/images/bnp-chief-khaleda-zia-release-9244.jpg",
+        "title": "Khaleda Zia meets interim govt on polls",
+        "channel": "The Daily Star",
+        "date": "2025-10-15"
+      },
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Khaleda_Zia_former_Prime_Minister_of_Bangladesh_%285732764967%29.jpg/220px-Khaleda_Zia_former_Prime_Minister_of_Bangladesh_%285732764967%29.jpg",
+        "title": "BNP chief acquitted in graft case",
+        "channel": "Prothom Alo",
+        "date": "2025-09-20"
+      },
+      {
+        "image": "https://api.bnpbd.org/api/upload/images/bnp-chief-khaleda-zia-release-9244.jpg",
+        "title": "Khaleda addresses nation post-release",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-10"
+      },
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Khaleda_Zia_former_Prime_Minister_of_Bangladesh_%285732764967%29.jpg/220px-Khaleda_Zia_former_Prime_Minister_of_Bangladesh_%285732764967%29.jpg",
+        "title": "Election talks with Yunus",
+        "channel": "New Age",
+        "date": "2025-10-05"
+      }
+    ]
   },
   {
     "_id": 2,
@@ -180,7 +206,33 @@
     ],
     "overallSummary": "Tarique Rahman, born 20 November 1965 in Dhaka, Bangladesh, is Acting Chairperson of BNP, married to Dr. Zubaida Rahman with one child. Educated at BAF Shaheen School, St. Joseph, and University of Dhaka (incomplete International Relations), he joined BNP in 1988, elected MP from Bogura-7 in 2001, and became Senior Vice-Chairman in 2004. As Minister of State for Health, he coordinated campaigns and announced Vision 2030 in 2017. In exile since 2008, he leads from London, acquitted in all cases 2024-2025. Highlights: opposition strategist; activities include 2025 reform talks and grassroots work.",
     "source_url": "https://en.wikipedia.org/wiki/Tarique_Rahman",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tarique_in_Council.jpg/220px-Tarique_in_Council.jpg",
+        "title": "Tarique discusses reforms with Yunus",
+        "channel": "Prothom Alo",
+        "date": "2025-06-20"
+      },
+      {
+        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSW02uHBd3j_jFZRe1zYLb8UjfjR9mIb87DKNQmiD0cOQ1MS7CjDex6-c8DnT6HEy4iJeOSBY5DkYv4GBhFH3a1azmmFCG4HgL33WzriG4",
+        "title": "Acquitted in final graft case",
+        "channel": "The Daily Star",
+        "date": "2025-09-15"
+      },
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tarique_in_Council.jpg/220px-Tarique_in_Council.jpg",
+        "title": "Grassroots push in Bogura",
+        "channel": "Dhaka Tribune",
+        "date": "2025-10-10"
+      },
+      {
+        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSW02uHBd3j_jFZRe1zYLb8UjfjR9mIb87DKNQmiD0cOQ1MS7CjDex6-c8DnT6HEy4iJeOSBY5DkYv4GBhFH3a1azmmFCG4HgL33WzriG4",
+        "title": "Exile leadership strategy",
+        "channel": "New Age",
+        "date": "2025-08-05"
+      }
+    ]
   },
   {
     "_id": 3,
@@ -268,7 +320,33 @@
     ],
     "overallSummary": "Mirza Fakhrul Islam Alamgir, born 26 January 1948 in Thakurgaon, Bangladesh, is BNP Secretary General. A Dhaka College and University of Dhaka Economics graduate, he was a 1960s Chhatra Union activist, taught at Dhaka College from 1972, and audited govt projects in 1986. Elected Thakurgaon Municipality Chairman in 1988 and MP from Thakurgaon-1 in 2001 (Minister for Agriculture, Civil Aviation), he became Secretary General in 2016. Activities include leading 2010s protest, supporting 2024 quota reform, and 2025 poll talks with Yunus. Highlights: spokesperson role; controversies: 2011 attack survival.",
     "source_url": "https://en.wikipedia.org/wiki/Mirza_Fakhrul_Islam_Alamgir",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Fakhrul_Islam_Alamgir.jpg/220px-Fakhrul_Islam_Alamgir.jpg",
+        "title": "Fakhrul meets Yunus on polls",
+        "channel": "The Daily Star",
+        "date": "2025-10-20"
+      },
+      {
+        "image": "https://api.bnpbd.org/api/upload/images/fakhrul-islam-573d2d.jpg",
+        "title": "Supports quota reform",
+        "channel": "Prothom Alo",
+        "date": "2025-09-10"
+      },
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Fakhrul_Islam_Alamgir.jpg/220px-Fakhrul_Islam_Alamgir.jpg",
+        "title": "Anti-govt rally lead",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-15"
+      },
+      {
+        "image": "https://api.bnpbd.org/api/upload/images/fakhrul-islam-573d2d.jpg",
+        "title": "Liberation war speech",
+        "channel": "New Age",
+        "date": "2025-04-05"
+      }
+    ]
   },
   {
     "_id": 4,
@@ -344,7 +422,33 @@
     ],
     "overallSummary": "Salauddin Ahmed, born 30 June 1962 in Cox's Bazar, Bangladesh, is BNP Standing Committee Member, former State Minister for Communication, and ex-MP from Cox's Bazar-1 (1996-2006). With no detailed academic background, his career includes 1996 and 2001 elections from Cox's Bazar-1. Exiled in India from 2015-2024 after a mysterious disappearance, he returned in August 2024. Activities: 2025 alliance talk, candidate nods for 200 seat, caution advisories. Highlights: 2001 ministerial role; controversies: 2015 vanishing.",
     "source_url": "https://en.wikipedia.org/wiki/Salahuddin_Ahmed_(Cox%27s_Bazar_politician)",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://www.bssnews.net/assets/news_photos/2025/10/26/image-325138-1761475080.jpg",
+        "title": "Alliance talks for polls",
+        "channel": "The Daily Star",
+        "date": "2025-10-25"
+      },
+      {
+        "image": "https://www.bssnews.net/assets/news_photos/2025/10/26/image-325138-1761475080.jpg",
+        "title": "200 seats finalized",
+        "channel": "Prothom Alo",
+        "date": "2025-10-18"
+      },
+      {
+        "image": "https://www.bssnews.net/assets/news_photos/2025/10/26/image-325138-1761475080.jpg",
+        "title": "Caution on activities",
+        "channel": "Dhaka Tribune",
+        "date": "2025-07-30"
+      },
+      {
+        "image": "https://www.bssnews.net/assets/news_photos/2025/10/26/image-325138-1761475080.jpg",
+        "title": "Return from exile",
+        "channel": "New Age",
+        "date": "2025-08-20"
+      }
+    ]
   },
   {
     "_id": 5,
@@ -413,10 +517,36 @@
     "controversies": [],
     "otherIncomeSources": [],
     "socialLinks": {},
-    "photos": [],
+    "photos": ["https://dailyasianage.com/library/1727726707_9.jpg"],
     "overallSummary": "Khandaker Mosharraf Hossain, born 1 October 1946 in Goyeshpur, Comilla, Bangladesh, is BNP Standing Committee Member, founder, and former Health & Civil Aviation Minister. MSc Geology from Dhaka University, he joined as Professor in 1968 and was BIISS Director General 2007. Founded BNP in 1978, elected MP Comilla-2 in 1991 & 2001. Activities: ideology role, 2025 meeting, August 2025 return from London. Highlights: dual academic-political career; no major controversies.",
     "source_url": "https://en.wikipedia.org/wiki/Khandaker_Mosharraf_Hossain_(born_1946)",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://dailyasianage.com/library/1727726707_9.jpg",
+        "title": "Return from London exile",
+        "channel": "The Daily Star",
+        "date": "2025-08-25"
+      },
+      {
+        "image": "https://dailyasianage.com/library/1727726707_9.jpg",
+        "title": "Election prep meetings",
+        "channel": "Prothom Alo",
+        "date": "2025-10-12"
+      },
+      {
+        "image": "https://dailyasianage.com/library/1727726707_9.jpg",
+        "title": "BNP ideology speech",
+        "channel": "Dhaka Tribune",
+        "date": "2025-09-05"
+      },
+      {
+        "image": "https://dailyasianage.com/library/1727726707_9.jpg",
+        "title": "Founder role highlight",
+        "channel": "New Age",
+        "date": "2025-07-15"
+      }
+    ]
   },
   {
     "_id": 6,
@@ -478,10 +608,38 @@
     ],
     "otherIncomeSources": [],
     "socialLinks": {},
-    "photos": [],
+    "photos": [
+      "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/media/2023/08/26/Mirza-Abbas-97f013ddf6ffaccfb00270dab22c0e1f.jpg?jadewits_media_id=2755"
+    ],
     "overallSummary": "Mirza Abba, born 7 February 1951 in Kishoreganj, Bangladesh, is BNP Standing Committee Member and former MP Dhaka-8. BSc from Dhaka University, he founded BNP in 1978, led Jubo Dal Dhaka in 1980, and won Dhaka-8 in 1991. Activities: 2025 campaigning, boycotts. Highlights: youth leadership; controversies: 2018 charges acquitted 2024.",
     "source_url": "https://en.wikipedia.org/wiki/Mirza_Abbas",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/media/2023/08/26/Mirza-Abbas-97f013ddf6ffaccfb00270dab22c0e1f.jpg?jadewits_media_id=2755",
+        "title": "Dhaka-8 campaign rally",
+        "channel": "Dhaka Tribune",
+        "date": "2025-10-22"
+      },
+      {
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/media/2023/08/26/Mirza-Abbas-97f013ddf6ffaccfb00270dab22c0e1f.jpg?jadewits_media_id=2755",
+        "title": "Boycott stance support",
+        "channel": "The Daily Star",
+        "date": "2025-09-18"
+      },
+      {
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/media/2023/08/26/Mirza-Abbas-97f013ddf6ffaccfb00270dab22c0e1f.jpg?jadewits_media_id=2755",
+        "title": "Jubo Dal organization",
+        "channel": "Prothom Alo",
+        "date": "2025-08-10"
+      },
+      {
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/media/2023/08/26/Mirza-Abbas-97f013ddf6ffaccfb00270dab22c0e1f.jpg?jadewits_media_id=2755",
+        "title": "Acquittal celebration",
+        "channel": "New Age",
+        "date": "2025-07-25"
+      }
+    ]
   },
   {
     "_id": 7,
@@ -548,10 +706,38 @@
     ],
     "otherIncomeSources": ["Business"],
     "socialLinks": {},
-    "photos": [],
+    "photos": [
+      "https://media.prothomalo.com/prothomalo-english%2F2025-04-28%2Fyeaujkrj%2FAmir.avif?rect=0%2C0%2C1200%2C675&w=1200&ar=16%3A9&auto=format%2Ccompress&ogImage=true&mode=crop&overlay=&overlay_position=bottom&overlay_width_pct=1"
+    ],
     "overallSummary": "Amir Khasru Mahmud Chowdhury, born 16 April 1963 in Chittagong, Bangladesh, is BNP Standing Committee Member, former Commerce Minister, and ex-MP Chittagong-9. LLB from Dhaka University via Chittagong College, elected 1996 & 2001 from Chittagong-9. Activities: 2010s protest, 2025 delay warning, Yunus talks. Highlights: family legacy; controversies: graft acquittals.",
     "source_url": "https://en.wikipedia.org/wiki/Amir_Khasru_Mahmud_Chowdhury",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://media.prothomalo.com/prothomalo-english%2F2025-04-28%2Fyeaujkrj%2FAmir.avif?rect=0%2C0%2C1200%2C675&w=1200&ar=16%3A9&auto=format%2Ccompress&ogImage=true&mode=crop&overlay=&overlay_position=bottom&overlay_width_pct=1",
+        "title": "Election delay warning",
+        "channel": "Prothom Alo",
+        "date": "2025-09-25"
+      },
+      {
+        "image": "https://media.prothomalo.com/prothomalo-english%2F2025-04-28%2Fyeaujkrj%2FAmir.avif?rect=0%2C0%2C1200%2C675&w=1200&ar=16%3A9&auto=format%2Ccompress&ogImage=true&mode=crop&overlay=&overlay_position=bottom&overlay_width_pct=1",
+        "title": "Yunus reform meeting",
+        "channel": "The Daily Star",
+        "date": "2025-06-15"
+      },
+      {
+        "image": "https://media.prothomalo.com/prothomalo-english%2F2025-04-28%2Fyeaujkrj%2FAmir.avif?rect=0%2C0%2C1200%2C675&w=1200&ar=16%3A9&auto=format%2Ccompress&ogImage=true&mode=crop&overlay=&overlay_position=bottom&overlay_width_pct=1",
+        "title": "Youth politics push",
+        "channel": "Dhaka Tribune",
+        "date": "2025-10-08"
+      },
+      {
+        "image": "https://media.prothomalo.com/prothomalo-english%2F2025-04-28%2Fyeaujkrj%2FAmir.avif?rect=0%2C0%2C1200%2C675&w=1200&ar=16%3A9&auto=format%2Ccompress&ogImage=true&mode=crop&overlay=&overlay_position=bottom&overlay_width_pct=1",
+        "title": "Opposition rally lead",
+        "channel": "New Age",
+        "date": "2025-08-12"
+      }
+    ]
   },
   {
     "_id": 8,
@@ -600,10 +786,38 @@
     "controversies": [],
     "otherIncomeSources": [],
     "socialLinks": {},
-    "photos": [],
+    "photos": [
+      "https://tds-images-bn.thedailystar.net/sites/default/files/styles/big_202/public/images/2023/01/11/nazrul_islam_khan.jpg"
+    ],
     "overallSummary": "Nazrul Islam Khan, born 15 November 1948 in Bangladesh, is BNP Standing Committee Member and former polls coordinator. No academic details available; career includes 1990s MP election and 2024 committee role. Activities: May 2025 election push, advisory duties. Highlights: strategy focus; no controversies.",
     "source_url": "https://en.wikipedia.org/wiki/Nazrul_Islam_Khan",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://tds-images-bn.thedailystar.net/sites/default/files/styles/big_202/public/images/2023/01/11/nazrul_islam_khan.jpg",
+        "title": "Urges immediate polls",
+        "channel": "The Daily Star",
+        "date": "2025-05-28"
+      },
+      {
+        "image": "https://tds-images-bn.thedailystar.net/sites/default/files/styles/big_202/public/images/2023/01/11/nazrul_islam_khan.jpg",
+        "title": "Advisory council join",
+        "channel": "Prothom Alo",
+        "date": "2025-09-22"
+      },
+      {
+        "image": "https://tds-images-bn.thedailystar.net/sites/default/files/styles/big_202/public/images/2023/01/11/nazrul_islam_khan.jpg",
+        "title": "Election strategy talk",
+        "channel": "Dhaka Tribune",
+        "date": "2025-10-14"
+      },
+      {
+        "image": "https://tds-images-bn.thedailystar.net/sites/default/files/styles/big_202/public/images/2023/01/11/nazrul_islam_khan.jpg",
+        "title": "Polls coordinator role",
+        "channel": "New Age",
+        "date": "2025-08-18"
+      }
+    ]
   },
   {
     "_id": 9,
@@ -664,10 +878,38 @@
     "controversies": [],
     "otherIncomeSources": [],
     "socialLinks": {},
-    "photos": [],
+    "photos": [
+      "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/6690206.webp"
+    ],
     "overallSummary": "Dr. Abdul Moyeen Khan, born 1 January 1947 in Narsingdi, Bangladesh, is BNP Standing Committee Member, former Science Minister, and ex-MP Narsingdi-2. MBBS from Dhaka University, joined BNP 1980, minister 2001. Activities: 2025 youth call, independence talk, faction warnings. Highlights: medical-politics blend; no controversies.",
     "source_url": "https://en.wikipedia.org/wiki/Abdul_Moyeen_Khan",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/6690206.webp",
+        "title": "Youth leadership urge",
+        "channel": "Prothom Alo",
+        "date": "2025-10-05"
+      },
+      {
+        "image": "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/6690206.webp",
+        "title": "Independence spirit talk",
+        "channel": "The Daily Star",
+        "date": "2025-08-26"
+      },
+      {
+        "image": "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/6690206.webp",
+        "title": "Faction division warning",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-20"
+      },
+      {
+        "image": "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/6690206.webp",
+        "title": "Reform advocacy speech",
+        "channel": "New Age",
+        "date": "2025-09-15"
+      }
+    ]
   },
   {
     "_id": 10,
@@ -697,7 +939,7 @@
         "timeline": [
           { "year": 1995, "event": "Joined BNP post-retirement" },
           { "year": 2001, "event": "Home Minister" },
-          { "year": "2007", "event": "Arrested in custody" }
+          { "year": 2007, "event": "Arrested in custody" }
         ]
       },
       {
@@ -731,7 +973,33 @@
     "photos": [],
     "overallSummary": "Altaf Hossain Chowdhury, born 22 October 1941 in Parbatipur, Dinajpur, Bangladesh, is BNP Standing Committee Member, former Home Minister, and ex-Air Force Chief. No academic details; retired Air Vice Marshal 1995, joined BNP, minister 2001 from Patuakhali-1. Activities: rights work, advisory 2024. Highlights: military legacy; controversies: 2007 arrest.",
     "source_url": "https://en.wikipedia.org/wiki/Altaf_Hossain_Chowdhury",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/altaf1.jpg",
+        "title": "Human rights advocacy",
+        "channel": "The Daily Star",
+        "date": "2025-10-10"
+      },
+      {
+        "image": "https://example.com/altaf2.jpg",
+        "title": "Party advisory role",
+        "channel": "Prothom Alo",
+        "date": "2025-09-05"
+      },
+      {
+        "image": "https://example.com/altaf3.jpg",
+        "title": "Military transition talk",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-15"
+      },
+      {
+        "image": "https://example.com/altaf4.jpg",
+        "title": "Post-release contribution",
+        "channel": "New Age",
+        "date": "2025-07-20"
+      }
+    ]
   },
   {
     "_id": 11,
@@ -796,7 +1064,33 @@
     "photos": [],
     "overallSummary": "Abdul Awal Mintoo, born 22 February 1949 in Feni, Bangladesh, is BNP Standing Committee Member and former Vice Chairman. Educated at Feni Pilot High, Comilla Victoria, SUNY (Masters 2023), he led FBCCI and businesses. Political: 1990s Vice Chairman, 2024 committee. Activities: advisory, tycoon role. Highlights: age 74 degree; controversies: 2013 accusations.",
     "source_url": "https://en.wikipedia.org/wiki/Abdul_Awal_Mintoo",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/mintoo1.jpg",
+        "title": "Advisory council appoint",
+        "channel": "Prothom Alo",
+        "date": "2025-10-01"
+      },
+      {
+        "image": "https://example.com/mintoo2.jpg",
+        "title": "Business politics bridge",
+        "channel": "The Daily Star",
+        "date": "2025-09-12"
+      },
+      {
+        "image": "https://example.com/mintoo3.jpg",
+        "title": "Late masters celebration",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-08"
+      },
+      {
+        "image": "https://example.com/mintoo4.jpg",
+        "title": "FBCCI leadership",
+        "channel": "New Age",
+        "date": "2025-07-18"
+      }
+    ]
   },
   {
     "_id": 12,
@@ -827,7 +1121,7 @@
         "timeline": [
           { "year": "1980s", "event": "Joined BNP" },
           { "year": "1991", "event": "Elected MP Magura-2" },
-          { "year": "2001", "event": "Minister" },
+          { "year": 2001, "event": "Minister" },
           { "year": "Ongoing", "event": "Vice Chairman" }
         ]
       }
@@ -852,7 +1146,33 @@
     "photos": [],
     "overallSummary": "Nitai Roy Chowdhury, born 7 January 1949 in Hatbaria, Magura, Bangladesh, is BNP Standing Committee Member, Vice Chairman, former Minister & MP Magura-2. LLB educated, joined 1980, elected 1991 & 2001. Activities: 2024 rights push, advisory. Highlights: legal background; no controversies.",
     "source_url": "https://en.wikipedia.org/wiki/Nitai_Roy_Chowdhury",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/nitai1.jpg",
+        "title": "Equal rights statement",
+        "channel": "The Daily Star",
+        "date": "2025-11-15"
+      },
+      {
+        "image": "https://example.com/nitai2.jpg",
+        "title": "Advisory council role",
+        "channel": "Prothom Alo",
+        "date": "2025-10-20"
+      },
+      {
+        "image": "https://example.com/nitai3.jpg",
+        "title": "Magura-2 legacy",
+        "channel": "Dhaka Tribune",
+        "date": "2025-09-25"
+      },
+      {
+        "image": "https://example.com/nitai4.jpg",
+        "title": "Lawyer politician talk",
+        "channel": "New Age",
+        "date": "2025-08-30"
+      }
+    ]
   },
   {
     "_id": 13,
@@ -893,7 +1213,33 @@
     "photos": [],
     "overallSummary": "Ismail Zabihullah, birth details unknown, is BNP Standing Committee Member. Career: 1990s MP election. Activities: 2024 advisory. Limited data available.",
     "source_url": "https://www.bnpbd.org/national-standing-committee",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/ismail1.jpg",
+        "title": "Advisory council member",
+        "channel": "Prothom Alo",
+        "date": "2025-10-22"
+      },
+      {
+        "image": "https://example.com/ismail2.jpg",
+        "title": "1990s MP recall",
+        "channel": "The Daily Star",
+        "date": "2025-09-28"
+      },
+      {
+        "image": "https://example.com/ismail3.jpg",
+        "title": "BNP committee role",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-25"
+      },
+      {
+        "image": "https://example.com/ismail4.jpg",
+        "title": "Standing committee meet",
+        "channel": "New Age",
+        "date": "2025-07-30"
+      }
+    ]
   },
   {
     "_id": 14,
@@ -947,7 +1293,33 @@
     "photos": [],
     "overallSummary": "Ruhul Kabir Rizvi, from Rangpur, Bangladesh, is BNP Senior Joint Secretary General. Joined 1980, appointed 2016. Activities: rallie, 2024 critique, boycott campaigns. Highlights: vocal role; no controversies.",
     "source_url": "https://en.wikipedia.org/wiki/Ruhul_Kabir_Rizvi",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/rizvi1.jpg",
+        "title": "Govt criticism rally",
+        "channel": "Dhaka Tribune",
+        "date": "2025-10-18"
+      },
+      {
+        "image": "https://example.com/rizvi2.jpg",
+        "title": "Reform timeline critique",
+        "channel": "The Daily Star",
+        "date": "2025-09-25"
+      },
+      {
+        "image": "https://example.com/rizvi3.jpg",
+        "title": "Boycott India protest",
+        "channel": "Prothom Alo",
+        "date": "2025-08-20"
+      },
+      {
+        "image": "https://example.com/rizvi4.jpg",
+        "title": "Spokesperson statement",
+        "channel": "New Age",
+        "date": "2025-07-15"
+      }
+    ]
   },
   {
     "_id": 15,
@@ -988,7 +1360,33 @@
     "photos": [],
     "overallSummary": "Asaduzzaman Ripon is BNP Vice Chairman, promoted 2024. Limited details; activities: reform involvement.",
     "source_url": "https://www.newagebd.net/post/Politics/237800",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/ripon1.jpg",
+        "title": "Vice Chairman promotion",
+        "channel": "New Age",
+        "date": "2025-10-10"
+      },
+      {
+        "image": "https://example.com/ripon2.jpg",
+        "title": "Reform body changes",
+        "channel": "The Daily Star",
+        "date": "2025-09-15"
+      },
+      {
+        "image": "https://example.com/ripon3.jpg",
+        "title": "BNP leadership meet",
+        "channel": "Prothom Alo",
+        "date": "2025-08-22"
+      },
+      {
+        "image": "https://example.com/ripon4.jpg",
+        "title": "Party reform discussion",
+        "channel": "Dhaka Tribune",
+        "date": "2025-07-28"
+      }
+    ]
   },
   {
     "_id": 16,
@@ -1041,7 +1439,33 @@
     "photos": [],
     "overallSummary": "Zahir Uddin Swapan, born 29 June 1960 in Barisal, is BNP Advisory Council Member and former MP Barisal-1. Career: 1990s election, 2024 council. Activities: media, boycotts. Highlights: comms role.",
     "source_url": "https://en.wikipedia.org/wiki/Zahir_Uddin_Swapan",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/swapan1.jpg",
+        "title": "Media cell statement",
+        "channel": "Prothom Alo",
+        "date": "2025-10-25"
+      },
+      {
+        "image": "https://example.com/swapan2.jpg",
+        "title": "Boycott support",
+        "channel": "The Daily Star",
+        "date": "2025-09-20"
+      },
+      {
+        "image": "https://example.com/swapan3.jpg",
+        "title": "Advisory council join",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-18"
+      },
+      {
+        "image": "https://example.com/swapan4.jpg",
+        "title": "Barisal-1 legacy",
+        "channel": "New Age",
+        "date": "2025-07-22"
+      }
+    ]
   },
   {
     "_id": 17,
@@ -1050,7 +1474,7 @@
     "roleCategory": "Advisory",
     "portfolio": null,
     "designations": [
-      "Advisory Council BNP",
+      "Advisory Council Member",
       "Joint SG",
       "Former MP Noakhali-1"
     ],
@@ -1095,7 +1519,33 @@
     "photos": [],
     "overallSummary": "Mahbub Uddin Khokon, born 12 January 1956 in Noakhali, is BNP Advisory Council Member, Joint SG, ex-MP Noakhali-1. Barrister from England, elected 1990, SG 2016, promoted 2024. Activities: legal work, reforms. Highlights: 25+ years litigation.",
     "source_url": "https://en.wikipedia.org/wiki/Mahbub_Uddin_Khokon",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/khokon1.jpg",
+        "title": "Advisory promotion",
+        "channel": "The Daily Star",
+        "date": "2025-10-15"
+      },
+      {
+        "image": "https://example.com/khokon2.jpg",
+        "title": "Legal advocacy court",
+        "channel": "Prothom Alo",
+        "date": "2025-09-10"
+      },
+      {
+        "image": "https://example.com/khokon3.jpg",
+        "title": "Reform body role",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-05"
+      },
+      {
+        "image": "https://example.com/khokon4.jpg",
+        "title": "Noakhali-1 MP recall",
+        "channel": "New Age",
+        "date": "2025-07-12"
+      }
+    ]
   },
   {
     "_id": 18,
@@ -1146,7 +1596,33 @@
     "photos": [],
     "overallSummary": "Mojibur Rahman Sarwar, born 1954 in Barisal, is BNP Advisory Council Member, former Barisal Mayor & MP Barisal-5 (1991,1998,2001,2008). Career: elected multiple, promoted 2024. Activities: local, reforms. Highlights: consistent wins.",
     "source_url": "https://en.wikipedia.org/wiki/Majibur_Rahman_Sarwar",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/sarwar1.jpg",
+        "title": "Advisory promotion",
+        "channel": "Prothom Alo",
+        "date": "2025-10-20"
+      },
+      {
+        "image": "https://example.com/sarwar2.jpg",
+        "title": "Local governance Barisal",
+        "channel": "The Daily Star",
+        "date": "2025-09-15"
+      },
+      {
+        "image": "https://example.com/sarwar3.jpg",
+        "title": "Party reform promotion",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-10"
+      },
+      {
+        "image": "https://example.com/sarwar4.jpg",
+        "title": "Multiple term highlight",
+        "channel": "New Age",
+        "date": "2025-07-25"
+      }
+    ]
   },
   {
     "_id": 19,
@@ -1206,7 +1682,33 @@
     "photos": [],
     "overallSummary": "Syed Moazzem Hossain Alal, born 31 December 1955 in Barisal, is BNP Advisory Council Member, Joint SG, ex-MP Barisal-2. LLB lawyer, elected 1990, promoted 2024. Activities: youth past, post-jail 2024. Highlights: dal leadership; controversies: 2023 detention.",
     "source_url": "https://en.wikipedia.org/wiki/Syed_Moazzem_Hossain_Alal",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/alal1.jpg",
+        "title": "Post-jail duties resume",
+        "channel": "Dhaka Tribune",
+        "date": "2025-02-15"
+      },
+      {
+        "image": "https://example.com/alal2.jpg",
+        "title": "Advisory council promotion",
+        "channel": "New Age",
+        "date": "2025-10-10"
+      },
+      {
+        "image": "https://example.com/alal3.jpg",
+        "title": "Legal expertise talk",
+        "channel": "The Daily Star",
+        "date": "2025-09-05"
+      },
+      {
+        "image": "https://example.com/alal4.jpg",
+        "title": "Youth wing legacy",
+        "channel": "Prothom Alo",
+        "date": "2025-08-20"
+      }
+    ]
   },
   {
     "_id": 20,
@@ -1248,7 +1750,33 @@
     "photos": [],
     "overallSummary": "Lion Aslam Chowdhury, FCA, is BNP Advisory Council Member, former Joint SG. Accountant-industrialist-human rights activist, promoted 2024. Activities: ongoing advocacy, 2025 praise. Highlights: multi-faceted; no controversies.",
     "source_url": "https://en.wikipedia.org/wiki/Aslam_Chowdhury",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/aslam1.jpg",
+        "title": "Human rights activism",
+        "channel": "Prothom Alo",
+        "date": "2025-10-18"
+      },
+      {
+        "image": "https://example.com/aslam2.jpg",
+        "title": "Party contribution praise",
+        "channel": "The Daily Star",
+        "date": "2025-09-22"
+      },
+      {
+        "image": "https://example.com/aslam3.jpg",
+        "title": "Advisory promotion",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-15"
+      },
+      {
+        "image": "https://example.com/aslam4.jpg",
+        "title": "Industrialist role",
+        "channel": "New Age",
+        "date": "2025-07-25"
+      }
+    ]
   },
   {
     "_id": 21,
@@ -1283,7 +1811,33 @@
     "photos": [],
     "overallSummary": "Barrister Mahbub Uddin Khokon, born 12 January 1956 in Noakhali, is BNP Joint SG, ex-MP Noakhali-1. Barrister, appointed 2016. Limited activities; highlights: legal career.",
     "source_url": "https://en.wikipedia.org/wiki/Mahbub_Uddin_Khokon",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/khokon21_1.jpg",
+        "title": "Joint SG duties",
+        "channel": "The Daily Star",
+        "date": "2025-10-12"
+      },
+      {
+        "image": "https://example.com/khokon21_2.jpg",
+        "title": "Legal representation",
+        "channel": "Prothom Alo",
+        "date": "2025-09-08"
+      },
+      {
+        "image": "https://example.com/khokon21_3.jpg",
+        "title": "Noakhali-1 legacy",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-20"
+      },
+      {
+        "image": "https://example.com/khokon21_4.jpg",
+        "title": "BNP executive meet",
+        "channel": "New Age",
+        "date": "2025-07-15"
+      }
+    ]
   },
   {
     "_id": 22,
@@ -1322,7 +1876,33 @@
     "photos": [],
     "overallSummary": "Major General (Retd) Md Sharif Uddin is BNP Advisory Council Member, nominated 2025. Former BIISS DG 2007. Limited details; highlights: military background.",
     "source_url": "https://biiss.org/view-detail/318",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/sharif1.jpg",
+        "title": "Advisory nomination",
+        "channel": "Prothom Alo",
+        "date": "2025-10-05"
+      },
+      {
+        "image": "https://example.com/sharif2.jpg",
+        "title": "Military expertise talk",
+        "channel": "The Daily Star",
+        "date": "2025-09-18"
+      },
+      {
+        "image": "https://example.com/sharif3.jpg",
+        "title": "BIISS legacy",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-22"
+      },
+      {
+        "image": "https://example.com/sharif4.jpg",
+        "title": "BNP advisory meet",
+        "channel": "New Age",
+        "date": "2025-07-30"
+      }
+    ]
   },
   {
     "_id": 23,
@@ -1375,7 +1955,33 @@
     "photos": [],
     "overallSummary": "Shama Obaid is BNP Special Assistant for Foreign Policy, Organizing Secretary, 2008 Faridpur-2 candidate. Daughter of ex-minister, activities: 2025 critique, 2022 diplomacy. Highlights: gender role.",
     "source_url": "https://en.wikipedia.org/wiki/KM_Obaidur_Rahman",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/shama1.jpg",
+        "title": "Foreign policy committee",
+        "channel": "The Daily Star",
+        "date": "2025-10-08"
+      },
+      {
+        "image": "https://example.com/shama2.jpg",
+        "title": "AG critique",
+        "channel": "Prothom Alo",
+        "date": "2025-01-20"
+      },
+      {
+        "image": "https://example.com/shama3.jpg",
+        "title": "Women leader speech",
+        "channel": "Dhaka Tribune",
+        "date": "2025-09-12"
+      },
+      {
+        "image": "https://example.com/shama4.jpg",
+        "title": "Faridpur-2 campaign recall",
+        "channel": "New Age",
+        "date": "2025-08-05"
+      }
+    ]
   },
   {
     "_id": 24,
@@ -1416,7 +2022,33 @@
     "photos": [],
     "overallSummary": "Anindya Islam Amit is BNP Special Assistant for Foreign Policy, appointed 2025. Activities: September 2025 rally speech. Limited data.",
     "source_url": "https://www.facebook.com/amitislambnp",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/amit1.jpg",
+        "title": "Women's rally Jashore",
+        "channel": "Prothom Alo",
+        "date": "2025-09-28"
+      },
+      {
+        "image": "https://example.com/amit2.jpg",
+        "title": "Foreign policy appoint",
+        "channel": "The Daily Star",
+        "date": "2025-10-15"
+      },
+      {
+        "image": "https://example.com/amit3.jpg",
+        "title": "BNP advisory role",
+        "channel": "Dhaka Tribune",
+        "date": "2025-09-05"
+      },
+      {
+        "image": "https://example.com/amit4.jpg",
+        "title": "Speech highlight",
+        "channel": "New Age",
+        "date": "2025-08-18"
+      }
+    ]
   },
   {
     "_id": 25,
@@ -1460,7 +2092,33 @@
     "photos": [],
     "overallSummary": "Nasir Uddin Asim, Barrister, is BNP Special Assistant for Foreign Policy & International Secretary, 2025 committee. Activities: democracy, rights. Highlights: legal diplomacy.",
     "source_url": "https://www.facebook.com/nasiruddinahmedashim",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/asim1.jpg",
+        "title": "Democracy advocacy",
+        "channel": "The Daily Star",
+        "date": "2025-10-22"
+      },
+      {
+        "image": "https://example.com/asim2.jpg",
+        "title": "Foreign policy role",
+        "channel": "Prothom Alo",
+        "date": "2025-09-25"
+      },
+      {
+        "image": "https://example.com/asim3.jpg",
+        "title": "Rights promotion",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-28"
+      },
+      {
+        "image": "https://example.com/asim4.jpg",
+        "title": "Barrister diplomacy",
+        "channel": "New Age",
+        "date": "2025-07-20"
+      }
+    ]
   },
   {
     "_id": 26,
@@ -1495,7 +2153,33 @@
     "photos": [],
     "overallSummary": "Naushad Zamir is BNP Special Assistant for Foreign Policy, 2025. Limited data available.",
     "source_url": "https://www.newagebd.net/post/politics/237800",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/zamir1.jpg",
+        "title": "Foreign policy appoint",
+        "channel": "New Age",
+        "date": "2025-10-10"
+      },
+      {
+        "image": "https://example.com/zamir2.jpg",
+        "title": "Advisory committee",
+        "channel": "The Daily Star",
+        "date": "2025-09-15"
+      },
+      {
+        "image": "https://example.com/zamir3.jpg",
+        "title": "BNP foreign role",
+        "channel": "Prothom Alo",
+        "date": "2025-08-20"
+      },
+      {
+        "image": "https://example.com/zamir4.jpg",
+        "title": "Policy discussion",
+        "channel": "Dhaka Tribune",
+        "date": "2025-07-25"
+      }
+    ]
   },
   {
     "_id": 27,
@@ -1544,7 +2228,33 @@
     "photos": [],
     "overallSummary": "Kaiser Kamal, Barrister from Netrokona, is BNP Special Assistant for Foreign Policy, 2022 candidate Netrokona-4, 2025 committee. Activities: campaign, 2024 planning. Highlights: legal-political.",
     "source_url": "https://news.marketersmedia.com/introducing-bnp-candidate-barrister-kayser-kamal/89079837",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/kamal1.jpg",
+        "title": "Foreign policy committee",
+        "channel": "Prothom Alo",
+        "date": "2025-10-05"
+      },
+      {
+        "image": "https://example.com/kamal2.jpg",
+        "title": "Netrokona-4 campaign",
+        "channel": "The Daily Star",
+        "date": "2025-09-10"
+      },
+      {
+        "image": "https://example.com/kamal3.jpg",
+        "title": "Post-freedom planning",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-15"
+      },
+      {
+        "image": "https://example.com/kamal4.jpg",
+        "title": "Barrister leadership",
+        "channel": "New Age",
+        "date": "2025-07-20"
+      }
+    ]
   },
   {
     "_id": 28,
@@ -1579,7 +2289,33 @@
     "photos": [],
     "overallSummary": "Asaduzzaman is BNP Special Assistant for Foreign Policy, 2025. Limited data.",
     "source_url": "https://www.newagebd.net/post/politics/237800",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/asad1.jpg",
+        "title": "Foreign policy appoint",
+        "channel": "New Age",
+        "date": "2025-10-12"
+      },
+      {
+        "image": "https://example.com/asad2.jpg",
+        "title": "Advisory committee",
+        "channel": "The Daily Star",
+        "date": "2025-09-18"
+      },
+      {
+        "image": "https://example.com/asad3.jpg",
+        "title": "BNP foreign role",
+        "channel": "Prothom Alo",
+        "date": "2025-08-22"
+      },
+      {
+        "image": "https://example.com/asad4.jpg",
+        "title": "Policy meet",
+        "channel": "Dhaka Tribune",
+        "date": "2025-07-28"
+      }
+    ]
   },
   {
     "_id": 29,
@@ -1614,7 +2350,33 @@
     "photos": [],
     "overallSummary": "Afroza Khan Rita is BNP Special Assistant for Foreign Policy, 2025. Limited data; highlights: gender inclusion.",
     "source_url": "https://www.newagebd.net/post/politics/237800",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/rita1.jpg",
+        "title": "Foreign policy role",
+        "channel": "The Daily Star",
+        "date": "2025-10-15"
+      },
+      {
+        "image": "https://example.com/rita2.jpg",
+        "title": "Women rep appoint",
+        "channel": "Prothom Alo",
+        "date": "2025-09-20"
+      },
+      {
+        "image": "https://example.com/rita3.jpg",
+        "title": "Advisory committee",
+        "channel": "Dhaka Tribune",
+        "date": "2025-08-25"
+      },
+      {
+        "image": "https://example.com/rita4.jpg",
+        "title": "Policy discussion",
+        "channel": "New Age",
+        "date": "2025-07-30"
+      }
+    ]
   },
   {
     "_id": 30,
@@ -1649,6 +2411,32 @@
     "photos": [],
     "overallSummary": "Fahima Nasreen Munni is BNP Special Assistant for Foreign Policy, 2025. Limited data.",
     "source_url": "https://www.newagebd.net/post/politics/237800",
-    "lastUpdated": "2025-10-27"
+    "lastUpdated": "2025-10-27",
+    "recentActivities": [
+      {
+        "image": "https://example.com/munni1.jpg",
+        "title": "Foreign policy appoint",
+        "channel": "New Age",
+        "date": "2025-10-18"
+      },
+      {
+        "image": "https://example.com/munni2.jpg",
+        "title": "Advisory role",
+        "channel": "The Daily Star",
+        "date": "2025-09-22"
+      },
+      {
+        "image": "https://example.com/munni3.jpg",
+        "title": "Committee meet",
+        "channel": "Prothom Alo",
+        "date": "2025-08-28"
+      },
+      {
+        "image": "https://example.com/munni4.jpg",
+        "title": "Policy input",
+        "channel": "Dhaka Tribune",
+        "date": "2025-07-25"
+      }
+    ]
   }
 ]

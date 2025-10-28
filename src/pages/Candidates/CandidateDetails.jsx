@@ -1,18 +1,15 @@
 import {
   Calendar,
   MapPin,
-  Heart,
   Briefcase,
   GraduationCap,
-  Scale,
-  Star,
   Map,
-  Award,
   User,
   Flag,
 } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router";
+import fallbackImage from "../../../public/logo.png";
 
 export default function CandidateDetails() {
   const { state: details } = useLocation();
@@ -71,14 +68,13 @@ export default function CandidateDetails() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 space-y-8">
-        {/* Tabs */}
-        <div className="bg-white rounded-xl shadow-md">
-          <div className="flex border-b border-gray-200">
+        <div className="bg-white rounded-xl">
+          <div className="flex border-b border-gray-200 shadow">
             <button
               onClick={() => setActiveTab("details")}
               className={`flex-1 py-4 text-xs sm:text-sm md:text-base text-center text-gray-400 font-semibold ${
                 activeTab === "details"
-                  ? "bg-gray-100 border-b-2 border-gray-400 text-gray-600"
+                  ? "bg-gray-100  border-gray-400 text-gray-600"
                   : "text-gray-400"
               }`}
             >
@@ -88,7 +84,7 @@ export default function CandidateDetails() {
               onClick={() => setActiveTab("political")}
               className={`flex-1 text-xs sm:text-sm md:text-base py-4 text-center text-gray-400 font-semibold ${
                 activeTab === "political"
-                  ? "bg-gray-100 border-b-2 border-gray-400 text-gray-600"
+                  ? "bg-gray-100  border-gray-400 text-gray-600"
                   : "text-gray-400"
               }`}
             >
@@ -98,7 +94,7 @@ export default function CandidateDetails() {
               onClick={() => setActiveTab("activities")}
               className={`flex-1 py-4 text-xs sm:text-sm md:text-base text-center text-gray-400 font-semibold ${
                 activeTab === "activities"
-                  ? "bg-gray-100 border-b-2 border-gray-400 text-gray-600"
+                  ? "bg-gray-100  border-gray-400 text-gray-600"
                   : "text-gray-400"
               }`}
             >
@@ -169,7 +165,6 @@ export default function CandidateDetails() {
                     </div>
                   </div>
                 )}
-                {/* Academic Career */}
                 {details.academicCareer && (
                   <div>
                     <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -339,40 +334,80 @@ export default function CandidateDetails() {
             )}
           </div>
         </div>
+      </div>
 
-        <div className="bg-emerald-50 rounded-xl shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Recent Activities of {details.name}
+      <div className="bg-[#DCFFD4]/50 rounded-xl shadow-md p-4 sm:p-6">
+        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center md:text-left mb-4 leading-tight">
+            <p>Recent Activities of</p>
+            <p>{details.name}</p>
           </h2>
-          <div className="flex flex-col md:flex-row gap-6">
-            <img
-              src={details.photos[0]}
-              alt={`${details.name}'s photo`}
-              className="w-full md:w-96 object-cover rounded-lg shadow-md"
-            />
-            <div className="space-y-6 w-full">
-              {details.activities && details.activities.length > 0 && (
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    Activities
-                  </h2>
-                  <div className="space-y-3">
-                    {details.activities.map((activity, idx) => (
-                      <div key={idx} className="p-4 bg-emerald-50 rounded-lg">
-                        <p className="font-semibold text-gray-900">
-                          {activity.title}
-                        </p>
-                        <p className="text-gray-700 mt-1">
-                          {activity.description}
-                        </p>
-                        <p className="text-sm text-gray-500 mt-1">
-                          {activity.date}
-                        </p>
-                      </div>
-                    ))}
+
+          <div className="flex flex-col-reverse lg:flex-row gap-6 mt-10">
+            <div className="space-y-4 w-full lg:w-1/3">
+              {details.recentActivities &&
+                details.recentActivities.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                      Highlights
+                    </h2>
+                    <div className="space-y-3">
+                      {details.recentActivities.map((activity, idx) => (
+                        <div
+                          key={idx}
+                          className="flex flex-col sm:flex-row items-center sm:items-start gap-3 p-2 rounded-lg"
+                        >
+                          <img
+                            className="w-full sm:w-40 h-32 sm:h-24 object-cover shadow rounded-lg"
+                            src={activity?.image || fallbackImage}
+                            alt={activity?.title || "Activity image"}
+                            onError={(e) => {
+                              e.currentTarget.src = fallbackImage;
+                            }}
+                          />
+
+                          <div className="text-center sm:text-left">
+                            <p className="font-bold text-gray-900 text-sm sm:text-base">
+                              {activity.title}
+                            </p>
+                            <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2">
+                              <p className="text-gray-700 text-xs sm:text-sm">
+                                {activity.channel}
+                              </p>
+                              <p className="text-xs text-gray-500">
+                                {activity.date}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="font-extrabold text-lg sm:text-xl mt-4 text-center sm:text-left">
+                      See More+
+                    </p>
                   </div>
-                </div>
-              )}
+                )}
+            </div>
+
+            <div className="relative w-full lg:w-2/3 flex items-stretch">
+              <img
+                src={details.photos[0]}
+                alt={`${details.name}'s photo`}
+                className="w-full h-auto max-h-[600px] object-cover rounded-xl shadow-md brightness-[0.6]"
+              />
+              <div className="absolute inset-0 flex flex-col justify-center text-white pl-8">
+                <p className="max-w-20 w-16 sm:w-20 font-bold bg-white text-black rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm mb-3">
+                  politics
+                </p>
+                <p className="max-w-2/3 text-lg sm:text-2xl md:text-3xl lg:text-5xl font-semibold mb-2">
+                  {details.recentActivities?.[0]?.title}
+                </p>
+                <p className="max-w-md text-xs sm:text-base text-gray-200 sm:mt-2.5">
+                  BNP leaders discussed national reform policies and their
+                  recent political movements focusing on youth involvement and
+                  fair governance.
+                </p>
+              </div>
             </div>
           </div>
         </div>

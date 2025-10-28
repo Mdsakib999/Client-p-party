@@ -2,7 +2,7 @@ import axios from "axios";
 import candidatesBanner from "../../assets/candidates-banner.jpg";
 import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ListFilter, Search } from "lucide-react";
-import candidatesData from "../../../public/candidates.json";
+import candidatesData from "../../data/candidates.json";
 import CandidateCard from "../../components/CandidateCard";
 
 const Candidates = () => {
