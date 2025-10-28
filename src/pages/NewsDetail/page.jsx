@@ -1,10 +1,16 @@
 import { useParams, Link } from "react-router";
 import newsArticles from "../../data/newsArticles.json";
 import activitiesData from "../../data/activities.json";
+import campaignActivities from "../../data/campaignActivities.json";
 
 export default function NewsDetail() {
-const { slug } = useParams();
-  const article = newsArticles.find((a) => a.slug === slug) || activitiesData.find((a) => a.slug === slug);
+  const { slug } = useParams();
+
+  // Campaign activities are imported from JSON
+
+  const article = newsArticles.find((a) => a.slug === slug) ||
+  activitiesData.find((a) => a.slug === slug) ||
+  campaignActivities.find((a) => a.slug === slug);
 
   if (!article) {
     return (
@@ -17,7 +23,7 @@ const { slug } = useParams();
     );
   }
 
-  const allArticles = [...newsArticles, ...activitiesData];
+  const allArticles = [...newsArticles, ...activitiesData, ...campaignActivities];
   const relatedArticles = allArticles
     .filter((a) => a.id !== article.id)
     .slice(0, 3);

@@ -14,11 +14,11 @@ const About = () => {
 
           {/* Right - Content */}
           <div className="space-y-6 w-full flex flex-col items-center text-center">
-            <span className="inline-block bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium">
+            <span className="inline-block bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-medium">
               About
             </span>
 
-            <h2 className="text-4xl md:text-4xl font-bold text-center mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 tracking-tight">
               Champion of Democracy in Bangladesh
             </h2>
 

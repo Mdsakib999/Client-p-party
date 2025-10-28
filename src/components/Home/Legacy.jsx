@@ -38,7 +38,7 @@ const Legacy = () => {
     <section className="py-16 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
-        <h2 className="text-4xl md:text-4xl font-bold text-center mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 tracking-tight">
           Legacy of Leadership
         </h2>
 

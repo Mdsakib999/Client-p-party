@@ -2,24 +2,24 @@ import { Link } from "react-router";
 import newsArticles from "../../data/newsArticles.json";
 
 const NewsSection = () => {
-const newsActivities = newsArticles.slice(0, 8);
+  const newsActivities = newsArticles.slice(0, 8);
 
-return (
-<section className="py-16 px-6 bg-white">
-<div className="max-w-8xl mx-auto">
-{/* Header */}
-<div className="mb-12">
-<h2 className="text-4xl md:text-5xl font-bold mb-3">
-News and Activities
-</h2>
-<p className="text-gray-600 text-lg">
-We Focus on the details of everything we do. All to help people
-</p>
-</div>
+  return (
+    <section className="py-16 px-6 bg-white">
+      <div className="max-w-8xl mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
+            News and Activities
+          </h2>
+          <p className="text-gray-600 text-lg">
+            We Focus on the details of everything we do. All to help people
+          </p>
+        </div>
 
-{/* Grid */}
-<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-{newsActivities.map((item) => (
+        {/* Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+          {newsActivities.map((item) => (
             <Link
               key={item.id}
               to={`/news/${item.slug}`}

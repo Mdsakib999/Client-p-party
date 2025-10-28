@@ -45,14 +45,14 @@ export const Candidates = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+          <span className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>
             Candidates
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 tracking-tight">
             Meet our the candidates
           </h2>
 
@@ -69,7 +69,7 @@ export const Candidates = () => {
             </Link>
             <Link
               to="/get-involved"
-              className="flex items-center gap-2 bg-green-600 text-white px-6 py-2.5 rounded hover:bg-green-700 transition-colors font-medium"
+              className="flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
             >
               Get Involved <HiArrowRight className="w-5 h-5" />
             </Link>
