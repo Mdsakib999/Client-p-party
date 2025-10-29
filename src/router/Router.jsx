@@ -8,6 +8,8 @@ import News from "../pages/News/page.jsx";
 import Candidates from "../pages/Candidates/page.jsx";
 import CandidateDetails from "../pages/Candidates/CandidateDetails.jsx";
 import NewsDetail from "../pages/NewsDetail/page.jsx";
+import LoginPage from "../pages/Login/page.jsx";
+import RegisterPage from "../pages/Register/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: "/login",
+        Component: LoginPage,
+      },
+      {
+        path: "/register",
+        Component: RegisterPage,
       },
     ],
   },

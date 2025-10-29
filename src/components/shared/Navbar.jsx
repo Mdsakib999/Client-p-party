@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,10 +70,23 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        {/* CTA Button - Desktop */}
-        <button className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium">
-          Donate <HiArrowRight className="w-5 h-5" />
-        </button>
+        <div className="flex items-center gap-x-2">
+          <button className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium">
+            Donate <HiArrowRight className="w-5 h-5" />
+          </button>
+          <Link
+            to="/register"
+            className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
+          >
+            Sign Up <HiArrowRight className="w-5 h-5" />
+          </Link>
+          <Link
+            to="/login"
+            className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
+          >
+            Login <HiArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
 
         {/* Mobile toggle */}
         <button
