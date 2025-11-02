@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Leaders from "../../utils/Leaders";
 import { Eye, EyeOff } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Google from "../../utils/Google";
+import { validatePassword } from "../../utils/passwordValidation";
+import { useCreateUserMutation } from "../../redux/features/user/user.api";
+import toast from "react-hot-toast";
 
 export default function RegisterPage() {
   const {
@@ -13,24 +16,35 @@ export default function RegisterPage() {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const password = watch("password");
 
-  const onSubmit = (data) => {
-    console.log("Registration Data:", data);
-    alert("Registration successful! Check console for data.");
-  };
+  const [createUser, { isLoading }] = useCreateUserMutation();
 
-  const validatePassword = (value) => {
-    const errors = [];
-    if (value.length < 6) errors.push("at least 6 characters");
-    if (value.length > 30) errors.push("maximum 30 characters");
-    if (!/[a-z]/.test(value)) errors.push("one lowercase letter");
-    if (!/[A-Z]/.test(value)) errors.push("one uppercase letter");
-    if (!/[!@#$%^&*(),.?":{}|<>]/.test(value))
-      errors.push("one special character");
+  const onSubmit = async (data) => {
+    try {
+      const result = await createUser(data).unwrap();
+      if (result?.success) {
+        toast.success("Registration successful!");
 
-    return errors.length === 0 || `Password must contain ${errors.join(", ")}`;
+        sessionStorage.setItem(
+          "verifyData",
+          JSON.stringify({
+            email: result?.data?.email,
+            name: result?.data?.name,
+          })
+        );
+
+        navigate("/verify");
+      } else {
+        toast.error("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      toast.error(
+        error?.data?.message || "Registration failed. Please try again."
+      );
+    }
   };
 
   return (
@@ -49,16 +63,15 @@ export default function RegisterPage() {
                 Join us in building a better Bangladesh
               </p>
             </div>
-
             <Leaders />
           </div>
 
-          <div className="max-w-xl bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-green-100">
+          <div className="max-w-xl w-full mx-auto bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-green-100">
             <h2 className="text-2xl font-semibold text-gray-800 mb-8">
               Create Your Account
             </h2>
 
-            <div className="space-y-3">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name <span className="text-red-500">*</span>
@@ -66,7 +79,7 @@ export default function RegisterPage() {
                 <input
                   {...register("name", { required: "Name is required" })}
                   type="text"
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition-all duration-300"
                   placeholder="Enter your full name"
                 />
                 {errors.name && (
@@ -90,7 +103,7 @@ export default function RegisterPage() {
                     },
                   })}
                   type="email"
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition-all duration-300"
                   placeholder="example@email.com"
                 />
                 {errors.email && (
@@ -112,7 +125,7 @@ export default function RegisterPage() {
                       validate: validatePassword,
                     })}
                     type={showPassword ? "text" : "password"}
-                    className="w-full px-5 py-3 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+                    className="w-full px-5 py-3 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition-all duration-300"
                     placeholder="Create a strong password"
                   />
                   <button
@@ -171,6 +184,16 @@ export default function RegisterPage() {
                       ></span>
                       <span>Special character</span>
                     </div>
+                    <div className="flex items-center gap-2.5 text-xs text-gray-600">
+                      <span
+                        className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                          /[0-9]/.test(password)
+                            ? "bg-green-500 shadow-sm shadow-green-300"
+                            : "bg-gray-300"
+                        }`}
+                      ></span>
+                      <span>One Number</span>
+                    </div>
                   </div>
                 )}
               </div>
@@ -183,17 +206,31 @@ export default function RegisterPage() {
                 <input
                   {...register("phoneNumber")}
                   type="tel"
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition-all duration-300"
                   placeholder="+880 1XXX-XXXXXX"
                 />
               </div>
 
               <button
-                type="button"
-                onClick={handleSubmit(onSubmit)}
-                className="cursor-pointer mt-2 w-full bg-green-600 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 shadow"
+                type="submit"
+                disabled={isLoading}
+                className={`mt-2 w-full font-semibold py-3.5 rounded-xl transition-all duration-300 shadow text-white flex items-center justify-center gap-2
+                ${
+                  isLoading
+                    ? "bg-green-400 opacity-80 cursor-not-allowed animate-pulse"
+                    : "bg-green-600 hover:bg-green-700 cursor-pointer"
+                }`}
               >
-                Sign Up
+                {isLoading ? (
+                  <>
+                    <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span className="text-sm tracking-wide">
+                      Creating Account...
+                    </span>
+                  </>
+                ) : (
+                  "Sign Up"
+                )}
               </button>
 
               <div className="relative mt-2 mb-4">
@@ -206,18 +243,19 @@ export default function RegisterPage() {
                   </span>
                 </div>
               </div>
-            </div>
-            {/* google signin component */}
-            <Google />
-            <p className="text-center text-sm text-gray-600 mt-6">
-              Already have an account?{" "}
-              <Link
-                to="/login"
-                className="text-green-700 hover:text-green-600 hover:underline font-semibold transition-colors duration-300"
-              >
-                Login
-              </Link>
-            </p>
+
+              <Google disabled={isLoading} />
+
+              <p className="text-center text-sm text-gray-600 mt-6">
+                Already have an account?{" "}
+                <Link
+                  to="/login"
+                  className="text-green-700 hover:text-green-600 hover:underline font-semibold transition-colors duration-300"
+                >
+                  Login
+                </Link>
+              </p>
+            </form>
           </div>
         </div>
       </div>

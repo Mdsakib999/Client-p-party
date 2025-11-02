@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
-import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import Google from "../../utils/Google";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import toast from "react-hot-toast";
+import { useLoginMutation } from "../../redux/features/auth/auth.api";
 
 export default function LoginPage() {
   const {
@@ -12,22 +14,45 @@ export default function LoginPage() {
   } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [login, { isLoading }] = useLoginMutation();
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      console.log("Login Data:", data);
-      alert("Login successful! Check console for data.");
-      setIsLoading(false);
-    }, 1500);
+  const onSubmit = async (data) => {
+    try {
+      const result = await login(data).unwrap();
+      if (result?.success) {
+        toast.success(result?.message);
+        navigate("/");
+      } else {
+        toast.error("Login failed. Please try again.");
+      }
+    } catch (error) {
+      const errorMessage = error?.data?.message;
+
+      if (errorMessage?.toLowerCase().includes("user is not verified")) {
+        toast("Please verify your email first");
+
+        sessionStorage.setItem(
+          "verifyData",
+          JSON.stringify({
+            email: data.email,
+            name: "Leader",
+          })
+        );
+
+        navigate("/verify");
+      } else {
+        toast.error(errorMessage || "Login failed. Please try again.");
+      }
+    }
   };
 
   return (
     <div className="min-h-screen relative flex items-center justify-center p-4 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
-      <div className="relative w-full max-w-7xl grid lg:grid-cols-2 gap-8 items-center">
+      <div className="relative w-full max-w-5xl grid lg:grid-cols-2 gap-8">
+        {/* Left side info */}
         <div className="hidden lg:block text-center">
-          <div className="bg-gradient-to-br from-green-700 to-red-700 w-36 h-36 rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-2xl transform hover:rotate-6 transition-transform duration-500">
+          <div className="bg-gradient-to-br from-green-600 to-green-800 w-36 h-36 rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-2xl">
             <div className="text-white text-5xl font-bold">BNP</div>
           </div>
           <h1 className="text-5xl font-bold text-green-900 mb-4 leading-tight">
@@ -42,37 +67,31 @@ export default function LoginPage() {
           </p>
 
           <div className="space-y-4 text-left max-w-md mx-auto">
-            <div className="flex items-start gap-3 bg-white backdrop-blur-sm p-4 rounded-xl">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <div>
-                <p className="font-semibold text-gray-800">Stay Connected</p>
-                <p className="text-sm text-gray-600">
-                  Access your member dashboard
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 bg-white backdrop-blur-sm p-4 rounded-xl">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <div>
-                <p className="font-semibold text-gray-800">Join Events</p>
-                <p className="text-sm text-gray-600">
-                  Participate in party activities
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 bg-white backdrop-blur-sm p-4 rounded-xl">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <div>
-                <p className="font-semibold text-gray-800">Make Impact</p>
-                <p className="text-sm text-gray-600">
-                  Contribute to our vision
-                </p>
-              </div>
-            </div>
+            {["Stay Connected", "Join Events", "Make Impact"].map(
+              (title, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start gap-3 bg-white backdrop-blur-sm p-4 rounded-xl"
+                >
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
+                  <div>
+                    <p className="font-semibold text-gray-800">{title}</p>
+                    <p className="text-sm text-gray-600">
+                      {title === "Stay Connected" &&
+                        "Access your member dashboard"}
+                      {title === "Join Events" &&
+                        "Participate in party activities"}
+                      {title === "Make Impact" && "Contribute to our vision"}
+                    </p>
+                  </div>
+                </div>
+              )
+            )}
           </div>
         </div>
 
-        <div className="bg-white backdrop-blur-md rounded-3xl shadow p-8 lg:p-10 border border-green-100/50 mt-5">
+        {/* Right side form */}
+        <div className="max-w-xl w-full mx-auto bg-white backdrop-blur-md rounded-3xl shadow p-8 lg:p-10 border border-green-100/50 mt-5">
           <div className="lg:hidden text-center mb-8">
             <div className="bg-green-700 w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
               <div className="text-white text-3xl font-bold">BNP</div>
@@ -85,25 +104,25 @@ export default function LoginPage() {
             Enter your credentials to access your account
           </p>
 
-          <div className="space-y-5">
+          {/* ✅ Wrap inputs inside a <form> */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            {/* Email */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
               </label>
-              <div>
-                <input
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address",
-                    },
-                  })}
-                  type="email"
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200 outline-none bg-white/50"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+              <input
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+                type="email"
+                className="w-full px-5 py-3.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200 outline-none bg-white/50"
+                placeholder="your.email@example.com"
+              />
               {errors.email && (
                 <p className="mt-2 text-sm text-red-600 flex items-center gap-1.5">
                   <span className="inline-block w-1.5 h-1.5 bg-red-600 rounded-full"></span>
@@ -112,6 +131,7 @@ export default function LoginPage() {
               )}
             </div>
 
+            {/* Password */}
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="block text-sm font-medium text-gray-700">
@@ -149,10 +169,9 @@ export default function LoginPage() {
               )}
             </div>
 
-            {/* Submit Button */}
+            {/* Submit */}
             <button
-              type="button"
-              onClick={handleSubmit(onSubmit)}
+              type="submit" // ✅ change type
               disabled={isLoading}
               className="w-full bg-gradient-to-r from-green-700 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
             >
@@ -192,7 +211,7 @@ export default function LoginPage() {
               </div>
             </div>
             <Google />
-          </div>
+          </form>
 
           <p className="text-center text-sm text-gray-600 mt-5">
             Don't have an account?{" "}

@@ -2,7 +2,7 @@ import { baseApi } from "../../baseApi";
 
 export const userApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    register: builder.mutation({
+    createUser: builder.mutation({
       query: (userInfo) => ({
         url: "/user/register",
         method: "POST",
@@ -19,4 +19,4 @@ export const userApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useRegisterMutation, useUserInfoQuery } = userApi;
+export const { useCreateUserMutation, useUserInfoQuery } = userApi;
