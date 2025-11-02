@@ -45,26 +45,29 @@ export default function Footer() {
           <li>
           <Link to="/campaigns">Campaigns</Link>
           </li>
+          <li>
+          <Link to="/contact">Contact</Link>
+          </li>
           </ul>
         </div>
 
         {/* ✅ Support (New Column instead of Recent Project) */}
         <div className="space-y-4 text-center">
           <h4 className="text-base sm:text-lg font-semibold text-white uppercase text-center">
-            Support
+           Resources
           </h4>
           <ul className="space-y-3 text-sm">
             <li className="hover:text-white cursor-pointer transition">
-              Help Center
+              Our Leaders
             </li>
             <li className="hover:text-white cursor-pointer transition">
-              Customer Care
+              Vision
             </li>
             <li className="hover:text-white cursor-pointer transition">
               Privacy Policy
             </li>
             <li className="hover:text-white cursor-pointer transition">
-              Terms & Support
+              Terms & Conditions
             </li>
           </ul>
         </div>
