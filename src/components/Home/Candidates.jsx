@@ -19,29 +19,29 @@ export const Candidates = () => {
     },
     {
       id: 3,
-      name: "Mr. Mirza Abbas",
+      name: "Dr. Khandaker Mosharraf Hossain",
       position: "Member Standing Committee",
       image: "./src/assets/bnp-3.jpg",
       highlight: false,
     },
     {
       id: 4,
-      name: "Dr. Khandaker Mosharraf Hossain",
+      name: "Barrister Zamir Uddin Sarkar",
       position: "Member Standing Committee",
       image: "./src/assets/bnp-4.jpg",
       highlight: false,
     },
     {
       id: 5,
-      name: "Mirza Fakhrul Islam Alamgir",
-      position: "Secretary General",
+      name: "Barrister Rafiqul Islam Mia",
+      position: "National Standing Committee",
       image: "./src/assets/bnp-5.jpg",
       highlight: false,
     },
   ];
 
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-12 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -79,21 +79,21 @@ export const Candidates = () => {
         {/* Candidates Grid */}
         <div className="max-w-5xl mx-auto mb-12">
           {/* First Row - 2 cards centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 max-w-2xl mx-auto">
             {candidates.slice(0, 2).map((candidate) => (
               <div
-                key={candidate.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-sm mx-auto w-full"
+              key={candidate.id}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
               >
-                <div className="aspect-[5/6] overflow-hidden bg-gray-100">
-                  <img
-                    src={candidate.image}
-                    alt={candidate.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold mb-1">{candidate.name}</h3>
+              <div className="h-70 w-60 overflow-hidden bg-gray-100">
+              <img
+              src={candidate.image}
+              alt={candidate.name}
+              className="w-full h-full object-cover"
+              />
+              </div>
+              <div className="p-2 text-center">
+              <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
                   <p
                     className={
                       candidate.highlight
@@ -109,21 +109,21 @@ export const Candidates = () => {
           </div>
 
           {/* Second Row - 3 cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {candidates.slice(2, 5).map((candidate) => (
               <div
-                key={candidate.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-sm mx-auto w-full"
+              key={candidate.id}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
               >
-                <div className="aspect-[5/6] overflow-hidden bg-gray-100">
-                  <img
-                    src={candidate.image}
-                    alt={candidate.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold mb-1">{candidate.name}</h3>
+              <div className="h-70 w-60 overflow-hidden bg-gray-100">
+              <img
+              src={candidate.image}
+              alt={candidate.name}
+              className="w-full h-full object-cover"
+              />
+              </div>
+              <div className="p-2 text-center">
+              <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
                   <p
                     className={
                       candidate.highlight

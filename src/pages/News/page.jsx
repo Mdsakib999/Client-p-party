@@ -4,7 +4,7 @@ import NewsSection from "../../components/Home/NewsSection";
 const page = () => {
   return (
     <div>
-      <div className="px-6 py-10 max-w-8xl mx-auto">
+      <div className="px-4 py-8 max-w-7xl mx-auto">
         <HighlightCard />
       </div>
 

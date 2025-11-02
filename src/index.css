@@ -26,3 +26,7 @@
 .animate-fadeSlide {
   animation: fadeSlide 1s ease-in-out;
 }
+
+.b{
+  border: 2px solid red;
+}
