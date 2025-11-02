@@ -30,7 +30,7 @@ const Contact = () => {
       {/* Hero Banner */}
       <div className="relative h-64 md:h-80 lg:h-96">
         <img
-          src="/hero-banner.jpg"
+          src="./src/assets/hero-banner.jpg"
           alt="Contact Us Banner"
           className="w-full h-full object-cover"
         />
