@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { HiPlay } from "react-icons/hi";
 import activitiesData from "../../data/activities.json";
 
 const Activity = () => {
@@ -22,8 +23,8 @@ const featured = {
 };
 
   return (
-    <section className="py-16 px-6 bg-green-50">
-      <div className="max-w-8xl mx-auto">
+    <section className="py-12 px-4 bg-green-50">
+      <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[400px_1fr] gap-8">
           {/* Left - Activity List */}
           <div>
@@ -35,12 +36,15 @@ const featured = {
                   to={`/news/${activity.slug}`}
                   className="flex gap-3 group"
                 >
-                  <div className="w-24 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200">
-                    <img
-                      src={activity.image}
-                      alt={activity.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                  <div className="w-24 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200 relative">
+                  <img
+                  src={activity.image}
+                  alt={activity.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                      <HiPlay className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-sm leading-tight mb-1 group-hover:text-green-600 transition-colors">
@@ -70,6 +74,11 @@ const featured = {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 bg-black/50 rounded-full flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                  <HiPlay className="w-8 h-8 text-red-500" />
+                </div>
+              </div>
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                 <span className="inline-block bg-white text-black px-3 py-1 rounded-full text-xs font-semibold mb-4">
                   {featured.category}

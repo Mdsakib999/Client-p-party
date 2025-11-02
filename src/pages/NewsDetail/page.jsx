@@ -97,7 +97,7 @@ export default function NewsDetail() {
 
       {/* Popular Posts Section */}
       <div className="bg-white py-12 border-t border-gray-200">
-        <div className="max-w-8xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-gray-900">Popular Post</h2>
             <Link
