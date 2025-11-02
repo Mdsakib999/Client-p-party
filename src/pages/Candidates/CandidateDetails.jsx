@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router";
-const fallbackImage = "/logo.png?url";
+import fallbackImage from "../../assets/logo.png";
 
 export default function CandidateDetails() {
   const { state: details } = useLocation();

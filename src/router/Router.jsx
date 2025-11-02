@@ -10,6 +10,7 @@ import CandidateDetails from "../pages/Candidates/CandidateDetails.jsx";
 import NewsDetail from "../pages/NewsDetail/page.jsx";
 import LoginPage from "../pages/Login/page.jsx";
 import RegisterPage from "../pages/Register/page.jsx";
+import VerifyPage from "../pages/Verify/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: RegisterPage,
+      },
+      {
+        path: "/verify",
+        Component: VerifyPage,
       },
     ],
   },
