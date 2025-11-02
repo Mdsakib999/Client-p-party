@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-50 bg-white border border-gray-200">
-      <nav className="max-w-8xl mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
@@ -71,20 +71,13 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-x-2">
-          <button className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium">
-            Donate <HiArrowRight className="w-5 h-5" />
-          </button>
-          <Link
-            to="/register"
-            className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
-          >
-            Sign Up <HiArrowRight className="w-5 h-5" />
-          </Link>
+  
+
           <Link
             to="/login"
             className="hidden md:flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
           >
-            Login <HiArrowRight className="w-5 h-5" />
+            Join Us <HiArrowRight className="w-5 h-5" />
           </Link>
         </div>
 
@@ -136,9 +129,7 @@ export default function Navbar() {
           >
             Campaigns
           </NavLink>
-          <button className="flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-2.5 rounded hover:bg-green-700 transition-colors font-medium mt-2">
-            Donate <HiArrowRight className="w-5 h-5" />
-          </button>
+ 
         </div>
       )}
     </div>

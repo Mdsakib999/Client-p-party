@@ -4,6 +4,7 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 export default function Leaders() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const slides = [
     {
@@ -24,11 +25,21 @@ export default function Leaders() {
   ];
 
   useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 3000);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('resize', checkScreenSize);
+    };
   }, [slides.length]);
 
   const nextSlide = () => {
@@ -44,18 +55,23 @@ export default function Leaders() {
   };
 
   return (
-    <div className="relative max-w-6xl mx-auto mt-12">
+    <div className="relative max-w-7xl mx-auto mt-12">
       {/* Stacked Images */}
       <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] flex items-center justify-center overflow-hidden">
         {slides.map((slide, index) => {
-          const offset = index - currentSlide;
-          const isActive = index === currentSlide;
+          // Calculate circular positions to always show 3 images: left, center, right
+          const normalizedIndex = (index - currentSlide + slides.length) % slides.length;
+          const isActive = normalizedIndex === 0;
+          const isLeft = normalizedIndex === slides.length - 1;
+          const isRight = normalizedIndex === 1;
+          const offset = isLeft ? -1 : isRight ? 1 : 0;
 
-          // Calculate position for desktop (both sides visible)
+          // Calculate position for circular layout (always 3 images visible)
           const getTransform = () => {
             if (isActive) return 0;
-            // On larger screens, spread images on both sides
-            return offset * 90;
+            // Position left and right images - closer on mobile, further on desktop
+            const spread = isMobile ? 90 : 300;
+            return offset * spread;
           };
 
           return (
@@ -64,13 +80,13 @@ export default function Leaders() {
               className={`absolute transition-all duration-500 ease-out ${
                 isActive
                   ? "z-30 scale-100 opacity-100"
-                  : Math.abs(offset) === 1
-                  ? "z-20 md:scale-90 scale-75 opacity-60 md:opacity-70 blur-[1px]"
-                  : "z-10 scale-75 opacity-0 md:opacity-40 blur-sm pointer-events-none"
+                  : (isLeft || isRight)
+                  ? "z-20 scale-75 md:scale-85 opacity-80 blur-[0.5px]"
+                  : "z-10 scale-50 opacity-0 pointer-events-none"
               }`}
               style={{
                 transform: `translateX(${getTransform()}px) scale(${
-                  isActive ? 1 : Math.abs(offset) === 1 ? 0.9 : 0.75
+                  isActive ? 1 : (isLeft || isRight) ? 0.85 : 0.5
                 })`,
               }}
             >

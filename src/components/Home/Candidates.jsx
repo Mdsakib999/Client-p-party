@@ -19,29 +19,29 @@ export const Candidates = () => {
     },
     {
       id: 3,
-      name: "Mr. Mirza Abbas",
+      name: "Dr. Khandaker Mosharraf Hossain",
       position: "Member Standing Committee",
       image: "./src/assets/bnp-3.jpg",
       highlight: false,
     },
     {
       id: 4,
-      name: "Dr. Khandaker Mosharraf Hossain",
+      name: "Barrister Zamir Uddin Sarkar",
       position: "Member Standing Committee",
       image: "./src/assets/bnp-4.jpg",
       highlight: false,
     },
     {
       id: 5,
-      name: "Mirza Fakhrul Islam Alamgir",
-      position: "Secretary General",
+      name: "Barrister Rafiqul Islam Mia",
+      position: "National Standing Committee",
       image: "./src/assets/bnp-5.jpg",
       highlight: false,
     },
   ];
 
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-12 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

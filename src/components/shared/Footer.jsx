@@ -6,12 +6,24 @@ export default function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto py-12 px-6 md:px-12">
         {/* ✅ Company Info */}
         <div className="space-y-3 text-center md:text-left">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase">
-            Ekspress
-          </h2>
+        <div className="flex items-center gap-3 justify-center md:justify-start">
+        <img
+            src="/logo.png"
+            alt="BNP Logo"
+          className="w-20 h-15 object-contain"
+        />
+          <div>
+              <div className="text-lg font-semibold leading-tight text-white">
+                Bangladesh
+              </div>
+              <div className="text-lg font-semibold leading-tight text-white">
+                National Party - BNP
+              </div>
+            </div>
+          </div>
           <p className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
-            At FastGo, we believe in providing our clients with personalized and
-            efficient logistics solutions that meet their unique needs.
+            Bangladesh National Party (BNP) is committed to democratic values,
+            national unity, and the welfare of the people.
           </p>
         </div>
 
@@ -21,18 +33,18 @@ export default function Footer() {
             Navigation
           </h4>
           <ul className="space-y-3 text-sm">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="">About Us</Link>
-            </li>
-            <li>
-              <Link to="">Services</Link>
-            </li>
-            <li>
-              <Link to="">Contact Us</Link>
-            </li>
+          <li>
+          <Link to="/">Home</Link>
+          </li>
+          <li>
+          <Link to="/candidates">Candidates</Link>
+          </li>
+          <li>
+          <Link to="/news">News</Link>
+          </li>
+          <li>
+          <Link to="/campaigns">Campaigns</Link>
+          </li>
           </ul>
         </div>
 
@@ -74,7 +86,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="flex-shrink-0 cursor-pointer bg-yellow-500 hover:bg-yellow-400 text-black px-5 py-3 font-semibold text-sm rounded-full transition-all duration-300"
+                className="flex-shrink-0 cursor-pointer bg-green-800 hover:bg-green-900 text-white px-5 py-3 font-semibold text-sm rounded-full transition-all duration-300"
               >
                 Subscribe
               </button>
@@ -85,7 +97,7 @@ export default function Footer() {
 
       {/* ✅ Bottom Bar */}
       <div className="border-t border-gray-800 text-center py-4 text-xs sm:text-sm text-gray-500 px-4">
-        © {new Date().getFullYear()} Ekspress. All rights reserved.
+      © {new Date().getFullYear()} Bangladesh National Party - BNP. All rights reserved.
       </div>
     </footer>
   );

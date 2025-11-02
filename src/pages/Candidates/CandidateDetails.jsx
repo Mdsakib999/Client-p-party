@@ -33,7 +33,7 @@ export default function CandidateDetails() {
   return (
     <div className="min-h-screen">
       <div className="bg-white mt-10">
-        <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <img
               src={bigImage}
@@ -67,7 +67,7 @@ export default function CandidateDetails() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-8">
         <div className="bg-white rounded-xl">
           <div className="flex border-b border-gray-200 shadow">
             <button
@@ -337,7 +337,7 @@ export default function CandidateDetails() {
       </div>
 
       <div className="bg-[#DCFFD4]/50 rounded-xl shadow-md p-4 sm:p-6">
-        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center md:text-left mb-4 leading-tight">
             <p>Recent Activities of</p>
             <p>{details.name}</p>

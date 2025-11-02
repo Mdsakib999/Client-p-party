@@ -2,7 +2,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className="w-full h-[500px] md:h-[600px] lg:h-[550px] max-w-8xl mx-auto overflow-visible p-6 relative mb-12">
+    <section className="w-full h-[500px] md:h-[600px] lg:h-[550px] max-w-7xl mx-auto overflow-visible p-4 relative mb-12">
       <img
         src="./src/assets/hero-banner.jpg"
         alt="Bangladesh National Party Hero Banner"
