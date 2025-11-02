@@ -9,7 +9,7 @@ const Highlights = () => {
       <div className="max-w-8xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="ttext-3xl md:text-4xl font-bold  mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold  mb-6 tracking-tight">
             Movements, Messages, Momentum
           </h2>
 
