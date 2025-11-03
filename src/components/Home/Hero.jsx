@@ -1,15 +1,15 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import bnpBanner from "../../assets/hero-banner.jpg";
 
 const Hero = () => {
   return (
     <section className="w-full h-[500px] md:h-[600px] lg:h-[550px] max-w-7xl mx-auto overflow-visible p-4 relative mb-12">
       <img
-        src="./src/assets/hero-banner.jpg"
+        src={bnpBanner}
         alt="Bangladesh National Party Hero Banner"
         className="w-full h-full object-cover object-[32%_40%] md:object-center rounded-md"
       />
 
-      {/* Quote Overlay */}
       <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-end md:justify-end mb-12">
         <div className="text-center text-green-900 px-6 max-w-3xl">
           <blockquote className="text-2xl md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight mb-8  bg-white/80">

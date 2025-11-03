@@ -1,3 +1,5 @@
+import about from "../../assets/about.jpg";
+
 const About = () => {
   return (
     <section className="py-12 px-4 bg-white">
@@ -6,7 +8,7 @@ const About = () => {
           {/* Left - Image */}
           <div className="relative">
             <img
-              src="./src/assets/about.jpg"
+              src={about}
               alt="Champion of Democracy in Bangladesh"
               className="w-full h-[500px] md:h-[550px] object-cover rounded-md shadow-xl"
             />
