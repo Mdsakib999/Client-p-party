@@ -9,14 +9,7 @@ export const userApi = baseApi.injectEndpoints({
         data: userInfo,
       }),
     }),
-    userInfo: builder.query({
-      query: () => ({
-        url: "/user/me",
-        method: "GET",
-      }),
-      providesTags: ["USER"],
-    }),
   }),
 });
 
-export const { useCreateUserMutation, useUserInfoQuery } = userApi;
+export const { useCreateUserMutation } = userApi;
