@@ -1,10 +1,11 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import bnpBanner from "../../assets/hero-banner.jpg";
 
 const Hero = () => {
   return (
     <section className="w-full h-[500px] md:h-[600px] lg:h-[550px] max-w-7xl mx-auto overflow-visible p-4 relative mb-12">
       <img
-        src="./src/assets/hero-banner.jpg"
+        src={bnpBanner}
         alt="Bangladesh National Party Hero Banner"
         className="w-full h-full object-cover object-[32%_40%] md:object-center rounded-md"
       />
