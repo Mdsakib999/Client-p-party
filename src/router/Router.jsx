@@ -13,6 +13,7 @@ import RegisterPage from "../pages/Register/page.jsx";
 import VerifyPage from "../pages/Verify/page.jsx";
 import ResetPassword from "../pages/ResetPassword/page.jsx";
 import ForgotPassword from "../pages/ForgotPassword/page.jsx";
+import withPublic from "../utils/withPublic.jsx";
 
 const router = createBrowserRouter([
   {
@@ -64,23 +65,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        Component: LoginPage,
+        Component: withPublic(LoginPage),
       },
       {
         path: "/register",
-        Component: RegisterPage,
+        Component: withPublic(RegisterPage),
       },
       {
         path: "/verify",
-        Component: VerifyPage,
+        Component: withPublic(VerifyPage),
       },
       {
         path: "/reset-password",
-        Component: ResetPassword,
+        Component: withPublic(ResetPassword),
       },
       {
         path: "/forgot-password",
-        Component: ForgotPassword,
+        Component: withPublic(ForgotPassword),
       },
     ],
   },
