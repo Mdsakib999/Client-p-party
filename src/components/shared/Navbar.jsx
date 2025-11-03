@@ -122,9 +122,9 @@ export default function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            <button className="flex items-center gap-2 bg-green-700 text-white px-5 py-2.5 rounded-lg hover:bg-green-800 transition-all font-medium shadow-sm hover:shadow">
+            {/* <button className="flex items-center gap-2 bg-green-700 text-white px-5 py-2.5 rounded-lg hover:bg-green-800 transition-all font-medium shadow-sm hover:shadow">
               Donate <HiArrowRight className="w-4 h-4" />
-            </button>
+            </button> */}
 
             {user ? (
               <div className="relative" ref={userMenuRef}>
@@ -189,7 +189,7 @@ export default function Navbar() {
                   to="/login"
                   className="flex items-center gap-2 bg-green-700 text-white px-5 py-2.5 rounded-lg hover:bg-green-800 transition-all font-medium shadow-sm"
                 >
-                  Login
+                  Login <HiArrowRight className="w-4 h-4" />
                 </Link>
               </>
             )}
