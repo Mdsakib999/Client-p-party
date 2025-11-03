@@ -66,10 +66,10 @@ const featured = {
           </div>
 
           {/* Right - Featured Card */}
-          <Link to={`/news/${featured.slug}`} className="block group">
+          <Link to={`https://www.youtube.com/watch?v=mYrsY6cZw1Q`} className="block group">
             <div className="relative h-[400px] rounded-3xl overflow-hidden">
               <img
-                src={featured.image}
+                src='https://i.ibb.co.com/99Xcm55m/foysal-amin.png'
                 alt={featured.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -81,10 +81,10 @@ const featured = {
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                 <span className="inline-block bg-white text-black px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  {featured.category}
+                  News
                 </span>
                 <h3 className="text-3xl font-bold mb-3 leading-tight">
-                  {featured.title}
+                  The Goal is one, Establishing Democracy: Mirza Faisal
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed">
                   {featured.description}

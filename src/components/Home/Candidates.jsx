@@ -18,6 +18,13 @@ export const Candidates = () => {
       highlight: true,
     },
     {
+      id: 5,
+      name: "Mirza Fakhrul Islam Alamgir",
+      position: "Secretary General",
+      image: "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
+      highlight: false,
+    },
+    {
       id: 3,
       name: "Dr. Khandaker Mosharraf Hossain",
       position: "Member Standing Committee",
@@ -31,13 +38,7 @@ export const Candidates = () => {
       image: "./src/assets/bnp-4.jpg",
       highlight: false,
     },
-    {
-      id: 5,
-      name: "Barrister Rafiqul Islam Mia",
-      position: "National Standing Committee",
-      image: "./src/assets/bnp-5.jpg",
-      highlight: false,
-    },
+    
   ];
 
   return (
@@ -62,13 +63,13 @@ export const Candidates = () => {
 
           <div className="flex items-center justify-center gap-4">
             <Link
-              to="/candidates"
-              className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium transition-colors"
+              to="/news"
+              className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium transition-colors rounded border-2 border-green-700 px-6 py-2"
             >
               Learn More <HiArrowRight className="w-5 h-5" />
             </Link>
             <Link
-              to="/get-involved"
+              to="/candidates"
               className="flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
             >
               Get Involved <HiArrowRight className="w-5 h-5" />
