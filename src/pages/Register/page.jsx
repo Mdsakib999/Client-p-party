@@ -26,7 +26,12 @@ export default function RegisterPage() {
     try {
       const result = await createUser(data).unwrap();
       if (result?.success) {
-        toast.success("Registration successful!");
+        toast.success(
+          <h1 className="text-center font-serif">Registration successful!</h1>,
+          {
+            position: "top-right",
+          }
+        );
 
         sessionStorage.setItem(
           "verifyData",
@@ -38,7 +43,14 @@ export default function RegisterPage() {
 
         navigate("/verify");
       } else {
-        toast.error("Registration failed. Please try again.");
+        toast.error(
+          <h1 className="text-center font-serif">
+            Registration failed. Please try again.
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
       }
     } catch (error) {
       toast.error(

@@ -40,7 +40,12 @@ export default function ResetPassword() {
       });
 
       setIsSuccess(true);
-      toast.success("Password reset successful");
+      toast.success(
+        <h1 className="text-center font-serif">Password reset successful</h1>,
+        {
+          position: "top-right",
+        }
+      );
 
       setTimeout(() => {
         navigate("/login");
