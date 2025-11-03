@@ -1,10 +1,11 @@
+import { useState } from "react";
+import toast from "react-hot-toast";
+import Google from "../../utils/Google";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
-import Google from "../../utils/Google";
 import { Link, useNavigate } from "react-router";
-import toast from "react-hot-toast";
-import { useLoginMutation } from "../../redux/features/auth/auth.api";
+import { authApi, useLoginMutation } from "../../redux/features/auth/auth.api";
+import { useDispatch } from "react-redux";
 
 export default function LoginPage() {
   const {
@@ -16,11 +17,17 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [login, { isLoading }] = useLoginMutation();
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const onSubmit = async (data) => {
     try {
       const result = await login(data).unwrap();
       if (result?.success) {
+        dispatch(
+          authApi.util.upsertQueryData("userInfo", undefined, {
+            data: result.data.data,
+          })
+        );
+
         toast.success(result?.message);
         navigate("/");
       } else {
@@ -50,7 +57,6 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen relative flex items-center justify-center p-4 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
       <div className="relative w-full max-w-5xl grid lg:grid-cols-2 gap-8">
-        {/* Left side info */}
         <div className="hidden lg:block text-center">
           <div className="bg-gradient-to-br from-green-600 to-green-800 w-36 h-36 rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-2xl">
             <div className="text-white text-5xl font-bold">BNP</div>
@@ -104,9 +110,7 @@ export default function LoginPage() {
             Enter your credentials to access your account
           </p>
 
-          {/* ✅ Wrap inputs inside a <form> */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            {/* Email */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
@@ -131,14 +135,13 @@ export default function LoginPage() {
               )}
             </div>
 
-            {/* Password */}
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <Link
-                  to=""
+                  to="/forgot-password"
                   className="text-sm text-green-700 hover:text-green-800 font-medium transition-colors"
                 >
                   forgot password?
@@ -169,9 +172,8 @@ export default function LoginPage() {
               )}
             </div>
 
-            {/* Submit */}
             <button
-              type="submit" // ✅ change type
+              type="submit"
               disabled={isLoading}
               className="w-full bg-gradient-to-r from-green-700 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
             >
@@ -210,7 +212,7 @@ export default function LoginPage() {
                 </span>
               </div>
             </div>
-            <Google />
+            <Google disabled={isLoading} />
           </form>
 
           <p className="text-center text-sm text-gray-600 mt-5">

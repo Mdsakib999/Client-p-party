@@ -11,6 +11,8 @@ import NewsDetail from "../pages/NewsDetail/page.jsx";
 import LoginPage from "../pages/Login/page.jsx";
 import RegisterPage from "../pages/Register/page.jsx";
 import VerifyPage from "../pages/Verify/page.jsx";
+import ResetPassword from "../pages/ResetPassword/page.jsx";
+import ForgotPassword from "../pages/ForgotPassword/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +73,14 @@ const router = createBrowserRouter([
       {
         path: "/verify",
         Component: VerifyPage,
+      },
+      {
+        path: "/reset-password",
+        Component: ResetPassword,
+      },
+      {
+        path: "/forgot-password",
+        Component: ForgotPassword,
       },
     ],
   },
