@@ -42,7 +42,12 @@ export default function Navbar() {
   const handleLogout = async () => {
     await logout();
     dispatch(authApi.util.resetApiState());
-    toast.success("Logged out successfully");
+    toast.success(
+      <h1 className="text-center font-serif">Logged out successfully</h1>,
+      {
+        position: "bottom-right",
+      }
+    );
     setShowUserMenu(false);
   };
 

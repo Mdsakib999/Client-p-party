@@ -124,7 +124,14 @@ export default function VerifyPage() {
 
       if (res.success) {
         setIsVerified(true); // Set flag before clearing storage
-        toast.success("Email verified successfully!");
+        toast.success(
+          <h1 className="text-center font-serif">
+            Email verified successfully!
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
         sessionStorage.removeItem("verifyData");
         sessionStorage.removeItem("otpExpiry");
         navigate("/login", { replace: true }); // Use replace to prevent back navigation
@@ -141,7 +148,14 @@ export default function VerifyPage() {
       const res = await sendOtp({ email, name }).unwrap();
 
       if (res.success) {
-        toast.success("New OTP sent to your email");
+        toast.success(
+          <h1 className="text-center font-serif">
+            New OTP sent to your email
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
         setOtp(["", "", "", "", "", ""]);
 
         const newExpiry = Date.now() + 120000;

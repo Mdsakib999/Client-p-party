@@ -20,10 +20,22 @@ export default function LoginPage() {
     try {
       const result = await login(data).unwrap();
       if (result?.success) {
-        toast.success(result?.message);
+        toast.success(
+          <h1 className="text-center font-serif">{result?.message}</h1>,
+          {
+            position: "top-right",
+          }
+        );
         navigate("/");
       } else {
-        toast.error("Login failed. Please try again.");
+        toast.error(
+          <h1 className="text-center font-serif">
+            Login failed. Please try again.
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
       }
     } catch (error) {
       const errorMessage = error?.data?.message;
