@@ -11,14 +11,14 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
 export default function Navbar() {
+  const { data: userInfo } = useUserInfoQuery();
+  const user = userInfo?.data;
+
   const [isOpen, setIsOpen] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [imageError, setImageError] = useState(false);
 
   const userMenuRef = useRef(null);
-  const { data: userInfo } = useUserInfoQuery();
-  const user = userInfo?.data;
-  console.log(user);
   const [logout] = useLogoutMutation();
 
   useEffect(() => {

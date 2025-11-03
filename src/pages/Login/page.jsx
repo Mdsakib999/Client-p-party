@@ -4,8 +4,7 @@ import Google from "../../utils/Google";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router";
-import { authApi, useLoginMutation } from "../../redux/features/auth/auth.api";
-import { useDispatch } from "react-redux";
+import { useLoginMutation } from "../../redux/features/auth/auth.api";
 
 export default function LoginPage() {
   const {
@@ -17,17 +16,10 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [login, { isLoading }] = useLoginMutation();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const onSubmit = async (data) => {
     try {
       const result = await login(data).unwrap();
       if (result?.success) {
-        dispatch(
-          authApi.util.upsertQueryData("userInfo", undefined, {
-            data: result.data.data,
-          })
-        );
-
         toast.success(result?.message);
         navigate("/");
       } else {
