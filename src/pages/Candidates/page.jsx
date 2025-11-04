@@ -393,7 +393,7 @@ const Candidates = () => {
           </div>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {candidatesData.slice(0, 9).map((candidate) => (
+          {candidatesData.slice(0, 12).map((candidate) => (
             <CandidateCard key={candidate._id} candidate={candidate} />
           ))}
         </section>
