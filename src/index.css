@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@import "froala-editor/css/froala_editor.pkgd.min.css";
+@import "froala-editor/css/froala_style.min.css";
+@import "froala-editor/css/themes/gray.min.css";
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -27,6 +31,6 @@
   animation: fadeSlide 1s ease-in-out;
 }
 
-.b{
+.b {
   border: 2px solid red;
 }

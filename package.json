@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -14,11 +14,13 @@
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.12.2",
     "framer-motion": "^12.23.21",
+    "froala-editor": "^4.7.0",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-countup": "^6.5.3",
     "react-dom": "^19.1.1",
     "react-fast-marquee": "^1.6.5",
+    "react-froala-wysiwyg": "^4.7.0",
     "react-hook-form": "^7.65.0",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
