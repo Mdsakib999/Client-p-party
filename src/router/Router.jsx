@@ -8,6 +8,14 @@ import News from "../pages/News/page.jsx";
 import Candidates from "../pages/Candidates/page.jsx";
 import CandidateDetails from "../pages/Candidates/CandidateDetails.jsx";
 import NewsDetail from "../pages/NewsDetail/page.jsx";
+import Dashboard from "../pages/Dashboard/page.jsx";
+import Overview from "../pages/Dashboard/Overview/page.jsx";
+import CreateCandidate from "../pages/Dashboard/CreateCandidate/page.jsx";
+import CreateBlog from "../pages/Dashboard/CreateBlog/page.jsx";
+import ManageCandidates from "../pages/Dashboard/ManageCandidates/page.jsx";
+import ManageBlogs from "../pages/Dashboard/ManageBlogs/page.jsx";
+import Donate from "../pages/Dashboard/Donate/page.jsx";
+import ManageAccount from "../pages/Dashboard/ManageAccount/page.jsx";
 import LoginPage from "../pages/Login/page.jsx";
 import RegisterPage from "../pages/Register/page.jsx";
 import VerifyPage from "../pages/Verify/page.jsx";
@@ -62,6 +70,40 @@ const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: "/dashboard",
+        Component: Dashboard,
+        children: [
+          {
+            index: true,
+            Component: Overview,
+          },
+          {
+            path: "create-candidate",
+            Component: CreateCandidate,
+          },
+          {
+            path: "create-blog",
+            Component: CreateBlog,
+          },
+          {
+            path: "manage-candidates",
+            Component: ManageCandidates,
+          },
+          {
+            path: "manage-blogs",
+            Component: ManageBlogs,
+          },
+          {
+            path: "donate",
+            Component: Donate,
+          },
+          {
+            path: "manage-account",
+            Component: ManageAccount,
+          },
+        ],
       },
       {
         path: "/login",
