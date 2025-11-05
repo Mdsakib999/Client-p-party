@@ -74,10 +74,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        Component: withAuth(Dashboard), // Allow any authenticated user
+        Component: withAuth(Dashboard, ["SUPER_ADMIN", "ADMIN", "USER"]),
         children: [
           {
             index: true,
+            Component: withAuth(ManageAccount, [
+              "SUPER_ADMIN",
+              "ADMIN",
+              "USER",
+            ]),
+          },
+          {
+            path: "overview",
             Component: withAuth(Overview, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
@@ -98,11 +106,7 @@ const router = createBrowserRouter([
           },
           {
             path: "donate",
-            Component: withAuth(Donate), // Allow any authenticated user
-          },
-          {
-            path: "manage-account",
-            Component: withAuth(ManageAccount), // Allow any authenticated user
+            Component: withAuth(Donate, ["SUPER_ADMIN", "ADMIN", "USER"]),
           },
         ],
       },

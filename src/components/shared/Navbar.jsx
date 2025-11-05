@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 export default function Navbar() {
   const { data: userInfo } = useUserInfoQuery();
   const user = userInfo?.data;
+  console.log("user", user);
 
   const [isOpen, setIsOpen] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
