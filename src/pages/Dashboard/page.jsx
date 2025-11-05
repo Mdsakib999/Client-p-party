@@ -23,6 +23,12 @@ const Dashboard = () => {
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
     {
+      path: "/dashboard",
+      label: "Manage Account",
+      Icon: FaUser,
+      roles: ["SUPER_ADMIN", "ADMIN", "USER"],
+    },
+    {
       path: "/dashboard/create-candidate",
       label: "Create Candidate",
       Icon: FaUserPlus,
@@ -54,12 +60,6 @@ const Dashboard = () => {
       path: "/dashboard/donate",
       label: "Donate",
       Icon: FaDonate,
-      roles: ["SUPER_ADMIN", "ADMIN", "USER"],
-    },
-    {
-      path: "/dashboard",
-      label: "Manage Account",
-      Icon: FaUser,
       roles: ["SUPER_ADMIN", "ADMIN", "USER"],
     },
   ];
