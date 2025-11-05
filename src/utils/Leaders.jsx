@@ -1,6 +1,8 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import leader1 from "../assets/leader-1.jpg";
+import leader2 from "../assets/leader-2.jpg";
+import leader3 from "../assets/leader-3.jpg";
 
 export default function Leaders() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,17 +11,17 @@ export default function Leaders() {
   const slides = [
     {
       id: 1,
-      image: "./src/assets/leader-1.jpg",
+      image: leader1,
       alt: "Ziaur Rahman",
     },
     {
       id: 2,
-      image: "./src/assets/leader-2.jpg",
+      image: leader2,
       alt: "Khaleda Zia",
     },
     {
       id: 3,
-      image: "./src/assets/leader-3.jpg",
+      image: leader3,
       alt: "Tarique Rahman",
     },
   ];
@@ -30,7 +32,7 @@ export default function Leaders() {
     };
 
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -38,7 +40,7 @@ export default function Leaders() {
 
     return () => {
       clearInterval(timer);
-      window.removeEventListener('resize', checkScreenSize);
+      window.removeEventListener("resize", checkScreenSize);
     };
   }, [slides.length]);
 
@@ -60,7 +62,8 @@ export default function Leaders() {
       <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] flex items-center justify-center overflow-hidden">
         {slides.map((slide, index) => {
           // Calculate circular positions to always show 3 images: left, center, right
-          const normalizedIndex = (index - currentSlide + slides.length) % slides.length;
+          const normalizedIndex =
+            (index - currentSlide + slides.length) % slides.length;
           const isActive = normalizedIndex === 0;
           const isLeft = normalizedIndex === slides.length - 1;
           const isRight = normalizedIndex === 1;
@@ -80,13 +83,13 @@ export default function Leaders() {
               className={`absolute transition-all duration-500 ease-out ${
                 isActive
                   ? "z-30 scale-100 opacity-100"
-                  : (isLeft || isRight)
+                  : isLeft || isRight
                   ? "z-20 scale-75 md:scale-85 opacity-80 blur-[0.5px]"
                   : "z-10 scale-50 opacity-0 pointer-events-none"
               }`}
               style={{
                 transform: `translateX(${getTransform()}px) scale(${
-                  isActive ? 1 : (isLeft || isRight) ? 0.85 : 0.5
+                  isActive ? 1 : isLeft || isRight ? 0.85 : 0.5
                 })`,
               }}
             >

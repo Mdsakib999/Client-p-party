@@ -2,19 +2,23 @@ import { useState, useEffect, useRef } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
 import { Link, NavLink } from "react-router";
-import { useUserInfoQuery } from "../../redux/features/user/user.api";
-import { authApi, useLogoutMutation } from "../../redux/features/auth/auth.api";
+import {
+  authApi,
+  useLogoutMutation,
+  useUserInfoQuery,
+} from "../../redux/features/auth/auth.api";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
 export default function Navbar() {
+  const { data: userInfo } = useUserInfoQuery();
+  const user = userInfo?.data;
+
   const [isOpen, setIsOpen] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [imageError, setImageError] = useState(false);
 
   const userMenuRef = useRef(null);
-  const { data: userInfo } = useUserInfoQuery();
-  const user = userInfo?.data;
   const [logout] = useLogoutMutation();
 
   useEffect(() => {
@@ -38,7 +42,12 @@ export default function Navbar() {
   const handleLogout = async () => {
     await logout();
     dispatch(authApi.util.resetApiState());
-    toast.success("Logged out successfully");
+    toast.success(
+      <h1 className="text-center font-serif">Logged out successfully</h1>,
+      {
+        position: "bottom-right",
+      }
+    );
     setShowUserMenu(false);
   };
 
@@ -46,7 +55,6 @@ export default function Navbar() {
     <div className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Fixed width on larger screens */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0">
             <img
               src="/logo.png"

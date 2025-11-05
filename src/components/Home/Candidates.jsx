@@ -1,5 +1,9 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router";
+import kZia from "../../assets/bnp-1.jpg";
+import tRahman from "../../assets/bnp-2.jpg";
+import kMossaraf from "../../assets/bnp-3.jpg";
+import zSarkar from "../../assets/bnp-4.jpg";
 
 export const Candidates = () => {
   const candidates = [
@@ -7,38 +11,38 @@ export const Candidates = () => {
       id: 1,
       name: "Begum Khaleda Zia",
       position: "Chairperson",
-      image: "./src/assets/bnp-1.jpg",
+      image: kZia,
       highlight: false,
     },
     {
       id: 2,
       name: "Mr. Tarique Rahman",
       position: "Acting Chairman",
-      image: "./src/assets/bnp-2.jpg",
+      image: tRahman,
       highlight: true,
     },
     {
       id: 5,
       name: "Mirza Fakhrul Islam Alamgir",
       position: "Secretary General",
-      image: "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
+      image:
+        "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
       highlight: false,
     },
     {
       id: 3,
       name: "Dr. Khandaker Mosharraf Hossain",
       position: "Member Standing Committee",
-      image: "./src/assets/bnp-3.jpg",
+      image: kMossaraf,
       highlight: false,
     },
     {
       id: 4,
       name: "Barrister Zamir Uddin Sarkar",
       position: "Member Standing Committee",
-      image: "./src/assets/bnp-4.jpg",
+      image: zSarkar,
       highlight: false,
     },
-    
   ];
 
   return (
@@ -83,18 +87,18 @@ export const Candidates = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 max-w-2xl mx-auto">
             {candidates.slice(0, 2).map((candidate) => (
               <div
-              key={candidate.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
+                key={candidate.id}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
               >
-              <div className="h-70 w-60 overflow-hidden bg-gray-100">
-              <img
-              src={candidate.image}
-              alt={candidate.name}
-              className="w-full h-full object-cover"
-              />
-              </div>
-              <div className="p-2 text-center">
-              <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
+                <div className="h-70 w-60 overflow-hidden bg-gray-100">
+                  <img
+                    src={candidate.image}
+                    alt={candidate.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-2 text-center">
+                  <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
                   <p
                     className={
                       candidate.highlight
@@ -113,18 +117,18 @@ export const Candidates = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {candidates.slice(2, 5).map((candidate) => (
               <div
-              key={candidate.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
+                key={candidate.id}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
               >
-              <div className="h-70 w-60 overflow-hidden bg-gray-100">
-              <img
-              src={candidate.image}
-              alt={candidate.name}
-              className="w-full h-full object-cover"
-              />
-              </div>
-              <div className="p-2 text-center">
-              <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
+                <div className="h-70 w-60 overflow-hidden bg-gray-100">
+                  <img
+                    src={candidate.image}
+                    alt={candidate.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-2 text-center">
+                  <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
                   <p
                     className={
                       candidate.highlight

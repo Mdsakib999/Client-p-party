@@ -10,6 +10,7 @@ import {
 export default function VerifyPage() {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [timeLeft, setTimeLeft] = useState(0);
+  const [isVerified, setIsVerified] = useState(false);
 
   const navigate = useNavigate();
   const timerRef = useRef(null);
@@ -22,6 +23,8 @@ export default function VerifyPage() {
   const { name, email } = storedData;
 
   useEffect(() => {
+    if (isVerified) return;
+
     if (!name || !email) {
       navigate("/register");
       return;
@@ -39,7 +42,7 @@ export default function VerifyPage() {
       sessionStorage.setItem("otpExpiry", expiryTime.toString());
       setTimeLeft(120);
     }
-  }, [name, email, navigate]);
+  }, [name, email, navigate, isVerified]);
 
   useEffect(() => {
     if (timeLeft <= 0) {
@@ -120,10 +123,18 @@ export default function VerifyPage() {
       const res = await verifyOtp({ email, otp: otpCode }).unwrap();
 
       if (res.success) {
-        toast.success("Email verified Logged in successfully!");
+        setIsVerified(true); // Set flag before clearing storage
+        toast.success(
+          <h1 className="text-center font-serif">
+            Email verified successfully!
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
         sessionStorage.removeItem("verifyData");
         sessionStorage.removeItem("otpExpiry");
-        navigate("/");
+        navigate("/login", { replace: true }); // Use replace to prevent back navigation
       }
     } catch (err) {
       toast.error(err?.data?.message || "Invalid OTP. Please try again.");
@@ -137,7 +148,14 @@ export default function VerifyPage() {
       const res = await sendOtp({ email, name }).unwrap();
 
       if (res.success) {
-        toast.success("New OTP sent to your email");
+        toast.success(
+          <h1 className="text-center font-serif">
+            New OTP sent to your email
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
         setOtp(["", "", "", "", "", ""]);
 
         const newExpiry = Date.now() + 120000;
