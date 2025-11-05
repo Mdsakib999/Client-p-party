@@ -1,7 +1,7 @@
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Shield, Clock, Loader2 } from "lucide-react";
-import { useNavigate } from "react-router";
-import toast from "react-hot-toast";
 import {
   useSendOtpMutation,
   useVerifyOtpMutation,
@@ -123,7 +123,7 @@ export default function VerifyPage() {
       const res = await verifyOtp({ email, otp: otpCode }).unwrap();
 
       if (res.success) {
-        setIsVerified(true); // Set flag before clearing storage
+        setIsVerified(true);
         toast.success(
           <h1 className="text-center font-serif">
             Email verified successfully!
