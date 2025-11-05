@@ -16,6 +16,6 @@ export default function withAuth(Component, requiredRoles = []) {
       return <Navigate to="/" />;
     }
 
-    return <Component />;
+    return <Component userData={data?.data} />;
   };
 }

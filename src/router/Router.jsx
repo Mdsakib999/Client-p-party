@@ -74,35 +74,39 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        Component: withAuth(Dashboard, ["SUPER_ADMIN", "ADMIN"]),
+        Component: withAuth(Dashboard, ["SUPER_ADMIN", "ADMIN", "USER"]),
         children: [
           {
             index: true,
-            Component: Overview,
+            Component: withAuth(ManageAccount, [
+              "SUPER_ADMIN",
+              "ADMIN",
+              "USER",
+            ]),
+          },
+          {
+            path: "overview",
+            Component: withAuth(Overview, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "create-candidate",
-            Component: CreateCandidate,
+            Component: withAuth(CreateCandidate, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "create-news-article",
-            Component: CreateNewsArticle,
+            Component: withAuth(CreateNewsArticle, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "manage-candidates",
-            Component: ManageCandidates,
+            Component: withAuth(ManageCandidates, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "manage-blogs",
-            Component: ManageBlogs,
+            Component: withAuth(ManageBlogs, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "donate",
-            Component: Donate,
-          },
-          {
-            path: "manage-account",
-            Component: ManageAccount,
+            Component: withAuth(Donate, ["SUPER_ADMIN", "ADMIN", "USER"]),
           },
         ],
       },
