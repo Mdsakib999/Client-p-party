@@ -12,7 +12,9 @@ import { useUserInfoQuery } from "../../redux/features/auth/auth.api";
 
 const Dashboard = () => {
   const location = useLocation();
-  const { data: user, isLoading } = useUserInfoQuery();
+  const { data: user, isLoading, error } = useUserInfoQuery();
+  console.log("User Info:", user);
+  console.log("User Info Error:", error);
 
   const adminSidebarItems = [
     { path: "/dashboard", label: "Overview", Icon: FaHome },
@@ -52,8 +54,9 @@ const Dashboard = () => {
     },
   ];
 
-  const sidebarItems =
-    user?.role === "ADMIN" ? adminSidebarItems : userSidebarItems;
+  const isAdminUser =
+    user?.data?.role === "ADMIN" || user?.data?.role === "SUPER_ADMIN";
+  const sidebarItems = isAdminUser ? adminSidebarItems : userSidebarItems;
 
   if (isLoading) {
     return <div>Loading...</div>;
