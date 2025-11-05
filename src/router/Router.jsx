@@ -11,7 +11,6 @@ import NewsDetail from "../pages/NewsDetail/page.jsx";
 import Dashboard from "../pages/Dashboard/page.jsx";
 import Overview from "../pages/Dashboard/Overview/page.jsx";
 import CreateCandidate from "../pages/Dashboard/CreateCandidate/page.jsx";
-import CreateBlog from "../pages/Dashboard/CreateBlog/page.jsx";
 import ManageCandidates from "../pages/Dashboard/ManageCandidates/page.jsx";
 import ManageBlogs from "../pages/Dashboard/ManageBlogs/page.jsx";
 import Donate from "../pages/Dashboard/Donate/page.jsx";
@@ -22,6 +21,8 @@ import VerifyPage from "../pages/Verify/page.jsx";
 import ResetPassword from "../pages/ResetPassword/page.jsx";
 import ForgotPassword from "../pages/ForgotPassword/page.jsx";
 import withPublic from "../utils/withPublic.jsx";
+import withAuth from "../utils/withAuth.jsx";
+import CreateNewsArticle from "../pages/Dashboard/CreateNewsArticle/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -73,35 +74,39 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        Component: Dashboard,
+        Component: withAuth(Dashboard, ["SUPER_ADMIN", "ADMIN", "USER"]),
         children: [
           {
             index: true,
-            Component: Overview,
+            Component: withAuth(ManageAccount, [
+              "SUPER_ADMIN",
+              "ADMIN",
+              "USER",
+            ]),
+          },
+          {
+            path: "overview",
+            Component: withAuth(Overview, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "create-candidate",
-            Component: CreateCandidate,
+            Component: withAuth(CreateCandidate, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
-            path: "create-blog",
-            Component: CreateBlog,
+            path: "create-news-article",
+            Component: withAuth(CreateNewsArticle, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "manage-candidates",
-            Component: ManageCandidates,
+            Component: withAuth(ManageCandidates, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "manage-blogs",
-            Component: ManageBlogs,
+            Component: withAuth(ManageBlogs, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "donate",
-            Component: Donate,
-          },
-          {
-            path: "manage-account",
-            Component: ManageAccount,
+            Component: withAuth(Donate, ["SUPER_ADMIN", "ADMIN", "USER"]),
           },
         ],
       },

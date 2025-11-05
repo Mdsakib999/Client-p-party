@@ -1,23 +1,21 @@
-import { Navigate } from "react-router";
-import Loader from "./Loader";
 import { useUserInfoQuery } from "../redux/features/auth/auth.api";
+import BNPLoader from "./BNPLoader";
+import { Navigate } from "react-router";
 
-export default function withAuth(Component, requiredRole) {
+export default function withAuth(Component, requiredRoles = []) {
   return function AuthWrapper() {
     const { data, isLoading } = useUserInfoQuery();
 
-    if (isLoading) {
-      return <Loader />;
-    }
+    if (isLoading) return <BNPLoader />;
 
-    if (!isLoading && !data?.data?.email) {
+    if (!data?.data?.email) {
       return <Navigate to="/login" />;
     }
 
-    if (requiredRole && !isLoading && requiredRole !== data?.data?.role) {
+    if (requiredRoles.length > 0 && !requiredRoles.includes(data?.data?.role)) {
       return <Navigate to="/" />;
     }
 
-    return <Component />;
+    return <Component userData={data?.data} />;
   };
 }
