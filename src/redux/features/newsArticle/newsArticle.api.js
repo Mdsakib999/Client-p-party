@@ -1,4 +1,3 @@
-// src/redux/features/newsArticle/newsArticle.api.js
 import { baseApi } from "../../baseApi";
 
 export const newsArticleApi = baseApi.injectEndpoints({
