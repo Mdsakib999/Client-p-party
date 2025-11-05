@@ -8,11 +8,13 @@ import {
   FaDonate,
   FaUser,
 } from "react-icons/fa";
+import { useUserInfoQuery } from "../../redux/features/auth/auth.api";
 
 const Dashboard = () => {
   const location = useLocation();
+  const { data: user, isLoading } = useUserInfoQuery();
 
-  const sidebarItems = [
+  const adminSidebarItems = [
     { path: "/dashboard", label: "Overview", Icon: FaHome },
     {
       path: "/dashboard/create-candidate",
@@ -34,6 +36,10 @@ const Dashboard = () => {
       label: "Manage Blogs",
       Icon: FaNewspaper,
     },
+  ];
+
+  const userSidebarItems = [
+    { path: "/dashboard", label: "Overview", Icon: FaHome },
     {
       path: "/dashboard/donate",
       label: "Donate",
@@ -45,6 +51,13 @@ const Dashboard = () => {
       Icon: FaUser,
     },
   ];
+
+  const sidebarItems =
+    user?.role === "ADMIN" ? adminSidebarItems : userSidebarItems;
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-100">
