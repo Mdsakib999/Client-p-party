@@ -204,7 +204,7 @@ export default function CandidateDetails() {
                         <Map className="w-6 h-6 text-gray-500" />
                         Election Constituencies
                       </h2>
-                      <div className="space-y-4 w-[50%]">
+                      <div className="space-y-4  md:w-[50%]">
                         {details.election_constituencies.map(
                           (constituency, idx) => (
                             <div
