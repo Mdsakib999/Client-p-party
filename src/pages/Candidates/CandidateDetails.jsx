@@ -47,20 +47,70 @@ export default function CandidateDetails() {
                 {details.name}
               </h1>
 
+              {/* Position and Category */}
+              <div className="flex flex-wrap gap-2 items-center mb-3">
+                {details.position && (
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {details.position}
+                  </span>
+                )}
+                {details.category && (
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {details.category}
+                  </span>
+                )}
+              </div>
+
+              {/* Portfolio Section */}
+              {details.portfolio && (
+                <div className="mb-4">
+                  {details.portfolio.latest &&
+                    details.portfolio.latest.length > 0 && (
+                      <div className="mb-2">
+                        <p className="text-sm text-gray-500">
+                          Current Position
+                        </p>
+                        <ul className="list-disc list-inside text-gray-900">
+                          {details.portfolio.latest.map((position, idx) => (
+                            <li key={idx} className="text-base">
+                              {position}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  {details.portfolio.previous &&
+                    details.portfolio.previous.length > 0 && (
+                      <div>
+                        <p className="text-sm text-gray-500">
+                          Previous Positions
+                        </p>
+                        <ul className="list-disc list-inside text-gray-900">
+                          {details.portfolio.previous.map((position, idx) => (
+                            <li key={idx} className="text-base">
+                              {position}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                </div>
+              )}
+
               <p className="text-gray-500 font-semibold my-3">
                 {details?.designations?.map((designation, idx) => (
                   <span key={idx}>{designation} | </span>
                 ))}
               </p>
 
-              {details.personal_info?.birth_date && (
+              {/* {details.personalInfo?.birthDate && (
                 <div className="flex items-center gap-2 mb-3 text-gray-600">
                   <Calendar className="w-5 h-5 text-gray-500" />
                   <p className="text-sm font-medium">
                     Date of Birth: {details.personal_info.birth_date}
                   </p>
                 </div>
-              )}
+              )} */}
 
               {details.overall_summary && (
                 <p className="text-gray-700 text-justify mt-5">
@@ -84,7 +134,7 @@ export default function CandidateDetails() {
                 className={`flex-1 py-4 text-xs sm:text-sm md:text-base text-center font-semibold ${
                   activeTab === tab
                     ? "bg-gray-100 border-gray-400 text-gray-600"
-                    : "text-gray-400"
+                    : "text-gray-600"
                 }`}
               >
                 {tab === "details"
@@ -109,6 +159,17 @@ export default function CandidateDetails() {
                       Personal Information
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {details.personal_info.birth_date && (
+                        <div className="flex items-start gap-3">
+                          <Calendar className="w-5 h-5 text-gray-500 mt-1" />
+                          <div>
+                            <p className="text-sm text-gray-500">Birth Date</p>
+                            <span className="text-gray-900 font-medium">
+                              {details.personal_info.birth_date}
+                            </span>
+                          </div>
+                        </div>
+                      )}
                       {details.personal_info.birth_place && (
                         <div className="flex items-start gap-3">
                           <MapPin className="w-5 h-5 text-gray-500 mt-1" />
@@ -120,7 +181,8 @@ export default function CandidateDetails() {
                           </div>
                         </div>
                       )}
-                      {details.personal_info.nationality && (
+
+                      {/* {details.personalInfo.nationality && (
                         <div className="flex items-start gap-3">
                           <Flag className="w-5 h-5 text-gray-500 mt-1" />
                           <div>
@@ -130,10 +192,37 @@ export default function CandidateDetails() {
                             </span>
                           </div>
                         </div>
-                      )}
+                      )} */}
+                      {/* Election Constituency */}
                     </div>
                   </section>
                 )}
+                {details.election_constituencies &&
+                  details.election_constituencies.length > 0 && (
+                    <section>
+                      <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <Map className="w-6 h-6 text-gray-500" />
+                        Election Constituencies
+                      </h2>
+                      <div className="space-y-4 w-[50%]">
+                        {details.election_constituencies.map(
+                          (constituency, idx) => (
+                            <div
+                              key={idx}
+                              className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500"
+                            >
+                              <p className="text-lg font-semibold text-gray-900">
+                                {constituency.actual_place_name}
+                              </p>
+                              <p className="text-gray-600 mt-1">
+                                Area: {constituency.election_area_name}
+                              </p>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </section>
+                  )}
 
                 {/* Education */}
                 {details.academic_career && (
@@ -161,28 +250,6 @@ export default function CandidateDetails() {
                     </div>
                   </section>
                 )}
-
-                {/* Election Constituencies */}
-                {details.election_constituencies && (
-                  <section>
-                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <Map className="w-6 h-6 text-gray-500" />
-                      Election Constituencies
-                    </h2>
-                    <ul className="list-disc list-inside space-y-2 text-gray-900">
-                      {details.election_constituencies.map((item, idx) => (
-                        <ul key={idx}>
-                          <li className="font-semibold">
-                            Place : {item.actual_place_name}
-                          </li>
-                          <li className="font-semibold">
-                            Area : {item.election_area_name}
-                          </li>
-                        </ul>
-                      ))}
-                    </ul>
-                  </section>
-                )}
               </div>
             )}
 
@@ -201,10 +268,12 @@ export default function CandidateDetails() {
                       {details.political_career.map((career, idx) => (
                         <div
                           key={idx}
-                          className="border-l-4 border-gray-600 pl-4 py-2"
+                          className="border-l-4 border-green-600 pl-4 py-3 bg-gray-50 rounded-r-lg"
                         >
-                          <p className="text-sm text-gray-500">{career.year}</p>
-                          <p className="text-gray-800">{career.event}</p>
+                          <p className="text-sm font-semibold text-green-700">
+                            {career.year}
+                          </p>
+                          <p className="text-gray-800 mt-1">{career.event}</p>
                         </div>
                       ))}
                     </div>
@@ -219,13 +288,55 @@ export default function CandidateDetails() {
 
             {/* ACTIVITIES TAB */}
             {activeTab === "activities" && (
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Activity Highlights
-                </h2>
-                <p className="text-gray-700">
-                  {details.life_activities || "No recent activity recorded."}
-                </p>
+              <div className="space-y-6">
+                <section>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    Current Activities
+                  </h2>
+                  <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <p className="text-gray-700 leading-relaxed">
+                      {details.life_activities ||
+                        "No recent activity recorded."}
+                    </p>
+                  </div>
+                </section>
+
+                {details.other_income_sources &&
+                  details.other_income_sources.length > 0 && (
+                    <section>
+                      <h2 className="text-xl font-bold text-gray-900 mb-3">
+                        Other Activities & Income Sources
+                      </h2>
+                      <ul className="list-disc list-inside space-y-2">
+                        {details.other_income_sources.map((source, idx) => (
+                          <li key={idx} className="text-gray-700">
+                            {source}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                {details.social_links && details.social_links.length > 0 && (
+                  <section>
+                    <h2 className="text-xl font-bold text-gray-900 mb-3">
+                      Social Media & Web Presence
+                    </h2>
+                    <div className="flex flex-wrap gap-3">
+                      {details.social_links.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm text-blue-600 hover:bg-blue-50 transition-colors"
+                        >
+                          Visit Official Website
+                        </a>
+                      ))}
+                    </div>
+                  </section>
+                )}
               </div>
             )}
           </div>

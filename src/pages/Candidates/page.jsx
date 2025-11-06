@@ -94,11 +94,14 @@ const Candidates = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="w-full max-w-5xl">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            Our Candidates
+          </h2>
+          {/* <div className="w-full max-w-5xl">
             <div ref={containerRef} className="relative z-10">
-              <div className="bg-white rounded-xl md:rounded-full shadow-2xl p-2.5">
-                {/* Mobile Search Button */}
-                <div className="md:hidden flex justify-center">
+              <div className="bg-white rounded-xl md:rounded-full shadow-2xl p-2.5"> */}
+          {/* Mobile Search Button */}
+          {/* <div className="md:hidden flex justify-center">
                   <button
                     onClick={() => {
                       setIsMobileExpanded(!isMobileExpanded);
@@ -113,9 +116,9 @@ const Candidates = () => {
                     <Search size={20} />
                     <span>Search Location</span>
                   </button>
-                </div>
+                </div> */}
 
-                <div
+          {/* <div
                   className={`${
                     !isMobileExpanded && "hidden md:block"
                   } transition-all duration-300 ${
@@ -203,20 +206,20 @@ const Candidates = () => {
                       </button>
                     </div>
                   )}
-                </div>
-              </div>
+                </div> */}
+        </div>
 
-              {/* Dropdown */}
-              {activeSection && (
+        {/* Dropdown */}
+        {/* {activeSection && (
                 <div
                   className={`fixed md:absolute left-0 right-0 md:mt-4 mx-3 md:mx-0 bg-white rounded-2xl shadow-2xl overflow-hidden z-50 transition-all duration-300 ease-in-out ${
                     isMobileExpanded
                       ? "top-[180px] max-h-[calc(100vh-200px)]"
                       : "top-[100px] max-h-[calc(100vh-120px)]"
                   } md:top-full md:max-h-[500px]`}
-                >
-                  {/* Search Results */}
-                  {activeSection === "search" && searchTerm && (
+                > */}
+        {/* Search Results */}
+        {/* {activeSection === "search" && searchTerm && (
                     <div className="max-h-full overflow-y-auto">
                       {filteredDivisions.length > 0 && (
                         <div className="p-4 sm:p-6">
@@ -287,10 +290,10 @@ const Candidates = () => {
                           </div>
                         )}
                     </div>
-                  )}
+                  )} */}
 
-                  {/* Division List */}
-                  {activeSection === "division" && (
+        {/* Division List */}
+        {/* {activeSection === "division" && (
                     <div className="max-h-full overflow-y-auto p-4 sm:p-6">
                       <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
                         Select Division
@@ -316,10 +319,10 @@ const Candidates = () => {
                         ))}
                       </div>
                     </div>
-                  )}
+                  )} */}
 
-                  {/* District List */}
-                  {activeSection === "district" && selectedDivision && (
+        {/* District List */}
+        {/* {activeSection === "district" && selectedDivision && (
                     <div className="max-h-full overflow-y-auto p-4 sm:p-6">
                       <div className="flex items-center gap-3 mb-4">
                         <button
@@ -365,16 +368,16 @@ const Candidates = () => {
                         </div>
                       )}
                     </div>
-                  )}
-                </div>
-              )}
-            </div>
+                  )} */}
+        {/* </div>
+              )} */}
+        {/* </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full max-w-7xl mx-auto my-10 px-4 md:px-6 lg:px-8">
-        <section className="relative py-4 mb-6">
+        {/* <section className="relative py-4 mb-6">
           <div className="flex justify-center overflow-x-auto gap-3 pb-2 scrollbar-hide">
             <div className="flex items-center gap-3 md:gap-4">
               {divisions.map((division) => (
@@ -391,7 +394,7 @@ const Candidates = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {candidatesData.map((candidate) => (
             <CandidateCard key={candidate?._id} candidate={candidate} />

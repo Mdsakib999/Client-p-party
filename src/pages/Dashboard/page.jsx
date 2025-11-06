@@ -52,6 +52,10 @@ const Dashboard = () => {
       Icon: FaNewspaper,
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
+  ];
+
+  const userSidebarItems = [
+    { path: "/dashboard", label: "Overview", Icon: FaHome },
     {
       path: "/dashboard/donate",
       label: "Donate",
