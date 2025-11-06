@@ -1,0 +1,882 @@
+[
+  {
+    "_id": 1,
+    "name": "Begum Khaleda Zia",
+    "position": "Chairperson, BNP",
+    "category": "Top leadership",
+    "portfolio": {
+      "latest": ["Chairperson, BNP (1984 - Present)"],
+      "previous": [
+        "Prime Minister of Bangladesh (1991-1996, 2001-2006)",
+        "Leader of the Opposition (1996-2001, 2008-2014)"
+      ]
+    },
+    "designations": [
+      "Chairperson, Bangladesh Nationalist Party (BNP)",
+      "Former Prime Minister (three terms)"
+    ],
+    "personal_info": {
+      "birth_date": "15 August 1945",
+      "birth_place": "Dinajpur, Bangladesh",
+      "nationality": "Bangladeshi",
+      "website_or_social": "https://www.bnpbd.org/leader-details/chairperson-begum-khaleda-zia"
+    },
+    "academic_career": {
+      "schools": ["Dinajpur Missionary School", "Dinajpur Girls' School"],
+      "college": "Surendranath College (enrolled)",
+      "university": "Not available",
+      "degree": "No formal degree (self-educated)"
+    },
+    "business_income_source_professional_career": ["Career politician"],
+    "political_career": [
+      {
+        "year": "1982-1984",
+        "event": "Entered active politics after Ziaur Rahman's assassination; became BNP Chairperson in 1984"
+      },
+      {
+        "year": "1991-2006",
+        "event": "Served as Prime Minister (three terms, with major policy reforms)"
+      },
+      {
+        "year": "2024-2025",
+        "event": "Released; acquitted in remaining cases; nominated for upcoming election"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Feni-1",
+        "election_area_name": "Feni Sadar Upazila"
+      },
+      { "actual_place_name": "Bogura-7", "election_area_name": "Bogura area" },
+      {
+        "actual_place_name": "Dinajpur-3",
+        "election_area_name": "Dinajpur area"
+      }
+    ],
+    "life_activities": "Leading BNP, nationwide political mobilization",
+    "other_income_sources": ["Not available"],
+    "social_links": [
+      "https://www.bnpbd.org/leader-details/chairperson-begum-khaleda-zia"
+    ],
+    "photos": [
+      "https://www.aljazeera.com/wp-content/uploads/2024/08/2016-03-30T120000Z_1511281279_GF10000365774_RTRMADP_3_BANGLADESH-OPPOSITION-1722879864.jpg?resize=1920%2C1440"
+    ],
+    "overall_summary": "Begum Khaleda Zia, born 15 Aug 1945, BNP Chairperson and three-time former Prime Minister. Recently nominated to contest from Feni-1, Bogura-7 and Dinajpur-3.",
+    "district": ["Feni", "Bogura", "Dinajpur"],
+    "division": ["Chattogram", "Rajshahi", "Rangpur"]
+  },
+  {
+    "_id": 2,
+    "name": "Tarique Rahman",
+    "position": "Acting Chairman, BNP",
+    "category": "Top leadership",
+    "portfolio": {
+      "latest": ["Acting Chairman, BNP (2018 - Present)"],
+      "previous": ["Senior Vice Chairman, BNP (2009-2018)"]
+    },
+    "designations": ["Acting Chairman, BNP", "Publisher (The Daily Dinkal)"],
+    "personal_info": {
+      "birth_date": "20 November 1965",
+      "birth_place": "Dhaka, Bangladesh",
+      "nationality": "Bangladeshi",
+      "website_or_social": "https://www.tariquerahman.info/"
+    },
+    "academic_career": {
+      "schools": [
+        "BAF Shaheen College Dhaka",
+        "St. Joseph Higher Secondary School"
+      ],
+      "college": "Adamjee Cantonment College",
+      "university": "University of Dhaka",
+      "degree": "Graduate (International Relations)"
+    },
+    "business_income_source_professional_career": [
+      "Business interests, publishing"
+    ],
+    "political_career": [
+      { "year": "1988", "event": "Joined BNP at grassroots (Bogura)" },
+      { "year": "2002-2009", "event": "Senior Joint Secretary General, BNP" },
+      { "year": "2018", "event": "Assumed role of Acting Chairman" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Bogura-6",
+        "election_area_name": "Bogura Sadar Upazila"
+      }
+    ],
+    "life_activities": "Leading party strategy from exile; party mobilisation",
+    "other_income_sources": ["Not available"],
+    "social_links": [
+      "https://www.tariquerahman.info/",
+      "https://www.bnpbd.org/leader-details/acting-chairman-tarique-rahman"
+    ],
+    "photos": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHVs2Njmth46Jy1GBuW4on_oIVzvDRf7Mns_vhC_bcbMaLlCDVFbdX2iHdL0MQKXdm52ho1NZO5H9PBC0nck2-pPrsQiAFW2Jn-RImlnMfTw&s=10"
+    ],
+    "overall_summary": "Tarique Rahman (b.1965), acting chairman of BNP — nominated for Bogura-6 in the recently announced BNP candidate list.",
+    "district": ["Bogura"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 3,
+    "name": "Mirza Fakhrul Islam Alamgir",
+    "position": "Secretary General, BNP",
+    "category": "Top leadership",
+    "portfolio": { "latest": ["Secretary General, BNP"] },
+    "designations": ["Secretary General, BNP"],
+    "personal_info": {
+      "birth_date": "26 January 1948",
+      "birth_place": "Thakurgaon, Bangladesh",
+      "nationality": "Bangladeshi",
+      "website_or_social": "https://www.bnpbd.org/leader-details/mirza-fakhrul-islam-alamgir"
+    },
+    "academic_career": {
+      "schools": ["Thakurgaon Government Boys’ School"],
+      "college": "Thakurgaon College",
+      "university": "University of Dhaka",
+      "degree": "MA in Economics"
+    },
+    "business_income_source_professional_career": ["Career politician"],
+    "political_career": [
+      {
+        "year": "1991",
+        "event": "Elected MP from Thakurgaon-1 (previous terms)"
+      },
+      { "year": "2025", "event": "Announced as BNP candidate for Thakurgaon-1" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Thakurgaon-1",
+        "election_area_name": "Thakurgaon Sadar Upazila"
+      }
+    ],
+    "life_activities": "Party leadership, campaigning",
+    "other_income_sources": ["Not available"],
+    "social_links": [
+      "https://www.bnpbd.org/leader-details/mirza-fakhrul-islam-alamgir"
+    ],
+    "photos": ["https://i.ibb.co.com/N6rqpN0n/download-2.jpg"],
+    "overall_summary": "Mirza Fakhrul (b.1948), BNP Secretary General — listed by BNP to contest from Thakurgaon-1.",
+    "district": ["Thakurgaon"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 4,
+    "name": "Salahuddin Ahmed",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (2016 - present)"]
+    },
+    "designations": [
+      "member, national standing committee, BNP",
+      "former state minister"
+    ],
+    "personal_info": {
+      "birth_date": "30 June 1962",
+      "birth_place": "Chakaria, Cox's Bazar",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["Shilkhali High School, Pekua"],
+      "college": "Chittagong Government College",
+      "university": "University of Dhaka",
+      "degree": "LL.B., LL.M."
+    },
+    "business_income_source_professional_career": ["Lawyer, politician"],
+    "political_career": [
+      {
+        "year": "1996-2006",
+        "event": "Elected MP Cox's Bazar-1 (multiple terms)"
+      },
+      { "year": "2025", "event": "Named by BNP to contest Cox's Bazar-1" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Cox's Bazar-1",
+        "election_area_name": "Chakaria and Pekua Upazilas"
+      }
+    ],
+    "life_activities": "national committee work, constituency organisation",
+    "other_income_sources": ["not available"],
+    "social_links": [],
+    "photos": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ30pEMwpWqiGrUYxdMYPU2xkzyt5-y5ID6w&s"
+    ],
+    "overall_summary": "Salahuddin Ahmed, senior BNP leader — included in the BNP list to contest Cox's Bazar-1.",
+    "district": ["Cox's Bazar"],
+    "division": ["Chattogram"]
+  },
+  {
+    "_id": 5,
+    "name": "Dr. Khandaker Mosharraf Hossain",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (1994 - present)"]
+    },
+    "designations": [
+      "member, national standing committee, BNP",
+      "former cabinet minister",
+      "PhD in Geology"
+    ],
+    "personal_info": {
+      "birth_date": "01 October 1946",
+      "birth_place": "Goyeshpur, Cumilla",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": [
+        "University of Dhaka",
+        "University of London",
+        "Imperial College London"
+      ],
+      "degree": ["M.Sc. Geology", "PhD (Geology)"]
+    },
+    "business_income_source_professional_career": [
+      "Academic (professor), politician"
+    ],
+    "political_career": [
+      {
+        "year": "1991",
+        "event": "Elected MP from Cumilla-2; served ministerial portfolios"
+      },
+      {
+        "year": "2025",
+        "event": "Listed among BNP candidates for Cumilla area seats"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Cumilla-2",
+        "election_area_name": "Daudkandi and Meghna Upazilas"
+      }
+    ],
+    "life_activities": "academic turned politician; public health & education policy",
+    "other_income_sources": ["not available"],
+    "social_links": [],
+    "photos": ["https://dailyasianage.com/library/1727726707_9.jpg"],
+    "overall_summary": "Dr. Khandaker Mosharraf Hossain, senior BNP leader and academic, associated with Cumilla-2.",
+    "district": ["Cumilla"],
+    "division": ["Chattogram"]
+  },
+  {
+    "_id": 6,
+    "name": "Mirza Abbas Uddin Ahmed",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (2009 - present)"]
+    },
+    "designations": [
+      "member, national standing committee, BNP",
+      "former mayor of Dhaka City Corporation",
+      "former cabinet minister"
+    ],
+    "personal_info": {
+      "birth_date": "07 February 1951",
+      "birth_place": "Kishoreganj",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["Local schools in Kishoreganj"],
+      "college": "Government Shaheed Suhrawardy College",
+      "university": "University of Dhaka (affiliated college)",
+      "degree": "B.Com"
+    },
+    "business_income_source_professional_career": [
+      "Business (Mirza Enterprises), banking (Dhaka Bank founder)"
+    ],
+    "political_career": [
+      { "year": "1991", "event": "Elected MP Dhaka-6" },
+      { "year": "2001-2006", "event": "Minister of Housing and Public Works" },
+      { "year": "2025", "event": "Named by BNP to contest Dhaka-8" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dhaka-8",
+        "election_area_name": "Parts of Dhaka city"
+      },
+      {
+        "actual_place_name": "Dhaka-6",
+        "election_area_name": "Historic constituency (previously represented)"
+      }
+    ],
+    "life_activities": "city politics, business philanthropy, party organisation",
+    "other_income_sources": ["Business, banking interests"],
+    "social_links": [],
+    "photos": [
+      "https://www.tbsnews.net/sites/default/files/styles/big_3/public/images/2023/07/27/mirza_abbas-2108221057.jpg"
+    ],
+    "overall_summary": "Mirza Abbas, veteran BNP leader, businessman and former Dhaka mayor — listed for Dhaka-8.",
+    "district": ["Dhaka"],
+    "division": ["Dhaka"]
+  },
+  {
+    "_id": 7,
+    "name": "Barrister Md. Nowshad Zamir",
+    "position": "candidate, BNP",
+    "category": "parliamentary candidate",
+    "portfolio": {
+      "latest": ["BNP candidate for Panchagarh-1 (2025 announcement)"]
+    },
+    "designations": ["Barrister, BNP leader"],
+    "personal_info": {
+      "birth_date": "not available",
+      "birth_place": "Panchagarh",
+      "nationality": "Bangladeshi",
+      "website_or_social": [
+        "https://www.linkedin.com/in/muhammadnawshadzamir/",
+        "https://www.facebook.com/nawshadzamirp1/"
+      ]
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "not available",
+      "degree": "Law (Barrister)"
+    },
+    "business_income_source_professional_career": [
+      "Law practice, political work"
+    ],
+    "political_career": [
+      { "year": "2025", "event": "Nominated by BNP for Panchagarh-1" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Panchagarh-1",
+        "election_area_name": "Panchagarh Sadar, Tentulia, Atwari"
+      }
+    ],
+    "life_activities": "local politics in Panchagarh",
+    "other_income_sources": ["not available"],
+    "social_links": [
+      "https://www.linkedin.com/in/muhammadnawshadzamir/",
+      "https://www.facebook.com/nawshadzamirp1/"
+    ],
+    "photos": ["https://i.ibb.co.com/SD7cydvB/download-1.jpg"],
+    "overall_summary": "Barrister Md. Nowshad Zamir — BNP nominee for Panchagarh-1.",
+    "district": ["Panchagarh"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 8,
+    "name": "Farhad Hossain Azad",
+    "position": "candidate, BNP",
+    "category": "parliamentary candidate",
+    "portfolio": {
+      "latest": ["BNP candidate for Panchagarh-2 (2025 announcement)"]
+    },
+    "designations": ["BNP leader"],
+    "personal_info": {
+      "birth_date": "1966",
+      "birth_place": "Menagram, Boda, Panchagarh",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["Pachpeer Primary School", "Boda Bohumukhi High School"],
+      "college": "Rajshahi Govt. College",
+      "university": "University of Dhaka",
+      "degree": "LLB"
+    },
+    "business_income_source_professional_career": ["Law, politics"],
+    "political_career": [
+      { "year": "2018", "event": "Previously contested Panchagarh-2" },
+      { "year": "2025", "event": "Nominated by BNP for Panchagarh-2" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Panchagarh-2",
+        "election_area_name": "Boda and Debiganj"
+      }
+    ],
+    "life_activities": "local organising in Panchagarh",
+    "other_income_sources": ["not available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/Tx4HmHgF/download.jpg"],
+    "overall_summary": "Farhad Hossain Azad — BNP candidate for Panchagarh-2.",
+    "district": ["Panchagarh"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 9,
+    "name": "Dr. Abdul Moyeen Khan",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (2009 - present)"]
+    },
+    "designations": [
+      "standing committee member",
+      "former minister",
+      "former professor"
+    ],
+    "personal_info": {
+      "birth_date": "01 January 1947",
+      "birth_place": "Narsingdi",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": ["University of Sussex", "University of Dhaka"],
+      "degree": "PhD (Physics)"
+    },
+    "business_income_source_professional_career": [
+      "Professor of Physics, politician"
+    ],
+    "political_career": [
+      {
+        "year": "1991-2006",
+        "event": "MP for Narsingdi-2 and ministerial roles"
+      },
+      { "year": "2024-2025", "event": "Announced candidate for Narsingdi-2" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Narsingdi-2",
+        "election_area_name": "Palash and Monohardi Upazilas"
+      }
+    ],
+    "life_activities": "policy, party strategy, public speaking",
+    "other_income_sources": ["Pension (former academic)"],
+    "social_links": [],
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Abdul_Moyeen_Khan_2018.jpg/330px-Abdul_Moyeen_Khan_2018.jpg"
+    ],
+    "overall_summary": "Dr. Abdul Moyeen Khan, PhD, senior BNP leader and former minister — associated with Narsingdi-2.",
+    "district": ["Narsingdi"],
+    "division": ["Dhaka"]
+  },
+  {
+    "_id": 10,
+    "name": "Ishraque Hossain",
+    "position": "member, BNP central international affairs committee",
+    "category": "youth/city leadership and central committee member",
+    "portfolio": {
+      "latest": [
+        "Declared mayor of Dhaka South City Corporation, BNP nominee for Dhaka-6"
+      ]
+    },
+    "designations": [
+      "BNP nominee for Dhaka-6",
+      "Managing Director, BanglaVision"
+    ],
+    "personal_info": {
+      "birth_date": "05 April 1987",
+      "birth_place": "Dhaka",
+      "nationality": "Bangladeshi",
+      "website_or_social": ["http://www.ishraque.com"]
+    },
+    "academic_career": {
+      "schools": ["Scholastica School (O/A levels)"],
+      "college": "not available",
+      "university": "University of Hertfordshire (UK)",
+      "degree": "BSc & MSc in Mechanical Engineering"
+    },
+    "business_income_source_professional_career": [
+      "Media (BanglaVision)",
+      "Engineering"
+    ],
+    "political_career": [
+      { "year": "2020", "event": "BNP candidate for Dhaka South mayor" },
+      { "year": "2025", "event": "Declared BNP nominee for Dhaka-6" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dhaka-6",
+        "election_area_name": "Sutrapur, Kotwali, Wari"
+      }
+    ],
+    "life_activities": "urban politics, youth outreach, media management",
+    "other_income_sources": ["Business (BanglaVision)"],
+    "social_links": ["http://www.ishraque.com"],
+    "photos": [
+      "https://www.tbsnews.net/sites/default/files/images/2022/11/05/he7dkmodcq6u3pmlge66hfuuhaa8sokk4ivjprfq.jpg"
+    ],
+    "overall_summary": "Ishraque Hossain (b.1987), engineer and media executive — BNP candidate for Dhaka-6.",
+    "district": ["Dhaka"],
+    "division": ["Dhaka"]
+  },
+  {
+    "_id": 11,
+    "name": "Amir Khasru Mahmud Chowdhury",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (2001 - present)"],
+      "previous": [
+        "minister of commerce (2001–2004)",
+        "founder, Chittagong Stock Exchange"
+      ]
+    },
+    "designations": [
+      "standing committee member, BNP",
+      "former commerce minister"
+    ],
+    "personal_info": {
+      "birth_date": "10 November 1949",
+      "birth_place": "North Kattali, Chattogram",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["Chittagong Collegiate School"],
+      "college": "Chittagong College",
+      "university": "London (reported)",
+      "degree": "Accountancy/Management (reported)"
+    },
+    "business_income_source_professional_career": ["Business, politics"],
+    "political_career": [
+      { "year": "1991", "event": "Elected MP (Chattogram area)" },
+      { "year": "2001-2004", "event": "Minister of Commerce" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Chattogram-10",
+        "election_area_name": "Chattogram city"
+      },
+      {
+        "actual_place_name": "Chattogram-8",
+        "election_area_name": "Chattogram city (former)"
+      }
+    ],
+    "life_activities": "party leadership, economic policy",
+    "other_income_sources": ["business"],
+    "social_links": [],
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Amir_Khasru_Mahmud_Chowdhury.jpg"
+    ],
+    "overall_summary": "Amir Khasru Mahmud Chowdhury — senior BNP leader, policymaker and ex-minister.",
+    "district": ["Chattogram"],
+    "division": ["Chattogram"]
+  },
+  {
+    "_id": 12,
+    "name": "Dr. A. Z. M. Zahid Hossain",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (2024 - present)"],
+      "previous": ["Vice-Chairman, BNP", "Physician to Khaleda Zia"]
+    },
+    "designations": ["Standing Committee Member", "Professor of Urology"],
+    "personal_info": {
+      "birth_date": "25 December 1960",
+      "birth_place": "Gafargaon, Mymensingh",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "Mymensingh Medical College",
+      "degree": ["MBBS", "FCPS", "MS (Urology)"]
+    },
+    "business_income_source_professional_career": [
+      "Medical practice",
+      "politics"
+    ],
+    "political_career": [
+      { "year": "2024", "event": "Promoted to Standing Committee" },
+      { "year": "2025", "event": "Active organiser in Dinajpur area" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dinajpur-6",
+        "election_area_name": "Dinajpur constituency"
+      }
+    ],
+    "life_activities": "medical advocacy, constituency organisation",
+    "other_income_sources": ["medical income"],
+    "social_links": [],
+    "photos": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxuzAwp1qeG00LvKEAt0GsF9gVeiyA8KYMTQ&s"
+    ],
+    "overall_summary": "Dr. Zahid Hossain — physician and BNP leader from Dinajpur area.",
+    "district": ["Dinajpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 13,
+    "name": "Major (Retd.) Hafiz Uddin Ahmed",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (current)"],
+      "previous": ["Minister of Water Resources", "Minister of Commerce"]
+    },
+    "designations": ["Bir Bikrom", "Standing Committee Member"],
+    "personal_info": {
+      "birth_date": "29 October 1944",
+      "birth_place": "Bhola",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "University of Dhaka (reported)",
+      "degree": "M.A. Political Science"
+    },
+    "business_income_source_professional_career": [
+      "Military pension",
+      "Book royalties"
+    ],
+    "political_career": [
+      { "year": "1986-2006", "event": "Elected MP, Bhola-3" },
+      { "year": "2001-2006", "event": "Served as Minister" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Bhola-3",
+        "election_area_name": "Lalmohan and Tajumuddin"
+      }
+    ],
+    "life_activities": "Veteran leader, constituency politics",
+    "other_income_sources": ["Military pension"],
+    "social_links": [],
+    "photos": [
+      "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/media/2024/09/03/Hafizuddin-Ahmed-e58c7e3839693b5a15a098e7f5858227.jpg"
+    ],
+    "overall_summary": "Major (Retd.) Hafiz Uddin Ahmed — decorated BNP leader and former minister from Bhola.",
+    "district": ["Bhola"],
+    "division": ["Barishal"]
+  },
+  {
+    "_id": 14,
+    "name": "Iqbal Hasan Mahmud Tuku",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (current)"],
+      "previous": ["State Minister of Power", "State Minister of Agriculture"]
+    },
+    "designations": ["Standing Committee Member", "Former State Minister"],
+    "personal_info": {
+      "birth_date": "1950",
+      "birth_place": "Sirajganj",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "not available",
+      "degree": "not available"
+    },
+    "business_income_source_professional_career": ["Politician"],
+    "political_career": [
+      { "year": "1986", "event": "Elected MP, Sirajganj-2" },
+      { "year": "2001-2006", "event": "State Minister (Power, Agriculture)" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Sirajganj-2",
+        "election_area_name": "Sirajganj Sadar and Kamarkhanda"
+      }
+    ],
+    "life_activities": "party leadership, constituency organisation",
+    "other_income_sources": ["not available"],
+    "social_links": [],
+    "photos": [
+      "https://imrs.rtvonline.com/api/image-service/resize?w=500&h=281.25&q=75&img=/media/images/2025/01/16/image-308993-1737010439.jpg"
+    ],
+    "overall_summary": "Iqbal Hasan Mahmud Tuku — veteran BNP leader, former state minister from Sirajganj.",
+    "district": ["Sirajganj"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 15,
+    "name": "Babu Gayeshwar Chandra Roy",
+    "position": "standing committee member, BNP",
+    "category": "top/senior leadership",
+    "portfolio": {
+      "latest": ["standing committee member, BNP (present)"],
+      "previous": [
+        "State Minister for Environment",
+        "General Secretary, Jubo Dal"
+      ]
+    },
+    "designations": ["Standing Committee Member", "Former State Minister"],
+    "personal_info": {
+      "birth_date": "01 November 1951",
+      "birth_place": "Keraniganj, Dhaka",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "not available",
+      "degree": "not available"
+    },
+    "business_income_source_professional_career": ["Politician"],
+    "political_career": [
+      { "year": "1991-1993", "event": "State Minister for Environment" },
+      { "year": "2025", "event": "Named BNP candidate for Dhaka-3" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dhaka-3",
+        "election_area_name": "Keraniganj Upazila"
+      }
+    ],
+    "life_activities": "youth politics, party organisation",
+    "other_income_sources": ["not available"],
+    "social_links": [],
+    "photos": [
+      "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/dten/2019/04/gayeshwar-1556184494404.jpg"
+    ],
+    "overall_summary": "Gayeshwar Chandra Roy — senior BNP leader and Hindu representative figure.",
+    "district": ["Dhaka"],
+    "division": ["Dhaka"]
+  },
+  {
+    "_id": 16,
+    "name": "Air Vice Marshal (Retd.) Altaf Hossain Chowdhury",
+    "position": "vice-chairman, BNP",
+    "category": "senior leadership",
+    "portfolio": {
+      "latest": ["vice-chairman, BNP (2016 - present)"],
+      "previous": [
+        "Chief of Air Staff",
+        "Minister of Home Affairs",
+        "Minister of Commerce"
+      ]
+    },
+    "designations": [
+      "Vice-Chairman, BNP",
+      "Former Air Chief",
+      "Former Minister"
+    ],
+    "personal_info": {
+      "birth_date": "1942",
+      "birth_place": "Patuakhali",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "not available",
+      "degree": "Military education"
+    },
+    "business_income_source_professional_career": [
+      "Military pension",
+      "Private business"
+    ],
+    "political_career": [
+      { "year": "1995", "event": "Joined BNP" },
+      { "year": "2001-2006", "event": "Elected MP and served in cabinet" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Patuakhali-1",
+        "election_area_name": "Patuakhali Sadar, Dumki, Mirzaganj"
+      }
+    ],
+    "life_activities": "veteran affairs, district leadership",
+    "other_income_sources": ["Military pension"],
+    "social_links": [],
+    "photos": [
+      "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/media/2023/11/05/Altaf-Hossain-Chowdhury-c37a71286256688d3e879e4df60a3e53.jpg"
+    ],
+    "overall_summary": "Altaf Hossain Chowdhury — retired air chief and BNP vice-chairman from Patuakhali.",
+    "district": ["Patuakhali"],
+    "division": ["Barishal"]
+  },
+  {
+    "_id": 17,
+    "name": "Advocate Harunur Rashid",
+    "position": "BNP national executive committee member",
+    "category": "senior leadership (parliamentary/district)",
+    "portfolio": {
+      "latest": ["BNP national executive committee member"],
+      "previous": ["MP, Chapainawabganj-3", "District BNP leader"]
+    },
+    "designations": ["Advocate", "Former MP"],
+    "personal_info": {
+      "birth_date": "01 January 1962",
+      "birth_place": "Chapainawabganj",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["not available"],
+      "college": "not available",
+      "university": "not available",
+      "degree": "LLB"
+    },
+    "business_income_source_professional_career": ["Law practice", "Politics"],
+    "political_career": [
+      { "year": "1996", "event": "Elected MP Chapainawabganj-3" },
+      { "year": "2019", "event": "Elected MP again (resigned 2022)" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Chapainawabganj-3",
+        "election_area_name": "Chapainawabganj Sadar"
+      }
+    ],
+    "life_activities": "district politics, legal advocacy",
+    "other_income_sources": ["Law practice income"],
+    "social_links": [],
+    "photos": [
+      "https://hoque-associates.com/storage/app/uploads/public/66f/e5a/a77/66fe5aa77f522169448674.jpg"
+    ],
+    "overall_summary": "Advocate Harunur Rashid — senior BNP leader and multiple-term MP from Chapainawabganj.",
+    "district": ["Chapainawabganj"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 18,
+    "name": "Barkat Ullah Bulu",
+    "position": "vice-chairman, BNP",
+    "category": "senior leadership",
+    "portfolio": {
+      "latest": ["vice-chairman, BNP (current)"],
+      "previous": ["State Minister of Commerce", "MP, Noakhali-3"]
+    },
+    "designations": ["Vice-Chairman, BNP", "Former State Minister"],
+    "personal_info": {
+      "birth_date": "20 December 1956",
+      "birth_place": "Begumganj, Noakhali",
+      "nationality": "Bangladeshi",
+      "website_or_social": "not available"
+    },
+    "academic_career": {
+      "schools": ["Bhototoli Bazar Primary School"],
+      "college": "not available",
+      "university": "not available",
+      "degree": "Graduate"
+    },
+    "business_income_source_professional_career": ["Politics", "Business"],
+    "political_career": [
+      { "year": "1991-2001", "event": "Elected MP, Noakhali region" },
+      { "year": "2001-2003", "event": "State Minister of Commerce" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Noakhali-3",
+        "election_area_name": "Begumganj Upazila"
+      }
+    ],
+    "life_activities": "regional leadership, organisational politics",
+    "other_income_sources": ["Business interests"],
+    "social_links": [],
+    "photos": [
+      "https://cdn.jugantor.com/assets/news_photos/2025/04/04/Untitled-1-67efd3eeb6242.jpg"
+    ],
+    "overall_summary": "Barkat Ullah Bulu — veteran BNP vice-chairman and multiple-term MP from Noakhali.",
+    "district": ["Noakhali"],
+    "division": ["Chattogram"]
+  }
+]
