@@ -144,7 +144,6 @@ export const Candidates = () => {
           </div>
         </div>
 
-        {/* View All Button */}
         <div className="flex justify-center">
           <Link
             to="/candidates"

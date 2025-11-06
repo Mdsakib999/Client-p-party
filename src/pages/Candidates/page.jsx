@@ -446,7 +446,7 @@ const Candidates = () => {
         {/* Pagination Controls */}
         <div
           id="pagination"
-          className="flex justify-center items-center gap-2 mt-8 mb-4"
+          className="flex flex-wrap justify-center items-center gap-2 mt-8 mb-4"
         >
           <button
             onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}

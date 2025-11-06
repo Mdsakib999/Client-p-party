@@ -62,9 +62,11 @@ export default function LoginPage() {
     <div className="min-h-screen relative flex items-center justify-center p-4 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
       <div className="relative w-full max-w-5xl grid lg:grid-cols-2 gap-8">
         <div className="hidden lg:block text-center">
-          <div className="bg-gradient-to-br from-green-600 to-green-800 w-36 h-36 rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-2xl">
-            <div className="text-white text-5xl font-bold">BNP</div>
-          </div>
+          <img
+            src="/logo.png"
+            alt="BNP Logo"
+            className="w-44 h-44 mx-auto object-contain"
+          />
           <h1 className="text-5xl font-bold text-green-900 mb-4 leading-tight">
             Welcome Back
           </h1>
