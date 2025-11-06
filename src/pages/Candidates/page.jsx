@@ -15,9 +15,22 @@ const Candidates = () => {
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const containerRef = useRef(null);
   const searchInputRef = useRef(null);
+  const scrollRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   useEffect(() => {
-    fetchDivisions();
+    const allDivisions = candidatesData.flatMap(
+      (candidate) => candidate.division || []
+    );
+    const uniqueDivisions = [...new Set(allDivisions)];
+    setDivisions(
+      uniqueDivisions.map((div, index) => ({
+        id: index + 1,
+        name: div,
+        bn_name: div,
+      }))
+    );
   }, []);
 
   useEffect(() => {
@@ -36,17 +49,6 @@ const Candidates = () => {
       searchInputRef.current.focus();
     }
   }, [activeSection]);
-
-  const fetchDivisions = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://bdapi.vercel.app/api/v.1/division"
-      );
-      setDivisions(data?.data || []);
-    } catch (error) {
-      console.error("Error fetching divisions:", error);
-    }
-  };
 
   const fetchDistricts = async (divisionId) => {
     try {
@@ -84,6 +86,18 @@ const Candidates = () => {
       d.bn_name.includes(searchTerm)
   );
 
+  const filteredCandidates = selectedDivision
+    ? candidatesData.filter((c) => c.division?.includes(selectedDivision.name))
+    : candidatesData;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    setTimeout(
+      () => scrollRef.current?.scrollIntoView({ behavior: "smooth" }),
+      0
+    );
+  };
+
   return (
     <div className="min-h-screen w-full">
       <div className="relative w-full h-[500px] sm:h-[550px] md:h-[600px]">
@@ -94,8 +108,8 @@ const Candidates = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Our Candidates
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight text-center">
+            Our nominees for the <br /> 2025 elections
           </h2>
           {/* <div className="w-full max-w-5xl">
             <div ref={containerRef} className="relative z-10">
@@ -377,13 +391,39 @@ const Candidates = () => {
       </div>
 
       <div className="w-full max-w-7xl mx-auto my-10 px-4 md:px-6 lg:px-8">
-        {/* <section className="relative py-4 mb-6">
+        {/* DIVISION LIST */}
+        <section
+          className="relative py-4 mb-6"
+          ref={scrollRef} //for scrolling
+        >
           <div className="flex justify-center overflow-x-auto gap-3 pb-2 scrollbar-hide">
             <div className="flex items-center gap-3 md:gap-4">
+              <div
+                className={`flex items-center gap-x-2 text-sm md:text-base whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-50 px-2 py-1 rounded ${
+                  !selectedDivision ? "bg-blue-100" : ""
+                }`}
+                onClick={() => {
+                  setSelectedDivision(null);
+                  setSelectedDistrict(null);
+                  setCurrentPage(1);
+                }}
+              >
+                <span className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full border border-gray-300 bg-gray-300"></span>
+                <span>All</span>
+              </div>
               {divisions.map((division) => (
                 <div
-                  className="flex items-center gap-x-2 text-sm md:text-base whitespace-nowrap flex-shrink-0"
+                  className={`flex items-center gap-x-2 text-sm md:text-base whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-50 px-2 py-1 rounded ${
+                    selectedDivision?.id === division.id ? "bg-blue-100" : ""
+                  }`}
                   key={division.id}
+                  onClick={() => {
+                    setSelectedDivision(
+                      selectedDivision?.id === division.id ? null : division
+                    );
+                    setSelectedDistrict(null);
+                    setCurrentPage(1);
+                  }}
                 >
                   <span className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full border border-gray-300 bg-gray-300"></span>
                   <span>{division?.name}</span>
@@ -394,13 +434,74 @@ const Candidates = () => {
               </div>
             </div>
           </div>
-        </section> */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {candidatesData.map((candidate) => (
-            <CandidateCard key={candidate?._id} candidate={candidate} />
-          ))}
         </section>
-        <p className="text-center font-bold mt-8">Load on scroll...</p>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {filteredCandidates
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((candidate) => (
+              <CandidateCard key={candidate?._id} candidate={candidate} />
+            ))}
+        </section>
+
+        {/* Pagination Controls */}
+        <div
+          id="pagination"
+          className="flex justify-center items-center gap-2 mt-8 mb-4"
+        >
+          <button
+            onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 rounded-md ${
+              currentPage === 1
+                ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                : "bg-green-600 text-white hover:bg-green-700"
+            }`}
+          >
+            Previous
+          </button>
+
+          <div className="flex items-center gap-2">
+            {Array.from(
+              { length: Math.ceil(filteredCandidates.length / itemsPerPage) },
+              (_, i) => i + 1
+            ).map((pageNum) => (
+              <button
+                key={pageNum}
+                onClick={() => handlePageChange(pageNum)}
+                className={`w-8 h-8 rounded-md ${
+                  currentPage === pageNum
+                    ? "bg-green-600 text-white"
+                    : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                }`}
+              >
+                {pageNum}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() =>
+              handlePageChange(
+                Math.min(
+                  currentPage + 1,
+                  Math.ceil(filteredCandidates.length / itemsPerPage)
+                )
+              )
+            }
+            disabled={
+              currentPage ===
+              Math.ceil(filteredCandidates.length / itemsPerPage)
+            }
+            className={`px-4 py-2 rounded-md ${
+              currentPage ===
+              Math.ceil(filteredCandidates.length / itemsPerPage)
+                ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                : "bg-green-600 text-white hover:bg-green-700"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
