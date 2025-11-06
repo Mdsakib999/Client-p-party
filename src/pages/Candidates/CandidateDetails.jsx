@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router";
-import fallbackImage from "../../assets/logo.png";
 
 export default function CandidateDetails() {
   const { state: details } = useLocation();
@@ -37,10 +36,16 @@ export default function CandidateDetails() {
         <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <img
-              src={bigImage}
+              src={
+                bigImage ||
+                "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg"
+              }
               alt={details.name}
               className="w-full md:w-96 h-96 object-cover rounded-xl shadow"
-              onError={(e) => (e.currentTarget.src = fallbackImage)}
+              onError={(e) =>
+                (e.currentTarget.src =
+                  "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
+              }
             />
             <div className="flex-1">
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
