@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function CandidateCard({ candidate }) {
   return (
     <Link state={candidate} to={`${candidate._id}`}>
-      <div className="rounded-lg lg:w-80 xl:w-96 max-w-[350px] h-[350px] mx-auto hover:shadow group">
+      <div className="rounded-lg lg:w-80 xl:w-80 max-w-[300px] h-[350px] mx-auto hover:shadow group">
         <img
           className="w-full h-64 rounded-t-lg"
           src={candidate?.photos?.[0]}
