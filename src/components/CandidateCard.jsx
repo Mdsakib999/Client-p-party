@@ -6,7 +6,10 @@ export default function CandidateCard({ candidate }) {
       <div className="rounded-lg lg:w-80 xl:w-80 max-w-[300px] h-[350px] mx-auto hover:shadow group">
         <img
           className="w-full h-64 rounded-t-lg"
-          src={candidate?.photos?.[0]}
+          src={
+            candidate?.photos?.[0] ||
+            "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg"
+          }
           alt={`${candidate?.name}'s photo`}
         />
         <div className="mt-3 group-hover:p-3 group-hover:mt-0 duration-300">
