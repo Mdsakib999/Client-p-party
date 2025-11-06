@@ -108,8 +108,8 @@ const Candidates = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Our Candidates
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight text-center">
+            Our nominees for the <br /> 2025 elections
           </h2>
           {/* <div className="w-full max-w-5xl">
             <div ref={containerRef} className="relative z-10">

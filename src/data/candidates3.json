@@ -301,10 +301,6 @@
       {
         "actual_place_name": "Dhaka-8",
         "election_area_name": "Parts of Dhaka city"
-      },
-      {
-        "actual_place_name": "Dhaka-6",
-        "election_area_name": "Historic constituency (previously represented)"
       }
     ],
     "life_activities": "city politics, business philanthropy, party organisation",
@@ -542,11 +538,8 @@
       {
         "actual_place_name": "Chattogram-10",
         "election_area_name": "Chattogram city"
-      },
-      {
-        "actual_place_name": "Chattogram-8",
-        "election_area_name": "Chattogram city (former)"
       }
+
     ],
     "life_activities": "party leadership, economic policy",
     "other_income_sources": ["business"],
