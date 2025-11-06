@@ -2,7 +2,7 @@ import axios from "axios";
 import candidatesBanner from "../../assets/candidates-banner.jpg";
 import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ListFilter, Search } from "lucide-react";
-import candidatesData from "../../data/candidates.json";
+import candidatesData from "../../data/candidates2.json";
 import CandidateCard from "../../components/CandidateCard";
 
 const Candidates = () => {
@@ -393,8 +393,8 @@ const Candidates = () => {
           </div>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {candidatesData.slice(0, 12).map((candidate) => (
-            <CandidateCard key={candidate._id} candidate={candidate} />
+          {candidatesData.map((candidate) => (
+            <CandidateCard key={candidate?._id} candidate={candidate} />
           ))}
         </section>
         <p className="text-center font-bold mt-8">Load on scroll...</p>
