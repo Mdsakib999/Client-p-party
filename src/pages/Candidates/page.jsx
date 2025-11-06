@@ -15,6 +15,8 @@ const Candidates = () => {
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const containerRef = useRef(null);
   const searchInputRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   useEffect(() => {
     fetchDivisions();
@@ -396,11 +398,67 @@ const Candidates = () => {
           </div>
         </section> */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {candidatesData.map((candidate) => (
-            <CandidateCard key={candidate?._id} candidate={candidate} />
-          ))}
+          {candidatesData
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((candidate) => (
+              <CandidateCard key={candidate?._id} candidate={candidate} />
+            ))}
         </section>
-        <p className="text-center font-bold mt-8">Load on scroll...</p>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center items-center gap-2 mt-8 mb-4">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 rounded-md ${
+              currentPage === 1
+                ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+          >
+            Previous
+          </button>
+
+          <div className="flex items-center gap-2">
+            {Array.from(
+              { length: Math.ceil(candidatesData.length / itemsPerPage) },
+              (_, i) => i + 1
+            ).map((pageNum) => (
+              <button
+                key={pageNum}
+                onClick={() => setCurrentPage(pageNum)}
+                className={`w-8 h-8 rounded-md ${
+                  currentPage === pageNum
+                    ? "bg-green-600 text-white"
+                    : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                }`}
+              >
+                {pageNum}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() =>
+              setCurrentPage((prev) =>
+                Math.min(
+                  prev + 1,
+                  Math.ceil(candidatesData.length / itemsPerPage)
+                )
+              )
+            }
+            disabled={
+              currentPage === Math.ceil(candidatesData.length / itemsPerPage)
+            }
+            className={`px-4 py-2 rounded-md ${
+              currentPage === Math.ceil(candidatesData.length / itemsPerPage)
+                ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                : "bg-green-600 text-white hover:bg-green-700"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
