@@ -52,14 +52,14 @@ export default function CandidateDetails() {
                 ))}
               </p>
 
-              {details.personalInfo?.birthDate && (
+              {/* {details.personalInfo?.birthDate && (
                 <div className="flex items-center gap-2 mb-3 text-gray-600">
                   <Calendar className="w-5 h-5 text-gray-500" />
                   <p className="text-sm font-medium">
                     Date of Birth: {details.personalInfo.birthDate}
                   </p>
                 </div>
-              )}
+              )} */}
 
               {details.overallSummary && (
                 <p className="text-gray-700 text-justify mt-5">
@@ -82,7 +82,7 @@ export default function CandidateDetails() {
                 className={`flex-1 py-4 text-xs sm:text-sm md:text-base text-center font-semibold ${
                   activeTab === tab
                     ? "bg-gray-100 border-gray-400 text-gray-600"
-                    : "text-gray-400"
+                    : "text-gray-600"
                 }`}
               >
                 {tab === "details"
@@ -102,8 +102,8 @@ export default function CandidateDetails() {
                 {details.personalInfo && (
                   <section>
                     <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <User className="w-6 h-6 text-gray-500" />
-                      Personal Information
+                      {/* <User className="w-6 h-6 text-gray-500" /> */}
+                      {details.name}'s Personal Information
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {details.personalInfo.birthPlace && (
@@ -117,7 +117,8 @@ export default function CandidateDetails() {
                           </div>
                         </div>
                       )}
-                      {details.personalInfo.nationality && (
+
+                      {/* {details.personalInfo.nationality && (
                         <div className="flex items-start gap-3">
                           <Flag className="w-5 h-5 text-gray-500 mt-1" />
                           <div>
@@ -127,8 +128,20 @@ export default function CandidateDetails() {
                             </span>
                           </div>
                         </div>
-                      )}
+                      )} */}
+                      {/* Election Constituency */}
                     </div>
+                  </section>
+                )}
+                {details.electionConstituency && (
+                  <section>
+                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <Map className="w-6 h-6 text-gray-500" />
+                      Voting Area
+                    </h2>
+                    <p className="text-gray-900 font-medium">
+                      {details.electionConstituency}
+                    </p>
                   </section>
                 )}
 
@@ -151,19 +164,6 @@ export default function CandidateDetails() {
                         </p>
                       )}
                     </div>
-                  </section>
-                )}
-
-                {/* Election Constituency */}
-                {details.electionConstituency && (
-                  <section>
-                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <Map className="w-6 h-6 text-gray-500" />
-                      Election Constituency
-                    </h2>
-                    <p className="text-gray-900 font-medium">
-                      {details.electionConstituency}
-                    </p>
                   </section>
                 )}
               </div>
