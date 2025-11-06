@@ -70,7 +70,7 @@ export default function CandidateDetails() {
                         <p className="text-sm text-gray-500">
                           Current Position
                         </p>
-                        <ul className="list-disc list-inside text-gray-900">
+                        <ul className=" text-gray-900 font-semibold">
                           {details.portfolio.latest.map((position, idx) => (
                             <li key={idx} className="text-base">
                               {position}
@@ -85,7 +85,7 @@ export default function CandidateDetails() {
                         <p className="text-sm text-gray-500">
                           Previous Positions
                         </p>
-                        <ul className="list-disc list-inside text-gray-900">
+                        <ul className=" text-gray-900">
                           {details.portfolio.previous.map((position, idx) => (
                             <li key={idx} className="text-base">
                               {position}
@@ -97,7 +97,7 @@ export default function CandidateDetails() {
                 </div>
               )}
 
-              <p className="text-gray-500 font-semibold my-3">
+              <p className="text-green-800 font-semibold my-3">
                 {details?.designations?.map((designation, idx) => (
                   <span key={idx}>{designation} | </span>
                 ))}
@@ -155,13 +155,13 @@ export default function CandidateDetails() {
                 {details.personal_info && (
                   <section>
                     <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <User className="w-6 h-6 text-gray-500" />
+                      <User className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
                       Personal Information
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {details.personal_info.birth_date && (
                         <div className="flex items-start gap-3">
-                          <Calendar className="w-5 h-5 text-gray-500 mt-1" />
+                          <Calendar className="w-10 h-10 text-white  bg-green-700 p-2 rounded-md" />
                           <div>
                             <p className="text-sm text-gray-500">Birth Date</p>
                             <span className="text-gray-900 font-medium">
@@ -172,7 +172,7 @@ export default function CandidateDetails() {
                       )}
                       {details.personal_info.birth_place && (
                         <div className="flex items-start gap-3">
-                          <MapPin className="w-5 h-5 text-gray-500 mt-1" />
+                          <MapPin className="w-10 h-10 text-white  bg-green-700 p-2 rounded-md" />
                           <div>
                             <p className="text-sm text-gray-500">Birth Place</p>
                             <span className="text-gray-900 font-medium">
@@ -201,7 +201,7 @@ export default function CandidateDetails() {
                   details.election_constituencies.length > 0 && (
                     <section>
                       <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Map className="w-6 h-6 text-gray-500" />
+                        <Map className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
                         Election Constituencies
                       </h2>
                       <div className="space-y-4  md:w-[50%]">
@@ -223,12 +223,44 @@ export default function CandidateDetails() {
                       </div>
                     </section>
                   )}
+                {details.business_income_source_professional_career && (
+                  <section>
+                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <Briefcase className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
+                      Professional Career & Income Sources
+                    </h2>
+                    <div className="space-y-4 md:w-[50%]">
+                      <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        {Array.isArray(
+                          details.business_income_source_professional_career
+                        ) ? (
+                          <ul className="list-disc list-inside space-y-2">
+                            {details.business_income_source_professional_career.map(
+                              (career, idx) => (
+                                <li
+                                  key={idx}
+                                  className="text-gray-700 list-none"
+                                >
+                                  {career}
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        ) : (
+                          <p className="text-gray-700">
+                            {details.business_income_source_professional_career}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </section>
+                )}
 
                 {/* Education */}
                 {details.academic_career && (
                   <section>
                     <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <GraduationCap className="w-6 h-6 text-gray-500" />
+                      <GraduationCap className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
                       Education
                     </h2>
                     <div className="space-y-2">
@@ -260,7 +292,7 @@ export default function CandidateDetails() {
                 details.political_career.length > 0 ? (
                   <section>
                     <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <Briefcase className="w-6 h-6 text-gray-500" />
+                      <Briefcase className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
                       Political Journey
                     </h2>
 
