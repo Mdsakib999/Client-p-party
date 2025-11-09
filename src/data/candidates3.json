@@ -24,7 +24,7 @@
     "academic_career": {
       "schools": ["Dinajpur Missionary School", "Dinajpur Girls' School"],
       "college": "Surendranath College (enrolled)",
-      "university": "Not available",
+      "university": "Not Available",
       "degree": "No formal degree (self-educated)"
     },
     "business_income_source_professional_career": ["Career politician"],
@@ -45,16 +45,19 @@
     "election_constituencies": [
       {
         "actual_place_name": "Feni-1",
-        "election_area_name": "Feni Sadar Upazila"
+        "election_area_name": "porshuram Upazila, chagolnaiya upazila, fulgazi upozila"
       },
-      { "actual_place_name": "Bogura-7", "election_area_name": "Bogura area" },
+      {
+        "actual_place_name": "Bogura-7",
+        "election_area_name": "gabtoli upazila, shajaha upazila"
+      },
       {
         "actual_place_name": "Dinajpur-3",
-        "election_area_name": "Dinajpur area"
+        "election_area_name": "Dinajpur sadar upozila"
       }
     ],
     "life_activities": "Leading BNP, nationwide political mobilization",
-    "other_income_sources": ["Not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [
       "https://www.bnpbd.org/leader-details/chairperson-begum-khaleda-zia"
     ],
@@ -105,7 +108,7 @@
       }
     ],
     "life_activities": "Leading party strategy from exile; party mobilisation",
-    "other_income_sources": ["Not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [
       "https://www.tariquerahman.info/",
       "https://www.bnpbd.org/leader-details/acting-chairman-tarique-rahman"
@@ -151,11 +154,13 @@
       }
     ],
     "life_activities": "Party leadership, campaigning",
-    "other_income_sources": ["Not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [
       "https://www.bnpbd.org/leader-details/mirza-fakhrul-islam-alamgir"
     ],
-    "photos": ["https://i.ibb.co.com/N6rqpN0n/download-2.jpg"],
+    "photos": [
+      "https://b.bssnews.net/assets/news_photos/2025/09/04/image-308684-1757004914.jpg"
+    ],
     "overall_summary": "Mirza Fakhrul Islam Alamgir (born 26 January 1948) is the Secretary General of BNP and a seasoned economist and parliamentarian. With decades of political experience, he has served as one of the party’s principal spokespersons and strategists during times of crisis. Widely respected for his calm and disciplined leadership, Fakhrul represents the party’s moderate reformist wing and has been announced as the BNP candidate for Thakurgaon-1.",
     "district": ["Thakurgaon"],
     "division": ["Rangpur"]
@@ -163,20 +168,20 @@
   {
     "_id": 4,
     "name": "Salahuddin Ahmed",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (2016 - present)"]
+      "latest": ["Standing committee member, BNP (2016 - present)"]
     },
     "designations": [
-      "member, national standing committee, BNP",
+      "member, national Standing committee, BNP",
       "former state minister"
     ],
     "personal_info": {
       "birth_date": "30 June 1962",
       "birth_place": "Chakaria, Cox's Bazar",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
       "schools": ["Shilkhali High School, Pekua"],
@@ -195,14 +200,14 @@
     "election_constituencies": [
       {
         "actual_place_name": "Cox's Bazar-1",
-        "election_area_name": "Chakaria and Pekua Upazilas"
+        "election_area_name": "Chakaria Upazila and Pekua Upazila"
       }
     ],
     "life_activities": "national committee work, constituency organisation",
-    "other_income_sources": ["not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [],
     "photos": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ30pEMwpWqiGrUYxdMYPU2xkzyt5-y5ID6w&s"
+      "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/media/2025/09/20/salahuddin-ahmed-d9cfbd2d4b80b1b1fc77d4c71c8d876a-5a1e16acdb89deae15c9b66a44cfb7da.jpg?jadewits_media_id=51185"
     ],
     "overall_summary": "Salahuddin Ahmed (born 30 June 1962) is a senior BNP leader and member of the party’s National Standing Committee. A former State Minister and multiple-term Member of Parliament from Cox’s Bazar-1, he has played a significant role in BNP’s national and local-level policy coordination. A lawyer by profession, he continues to be an active organiser in the Chattogram division and has been nominated again for Cox’s Bazar-1.",
     "district": ["Cox's Bazar"],
@@ -211,13 +216,13 @@
   {
     "_id": 5,
     "name": "Dr. Khandaker Mosharraf Hossain",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (1994 - present)"]
+      "latest": ["Standing committee member, BNP (1994 - present)"]
     },
     "designations": [
-      "member, national standing committee, BNP",
+      "member, national Standing committee, BNP",
       "former cabinet minister",
       "PhD in Geology"
     ],
@@ -225,11 +230,11 @@
       "birth_date": "01 October 1946",
       "birth_place": "Goyeshpur, Cumilla",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
+      "schools": ["Not Available"],
+      "college": "Not Available",
       "university": [
         "University of Dhaka",
         "University of London",
@@ -252,12 +257,12 @@
     ],
     "election_constituencies": [
       {
-        "actual_place_name": "Cumilla-2",
+        "actual_place_name": "Cumilla-1",
         "election_area_name": "Daudkandi and Meghna Upazilas"
       }
     ],
     "life_activities": "academic turned politician; public health & education policy",
-    "other_income_sources": ["not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [],
     "photos": ["https://dailyasianage.com/library/1727726707_9.jpg"],
     "overall_summary": "Dr. Khandaker Mosharraf Hossain (born 1 October 1946) is a veteran BNP Standing Committee member and an academic-turned-politician. With a PhD in Geology from Imperial College London, he previously served as a cabinet minister in several key departments. Known for his expertise in development policy and governance, Dr. Hossain remains an influential voice in BNP’s policymaking. He is closely associated with Cumilla-2 constituency, representing the Chattogram division.",
@@ -267,13 +272,13 @@
   {
     "_id": 6,
     "name": "Mirza Abbas Uddin Ahmed",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (2009 - present)"]
+      "latest": ["Standing committee member, BNP (2009 - present)"]
     },
     "designations": [
-      "member, national standing committee, BNP",
+      "member, national Standing committee, BNP",
       "former mayor of Dhaka City Corporation",
       "former cabinet minister"
     ],
@@ -281,7 +286,7 @@
       "birth_date": "07 February 1951",
       "birth_place": "Kishoreganj",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
       "schools": ["Local schools in Kishoreganj"],
@@ -300,7 +305,11 @@
     "election_constituencies": [
       {
         "actual_place_name": "Dhaka-8",
-        "election_area_name": "Parts of Dhaka city"
+        "election_area_name": "wards 8, 9, 10, 11, 12, 13, 19, 20 & 21 of Dhaka South City Corporation (Motijheel, Shahbagh, Ramna, Paltan and Shahjahanpur)"
+      },
+      {
+        "actual_place_name": "Dhaka-6",
+        "election_area_name": "Historic constituency (previously represented)"
       }
     ],
     "life_activities": "city politics, business philanthropy, party organisation",
@@ -315,101 +324,14 @@
   },
   {
     "_id": 7,
-    "name": "Barrister Md. Nowshad Zamir",
-    "position": "candidate, BNP",
-    "category": "parliamentary candidate",
-    "portfolio": {
-      "latest": ["BNP candidate for Panchagarh-1 (2025 announcement)"]
-    },
-    "designations": ["Barrister, BNP leader"],
-    "personal_info": {
-      "birth_date": "not available",
-      "birth_place": "Panchagarh",
-      "nationality": "Bangladeshi",
-      "website_or_social": [
-        "https://www.linkedin.com/in/muhammadnawshadzamir/",
-        "https://www.facebook.com/nawshadzamirp1/"
-      ]
-    },
-    "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
-      "university": "not available",
-      "degree": "Law (Barrister)"
-    },
-    "business_income_source_professional_career": [
-      "Law practice, political work"
-    ],
-    "political_career": [
-      { "year": "2025", "event": "Nominated by BNP for Panchagarh-1" }
-    ],
-    "election_constituencies": [
-      {
-        "actual_place_name": "Panchagarh-1",
-        "election_area_name": "Panchagarh Sadar, Tentulia, Atwari"
-      }
-    ],
-    "life_activities": "local politics in Panchagarh",
-    "other_income_sources": ["not available"],
-    "social_links": [
-      "https://www.linkedin.com/in/muhammadnawshadzamir/",
-      "https://www.facebook.com/nawshadzamirp1/"
-    ],
-    "photos": ["https://i.ibb.co.com/SD7cydvB/download-1.jpg"],
-    "overall_summary": "Barrister Md. Nowshad Zamir is a rising BNP leader and candidate for Panchagarh-1. Trained in law and active in grassroots politics, he represents the new generation of educated professionals entering the party’s ranks. With strong community ties and a reputation for integrity, he has been nominated as BNP’s official candidate for the northern district of Panchagarh.",
-    "district": ["Panchagarh"],
-    "division": ["Rangpur"]
-  },
-  {
-    "_id": 8,
-    "name": "Farhad Hossain Azad",
-    "position": "candidate, BNP",
-    "category": "parliamentary candidate",
-    "portfolio": {
-      "latest": ["BNP candidate for Panchagarh-2 (2025 announcement)"]
-    },
-    "designations": ["BNP leader"],
-    "personal_info": {
-      "birth_date": "1966",
-      "birth_place": "Menagram, Boda, Panchagarh",
-      "nationality": "Bangladeshi",
-      "website_or_social": "not available"
-    },
-    "academic_career": {
-      "schools": ["Pachpeer Primary School", "Boda Bohumukhi High School"],
-      "college": "Rajshahi Govt. College",
-      "university": "University of Dhaka",
-      "degree": "LLB"
-    },
-    "business_income_source_professional_career": ["Law, politics"],
-    "political_career": [
-      { "year": "2018", "event": "Previously contested Panchagarh-2" },
-      { "year": "2025", "event": "Nominated by BNP for Panchagarh-2" }
-    ],
-    "election_constituencies": [
-      {
-        "actual_place_name": "Panchagarh-2",
-        "election_area_name": "Boda and Debiganj"
-      }
-    ],
-    "life_activities": "local organising in Panchagarh",
-    "other_income_sources": ["not available"],
-    "social_links": [],
-    "photos": ["https://i.ibb.co.com/Tx4HmHgF/download.jpg"],
-    "overall_summary": "Farhad Hossain Azad (born 1966) is a BNP leader from Panchagarh, nominated for Panchagarh-2. A lawyer by profession, he has been involved in BNP politics since his student days and previously contested elections from the same seat. Known for his organisational work and close connection with local communities, he continues to play a key role in BNP’s grassroots mobilisation in the Rangpur division.",
-    "district": ["Panchagarh"],
-    "division": ["Rangpur"]
-  },
-  {
-    "_id": 9,
     "name": "Dr. Abdul Moyeen Khan",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (2009 - present)"]
+      "latest": ["Standing committee member, BNP (2009 - present)"]
     },
     "designations": [
-      "standing committee member",
+      "Standing committee member",
       "former minister",
       "former professor"
     ],
@@ -417,11 +339,11 @@
       "birth_date": "01 January 1947",
       "birth_place": "Narsingdi",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
+      "schools": ["Not Available"],
+      "college": "Not Available",
       "university": ["University of Sussex", "University of Dhaka"],
       "degree": "PhD (Physics)"
     },
@@ -438,7 +360,7 @@
     "election_constituencies": [
       {
         "actual_place_name": "Narsingdi-2",
-        "election_area_name": "Palash and Monohardi Upazilas"
+        "election_area_name": "Palash and Narsingdi sadar Upazilas union: amdia, pachdona & meherpara union"
       }
     ],
     "life_activities": "policy, party strategy, public speaking",
@@ -452,10 +374,100 @@
     "division": ["Dhaka"]
   },
   {
+    "_id": 8,
+    "name": "Barrister Md. Nowshad Zamir",
+    "position": "Candidate, BNP",
+    "category": "Parliamentary Candidate",
+    "portfolio": {
+      "latest": ["BNP candidate for Panchagarh-1 (2025 announcement)"]
+    },
+    "designations": ["Barrister, BNP leader"],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Panchagarh",
+      "nationality": "Bangladeshi",
+      "website_or_social": [
+        "https://www.linkedin.com/in/muhammadnawshadzamir/",
+        "https://www.facebook.com/nawshadzamirp1/"
+      ]
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Law (Barrister)"
+    },
+    "business_income_source_professional_career": [
+      "Law practice, political work"
+    ],
+    "political_career": [
+      { "year": "2025", "event": "Nominated by BNP for Panchagarh-1" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Panchagarh-1",
+        "election_area_name": "Panchagarh Sadar, Tentulia upazila, Atwari upazila"
+      }
+    ],
+    "life_activities": "local politics in Panchagarh",
+    "other_income_sources": ["Not Available"],
+    "social_links": [
+      "https://www.linkedin.com/in/muhammadnawshadzamir/",
+      "https://www.facebook.com/nawshadzamirp1/"
+    ],
+    "photos": [
+      "https://media.licdn.com/dms/image/v2/C4D03AQEqbFR5ek6ARw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623275982663?e=1764201600&v=beta&t=e-vgNSQTWAF3HJYLySx8IjC2ByP4b42pDxXSInAJEuk"
+    ],
+    "overall_summary": "Barrister Md. Nowshad Zamir is a rising BNP leader and candidate for Panchagarh-1. Trained in law and active in grassroots politics, he represents the new generation of educated professionals entering the party’s ranks. With strong community ties and a reputation for integrity, he has been nominated as BNP’s official candidate for the northern district of Panchagarh.",
+    "district": ["Panchagarh"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 9,
+    "name": "Farhad Hossain Azad",
+    "position": "Candidate, BNP",
+    "category": "Parliamentary Candidate",
+    "portfolio": {
+      "latest": ["BNP candidate for Panchagarh-2 (2025 announcement)"]
+    },
+    "designations": ["BNP leader"],
+    "personal_info": {
+      "birth_date": "1966",
+      "birth_place": "Menagram, Boda, Panchagarh",
+      "nationality": "Bangladeshi",
+      "website_or_social": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Pachpeer Primary School", "Boda Bohumukhi High School"],
+      "college": "Rajshahi Govt. College",
+      "university": "University of Dhaka",
+      "degree": "LLB"
+    },
+    "business_income_source_professional_career": ["Law, politics"],
+    "political_career": [
+      { "year": "2018", "event": "Previously contested Panchagarh-2" },
+      { "year": "2025", "event": "Nominated by BNP for Panchagarh-2" }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Panchagarh-2",
+        "election_area_name": "Boda upazila's union, Boda municipality and Debiganj upazila"
+      }
+    ],
+    "life_activities": "local organising in Panchagarh",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://samakal.com/media/imgAll/2024May/bnp-1714928490.jpg"],
+    "overall_summary": "Farhad Hossain Azad (born 1966) is a BNP leader from Panchagarh, nominated for Panchagarh-2. A lawyer by profession, he has been involved in BNP politics since his student days and previously contested elections from the same seat. Known for his organisational work and close connection with local communities, he continues to play a key role in BNP’s grassroots mobilisation in the Rangpur division.",
+    "district": ["Panchagarh"],
+    "division": ["Rangpur"]
+  },
+
+  {
     "_id": 10,
     "name": "Ishraque Hossain",
-    "position": "member, BNP central international affairs committee",
-    "category": "youth/city leadership and central committee member",
+    "position": "Member, BNP central international affairs committee",
+    "category": "Youth leadership and central committee member",
     "portfolio": {
       "latest": [
         "Declared mayor of Dhaka South City Corporation, BNP nominee for Dhaka-6"
@@ -473,7 +485,7 @@
     },
     "academic_career": {
       "schools": ["Scholastica School (O/A levels)"],
-      "college": "not available",
+      "college": "Not Available",
       "university": "University of Hertfordshire (UK)",
       "degree": "BSc & MSc in Mechanical Engineering"
     },
@@ -488,7 +500,7 @@
     "election_constituencies": [
       {
         "actual_place_name": "Dhaka-6",
-        "election_area_name": "Sutrapur, Kotwali, Wari"
+        "election_area_name": "ward - 34, 37,38,39,40,41,42,43,44,45,46 of Dhaka south city corporation(sutrapur,wari, gendaria, kotowali partially"
       }
     ],
     "life_activities": "urban politics, youth outreach, media management",
@@ -504,24 +516,24 @@
   {
     "_id": 11,
     "name": "Amir Khasru Mahmud Chowdhury",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (2001 - present)"],
+      "latest": ["Standing committee member, BNP (2001 - present)"],
       "previous": [
         "minister of commerce (2001–2004)",
         "founder, Chittagong Stock Exchange"
       ]
     },
     "designations": [
-      "standing committee member, BNP",
+      "Standing committee member, BNP",
       "former commerce minister"
     ],
     "personal_info": {
       "birth_date": "10 November 1949",
       "birth_place": "North Kattali, Chattogram",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
       "schools": ["Chittagong Collegiate School"],
@@ -537,15 +549,14 @@
     "election_constituencies": [
       {
         "actual_place_name": "Chattogram-10",
-        "election_area_name": "Chattogram city"
+        "election_area_name": "Chattogram city corporation ward no - 8, 11, 12, 13, 14, 24, 25 ,26"
       }
-
     ],
     "life_activities": "party leadership, economic policy",
     "other_income_sources": ["business"],
     "social_links": [],
     "photos": [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Amir_Khasru_Mahmud_Chowdhury.jpg"
+      "https://media.prothomalo.com/prothomalo-english%2F2025-04-28%2Fyeaujkrj%2FAmir.avif?rect=0%2C0%2C1200%2C675&w=1200&ar=16%3A9&auto=format%2Ccompress&ogImage=true&mode=crop&overlay=&overlay_position=bottom&overlay_width_pct=1"
     ],
     "overall_summary": "Amir Khasru Mahmud Chowdhury (born 10 November 1949) is a senior BNP Standing Committee member, economist, and former Minister of Commerce. As the founder of the Chittagong Stock Exchange, he played a pioneering role in developing Bangladesh’s financial sector. A respected policymaker, he continues to guide BNP’s economic and trade policy. He represents Chattogram city constituencies and remains an influential figure in national politics.",
     "district": ["Chattogram"],
@@ -554,10 +565,10 @@
   {
     "_id": 12,
     "name": "Dr. A. Z. M. Zahid Hossain",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (2024 - present)"],
+      "latest": ["Standing committee member, BNP (2024 - present)"],
       "previous": ["Vice-Chairman, BNP", "Physician to Khaleda Zia"]
     },
     "designations": ["Standing Committee Member", "Professor of Urology"],
@@ -565,11 +576,11 @@
       "birth_date": "25 December 1960",
       "birth_place": "Gafargaon, Mymensingh",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
+      "schools": ["Not Available"],
+      "college": "Not Available",
       "university": "Mymensingh Medical College",
       "degree": ["MBBS", "FCPS", "MS (Urology)"]
     },
@@ -584,7 +595,7 @@
     "election_constituencies": [
       {
         "actual_place_name": "Dinajpur-6",
-        "election_area_name": "Dinajpur constituency"
+        "election_area_name": "Nawabganj Upazila, Birampum Upazila, Hakimpur Upazila & Ghoraghat Upazila"
       }
     ],
     "life_activities": "medical advocacy, constituency organisation",
@@ -600,10 +611,10 @@
   {
     "_id": 13,
     "name": "Major (Retd.) Hafiz Uddin Ahmed",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (current)"],
+      "latest": ["Standing committee member, BNP (current)"],
       "previous": ["Minister of Water Resources", "Minister of Commerce"]
     },
     "designations": ["Bir Bikrom", "Standing Committee Member"],
@@ -611,11 +622,11 @@
       "birth_date": "29 October 1944",
       "birth_place": "Bhola",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
+      "schools": ["Not Available"],
+      "college": "Not Available",
       "university": "University of Dhaka (reported)",
       "degree": "M.A. Political Science"
     },
@@ -630,7 +641,7 @@
     "election_constituencies": [
       {
         "actual_place_name": "Bhola-3",
-        "election_area_name": "Lalmohan and Tajumuddin"
+        "election_area_name": "Lalmohan and Tajumuddin Upazila"
       }
     ],
     "life_activities": "Veteran leader, constituency politics",
@@ -639,17 +650,17 @@
     "photos": [
       "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/media/2024/09/03/Hafizuddin-Ahmed-e58c7e3839693b5a15a098e7f5858227.jpg"
     ],
-    "overall_summary": "Major (Retd.) Hafiz Uddin Ahmed (born 29 October 1944) is a decorated war veteran (Bir Bikrom), BNP Standing Committee member, and former Minister of Water Resources and Commerce. Having served multiple terms as MP from Bhola-3, he is known for his disciplined leadership, integrity, and long-standing contribution to Bangladesh’s liberation and political history. He remains an influential figure in Barishal division politics.",
+    "overall_summary": "Major (Retd.) Hafiz Uddin Ahmed (born 29 October 1944) is a decorated war veteran (Bir Bikrom), BNP Standing Committee member, and former Minister of Water Resources and Commerce. Having served multiple terms as MP from Bhola-3, he is known for his disciplined leadership, integrity, and long-Standing contribution to Bangladesh’s liberation and political history. He remains an influential figure in Barishal division politics.",
     "district": ["Bhola"],
     "division": ["Barishal"]
   },
   {
     "_id": 14,
     "name": "Iqbal Hasan Mahmud Tuku",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (current)"],
+      "latest": ["Standing committee member, BNP (current)"],
       "previous": ["State Minister of Power", "State Minister of Agriculture"]
     },
     "designations": ["Standing Committee Member", "Former State Minister"],
@@ -657,13 +668,13 @@
       "birth_date": "1950",
       "birth_place": "Sirajganj",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
-      "university": "not available",
-      "degree": "not available"
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
     },
     "business_income_source_professional_career": ["Politician"],
     "political_career": [
@@ -673,11 +684,11 @@
     "election_constituencies": [
       {
         "actual_place_name": "Sirajganj-2",
-        "election_area_name": "Sirajganj Sadar and Kamarkhanda"
+        "election_area_name": "Sirajganj Sadar upazila's union Bohuli, Shialkol, khokshabari, kaowakola, kaliahoripur ,saidabad , Sirajganj municipality & Kamarkhanda Upazila"
       }
     ],
     "life_activities": "party leadership, constituency organisation",
-    "other_income_sources": ["not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [],
     "photos": [
       "https://imrs.rtvonline.com/api/image-service/resize?w=500&h=281.25&q=75&img=/media/images/2025/01/16/image-308993-1737010439.jpg"
@@ -689,10 +700,10 @@
   {
     "_id": 15,
     "name": "Babu Gayeshwar Chandra Roy",
-    "position": "standing committee member, BNP",
-    "category": "top/senior leadership",
+    "position": "Standing committee member, BNP",
+    "category": "Top leadership",
     "portfolio": {
-      "latest": ["standing committee member, BNP (present)"],
+      "latest": ["Standing committee member, BNP (present)"],
       "previous": [
         "State Minister for Environment",
         "General Secretary, Jubo Dal"
@@ -703,13 +714,13 @@
       "birth_date": "01 November 1951",
       "birth_place": "Keraniganj, Dhaka",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
-      "university": "not available",
-      "degree": "not available"
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
     },
     "business_income_source_professional_career": ["Politician"],
     "political_career": [
@@ -719,11 +730,11 @@
     "election_constituencies": [
       {
         "actual_place_name": "Dhaka-3",
-        "election_area_name": "Keraniganj Upazila"
+        "election_area_name": "Keraniganj Upazila's union jinjira, aganogor, teghria, konda & shuvaddho union"
       }
     ],
     "life_activities": "youth politics, party organisation",
-    "other_income_sources": ["not available"],
+    "other_income_sources": ["Not Available"],
     "social_links": [],
     "photos": [
       "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/dten/2019/04/gayeshwar-1556184494404.jpg"
@@ -735,8 +746,8 @@
   {
     "_id": 16,
     "name": "Air Vice Marshal (Retd.) Altaf Hossain Chowdhury",
-    "position": "vice-chairman, BNP",
-    "category": "senior leadership",
+    "position": "Vice-Chairman, BNP",
+    "category": "Senior leadership",
     "portfolio": {
       "latest": ["vice-chairman, BNP (2016 - present)"],
       "previous": [
@@ -754,12 +765,12 @@
       "birth_date": "1942",
       "birth_place": "Patuakhali",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
-      "university": "not available",
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
       "degree": "Military education"
     },
     "business_income_source_professional_career": [
@@ -773,7 +784,7 @@
     "election_constituencies": [
       {
         "actual_place_name": "Patuakhali-1",
-        "election_area_name": "Patuakhali Sadar, Dumki, Mirzaganj"
+        "election_area_name": "Patuakhali Sadar, Dumki, Mirzaganj upazila"
       }
     ],
     "life_activities": "veteran affairs, district leadership",
@@ -789,8 +800,8 @@
   {
     "_id": 17,
     "name": "Advocate Harunur Rashid",
-    "position": "BNP national executive committee member",
-    "category": "senior leadership (parliamentary/district)",
+    "position": "Standing committee member, BNP",
+    "category": "Senior leadership",
     "portfolio": {
       "latest": ["BNP national executive committee member"],
       "previous": ["MP, Chapainawabganj-3", "District BNP leader"]
@@ -800,12 +811,12 @@
       "birth_date": "01 January 1962",
       "birth_place": "Chapainawabganj",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
-      "schools": ["not available"],
-      "college": "not available",
-      "university": "not available",
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
       "degree": "LLB"
     },
     "business_income_source_professional_career": ["Law practice", "Politics"],
@@ -825,15 +836,15 @@
     "photos": [
       "https://hoque-associates.com/storage/app/uploads/public/66f/e5a/a77/66fe5aa77f522169448674.jpg"
     ],
-    "overall_summary": "Advocate Harunur Rashid (born 1 January 1962) is a BNP National Executive Committee member and multiple-term MP from Chapainawabganj-3. A practicing lawyer and outspoken parliamentarian, he is known for his strong defence of democratic rights and local governance reforms. His long-standing presence in national politics makes him one of the most influential BNP figures in the Rajshahi division.",
+    "overall_summary": "Advocate Harunur Rashid (born 1 January 1962) is a BNP National Executive Committee member and multiple-term MP from Chapainawabganj-3. A practicing lawyer and outspoken parliamentarian, he is known for his strong defence of democratic rights and local governance reforms. His long-Standing presence in national politics makes him one of the most influential BNP figures in the Rajshahi division.",
     "district": ["Chapainawabganj"],
     "division": ["Rajshahi"]
   },
   {
     "_id": 18,
     "name": "Barkat Ullah Bulu",
-    "position": "vice-chairman, BNP",
-    "category": "senior leadership",
+    "position": "Vice-chairman, BNP",
+    "category": "Senior leadership",
     "portfolio": {
       "latest": ["vice-chairman, BNP (current)"],
       "previous": ["State Minister of Commerce", "MP, Noakhali-3"]
@@ -843,12 +854,12 @@
       "birth_date": "20 December 1956",
       "birth_place": "Begumganj, Noakhali",
       "nationality": "Bangladeshi",
-      "website_or_social": "not available"
+      "website_or_social": "Not Available"
     },
     "academic_career": {
       "schools": ["Bhototoli Bazar Primary School"],
-      "college": "not available",
-      "university": "not available",
+      "college": "Not Available",
+      "university": "Not Available",
       "degree": "Graduate"
     },
     "business_income_source_professional_career": ["Politics", "Business"],
@@ -866,10 +877,1870 @@
     "other_income_sources": ["Business interests"],
     "social_links": [],
     "photos": [
-      "https://cdn.jugantor.com/assets/news_photos/2025/04/04/Untitled-1-67efd3eeb6242.jpg"
+      "https://asset.kalerkantho.com/public/news_images/2022/11/10/220252Untitled-12.jpg"
     ],
     "overall_summary": "Barkat Ullah Bulu (born 20 December 1956) is a BNP Vice-Chairman, former State Minister of Commerce, and long-time Member of Parliament from Noakhali-3. A veteran organiser and influential figure in Chattogram division politics, he has contributed significantly to BNP’s economic and trade policy debates. Known for his pragmatic leadership and close grassroots ties, he continues to play an active role in party affairs.",
     "district": ["Noakhali"],
     "division": ["Chattogram"]
+  },
+  {
+    "_id": 19,
+    "name": "Md. Jahidur Rahman Jahid",
+    "position": "Former MP, Thakurgaon-3",
+    "category": "District/constituency politician",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Thakurgaon-3 (Pirganj–Ranisankail) in the upcoming General Election"
+      ],
+      "previous": [
+        "Member of Parliament for Thakurgaon-3 (11th General Election, 2019–2022)",
+        "Resigned from parliament on December 11, 2022, following BNP’s collective decision",
+        "Only BNP MP to initially take oath of office after 2018 election"
+      ]
+    },
+    "designations": [
+      "Former Member of Parliament (MP), Thakurgaon-3",
+      "BNP nominee for Thakurgaon-3 constituency",
+      "Prominent organizing leader for the BNP in Thakurgaon district"
+    ],
+    "personal_info": {
+      "birth_date": "January 11, 1959",
+      "birth_place": "Thakurgaon, Bangladesh",
+      "address": "Resident of Thakurgaon-3 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Long-serving politician and local leader; specific business or professional details not available"
+    ],
+    "political_career": [
+      {
+        "year": "early career",
+        "event": "Held various positions within local BNP organizational structure in Thakurgaon"
+      },
+      {
+        "year": "2001",
+        "event": "Contested 8th General Election from Thakurgaon-3 as BNP candidate"
+      },
+      {
+        "year": "2008",
+        "event": "Contested 9th General Election from Thakurgaon-3 (lost to Jatiya Party candidate)"
+      },
+      {
+        "year": "2018/2019",
+        "event": "Elected as MP for Thakurgaon-3 in the 11th General Election representing BNP"
+      },
+      {
+        "year": "April 25, 2019",
+        "event": "Took oath as MP despite party’s initial boycott decision"
+      },
+      {
+        "year": "December 11, 2022",
+        "event": "Resigned from parliament with other BNP MPs"
+      },
+      {
+        "year": "2025/2026",
+        "event": "Confirmed by BNP as nominee for next General Election from Thakurgaon-3"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Thakurgaon-3",
+        "election_area_name": "Pirganj Upazila and parts of Ranisankail Upazila"
+      }
+    ],
+    "life_activities": "Dedicated to grassroots political mobilization, maintaining BNP’s organizational strength in Thakurgaon-3, and campaigning for re-election.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/HTbCgcDH/download-5.jpg"],
+    "overall_summary": "Md. Jahidur Rahman Jahid (born 1959) is a senior BNP leader from Thakurgaon and former MP for Thakurgaon-3. He resigned from parliament in 2022 as part of BNP’s political stance and remains the confirmed nominee for the upcoming general election, known for his strong local influence and consistent dedication to party causes.",
+    "district": ["Thakurgaon"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 20,
+    "name": "Md. Sadiq Riaz",
+    "position": "BNP leader",
+    "category": "District/constituency politician",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Dinajpur-2 (Bochaganj–Biral) in the upcoming General Election"
+      ],
+      "previous": [
+        "Held significant local BNP organizational roles (Upazila/District Committee level)"
+      ]
+    },
+    "designations": [
+      "BNP nominee for Dinajpur-2 constituency",
+      "Key organizer and leader for BNP in Bochaganj and Biral Upazilas"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "resident of Bochaganj or Biral Upazila, Dinajpur District, Bangladesh",
+      "address": "Resident of Dinajpur-2 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career rooted in local politics and community leadership; specific business or professional details not available"
+    ],
+    "political_career": [
+      {
+        "year": "prior to nomination",
+        "event": "Dedicated years to local-level politics, focusing on BNP organization and mass contact within Dinajpur-2 area"
+      },
+      {
+        "year": "2025 (November)",
+        "event": "Confirmed by BNP as official candidate for Dinajpur-2 in the 13th General Election"
+      },
+      {
+        "year": "current",
+        "event": "Actively engaged in election preparations, party coordination, and campaigning across Bochaganj and Biral Upazilas"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dinajpur-2",
+        "election_area_name": "Bochaganj and Biral Upazilas"
+      }
+    ],
+    "life_activities": "Focused on political campaigning, organizational strengthening, and representing BNP in Dinajpur-2 for the upcoming General Election.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/ynV2yZ3r/Screenshot-2025-11-06-144427.png"
+    ],
+    "overall_summary": "Md. Sadiq Riaz is a grassroots BNP leader and the confirmed nominee for Dinajpur-2 (Bochaganj–Biral). His selection underscores his strong local presence and dedication to party organization and electoral mobilization in the Rangpur region.",
+    "district": ["Dinajpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 21,
+    "name": "Md. Manzurul Islam",
+    "position": "BNP leader",
+    "category": "district/constituency politician (local frontline leader)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Dinajpur-1 in the upcoming General Election (the 13th/14th Jatiya Sangsad Election)"
+      ],
+      "previous": [
+        "Held various key organizational positions within the local or district unit of BNP (Upazila/District Committee roles, not publicly detailed)"
+      ]
+    },
+    "designations": [
+      "BNP nominee for Dinajpur-1 constituency",
+      "Prominent organizer and leader for BNP in Birganj and Kaharol Upazilas"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "resident of Birganj or Kaharol Upazila, Dinajpur District, Bangladesh",
+      "address": "Resident of Dinajpur-1 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Long-serving politician and local community leader; specific business or professional background not available"
+    ],
+    "political_career": [
+      {
+        "year": "prior to nomination",
+        "event": "Dedicated years to local politics, organizing, and strengthening BNP’s base in Birganj and Kaharol Upazilas"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Nominated by BNP to contest the next General Election from Dinajpur-1 (Birganj and Kaharol)"
+      },
+      {
+        "year": "current",
+        "event": "Actively preparing for the upcoming election, leading local mobilization efforts and mass contact campaigns"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dinajpur-1",
+        "election_area_name": "Birganj and Kaharol Upazilas"
+      }
+    ],
+    "life_activities": "Focused on expanding BNP’s organizational presence and preparing for the general election within the Dinajpur-1 constituency.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [],
+    "overall_summary": "Md. Manzurul Islam is a dedicated BNP grassroots leader and confirmed nominee for Dinajpur-1 (Birganj–Kaharol). His selection reflects his deep local influence and leadership within northern Bangladesh, as he organizes and campaigns ahead of the next General Election.",
+    "district": ["Dinajpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 22,
+    "name": "Md. Ataur Zaman Riaz",
+    "position": "BNP leader",
+    "category": "Constituency politician (nominee and local leader)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Dinajpur-4 (Khansama–Chirirbandar) in the upcoming General Election"
+      ],
+      "previous": [
+        "Held significant local BNP roles (Upazila or District level) establishing the political base for nomination"
+      ]
+    },
+    "designations": [
+      "BNP nominee for Dinajpur-4 constituency",
+      "Key organizer and political figure in Khansama and Chirirbandar Upazilas"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "resident of Khansama or Chirirbandar Upazila, Dinajpur District, Bangladesh",
+      "address": "Resident of Dinajpur-4 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career politician focused on organizational and electoral politics at the local level; professional or business details not available"
+    ],
+    "political_career": [
+      {
+        "year": "prior to nomination",
+        "event": "Dedicated time to local political activities, grassroots campaigning, and strengthening BNP’s base across Khansama and Chirirbandar"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Nominated by BNP as candidate for Dinajpur-4 in the next General Election"
+      },
+      {
+        "year": "current",
+        "event": "Leading local BNP organization, campaign operations, and public outreach in the constituency"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Dinajpur-4",
+        "election_area_name": "Khansama and Chirirbandar Upazilas"
+      }
+    ],
+    "life_activities": "Focused on winning Dinajpur-4, building local BNP structure, and promoting party programs across the constituency.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [],
+    "overall_summary": "Md. Ataur Zaman Riaz is the confirmed BNP nominee for Dinajpur-4 (Khansama–Chirirbandar). His candidacy reflects his deep involvement in district-level politics and long-Standing service to the BNP’s organizational network in Dinajpur.",
+    "district": ["Dinajpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 23,
+    "name": "Md. Abdul Gafur Sarkar",
+    "position": "President, Syedpur District BNP",
+    "category": "District-level politician",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Nilphamari-4 in the upcoming General Election"
+      ],
+      "previous": [
+        "President of Syedpur District BNP since March 2023",
+        "Influential leader in the Syedpur and greater Nilphamari area"
+      ]
+    },
+    "designations": [
+      "President, Syedpur District Bangladesh Nationalist Party (BNP)",
+      "BNP nominee for Nilphamari-4 constituency"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "resident of Syedpur or the Nilphamari-4 constituency area",
+      "address": "Resident of Nilphamari-4 electoral area (Syedpur-centered)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Prominent local politician and BNP organizer with long-Standing ties to Syedpur; possible involvement in local business or community leadership"
+    ],
+    "political_career": [
+      {
+        "year": "organizational rise",
+        "event": "Served various roles in Syedpur and Nilphamari BNP units, building grassroots leadership"
+      },
+      {
+        "year": "March 2023",
+        "event": "Elected/selected as President of the Syedpur District BNP"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Confirmed as BNP nominee for Nilphamari-4 constituency for the next General Election"
+      },
+      {
+        "year": "current",
+        "event": "Leading Syedpur District BNP organization, managing campaign efforts, and preparing for the upcoming election"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Nilphamari-4",
+        "election_area_name": "Syedpur Upazila and part of Kishoreganj Upazila"
+      }
+    ],
+    "life_activities": "Dedicated to local BNP leadership, strengthening party organization, and coordinating campaign activities for Nilphamari-4.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/mVVSJPYP/Screenshot-2025-11-06-151922.png"
+    ],
+    "overall_summary": "Md. Abdul Gafur Sarkar is the President of Syedpur District BNP and the confirmed nominee for Nilphamari-4 (Syedpur and part of Kishoreganj). A respected grassroots leader, he plays a crucial role in organizing BNP’s political activities in the region and is now leading the local campaign for the upcoming General Election.",
+    "district": ["Nilphamari"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 24,
+    "name": "Md. Hasan Rajib Prodhan",
+    "position": "BNP leader",
+    "category": "Constituency politician and professional (lawyer)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Lalmonirhat-1 (Patgram–Hatibandha) in the upcoming General Election"
+      ],
+      "previous": [
+        "Active lawyer and member of the Dhaka Bar Association",
+        "Held various organizational roles within BNP, locally and centrally"
+      ]
+    },
+    "designations": [
+      "BNP nominee for Lalmonirhat-1 constituency",
+      "Advocate/Lawyer, Dhaka Bar Association",
+      "Key BNP leader for Patgram and Hatibandha Upazilas"
+    ],
+    "personal_info": {
+      "birth_date": "01 July 1966",
+      "birth_place": "Not Available",
+      "present_address": "396, New Eskaton Road, Flat No-B(3), Ramna, Dhaka",
+      "nationality": "Bangladeshi",
+      "parents": {
+        "father": "Late Md. Abedur Rahman Prodhan",
+        "mother": "Not Available"
+      },
+      "blood_group": "B+",
+      "religion": "Muslim",
+      "gender": "Male"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Law Graduate (enrolled member of the Bar Council)"
+    },
+    "business_income_source_professional_career": [
+      "Primary profession: practicing lawyer/advocate",
+      "Political role: dedicated BNP organizer and leader"
+    ],
+    "political_career": [
+      {
+        "year": "1996 (April 13)",
+        "event": "Enrolled as a lawyer with the Bangladesh Bar Council"
+      },
+      {
+        "year": "1998 (August 12)",
+        "event": "Became a member of the Dhaka Bar Association"
+      },
+      {
+        "year": "prior to nomination",
+        "event": "Active in BNP politics while maintaining his legal practice in Dhaka; contributed to BNP’s organizational work in Lalmonirhat"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Confirmed as BNP candidate for Lalmonirhat-1 constituency for the upcoming General Election"
+      },
+      {
+        "year": "current",
+        "event": "Leading campaign activities in Patgram and Hatibandha while continuing his law practice in Dhaka"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Lalmonirhat-1",
+        "election_area_name": "Patgram and Hatibandha Upazilas"
+      }
+    ],
+    "life_activities": "Balancing his professional legal career in Dhaka with political campaigning and leadership duties in Lalmonirhat-1 constituency.",
+    "other_income_sources": ["Income from legal practice"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/vxVHZckK/1539787893.jpg"],
+    "overall_summary": "Md. Hasan Rajib Prodhan (born 1966) is a BNP leader and professional lawyer affiliated with the Dhaka Bar Association. He is the confirmed nominee for Lalmonirhat-1 (Patgram–Hatibandha), known for his dual career in law and politics, and is currently leading the BNP’s campaign efforts in the region.",
+    "district": ["Lalmonirhat"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 25,
+    "name": "Md. Mokarram Hossain Sujan",
+    "position": "BNP leader",
+    "category": "Constituency politician and local government leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Rangpur-1 (Gangachara and parts of Rangpur City) in the upcoming General Election"
+      ],
+      "previous": [
+        "Three-time Chairman of Alambiditor Union Parishad under Gangachara Upazila",
+        "Former senior member of Gangachara Upazila BNP"
+      ]
+    },
+    "designations": [
+      "BNP nominee for Rangpur-1 constituency",
+      "Respected former Union Parishad Chairman and key local party leader"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Alambiditor Union, Gangachara Upazila, Rangpur District, Bangladesh",
+      "address": "Resident of Rangpur-1 electoral area (Gangachara/Rangpur City)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Local political and social leader with long experience in local government; specific business or professional details not publicly known"
+    ],
+    "political_career": [
+      {
+        "year": "local government service",
+        "event": "Served three terms as Chairman of Alambiditor Union Parishad, showing strong grassroots support"
+      },
+      {
+        "year": "party organization",
+        "event": "Served as senior member within Gangachara Upazila BNP unit"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Confirmed by BNP as their candidate for Rangpur-1 constituency in the next General Election"
+      },
+      {
+        "year": "current",
+        "event": "Campaigning and mobilizing grassroots support in Gangachara and Rangpur City to regain the seat BNP last won in 1979"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Rangpur-1",
+        "election_area_name": "Gangachara Upazila and Rangpur City Corporation Wards 1–9"
+      }
+    ],
+    "life_activities": "Dedicated to securing a BNP victory in Rangpur-1 by leveraging his experience as a Union Parishad chairman and deep local connections.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/JW80V7D4/1000072067.webp"],
+    "overall_summary": "Md. Mokarram Hossain Sujan is the BNP nominee for Rangpur-1. A three-time Union Parishad Chairman from Alambiditor Union, he has deep grassroots influence in Gangachara. Sujan now leads the BNP campaign to reclaim Rangpur-1 in the upcoming General Election.",
+    "district": ["Rangpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 26,
+    "name": "Md. Shamsuzzaman Samu",
+    "position": "Convener, Rangpur metropolitan bnp & confirmed nominee for rangpur-3",
+    "category": "District/constituency politician (metropolitan party chief and nominee)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Rangpur-3 (Rangpur Sadar) in the upcoming General Election"
+      ],
+      "previous": [
+        "Convener of Rangpur Metropolitan BNP",
+        "Key organizer and influential leader across Rangpur metropolitan and Sadar areas"
+      ]
+    },
+    "designations": [
+      "Convener, Rangpur Metropolitan Bangladesh Nationalist Party (BNP)",
+      "BNP nominee for Rangpur-3 constituency",
+      "Key organizational leader in Rangpur Sadar region"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Likely resident of Rangpur Sadar Upazila or Rangpur City",
+      "address": "Resident of Rangpur-3 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career politician leading Rangpur Metropolitan BNP; no public professional or business details available"
+    ],
+    "political_career": [
+      {
+        "year": "party leadership",
+        "event": "Served as Convener of Rangpur Metropolitan BNP, leading the metropolitan organization"
+      },
+      {
+        "year": "long-term campaigner",
+        "event": "Has been actively campaigning in Rangpur Sadar for multiple election cycles"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Confirmed by BNP as candidate for the strategically important Rangpur-3 constituency"
+      },
+      {
+        "year": "current",
+        "event": "Leading BNP’s electoral operations and public outreach in Rangpur Sadar and Rangpur City"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Rangpur-3",
+        "election_area_name": "Rangpur Sadar Upazila, Rangpur City Corporation (excluding Wards 1–9 under Rangpur-1), and Rangpur Cantonment Area"
+      }
+    ],
+    "life_activities": "Focused on mobilizing the metropolitan and Sadar BNP units, strengthening organizational capacity, and leading campaign efforts to reclaim Rangpur-3.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/g59TjcQ/download-6.jpg"],
+    "overall_summary": "Md. Shamsuzzaman Samu, Convener of Rangpur Metropolitan BNP, is the confirmed BNP nominee for Rangpur-3 (Rangpur Sadar). As the metropolitan chief, he wields significant organizational influence and is leading BNP’s charge to regain the key Rangpur-3 seat in the upcoming General Election.",
+    "district": ["Rangpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 27,
+    "name": "Mohammad Emdadul Haque Bharasha",
+    "position": "President, Kawnia upazila bnp",
+    "category": "District/constituency politician and industrialist (legacy leader)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Rangpur-4 (Pirgacha–Kawnia) in the upcoming General Election"
+      ],
+      "previous": [
+        "President of Kawnia Upazila Bangladesh Nationalist Party (BNP)",
+        "Former President of District BNP (as per reports)",
+        "Son of Rahim Uddin Bharsha, elected MP from Rangpur-4 as BNP candidate in 1979"
+      ]
+    },
+    "designations": [
+      "President, Kawnia Upazila Bangladesh Nationalist Party (BNP)",
+      "BNP nominee for Rangpur-4 constituency",
+      "Industrialist and key political leader from the Bharsha family"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Likely Kawnia or Pirgacha Upazila, Rangpur District, Bangladesh",
+      "address": "Resident of Rangpur-4 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": {
+        "father": "Late Rahim Uddin Bharsha (Former MP, Rangpur-4, BNP, 1979)"
+      }
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Industrialist with business ventures providing financial base for political and organizational activities"
+    ],
+    "political_career": [
+      {
+        "year": "organizational dedication",
+        "event": "Rose through BNP ranks to become President of Kawnia Upazila BNP and reportedly served as District BNP President"
+      },
+      {
+        "year": "family tradition",
+        "event": "Continuing the political legacy of his father Rahim Uddin Bharsha, who won Rangpur-4 for BNP in 1979"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Confirmed BNP candidate for Rangpur-4 constituency in the next General Election; confident of reclaiming seat for BNP if election is fair"
+      },
+      {
+        "year": "current",
+        "event": "Leading BNP’s campaign and organizational activities in Pirgacha and Kawnia Upazilas"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Rangpur-4",
+        "election_area_name": "Pirgacha Upazila and Kawnia Upazila"
+      }
+    ],
+    "life_activities": "Focused on restoring BNP’s historical influence in Rangpur-4 by leveraging family legacy and strengthening local party networks in Pirgacha and Kawnia.",
+    "other_income_sources": ["income from industrial ventures/business"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/zhDNs1mX/574877337-3103079026519124-3416161654675647842-n.jpg"
+    ],
+    "overall_summary": "Mohammad Emdadul Haque Bharasha, an industrialist and President of Kawnia Upazila BNP, is the confirmed BNP nominee for Rangpur-4 (Pirgacha–Kawnia). Carrying forward the political legacy of his father, who won this seat in 1979, Bharasha is a strong grassroots leader aiming to reclaim this symbolic constituency for the BNP.",
+    "district": ["Rangpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 28,
+    "name": "Md. Golam Rabbani",
+    "position": "President, mithapukur upazila bnp",
+    "category": "District/constituency politician (local frontline leader)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Rangpur-5 (Mithapukur) in the upcoming General Election"
+      ],
+      "previous": [
+        "President of Mithapukur Upazila BNP (current primary party role)",
+        "Candidate/aspirant for Rangpur-5 in previous General Elections",
+        "Veteran leader of the local BNP organization"
+      ]
+    },
+    "designations": [
+      "President, Mithapukur Upazila Bangladesh Nationalist Party (BNP)",
+      "Key organizer for BNP in Mithapukur Upazila",
+      "Confirmed nominee for Rangpur-5 constituency"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mithapukur Upazila, Rangpur District, Bangladesh",
+      "address": "Resident of Mithapukur Upazila, Rangpur District",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "graduate"
+    },
+    "business_income_source_professional_career": [
+      "Long-time career politician and local leader, possibly involved in business or professional activities in Mithapukur; deeply connected to the local community"
+    ],
+    "political_career": [
+      {
+        "year": "early career",
+        "event": "Held various organizational roles within Mithapukur Upazila BNP, showing steady political growth"
+      },
+      {
+        "year": "ascension",
+        "event": "Became President of Mithapukur Upazila BNP, establishing himself as the top local leader"
+      },
+      {
+        "year": "pre-election period",
+        "event": "Repeated candidate/aspirant for Rangpur-5 in past General Elections"
+      },
+      {
+        "year": "2025/2026 (projected)",
+        "event": "Nominated by BNP to contest Rangpur-5 (Mithapukur) in the next General Election"
+      },
+      {
+        "year": "current",
+        "event": "Leading local mobilization and maintaining BNP’s organizational presence across Mithapukur Upazila"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Rangpur-5",
+        "election_area_name": "Mithapukur Upazila"
+      }
+    ],
+    "life_activities": "Dedicated grassroots politician focused on strengthening BNP’s organizational structure and mass contact in Mithapukur.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/396LLyfy/Whats-App-Image-2025-11-04-at-12-48-58-50af6887-600x337.jpg"
+    ],
+    "overall_summary": "Md. Golam Rabbani, President of Mithapukur Upazila BNP, is the confirmed nominee for Rangpur-5. A veteran local leader and loyal party organizer, he plays a crucial role in BNP’s grassroots campaign strategy in the Rangpur Division, representing long-Standing community leadership and organizational depth.",
+    "district": ["Rangpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 29,
+    "name": "Md. Saiful Islam",
+    "position": "Convener, Rangpur district bnp",
+    "category": "District/constituency politician",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP nominee for Rangpur-6 (Pirganj) in the upcoming General Election",
+        "Formally launched campaign on November 4, 2025, by visiting the grave of martyr Abu Sayeed in Babanpur village"
+      ],
+      "previous": ["Held the position of Convener for Rangpur District BNP"]
+    },
+    "designations": [
+      "Convener, Rangpur District Bangladesh Nationalist Party (BNP)",
+      "BNP nominee for Rangpur-6 constituency"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Pirganj Upazila, Rangpur District, Bangladesh",
+      "address": "Resident of Rangpur-6 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career rooted in local politics and long-term organizational work for the BNP; specific business or professional details not publicly available"
+    ],
+    "political_career": [
+      {
+        "year": "prior to nomination",
+        "event": "Dedicated years to local-level politics, rising to become Convener of Rangpur District BNP"
+      },
+      {
+        "year": "2025 (november)",
+        "event": "Confirmed as BNP candidate for Rangpur-6 constituency in the upcoming General Election"
+      },
+      {
+        "year": "2025 (november 4)",
+        "event": "Formally launched election campaign by visiting the grave of martyr Abu Sayeed in Pirganj Upazila"
+      },
+      {
+        "year": "current",
+        "event": "Actively engaged in election preparations, local party management, and campaigning across Pirganj"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Rangpur-6",
+        "election_area_name": "Pirganj Upazila"
+      }
+    ],
+    "life_activities": "Focused on political campaigning, strengthening the BNP’s organizational base in Rangpur, and contesting the Rangpur-6 parliamentary seat.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/4Zvhk84q/bb-1719242837.jpg"],
+    "overall_summary": "Md. Saiful Islam, Convener of Rangpur District BNP, is the confirmed BNP nominee for Rangpur-6 (Pirganj). His nomination highlights his strong organizational leadership and dedication to expanding BNP’s grassroots presence in Rangpur. He currently leads the campaign to reclaim this strategic northern seat for the party.",
+    "district": ["Rangpur"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 30,
+    "name": "Saiful Islam Rana",
+    "position": "General secretary, kurigram district bnp",
+    "category": "District/constituency politician",
+    "portfolio": {
+      "latest": [
+        "Long-Standing General Secretary of Kurigram District BNP",
+        "BNP standard-bearer for Kurigram-1 in multiple general elections (1996, 2001, 2008, 2018)"
+      ],
+      "previous": [
+        "Former Member of Parliament (MP) for Kurigram-1 in the 6th Jatiya Sangsad (February 15, 1996 – June 12, 1996)"
+      ]
+    },
+    "designations": [
+      "General Secretary, Kurigram District Bangladesh Nationalist Party (BNP)",
+      "Former Member of Parliament, Kurigram-1"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Kurigram District, Bangladesh",
+      "address": "Resident of Kurigram-1 electoral area (Bhurungamari and Nageshwari Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career focused on politics and organizational work for the BNP; no public business or professional details available"
+    ],
+    "political_career": [
+      {
+        "year": "prior to 1996",
+        "event": "Served as General Secretary for Kurigram District BNP"
+      },
+      {
+        "year": "1996 (february 15)",
+        "event": "Elected Member of Parliament for Kurigram-1 in the 6th Jatiya Sangsad"
+      },
+      {
+        "year": "1996 (june 12)",
+        "event": "Term ended with the dissolution of the 6th Jatiya Sangsad"
+      },
+      {
+        "year": "1996 (june)",
+        "event": "Contested and lost the subsequent general election for Kurigram-1"
+      },
+      {
+        "year": "2001, 2008, 2018",
+        "event": "Contested and lost general elections for Kurigram-1 as the BNP nominee"
+      },
+      {
+        "year": "2024",
+        "event": "Nominated by BNP for the 12th General Election but did not contest due to national boycott"
+      },
+      {
+        "year": "current",
+        "event": "Serving as General Secretary of Kurigram District BNP and coordinating party organization"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Kurigram-1",
+        "election_area_name": "Bhurungamari Upazila and Nageshwari Upazila"
+      }
+    ],
+    "life_activities": "Focused on maintaining BNP’s organizational strength in Kurigram District and persistently contesting the Kurigram-1 parliamentary seat.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/DPTSNSHS/saifur-rahman-rana-20250807084544.jpg"
+    ],
+    "overall_summary": "Saiful Islam Rana is a veteran BNP leader serving as the General Secretary of Kurigram District BNP. He briefly represented Kurigram-1 in 1996 and has since been the party’s consistent candidate for this seat in multiple elections, demonstrating enduring loyalty and leadership within the BNP.",
+    "district": ["Kurigram"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 31,
+    "name": "Md. Sohel Hossain Kaokabad",
+    "position": "Former MP for kurigram-2",
+    "category": "Politician, businessman",
+    "portfolio": {
+      "latest": [
+        "Elected MP for Kurigram-2 in the 11th Jatiya Sangsad Election (2018)"
+      ],
+      "previous": ["Long-Standing member of the Bangladesh Awami League"]
+    },
+    "designations": ["Member of Parliament", "Businessman"],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Not Available",
+      "address": "Not Available",
+      "nationality": "Bangladeshi",
+      "parents": {
+        "father": "Md. Ahad Ali",
+        "mother": "Most. Suraya Begum"
+      }
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Bachelor of Social Science (BSS) and Master of Social Science (MSS)"
+    },
+    "business_income_source_professional_career": [
+      "Businessman and politician with primary income from consultancy, business/trade, and MP salary"
+    ],
+    "political_career": [
+      {
+        "year": "prior to 2018",
+        "event": "Long-time active member of Bangladesh Awami League"
+      },
+      {
+        "year": "2018",
+        "event": "Elected as MP for Kurigram-2 in the 11th Jatiya Sangsad Election, securing 134,800 votes"
+      },
+      {
+        "year": "current",
+        "event": "Serving as sitting Member of Parliament for Kurigram-2"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Kurigram-2",
+        "election_area_name": "Kurigram Sadar Upazila, Rajarhat Upazila, and Fulbari Upazila"
+      }
+    ],
+    "life_activities": "Engaged in parliamentary duties, overseeing constituency development, and managing consultancy and business ventures; has one pending criminal case and one acquittal/discharge.",
+    "other_income_sources": [
+      "Consultancy/Other: 5,472,000 BDT/year",
+      "Business/Trade: 2,746,400 BDT/year",
+      "MP Salary: 757,860 BDT/year",
+      "Agriculture: 200,000 BDT/year"
+    ],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/p6CJYHXY/304888383-529332292530629-6869085029109533874-n.jpg"
+    ],
+    "overall_summary": "Md. Sohel Hossain Kaokabad is a well-established Awami League politician and current MP for Kurigram-2. Holding BSS and MSS degrees, he combines political leadership with a successful consultancy and business career, reflecting both financial stability and regional political influence.",
+    "district": ["Kurigram"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 32,
+    "name": "Tasvir Ul Islam",
+    "position": "Member of the Kurigram District BNP Partial Convening Committee",
+    "category": "District/Constituency Politician (Opposition), Industrialist, and Diplomat",
+    "portfolio": {
+      "latest": [
+        "Member of the five-member Kurigram District BNP Partial Convening Committee, established to reorganize the party structure for future electoral challenges",
+        "Honorary Consul of Austria to Bangladesh since 2002",
+        "Managing Director and CEO of Quasem Industries Limited"
+      ],
+      "previous": [
+        "Founded Quasem Drycells Limited in 1983 and led it to become Bangladesh’s largest battery company",
+        "Awarded the Medal of Honor by the President of Austria in 2013 for diplomatic service",
+        "Maintained long-term involvement in BNP’s organizational activities in Kurigram District"
+      ]
+    },
+    "designations": [
+      "Member, Kurigram District BNP Partial Convening Committee",
+      "Honorary Consul of Austria to Bangladesh",
+      "Managing Director and CEO, Quasem Industries Limited",
+      "Chairperson and Managing Director, Quasem Food Products Limited",
+      "Managing Director, The Quasem Foundation"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Originally from the Kurigram District, Northern Bangladesh",
+      "address": "Resident of Kurigram-3 electoral area (Ulipur Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Father was a former Deputy Speaker during the Pakistan period",
+      "spouse_family": "Married to Dr. Reyan Anis Islam, a renowned interventional cardiologist and Chairman of Quasem Industries; they have one son and one daughter who work in their family enterprises"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Managing Director and CEO of Quasem Industries Limited, one of Bangladesh’s oldest and most respected industrial conglomerates",
+      "Founder of Quasem Drycells Limited (1983)",
+      "Honorary Consul of Austria to Bangladesh since September 2002, honored with the Medal of Honor by the President of Austria in 2013"
+    ],
+    "political_career": [
+      {
+        "year": "Family Heritage",
+        "event": "Comes from a political family; his brother A.K.M. Maidul Islam served as a Minister and Member of Parliament for over 20 years"
+      },
+      {
+        "year": "Prior to 2024",
+        "event": "Dedicated years to organizational work for the Bangladesh Nationalist Party (BNP) in the Kurigram District"
+      },
+      {
+        "year": "Recent",
+        "event": "Appointed as one of the five key members of the Kurigram District BNP Partial Convening Committee"
+      },
+      {
+        "year": "Current",
+        "event": "Focused on political mobilization within Ulipur Upazila for the upcoming election in the vacant Kurigram-3 seat"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Kurigram-3",
+        "election_area_name": "Ulipur Upazila"
+      }
+    ],
+    "life_activities": "Balances political leadership, business management, diplomatic service, and philanthropy. Through The Quasem Foundation, he has established a maternity hospital, three eye hospitals, six vision centers, and a modern school in Northern Bangladesh. As an industrialist and Honorary Consul, he remains a key bridge between corporate, humanitarian, and political spheres.",
+    "other_income_sources": [
+      "Primary income derived from his business and industrial ventures under Quasem Group"
+    ],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/Pzrx7ZDX/273145116-349456733849793-6049672841914089580-n.png"
+    ],
+    "overall_summary": "Tasvir Ul Islam is a multifaceted Bangladeshi leader — a senior BNP figure, international diplomat, and influential industrialist. As a member of the Kurigram District BNP Partial Convening Committee, he is responsible for revitalizing local party organization, particularly in the Kurigram-3 constituency (Ulipur Upazila). Beyond politics, he serves as the Honorary Consul of Austria and Managing Director of Quasem Industries, while also overseeing extensive philanthropic work through The Quasem Foundation.",
+    "district": ["Kurigram"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 33,
+    "name": "Md. Azizur Rahman",
+    "position": "Prominent Local Politician",
+    "category": "District/Constituency Politician",
+    "portfolio": {
+      "latest": [
+        "Serving as the General Secretary for the BNP in the Kurigram-4 constituency",
+        "Maintains strong political presence and organizational influence across Roumari, Rajibpur, and Chilmari Upazilas"
+      ],
+      "previous": [
+        "Held active political involvement and party-level leadership positions within the Kurigram District BNP structure"
+      ]
+    },
+    "designations": ["BNP General Secretary for Kurigram-4"],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Kurigram District, Bangladesh",
+      "address": "Not Available",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available",
+      "spouse_family": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": ["Not Available"],
+    "political_career": [
+      {
+        "year": "Prior to 2024",
+        "event": "Maintained a significant political presence as a strong candidate or party organizer within the Roumari, Rajibpur, and Chilmari Upazilas of Kurigram-4."
+      },
+      {
+        "year": "Current",
+        "event": "Focused on political organization and potential candidacy mobilization for the currently vacant Kurigram-4 parliamentary seat."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Kurigram-4",
+        "election_area_name": "Roumari Upazila, Rajibpur Upazila, and Chilmari Upazila"
+      }
+    ],
+    "life_activities": "Engaged in local political strategy, party organization, and constituency development efforts within the Roumari, Rajibpur, and Chilmari Upazilas to strengthen BNP’s representation for the Kurigram-4 seat.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/jvbPpSyP/IMG-0482.png"],
+    "overall_summary": "Md. Azizur Rahman is a locally prominent political leader serving as the BNP General Secretary for the Kurigram-4 constituency, which includes Roumari, Rajibpur, and Chilmari Upazilas. Known for his consistent political presence and grassroots connections, he plays a central role in party organization and constituency mobilization within the Kurigram District.",
+    "district": ["Kurigram"],
+    "division": ["Rangpur"]
+  },
+  {
+    "_id": 39,
+    "name": "Md. Sharif Uddin",
+    "position": "BNP Leader",
+    "category": "Constituency Politician and Local Party Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Rajshahi-1 (Godagari and Tanore Upazilas) in the upcoming General Election",
+        "Recognized as a local organizational leader within the Rajshahi District BNP structure"
+      ],
+      "previous": [
+        "Long-standing grassroots organizer and political activist in the Godagari and Tanore areas under Rajshahi District BNP"
+      ]
+    },
+    "designations": [
+      "BNP Nominee for Rajshahi-1",
+      "Key Organizational Leader in Godagari and Tanore Upazilas"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Godagari or Tanore Upazila, Rajshahi District, Bangladesh",
+      "address": "Resident of the Rajshahi-1 electoral area (Godagari/Tanore Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career politician involved in local BNP organization and electoral politics; specific professional or business details are not available."
+    ],
+    "political_career": [
+      {
+        "year": "Organizational Dedication",
+        "event": "Actively engaged in strengthening the BNP's organizational structure and grassroots presence in the Godagari and Tanore Upazilas."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the official BNP Nominee for the Rajshahi-1 constituency."
+      },
+      {
+        "year": "Current",
+        "event": "Leading election preparation, unifying local party units, and conducting mass contact campaigns across the two Upazilas."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Rajshahi-1",
+        "election_area_name": "Godagari Upazila and Tanore Upazila"
+      }
+    ],
+    "life_activities": "Focused on political organizing, party coordination, and mobilizing voters to strengthen BNP's base in Rajshahi-1 (Godagari-Tanore).",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/Myd8GghH/6908e48da7703.jpg"],
+    "overall_summary": "Md. Sharif Uddin is a committed BNP leader and the confirmed nominee for the Rajshahi-1 constituency, which includes Godagari and Tanore Upazilas. Known for his long-term dedication to grassroots organization, he is leading the party’s campaign and coordination efforts in preparation for the upcoming General Election.",
+    "district": ["Rajshahi"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 40,
+    "name": "Abdul Mohit Talukder",
+    "position": "President, Adamdighi Upazila BNP",
+    "category": "District/Constituency Politician (Upazila Party Chief and Nominee)",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Bogra-3 (Adamdighi-Dupchanchia) in the upcoming General Election"
+      ],
+      "previous": [
+        "President, Adamdighi Upazila Bangladesh Nationalist Party (BNP)",
+        "Former Upazila Parishad Chairman, Adamdighi Upazila",
+        "Member of the influential Talukder political family, related to former MPs Abdul Majid Talukder and Abdul Momen Talukder"
+      ]
+    },
+    "designations": [
+      "Confirmed Nominee for the Bogra-3 constituency",
+      "President, Adamdighi Upazila BNP",
+      "Former Upazila Parishad Chairman"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Adamdighi Upazila, Bogra District, Bangladesh",
+      "address": "Permanent resident of the Bogra-3 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available (Member of the politically influential Talukder family)"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Possesses a long history in politics and local government; specific details regarding business or professional income sources are not available"
+    ],
+    "political_career": [
+      {
+        "year": "Local Leadership",
+        "event": "Served for a significant period as President of the Adamdighi Upazila BNP, demonstrating a strong local organizational base"
+      },
+      {
+        "year": "Local Government",
+        "event": "Served as the Upazila Parishad Chairman for Adamdighi"
+      },
+      {
+        "year": "2018 General Election",
+        "event": "Candidacy for the 2018 General Election was disqualified due to legal complications"
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed by the BNP to contest the Bogra-3 constituency in the next General Election, indicating party confidence in his influence"
+      },
+      {
+        "year": "Current",
+        "event": "Actively working to unite local party workers and prepare the campaign across Adamdighi and Dupchanchia Upazilas"
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Bogra-3",
+        "election_area_name": "Adamdighi Upazila and Dupchanchia Upazila"
+      }
+    ],
+    "life_activities": "Dedicated to local political organizing, leading the Adamdighi Upazila BNP, and contesting the parliamentary seat while leveraging his family's long-standing political influence in the region.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/pjXv0cX6/abdul-mohit-talukder-08383a83-2c76-4041-920e-0f65f3c1adb-resize-750.jpg"
+    ],
+    "overall_summary": "Abdul Mohit Talukder is a senior and influential BNP leader in Bogra District, currently serving as President of the Adamdighi Upazila BNP. A former Upazila Parishad Chairman and member of the prominent Talukder family, he is the confirmed BNP nominee for Bogra-3 (Adamdighi-Dupchanchia). Known for his organizational strength and family legacy, he is considered one of the strongest local candidates for the upcoming General Election.",
+    "district": ["Bogra"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 41,
+    "name": "Alhajj Mosharraf Hossain",
+    "position": "BNP Leader, Former Member of Parliament for Bogra-4",
+    "category": "Former Member of Parliament (MP), District and Central Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Bogra-4 (Kahaloo-Nandigram) in the upcoming General Election",
+        "Serving as Acting General Secretary, Bogra District BNP",
+        "Joint General Secretary, Central Krishak Dal (BNP Peasant Front)"
+      ],
+      "previous": [
+        "Member of the 11th Jatiya Sangsad (Parliament), representing Bogra-4 (December 2018 – December 2022)"
+      ]
+    },
+    "designations": [
+      "Acting General Secretary, Bogra District BNP",
+      "Former Member of Parliament (MP), Bogra-4",
+      "Joint General Secretary, Central Krishak Dal (BNP Peasant Front)"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Bogra District, Bangladesh",
+      "address": "Permanent resident of the Bogra-4 electoral area (Kahaloo or Nandigram Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Known as a businessman and industrialist alongside his political career; specific details regarding his ventures or income sources are not available."
+    ],
+    "political_career": [
+      {
+        "year": "2001-2018",
+        "event": "Active in party politics in the Bogra-4 constituency, gradually building a strong grassroots and organizational base."
+      },
+      {
+        "year": "2018",
+        "event": "Elected as Member of Parliament for Bogra-4, representing the Bangladesh Nationalist Party (BNP) in the 11th General Election."
+      },
+      {
+        "year": "2019 (April 29)",
+        "event": "Took the oath of office as MP in the 11th Jatiya Sangsad."
+      },
+      {
+        "year": "2022 (December 11)",
+        "event": "Resigned from Parliament along with other BNP MPs as part of the party’s collective political decision."
+      },
+      {
+        "year": "Current",
+        "event": "Serving as Acting General Secretary of Bogra District BNP and Joint General Secretary of the Central Krishak Dal."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP Nominee for the Bogra-4 constituency in the upcoming General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Bogra-4",
+        "election_area_name": "Kahaloo Upazila and Nandigram Upazila"
+      }
+    ],
+    "life_activities": "Dedicated grassroots activist and political organizer, focusing on mobilizing local BNP workers and maintaining strong engagement in the Bogra-4 constituency.",
+    "other_income_sources": [
+      "Business/Industry income (Details Not Available)"
+    ],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/nMPs3Rk2/download-7.jpg"],
+    "overall_summary": "Alhajj Mosharraf Hossain is a prominent BNP leader in Bogra District and a former Member of Parliament for Bogra-4 (Kahaloo-Nandigram). Elected in 2018, he resigned in 2022 as part of BNP’s political movement. Currently serving as Acting General Secretary of Bogra District BNP and Joint General Secretary of the Central Krishak Dal, he remains a respected grassroots figure and the confirmed BNP Nominee for Bogra-4 in the upcoming General Election.",
+    "district": ["Bogra"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 42,
+    "name": "Golam Mohammad Siraj",
+    "position": "BNP Leader, Multiple-time Former Member of Parliament for Bogra-5 and Bogra-6",
+    "category": "Veteran Former Member of Parliament (MP), Central Leader, and Businessman",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Bogra-5 (Sherpur-Dhunat) in the upcoming General Election",
+        "Founder and Chairman of SR Group (S.R. Group)",
+        "Senior BNP leader maintaining active involvement in national and district-level party affairs"
+      ],
+      "previous": [
+        "Member of the 5th, 6th, and 7th Jatiya Sangsad (Parliament) representing Bogra-5 (1991–2006)",
+        "Member of the 11th Jatiya Sangsad (Parliament) representing Bogra-6 (June 2019 – December 2022)"
+      ]
+    },
+    "designations": [
+      "Multiple-time Former Member of Parliament (MP), Bogra-5 and Bogra-6",
+      "Founder and Chairman, SR Group",
+      "BNP Nominee for Bogra-5"
+    ],
+    "personal_info": {
+      "birth_date": "January 15, 1950",
+      "birth_place": "Bogra, Bangladesh",
+      "address": "Permanent resident of the Bogra-5 electoral area (Sherpur or Dhunat Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "M.Com"
+    },
+    "business_income_source_professional_career": [
+      "Prominent businessman and industrialist; Founder and Chairman of SR Group, a leading Bangladeshi industrial conglomerate."
+    ],
+    "political_career": [
+      {
+        "year": "1991 – 2006",
+        "event": "Elected as Member of Parliament for Bogra-5 in four consecutive terms (1991, February 1996, June 1996, and 2001), representing the Bangladesh Nationalist Party (BNP)."
+      },
+      {
+        "year": "2019 (June)",
+        "event": "Won the by-election for Bogra-6, representing BNP in the 11th Jatiya Sangsad."
+      },
+      {
+        "year": "2019 (July 11)",
+        "event": "Took oath of office as Member of Parliament for Bogra-6."
+      },
+      {
+        "year": "2022 (December 10 – 11)",
+        "event": "Resigned from Parliament with six other BNP MPs; resignation became official on December 11, 2022."
+      },
+      {
+        "year": "Current",
+        "event": "Senior BNP leader actively engaged in national and local political strategy."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as BNP Nominee for the Bogra-5 constituency for the upcoming General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Bogra-5",
+        "election_area_name": "Sherpur Upazila and Dhunat Upazila"
+      }
+    ],
+    "life_activities": "A successful businessman who transformed his commercial success into a long and accomplished political career, serving multiple terms as MP for Bogra-5 and Bogra-6. Recognized as a veteran BNP leader with deep ties to the Bogra region.",
+    "other_income_sources": ["Business/Industry income (SR Group)"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/sdckJscM/download-8.jpg"],
+    "overall_summary": "Golam Mohammad Siraj (born January 15, 1950) is a veteran BNP politician and industrialist. He served four terms as MP for Bogra-5 (1991–2006) and later represented Bogra-6 (2019–2022). As Founder and Chairman of SR Group, he is a prominent business figure with major influence in Bogra politics. He is now the confirmed BNP Nominee for Bogra-5 in the upcoming General Election.",
+    "district": ["Bogra"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 43,
+    "name": "Professor Md. Shahjahan Miah",
+    "position": "Veteran BNP Leader, Multiple-time Former Member of Parliament for Chapainawabganj-1",
+    "category": "Former Member of Parliament (MP), District President, and Central Advisor",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Chapainawabganj-1 (Gomostapur) in the upcoming General Election",
+        "Advisor to the BNP Chairperson",
+        "Actively conducting public relations and mass contact campaigns across the Shibganj and Gomostapur areas (2025)"
+      ],
+      "previous": [
+        "Member of Parliament (MP) for Chapainawabganj-1 in 1991, February 1996, June 1996, and 2001",
+        "Member of Parliament (MP) from Undivided Rajshahi-1 in 1979",
+        "Former President, Chapainawabganj District BNP",
+        "Minister of State (BNP Government) with jurisdiction over Chapainawabganj, Lalmonirhat, and Kurigram districts",
+        "Former Whip in Jatiya Sangsad"
+      ]
+    },
+    "designations": [
+      "Former Member of Parliament (MP) for Chapainawabganj-1 (four terms)",
+      "Advisor to the BNP Chairperson",
+      "Former President, Chapainawabganj District BNP",
+      "BNP Nominee for Chapainawabganj-1"
+    ],
+    "personal_info": {
+      "birth_date": "January 10, 1947",
+      "birth_place": "Shibganj, Chapainawabganj District, Bangladesh",
+      "address": "Permanent resident of the Chapainawabganj-1 electoral area (Shibganj/Gomostapur)",
+      "nationality": "Bangladeshi",
+      "parents": {
+        "father": "Faiz Ahmed Mia",
+        "mother": "Naibor Nessa"
+      }
+    },
+    "academic_career": {
+      "schools": ["Shibganj Model High School (Matriculation - 1964)"],
+      "college": "Adina Fazlul Haque Government College (HSC - 1966)",
+      "university": "University of Rajshahi",
+      "degree": "M.A. in Economics (1970)"
+    },
+    "business_income_source_professional_career": [
+      "Career politician with an academic background; referred to as 'Professor' in multiple reports, indicating prior teaching experience before full-time politics."
+    ],
+    "political_career": [
+      {
+        "year": "1971",
+        "event": "Active organizer during the Bangladesh Liberation War; recognized as a Freedom Fighter."
+      },
+      {
+        "year": "1979",
+        "event": "Elected as Member of Parliament from Undivided Rajshahi-1 as a BNP candidate."
+      },
+      {
+        "year": "1991 – 2001",
+        "event": "Elected MP for Chapainawabganj-1 in four consecutive general elections, representing the BNP."
+      },
+      {
+        "year": "2001 – 2006",
+        "event": "Served as President of the Chapainawabganj District BNP; participated in several parliamentary standing committees (Religion, Jute & Textiles, Home Affairs)."
+      },
+      {
+        "year": "2025 (July)",
+        "event": "Began public contact and campaign efforts in Shibganj and Gomostapur areas."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as BNP Nominee for Chapainawabganj-1 in the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Chapainawabganj-1",
+        "election_area_name": "Gomostapur Upazila (historically linked to Shibganj area)"
+      }
+    ],
+    "life_activities": "A veteran of Bangladesh’s political landscape, Professor Shahjahan Miah continues to engage with grassroots party activists and remains an influential figure in Chapainawabganj and Rajshahi politics.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [
+      "https://i.ibb.co.com/k20N3J8C/67374950-925659957776959-5710050988719603712-n.jpg"
+    ],
+    "overall_summary": "Professor Md. Shahjahan Miah, born in 1947, is a distinguished veteran BNP leader and multiple-time former Member of Parliament for the Chapainawabganj region. A Freedom Fighter, educator, and long-serving party organizer, he has played vital roles as a State Minister, Whip, and District BNP President. Currently an Advisor to the BNP Chairperson, he is the confirmed BNP Nominee for Chapainawabganj-1 (Gomostapur) in the upcoming General Election.",
+    "district": ["Chapainawabganj"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 44,
+    "name": "Md. Aminul Islam",
+    "position": "Former Member of Parliament, Senior BNP Leader",
+    "category": "Politician, Former MP",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Chapainawabganj-2 in the upcoming General Election",
+        "Actively engaged in party organizational activities and local leadership consolidation"
+      ],
+      "previous": [
+        "Former Member of Parliament for Chapainawabganj-2 constituency",
+        "Long-time senior leader within the Chapainawabganj District BNP structure"
+      ]
+    },
+    "designations": [
+      "Former Member of Parliament (MP) for Chapainawabganj-2",
+      "BNP Nominee for Chapainawabganj-2",
+      "Senior Local BNP Leader"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Chapainawabganj District, Bangladesh",
+      "address": "Permanent resident of the Chapainawabganj-2 electoral area",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": ["Not Available"],
+    "political_career": [
+      {
+        "year": "Unknown (Prior tenure)",
+        "event": "Served at least one term as a Member of Parliament for Chapainawabganj-2, representing the Bangladesh Nationalist Party (BNP)."
+      },
+      {
+        "year": "Current",
+        "event": "Confirmed as BNP Nominee for Chapainawabganj-2 in the next General Election; continues active involvement in party organization and regional leadership."
+      },
+      {
+        "year": "Recent",
+        "event": "Focused on uniting local leaders across Bholahat, Gomostapur, and Nachol Upazilas after nomination announcement."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Chapainawabganj-2",
+        "election_area_name": "Bholahat Upazila, Gomostapur Upazila, and Nachol Upazila"
+      }
+    ],
+    "life_activities": "Focused on strengthening BNP’s organizational and electoral structure within Chapainawabganj-2, maintaining his influence across Bholahat, Gomostapur, and Nachol Upazilas.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/xKGJwd2b/download-9.jpg"],
+    "overall_summary": "Md. Aminul Islam is an established and influential Bangladesh Nationalist Party (BNP) leader and a former Member of Parliament for Chapainawabganj-2. Covering the upazilas of Bholahat, Gomostapur, and Nachol, his constituency remains one of the BNP’s key strongholds in Rajshahi Division. His renewed nomination reflects the party’s confidence in his experience, leadership, and enduring grassroots connections.",
+    "district": ["Chapainawabganj"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 45,
+    "name": "Md. Harunur Rashid (Harun)",
+    "position": "Veteran BNP Leader, Multiple-time Former Member of Parliament for Chapainawabganj-3",
+    "category": "Former Member of Parliament (MP), Central Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Chapainawabganj-3 (Sadar Upazila) in the upcoming General Election",
+        "Senior central leader maintaining a strong political base in Chapainawabganj District"
+      ],
+      "previous": [
+        "Member of Parliament for Chapainawabganj-3 in the 7th Jatiya Sangsad (1996)",
+        "Member of Parliament for Chapainawabganj-3 in the 11th Jatiya Sangsad (2018–2022)",
+        "Former Organizing Secretary, Central Committee of the Bangladesh Nationalist Party (BNP)"
+      ]
+    },
+    "designations": [
+      "Multiple-time Former Member of Parliament (MP) for Chapainawabganj-3",
+      "Former Organizing Secretary, BNP Central Committee",
+      "BNP Nominee for Chapainawabganj-3"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Chapainawabganj District, Bangladesh",
+      "address": "Permanent resident of the Chapainawabganj-3 electoral area (Sadar Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available (Highly educated, given his political stature)"
+    },
+    "business_income_source_professional_career": [
+      "Full-time career politician and seasoned organizational leader; specific business or professional details are not available."
+    ],
+    "political_career": [
+      {
+        "year": "1996 (June)",
+        "event": "Elected as Member of Parliament for Chapainawabganj-3, beginning his parliamentary career."
+      },
+      {
+        "year": "2018 (December)",
+        "event": "Elected again as MP for Chapainawabganj-3 in the 11th General Election, representing the Bangladesh Nationalist Party (BNP)."
+      },
+      {
+        "year": "2022 (December 11)",
+        "event": "Resigned from Parliament as part of the BNP's collective resignation decision."
+      },
+      {
+        "year": "Current",
+        "event": "Serving as a senior BNP leader with a key organizational role, maintaining strong grassroots influence in the Chapainawabganj region."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP Nominee for the Chapainawabganj-3 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Chapainawabganj-3",
+        "election_area_name": "Chapainawabganj Sadar Upazila"
+      }
+    ],
+    "life_activities": "Focused on national-level BNP strategy and local electoral organization, particularly in Chapainawabganj Sadar, a politically vital constituency within the Rajshahi Division.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": [],
+    "overall_summary": "Md. Harunur Rashid (Harun) is a veteran BNP leader and multiple-time former Member of Parliament for Chapainawabganj-3 (Sadar Upazila). Having served as the BNP’s Central Organizing Secretary, he is a well-recognized national figure. His resignation from Parliament in 2022 aligned with BNP’s mass protest strategy, and he now serves as the confirmed BNP Nominee for the Chapainawabganj-3 seat in the upcoming General Election.",
+    "district": ["Chapainawabganj"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 46,
+    "name": "Md. Mostafizur Rahman",
+    "position": "BNP Leader",
+    "category": "Constituency Politician and Local Frontline Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Naogaon-1 (Porsha, Sapahar, and Niamatpur Upazilas) in the upcoming General Election",
+        "Active local BNP leader involved in party organization across Naogaon District"
+      ],
+      "previous": [
+        "Previously associated with Dr. Saleh Uddin Ahmed in early nomination considerations before final confirmation of Md. Mostafizur Rahman’s candidacy"
+      ]
+    },
+    "designations": [
+      "BNP Nominee for Naogaon-1",
+      "Local BNP Leader (Details Not Available)"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Naogaon District, Bangladesh",
+      "address": "Permanent resident of the Naogaon-1 electoral area (Porsha, Sapahar, and Niamatpur Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": ["Not Available"],
+    "political_career": [
+      {
+        "year": "Current",
+        "event": "Confirmed as the official BNP Nominee for Naogaon-1 constituency."
+      },
+      {
+        "year": "Ongoing",
+        "event": "Actively engaged in grassroots-level organization and mobilization within Porsha, Sapahar, and Niamatpur Upazilas."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Naogaon-1",
+        "election_area_name": "Porsha Upazila, Sapahar Upazila, and Niamatpur Upazila"
+      }
+    ],
+    "life_activities": "Focused on strengthening BNP’s organizational presence and leading campaign activities within the Naogaon-1 constituency, particularly in the rural Upazilas of Porsha, Sapahar, and Niamatpur.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/rfKNDMHJ/download-10.jpg"],
+    "overall_summary": "Md. Mostafizur Rahman is the confirmed Bangladesh Nationalist Party (BNP) nominee for the Naogaon-1 constituency, which includes Porsha, Sapahar, and Niamatpur Upazilas. Although specific biographical and professional details are limited, his selection underscores his influence as a trusted local organizer and emerging political leader for the BNP in Naogaon District.",
+    "district": ["Naogaon"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 47,
+    "name": "Shamsuzzoha Khan",
+    "position": "Veteran BNP Leader, Multiple-time Former Member of Parliament for Naogaon-2",
+    "category": "Former Member of Parliament (MP) and Senior District Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Naogaon-2 (Patnitala and Dhamoirhat Upazilas) in the upcoming General Election",
+        "Senior and influential leader within the Naogaon District BNP"
+      ],
+      "previous": [
+        "Member of Parliament for Naogaon-2 in the 6th Jatiya Sangsad (February 1996)",
+        "Member of Parliament for Naogaon-2 in the 8th Jatiya Sangsad (2001)",
+        "Long-time political organizer and respected local figure in Naogaon District"
+      ]
+    },
+    "designations": [
+      "Multiple-time Former Member of Parliament (MP) for Naogaon-2",
+      "BNP Nominee for Naogaon-2",
+      "Senior Political Organizer, Naogaon District"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available (Likely born in the 1940s or 1950s)",
+      "birth_place": "Naogaon District, Bangladesh",
+      "address": "Permanent resident of the Naogaon-2 electoral area (Patnitala and Dhamoirhat Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career politician with a long record of public service; specific professional or business details are not available."
+    ],
+    "political_career": [
+      {
+        "year": "1996 (February)",
+        "event": "Elected as Member of Parliament for Naogaon-2 as a candidate of the Bangladesh Nationalist Party (BNP)."
+      },
+      {
+        "year": "2001",
+        "event": "Re-elected as Member of Parliament for Naogaon-2 in the 8th Jatiya Sangsad."
+      },
+      {
+        "year": "Current",
+        "event": "Serving as a senior BNP leader in Naogaon District, maintaining a strong organizational base and regional influence."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP Nominee for the Naogaon-2 constituency for the upcoming General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Naogaon-2",
+        "election_area_name": "Patnitala Upazila and Dhamoirhat Upazila"
+      }
+    ],
+    "life_activities": "Focused on strengthening BNP’s local structure, mentoring younger party activists, and preparing for the next parliamentary election in Naogaon-2 using his long-standing grassroots influence.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/GvVx2R13/download-11.jpg"],
+    "overall_summary": "Shamsuzzoha Khan is a veteran and highly respected Bangladesh Nationalist Party (BNP) leader, known for his multiple tenures as Member of Parliament for Naogaon-2 (Patnitala and Dhamoirhat Upazilas). Elected in both 1996 and 2001, he remains one of the most experienced political figures in the district. His confirmed nomination for the upcoming General Election underscores his continued influence and commitment to the BNP’s regional leadership.",
+    "district": ["Naogaon"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 48,
+    "name": "Md. Fazle Huda Babul",
+    "position": "BNP Leader",
+    "category": "Constituency Politician and Naogaon District BNP Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Naogaon-3 (Badalgachhi and Mohadevpur Upazilas) in the upcoming General Election",
+        "Senior organizational leader within the Naogaon District Bangladesh Nationalist Party (BNP)"
+      ],
+      "previous": []
+    },
+    "designations": [
+      "BNP Nominee for Naogaon-3",
+      "Senior Organizational Leader, Naogaon District BNP"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Naogaon District, Bangladesh",
+      "address": "Permanent resident of the Naogaon-3 electoral area (Badalgachhi and Mohadevpur Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Primarily a politician actively engaged in BNP party affairs; specific details regarding profession or business income are not available."
+    ],
+    "political_career": [
+      {
+        "year": "Organizational Dedication",
+        "event": "Actively involved in Naogaon District and Naogaon-3 constituency politics for a significant period, maintaining a strong organizational base."
+      },
+      {
+        "year": "Current",
+        "event": "Confirmed as the BNP Nominee for Naogaon-3 (Badalgachhi and Mohadevpur Upazilas) for the upcoming General Election."
+      },
+      {
+        "year": "Ongoing",
+        "event": "Leading local BNP efforts, focusing on organizational unity and electoral preparations."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Naogaon-3",
+        "election_area_name": "Badalgachhi Upazila and Mohadevpur Upazila"
+      }
+    ],
+    "life_activities": "Focused on maintaining a strong local political presence, organizational coordination, and voter mobilization across the Naogaon-3 constituency.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/TxXfSRLT/download-12.jpg"],
+    "overall_summary": "Md. Fazle Huda Babul is a senior leader of the Bangladesh Nationalist Party (BNP) in Naogaon District and the confirmed nominee for the Naogaon-3 constituency, which covers Badalgachhi and Mohadevpur Upazilas. Known for his organizational skills and loyalty to the party, he is now focused on leading BNP’s grassroots campaign for the upcoming General Election.",
+    "district": ["Naogaon"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 49,
+    "name": "Iqramul Bari Tipu",
+    "position": "BNP Leader",
+    "category": "Constituency Politician and Local Party Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Naogaon-4 (Manda Upazila) in the upcoming General Election",
+        "Recognized organizational leader within the Manda Upazila and Naogaon District BNP structure"
+      ],
+      "previous": [
+        "Long-time organizer and political activist in Manda Upazila",
+        "Maintained consistent involvement in grassroots party operations"
+      ]
+    },
+    "designations": [
+      "BNP Nominee for Naogaon-4",
+      "Key Organizational Leader, Manda Upazila BNP"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Manda Upazila, Naogaon District, Bangladesh",
+      "address": "Resident of the Naogaon-4 electoral area (Manda Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career politician focused on organizational and electoral politics; specific professional or business income details are not available."
+    ],
+    "political_career": [
+      {
+        "year": "Organizational Dedication",
+        "event": "Actively engaged in strengthening the BNP base and party unity within Manda Upazila."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the official Bangladesh Nationalist Party (BNP) Nominee for Naogaon-4."
+      },
+      {
+        "year": "Current",
+        "event": "Leading local mobilization and reconciliation efforts among party factions following his nomination."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Naogaon-4",
+        "election_area_name": "Manda Upazila"
+      }
+    ],
+    "life_activities": "Focused on grassroots political mobilization, unifying party workers, and preparing for the upcoming parliamentary election in Manda Upazila.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/VpCW1zrp/download-14.jpg"],
+    "overall_summary": "Iqramul Bari Tipu is a prominent BNP leader and the confirmed nominee for the Naogaon-4 constituency, which consists solely of Manda Upazila. His nomination reflects strong central confidence in his leadership despite reported local factional differences. Currently, he is concentrating on uniting BNP activists and leading the party’s campaign for the upcoming General Election.",
+    "district": ["Naogaon"],
+    "division": ["Rajshahi"]
+  },
+  {
+    "_id": 50,
+    "name": "Sheikh Md. Rezaul Islam",
+    "position": "BNP Leader, Nominee for Naogaon-6",
+    "category": "Constituency Politician and Local Party Leader",
+    "portfolio": {
+      "latest": [
+        "Confirmed BNP Nominee for Naogaon-6 (Raninagar and Atrai Upazilas) in the upcoming General Election",
+        "Recognized senior leader within the Naogaon District BNP structure, known for his grassroots organizing in Raninagar and Atrai"
+      ],
+      "previous": [
+        "Long-time political organizer and leader within the BNP in Naogaon District",
+        "Actively involved in the 2020 Naogaon-6 by-election nomination process"
+      ]
+    },
+    "designations": [
+      "BNP Nominee for Naogaon-6",
+      "Senior Organizational Leader, Raninagar and Atrai Upazilas"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Raninagar or Atrai Upazila, Naogaon District, Bangladesh",
+      "address": "Resident of the Naogaon-6 electoral area (Raninagar and Atrai Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Career politician engaged in BNP organizational and electoral activities; specific professional or business details are not available."
+    ],
+    "political_career": [
+      {
+        "year": "Organizational Dedication",
+        "event": "Maintained strong political presence and grassroots organization for the BNP in Raninagar and Atrai Upazilas."
+      },
+      {
+        "year": "2020 (By-election Context)",
+        "event": "Served as a key leader and contender for the BNP nomination in the Naogaon-6 by-election."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the official Bangladesh Nationalist Party (BNP) Nominee for Naogaon-6."
+      },
+      {
+        "year": "Current",
+        "event": "Leading local party election preparations, coordinating with Upazila-level units, and managing grassroots campaigns."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Naogaon-6",
+        "election_area_name": "Raninagar Upazila and Atrai Upazila"
+      }
+    ],
+    "life_activities": "Focused on winning the upcoming parliamentary election for Naogaon-6 through extensive grassroots mobilization and party organization in Raninagar and Atrai Upazilas.",
+    "other_income_sources": ["Not Available"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/FLGjnXhL/download-13.jpg"],
+    "overall_summary": "Sheikh Md. Rezaul Islam is a senior BNP leader and the confirmed nominee for the Naogaon-6 constituency, which comprises Raninagar and Atrai Upazilas. Known for his strong local organizational capacity, he is leading BNP’s campaign efforts in the area as the party prepares for the upcoming General Election.",
+    "district": ["Naogaon"],
+    "division": ["Rajshahi"]
   }
 ]

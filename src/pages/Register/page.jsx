@@ -64,10 +64,12 @@ export default function RegisterPage() {
       <div className="max-w-7xl mx-auto mt-10">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="lg:sticky lg:top-8">
-            <div className="text-center mb-6">
-              <div className="bg-green-700 w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                <div className="text-white text-3xl font-bold">BNP</div>
-              </div>
+            <div className="text-center mb-4">
+              <img
+                src="/logo.png"
+                alt="BNP Logo"
+                className="w-32 h-32 mx-auto object-contain"
+              />
               <h1 className="text-4xl font-bold text-green-800 mb-2">
                 Bangladesh Nationalist Party
               </h1>
