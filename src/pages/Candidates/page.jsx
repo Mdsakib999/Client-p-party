@@ -425,7 +425,13 @@ const Candidates = () => {
                     setCurrentPage(1);
                   }}
                 >
-                  <span className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full border border-gray-300 bg-gray-300"></span>
+                  <span
+                    className={`w-1.5 md:w-2 h-1.5 md:h-2 rounded-full border border-gray-300 bg-gray-300  ${
+                      selectedDivision?.id === division.id
+                        ? "bg-green-600"
+                        : "bg-gray-300"
+                    }`}
+                  ></span>
                   <span>{division?.name}</span>
                 </div>
               ))}
