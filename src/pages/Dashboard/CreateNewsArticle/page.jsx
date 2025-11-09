@@ -71,6 +71,15 @@ export default function CreateNewsArticle() {
       return;
     }
 
+    if (imageFiles.length === 0) {
+      toast.error(
+        <p className="text-center font-serif">
+          Please upload at least one image
+        </p>
+      );
+      return;
+    }
+
     const formData = new FormData();
     formData.append("title", title.trim());
     formData.append("description", description.trim());
@@ -121,7 +130,7 @@ export default function CreateNewsArticle() {
             </h1>
 
             {imageFiles.length > 0 && (
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
+              <div>
                 {imageFiles.map((img, index) => (
                   <img
                     key={index}

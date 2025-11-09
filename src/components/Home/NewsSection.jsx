@@ -1,13 +1,20 @@
 import { Link } from "react-router";
-import newsArticles from "../../data/newsArticles.json";
 
-const NewsSection = () => {
-  const newsActivities = newsArticles.slice(0, 8);
+const NewsSection = ({ newsArticles }) => {
+  const newsActivities = newsArticles?.slice(0, 8) || [];
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
 
   return (
-    <section className="py-12 px-4 bg-white">
+    <section className="py-10 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
             News and Activities
@@ -17,28 +24,27 @@ const NewsSection = () => {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {newsActivities.map((item) => (
             <Link
-              key={item.id}
+              key={item._id}
               to={`/news/${item.slug}`}
               className="block group"
             >
-              <div className="rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-shadow">
+              <div className="w-full max-w-96 mx-auto rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-shadow">
                 <div className="aspect-[4/3] overflow-hidden bg-gray-200">
                   <img
-                    src={item.featuredImage}
+                    src={item?.images?.[0]?.url}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-base leading-tight mb-2 group-hover:text-green-600 transition-colors">
-                    {item.title}
+                    {item.title.slice(0, 50)}...
                   </h3>
-                  <p className="text-xs text-gray-600 uppercase">
-                    {item.category} · {item.date}
+                  <p className="text-xs text-gray-600">
+                    {formatDate(item.createdAt)}
                   </p>
                 </div>
               </div>
@@ -46,7 +52,6 @@ const NewsSection = () => {
           ))}
         </div>
 
-        {/* See More Link */}
         <Link
           to="/news"
           className="inline-block font-semibold text-sm hover:text-green-600 transition-colors"
