@@ -5,7 +5,6 @@ import BNPLoader from "../../utils/BNPLoader";
 
 export default function AllNews() {
   const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery();
-
   if (isLoading) return <BNPLoader />;
   return (
     <div>

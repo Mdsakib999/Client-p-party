@@ -11,7 +11,7 @@ export const newsArticleApi = baseApi.injectEndpoints({
       invalidatesTags: ["NEWS_ARTICLE"],
     }),
     getAllNewsArticles: builder.query({
-      query: ({ page = 1, limit = 10, tag = "", search = "" }) => ({
+      query: ({ page = 1, limit = 10, tag = "", search = "" } = {}) => ({
         url: "/news-articles/all-news-articles",
         method: "GET",
         params: { page, limit, tag, search },

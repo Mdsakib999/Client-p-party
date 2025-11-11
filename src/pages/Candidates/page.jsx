@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ListFilter, Search } from "lucide-react";
 import candidatesData from "../../data/candidates3.json";
 import CandidateCard from "../../components/CandidateCard";
+import Pagination from "../../components/Pagination";
 
 const Candidates = () => {
   const [divisions, setDivisions] = useState([]);
@@ -89,6 +90,8 @@ const Candidates = () => {
   const filteredCandidates = selectedDivision
     ? candidatesData.filter((c) => c.division?.includes(selectedDivision.name))
     : candidatesData;
+
+  const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -443,65 +446,11 @@ const Candidates = () => {
             ))}
         </section>
 
-        {/* Pagination Controls */}
-        <div
-          id="pagination"
-          className="flex flex-wrap justify-center items-center gap-2 mt-8 mb-4"
-        >
-          <button
-            onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-md ${
-              currentPage === 1
-                ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                : "bg-green-600 text-white hover:bg-green-700"
-            }`}
-          >
-            Previous
-          </button>
-
-          <div className="flex items-center gap-2">
-            {Array.from(
-              { length: Math.ceil(filteredCandidates.length / itemsPerPage) },
-              (_, i) => i + 1
-            ).map((pageNum) => (
-              <button
-                key={pageNum}
-                onClick={() => handlePageChange(pageNum)}
-                className={`w-8 h-8 rounded-md ${
-                  currentPage === pageNum
-                    ? "bg-green-600 text-white"
-                    : "bg-gray-200 hover:bg-gray-300 text-gray-700"
-                }`}
-              >
-                {pageNum}
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={() =>
-              handlePageChange(
-                Math.min(
-                  currentPage + 1,
-                  Math.ceil(filteredCandidates.length / itemsPerPage)
-                )
-              )
-            }
-            disabled={
-              currentPage ===
-              Math.ceil(filteredCandidates.length / itemsPerPage)
-            }
-            className={`px-4 py-2 rounded-md ${
-              currentPage ===
-              Math.ceil(filteredCandidates.length / itemsPerPage)
-                ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                : "bg-green-600 text-white hover:bg-green-700"
-            }`}
-          >
-            Next
-          </button>
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </div>
   );

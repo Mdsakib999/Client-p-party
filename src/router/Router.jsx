@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
-import Home from "../pages/Home/page.jsx";
 import About from "../pages/About/page.jsx";
 import Contact from "../pages/Contact/page.jsx";
 import Campaigns from "../pages/Campaigns/page.jsx";
@@ -23,6 +22,7 @@ import ForgotPassword from "../pages/ForgotPassword/page.jsx";
 import withPublic from "../utils/withPublic.jsx";
 import withAuth from "../utils/withAuth.jsx";
 import CreateNewsArticle from "../pages/Dashboard/CreateNewsArticle/page.jsx";
+import Home from "../pages/Home/page.jsx";
 
 const router = createBrowserRouter([
   {
