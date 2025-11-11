@@ -462,7 +462,6 @@
     "district": ["Panchagarh"],
     "division": ["Rangpur"]
   },
-
   {
     "_id": 10,
     "name": "Ishraque Hossain",
@@ -3332,41 +3331,31 @@
     "district": ["Natore"],
     "division": ["Rajshahi"]
   },
+
   {
     "_id": 54,
-    "name": "Iqbal Hasan Mahmud Tuku",
-    "position": "BNP Standing Committee Member, Veteran Former Minister and Former MP",
-    "category": "Former Minister, Former MP, and Central Executive Leader",
+    "name": "Saching Prue Jerry",
+    "position": "Former MP",
+    "category": "Veteran Hill Tracts Leader and Electoral Challenger",
     "portfolio": {
       "latest": [
-        "Central Party Role: Member of the Standing Committee, the highest policy-making body of the Bangladesh Nationalist Party (BNP).",
-        "Ministerial Role: Served as State Minister for Power (2001–2006) and later as State Minister for Agriculture (2006) under the BNP government.",
-        "Parliamentary Role: Multiple-time former Member of Parliament for Sirajganj-2, elected in 1986 (Jatiya Party) and 2001 (BNP).",
-        "Electoral Status: Confirmed BNP Nominee for the Sirajganj-2 constituency in the upcoming General Election."
+        "A long-time and successful leader of the Bangladesh Nationalist Party (BNP) in the Bandarban Hill District.",
+        "Officially announced as the BNP Candidate for the Bandarban constituency in the recent candidate list for the upcoming General Election."
       ],
       "previous": [
-        "Longtime political leader with ministerial and legislative experience, recognized as a key policymaker within BNP and a senior figure in national politics."
+        "Served as an elected Member of Parliament (MP) for Bandarban in the February 1996 General Election (BNP)."
       ]
     },
     "designations": [
-      "BNP Standing Committee Member",
-      "Former State Minister for Power and Agriculture",
-      "Former Member of Parliament (MP) for Sirajganj-2",
-      "BNP Nominee for Sirajganj-2"
+      "Former Member of Parliament, Bandarban (Feb 1996)",
+      "Senior Leader, Bandarban District BNP"
     ],
     "personal_info": {
       "birth_date": "Not Available",
-      "birth_place": "Koyelgati village, Sheyalkol Union, Sirajganj Sadar Upazila, Sirajganj District, Bangladesh",
-      "address": "Permanent resident of the Sirajganj-2 electoral area",
+      "birth_place": "Bandarban Hill District, Bangladesh (belongs to one of the major indigenous communities of the region)",
+      "address": "Permanent resident of the Bandarban electoral area",
       "nationality": "Bangladeshi",
-      "parents": {
-        "father": "Abdullah al Mahmood (Noted politician and former Minister in East Pakistan)",
-        "grandfather": "Derazuddin Taluqdar"
-      },
-      "family_connections": {
-        "brother_in_law": "Mohammad Abdul Matin (Former Deputy Prime Minister of Bangladesh)",
-        "spouse": "Rumana Mahmud (President of Sirajganj District BNP and former MP for Sirajganj-2, elected in 2008)"
-      }
+      "parents": "Not Available"
     },
     "academic_career": {
       "schools": ["Not Available"],
@@ -3375,47 +3364,35 @@
       "degree": "Not Available"
     },
     "business_income_source_professional_career": [
-      "Full-time career politician with a background in government and national-level party strategy; specific professional or business details are not available."
+      "A career politician and former parliamentarian who holds a leadership role in the district organization, focused on the political dynamics of the Chittagong Hill Tracts."
     ],
     "political_career": [
       {
-        "year": "1986",
-        "event": "Elected as Member of Parliament for Sirajganj-2 under the Jatiya Party."
+        "year": "1996 (Feb)",
+        "event": "Elected as Member of Parliament (MP) for Bandarban representing the Bangladesh Nationalist Party (BNP)."
       },
       {
-        "year": "2001",
-        "event": "Elected as Member of Parliament for Sirajganj-2 representing the BNP and appointed as State Minister for Power."
-      },
-      {
-        "year": "2006",
-        "event": "Served as State Minister for Agriculture during the later part of the BNP-led government."
-      },
-      {
-        "year": "2008",
-        "event": "His wife, Rumana Mahmud, won the Sirajganj-2 seat as a BNP candidate."
+        "year": 2018,
+        "event": "Contested the Bandarban parliamentary seat for the BNP."
       },
       {
         "year": "Current",
-        "event": "Serving as a Member of the BNP Standing Committee, contributing to central policy and strategy decisions for the party."
-      },
-      {
-        "year": "2025/2026 (Projected)",
-        "event": "Confirmed as the BNP Nominee for Sirajganj-2 in the upcoming General Election."
+        "event": "Nominated and confirmed as the BNP candidate for the Bandarban constituency, remaining the primary face of the party in the area."
       }
     ],
     "election_constituencies": [
       {
-        "actual_place_name": "Sirajganj-2",
-        "election_area_name": "Sirajganj Sadar Upazila (partial: Bahuli, Sheyalkol, Khokshabari, Kawakola, Kaliahripur, and Saydabad Unions) and Kamarkandh Upazila including Sirajganj Municipality"
+        "actual_place_name": "Bandarban",
+        "election_area_name": "Entire Bandarban District (All Upazilas)"
       }
     ],
-    "life_activities": "Focused on national-level BNP leadership and policy formulation while maintaining a strong political base in Sirajganj. Actively involved in guiding district and central party strategies, supported by a politically influential family background.",
+    "life_activities": "Dedicated to representing the people of the Bandarban Hill District and strengthening BNP’s organizational and electoral presence across the Chittagong Hill Tracts.",
     "other_income_sources": [],
     "social_links": [],
-    "photos": ["https://i.ibb.co.com/4gn0x0Cf/download-20.jpg"],
-    "overall_summary": "Iqbal Hasan Mahmud Tuku is a veteran Bangladeshi politician and senior member of the Bangladesh Nationalist Party’s Standing Committee — the party’s top policy body. A former State Minister for Power and Agriculture, he has represented Sirajganj-2 multiple times as a Member of Parliament. With deep political lineage and strong local influence, he remains a central figure in BNP’s leadership and the confirmed nominee for Sirajganj-2 in the upcoming General Election.",
-    "district": ["Sirajganj"],
-    "division": ["Rajshahi"]
+    "photos": ["https://i.ibb.co.com/gbzvBzv2/saching.jpg"],
+    "overall_summary": "Saching Prue Jerry is the definitive and officially confirmed Bangladesh Nationalist Party (BNP) figure for the Bandarban Hill District constituency. As a former Member of Parliament, he is a veteran leader and electoral heavyweight chosen to lead the party's challenge in the politically unique and sensitive region of Bandarban.",
+    "district": ["Bandarban"],
+    "division": ["Chattogram"]
   },
   {
     "_id": 55,
@@ -5152,7 +5129,7 @@
     "life_activities": "Focused on central party strategy, legal advocacy for party leaders, and leading the electoral campaign in his long-time constituency, Magura-2.",
     "other_income_sources": [],
     "social_links": [],
-    "photos": ["Not Available"],
+    "photos": [],
     "overall_summary": "Nitai Roy Chowdhury is a highly experienced politician, a lawyer, and a senior Vice Chairman of the Central BNP Committee. His political career includes serving as a Member of Parliament for Magura-2 and holding multiple ministerial portfolios. He is the official candidate of the Bangladesh Nationalist Party for the Magura-2 constituency, tasked with leading the party's electoral challenge in the upcoming General Election.",
     "district": ["Magura"],
     "division": ["Khulna"]
@@ -5219,7 +5196,7 @@
     "life_activities": "Focused on political organization, public engagement, and leading the BNP’s electoral campaign in his long-time constituency.",
     "other_income_sources": [],
     "social_links": [],
-    "photos": ["Not Available"],
+    "photos": [],
     "overall_summary": "Biswas Jahangir Alam is a veteran politician and former Member of Parliament for the Narail-1 constituency, which covers Kalia Upazila and parts of Narail Sadar Upazila. As a long-standing candidate for the Bangladesh Nationalist Party, his selection reflects his extensive experience and leadership as a key political figure for the upcoming General Election.",
     "district": ["Narail"],
     "division": ["Khulna"]
@@ -6728,8 +6705,8 @@
       }
     ],
     "life_activities": "Focused on leading the BNP’s grassroots organization, coordinating campaign strategies, and maintaining strong connections with the electorate across the three upazilas of Pirojpur-2.",
-    "other_income_sources": ["Not Available"],
-    "social_links": ["Not Available"],
+    "other_income_sources": [],
+    "social_links": [],
     "photos": ["https://i.ibb.co.com/9kRF9Jvv/image.jpg"],
     "overall_summary": "Ahmed Sohel Monjur is a central leader of the Bangladesh Nationalist Party (BNP) and the confirmed nominee for the Pirojpur-2 constituency, encompassing Kaukhali, Bhandaria, and Indurkani upazilas. His involvement in the party’s central committee and his local leadership role mark him as a key organizational and electoral strategist for the BNP in this region.",
     "district": ["Pirojpur"],
@@ -6792,7 +6769,7 @@
       }
     ],
     "life_activities": "Focused on revitalizing BNP’s organizational strength and leading the electoral campaign in Mathbaria Upazila, aiming to reclaim the parliamentary seat with renewed grassroots mobilization.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/Md.Ruhul.Amin.Dulal1111/"],
     "photos": ["https://i.ibb.co.com/rBkTKb3/Dulal.jpg"],
     "overall_summary": "Md. Ruhul Amin Dulal is a Central Executive Committee Member of the Bangladesh Nationalist Party (BNP) and a former Member of Parliament for the Pirojpur-3 constituency, which includes Mathbaria Upazila. His confirmed nomination for the upcoming general election builds on his prior parliamentary experience and deep local influence, positioning him as the BNP’s key representative in the region.",
@@ -6854,8 +6831,8 @@
       }
     ],
     "life_activities": "Dedicated to advancing BNP’s political presence in Tangail by leading grassroots campaigns and strengthening central-local coordination in the Madhupur and Dhanbari regions.",
-    "other_income_sources": ["Not Available"],
-    "social_links": ["Not Available"],
+    "other_income_sources": [],
+    "social_links": [],
     "photos": ["https://i.ibb.co.com/Kp4sQn3P/Md-Mahubub-Anam-Shopon.jpg"],
     "overall_summary": "Fakir Mahbub Anam Swapan is a Central Executive Committee Member of the Bangladesh Nationalist Party (BNP) and the confirmed candidate for the Tangail-1 constituency, covering Madhupur and Dhanbari upazilas. His leadership role within the party and strong organizational influence at both the central and district levels position him as a key figure for BNP’s campaign in this strategically important constituency.",
     "district": ["Tangail"],
@@ -6932,7 +6909,7 @@
       }
     ],
     "life_activities": "Focused on central executive responsibilities while leading BNP’s electoral campaign in the Tangail-2 constituency. He utilizes his past ministerial experience and strong regional influence to strengthen BNP’s organizational presence in Bhuapur and Gopalpur.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": [
       "https://www.facebook.com/p/Abdus-Salam-Pintu-61569598418630/"
     ],
@@ -6996,8 +6973,8 @@
       }
     ],
     "life_activities": "Focused on strengthening BNP’s grassroots network in Ghatail, enhancing coordination with local leaders, and leading the party’s electoral campaign in the Tangail-3 constituency.",
-    "other_income_sources": ["Not Available"],
-    "social_links": ["Not Available"],
+    "other_income_sources": [],
+    "social_links": [],
     "photos": ["https://i.ibb.co.com/5xJjXS23/SM.jpg"],
     "overall_summary": "SM Obaidul Haque Nasir is a Central Executive Committee Member of the Bangladesh Nationalist Party (BNP) and the confirmed candidate for the Tangail-3 constituency, covering Ghatail Upazila. His organizational influence and leadership experience position him as a key figure in BNP’s campaign for this significant single-upazila seat.",
     "district": ["Tangail"],
@@ -7058,7 +7035,7 @@
       }
     ],
     "life_activities": "Focused on central political coordination, grassroots party development, and leading the BNP’s electoral campaign in Kalihati Upazila, a significant single-upazila constituency in Tangail.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/lutforrahman.matin/"],
     "photos": ["https://i.ibb.co.com/6j07n4L/motin.jpg"],
     "overall_summary": "Md. Lutfar Rahman Matin is a key Central Executive Committee Member of the Bangladesh Nationalist Party (BNP) and the confirmed candidate for the Tangail-4 constituency, covering Kalihati Upazila. His leadership role in both central and local party structures positions him as the primary figure driving BNP’s campaign in this critical constituency ahead of the upcoming general election.",
@@ -7120,7 +7097,7 @@
       }
     ],
     "life_activities": "Focused on BNP’s local and central coordination, organizing grassroots movements, and leading the electoral campaign across Delduar and Nagarpur Upazilas through his executive leadership role.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/robiul.awal.lovelu"],
     "photos": ["https://i.ibb.co.com/Kj9mdWGz/Lovelu.jpg"],
     "overall_summary": "Md. Rabiul Awal Lablu is a Central Executive Committee Member of the Bangladesh Nationalist Party (BNP) and the confirmed candidate for the Tangail-6 constituency, which includes Delduar and Nagarpur Upazilas. Known for his organizational abilities and strong grassroots presence, he plays a pivotal role in the BNP’s regional strategy and electoral campaign for this important constituency.",
@@ -7192,7 +7169,7 @@
       }
     ],
     "life_activities": "Focused on leveraging his strong local influence and long history of public service to lead the BNP’s campaign in Mirzapur Upazila.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/akazadsiddique/"],
     "photos": ["https://i.ibb.co.com/ZR8d8hvd/Siddiq.png"],
     "overall_summary": "Abul Kalam Azad Siddiqi is a seasoned and respected politician, having served multiple terms as a Member of Parliament for Tangail-7. Covering Mirzapur Upazila, his long-standing influence and consistent BNP representation make him a central figure in the party’s regional leadership. His confirmed candidacy for the upcoming general election reinforces his role as the party’s key contender for this pivotal seat.",
@@ -7259,7 +7236,7 @@
       }
     ],
     "life_activities": "Focused on central executive responsibilities and leading the BNP’s campaign in Basail and Sakhipur Upazilas, emphasizing grassroots mobilization and local organizational development.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/advahmedaazamkhan/"],
     "photos": ["https://i.ibb.co.com/B5D2jggY/image.jpg"],
     "overall_summary": "Ahmed Azam Khan is a prominent Central Executive Committee Member of the Bangladesh Nationalist Party (BNP) and the confirmed candidate for the Tangail-8 constituency, covering Basail and Sakhipur Upazilas. His political journey reflects consistent dedication to BNP’s grassroots and central structures, with a track record of active participation in national elections and long-term regional leadership. His confirmed nomination positions him as the leading BNP contender for this seat in the upcoming general election.",
@@ -7331,7 +7308,7 @@
       }
     ],
     "life_activities": "Focused on central party finance and organization, while leading the electoral campaign in Dewanganj and Bokshiganj Upazilas, drawing upon his previous parliamentary experience and regional leadership.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/MRMillat"],
     "photos": ["https://i.ibb.co.com/nMYVphhW/image.jpg"],
     "overall_summary": "M. Rashiduzzaman Millat is a senior leader and the current Treasurer of the Bangladesh Nationalist Party (BNP). A former Member of Parliament for Jamalpur-1, covering Dewanganj and Bokshiganj Upazilas, he has long been a central figure in both district and national BNP activities. Despite past legal challenges, his confirmed nomination demonstrates the party’s continued confidence in his leadership and political experience.",
@@ -7395,7 +7372,7 @@
       }
     ],
     "life_activities": "Focused on revitalizing BNP’s grassroots organization in Islampur Upazila and leading the electoral campaign for Jamalpur-2, drawing on his prior parliamentary and executive experience.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/profile.php?id=100063706690217"],
     "photos": ["https://i.ibb.co.com/VcT418RB/image.png"],
     "overall_summary": "A E Sultan Mahmud Babu is a prominent leader within the Bangladesh Nationalist Party (BNP), serving as a Central Executive Committee Member and former Member of Parliament for Jamalpur-2. His confirmed candidacy underscores his influential position within both the national leadership and his local constituency in Islampur Upazila. With a history of legislative experience and organizational leadership, he remains one of BNP’s key figures in the Mymensingh Division.",
@@ -7458,11 +7435,705 @@
       }
     ],
     "life_activities": "Focused on leading the BNP's campaign and political mobilization across Melandah and Sharishabari Upazilas, emphasizing local organizational revival and connecting with grassroots supporters.",
-    "other_income_sources": ["Not Available"],
+    "other_income_sources": [],
     "social_links": ["https://www.facebook.com/MustafizurRahmanBabulJamalpur"],
     "photos": ["https://i.ibb.co.com/b5Hjs9mQ/image.jpg"],
     "overall_summary": "Md. Mustafizur Rahman Babul is a central executive leader of the Bangladesh Nationalist Party (BNP) and the confirmed candidate for the Jamalpur-3 constituency, encompassing Melandah and Sharishabari Upazilas. His prior electoral experience in 2008 and his current central-level leadership make him a pivotal figure for BNP's organizational and electoral strategy in the Mymensingh Division.",
     "district": ["Jamalpur"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 116,
+    "name": "Khondokar Abdul Moktadir Chowdhury",
+    "position": "Former MP and Senior Leader",
+    "category": "Former Parliamentarian, Central Politician, and City Area Challenger",
+    "portfolio": {
+      "latest": [
+        "Senior Leader of the Bangladesh Nationalist Party (BNP) in the Sylhet Division",
+        "Confirmed BNP candidate for the Sylhet-1 constituency in the upcoming General Election"
+      ],
+      "previous": [
+        "Former Member of Parliament (MP) from the Sylhet region",
+        "Prominent organizational leader with close ties to the central BNP leadership"
+      ]
+    },
+    "designations": [
+      "Former Member of Parliament (MP)",
+      "Senior Leader, Sylhet District BNP",
+      "BNP Candidate for Sylhet-1"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Sylhet District, Bangladesh (specifically within Sylhet Sadar area)",
+      "address": "Permanent resident of the Sylhet-1 electoral area (Sylhet City Corporation and Sadar Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "A career politician and former parliamentarian, engaged in both national-level BNP activities and Sylhet's urban political structure. Specific business or professional details are not available."
+    ],
+    "political_career": [
+      {
+        "year": "Pre-2018",
+        "event": "Served as an elected Member of Parliament (MP) representing a Sylhet region constituency."
+      },
+      {
+        "year": 2018,
+        "event": "Contested the Sylhet-1 seat as the BNP candidate, securing 123,851 votes, establishing himself as the primary opposition challenger."
+      },
+      {
+        "year": "Current",
+        "event": "Active in organizing and leading BNP’s Sylhet metropolitan and Sadar-level activities, representing the party in central discussions and local campaigns."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Sylhet-1 constituency for the upcoming General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Sylhet-1",
+        "election_area_name": "Sylhet City Corporation and Sylhet Sadar Upazila"
+      }
+    ],
+    "life_activities": "Focused on consolidating BNP's urban base in Sylhet City and Sadar Upazila by combining central-level strategic experience with strong local organizational leadership.",
+    "other_income_sources": [],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/twCMk7z6/Khandaker-Abdul-Muktadir.jpg"],
+    "overall_summary": "Khondokar Abdul Moktadir Chowdhury is a veteran leader of the Bangladesh Nationalist Party (BNP), having previously served as a Member of Parliament and maintained strong influence in Sylhet’s political arena. As the confirmed BNP candidate for the prestigious Sylhet-1 constituency, covering Sylhet City Corporation and Sadar Upazila, he represents the party’s strategic effort to reclaim one of the country’s most symbolic and competitive seats through experienced and well-connected leadership.",
+    "district": ["Sylhet"],
+    "division": ["Sylhet"]
+  },
+  {
+    "_id": 117,
+    "name": "Mosammat Tahsina Rushdir",
+    "position": "Central Executive Member",
+    "category": "Central Leader and Electoral Challenger",
+    "portfolio": {
+      "latest": [
+        "Holds a position in the Bangladesh Nationalist Party (BNP) Central Executive Committee, demonstrating her high standing in the national party structure.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Sylhet-2 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Contested the Sylhet-2 seat for the BNP in previous general elections, establishing her as the primary challenger in this area.",
+        "Possesses significant local support and is a recognized leader in the Bishwanath and Osmani Nagar Upazilas."
+      ]
+    },
+    "designations": [
+      "Member, BNP Central Executive Committee",
+      "Former Electoral Candidate, Sylhet-2",
+      "BNP Candidate for Sylhet-2"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Sylhet District, Bangladesh (specifically within the Sylhet-2 electoral area)",
+      "address": "Permanent resident of the Sylhet-2 electoral area (Bishwanath and Osmani Nagar Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available",
+      "gender": "Female"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "A career politician focused on executive party roles and organizing electoral campaigns. Specific professional or business details are Not Available."
+    ],
+    "political_career": [
+      {
+        "year": "Previous",
+        "event": "Has been a consistent figure in BNP's electoral attempts in the Sylhet-2 constituency."
+      },
+      {
+        "year": "Current",
+        "event": "Serves as a member of the BNP Central Executive Committee."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Sylhet-2 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Sylhet-2",
+        "election_area_name": "Bishwanath Upazila and Osmani Nagar Upazila"
+      }
+    ],
+    "life_activities": "Dedicated to central party duties and leading the BNP's campaign in the Bishwanath and Osmani Nagar Upazilas.",
+    "other_income_sources": [],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/xS8x0zqy/Mosammat-Tahsina-Rushdir.webp"],
+    "overall_summary": "Mosammat Tahsina Rushdir is a dedicated central leader of the Bangladesh Nationalist Party (BNP), holding a position in the Central Executive Committee. As a confirmed candidate for the Sylhet-2 constituency, which covers Bishwanath and Osmani Nagar Upazilas, she is the primary and veteran challenger for the BNP in this area, relying on her party seniority and history of campaigning in the seat.",
+    "district": ["Sylhet"],
+    "division": ["Sylhet"]
+  },
+  {
+    "_id": 118,
+    "name": "Mohammad Abdul Malik",
+    "position": "District Executive Leader",
+    "category": "District-Level Politician and Electoral Challenger",
+    "portfolio": {
+      "latest": [
+        "A prominent executive leader of the Bangladesh Nationalist Party (BNP) in the Sylhet District unit.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Sylhet-3 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Possesses significant local support and is an active political figure in the Balaganj, Dakshin Surma, and Fenchuganj Upazilas.",
+        "Noted as a key figure in the party's local organizing efforts within the Sylhet District."
+      ]
+    },
+    "designations": [
+      "Senior Leader, Sylhet District BNP",
+      "BNP Candidate for Sylhet-3"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Sylhet District, Bangladesh (specifically within the Sylhet-3 electoral area)",
+      "address": "Permanent resident of the Sylhet-3 electoral area (Balaganj, Dakshin Surma, and Fenchuganj Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "A career politician focused on district party management and public service. Specific professional or business details are Not Available."
+    ],
+    "political_career": [
+      {
+        "year": "Current",
+        "event": "Actively involved in the district's organizational structure, often leading local political events and strategic planning for the constituency."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Sylhet-3 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Sylhet-3",
+        "election_area_name": "Balaganj Upazila, Dakshin Surma Upazila, and Fenchuganj Upazila"
+      }
+    ],
+    "life_activities": "Focused on executive party duties and leading the BNP's electoral campaign in the three Upazilas of the Sylhet-3 constituency.",
+    "other_income_sources": [],
+    "social_links": ["https://www.facebook.com/maliquebnp/"],
+    "photos": ["https://i.ibb.co.com/m57ZHPSX/Mohammed-Malique.jpg"],
+    "overall_summary": "Mohammad Abdul Malik is an executive leader of the Bangladesh Nationalist Party (BNP) in the Sylhet District. He is the confirmed candidate for the Sylhet-3 constituency, which covers Balaganj, Dakshin Surma, and Fenchuganj Upazilas. His nomination is part of the party's strategy to field strong, organizationally backed local leaders to contest this historically significant seat.",
+    "district": ["Sylhet"],
+    "division": ["Sylhet"]
+  },
+  {
+    "_id": 119,
+    "name": "Emran Ahmed Chowdhury",
+    "position": "Central/District Politician",
+    "category": "Senior Leader and Electoral Challenger",
+    "portfolio": {
+      "latest": [
+        "A confirmed and prominent leader of the Bangladesh Nationalist Party (BNP) with strong organizational ties in the Sylhet District.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Sylhet-6 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Has been a consistent challenger for the BNP in the Sylhet-6 area, having been nominated and campaigning in previous election cycles.",
+        "Possesses significant support in the two Upazilas, Beanibazar and Golapganj, which are known for their high concentration of expatriate voters and political activism."
+      ]
+    },
+    "designations": [
+      "Senior Leader, Sylhet District/Central BNP",
+      "BNP Candidate for Sylhet-6"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Sylhet District, Bangladesh (specifically within the Sylhet-6 electoral area)",
+      "address": "Permanent resident of the Sylhet-6 electoral area (Beanibazar and Golapganj Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "A career politician focused on executive party roles and public service. Specific professional or business details are Not Available."
+    ],
+    "political_career": [
+      {
+        "year": "Previous",
+        "event": "Has been involved in the electoral process of Sylhet-6, establishing him as the party's consistent choice."
+      },
+      {
+        "year": "Current",
+        "event": "Actively involved in the party's organizational structure in the Sylhet Division."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Sylhet-6 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Sylhet-6",
+        "election_area_name": "Beanibazar Upazila and Golapganj Upazila"
+      }
+    ],
+    "life_activities": "Focused on leading the BNP's campaign in the Beanibazar and Golapganj Upazilas, leveraging local connections and party support to mount a strong challenge.",
+    "other_income_sources": [],
+    "social_links": ["https://www.facebook.com/emran.chowdhury.146/"],
+    "photos": ["https://i.ibb.co.com/3q8wkFM/Emran-Ahmed-Chowdhury.jpg"],
+    "overall_summary": "Emran Ahmed Chowdhury is the confirmed Bangladesh Nationalist Party (BNP) candidate for the Sylhet-6 constituency, which covers Beanibazar and Golapganj Upazilas. He is a senior and active leader in the party's Sylhet organization, having been entrusted with contesting this seat in the upcoming General Election. His nomination aims to mobilize the party base in this influential region, known for its strong expatriate connections with the UK and US.",
+    "district": ["Sylhet"],
+    "division": ["Sylhet"]
+  },
+  {
+    "_id": 120,
+    "name": "Md. Mahmudul Haque Rubel",
+    "position": "Former Member of Parliament",
+    "category": "Multi-time Former Parliamentarian and Senior Constituency Politician",
+    "portfolio": {
+      "latest": [
+        "Senior leader of the Bangladesh Nationalist Party (BNP) in the Sherpur District.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Sherpur-3 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Served as a multi-time elected Member of Parliament (MP) for Sherpur-3 (Feb 1996 and 2001).",
+        "His father, Md. Serajul Haque, was also a former MP for this constituency."
+      ]
+    },
+    "designations": [
+      "Former Member of Parliament (MP) for Sherpur-3",
+      "Senior Leader, Sherpur District BNP",
+      "BNP Candidate for Sherpur-3"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Sherpur District, Bangladesh (specifically within the Sherpur-3 electoral area)",
+      "address": "Permanent resident of the Sherpur-3 electoral area (Jhenaigati and Sreebardi Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "His father, Md. Serajul Haque, was also a former MP for Sherpur-3."
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "A veteran politician with significant experience in national legislature. Specific professional or business details are Not Available. He was involved in a past legal case regarding a tax conviction."
+    ],
+    "political_career": [
+      {
+        "year": 1991,
+        "event": "His father, Md. Serajul Haque, was elected MP for Sherpur-3 for the BNP."
+      },
+      {
+        "year": "Feb 1996",
+        "event": "Elected as Member of Parliament (MP) for Sherpur-3 as a BNP candidate."
+      },
+      {
+        "year": 2001,
+        "event": "Re-elected as Member of Parliament (MP) for Sherpur-3 as a BNP candidate."
+      },
+      {
+        "year": 2007,
+        "event": "Sentenced to six years imprisonment for a tax-related case."
+      },
+      {
+        "year": 2008,
+        "event": "Contested the Sherpur-3 seat, losing to the Awami League candidate."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Sherpur-3 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Sherpur-3",
+        "election_area_name": "Jhenaigati Upazila and Sreebardi Upazila"
+      }
+    ],
+    "life_activities": "Focused on leveraging his repeated electoral success and political family background to lead the BNP's campaign in the Jhenaigati and Sreebardi Upazilas.",
+    "other_income_sources": [],
+    "social_links": ["https://www.facebook.com/mahmudulhaquerubelmp"],
+    "photos": ["https://i.ibb.co.com/Fj7ctsB/Md-Mahmudul-Haque-Rubel.jpg"],
+    "overall_summary": "Md. Mahmudul Haque Rubel is a deeply established political figure and a multi-time former Member of Parliament for the Sherpur-3 constituency, which covers Jhenaigati and Sreebardi Upazilas. Drawing on his own and his family's electoral history, he is the confirmed candidate for the Bangladesh Nationalist Party (BNP), positioning him as the primary challenger for this seat in the upcoming election.",
+    "district": ["Sherpur"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 121,
+    "name": "Syed Emran Saleh Prince",
+    "position": "Central Organizing Secretary",
+    "category": "Central Executive Leader and Student Movement Veteran",
+    "portfolio": {
+      "latest": [
+        "Holds a high-ranking position as Organizing Secretary (Mymensingh Division) in the Central Executive Committee of the Bangladesh Nationalist Party (BNP).",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-1 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "A former leader in the student wing of the party, Jatiyatabadi Chhatra Dal (JCD).",
+        "A prominent and vocal central spokesperson for the party."
+      ]
+    },
+    "designations": [
+      "Central Organizing Secretary (Mymensingh Division), Bangladesh Nationalist Party (BNP)",
+      "Former Senior Vice-President, Jatiyatabadi Chhatra Dal (JCD)",
+      "BNP Candidate for Mymensingh-1"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mymensingh District, Bangladesh (specifically linked to the Mymensingh-1 electoral area)",
+      "address": "Permanent resident of the Mymensingh-1 electoral area (Haluaghat and Dhobaura Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "A career politician focused on executive and organizational work, leveraging his deep experience in student and central politics. Specific professional or business details are Not Available."
+    ],
+    "political_career": [
+      {
+        "year": "JCD Leadership",
+        "event": "Held key positions in the Jatiyatabadi Chhatra Dal (JCD), including Senior Vice-President."
+      },
+      {
+        "year": "Current",
+        "event": "Serves as the Organizing Secretary for the Mymensingh Division in the BNP's Central Executive Committee."
+      },
+      {
+        "year": "Public Role",
+        "event": "Regularly participates in political talk shows and media events as a leading party spokesperson."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Mymensingh-1 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Mymensingh-1",
+        "election_area_name": "Haluaghat Upazila and Dhobaura Upazila"
+      }
+    ],
+    "life_activities": "Focused on central political organization, public advocacy, and leading the electoral campaign in the Haluaghat and Dhobaura Upazilas.",
+    "other_income_sources": [],
+    "social_links": ["https://www.facebook.com/syedemransalehprince/"],
+    "photos": ["https://i.ibb.co.com/1YSxT4rq/Syed-Emran-Saleh-Prince.jpg"],
+    "overall_summary": "Syed Emran Saleh Prince is a powerful central figure in the Bangladesh Nationalist Party (BNP), serving as the Organizing Secretary for the Mymensingh Division and a former senior student leader. His confirmed candidacy for Mymensingh-1 (Haluaghat and Dhobaura Upazilas) establishes him as the party's standard-bearer in this northern border constituency, known for his vocal role in national opposition politics.",
+    "district": ["Mymensingh"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 122,
+    "name": "Motaher Hossin Talukder",
+    "position": "District Leader",
+    "category": "Senior Local Politician and Constituency Contender",
+    "portfolio": {
+      "latest": [
+        "A senior and influential leader within the Mymensingh District unit of the Bangladesh Nationalist Party (BNP).",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-2 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Possesses strong local support and a long history of grassroots activism in the Tarakanda and Phulpur Upazilas."
+      ]
+    },
+    "designations": [
+      "Senior Leader, Mymensingh District BNP",
+      "BNP Candidate for Mymensingh-2"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mymensingh District, Bangladesh (specifically within the Mymensingh-2 electoral area)",
+      "address": "Permanent resident of the Mymensingh-2 electoral area (Tarakanda and Phulpur Upazilas)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Details regarding his specific business or professional career are Not Available, suggesting a focus on political and local leadership activities."
+    ],
+    "political_career": [
+      {
+        "year": "Local Leadership",
+        "event": "Has been a sustained figure in local BNP politics, organizing and leading party activities across the constituency for many years."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Mymensingh-2 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Mymensingh-2",
+        "election_area_name": "Tarakanda Upazila and Phulpur Upazila"
+      }
+    ],
+    "life_activities": "Dedicated to local party organization and public engagement within the Mymensingh-2 constituency, aiming to secure the seat for the BNP.",
+    "other_income_sources": [],
+    "social_links": [
+      "https://www.facebook.com/officialmotaharhossain.talukder/"
+    ],
+    "photos": ["https://i.ibb.co.com/Kxx6YThJ/mahtab-Hossain.jpg"],
+    "overall_summary": "Motaher Hossin Talukder is a long-standing and respected leader of the Bangladesh Nationalist Party (BNP) in the Mymensingh District. As the confirmed candidate for Mymensingh-2 (Tarakanda and Phulpur Upazilas), his strength lies in his deep local connections and history of grassroots political work in the area.",
+    "district": ["Mymensingh"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 123,
+    "name": "M Iqbal Hossain",
+    "position": "Constituency Leader",
+    "category": "Local Politician and Electoral Challenger",
+    "portfolio": {
+      "latest": [
+        "A dedicated local leader within the Bangladesh Nationalist Party (BNP) in Mymensingh District.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-3 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Focused on mobilizing the party's support base within the single-upazila constituency of Gouripur."
+      ]
+    },
+    "designations": [
+      "Local Leader, Mymensingh District BNP",
+      "BNP Candidate for Mymensingh-3"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mymensingh District, Bangladesh (specifically within Gouripur Upazila)",
+      "address": "Permanent resident of the Mymensingh-3 electoral area (Gouripur Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Details regarding his specific business or professional career are Not Available, with his primary activities centered on political organization in Gouripur."
+    ],
+    "political_career": [
+      {
+        "year": "Local Activities",
+        "event": "Active in local political events, demonstrations, and organizational structure of the BNP in Gouripur Upazila."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Mymensingh-3 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Mymensingh-3",
+        "election_area_name": "Gouripur Upazila"
+      }
+    ],
+    "life_activities": "Dedicated to political and public life within the Gouripur Upazila, aiming to represent the BNP in the Jatiya Sangsad.",
+    "other_income_sources": [],
+    "social_links": [],
+    "photos": [],
+    "overall_summary": "M Iqbal Hossain is a local leader and the confirmed candidate for the Bangladesh Nationalist Party (BNP) in the Mymensingh-3 constituency (Gouripur Upazila). His candidacy is focused on local mobilization and challenging the incumbent majority in this key area.",
+    "district": ["Mymensingh"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 124,
+    "name": "Md. Abu Wahab Akhond Walid",
+    "position": "District Leader",
+    "category": "Local Politician and Constituency Contender",
+    "portfolio": {
+      "latest": [
+        "A dedicated and active local leader within the Mymensingh District unit of the Bangladesh Nationalist Party (BNP), with strong ties to the Sadar area.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-4 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Focused on mobilizing the party's support base within the Mymensingh Sadar Upazila."
+      ]
+    },
+    "designations": [
+      "Local Leader, Mymensingh District BNP",
+      "BNP Candidate for Mymensingh-4"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mymensingh District, Bangladesh (specifically within Mymensingh Sadar Upazila)",
+      "address": "Permanent resident of the Mymensingh-4 electoral area (Mymensingh Sadar Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Details regarding his specific business or professional career are Not Available, with his primary activities centered on political organization and leadership in the Sadar constituency."
+    ],
+    "political_career": [
+      {
+        "year": "Local Activities",
+        "event": "Active in local political events, demonstrations, and organizational structure of the BNP in the Mymensingh Sadar area."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Mymensingh-4 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Mymensingh-4",
+        "election_area_name": "Mymensingh Sadar Upazila (Part)"
+      }
+    ],
+    "life_activities": "Dedicated to political and public life within the Mymensingh Sadar Upazila, aiming to represent the BNP in the Jatiya Sangsad.",
+    "other_income_sources": [],
+    "social_links": ["https://www.facebook.com/wahabakanda.wahid/"],
+    "photos": ["https://i.ibb.co.com/JjsJz0tm/Md-Abu-Wahab-Akhond-Walid.jpg"],
+    "overall_summary": "Md. Abu Wahab Akhond Walid is a local leader and the confirmed candidate for the Bangladesh Nationalist Party (BNP) in the crucial Mymensingh-4 constituency, which covers a significant portion of Mymensingh Sadar. His candidacy is based on local organizational efforts and his aim to challenge the incumbent majority in this vital urban area.",
+    "district": ["Mymensingh"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 125,
+    "name": "Mohammad Jakir Hossain",
+    "position": "Former Electoral Contender",
+    "category": "Local Leader and Seasoned Electoral Candidate",
+    "portfolio": {
+      "latest": [
+        "A well-known and active figure in the Bangladesh Nationalist Party (BNP), holding a substantial support base in the constituency.",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-5 constituency in the upcoming General Election."
+      ],
+      "previous": [
+        "Contested the Mymensingh-5 seat in the 2008 General Election for the BNP, securing a significant vote percentage (39.5%)."
+      ]
+    },
+    "designations": [
+      "Former Electoral Candidate, Mymensingh-5",
+      "Senior Local Leader, Muktagacha Upazila",
+      "BNP Candidate for Mymensingh-5"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mymensingh District, Bangladesh (specifically within Muktagacha Upazila)",
+      "address": "Permanent resident of the Mymensingh-5 electoral area (Muktagacha Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Details regarding his specific business or professional career are Not Available, with a long-standing focus on political and electoral activities."
+    ],
+    "political_career": [
+      {
+        "year": 2008,
+        "event": "Contested the Mymensingh-5 seat for the BNP, demonstrating significant electoral strength."
+      },
+      {
+        "year": "Local Activities",
+        "event": "Continuous involvement in the political life and organization of the BNP in Muktagacha Upazila."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Mymensingh-5 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Mymensingh-5",
+        "election_area_name": "Muktagacha Upazila"
+      }
+    ],
+    "life_activities": "Focused on political campaigning and public representation in the Muktagacha Upazila.",
+    "other_income_sources": [],
+    "social_links": [],
+    "photos": [],
+    "overall_summary": "Mohammad Jakir Hossain is a seasoned politician and the confirmed Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-5 constituency, which covers Muktagacha Upazila. His past electoral performance and confirmed candidacy highlight his status as a persistent and strong challenger in this single-upazila seat.",
+    "district": ["Mymensingh"],
+    "division": ["Mymensingh"]
+  },
+  {
+    "_id": 126,
+    "name": "Md. Akhtarul Alam",
+    "position": "District Leader",
+    "category": "Local Politician and Constituency Contender",
+    "portfolio": {
+      "latest": [
+        "A key organizing figure and leader within the Mymensingh District unit of the Bangladesh Nationalist Party (BNP).",
+        "Confirmed as the Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-6 constituency in the upcoming General Election."
+      ],
+      "previous": ["Active in the political landscape of Bhaluka Upazila."]
+    },
+    "designations": [
+      "District Leader, Mymensingh District BNP",
+      "BNP Candidate for Mymensingh-6"
+    ],
+    "personal_info": {
+      "birth_date": "Not Available",
+      "birth_place": "Mymensingh District, Bangladesh (specifically within Bhaluka Upazila)",
+      "address": "Permanent resident of the Mymensingh-6 electoral area (Bhaluka Upazila)",
+      "nationality": "Bangladeshi",
+      "parents": "Not Available"
+    },
+    "academic_career": {
+      "schools": ["Not Available"],
+      "college": "Not Available",
+      "university": "Not Available",
+      "degree": "Not Available"
+    },
+    "business_income_source_professional_career": [
+      "Details regarding his specific business or professional career are Not Available, suggesting a focus on political and organizational activities in Bhaluka."
+    ],
+    "political_career": [
+      {
+        "year": "Local Activities",
+        "event": "Dedicated to the political and organizational life of the BNP in Bhaluka Upazila."
+      },
+      {
+        "year": "2025/2026 (Projected)",
+        "event": "Confirmed as the BNP candidate for the Mymensingh-6 constituency for the next General Election."
+      }
+    ],
+    "election_constituencies": [
+      {
+        "actual_place_name": "Mymensingh-6",
+        "election_area_name": "Bhaluka Upazila"
+      }
+    ],
+    "life_activities": "Focused on leading the BNP's campaign and mobilization efforts in the Bhaluka Upazila.",
+    "other_income_sources": [],
+    "social_links": [],
+    "photos": [],
+    "overall_summary": "Md. Akhtarul Alam is a dedicated leader of the Bangladesh Nationalist Party (BNP) at the district level and the confirmed candidate for the Mymensingh-6 constituency (Bhaluka Upazila). His candidacy represents the party's push to secure the seat through local organizational strength.",
+    "district": ["Mymensingh"],
     "division": ["Mymensingh"]
   }
 ]

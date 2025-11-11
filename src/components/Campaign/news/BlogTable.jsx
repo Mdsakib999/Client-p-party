@@ -3,9 +3,7 @@ import { useGetAllNewsArticlesQuery } from "../../../redux/features/newsArticle/
 import BNPLoader from "../../../utils/BNPLoader";
 
 export default function BlogTable() {
-  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
-    limit: 20,
-  });
+  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery();
 
   if (isLoading) return <BNPLoader />;
   const blogs = newsArticles?.data || [];
