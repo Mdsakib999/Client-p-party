@@ -9,7 +9,15 @@ export const userApi = baseApi.injectEndpoints({
         data: userInfo,
       }),
     }),
+    updateUser: builder.mutation({
+      query: ({ userInfo, userId }) => ({
+        url: `/user/${userId}`,
+        method: "PUT",
+        data: userInfo,
+      }),
+      invalidatesTags: ["USER"],
+    }),
   }),
 });
 
-export const { useCreateUserMutation } = userApi;
+export const { useCreateUserMutation, useUpdateUserMutation } = userApi;

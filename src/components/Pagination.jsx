@@ -30,11 +30,11 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
-        className={`cursor-pointer p-2 rounded-md flex items-center justify-center transition-all duration-200
+        className={`p-2 rounded-md flex items-center justify-center transition-all duration-200
           ${
             currentPage === 1
               ? "bg-emerald-100 text-emerald-400 cursor-not-allowed"
-              : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm"
+              : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm cursor-pointer"
           }`}
       >
         <ChevronLeft size={18} />
@@ -66,11 +66,11 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
         disabled={currentPage === totalPages}
-        className={`cursor-pointer p-2 rounded-md flex items-center justify-center transition-all duration-200
+        className={`p-2 rounded-md flex items-center justify-center transition-all duration-200
           ${
             currentPage === totalPages
               ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-              : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm"
+              : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm cursor-pointer"
           }`}
       >
         <ChevronRight size={18} />

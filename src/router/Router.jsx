@@ -11,7 +11,6 @@ import Dashboard from "../pages/Dashboard/page.jsx";
 import Overview from "../pages/Dashboard/Overview/page.jsx";
 import CreateCandidate from "../pages/Dashboard/CreateCandidate/page.jsx";
 import ManageCandidates from "../pages/Dashboard/ManageCandidates/page.jsx";
-import ManageBlogs from "../pages/Dashboard/ManageBlogs/page.jsx";
 import Donate from "../pages/Dashboard/Donate/page.jsx";
 import ManageAccount from "../pages/Dashboard/ManageAccount/page.jsx";
 import LoginPage from "../pages/Login/page.jsx";
@@ -23,6 +22,7 @@ import withPublic from "../utils/withPublic.jsx";
 import withAuth from "../utils/withAuth.jsx";
 import CreateNewsArticle from "../pages/Dashboard/CreateNewsArticle/page.jsx";
 import Home from "../pages/Home/page.jsx";
+import ManageNewsArticle from "../pages/Dashboard/ManageNewsArticle/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -101,8 +101,8 @@ const router = createBrowserRouter([
             Component: withAuth(ManageCandidates, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
-            path: "manage-blogs",
-            Component: withAuth(ManageBlogs, ["SUPER_ADMIN", "ADMIN"]),
+            path: "manage-news-articles",
+            Component: withAuth(ManageNewsArticle, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "donate",
