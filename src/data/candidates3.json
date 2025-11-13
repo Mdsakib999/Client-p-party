@@ -306,10 +306,6 @@
       {
         "actual_place_name": "Dhaka-8",
         "election_area_name": "wards 8, 9, 10, 11, 12, 13, 19, 20 & 21 of Dhaka South City Corporation (Motijheel, Shahbagh, Ramna, Paltan and Shahjahanpur)"
-      },
-      {
-        "actual_place_name": "Dhaka-6",
-        "election_area_name": "Historic constituency (previously represented)"
       }
     ],
     "life_activities": "city politics, business philanthropy, party organisation",
@@ -1123,62 +1119,69 @@
   },
   {
     "_id": 22,
-    "name": "Md. Ataur Zaman Riaz",
-    "position": "BNP leader",
-    "category": "Constituency politician (nominee and local leader)",
+    "name": "Md. Akhtaruzzaman Mia",
+    "position": "Former Member of Parliament and Confirmed Candidate",
+    "category": "Former Parliamentarian and Regional Leader",
     "portfolio": {
       "latest": [
-        "Confirmed BNP nominee for Dinajpur-4 (Khansama–Chirirbandar) in the upcoming General Election"
+        "A long-time leader of the Bangladesh Nationalist Party (BNP) in the Dinajpur District.",
+        "He was the officially announced BNP Candidate for the Dinajpur-4 constituency in the recent candidate list."
       ],
       "previous": [
-        "Held significant local BNP roles (Upazila or District level) establishing the political base for nomination"
+        "Served as an elected Member of Parliament (MP) for Dinajpur-4 in the 2001 General Election (BNP) for a five-year term.",
+        "Previously contested in the 2018 General Election for the same constituency."
       ]
     },
     "designations": [
-      "BNP nominee for Dinajpur-4 constituency",
-      "Key organizer and political figure in Khansama and Chirirbandar Upazilas"
+      "Former Member of Parliament, Dinajpur-4 (2001–2006)",
+      "Confirmed BNP Candidate for Dinajpur-4",
+      "Politician and Businessman"
     ],
     "personal_info": {
       "birth_date": "Not Available",
-      "birth_place": "resident of Khansama or Chirirbandar Upazila, Dinajpur District, Bangladesh",
-      "address": "Resident of Dinajpur-4 electoral area",
+      "birth_place": "Dinajpur District, East Pakistan (now Bangladesh)",
+      "address": "Permanent resident of the Dinajpur-4 electoral area",
       "nationality": "Bangladeshi",
       "parents": "Not Available"
     },
     "academic_career": {
       "schools": ["Not Available"],
       "college": "Not Available",
-      "university": "Not Available",
-      "degree": "Not Available"
+      "university": "Rajshahi University",
+      "degree": "Honours and Master's degrees in Accounting and Information Systems (1978–79 session)"
     },
     "business_income_source_professional_career": [
-      "Career politician focused on organizational and electoral politics at the local level; professional or business details not available"
+      "A businessman who became a politician, successfully winning the Dinajpur-4 seat in the 2001 General Election."
     ],
     "political_career": [
       {
-        "year": "prior to nomination",
-        "event": "Dedicated time to local political activities, grassroots campaigning, and strengthening BNP’s base across Khansama and Chirirbandar"
+        "year": 2001,
+        "event": "Elected as Member of Parliament (MP) for Dinajpur-4 representing the Bangladesh Nationalist Party (BNP) as part of the four-party alliance."
       },
       {
-        "year": "2025/2026 (projected)",
-        "event": "Nominated by BNP as candidate for Dinajpur-4 in the next General Election"
+        "year": 2008,
+        "event": "Contested the election as an independent candidate after failing to secure the BNP nomination."
       },
       {
-        "year": "current",
-        "event": "Leading local BNP organization, campaign operations, and public outreach in the constituency"
+        "year": 2018,
+        "event": "Contested the seat again as the BNP Candidate under the Jatiya Oikya Front alliance."
+      },
+      {
+        "year": "Current",
+        "event": "Recognized as the primary, confirmed BNP figure for the Dinajpur-4 constituency."
       }
     ],
     "election_constituencies": [
       {
         "actual_place_name": "Dinajpur-4",
-        "election_area_name": "Khansama and Chirirbandar Upazilas"
+        "election_area_name": "Chirirbandar Upazila and Khansama Upazila"
       }
     ],
-    "life_activities": "Focused on winning Dinajpur-4, building local BNP structure, and promoting party programs across the constituency.",
+    "life_activities": "Focused on re-establishing BNP’s political presence and voter confidence in the Chirirbandar and Khansama Upazilas through active organizational leadership and local engagement.",
     "other_income_sources": [],
     "social_links": [],
-    "photos": [],
-    "overall_summary": "Md. Ataur Zaman Riaz is the confirmed BNP nominee for Dinajpur-4 (Khansama–Chirirbandar). His candidacy reflects his deep involvement in district-level politics and long-Standing service to the BNP’s organizational network in Dinajpur.",
+    "photos": ["https://i.ibb.co.com/CKR5jq8L/xja.jpg"],
+    "overall_summary": "Md. Akhtaruzzaman Mia is the definitive Bangladesh Nationalist Party (BNP) figure for the Dinajpur-4 constituency. As a former Member of Parliament (2001) and the confirmed party nominee in recent elections, he remains a key political heavyweight leading the BNP's efforts in the Chirirbandar and Khansama areas.",
     "district": ["Dinajpur"],
     "division": ["Rangpur"]
   },
@@ -3589,26 +3592,26 @@
   },
   {
     "_id": 58,
-    "name": "Md. Amirul Islam Khan",
-    "position": "BNP Leader",
-    "category": "Constituency Politician and Local Party Leader",
+    "name": "Abdul Bari",
+    "position": "Confirmed Candidate and Senior Regional Leader",
+    "category": "District-Level Political Figure and Electoral Challenger",
     "portfolio": {
       "latest": [
-        "Party Role: Prominent leader within the Sirajganj District BNP structure, focusing on the Belkuchi and Chauhali Upazilas.",
-        "Electoral Status: Confirmed as the Bangladesh Nationalist Party (BNP) Nominee for the Sirajganj-5 constituency in the upcoming General Election."
+        "A long-time activist and recognized senior leader of the Bangladesh Nationalist Party (BNP) in the Joypurhat District.",
+        "Officially announced as the BNP Candidate for the Joypurhat-2 constituency in the party's recent candidate list."
       ],
       "previous": [
-        "Longtime grassroots organizer and active participant in local BNP activities, recognized for his leadership and dedication in the Belkuchi and Chauhali regions."
+        "Has been actively involved in BNP’s campaigns and organizational efforts across the Joypurhat-2 constituency."
       ]
     },
     "designations": [
-      "BNP Nominee for Sirajganj-5",
-      "Local Leader of Bangladesh Nationalist Party (BNP)"
+      "Confirmed BNP Candidate for Joypurhat-2",
+      "Senior Leader, Joypurhat District BNP"
     ],
     "personal_info": {
       "birth_date": "Not Available",
-      "birth_place": "Likely Belkuchi or Chauhali Upazila, Sirajganj District, Bangladesh",
-      "address": "Permanent resident of the Sirajganj-5 electoral area (Belkuchi/Chauhali Upazilas)",
+      "birth_place": "Joypurhat District, Bangladesh (prominent local figure in the Joypurhat-2 electoral area)",
+      "address": "Permanent resident of Akkelpur, Kalai, and Khetlal Upazilas, Joypurhat District",
       "nationality": "Bangladeshi",
       "parents": "Not Available"
     },
@@ -3619,34 +3622,30 @@
       "degree": "Not Available"
     },
     "business_income_source_professional_career": [
-      "Career politician dedicated to organizing and strengthening the BNP’s grassroots network in Sirajganj-5. Specific professional or business background details are not available."
+      "A career political figure focused on maintaining the BNP's strong historical base in the Akkelpur, Kalai, and Khetlal Upazilas."
     ],
     "political_career": [
       {
-        "year": "Local Leadership",
-        "event": "Recognized as a key BNP leader in Belkuchi and Chauhali, taking an active role in shaping the district-level party organization."
+        "year": "Previous Elections",
+        "event": "Active in BNP's campaigns and organizational efforts in the Joypurhat-2 constituency."
       },
       {
-        "year": "Current Status",
-        "event": "Confirmed as the Bangladesh Nationalist Party (BNP) Nominee for the Sirajganj-5 constituency in the upcoming General Election."
-      },
-      {
-        "year": "Ongoing",
-        "event": "Actively engaged in campaigning and organizational work, focusing on strengthening BNP’s support base and mobilizing voters across Belkuchi and Chauhali Upazilas."
+        "year": "Current",
+        "event": "Nominated and confirmed as the BNP's official candidate for the Joypurhat-2 constituency."
       }
     ],
     "election_constituencies": [
       {
-        "actual_place_name": "Sirajganj-5",
-        "election_area_name": "Belkuchi Upazila and Chauhali Upazila"
+        "actual_place_name": "Joypurhat-2",
+        "election_area_name": "Akkelpur Upazila, Kalai Upazila, and Khetlal Upazila"
       }
     ],
-    "life_activities": "Dedicated to political organizing, voter engagement, and public relations for the BNP in Sirajganj-5. Focused on unifying the party’s grassroots network and preparing for the upcoming election with a goal of strengthening BNP’s position in the constituency.",
+    "life_activities": "Dedicated to strengthening BNP's organizational structure and leading the party’s electoral campaign throughout the Akkelpur, Kalai, and Khetlal Upazilas.",
     "other_income_sources": [],
     "social_links": [],
-    "photos": ["https://i.ibb.co.com/DPC7qpfd/download-23.jpg"],
-    "overall_summary": "Md. Amirul Islam Khan is a prominent BNP leader and the confirmed nominee for the Sirajganj-5 constituency, encompassing Belkuchi and Chauhali Upazilas. Known for his grassroots leadership and organizational strength, he plays a crucial role in coordinating the BNP’s political activities and leading the campaign efforts in this region ahead of the General Election.",
-    "district": ["Sirajganj"],
+    "photos": ["https://i.ibb.co.com/Kxm93WrD/abd.jpg"],
+    "overall_summary": "Abdul Bari is the official and confirmed Bangladesh Nationalist Party (BNP) candidate for the Joypurhat-2 constituency. He is a senior regional leader tasked with contesting this seat, which includes Akkelpur, Kalai, and Khetlal Upazilas — areas known for BNP’s strong historical support base.",
+    "district": ["Joypurhat"],
     "division": ["Rajshahi"]
   },
   {
@@ -4422,29 +4421,26 @@
   },
   {
     "_id": 71,
-    "name": "Habibur Rahman Habib",
-    "position": "Advisor to the BNP Chairperson, Convener of Pabna District BNP, BNP Nominee for Pabna-4",
-    "category": "Central Executive Leader, Senior District Figure, Parliamentary Election Nominee",
+    "name": "Md. Masud Rana Pradhan",
+    "position": "Confirmed Candidate and Senior Joint Convener, District BNP",
+    "category": "District Executive Leader and Electoral Challenger",
     "portfolio": {
       "latest": [
-        "Serves as Advisor to the BNP Chairperson and Convener of the Pabna District BNP.",
-        "Confirmed as the official Bangladesh Nationalist Party (BNP) Nominee for the Pabna-4 constituency (Atgharia and Ishwardi Upazilas) in the upcoming General Election.",
-        "Recognized as one of the most influential BNP leaders in the Rajshahi Division, with extensive organizational and political experience."
+        "A key executive figure in the local party unit, serving as the Senior Joint Convener of the Joypurhat District BNP.",
+        "Officially announced as the BNP Candidate for the Joypurhat-1 constituency in the recent candidate list."
       ],
       "previous": [
-        "Contested the 2001 General Election for Pabna-4 as an Independent candidate, securing a significant vote count that established his local political base.",
-        "Played an essential leadership role in the BNP’s regional and district-level organizational rebuilding efforts during politically challenging periods."
+        "Has long been active in the Joypurhat District’s political scene, leading local organizational and electoral activities."
       ]
     },
     "designations": [
-      "Advisor to the BNP Chairperson",
-      "Convener, Pabna District BNP",
-      "BNP Nominee for Pabna-4"
+      "Senior Joint Convener, Joypurhat District BNP",
+      "Confirmed BNP Candidate for Joypurhat-1"
     ],
     "personal_info": {
       "birth_date": "Not Available",
-      "birth_place": "Not Available",
-      "address": "Permanent resident of the Pabna-4 electoral area (Atgharia/Ishwardi Upazilas)",
+      "birth_place": "Joypurhat District, Bangladesh (long-time resident and political figure with a base in the Joypurhat-1 electoral area)",
+      "address": "Permanent resident of Joypurhat Sadar and Panchbibi Upazilas, Joypurhat District",
       "nationality": "Bangladeshi",
       "parents": "Not Available"
     },
@@ -4455,40 +4451,33 @@
       "degree": "Not Available"
     },
     "business_income_source_professional_career": [
-      "A full-time career politician and seasoned organizer, known for his long-standing service in the Bangladesh Nationalist Party (BNP). Specific professional or business details are not available."
+      "A career politician focused on organizational and electoral responsibilities for the Bangladesh Nationalist Party (BNP) in the district headquarters area."
     ],
     "political_career": [
       {
-        "year": "2001",
-        "event": "Contested the General Election for Pabna-4 as an Independent candidate, achieving a high vote share and earning recognition as a major political figure in the constituency."
+        "year": "Current",
+        "event": "Serves as the Senior Joint Convener of the Joypurhat District BNP, making him a primary authority in the local party organization."
       },
       {
-        "year": "2008–Present",
-        "event": "Holds senior leadership roles within the BNP, including Advisor to the BNP Chairperson and Convener of the Pabna District BNP."
-      },
-      {
-        "year": "June 2024",
-        "event": "Released from detention following a political case, received a large public reception upon return, demonstrating strong grassroots support."
-      },
-      {
-        "year": "2025/2026 (Projected)",
-        "event": "Confirmed as the official BNP Nominee for the Pabna-4 constituency for the upcoming General Election."
+        "year": "Recent",
+        "event": "Nominated and confirmed as the BNP's official candidate for the Joypurhat-1 constituency, leading the party's electoral challenge in the area."
       }
     ],
     "election_constituencies": [
       {
-        "actual_place_name": "Pabna-4",
-        "election_area_name": "Atgharia Upazila and Ishwardi Upazila"
+        "actual_place_name": "Joypurhat-1",
+        "election_area_name": "Joypurhat Sadar Upazila and Panchbibi Upazila"
       }
     ],
-    "life_activities": "Acts as the chief political organizer for the BNP in Pabna District, coordinating strategy, candidate support, and mass mobilization efforts. Deeply involved in community engagement and party strengthening initiatives across the district.",
+    "life_activities": "Focused on strengthening BNP’s organizational network and leading the party’s campaign across the Sadar and Panchbibi Upazilas of Joypurhat District.",
     "other_income_sources": [],
-    "social_links": ["https://www.facebook.com/Habib.Official/"],
-    "photos": ["https://i.ibb.co.com/fYjzBjDP/Habibur-Rahman-Habib.jpg"],
-    "overall_summary": "Habibur Rahman Habib is a senior and highly influential BNP leader, currently serving as the Advisor to the BNP Chairperson and Convener of the Pabna District BNP. As the confirmed BNP Nominee for the Pabna-4 constituency (Atgharia-Ishwardi), he combines national-level leadership with deep grassroots influence. His strong political base and proven organizational capacity position him as one of the party’s most prominent figures in the Rajshahi Division.",
-    "district": ["Pabna"],
+    "social_links": [],
+    "photos": ["https://i.ibb.co.com/TD1cpsgx/download-55.jpg"],
+    "overall_summary": "Md. Masud Rana Pradhan is the official and confirmed Bangladesh Nationalist Party (BNP) candidate for the Joypurhat-1 constituency. As the Senior Joint Convener of the Joypurhat District BNP, he is the leading local executive figure responsible for spearheading the party's electoral and organizational efforts in the Sadar and Panchbibi Upazilas.",
+    "district": ["Joypurhat"],
     "division": ["Rajshahi"]
   },
+
   {
     "_id": 72,
     "name": "Md. Shamsur Rahman Shimul Biswas (Advocate)",
@@ -5601,26 +5590,27 @@
   },
   {
     "_id": 88,
-    "name": "Muhammad Abdul Alim",
-    "position": "Former Member Secretary of Satkhira District BNP",
-    "category": "District Executive Leader and Constituency Politician",
+    "name": "Abdur Rauf",
+    "position": "Confirmed Candidate and Prominent Local Leader (Chairman)",
+    "category": "Local Government Figure and Electoral Challenger",
     "portfolio": {
       "latest": [
-        "Confirmed BNP candidate for the Satkhira-2 constituency in the upcoming General Election"
+        "A senior leader of the Bangladesh Nationalist Party (BNP) in the Satkhira District.",
+        "Officially announced as the BNP Candidate for the Satkhira-2 constituency in the recent candidate list."
       ],
       "previous": [
-        "Former Member Secretary, Satkhira District BNP",
-        "Key local leader managing party organization in the Satkhira district headquarters"
+        "Known as 'Chairman Abdur Rauf,' indicating prior experience in local government leadership (Union Parishad or Upazila level)."
       ]
     },
     "designations": [
-      "Former Member Secretary, Satkhira District BNP",
-      "BNP Candidate for Satkhira-2"
+      "Confirmed BNP Candidate for Satkhira-2",
+      "Former Chairman (Local Government)",
+      "Senior Leader, Satkhira District BNP"
     ],
     "personal_info": {
       "birth_date": "Not Available",
-      "birth_place": "Satkhira Sadar Upazila, Satkhira District, Bangladesh",
-      "address": "Permanent resident of the Satkhira-2 electoral area",
+      "birth_place": "Satkhira District, Bangladesh",
+      "address": "Permanent resident and influential figure in the Satkhira Sadar Upazila area",
       "nationality": "Bangladeshi",
       "parents": "Not Available"
     },
@@ -5631,33 +5621,29 @@
       "degree": "Not Available"
     },
     "business_income_source_professional_career": [
-      "Full-time politician focused on district-level party executive responsibilities and electoral strategy"
+      "A seasoned local politician whose strength lies in his community service and governance background at the grassroots level."
     ],
     "political_career": [
       {
-        "year": "District Executive",
-        "event": "Served as Member Secretary of the Satkhira District BNP, overseeing organizational and administrative affairs"
+        "year": "Local Government",
+        "event": "Served in local government as Chairman, contributing to local development and administrative activities."
       },
       {
         "year": "Current",
-        "event": "Leading BNP’s local movement and worker mobilization programs in the Sadar and Debhata areas"
-      },
-      {
-        "year": "2025/2026 (Projected)",
-        "event": "Confirmed as the BNP candidate for the Satkhira-2 constituency for the next General Election"
+        "event": "Nominated and confirmed as the BNP's official candidate for the Satkhira-2 constituency, leading the campaign for the seat covering the district headquarters area."
       }
     ],
     "election_constituencies": [
       {
         "actual_place_name": "Satkhira-2",
-        "election_area_name": "Satkhira Sadar Upazila, Debhata Upazila"
+        "election_area_name": "Satkhira Sadar Upazila and Debhata Upazila (Part)"
       }
     ],
-    "life_activities": "Actively engaged in party organization, grassroots mobilization, and leadership efforts to strengthen the BNP’s position in the Satkhira-2 constituency — the administrative and political center of the district.",
-    "other_income_sources": [],
-    "social_links": [],
-    "photos": ["https://i.ibb.co.com/jvHtQ2B3/Satkhira-Alim-Chairman-BNP.jpg"],
-    "overall_summary": "Muhammad Abdul Alim is a prominent BNP leader who previously served as the Member Secretary of the Satkhira District BNP. He is the confirmed Bangladesh Nationalist Party (BNP) candidate for the Satkhira-2 constituency, which includes Satkhira Sadar and Debhata upazilas. His leadership in district-level party management and grassroots mobilization makes him the key figure in BNP’s campaign for this vital seat.",
+    "life_activities": "Focused on leveraging his local governance experience and leadership background to strengthen BNP’s electoral efforts in Satkhira Sadar and Debhata Upazilas.",
+    "other_income_sources": ["Not Available"],
+    "social_links": ["Not Available"],
+    "photos": ["https://i.ibb.co.com/5WfM50Rf/6910a981d2286.webp"],
+    "overall_summary": "Abdur Rauf is the official and confirmed Bangladesh Nationalist Party (BNP) candidate for the Satkhira-2 constituency. With a strong foundation in local governance as a former Chairman, he stands as the key BNP figure leading the party’s campaign in the Satkhira Sadar and Debhata regions, emphasizing grassroots engagement and organizational unity.",
     "district": ["Satkhira"],
     "division": ["Khulna"]
   },
@@ -8075,7 +8061,7 @@
     "life_activities": "Focused on political campaigning and public representation in the Muktagacha Upazila.",
     "other_income_sources": [],
     "social_links": [],
-    "photos": [],
+    "photos": ["https://i.ibb.co.com/KcgtjCrj/n.jpg"],
     "overall_summary": "Mohammad Jakir Hossain is a seasoned politician and the confirmed Bangladesh Nationalist Party (BNP) candidate for the Mymensingh-5 constituency, which covers Muktagacha Upazila. His past electoral performance and confirmed candidacy highlight his status as a persistent and strong challenger in this single-upazila seat.",
     "district": ["Mymensingh"],
     "division": ["Mymensingh"]

@@ -8,7 +8,10 @@ import NewsSection from "../../components/Home/NewsSection";
 import { useGetAllNewsArticlesQuery } from "../../redux/features/newsArticle/newsArticle.api";
 
 const Home = () => {
-  const { data: newsArticles } = useGetAllNewsArticlesQuery();
+  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
+    limit: 4,
+  });
+
   return (
     <div>
       <Hero />
@@ -17,7 +20,10 @@ const Home = () => {
       <Candidates />
       <Highlights />
       <Activity />
-      <NewsSection newsArticles={newsArticles?.data} />
+      <NewsSection
+        newsArticles={newsArticles?.data}
+        articleLoader={isLoading}
+      />
     </div>
   );
 };

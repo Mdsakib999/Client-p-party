@@ -3,7 +3,7 @@ import {
   useGetNewsArticleBySlugQuery,
   useGetAllNewsArticlesQuery,
 } from "../../redux/features/newsArticle/newsArticle.api";
-import BNPLoader from "../../utils/BNPLoader";
+import { FeaturedNewsSkeleton } from "../../utils/FeaturedNewsSkeleton";
 
 export default function NewsDetail() {
   const { slug } = useParams();
@@ -33,7 +33,7 @@ export default function NewsDetail() {
     );
   };
 
-  if (articleLoader || allArticleLoader) return <BNPLoader />;
+  if (articleLoader || allArticleLoader) return <FeaturedNewsSkeleton />;
 
   if (!article) {
     return (

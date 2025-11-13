@@ -1,11 +1,14 @@
 import HighlightCard from "../../components/Home/HighlightCard";
 import NewsSection from "../../components/Home/NewsSection";
 import { useGetAllNewsArticlesQuery } from "../../redux/features/newsArticle/newsArticle.api";
-import BNPLoader from "../../utils/BNPLoader";
+import { FeaturedNewsSkeleton } from "../../utils/FeaturedNewsSkeleton";
 
 export default function AllNews() {
-  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery();
-  if (isLoading) return <BNPLoader />;
+  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
+    limit: 20,
+  });
+  if (isLoading) return <FeaturedNewsSkeleton />;
+
   return (
     <div>
       <div className="px-4 py-8 max-w-7xl mx-auto">
@@ -15,7 +18,10 @@ export default function AllNews() {
         />
       </div>
 
-      <NewsSection newsArticles={newsArticles?.data} />
+      <NewsSection
+        newsArticles={newsArticles?.data}
+        articleLoader={isLoading}
+      />
     </div>
   );
 }
