@@ -47,22 +47,22 @@ const Dashboard = () => {
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
     {
-      path: "/dashboard/manage-blogs",
-      label: "Manage Blogs",
+      path: "/dashboard/manage-news-articles",
+      label: "Manage News Articles",
       Icon: FaNewspaper,
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
   ];
 
-  const userSidebarItems = [
-    { path: "/dashboard", label: "Overview", Icon: FaHome },
-    {
-      path: "/dashboard/donate",
-      label: "Donate",
-      Icon: FaDonate,
-      roles: ["SUPER_ADMIN", "ADMIN", "USER"],
-    },
-  ];
+  // const userSidebarItems = [
+  //   { path: "/dashboard", label: "Overview", Icon: FaHome },
+  //   {
+  //     path: "/dashboard/donate",
+  //     label: "Donate",
+  //     Icon: FaDonate,
+  //     roles: ["SUPER_ADMIN", "ADMIN", "USER"],
+  //   },
+  // ];
 
   const sidebarItems = allSidebarItems.filter((item) =>
     item.roles.includes(userRole)
