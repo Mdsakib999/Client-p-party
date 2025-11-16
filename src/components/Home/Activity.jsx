@@ -3,24 +3,24 @@ import { HiPlay } from "react-icons/hi";
 import activitiesData from "../../data/activities.json";
 
 const Activity = () => {
-// Use activities data
-const activities = activitiesData.slice(0, 4).map(activity => ({
-  id: activity.id,
-  title: activity.title,
-  author: activity.category,
-  date: activity.date,
-  image: activity.featuredImage,
-  slug: activity.slug,
-}));
+  // Use activities data
+  const activities = activitiesData.slice(0, 4).map((activity) => ({
+    id: activity.id,
+    title: activity.title,
+    author: activity.category,
+    date: activity.date,
+    image: activity.featuredImage,
+    slug: activity.slug,
+  }));
 
-const featured = {
-  id: activitiesData[4].id,
-  category: activitiesData[4].category,
-  title: activitiesData[4].title,
-  description: activitiesData[4].excerpt,
-  image: activitiesData[4].featuredImage,
-  slug: activitiesData[4].slug,
-};
+  const featured = {
+    id: activitiesData[4].id,
+    category: activitiesData[4].category,
+    title: activitiesData[4].title,
+    description: activitiesData[4].excerpt,
+    image: activitiesData[4].featuredImage,
+    slug: activitiesData[4].slug,
+  };
 
   return (
     <section className="py-12 px-4 bg-green-50">
@@ -37,11 +37,11 @@ const featured = {
                   className="flex gap-3 group"
                 >
                   <div className="w-24 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200 relative">
-                  <img
-                  src={activity.image}
-                  alt={activity.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                    <img
+                      src={activity.image}
+                      alt={activity.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
                       <HiPlay className="w-6 h-6 text-white" />
                     </div>
@@ -64,12 +64,14 @@ const featured = {
               See more +
             </Link>
           </div>
-
           {/* Right - Featured Card */}
-          <Link to={`https://www.youtube.com/watch?v=mYrsY6cZw1Q`} className="block group">
+          <Link
+            to={`https://www.youtube.com/watch?v=mYrsY6cZw1Q`}
+            className="block group"
+          >
             <div className="relative h-[400px] rounded-3xl overflow-hidden">
               <img
-                src='https://i.ibb.co.com/99Xcm55m/foysal-amin.png'
+                src="https://i.ibb.co.com/99Xcm55m/foysal-amin.png"
                 alt={featured.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />

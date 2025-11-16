@@ -10,7 +10,7 @@ export default function AllNews() {
   if (isLoading) return <FeaturedNewsSkeleton />;
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="px-4 py-8 max-w-7xl mx-auto">
         <HighlightCard
           newsArticle={newsArticles?.data[0]}
