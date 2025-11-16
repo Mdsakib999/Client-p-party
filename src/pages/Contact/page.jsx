@@ -19,7 +19,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log("Form submitted:", formData);
     alert("Thank you for your message. We will get back to you soon!");
     setFormData({ name: "", email: "", subject: "", message: "" });
@@ -27,8 +26,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Banner */}
-      <div className="relative h-64 md:h-80 lg:h-96">
+      <div className="relative h-64 md:h-80 lg:min-h-[72vh]">
         <img
           src="./src/assets/hero-banner.jpg"
           alt="Contact Us Banner"
@@ -41,16 +39,15 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto">
-              Get in touch with Bangladesh National Party. We're here to listen and serve.
+              Get in touch with Bangladesh Nationalist Party. We're here to
+              listen and serve.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Contact Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Send us a Message
@@ -58,7 +55,10 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Full Name
                   </label>
                   <input
@@ -73,7 +73,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email Address
                   </label>
                   <input
@@ -89,7 +92,10 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Subject
                 </label>
                 <input
@@ -104,7 +110,10 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -127,7 +136,6 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Contact Information */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Get in Touch
@@ -142,8 +150,10 @@ const Contact = () => {
                     Our Address
                   </h3>
                   <p className="text-gray-600">
-                    Bangladesh National Party Headquarters<br />
-                    123 Political Avenue<br />
+                    Bangladesh Nationalist Party Headquarters
+                    <br />
+                    123 Political Avenue
+                    <br />
                     Dhaka, Bangladesh 1000
                   </p>
                 </div>
@@ -158,7 +168,8 @@ const Contact = () => {
                     Phone Number
                   </h3>
                   <p className="text-gray-600">
-                    +880 1234-567890<br />
+                    +880 1234-567890
+                    <br />
                     +880 1234-567891 (Emergency)
                   </p>
                 </div>
@@ -173,7 +184,8 @@ const Contact = () => {
                     Email Address
                   </h3>
                   <p className="text-gray-600">
-                    info@bnp.org<br />
+                    info@bnp.org
+                    <br />
                     support@bnp.org
                   </p>
                 </div>
@@ -188,15 +200,16 @@ const Contact = () => {
                     Office Hours
                   </h3>
                   <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 6:00 PM<br />
-                    Saturday: 9:00 AM - 2:00 PM<br />
+                    Monday - Friday: 9:00 AM - 6:00 PM
+                    <br />
+                    Saturday: 9:00 AM - 2:00 PM
+                    <br />
                     Sunday: Closed
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Social Media or Additional Info */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Follow Us
@@ -204,27 +217,27 @@ const Contact = () => {
               <div className="flex gap-4">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-200 hover:bg-blue-400 group rounded-full flex items-center justify-center transition-colors"
                 >
-                  <FaFacebookF className="text-gray-600 w-5 h-5" />
+                  <FaFacebookF className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-200 hover:bg-cyan-400 group rounded-full flex items-center justify-center transition-colors"
                 >
-                  <FaTwitter className="text-gray-600 w-5 h-5" />
+                  <FaTwitter className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-200 hover:bg-gradient-to-br from-purple-600 via-rose-600 to-amber-500 group rounded-full flex items-center justify-center transition-colors"
                 >
-                  <FaInstagram className="text-gray-600 w-5 h-5" />
+                  <FaInstagram className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-200 hover:bg-red-600 group rounded-full flex items-center justify-center transition-colors"
                 >
-                  <FaYoutube className="text-gray-600 w-5 h-5" />
+                  <FaYoutube className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
               </div>
             </div>

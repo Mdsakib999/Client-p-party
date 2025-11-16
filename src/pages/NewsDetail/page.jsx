@@ -37,9 +37,12 @@ export default function NewsDetail() {
 
   if (!article) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+      <div className="max-w-7xl mx-auto px-4 py-20 text-center min-h-screen">
         <h1 className="text-3xl font-bold mb-4">Article Not Found</h1>
-        <Link to="/news" className="text-green-600 hover:underline">
+        <Link
+          to="/news"
+          className="text-emerald-600 text-xl font-semibold hover:underline"
+        >
           Back to News
         </Link>
       </div>
@@ -51,7 +54,7 @@ export default function NewsDetail() {
     .slice(0, 5);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
           <span className="uppercase font-semibold text-gray-700">
