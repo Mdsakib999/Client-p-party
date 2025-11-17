@@ -53,7 +53,7 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-sm">
-      <nav className="px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-3 flex-shrink-0">
             <img
@@ -125,12 +125,7 @@ export default function Navbar() {
             </NavLink>
           </div>
 
-          {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            {/* <button className="flex items-center gap-2 bg-green-700 text-white px-5 py-2.5 rounded-lg hover:bg-green-800 transition-all font-medium shadow-sm hover:shadow">
-              Donate <HiArrowRight className="w-4 h-4" />
-            </button> */}
-
             {user ? (
               <div className="relative" ref={userMenuRef}>
                 <button
@@ -162,13 +157,6 @@ export default function Navbar() {
                       </p>
                     </div>
                     <div className="py-1">
-                      <Link
-                        to="/profile"
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                        onClick={() => setShowUserMenu(false)}
-                      >
-                        Profile
-                      </Link>
                       <Link
                         to="/dashboard"
                         className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
@@ -299,13 +287,6 @@ export default function Navbar() {
 
               {user ? (
                 <>
-                  <Link
-                    to="/profile"
-                    onClick={() => setIsOpen(false)}
-                    className="block w-full px-5 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    Profile
-                  </Link>
                   <Link
                     to="/dashboard"
                     onClick={() => setIsOpen(false)}

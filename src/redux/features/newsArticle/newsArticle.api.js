@@ -11,9 +11,10 @@ export const newsArticleApi = baseApi.injectEndpoints({
       invalidatesTags: ["NEWS_ARTICLE"],
     }),
     getAllNewsArticles: builder.query({
-      query: () => ({
+      query: ({ page = 1, limit = 10, tag = "", search = "" } = {}) => ({
         url: "/news-articles/all-news-articles",
         method: "GET",
+        params: { page, limit, tag, search },
       }),
       providesTags: ["NEWS_ARTICLE"],
     }),
@@ -22,6 +23,7 @@ export const newsArticleApi = baseApi.injectEndpoints({
         url: `/news-articles/${slug}`,
         method: "GET",
       }),
+      transformResponse: (article) => article?.data,
       providesTags: ["NEWS_ARTICLE"],
     }),
     updateNewsArticle: builder.mutation({

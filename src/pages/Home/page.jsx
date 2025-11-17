@@ -5,8 +5,13 @@ import Hero from "../../components/Home/Hero";
 import Legacy from "../../components/Home/Legacy";
 import Highlights from "../../components/Home/Highlights";
 import NewsSection from "../../components/Home/NewsSection";
+import { useGetAllNewsArticlesQuery } from "../../redux/features/newsArticle/newsArticle.api";
 
-const page = () => {
+const Home = () => {
+  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
+    limit: 4,
+  });
+
   return (
     <div>
       <Hero />
@@ -15,9 +20,12 @@ const page = () => {
       <Candidates />
       <Highlights />
       <Activity />
-      <NewsSection />
+      <NewsSection
+        newsArticles={newsArticles?.data}
+        articleLoader={isLoading}
+      />
     </div>
   );
 };
 
-export default page;
+export default Home;

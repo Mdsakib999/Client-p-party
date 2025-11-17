@@ -1,10 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
-import Home from "../pages/Home/page.jsx";
 import About from "../pages/About/page.jsx";
 import Contact from "../pages/Contact/page.jsx";
 import Campaigns from "../pages/Campaigns/page.jsx";
-import News from "../pages/News/page.jsx";
+import AllNews from "../pages/News/page.jsx";
 import Candidates from "../pages/Candidates/page.jsx";
 import CandidateDetails from "../pages/Candidates/CandidateDetails.jsx";
 import NewsDetail from "../pages/NewsDetail/page.jsx";
@@ -12,7 +11,6 @@ import Dashboard from "../pages/Dashboard/page.jsx";
 import Overview from "../pages/Dashboard/Overview/page.jsx";
 import CreateCandidate from "../pages/Dashboard/CreateCandidate/page.jsx";
 import ManageCandidates from "../pages/Dashboard/ManageCandidates/page.jsx";
-import ManageBlogs from "../pages/Dashboard/ManageBlogs/page.jsx";
 import Donate from "../pages/Dashboard/Donate/page.jsx";
 import ManageAccount from "../pages/Dashboard/ManageAccount/page.jsx";
 import LoginPage from "../pages/Login/page.jsx";
@@ -23,6 +21,8 @@ import ForgotPassword from "../pages/ForgotPassword/page.jsx";
 import withPublic from "../utils/withPublic.jsx";
 import withAuth from "../utils/withAuth.jsx";
 import CreateNewsArticle from "../pages/Dashboard/CreateNewsArticle/page.jsx";
+import Home from "../pages/Home/page.jsx";
+import ManageNewsArticle from "../pages/Dashboard/ManageNewsArticle/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       {
         index: true,
         path: "/news",
-        Component: News,
+        Component: AllNews,
       },
       {
         path: "/news/:slug",
@@ -101,8 +101,8 @@ const router = createBrowserRouter([
             Component: withAuth(ManageCandidates, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
-            path: "manage-blogs",
-            Component: withAuth(ManageBlogs, ["SUPER_ADMIN", "ADMIN"]),
+            path: "manage-news-articles",
+            Component: withAuth(ManageNewsArticle, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "donate",

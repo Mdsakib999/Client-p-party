@@ -1,29 +1,44 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { X, Plus, ImagePlus, Quote, Tag, Eye } from "lucide-react";
 import FroalaEditorComponent from "react-froala-wysiwyg";
 import "froala-editor/css/froala_style.min.css";
 import "froala-editor/css/froala_editor.pkgd.min.css";
 import "froala-editor/js/plugins.pkgd.min.js";
-import { useCreateNewsArticleMutation } from "../../../redux/features/newsArticle/newsArticle.api";
+import { useUpdateNewsArticleMutation } from "../../../redux/features/newsArticle/newsArticle.api";
 import toast from "react-hot-toast";
 import { froalaConfig } from "../../../utils/textEditorConfig";
 
-export default function CreateNewsArticle() {
+export default function EditNewsArticleModal({ isOpen, onClose, article }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageFiles, setImageFiles] = useState([]);
+  const [existingImages, setExistingImages] = useState([]);
+  const [newImageFiles, setNewImageFiles] = useState([]);
   const [quote, setQuote] = useState("");
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
   const [isPreview, setIsPreview] = useState(false);
   const fileInputRef = useRef(null);
 
-  const [createNewsArticle, { isLoading }] = useCreateNewsArticleMutation();
+  const [updateNewsArticle, { isLoading }] = useUpdateNewsArticleMutation();
+
+  useEffect(() => {
+    if (article && isOpen) {
+      setTitle(article.title || "");
+      setDescription(article.description || "");
+      setExistingImages(article.images || []);
+      setQuote(article.quote || "");
+      setTags(article.tags || []);
+      setNewImageFiles([]);
+      setIsPreview(false);
+    }
+  }, [article, isOpen]);
 
   const handleImageUpload = (e) => {
     const files = Array.from(e.target.files);
+    const totalImages =
+      existingImages.length + newImageFiles.length + files.length;
 
-    if (imageFiles.length + files.length > 4) {
+    if (totalImages > 4) {
       toast.error(
         <p className="text-center font-serif">
           Maximum <span className="font-mono">4</span> images allowed
@@ -38,11 +53,15 @@ export default function CreateNewsArticle() {
       name: file.name,
     }));
 
-    setImageFiles((prev) => [...prev, ...newImages]);
+    setNewImageFiles((prev) => [...prev, ...newImages]);
   };
 
-  const removeImage = (index) => {
-    setImageFiles((prev) => {
+  const removeExistingImage = (index) => {
+    setExistingImages((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const removeNewImage = (index) => {
+    setNewImageFiles((prev) => {
       const newImages = prev.filter((_, i) => i !== index);
       URL.revokeObjectURL(prev[index].preview);
       return newImages;
@@ -65,17 +84,15 @@ export default function CreateNewsArticle() {
     }
   };
 
-  const handlePublish = async () => {
+  const handleUpdate = async () => {
     if (!title.trim()) {
       toast.error(<p className="text-center font-serif">Title is required</p>);
       return;
     }
 
-    if (imageFiles.length === 0) {
+    if (existingImages.length === 0 && newImageFiles.length === 0) {
       toast.error(
-        <p className="text-center font-serif">
-          Please upload at least one image
-        </p>
+        <p className="text-center font-serif">Please have at least one image</p>
       );
       return;
     }
@@ -86,56 +103,81 @@ export default function CreateNewsArticle() {
     formData.append("quote", quote.trim());
     formData.append("tags", JSON.stringify(tags));
 
-    imageFiles.forEach((img) => {
+    formData.append("existingImages", JSON.stringify(existingImages));
+
+    newImageFiles.forEach((img) => {
       formData.append("images", img.file);
     });
 
     try {
-      const res = await createNewsArticle(formData).unwrap();
-      toast.success(
-        <p className="text-center font-serif">Article created successfully!</p>
-      );
-      console.log("Server response:", res);
+      const res = await updateNewsArticle({
+        id: article._id,
+        updatedData: formData,
+      }).unwrap();
 
-      setTitle("");
-      setDescription("");
-      imageFiles.forEach((img) => URL.revokeObjectURL(img.preview));
-      setImageFiles([]);
-      setTags([]);
-      setQuote("");
+      if (res.success) {
+        toast.success(
+          <p className="text-center font-serif">
+            Article updated successfully!
+          </p>
+        );
+
+        newImageFiles.forEach((img) => URL.revokeObjectURL(img.preview));
+        onClose();
+      }
     } catch (err) {
-      console.error("Failed to create article:", err);
+      console.error("Failed to update article:", err);
       toast.error(
         <p className="text-center font-serif">
-          {err?.data?.message || err?.message || "Failed to publish article"}
+          {err?.data?.message || err?.message || "Failed to update article"}
         </p>
       );
     }
   };
 
+  const handleClose = () => {
+    newImageFiles.forEach((img) => URL.revokeObjectURL(img.preview));
+    onClose();
+  };
+
+  if (!isOpen) return null;
+
+  const allImages = [
+    ...existingImages.map((img) => ({ ...img, isExisting: true })),
+    ...newImageFiles.map((img) => ({ ...img, isExisting: false })),
+  ];
+
   if (isPreview) {
     return (
-      <div className="min-h-screen bg-gray-50 py-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <button
-            onClick={() => setIsPreview(false)}
-            className="mb-6 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
-          >
-            ← Back to Edit
-          </button>
+      <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
+        <div className="bg-gray-50 rounded-xl max-w-4xl w-full overflow-hidden flex flex-col max-h-[90vh]">
+          <div className="sticky top-0 bg-white border-b p-6 flex justify-between items-center z-10">
+            <button
+              onClick={() => setIsPreview(false)}
+              className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              ← Back to Edit
+            </button>
+            <button
+              onClick={handleClose}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
-          <article className="bg-white rounded-xl shadow-lg overflow-hidden p-8">
+          <article className="overflow-y-auto p-8">
             <h1 className="text-4xl font-bold mb-6 text-gray-900">
               {title || "Untitled"}
             </h1>
 
-            {imageFiles.length > 0 && (
-              <div>
-                {imageFiles.map((img, index) => (
+            {allImages.length > 0 && (
+              <div className="space-y-4 mb-6">
+                {allImages.map((img, index) => (
                   <img
                     key={index}
-                    src={img.preview}
-                    alt={img.name}
+                    src={img.isExisting ? img.url : img.preview}
+                    alt={img.name || "Article image"}
                     className="w-full h-64 object-cover rounded-lg shadow-md"
                   />
                 ))}
@@ -172,30 +214,36 @@ export default function CreateNewsArticle() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="bg-white rounded-xl shadow-lg p-8">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">
-              Create News Article
-            </h1>
-            <div className="flex gap-3">
-              <button
-                onClick={() => setIsPreview(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-              >
-                <Eye className="w-4 h-4" /> Preview
-              </button>
-              <button
-                disabled={isLoading}
-                onClick={handlePublish}
-                className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
-              >
-                {isLoading ? "Publishing..." : "Publish"}
-              </button>
-            </div>
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-white rounded-xl max-w-6xl w-full overflow-hidden flex flex-col max-h-[90vh]">
+        <div className="sticky top-0 bg-white border-b p-6 flex justify-between items-center z-10">
+          <h2 className="text-2xl font-bold text-gray-900">
+            Edit News Article
+          </h2>
+          <div className="flex gap-3">
+            <button
+              onClick={() => setIsPreview(true)}
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              <Eye className="w-4 h-4" /> Preview
+            </button>
+            <button
+              disabled={isLoading}
+              onClick={handleUpdate}
+              className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+            >
+              {isLoading ? "Updating..." : "Update"}
+            </button>
+            <button
+              onClick={handleClose}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
+        </div>
 
+        <div className="overflow-y-auto p-8">
           <div className="mb-8">
             <label className="block text-sm font-semibold mb-2 text-gray-700">
               Title <span className="text-red-500">*</span>
@@ -211,9 +259,59 @@ export default function CreateNewsArticle() {
 
           <div className="mb-8">
             <label className="block text-sm font-semibold mb-2 text-gray-700">
-              Upload Images{" "}
+              Images{" "}
               <span className="text-gray-500 text-xs font-normal">(Max 4)</span>
             </label>
+
+            {existingImages.length > 0 && (
+              <div className="mb-4">
+                <p className="text-xs text-gray-600 mb-2">Current Images:</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {existingImages.map((img, index) => (
+                    <div key={index} className="relative group">
+                      <img
+                        src={img.url}
+                        alt="Existing"
+                        className="w-full h-32 object-cover rounded-lg shadow-sm"
+                      />
+                      <button
+                        onClick={() => removeExistingImage(index)}
+                        className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {newImageFiles.length > 0 && (
+              <div className="mb-4">
+                <p className="text-xs text-gray-600 mb-2">New Images:</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {newImageFiles.map((img, index) => (
+                    <div key={index} className="relative group">
+                      <img
+                        src={img.preview}
+                        alt={img.name}
+                        className="w-full h-32 object-cover rounded-lg shadow-sm border-2 border-emerald-300"
+                      />
+                      <button
+                        onClick={() => removeNewImage(index)}
+                        className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white text-xs p-2 rounded-b-lg truncate">
+                        {img.name}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <input
               type="file"
               ref={fileInputRef}
@@ -224,39 +322,16 @@ export default function CreateNewsArticle() {
             />
             <button
               onClick={() => fileInputRef.current?.click()}
-              disabled={imageFiles.length >= 4}
+              disabled={existingImages.length + newImageFiles.length >= 4}
               className="flex items-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               <ImagePlus className="w-5 h-5 text-gray-500" />
               <span className="text-gray-600">
-                {imageFiles.length >= 4
+                {existingImages.length + newImageFiles.length >= 4
                   ? "Maximum images reached"
-                  : "Upload Images"}
+                  : "Upload More Images"}
               </span>
             </button>
-
-            {imageFiles.length > 0 && (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-                {imageFiles.map((img, index) => (
-                  <div key={index} className="relative group">
-                    <img
-                      src={img.preview}
-                      alt={img.name}
-                      className="w-full h-32 object-cover rounded-lg shadow-sm"
-                    />
-                    <button
-                      onClick={() => removeImage(index)}
-                      className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white text-xs p-2 rounded-b-lg truncate">
-                      {img.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
 
           <div className="mb-8">
