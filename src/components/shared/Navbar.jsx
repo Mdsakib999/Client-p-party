@@ -282,6 +282,18 @@ export default function Navbar() {
             >
               Campaigns
             </NavLink>
+            <NavLink
+              to="/activities"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
+                }`
+              }
+            >
+              Activities
+            </NavLink>
 
             <div className="pt-4 space-y-2">
               <button className="w-full flex items-center gap-2 bg-green-700 text-white px-5 py-3 rounded-lg hover:bg-green-800 transition-colors font-medium shadow-sm">
