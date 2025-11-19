@@ -66,10 +66,23 @@ const Activity = () => {
 
           {featured && (
             <div
-              className="relative h-[400px] rounded-3xl overflow-hidden group cursor-pointer"
-              onClick={() => setShowVideo(true)}
+              className={`relative h-[400px] rounded-3xl overflow-hidden group ${featuredVideoId ? "cursor-pointer" : "cursor-default"
+                }`}
+              onClick={() => {
+                if (featuredVideoId) setShowVideo(true);
+              }}
             >
-              {!showVideo ? (
+              {showVideo && featuredVideoId ? (
+                <div className="w-full h-full animate-fadeIn">
+                  <iframe
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${featuredVideoId}?autoplay=1`}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ) : (
+                // ---------- IMAGE ALWAYS SHOWN ----------
                 <>
                   <img
                     src={getFeaturedThumb(featured)}
@@ -77,13 +90,16 @@ const Activity = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
+                  {/* Gradient + Play Button ONLY IF video exists */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-black/50 rounded-full flex items-center justify-center group-hover:bg-black/40 transition-colors duration-300">
-                      <HiPlay className="w-8 h-8 text-red-500" />
+                  {featuredVideoId && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-black/50 rounded-full flex items-center justify-center group-hover:bg-black/40 transition-colors duration-300">
+                        <HiPlay className="w-8 h-8 text-red-500" />
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white pointer-events-none">
                     <span className="inline-block bg-white text-black px-3 py-1 rounded-full text-xs font-semibold mb-4">
@@ -99,15 +115,6 @@ const Activity = () => {
                     </p>
                   </div>
                 </>
-              ) : (
-                <div className="w-full h-full animate-fadeIn">
-                  <iframe
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${featuredVideoId}?autoplay=1`}
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                  ></iframe>
-                </div>
               )}
             </div>
           )}
