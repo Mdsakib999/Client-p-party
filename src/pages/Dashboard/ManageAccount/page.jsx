@@ -122,7 +122,14 @@ const ManageAccount = ({ userData }) => {
       }).unwrap();
 
       if (result?.success) {
-        toast.success("Profile updated successfully");
+        toast.success(
+          <h1 className="font-serif text-center">
+            Profile updated successfully
+          </h1>,
+          {
+            position: "top-right",
+          }
+        );
       }
 
       const newPhotoUrl =
@@ -238,7 +245,7 @@ const ManageAccount = ({ userData }) => {
                         {getProfileImageUrl() ? (
                           <img
                             src={
-                              userData?.photos?.[0]?.url || getProfileImageUrl()
+                              getProfileImageUrl() || userData?.photos?.[0]?.url
                             }
                             alt="Profile"
                             className="w-full h-full object-cover"
