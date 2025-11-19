@@ -23,12 +23,17 @@ import withAuth from "../utils/withAuth.jsx";
 import CreateNewsArticle from "../pages/Dashboard/CreateNewsArticle/page.jsx";
 import Home from "../pages/Home/page.jsx";
 import ManageNewsArticle from "../pages/Dashboard/ManageNewsArticle/page.jsx";
+import BNP404Page from "../pages/404/page.jsx";
+import ManageActivity from "../pages/Dashboard/ManageActivity/page.jsx";
+import AddActivity from "../pages/Dashboard/AddActivity/page.jsx";
+import Activities from "../pages/Activites/page.jsx";
+import ActivityDetails from "../pages/ActivityDetails/page.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
-    // errorElement: <ErrorPage />,
+    errorElement: <BNP404Page />,
     children: [
       {
         index: true,
@@ -58,6 +63,15 @@ const router = createBrowserRouter([
       {
         path: "/news/:slug",
         Component: NewsDetail,
+      },
+      {
+        index: true,
+        path: "/activities",
+        Component: Activities,
+      },
+      {
+        path: "/activities/:slug",
+        Component: ActivityDetails,
       },
       {
         index: true,
@@ -97,12 +111,20 @@ const router = createBrowserRouter([
             Component: withAuth(CreateNewsArticle, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
+            path: "add-activity",
+            Component: withAuth(AddActivity, ["SUPER_ADMIN", "ADMIN"]),
+          },
+          {
             path: "manage-candidates",
             Component: withAuth(ManageCandidates, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "manage-news-articles",
             Component: withAuth(ManageNewsArticle, ["SUPER_ADMIN", "ADMIN"]),
+          },
+          {
+            path: "manage-activity",
+            Component: withAuth(ManageActivity, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "donate",

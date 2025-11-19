@@ -78,10 +78,9 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `font-medium transition-colors ${
-                  isActive
-                    ? "text-green-700 border-b-2 border-green-700 pb-1"
-                    : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${isActive
+                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -90,10 +89,9 @@ export default function Navbar() {
             <NavLink
               to="/candidates"
               className={({ isActive }) =>
-                `font-medium transition-colors ${
-                  isActive
-                    ? "text-green-700 border-b-2 border-green-700 pb-1"
-                    : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${isActive
+                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -102,22 +100,31 @@ export default function Navbar() {
             <NavLink
               to="/news"
               className={({ isActive }) =>
-                `font-medium transition-colors ${
-                  isActive
-                    ? "text-green-700 border-b-2 border-green-700 pb-1"
-                    : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${isActive
+                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
               News
             </NavLink>
             <NavLink
+              to="/activities"
+              className={({ isActive }) =>
+                `font-medium transition-colors ${isActive
+                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  : "text-gray-700 hover:text-green-700"
+                }`
+              }
+            >
+              Activities
+            </NavLink>
+            <NavLink
               to="/campaigns"
               className={({ isActive }) =>
-                `font-medium transition-colors ${
-                  isActive
-                    ? "text-green-700 border-b-2 border-green-700 pb-1"
-                    : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${isActive
+                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -231,10 +238,9 @@ export default function Navbar() {
               to="/"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${
-                  isActive
-                    ? "bg-green-50 text-green-700"
-                    : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -244,10 +250,9 @@ export default function Navbar() {
               to="/candidates"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${
-                  isActive
-                    ? "bg-green-50 text-green-700"
-                    : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -257,10 +262,9 @@ export default function Navbar() {
               to="/news"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${
-                  isActive
-                    ? "bg-green-50 text-green-700"
-                    : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -270,14 +274,25 @@ export default function Navbar() {
               to="/campaigns"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${
-                  isActive
-                    ? "bg-green-50 text-green-700"
-                    : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
               Campaigns
+            </NavLink>
+            <NavLink
+              to="/activities"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
+                }`
+              }
+            >
+              Activities
             </NavLink>
 
             <div className="pt-4 space-y-2">
