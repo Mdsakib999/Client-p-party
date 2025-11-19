@@ -9,6 +9,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { useUserInfoQuery } from "../../redux/features/auth/auth.api";
+import { SquareActivity, SquareKanban } from "lucide-react";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -35,6 +36,12 @@ const Dashboard = () => {
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
     {
+      path: "/dashboard/add-activity",
+      label: "Add Activity",
+      Icon: SquareActivity,
+      roles: ["SUPER_ADMIN", "ADMIN"],
+    },
+    {
       path: "/dashboard/create-news-article",
       label: "Create News Article",
       Icon: FaPen,
@@ -50,6 +57,12 @@ const Dashboard = () => {
       path: "/dashboard/manage-news-articles",
       label: "Manage News Articles",
       Icon: FaNewspaper,
+      roles: ["SUPER_ADMIN", "ADMIN"],
+    },
+    {
+      path: "/dashboard/manage-activity",
+      label: "Manage Activity",
+      Icon: SquareKanban,
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
   ];
