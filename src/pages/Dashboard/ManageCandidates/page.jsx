@@ -5,13 +5,15 @@ import {
   useDeleteCandidateMutation,
 } from "../../../redux/features/candidate/candidate.api";
 import { FiEdit2, FiTrash2, FiEye } from "react-icons/fi";
+import EditCandidateModal from "../../../components/EditCandidateModal";
 
 const ManageCandidates = () => {
   const navigate = useNavigate();
-  const { data, isLoading, error } = useGetAllCandidatesQuery();
+  const { data, isLoading, error, refetch } = useGetAllCandidatesQuery();
   const [deleteCandidate, { isLoading: isDeleting }] =
     useDeleteCandidateMutation();
   const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const [editingCandidate, setEditingCandidate] = useState(null);
 
   const handleDelete = async (id, name) => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
@@ -25,8 +27,8 @@ const ManageCandidates = () => {
     }
   };
 
-  const handleEdit = (candidateId) => {
-    navigate(`/dashboard/edit-candidate/${candidateId}`);
+  const handleEdit = (candidate) => {
+    setEditingCandidate(candidate);
   };
 
   if (isLoading) {
@@ -138,7 +140,7 @@ const ManageCandidates = () => {
                         <FiEye size={18} />
                       </button>
                       <button
-                        onClick={() => handleEdit(candidate._id)}
+                        onClick={() => handleEdit(candidate)}
                         className="text-yellow-600 hover:text-yellow-900 p-2 hover:bg-yellow-50 rounded transition-colors"
                         title="Edit"
                       >
@@ -164,7 +166,7 @@ const ManageCandidates = () => {
       {/* View Details Modal */}
       {selectedCandidate && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedCandidate(null)}
         >
           <div
@@ -182,7 +184,7 @@ const ManageCandidates = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
                 {selectedCandidate.photos?.map((photo, idx) => (
                   <img
                     key={idx}
@@ -233,7 +235,7 @@ const ManageCandidates = () => {
                 <button
                   onClick={() => {
                     setSelectedCandidate(null);
-                    handleEdit(selectedCandidate._id);
+                    handleEdit(selectedCandidate);
                   }}
                   className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded transition-colors"
                 >
@@ -249,6 +251,15 @@ const ManageCandidates = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Edit Candidate Modal */}
+      {editingCandidate && (
+        <EditCandidateModal
+          candidate={editingCandidate}
+          onClose={() => setEditingCandidate(null)}
+          onSuccess={refetch}
+        />
       )}
     </div>
   );
