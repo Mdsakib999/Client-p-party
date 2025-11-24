@@ -13,7 +13,7 @@
     },
     "designations": [
       "Chairperson, Bangladesh Nationalist Party (BNP)",
-      "Former Prime Minister (three terms)"
+      "Former Prime Minister"
     ],
     "personal_info": {
       "birth_date": "15 August 1945",
@@ -45,11 +45,11 @@
     "election_constituencies": [
       {
         "actual_place_name": "Feni-1",
-        "election_area_name": "porshuram Upazila, chagolnaiya upazila, fulgazi upozila"
+        "election_area_name": "Porshuram Upazila, Chagolnaiya upazila, Fulgazi upozila"
       },
       {
         "actual_place_name": "Bogura-7",
-        "election_area_name": "gabtoli upazila, shajaha upazila"
+        "election_area_name": "Gabtoli upazila, Shahjahan upazila"
       },
       {
         "actual_place_name": "Dinajpur-3",
@@ -402,7 +402,7 @@
     "election_constituencies": [
       {
         "actual_place_name": "Panchagarh-1",
-        "election_area_name": "Panchagarh Sadar, Tentulia upazila, Atwari upazila"
+        "election_area_name": "Panchagarh Sadar, Tetulia upazila, Atwari upazila"
       }
     ],
     "life_activities": "local politics in Panchagarh",

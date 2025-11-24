@@ -149,7 +149,20 @@ const CreateCandidate = () => {
     }));
   };
 
-  const addElectionConstituency = () => {
+  const addElectionConstituency = (constituencyData) => {
+    // If called with data directly (from FinalInfo), use that
+    if (constituencyData) {
+      setFormData((prev) => ({
+        ...prev,
+        election_constituencies: [
+          ...prev.election_constituencies,
+          constituencyData,
+        ],
+      }));
+      return;
+    }
+
+    // Otherwise use the old method from arrayInputs
     const { actual_place_name, election_area_name } =
       arrayInputs.election_constituency;
     if (!actual_place_name?.trim() || !election_area_name?.trim()) return;
@@ -256,6 +269,9 @@ const CreateCandidate = () => {
           addArrayItem={addArrayItem}
           removeArrayItem={removeArrayItem}
           handleFileChange={handleFileChange}
+          handleNestedArrayInput={handleNestedArrayInput}
+          addElectionConstituency={addElectionConstituency}
+          removeElectionConstituency={removeElectionConstituency}
         />
       ),
     },

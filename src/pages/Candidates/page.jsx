@@ -5,6 +5,7 @@ import { ChevronLeft, ListFilter, Search } from "lucide-react";
 import candidatesData from "../../data/candidates3.json";
 import CandidateCard from "../../components/CandidateCard";
 import Pagination from "../../components/Pagination";
+import areasData from "../../data/areas.json";
 
 const Candidates = () => {
   const [divisions, setDivisions] = useState([]);
@@ -21,17 +22,15 @@ const Candidates = () => {
   const itemsPerPage = 9;
 
   useEffect(() => {
-    const allDivisions = candidatesData.flatMap(
-      (candidate) => candidate.division || []
-    );
-    const uniqueDivisions = [...new Set(allDivisions)];
+    const uniqueDivisions = Object.keys(areasData);
     setDivisions(
-      uniqueDivisions.map((div, index) => ({
-        id: index + 1,
+      uniqueDivisions.map((div) => ({
+        id: div,
         name: div,
         bn_name: div,
       }))
     );
+    console.log(uniqueDivisions);
   }, []);
 
   useEffect(() => {
@@ -65,7 +64,20 @@ const Candidates = () => {
   const handleDivisionClick = (division) => {
     setSelectedDivision(division);
     setSelectedDistrict(null);
-    fetchDistricts(division.id);
+
+    // Get districts from JSON based on selected division
+    const divisionDistricts = areasData[division.name]
+      ? Object.keys(areasData[division.name])
+      : [];
+
+    setDistricts(
+      divisionDistricts.map((dist) => ({
+        id: dist,
+        name: dist,
+        bn_name: dist,
+      }))
+    );
+
     setActiveSection("district");
   };
 
@@ -87,9 +99,25 @@ const Candidates = () => {
       d.bn_name.includes(searchTerm)
   );
 
-  const filteredCandidates = selectedDivision
-    ? candidatesData.filter((c) => c.division?.includes(selectedDivision.name))
-    : candidatesData;
+  const filteredCandidates = candidatesData.filter((c) => {
+    const matchesSelection = selectedDistrict
+      ? c.district?.includes(selectedDistrict.name)
+      : selectedDivision
+      ? c.division?.includes(selectedDivision.name)
+      : true;
+
+    const matchesSearch = searchTerm
+      ? c.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.district?.some((d) =>
+          d.toLowerCase().includes(searchTerm.toLowerCase())
+        ) ||
+        c.division?.some((d) =>
+          d.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      : true;
+
+    return matchesSelection && matchesSearch;
+  });
 
   const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
 
@@ -110,15 +138,15 @@ const Candidates = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 ">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight text-center">
             Our nominees for the <br /> 2025 elections
           </h2>
-          {/* <div className="w-full max-w-5xl">
+          <div className="w-full max-w-5xl">
             <div ref={containerRef} className="relative z-10">
-              <div className="bg-white rounded-xl md:rounded-full shadow-2xl p-2.5"> */}
-          {/* Mobile Search Button */}
-          {/* <div className="md:hidden flex justify-center">
+              <div className="bg-white rounded-xl md:rounded-full shadow-2xl p-2.5">
+                {/* Mobile Search Button */}
+                <div className="md:hidden flex justify-center">
                   <button
                     onClick={() => {
                       setIsMobileExpanded(!isMobileExpanded);
@@ -133,15 +161,16 @@ const Candidates = () => {
                     <Search size={20} />
                     <span>Search Location</span>
                   </button>
-                </div> */}
+                </div>
 
-          {/* <div
+                <div
                   className={`${
                     !isMobileExpanded && "hidden md:block"
                   } transition-all duration-300 ${
                     isMobileExpanded ? "mt-3" : ""
                   }`}
                 >
+                  {/* where */}
                   <div className="flex flex-col md:flex-row gap-2 md:gap-0">
                     <div
                       className="flex-1 px-4 md:px-6 py-3 md:py-2 rounded-xl md:rounded-full hover:bg-gray-50 transition cursor-text"
@@ -151,7 +180,7 @@ const Candidates = () => {
                       }}
                     >
                       <label className="block text-xs font-bold text-gray-900 mb-1 md:mb-2">
-                        Where
+                        Search
                       </label>
                       <input
                         ref={searchInputRef}
@@ -161,7 +190,7 @@ const Candidates = () => {
                           setSearchTerm(e.target.value);
                           setActiveSection("search");
                         }}
-                        placeholder="Search destinations"
+                        placeholder="Search candidates & destinations"
                         className="w-full bg-transparent text-sm text-gray-600 placeholder-gray-400 outline-none"
                       />
                     </div>
@@ -223,20 +252,20 @@ const Candidates = () => {
                       </button>
                     </div>
                   )}
-                </div> */}
-        </div>
+                </div>
+              </div>
 
-        {/* Dropdown */}
-        {/* {activeSection && (
+              {/* Dropdown */}
+              {activeSection && (
                 <div
                   className={`fixed md:absolute left-0 right-0 md:mt-4 mx-3 md:mx-0 bg-white rounded-2xl shadow-2xl overflow-hidden z-50 transition-all duration-300 ease-in-out ${
                     isMobileExpanded
                       ? "top-[180px] max-h-[calc(100vh-200px)]"
                       : "top-[100px] max-h-[calc(100vh-120px)]"
-                  } md:top-full md:max-h-[500px]`}
-                > */}
-        {/* Search Results */}
-        {/* {activeSection === "search" && searchTerm && (
+                  } md:top-full md:max-h-[80vh]`}
+                >
+                  {/* Search Results */}
+                  {activeSection === "search" && searchTerm && (
                     <div className="max-h-full overflow-y-auto">
                       {filteredDivisions.length > 0 && (
                         <div className="p-4 sm:p-6">
@@ -292,8 +321,48 @@ const Candidates = () => {
                         </div>
                       )}
 
+                      {filteredCandidates.length > 0 && (
+                        <div className="p-4 sm:p-6 border-t">
+                          <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">
+                            Candidates
+                          </h3>
+                          <div className="space-y-1">
+                            {filteredCandidates
+                              .slice(0, 10)
+                              .map((candidate) => (
+                                <button
+                                  key={candidate._id}
+                                  onClick={() => {
+                                    setSearchTerm(candidate.name);
+                                    setActiveSection(null);
+                                  }}
+                                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-100 transition flex items-center gap-3"
+                                >
+                                  <img
+                                    src={
+                                      candidate.photos?.[0] ||
+                                      "/placeholder.png"
+                                    }
+                                    alt={candidate.name}
+                                    className="w-8 h-8 rounded-full object-cover"
+                                  />
+                                  <div>
+                                    <div className="font-medium text-gray-900">
+                                      {candidate.name}
+                                    </div>
+                                    <div className="text-xs text-gray-500">
+                                      {candidate.position}
+                                    </div>
+                                  </div>
+                                </button>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+
                       {filteredDivisions.length === 0 &&
-                        filteredDistricts.length === 0 && (
+                        filteredDistricts.length === 0 &&
+                        filteredCandidates.length === 0 && (
                           <div className="p-12 text-center">
                             <div className="text-gray-400 w-12 h-12 mx-auto mb-3">
                               <Search size={48} className="mx-auto" />
@@ -307,10 +376,10 @@ const Candidates = () => {
                           </div>
                         )}
                     </div>
-                  )} */}
+                  )}
 
-        {/* Division List */}
-        {/* {activeSection === "division" && (
+                  {/* Division List */}
+                  {activeSection === "division" && (
                     <div className="max-h-full overflow-y-auto p-4 sm:p-6">
                       <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
                         Select Division
@@ -336,10 +405,10 @@ const Candidates = () => {
                         ))}
                       </div>
                     </div>
-                  )} */}
+                  )}
 
-        {/* District List */}
-        {/* {activeSection === "district" && selectedDivision && (
+                  {/* District List */}
+                  {activeSection === "district" && selectedDivision && (
                     <div className="max-h-full overflow-y-auto p-4 sm:p-6">
                       <div className="flex items-center gap-3 mb-4">
                         <button
@@ -385,12 +454,12 @@ const Candidates = () => {
                         </div>
                       )}
                     </div>
-                  )} */}
-        {/* </div>
-              )} */}
-        {/* </div>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="w-full max-w-7xl mx-auto my-10 px-4 md:px-6 lg:px-8">
