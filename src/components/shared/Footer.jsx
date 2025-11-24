@@ -3,16 +3,16 @@ import { Link } from "react-router";
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto py-12 px-6 md:px-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto py-12 px-6 md:px-0">
         {/* ✅ Company Info */}
         <div className="space-y-3 text-center md:text-left">
-        <div className="flex items-center gap-3 justify-center md:justify-start">
-        <img
-            src="/logo.png"
-            alt="BNP Logo"
-          className="w-20 h-15 object-contain"
-        />
-          <div>
+          <div className="flex items-center gap-3 justify-center md:justify-start">
+            <img
+              src="/logo.png"
+              alt="BNP Logo"
+              className="w-20 h-15 object-contain"
+            />
+            <div>
               <div className="text-lg font-semibold leading-tight text-white">
                 Bangladesh
               </div>
@@ -33,28 +33,28 @@ export default function Footer() {
             Navigation
           </h4>
           <ul className="space-y-3 text-sm">
-          <li>
-          <Link to="/">Home</Link>
-          </li>
-          <li>
-          <Link to="/candidates">Candidates</Link>
-          </li>
-          <li>
-          <Link to="/news">News</Link>
-          </li>
-          <li>
-          <Link to="/campaigns">Campaigns</Link>
-          </li>
-          <li>
-          <Link to="/contact">Contact</Link>
-          </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/candidates">Candidates</Link>
+            </li>
+            <li>
+              <Link to="/news">News</Link>
+            </li>
+            <li>
+              <Link to="/campaigns">Campaigns</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
         {/* ✅ Support (New Column instead of Recent Project) */}
         <div className="space-y-4 text-center">
           <h4 className="text-base sm:text-lg font-semibold text-white uppercase text-center">
-           Resources
+            Resources
           </h4>
           <ul className="space-y-3 text-sm">
             <li className="hover:text-white cursor-pointer transition">
@@ -99,8 +99,8 @@ export default function Footer() {
       </div>
 
       {/* ✅ Bottom Bar */}
-      <div className="border-t border-gray-800 text-center py-4 text-xs sm:text-sm text-gray-500 px-4">
-      © {new Date().getFullYear()} Bangladesh National Party - BNP. All rights reserved.
+      <div className="border-t border-gray-800 text-center py-4 text-xs sm:text-sm text-gray-400 px-4">
+        © {new Date().getFullYear()} Bangladesh Nationalist Party - BNP. All rights reserved.
       </div>
     </footer>
   );
