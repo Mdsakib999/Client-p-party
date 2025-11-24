@@ -271,18 +271,6 @@ export default function Navbar() {
               News
             </NavLink>
             <NavLink
-              to="/campaigns"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
-                }`
-              }
-            >
-              Campaigns
-            </NavLink>
-            <NavLink
               to="/activities"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
@@ -294,6 +282,19 @@ export default function Navbar() {
             >
               Activities
             </NavLink>
+            <NavLink
+              to="/campaigns"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
+                }`
+              }
+            >
+              Campaigns
+            </NavLink>
+            
 
             <div className="pt-4 space-y-2">
               <button className="w-full flex items-center gap-2 bg-green-700 text-white px-5 py-3 rounded-lg hover:bg-green-800 transition-colors font-medium shadow-sm">
