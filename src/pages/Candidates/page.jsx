@@ -100,13 +100,23 @@ const Candidates = () => {
   );
 
   const filteredCandidates = candidatesData.filter((c) => {
-    if (selectedDistrict) {
-      return c.district?.includes(selectedDistrict.name);
-    }
-    if (selectedDivision) {
-      return c.division?.includes(selectedDivision.name);
-    }
-    return true;
+    const matchesSelection = selectedDistrict
+      ? c.district?.includes(selectedDistrict.name)
+      : selectedDivision
+      ? c.division?.includes(selectedDivision.name)
+      : true;
+
+    const matchesSearch = searchTerm
+      ? c.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.district?.some((d) =>
+          d.toLowerCase().includes(searchTerm.toLowerCase())
+        ) ||
+        c.division?.some((d) =>
+          d.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      : true;
+
+    return matchesSelection && matchesSearch;
   });
 
   const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
@@ -160,6 +170,7 @@ const Candidates = () => {
                     isMobileExpanded ? "mt-3" : ""
                   }`}
                 >
+                  {/* where */}
                   <div className="flex flex-col md:flex-row gap-2 md:gap-0">
                     <div
                       className="flex-1 px-4 md:px-6 py-3 md:py-2 rounded-xl md:rounded-full hover:bg-gray-50 transition cursor-text"
@@ -169,7 +180,7 @@ const Candidates = () => {
                       }}
                     >
                       <label className="block text-xs font-bold text-gray-900 mb-1 md:mb-2">
-                        Where
+                        Search
                       </label>
                       <input
                         ref={searchInputRef}
@@ -179,7 +190,7 @@ const Candidates = () => {
                           setSearchTerm(e.target.value);
                           setActiveSection("search");
                         }}
-                        placeholder="Search destinations"
+                        placeholder="Search candidates & destinations"
                         className="w-full bg-transparent text-sm text-gray-600 placeholder-gray-400 outline-none"
                       />
                     </div>
@@ -251,7 +262,7 @@ const Candidates = () => {
                     isMobileExpanded
                       ? "top-[180px] max-h-[calc(100vh-200px)]"
                       : "top-[100px] max-h-[calc(100vh-120px)]"
-                  } md:top-full md:max-h-[500px]`}
+                  } md:top-full md:max-h-[80vh]`}
                 >
                   {/* Search Results */}
                   {activeSection === "search" && searchTerm && (
@@ -310,8 +321,48 @@ const Candidates = () => {
                         </div>
                       )}
 
+                      {filteredCandidates.length > 0 && (
+                        <div className="p-4 sm:p-6 border-t">
+                          <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">
+                            Candidates
+                          </h3>
+                          <div className="space-y-1">
+                            {filteredCandidates
+                              .slice(0, 10)
+                              .map((candidate) => (
+                                <button
+                                  key={candidate._id}
+                                  onClick={() => {
+                                    setSearchTerm(candidate.name);
+                                    setActiveSection(null);
+                                  }}
+                                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-100 transition flex items-center gap-3"
+                                >
+                                  <img
+                                    src={
+                                      candidate.photos?.[0] ||
+                                      "/placeholder.png"
+                                    }
+                                    alt={candidate.name}
+                                    className="w-8 h-8 rounded-full object-cover"
+                                  />
+                                  <div>
+                                    <div className="font-medium text-gray-900">
+                                      {candidate.name}
+                                    </div>
+                                    <div className="text-xs text-gray-500">
+                                      {candidate.position}
+                                    </div>
+                                  </div>
+                                </button>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+
                       {filteredDivisions.length === 0 &&
-                        filteredDistricts.length === 0 && (
+                        filteredDistricts.length === 0 &&
+                        filteredCandidates.length === 0 && (
                           <div className="p-12 text-center">
                             <div className="text-gray-400 w-12 h-12 mx-auto mb-3">
                               <Search size={48} className="mx-auto" />
