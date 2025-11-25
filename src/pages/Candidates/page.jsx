@@ -139,9 +139,6 @@ const Candidates = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 ">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight text-center">
-            Our nominees for the <br /> 2025 elections
-          </h2>
           <div className="w-full max-w-5xl">
             <div ref={containerRef} className="relative z-10">
               <div className="bg-white rounded-xl md:rounded-full shadow-2xl p-2.5">
@@ -159,7 +156,7 @@ const Candidates = () => {
                     className="bg-gradient-to-r from-zinc-900 to-zinc-800 text-white rounded-xl px-6 py-3 font-medium flex items-center gap-2 w-full justify-center"
                   >
                     <Search size={20} />
-                    <span>Search Location</span>
+                    <span>Search </span>
                   </button>
                 </div>
 
@@ -463,6 +460,9 @@ const Candidates = () => {
       </div>
 
       <div className="w-full max-w-7xl mx-auto my-10 px-4 md:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-3xl font-bold mb-6 tracking-tight text-center">
+          Our nominees for the <br /> 2025 elections
+        </h2>
         {/* DIVISION LIST */}
         <section
           className="relative py-4 mb-6"

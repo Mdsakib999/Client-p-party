@@ -1,6 +1,6 @@
 const CampaignStats = () => {
   return (
-    <section className="py-12 px-4 bg-green-700 text-white">
+    <section className="py-12 px-4 bg-green-700 text-white rounded-2xl">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -14,36 +14,20 @@ const CampaignStats = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">
-              150+
-            </div>
-            <div className="text-green-100">
-              Campaign Events
-            </div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">150+</div>
+            <div className="text-green-100">Campaign Events</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">
-              300+
-            </div>
-            <div className="text-green-100">
-              Constituencies Covered
-            </div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">300+</div>
+            <div className="text-green-100">Constituencies Covered</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">
-              50K+
-            </div>
-            <div className="text-green-100">
-              People Engaged
-            </div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
+            <div className="text-green-100">People Engaged</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">
-              180
-            </div>
-            <div className="text-green-100">
-              Days to Election
-            </div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">180</div>
+            <div className="text-green-100">Days to Election</div>
           </div>
         </div>
       </div>

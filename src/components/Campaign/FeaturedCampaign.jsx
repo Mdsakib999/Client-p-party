@@ -17,7 +17,7 @@ const FeaturedCampaign = ({ campaignActivities }) => {
         </p>
         </div>
 
-        <Link to={`/news/${featured.slug}`} className="block group">
+        <Link to={`/campaigns/${featured.slug}`} className="block group">
           <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden bg-gray-200">
             <img
               src={featured.featuredImage}
