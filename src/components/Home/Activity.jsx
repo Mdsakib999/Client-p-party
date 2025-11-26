@@ -65,8 +65,9 @@ const Activity = () => {
           </div>
 
           {featured && (
-            <div
-              className={`relative h-[400px] rounded-3xl overflow-hidden group ${featuredVideoId ? "cursor-pointer" : "cursor-default"
+            <Link
+              to={`/activities/${featured.slug}`}
+              className={`cursor-pointer relative h-[400px] rounded-3xl overflow-hidden group ${featuredVideoId ? "cursor-pointer" : "cursor-default"
                 }`}
               onClick={() => {
                 if (featuredVideoId) setShowVideo(true);
@@ -82,7 +83,6 @@ const Activity = () => {
                   ></iframe>
                 </div>
               ) : (
-                // ---------- IMAGE ALWAYS SHOWN ----------
                 <>
                   <img
                     src={getFeaturedThumb(featured)}
@@ -90,7 +90,6 @@ const Activity = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
-                  {/* Gradient + Play Button ONLY IF video exists */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
                   {featuredVideoId && (
@@ -116,7 +115,7 @@ const Activity = () => {
                   </div>
                 </>
               )}
-            </div>
+            </Link>
           )}
         </div>
       </div>

@@ -346,7 +346,7 @@ const CreateCandidate = () => {
         }
       }
 
-      const result = await createCandidate(submitData).unwrap();
+      await createCandidate(submitData).unwrap();
       alert("Candidate created successfully");
       resetForm();
     } catch (error) {
@@ -434,13 +434,12 @@ const CreateCandidate = () => {
         {steps.map((step, idx) => (
           <div key={idx} className="flex flex-col items-center min-w-max">
             <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${
-                idx === currentStep
-                  ? "bg-blue-500 text-white"
-                  : idx < currentStep
+              className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${idx === currentStep
+                ? "bg-blue-500 text-white"
+                : idx < currentStep
                   ? "bg-green-500 text-white"
                   : "bg-gray-300 text-gray-600"
-              }`}
+                }`}
             >
               {idx < currentStep ? "✓" : idx + 1}
             </div>
