@@ -1,6 +1,10 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Pagination({ currentPage, totalPages, onPageChange }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
   const getPageNumbers = () => {
     const pages = [];
     if (totalPages <= 7) {
@@ -31,10 +35,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
         className={`p-2 rounded-md flex items-center justify-center transition-all duration-200
-          ${
-            currentPage === 1
-              ? "bg-emerald-100 text-emerald-400 cursor-not-allowed"
-              : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm cursor-pointer"
+          ${currentPage === 1
+            ? "bg-emerald-100 text-emerald-400 cursor-not-allowed"
+            : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm cursor-pointer"
           }`}
       >
         <ChevronLeft size={18} />
@@ -51,10 +54,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
               key={index}
               onClick={() => onPageChange(num)}
               className={`cursor-pointer w-8 h-8 flex items-center justify-center rounded-md text-sm font-medium transition-all
-                ${
-                  currentPage === num
-                    ? "bg-emerald-600 text-white shadow-md"
-                    : "bg-gray-100 text-gray-700 hover:bg-emerald-100"
+                ${currentPage === num
+                  ? "bg-emerald-600 text-white shadow-md"
+                  : "bg-gray-100 text-gray-700 hover:bg-emerald-100"
                 }`}
             >
               {num}
@@ -67,10 +69,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
         disabled={currentPage === totalPages}
         className={`p-2 rounded-md flex items-center justify-center transition-all duration-200
-          ${
-            currentPage === totalPages
-              ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-              : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm cursor-pointer"
+          ${currentPage === totalPages
+            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+            : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm cursor-pointer"
           }`}
       >
         <ChevronRight size={18} />

@@ -6,18 +6,17 @@ import {
   FaPen,
   FaUsers,
   FaNewspaper,
-  FaDonate,
   FaUser,
   FaBars,
-  FaArrowLeft,
+  FaTimes,
 } from "react-icons/fa";
 import { useUserInfoQuery } from "../../redux/features/auth/auth.api";
 import { SquareActivity, SquareKanban } from "lucide-react";
 
 const Dashboard = () => {
   const location = useLocation();
-  const { data } = useUserInfoQuery();
-  const userRole = data?.data?.role;
+  const { data, isLoading } = useUserInfoQuery();
+  const userRole = data?.data?.role || "USER";
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const allSidebarItems = [
@@ -76,64 +75,69 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex min-h-screen bg-gray-100 relative">
-      {/* Mobile Sidebar Overlay */}
+    <div className="flex min-h-screen bg-gray-100">
+      {/* Mobile overlay */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
 
-      {/* Sidebar */}
-      <div
-        className={`fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-md transform transition-transform duration-300 ease-in-out md:static md:translate-x-0 ${
+      {/* Sidebar - Fixed height, no scroll */}
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        } flex flex-col`}
       >
-        <div className="p-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold">Dashboard</h1>
-          {/* Close Arrow (Mobile Only) */}
+        <div className="flex items-center justify-between p-5 border-b">
+          <h1 className="text-2xl font-bold text-emerald-700">Dashboard</h1>
           <button
             onClick={() => setIsSidebarOpen(false)}
-            className="md:hidden text-gray-500 hover:text-gray-700 p-2"
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
           >
-            <FaArrowLeft size={20} />
+            <FaTimes size={22} />
           </button>
         </div>
-        <nav className="mt-4">
+
+        <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
           {sidebarItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setIsSidebarOpen(false)}
-              className={`px-4 py-2 flex items-center hover:bg-gray-200 transition-colors ${
-                location.pathname === item.path ? "bg-gray-200" : ""
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                location.pathname === item.path
+                  ? "bg-emerald-100 text-emerald-700 shadow-sm"
+                  : "text-gray-700 hover:bg-emerald-50 hover:text-emerald-700"
               }`}
             >
-              <item.Icon className="mr-2" />
+              <item.Icon size={20} />
               {item.label}
             </Link>
           ))}
         </nav>
-      </div>
+      </aside>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Mobile Header with Toggle */}
-        <div className="md:hidden bg-white p-4 shadow-sm flex items-center">
+      {/* Main content area */}
+      <div className="flex-1 lg:ml-64">
+        {/* Mobile header */}
+        <header className="lg:hidden bg-white shadow-sm sticky top-0 z-30 flex items-center gap-4 p-4">
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="text-gray-600 hover:text-gray-900 mr-4"
+            className="p-2 hover:bg-gray-100 rounded-lg"
           >
             <FaBars size={24} />
           </button>
-          <span className="font-bold text-lg">Dashboard</span>
-        </div>
+          <h2 className="text-xl font-bold text-gray-800">Dashboard</h2>
+        </header>
 
-        <div className="flex-1 overflow-auto">
-          <Outlet />
-        </div>
+        {/* Page content */}
+        <main className="p-4 lg:p-8 min-h-screen bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <Outlet />
+          </div>
+        </main>
       </div>
     </div>
   );
