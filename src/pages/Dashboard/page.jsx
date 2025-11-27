@@ -34,20 +34,17 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      {/* Mobile overlay */}
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
-
-      {/* Sidebar - Fixed height, no scroll */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } flex flex-col`}
       >
-        <div className="flex items-center justify-between p-5 border-b">
+        <div className="flex items-center justify-between p-6 shadow-sm">
           <h1 className="text-2xl font-bold text-emerald-700">Dashboard</h1>
           <button
             onClick={() => setIsSidebarOpen(false)}
