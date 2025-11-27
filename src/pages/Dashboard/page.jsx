@@ -23,11 +23,11 @@ const Dashboard = () => {
     { path: "/dashboard/overview", label: "Overview", Icon: FaHome, roles: ["SUPER_ADMIN", "ADMIN"] },
     { path: "/dashboard", label: "Manage Account", Icon: FaUser, roles: ["SUPER_ADMIN", "ADMIN", "USER"] },
     { path: "/dashboard/create-candidate", label: "Create Candidate", Icon: FaUserPlus, roles: ["SUPER_ADMIN", "ADMIN"] },
-    { path: "/dashboard/add-activity", label: "Add Activity", Icon: SquareActivity, roles: ["SUPER_ADMIN", "ADMIN"] },
-    { path: "/dashboard/create-news-article", label: "Create News Article", Icon: FaPen, roles: ["SUPER_ADMIN", "ADMIN"] },
     { path: "/dashboard/manage-candidates", label: "Manage Candidates", Icon: FaUsers, roles: ["SUPER_ADMIN", "ADMIN"] },
-    { path: "/dashboard/manage-news-articles", label: "Manage News Articles", Icon: FaNewspaper, roles: ["SUPER_ADMIN", "ADMIN"] },
+    { path: "/dashboard/add-activity", label: "Add Activity", Icon: SquareActivity, roles: ["SUPER_ADMIN", "ADMIN"] },
     { path: "/dashboard/manage-activity", label: "Manage Activity", Icon: SquareKanban, roles: ["SUPER_ADMIN", "ADMIN"] },
+    { path: "/dashboard/create-news-article", label: "Create News Article", Icon: FaPen, roles: ["SUPER_ADMIN", "ADMIN"] },
+    { path: "/dashboard/manage-news-articles", label: "Manage News Articles", Icon: FaNewspaper, roles: ["SUPER_ADMIN", "ADMIN"] },
   ];
 
   const sidebarItems = allSidebarItems.filter((item) => item.roles.includes(userRole));
