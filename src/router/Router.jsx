@@ -29,6 +29,8 @@ import AddActivity from "../pages/Dashboard/AddActivity/page.jsx";
 import Activities from "../pages/Activites/page.jsx";
 import ActivityDetails from "../pages/ActivityDetails/page.jsx";
 import CampaignDetail from "../pages/CampaignDetail/page.jsx";
+import TermsAndConditions from "../pages/TermsAndConditions/page.jsx";
+import PrivacyPolicy from "../pages/PrivacyPolicy/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +92,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: "/privacy-policy",
+        Component: PrivacyPolicy,
+      },
+      {
+        path: "/terms-and-conditions",
+        Component: TermsAndConditions,
       },
       {
         path: "/dashboard",

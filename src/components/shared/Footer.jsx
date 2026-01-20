@@ -64,10 +64,10 @@ export default function Footer() {
               Vision
             </li>
             <li className="hover:text-white cursor-pointer transition">
-              Privacy Policy
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
             <li className="hover:text-white cursor-pointer transition">
-              Terms & Conditions
+              <Link to="/terms-and-conditions">Terms & Conditions</Link>
             </li>
           </ul>
         </div>
@@ -100,7 +100,8 @@ export default function Footer() {
 
       {/* ✅ Bottom Bar */}
       <div className="border-t border-gray-800 text-center py-4 text-xs sm:text-sm text-gray-400 px-4">
-        © {new Date().getFullYear()} Bangladesh Nationalist Party - BNP. All rights reserved.
+        © {new Date().getFullYear()} Bangladesh Nationalist Party - BNP. All
+        rights reserved.
       </div>
     </footer>
   );
