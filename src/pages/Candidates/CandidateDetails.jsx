@@ -5,16 +5,19 @@ import {
   GraduationCap,
   Map,
   User,
-  Flag,
 } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router";
+import { useGetCandidateByIdQuery } from "../../redux/features/candidate/candidate.api";
 
 export default function CandidateDetails() {
   const { state: details } = useLocation();
   const [activeTab, setActiveTab] = useState("details");
 
-  if (!details) {
+  const { data: candidateRes } = useGetCandidateByIdQuery(details?._id);
+  const candidate = candidateRes?.data || details;
+
+  if (!candidate) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <p className="text-xl text-gray-600 font-semibold">
@@ -25,101 +28,65 @@ export default function CandidateDetails() {
   }
 
   const bigImage =
-    details.photos && details.photos.length > 0
-      ? details.photos[0]
-      : "https://via.placeholder.com/400";
+    candidate.photos?.[0]?.url ||
+    candidate.photos?.[0] ||
+    "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg";
 
   return (
     <div className="min-h-screen">
-      {/* HEADER SECTION */}
+      {/* HEADER */}
       <div className="bg-white mt-10">
-        <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <img
-              src={
-                bigImage ||
-                "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg"
-              }
-              alt={details.name}
+              src={bigImage}
+              alt={candidate.name}
               className="w-full md:w-96 h-96 object-cover rounded-xl shadow"
               onError={(e) =>
                 (e.currentTarget.src =
                   "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
               }
             />
+
             <div className="flex-1">
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                {details.name}
+                {candidate.name}
               </h1>
 
-              {/* Position and Category */}
-              <div className="flex flex-wrap gap-2 items-center mb-3">
-                {details.position && (
+              <div className="flex flex-wrap gap-2 mb-3">
+                {candidate.position && (
                   <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                    {details.position}
+                    {candidate.position}
                   </span>
                 )}
-                {details.category && (
-                  <span className="bg-blue-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                    {details.category}
+                {candidate.category && (
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {candidate.category}
                   </span>
                 )}
               </div>
 
-              {/* Portfolio Section */}
-              {details.portfolio && (
-                <div className="mb-4">
-                  {details.portfolio.latest &&
-                    details.portfolio.latest.length > 0 && (
-                      <div className="mb-2">
-                        <p className="text-sm text-gray-500">
-                          Current Position
-                        </p>
-                        <ul className=" text-gray-900 font-semibold">
-                          {details.portfolio.latest.map((position, idx) => (
-                            <li key={idx} className="text-base">
-                              {position}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  {details.portfolio.previous &&
-                    details.portfolio.previous.length > 0 && (
-                      <div>
-                        <p className="text-sm text-gray-500">
-                          Previous Positions
-                        </p>
-                        <ul className=" text-gray-900">
-                          {details.portfolio.previous.map((position, idx) => (
-                            <li key={idx} className="text-base">
-                              {position}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                </div>
+              {Array.isArray(candidate.portfolio) &&
+                candidate.portfolio.length > 0 && (
+                  <div className="mb-4">
+                    <p className="text-sm text-gray-500 mb-1">Portfolio</p>
+                    <ul className="list-disc list-inside text-gray-900 font-medium">
+                      {candidate.portfolio.map((p, idx) => (
+                        <li key={idx}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+              {Array.isArray(candidate.designations) && (
+                <p className="text-green-800 font-semibold my-3">
+                  {candidate.designations.join(" | ")}
+                </p>
               )}
 
-              <p className="text-green-800 font-semibold my-3">
-                {details?.designations?.map((designation, idx) => (
-                  <span key={idx}>{designation} | </span>
-                ))}
-              </p>
-
-              {/* {details.personalInfo?.birthDate && (
-                <div className="flex items-center gap-2 mb-3 text-gray-600">
-                  <Calendar className="w-5 h-5 text-gray-500" />
-                  <p className="text-sm font-medium">
-                    Date of Birth: {details.personal_info.birth_date}
-                  </p>
-                </div>
-              )} */}
-
-              {details.overall_summary && (
+              {candidate.overall_summary && (
                 <p className="text-gray-700 text-justify mt-5">
-                  {details.overall_summary}
+                  {candidate.overall_summary}
                 </p>
               )}
             </div>
@@ -127,161 +94,118 @@ export default function CandidateDetails() {
         </div>
       </div>
 
-      {/* TABS SECTION */}
-      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-8">
+      {/* TABS */}
+      <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="bg-white rounded-xl">
-          {/* Tab Buttons */}
-          <div className="flex border-b border-gray-200 shadow">
+          <div className="flex border-b shadow">
             {["details", "political", "activities"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex-1 py-4 text-xs sm:text-sm md:text-base text-center font-semibold ${
+                className={`flex-1 py-4 font-semibold ${
                   activeTab === tab
-                    ? "bg-gray-100 border-gray-400 text-gray-600"
+                    ? "bg-gray-100 text-gray-700"
                     : "text-gray-600"
                 }`}
               >
                 {tab === "details"
                   ? "Details"
                   : tab === "political"
-                  ? "Political Career"
-                  : "Activity Highlights"}
+                    ? "Political Career"
+                    : "Activity Highlights"}
               </button>
             ))}
           </div>
 
-          {/* TAB CONTENT */}
           <div className="p-6">
-            {/* DETAILS TAB */}
+            {/* DETAILS */}
             {activeTab === "details" && (
               <div className="space-y-6">
-                {/* Personal Info */}
-                {details.personal_info && (
+                {candidate.personal_info && (
                   <section>
-                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <User className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <User className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
                       Personal Information
                     </h2>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {details.personal_info.birth_date && (
-                        <div className="flex items-start gap-3">
-                          <Calendar className="w-10 h-10 text-white  bg-green-700 p-2 rounded-md" />
+                      {candidate.personal_info.birth_date && (
+                        <div className="flex gap-3">
+                          <Calendar className="w-10 h-10 bg-green-700 text-white p-2 rounded-md" />
                           <div>
                             <p className="text-sm text-gray-500">Birth Date</p>
-                            <span className="text-gray-900 font-medium">
-                              {details.personal_info.birth_date}
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                      {details.personal_info.birth_place && (
-                        <div className="flex items-start gap-3">
-                          <MapPin className="w-10 h-10 text-white  bg-green-700 p-2 rounded-md" />
-                          <div>
-                            <p className="text-sm text-gray-500">Birth Place</p>
-                            <span className="text-gray-900 font-medium">
-                              {details.personal_info.birth_place}
-                            </span>
+                            <p className="font-medium">
+                              {candidate.personal_info.birth_date}
+                            </p>
                           </div>
                         </div>
                       )}
 
-                      {/* {details.personalInfo.nationality && (
-                        <div className="flex items-start gap-3">
-                          <Flag className="w-5 h-5 text-gray-500 mt-1" />
+                      {candidate.personal_info.birth_place && (
+                        <div className="flex gap-3">
+                          <MapPin className="w-10 h-10 bg-green-700 text-white p-2 rounded-md" />
                           <div>
-                            <p className="text-sm text-gray-500">Nationality</p>
-                            <span className="text-gray-900 font-medium">
-                              {details.personal_info.nationality}
-                            </span>
+                            <p className="text-sm text-gray-500">Birth Place</p>
+                            <p className="font-medium">
+                              {candidate.personal_info.birth_place}
+                            </p>
                           </div>
                         </div>
-                      )} */}
-                      {/* Election Constituency */}
+                      )}
                     </div>
                   </section>
                 )}
-                {details.election_constituencies &&
-                  details.election_constituencies.length > 0 && (
+
+                {Array.isArray(candidate.election_constituencies) &&
+                  candidate.election_constituencies.length > 0 && (
                     <section>
-                      <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Map className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
+                      <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <Map className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
                         Election Constituencies
                       </h2>
-                      <div className="space-y-4  md:w-[50%]">
-                        {details.election_constituencies.map(
-                          (constituency, idx) => (
-                            <div
-                              key={idx}
-                              className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500"
-                            >
-                              <p className="text-lg font-semibold text-gray-900">
-                                {constituency.actual_place_name}
-                              </p>
-                              <p className="text-gray-600 mt-1">
-                                Area: {constituency.election_area_name}
-                              </p>
-                            </div>
-                          )
-                        )}
+
+                      <div className="space-y-4 md:w-1/2">
+                        {candidate.election_constituencies.map((c, idx) => (
+                          <div
+                            key={idx}
+                            className="bg-green-50 p-4 rounded-lg border-l-4 border-green-600"
+                          >
+                            <p className="font-semibold">
+                              {c.actual_place_name}
+                            </p>
+                            <p className="text-gray-600">
+                              {c.election_area_name}
+                            </p>
+                          </div>
+                        ))}
                       </div>
                     </section>
                   )}
-                {details.business_income_source_professional_career && (
-                  <section>
-                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <Briefcase className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
-                      Professional Career & Income Sources
-                    </h2>
-                    <div className="space-y-4 md:w-[50%]">
-                      <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                        {Array.isArray(
-                          details.business_income_source_professional_career
-                        ) ? (
-                          <ul className="list-disc list-inside space-y-2">
-                            {details.business_income_source_professional_career.map(
-                              (career, idx) => (
-                                <li
-                                  key={idx}
-                                  className="text-gray-700 list-none"
-                                >
-                                  {career}
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        ) : (
-                          <p className="text-gray-700">
-                            {details.business_income_source_professional_career}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </section>
-                )}
 
-                {/* Education */}
-                {details.academic_career && (
+                {candidate.academic_career && (
                   <section>
-                    <h2 className="md:text-lg lg:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <GraduationCap className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <GraduationCap className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
                       Education
                     </h2>
+
                     <div className="space-y-2">
-                      {details.academic_career.schools && (
-                        <p className="text-gray-900">
-                          Schools: {details.academic_career.schools.join(", ")}
+                      {candidate.academic_career.schools?.length > 0 && (
+                        <p>
+                          <strong>Schools:</strong>{" "}
+                          {candidate.academic_career.schools.join(", ")}
                         </p>
                       )}
-                      {details.academic_career.college && (
-                        <p className="text-gray-900">
-                          College: {details.academic_career.college}
+                      {candidate.academic_career.college && (
+                        <p>
+                          <strong>College:</strong>{" "}
+                          {candidate.academic_career.college}
                         </p>
                       )}
-                      {details.academic_career.degree && (
-                        <p className="text-gray-900">
-                          Degree: {details.academic_career.degree}
+                      {candidate.academic_career.degree?.length > 0 && (
+                        <p>
+                          <strong>Degree:</strong>{" "}
+                          {candidate.academic_career.degree.join(", ")}
                         </p>
                       )}
                     </div>
@@ -290,27 +214,27 @@ export default function CandidateDetails() {
               </div>
             )}
 
-            {/* POLITICAL TAB */}
+            {/* POLITICAL */}
             {activeTab === "political" && (
               <div className="space-y-6">
-                {Array.isArray(details.political_career) &&
-                details.political_career.length > 0 ? (
+                {Array.isArray(candidate.political_career) &&
+                candidate.political_career.length > 0 ? (
                   <section>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <Briefcase className="w-10 h-10 text-green-800 border-2 border-green-800  bg-green-50 p-2 rounded-full" />
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <Briefcase className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
                       Political Journey
                     </h2>
 
                     <div className="space-y-4">
-                      {details.political_career.map((career, idx) => (
+                      {candidate.political_career.map((p, idx) => (
                         <div
                           key={idx}
                           className="border-l-4 border-green-600 pl-4 py-3 bg-gray-50 rounded-r-lg"
                         >
                           <p className="text-sm font-semibold text-green-700">
-                            {career.year}
+                            {p.year}
                           </p>
-                          <p className="text-gray-800 mt-1">{career.event}</p>
+                          <p className="text-gray-800">{p.event}</p>
                         </div>
                       ))}
                     </div>
@@ -323,57 +247,54 @@ export default function CandidateDetails() {
               </div>
             )}
 
-            {/* ACTIVITIES TAB */}
+            {/* ACTIVITIES */}
             {activeTab === "activities" && (
               <div className="space-y-6">
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-2xl font-bold mb-4">
                     Current Activities
                   </h2>
                   <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <p className="text-gray-700 leading-relaxed">
-                      {details.life_activities ||
+                    <p>
+                      {candidate.life_activities ||
                         "No recent activity recorded."}
                     </p>
                   </div>
                 </section>
 
-                {details.other_income_sources &&
-                  details.other_income_sources.length > 0 && (
+                {Array.isArray(candidate.other_income_sources) &&
+                  candidate.other_income_sources.length > 0 && (
                     <section>
-                      <h2 className="text-xl font-bold text-gray-900 mb-3">
-                        Other Activities & Income Sources
+                      <h2 className="text-xl font-bold mb-3">
+                        Other Income Sources
                       </h2>
                       <ul className="list-disc list-inside space-y-2">
-                        {details.other_income_sources.map((source, idx) => (
-                          <li key={idx} className="text-gray-700">
-                            {source}
-                          </li>
+                        {candidate.other_income_sources.map((s, idx) => (
+                          <li key={idx}>{s}</li>
                         ))}
                       </ul>
                     </section>
                   )}
 
-                {details.social_links && details.social_links.length > 0 && (
-                  <section>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3">
-                      Social Media & Web Presence
-                    </h2>
-                    <div className="flex flex-wrap gap-3">
-                      {details.social_links.map((link, idx) => (
-                        <a
-                          key={idx}
-                          href={link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm text-blue-600 hover:bg-blue-50 transition-colors"
-                        >
-                          Visit Official Website
-                        </a>
-                      ))}
-                    </div>
-                  </section>
-                )}
+                {Array.isArray(candidate.social_links) &&
+                  candidate.social_links.length > 0 && (
+                    <section>
+                      <h2 className="text-xl font-bold mb-3">Web Presence</h2>
+                      <div className="flex flex-wrap gap-3">
+                        {candidate.social_links.map((link, idx) => (
+                          <a
+                            key={idx}
+                            href={link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-2 border rounded-lg text-blue-600 hover:bg-blue-50"
+                          >
+                            Visit Website
+                          </a>
+                        ))}
+                      </div>
+                    </section>
+                  )}
               </div>
             )}
           </div>
