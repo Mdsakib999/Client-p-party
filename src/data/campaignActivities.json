@@ -1,11 +1,74 @@
 [
   {
+    "id": "tarique-youth-rally",
+    "slug": "tarique-youth-rally",
+    "category": "YOUTH RALLY",
+    "date": "November 27, 2025",
+    "eventDate": "2025-11-27T15:00:00",
+    "title": "Grand Youth Rally: Shaping Tomorrow",
+    "excerpt": "Join Acting Chairman Tarique Rahman in Chattogram for a historic gathering of Bangladesh's future leaders.",
+    "featuredImage": "/activity-5.jpg",
+    "candidate": "Mr. Tarique Rahman",
+    "location": "Chattogram, Bangladesh",
+    "content": [
+      {
+        "type": "text",
+        "text": "BNP Acting Chairman Tarique Rahman addressed a massive youth rally in Chittagong, focusing on technology-driven development and youth empowerment."
+      },
+      {
+        "type": "text",
+        "text": "The rally attracted thousands of young people who expressed enthusiasm for BNP's vision of a digitally advanced Bangladesh with ample job opportunities."
+      },
+      {
+        "type": "quote",
+        "text": "Our youth are the future leaders of Bangladesh. We will create an environment where young people can innovate, create jobs, and build a prosperous nation.",
+        "author": "Tarique Rahman, BNP Acting Chairman"
+      },
+      {
+        "type": "text",
+        "text": "The event featured interactive sessions on digital entrepreneurship and modern governance."
+      }
+    ]
+  },
+  {
+    "id": "women-empowerment-drive",
+    "slug": "women-empowerment-drive",
+    "category": "WOMEN'S RIGHTS",
+    "date": "November 30, 2025",
+    "eventDate": "2025-11-30T10:00:00",
+    "title": "Women's March for Rights & Democracy",
+    "excerpt": "A nationwide mobilization of women demanding equal rights, security, and political representation.",
+    "featuredImage": "/activity-10.jpg",
+    "candidate": "BNP Women's Wing",
+    "location": "Dhaka, Bangladesh",
+    "content": [
+      {
+        "type": "text",
+        "text": "BNP Women's Wing leaders have intensified their campaign efforts, organizing events and meetings to engage female voters across the country."
+      },
+      {
+        "type": "text",
+        "text": "The campaign focuses on women's rights, economic empowerment, and increasing female representation in politics."
+      },
+      {
+        "type": "quote",
+        "text": "Women are not just voters; they are leaders, decision-makers, and the future of Bangladesh. We will ensure their voices are heard and valued.",
+        "author": "BNP Women's Wing Leader"
+      },
+      {
+        "type": "text",
+        "text": "The initiative has seen increased participation from women in campaign activities and policy discussions."
+      }
+    ]
+  },
+  {
     "id": "bnp-campaign-launch-2026",
     "slug": "bnp-campaign-launch-2026",
-    "category": "CAMPAIGN",
-    "date": "October 2025",
-    "title": "BNP Launches Nationwide Campaign for 2026 Elections",
-    "excerpt": "Begum Khaleda Zia officially launches BNP's election campaign at a massive rally in Dhaka, outlining the party's vision for Bangladesh's future.",
+    "category": "OFFICIAL LAUNCH",
+    "date": "December 15, 2025",
+    "eventDate": "2025-12-15T09:00:00",
+    "title": "Nationwide Election Campaign Launch 2026",
+    "excerpt": "The official commencement of BNP's parliamentary election campaign led by Begum Khaleda Zia.",
     "featuredImage": "/activity-10.jpg",
     "candidate": "Begum Khaleda Zia",
     "location": "Dhaka, Bangladesh",
@@ -26,36 +89,6 @@
       {
         "type": "text",
         "text": "The campaign launch marks the beginning of an intensive grassroots mobilization effort across all constituencies."
-      }
-    ]
-  },
-  {
-    "id": "tarique-youth-rally",
-    "slug": "tarique-youth-rally",
-    "category": "YOUTH CAMPAIGN",
-    "date": "October 2025",
-    "title": "Tarique Rahman Addresses Massive Youth Rally",
-    "excerpt": "BNP Acting Chairman Tarique Rahman energizes young voters at a youth-focused campaign rally in Chittagong, promising digital innovation and job creation.",
-    "featuredImage": "/activity-5.jpg",
-    "candidate": "Mr. Tarique Rahman",
-    "location": "Chittagong, Bangladesh",
-    "content": [
-      {
-        "type": "text",
-        "text": "BNP Acting Chairman Tarique Rahman addressed a massive youth rally in Chittagong, focusing on technology-driven development and youth empowerment."
-      },
-      {
-        "type": "text",
-        "text": "The rally attracted thousands of young people who expressed enthusiasm for BNP's vision of a digitally advanced Bangladesh with ample job opportunities."
-      },
-      {
-        "type": "quote",
-        "text": "Our youth are the future leaders of Bangladesh. We will create an environment where young people can innovate, create jobs, and build a prosperous nation.",
-        "author": "Tarique Rahman, BNP Acting Chairman"
-      },
-      {
-        "type": "text",
-        "text": "The event featured interactive sessions on digital entrepreneurship and modern governance."
       }
     ]
   },
@@ -176,36 +209,6 @@
       {
         "type": "text",
         "text": "The meetings formed the basis for BNP's comprehensive agricultural development plan."
-      }
-    ]
-  },
-  {
-    "id": "women-empowerment-drive",
-    "slug": "women-empowerment-drive",
-    "category": "WOMEN'S RIGHTS",
-    "date": "September 2025",
-    "title": "BNP Women's Wing Intensifies Campaign Efforts",
-    "excerpt": "BNP women's leaders mobilize female voters across Bangladesh, focusing on gender equality and women's political participation.",
-    "featuredImage": "/activity-10.jpg",
-    "candidate": "BNP Women's Wing",
-    "location": "Multiple Locations",
-    "content": [
-      {
-        "type": "text",
-        "text": "BNP Women's Wing leaders have intensified their campaign efforts, organizing events and meetings to engage female voters across the country."
-      },
-      {
-        "type": "text",
-        "text": "The campaign focuses on women's rights, economic empowerment, and increasing female representation in politics."
-      },
-      {
-        "type": "quote",
-        "text": "Women are not just voters; they are leaders, decision-makers, and the future of Bangladesh. We will ensure their voices are heard and valued.",
-        "author": "BNP Women's Wing Leader"
-      },
-      {
-        "type": "text",
-        "text": "The initiative has seen increased participation from women in campaign activities and policy discussions."
       }
     ]
   },

@@ -28,6 +28,7 @@ import ManageActivity from "../pages/Dashboard/ManageActivity/page.jsx";
 import AddActivity from "../pages/Dashboard/AddActivity/page.jsx";
 import Activities from "../pages/Activites/page.jsx";
 import ActivityDetails from "../pages/ActivityDetails/page.jsx";
+import CampaignDetail from "../pages/CampaignDetail/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         index: true,
         path: "/campaigns",
         Component: Campaigns,
+      },
+      {
+        path: "/campaigns/:slug",
+        Component: CampaignDetail,
       },
       {
         index: true,
