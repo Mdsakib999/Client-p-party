@@ -13,7 +13,7 @@ export default function CandidateCard({ candidate }) {
             loading="lazy"
             className="w-full h-full object-cover"
             src={
-              candidate?.photos?.[0] ||
+              candidate?.photo ||
               "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg"
             }
             alt={`${candidate?.name}'s photo`}
