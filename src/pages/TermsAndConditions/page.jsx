@@ -12,8 +12,7 @@ export default function TermsAndConditions() {
               1. About This Website
             </h2>
             <p>
-              This website is operated by the Bangladesh Nationalist Party
-              (BNP). The purpose of this platform is to share information about
+              The purpose of this platform is to share information about
               the party’s vision, principles, nominated candidates for the 2026
               election, activities, news, and public communications.
             </p>
@@ -67,7 +66,7 @@ export default function TermsAndConditions() {
             </ul>
           </section>
 
-          <section>
+          {/* <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
               5. Donations
             </h2>
@@ -87,11 +86,11 @@ export default function TermsAndConditions() {
                 that violates legal, ethical, or party standards.
               </li>
             </ul>
-          </section>
+          </section> */}
 
           <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
-              6. User Conduct
+              5. User Conduct
             </h2>
             <ul className="list-disc list-inside space-y-1">
               <li>
@@ -109,7 +108,7 @@ export default function TermsAndConditions() {
             </ul>
           </section>
 
-          <section>
+          {/* <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
               7. Accuracy of Information
             </h2>
@@ -118,11 +117,11 @@ export default function TermsAndConditions() {
               accurate and up to date. However, we do not guarantee that all
               content is complete, error-free, or current at all times.
             </p>
-          </section>
+          </section> */}
 
           <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
-              8. External Links
+              6. External Links
             </h2>
             <p>
               This website may contain links to third-party websites. Bangladesh
@@ -133,7 +132,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
-              9. Privacy and Data Use
+              7. Privacy and Data Use
             </h2>
             <p>
               We respect your privacy. Any personal information you provide will
@@ -145,7 +144,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
-              10. Changes to Terms
+              8. Changes to Terms
             </h2>
             <p>
               These Terms and Conditions may be updated or modified at any time
@@ -156,7 +155,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-xl font-bold text-green-700 mb-2">
-              11. Contact Information
+              9. Contact Information
             </h2>
             <p>
               If you have any questions regarding Bangladesh Nationalist Party
