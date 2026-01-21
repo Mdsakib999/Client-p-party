@@ -1,9 +1,6 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router";
-import kZia from "../../assets/bnp-1.jpg";
-import tRahman from "../../assets/bnp-2.jpg";
-import kMossaraf from "../../assets/bnp-3.jpg";
-import zSarkar from "../../assets/bnp-4.jpg";
+import LeaderCard from "./LeaderCard";
 
 export const Candidates = () => {
   const candidates = [
@@ -11,36 +8,38 @@ export const Candidates = () => {
       id: 1,
       name: "Begum Khaleda Zia",
       position: "Chairperson",
-      image: kZia,
+      image: "https://api.bnpbd.org/api/upload/images/begum-khaleda-599985.jpg",
       highlight: false,
     },
     {
       id: 2,
       name: "Mr. Tarique Rahman",
       position: "Acting Chairman",
-      image: tRahman,
+      image:
+        "https://www.aljazeera.com/wp-content/uploads/2024/01/349B2U6-highres-1704353492.jpg?resize=1800%2C1800",
       highlight: true,
     },
     {
       id: 5,
       name: "Mirza Fakhrul Islam Alamgir",
-      position: "Secretary General",
+      position: "Secretary General - BNP",
       image:
         "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
       highlight: false,
     },
     {
       id: 3,
-      name: "Dr. Khandaker Mosharraf Hossain",
-      position: "Member Standing Committee",
-      image: kMossaraf,
+      name: "Salauddin Ahmed",
+      position: "Member of National Standing Committee - BNP",
+      image:
+        "https://i0.wp.com/asiatimes.com/wp-content/uploads/2025/11/Bangladesh-Salahuddin-Ahmed.jpg?fit=1200%2C800&quality=89&ssl=1",
       highlight: false,
     },
     {
       id: 4,
-      name: "Barrister Zamir Uddin Sarkar",
-      position: "Member Standing Committee",
-      image: zSarkar,
+      name: "Mr. Amir Khosru Chowdhury",
+      position: "Member of National Standing Committee - BNP",
+      image: "https://api.bnpbd.org/api/upload/images/13-1037d.jpg",
       highlight: false,
     },
   ];
@@ -58,88 +57,69 @@ export const Candidates = () => {
           </span>
 
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 tracking-tight">
-            Meet our the candidates
+            Meet Our Candidates
           </h2>
 
           <p className="text-gray-600 text-lg mb-6">
-            Who's Running & Why It Matters
+            Leaders dedicated to representing the voices of the people
           </p>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-6">
+            {/* OUTLINE BUTTON */}
             <Link
               to="/news"
-              className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium transition-colors rounded border-2 border-green-700 px-6 py-2"
+              className="
+      group flex items-center gap-2
+      px-6 py-2.5
+      rounded-full
+      border-2 border-green-700
+      text-green-800 font-medium
+      bg-white/70 backdrop-blur
+      transition-all duration-300
+      hover:bg-green-50 hover:border-green-800
+      hover:shadow-md hover:-translate-y-0.5
+    "
             >
-              Learn More <HiArrowRight className="w-5 h-5" />
+              Learn More
+              <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
+
+            {/* PRIMARY BUTTON */}
             <Link
               to="/candidates"
-              className="flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
+              className="
+      group flex items-center gap-2
+      px-7 py-3
+      rounded-full
+      bg-gradient-to-r from-green-700 to-green-600
+      text-white font-semibold
+      shadow-lg shadow-green-700/30
+      transition-all duration-300
+      hover:from-green-800 hover:to-green-700
+      hover:shadow-xl hover:-translate-y-0.5
+      focus:ring-4 focus:ring-green-300
+    "
             >
-              Get Involved <HiArrowRight className="w-5 h-5" />
+              Our Leadership
+              <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
 
         {/* Candidates Grid */}
-        <div className="max-w-5xl mx-auto mb-12">
-          {/* First Row - 2 cards centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 max-w-2xl mx-auto">
-            {candidates.slice(0, 2).map((candidate) => (
-              <div
-                key={candidate.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
-              >
-                <div className="h-70 w-60 overflow-hidden bg-gray-100">
-                  <img
-                    src={candidate.image}
-                    alt={candidate.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-2 text-center">
-                  <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
-                  <p
-                    className={
-                      candidate.highlight
-                        ? "text-green-600 font-medium text-sm"
-                        : "text-gray-600 text-sm"
-                    }
-                  >
-                    {candidate.position}
-                  </p>
-                </div>
-              </div>
+
+        <div className="max-w-5xl mx-auto mb-16">
+          {/* TOP ROW – 2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 max-w-xl mx-auto">
+            {candidates.slice(0, 2).map((c) => (
+              <LeaderCard key={c.id} candidate={c} />
             ))}
           </div>
 
-          {/* Second Row - 3 cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {candidates.slice(2, 5).map((candidate) => (
-              <div
-                key={candidate.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-64 mx-auto"
-              >
-                <div className="h-70 w-60 overflow-hidden bg-gray-100">
-                  <img
-                    src={candidate.image}
-                    alt={candidate.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-2 text-center">
-                  <h3 className="text-base font-bold mb-1">{candidate.name}</h3>
-                  <p
-                    className={
-                      candidate.highlight
-                        ? "text-green-600 font-medium text-sm"
-                        : "text-gray-600 text-sm"
-                    }
-                  >
-                    {candidate.position}
-                  </p>
-                </div>
-              </div>
+          {/* BOTTOM ROW – 3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {candidates.slice(2, 5).map((c) => (
+              <LeaderCard key={c.id} candidate={c} />
             ))}
           </div>
         </div>

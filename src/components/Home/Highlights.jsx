@@ -14,8 +14,8 @@ const Highlights = () => {
           </h2>
 
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            We Focus on the details of everything we do. All to help businesses
-            around the world Focus on what's most important to them.
+            Capturing the voices, initiatives, and collective actions that drive
+            change and reflect the aspirations of the people.
           </p>
 
           <Link

@@ -9,11 +9,11 @@ const CampaignHero = ({ campaign }) => {
     minutes: 0,
     seconds: 0,
   });
+  console.log("timeLeft", timeLeft.seconds);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = +new Date(campaign.eventDate) - +new Date();
-
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),

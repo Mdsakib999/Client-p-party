@@ -41,7 +41,8 @@ const NewsSection = ({ newsArticles = [], articleLoader }) => {
                 News and Activities
               </h2>
               <p className="text-gray-600 text-lg">
-                We Focus on the details of everything we do. All to help people
+                Latest updates from our programs, movements, and public
+                engagement.{" "}
               </p>
             </div>
 
