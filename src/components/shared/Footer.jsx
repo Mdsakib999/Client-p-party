@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto py-12 px-6 md:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto py-12 px-6 md:px-8">
         {/* ✅ Company Info */}
         <div className="space-y-3 text-center md:text-left">
           <div className="flex items-center gap-3 justify-center md:justify-start">
@@ -13,17 +13,17 @@ export default function Footer() {
               className="w-20 h-15 object-contain"
             />
             <div>
-              <div className="text-lg font-semibold leading-tight text-white">
+              <div className="font-semibold leading-tight text-white">
                 Bangladesh
               </div>
-              <div className="text-lg font-semibold leading-tight text-white">
-                National Party - BNP
+              <div className="font-semibold leading-tight text-white">
+                Nationalist Party - BNP
               </div>
             </div>
           </div>
           <p className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
-            Bangladesh National Party (BNP) is committed to democratic values,
-            national unity, and the welfare of the people.
+            Bangladesh Nationalist Party (BNP) is committed to democratic
+            values, national unity, and the welfare of the people.
           </p>
         </div>
 
@@ -43,9 +43,6 @@ export default function Footer() {
               <Link to="/news">News</Link>
             </li>
             <li>
-              <Link to="/campaigns">Campaigns</Link>
-            </li>
-            <li>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
@@ -58,10 +55,10 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3 text-sm">
             <li className="hover:text-white cursor-pointer transition">
-              Our Leaders
+              <Link to="/campaigns">Our Campaigns</Link>
             </li>
             <li className="hover:text-white cursor-pointer transition">
-              Vision
+              <Link to="/vision">Our Vision</Link>
             </li>
             <li className="hover:text-white cursor-pointer transition">
               <Link to="/privacy-policy">Privacy Policy</Link>
@@ -84,7 +81,7 @@ export default function Footer() {
               <input
                 type="email"
                 required
-                placeholder="Your email address"
+                placeholder="Enter your email address"
                 className="flex-1 min-w-0 bg-transparent text-gray-100 placeholder-gray-500 px-5 py-3 text-sm focus:ring-0 focus:outline-none"
               />
               <button

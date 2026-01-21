@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 export default function CandidateCard({ candidate }) {
+  console.log(candidate);
   return (
     <Link
       state={candidate}
@@ -14,6 +15,7 @@ export default function CandidateCard({ candidate }) {
             className="w-full h-full object-cover"
             src={
               candidate?.photo ||
+              candidate?.photos?.[0] ||
               "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg"
             }
             alt={`${candidate?.name}'s photo`}

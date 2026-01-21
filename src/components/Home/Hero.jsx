@@ -1,5 +1,6 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import bnpBanner from "../../assets/hero-banner.jpg";
+import { Link } from "react-router";
 
 const Hero = () => {
   return (
@@ -23,9 +24,11 @@ const Hero = () => {
 
       {/* Join Us Button at Bottom */}
       <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-        <button className="bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transition-colors">
-          Join Us
-        </button>
+        <Link to="/login">
+          <button className="cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transition-colors">
+            Join Us
+          </button>
+        </Link>
       </div>
     </section>
   );

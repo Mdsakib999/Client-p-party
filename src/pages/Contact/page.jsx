@@ -216,25 +216,29 @@ const Contact = () => {
               </h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/bnpbd.org/"
+                  target="_blank"
                   className="w-10 h-10 bg-gray-200 hover:bg-blue-400 group rounded-full flex items-center justify-center transition-colors"
                 >
                   <FaFacebookF className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/bdbnp78?lang=en"
+                  target="_blank"
                   className="w-10 h-10 bg-gray-200 hover:bg-cyan-400 group rounded-full flex items-center justify-center transition-colors"
                 >
                   <FaTwitter className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/bnpbd/?hl=en"
+                  target="_blank"
                   className="w-10 h-10 bg-gray-200 hover:bg-gradient-to-br from-purple-600 via-rose-600 to-amber-500 group rounded-full flex items-center justify-center transition-colors"
                 >
                   <FaInstagram className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@bdbnp"
+                  target="_blank"
                   className="w-10 h-10 bg-gray-200 hover:bg-red-600 group rounded-full flex items-center justify-center transition-colors"
                 >
                   <FaYoutube className="text-gray-600 group-hover:text-white w-5 h-5" />

@@ -23,7 +23,6 @@ const UpcomingCampaigns = ({ campaigns }) => {
 
           return (
             <div key={campaign.id} className="group relative pl-12">
-              {/* Timeline Dot */}
               <div
                 className={`absolute left-[11px] top-1 w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 ${
                   daysAway <= 5 ? "bg-red-500" : "bg-green-500"
@@ -42,7 +41,7 @@ const UpcomingCampaigns = ({ campaigns }) => {
                   }`}
                 >
                   <Clock size={10} />
-                  In {daysAway} Days
+                  {daysAway <= 0 ? "Campaign closed" : `${daysAway} Days`}
                 </span>
               </div>
 

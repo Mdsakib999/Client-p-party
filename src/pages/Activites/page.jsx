@@ -4,7 +4,10 @@ import { HiPlay } from "react-icons/hi";
 import { useGetAllActivitiesQuery } from "../../redux/features/activity/activity.api";
 import BNPLoader from "../../utils/BNPLoader";
 import Pagination from "../../components/Pagination";
-import { extractYouTubeId, getFeaturedThumb } from "../../utils/extractYouTubeId";
+import {
+  extractYouTubeId,
+  getFeaturedThumb,
+} from "../../utils/extractYouTubeId";
 
 export default function Activities() {
   const { data, isLoading } = useGetAllActivitiesQuery();
@@ -27,9 +30,9 @@ export default function Activities() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold mb-4 text-center">All Activities</h2>
         <p className="text-gray-600 md:text-lg max-w-3xl mx-auto mb-10 text-center">
-            We Focus on the details of everything we do. All to help businesses
-            around the world Focus on what's most important to them.
-          </p>
+          Actions and initiatives reflecting our commitment to the people and
+          the nation.
+        </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {paginatedActivities.map((activity) => {
@@ -43,7 +46,11 @@ export default function Activities() {
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
-                    src={videoId ? getFeaturedThumb(activity) : activity.featuredImage?.url}
+                    src={
+                      videoId
+                        ? getFeaturedThumb(activity)
+                        : activity.featuredImage?.url
+                    }
                     alt={activity.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -79,15 +86,13 @@ export default function Activities() {
           })}
         </div>
 
-        {
-          totalPages && totalPages.length > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          )
-        }
+        {totalPages && totalPages.length > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        )}
       </div>
     </section>
   );

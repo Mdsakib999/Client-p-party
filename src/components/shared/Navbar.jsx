@@ -46,7 +46,7 @@ export default function Navbar() {
       <h1 className="text-center font-serif">Logged out successfully</h1>,
       {
         position: "bottom-right",
-      }
+      },
     );
     setShowUserMenu(false);
   };
@@ -62,11 +62,11 @@ export default function Navbar() {
               className="w-16 h-16 object-contain"
             />
             <div className="hidden lg:block">
-              <div className="text-base font-bold leading-tight text-gray-900">
+              <div className="font-bold leading-tight text-gray-900">
                 Bangladesh
               </div>
-              <div className="text-base font-bold leading-tight text-gray-900">
-                National Party - BNP
+              <div className="font-bold leading-tight text-gray-900">
+                Nationalist Party - BNP
               </div>
             </div>
             <div className="lg:hidden">
@@ -78,9 +78,10 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
-                  : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${
+                  isActive
+                    ? "text-green-700 border-b-2 border-green-700 pb-1"
+                    : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -89,9 +90,10 @@ export default function Navbar() {
             <NavLink
               to="/candidates"
               className={({ isActive }) =>
-                `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
-                  : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${
+                  isActive
+                    ? "text-green-700 border-b-2 border-green-700 pb-1"
+                    : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -100,9 +102,10 @@ export default function Navbar() {
             <NavLink
               to="/news"
               className={({ isActive }) =>
-                `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
-                  : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${
+                  isActive
+                    ? "text-green-700 border-b-2 border-green-700 pb-1"
+                    : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -111,9 +114,10 @@ export default function Navbar() {
             <NavLink
               to="/activities"
               className={({ isActive }) =>
-                `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
-                  : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${
+                  isActive
+                    ? "text-green-700 border-b-2 border-green-700 pb-1"
+                    : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -122,9 +126,10 @@ export default function Navbar() {
             <NavLink
               to="/campaigns"
               className={({ isActive }) =>
-                `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
-                  : "text-gray-700 hover:text-green-700"
+                `font-medium transition-colors ${
+                  isActive
+                    ? "text-green-700 border-b-2 border-green-700 pb-1"
+                    : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
@@ -238,9 +243,10 @@ export default function Navbar() {
               to="/"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${
+                  isActive
+                    ? "bg-green-50 text-green-700"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -250,9 +256,10 @@ export default function Navbar() {
               to="/candidates"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${
+                  isActive
+                    ? "bg-green-50 text-green-700"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -262,9 +269,10 @@ export default function Navbar() {
               to="/news"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${
+                  isActive
+                    ? "bg-green-50 text-green-700"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -274,9 +282,10 @@ export default function Navbar() {
               to="/activities"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${
+                  isActive
+                    ? "bg-green-50 text-green-700"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
@@ -286,15 +295,15 @@ export default function Navbar() {
               to="/campaigns"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
+                `block px-4 py-3 rounded-lg font-medium transition-colors ${
+                  isActive
+                    ? "bg-green-50 text-green-700"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`
               }
             >
               Campaigns
             </NavLink>
-            
 
             <div className="pt-4 space-y-2">
               <button className="w-full flex items-center gap-2 bg-green-700 text-white px-5 py-3 rounded-lg hover:bg-green-800 transition-colors font-medium shadow-sm">

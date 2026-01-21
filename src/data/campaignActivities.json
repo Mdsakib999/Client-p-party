@@ -6,14 +6,14 @@
     "date": "November 27, 2025",
     "eventDate": "2026-02-12T15:00:00",
     "title": "Grand Youth Rally: Shaping Tomorrow",
-    "excerpt": "Join Acting Chairman Tarique Rahman in Chattogram for a historic gathering of Bangladesh's future leaders.",
+    "excerpt": "Join Chairman Tarique Rahman in Chattogram for a historic gathering of Bangladesh's future leaders.",
     "featuredImage": "/activity-5.jpg",
     "candidate": "Mr. Tarique Rahman",
     "location": "Chattogram, Bangladesh",
     "content": [
       {
         "type": "text",
-        "text": "BNP Acting Chairman Tarique Rahman addressed a massive youth rally in Chittagong, focusing on technology-driven development and youth empowerment."
+        "text": "BNP Chairman Tarique Rahman addressed a massive youth rally in Chittagong, focusing on technology-driven development and youth empowerment."
       },
       {
         "type": "text",
@@ -97,6 +97,7 @@
     "slug": "mirza-infrastructure-tour",
     "category": "INFRASTRUCTURE",
     "date": "September 2025",
+    "eventDate": "2025-12-15T09:00:00",
     "title": "Mirza Abbas Visits Infrastructure Projects in Sylhet",
     "excerpt": "BNP Standing Committee Member Mirza Abbas tours ongoing and planned infrastructure projects, promising accelerated development under BNP government.",
     "featuredImage": "/activity-3.jpg",
@@ -127,6 +128,7 @@
     "slug": "education-reform-seminar",
     "category": "EDUCATION",
     "date": "September 2025",
+    "eventDate": "2025-12-15T09:00:00",
     "title": "Khandaker Mosharraf Hosts Education Reform Seminar",
     "excerpt": "BNP leader presents comprehensive education policy at Rajshahi seminar, focusing on quality improvement and access for all students.",
     "featuredImage": "/activity-6.jpg",
@@ -157,6 +159,7 @@
     "slug": "digital-campaign-launch",
     "category": "DIGITAL INITIATIVE",
     "date": "October 2025",
+    "eventDate": "2025-12-15T09:00:00",
     "title": "Mirza Fakhrul Launches Digital Campaign Platform",
     "excerpt": "BNP Secretary General unveils innovative digital tools for voter engagement and transparent campaign communication.",
     "featuredImage": "/activity-1.jpg",
@@ -187,6 +190,7 @@
     "slug": "agricultural-policy-meeting",
     "category": "AGRICULTURE",
     "date": "August 2025",
+    "eventDate": "2025-12-15T09:00:00",
     "title": "Salahuddin Ahmed Meets Farmers in Khulna",
     "excerpt": "BNP Standing Committee Member engages with farmers to develop agriculture-focused policies for rural economic development.",
     "featuredImage": "/activity-4.jpg",
@@ -217,6 +221,7 @@
     "slug": "economic-vision-presentation",
     "category": "ECONOMIC POLICY",
     "date": "October 2025",
+    "eventDate": "2025-12-15T09:00:00",
     "title": "BNP Presents Economic Vision for 2026-2031",
     "excerpt": "Party leaders unveil comprehensive economic plan focusing on job creation, industrialization, and sustainable development.",
     "featuredImage": "/activity-12.jpg",

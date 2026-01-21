@@ -4,12 +4,15 @@ import { ChevronLeft, Search } from "lucide-react";
 import CandidateCard from "../../components/CandidateCard";
 import Pagination from "../../components/Pagination";
 import areasData from "../../data/areas.json";
-import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
-import BNPLoader from "../../utils/BNPLoader";
+// import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
+// import BNPLoader from "../../utils/BNPLoader";
+import candidatesData from "../../data/candidates3.json";
 
 const Candidates = () => {
-  const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
-  const candidates = candidatesData?.data || [];
+  // const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
+  // const candidates = candidatesData?.data || [];
+  const candidates = candidatesData || [];
+
   const [divisions, setDivisions] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [selectedDivision, setSelectedDivision] = useState(null);
@@ -86,12 +89,12 @@ const Candidates = () => {
 
   const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
 
-  if (isLoading) return <BNPLoader />;
+  // if (isLoading) return <BNPLoader />;
 
   return (
     <div className="min-h-screen w-full bg-gray-50">
       {/* Banner */}
-      <div className="relative h-[520px]">
+      <div className="relative h-[410px]">
         <img
           src={candidatesBanner}
           alt="Candidates"
@@ -214,15 +217,17 @@ const Candidates = () => {
             .map((candidate) => (
               <CandidateCard
                 key={candidate._id}
-                candidate={{
-                  _id: candidate._id,
-                  name: candidate.name,
-                  position: candidate.position,
-                  category: candidate.category,
-                  photo:
-                    candidate.photos?.[0]?.url ||
-                    candidate.photos?.[0]?.secure_url,
-                }}
+                // candidate={{
+                //   _id: candidate._id,
+                //   name: candidate.name,
+                //   position: candidate.position,
+                //   category: candidate.category,
+                //   photo:
+                //     candidate.photos?.[0]?.url ||
+                //     candidate.photos?.[0]?.secure_url ||
+                //     candidate.photos?.[0],
+                // }}
+                candidate={candidate}
               />
             ))}
         </section>

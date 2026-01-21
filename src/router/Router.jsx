@@ -31,6 +31,7 @@ import ActivityDetails from "../pages/ActivityDetails/page.jsx";
 import CampaignDetail from "../pages/CampaignDetail/page.jsx";
 import TermsAndConditions from "../pages/TermsAndConditions/page.jsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy/page.jsx";
+import Vision from "../pages/Vision/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: "/vision",
+        Component: Vision,
       },
       {
         path: "/privacy-policy",
