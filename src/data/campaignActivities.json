@@ -1,5 +1,32 @@
 [
   {
+    "id": "bnp-referendum-support",
+    "slug": "bnp-referendum-support",
+    "category": "STATE REFORM",
+    "date": "February 02, 2026",
+    "eventDate": "2026-02-12T08:00:00",
+    "title": "BNP to Support 'Yes' Vote in February 12 Referendum",
+    "excerpt": "Aligning with its 31-point reform agenda, the BNP officially announces support for the constitutional referendum held alongside the general election.",
+    "featuredImage": "https://www.thedailystar.net/sites/default/files/styles/big_1/public/media/api_images/2022/08/29/BNP%20logo.jpg",
+    "candidate": "Mr. Tarique Rahman",
+    "location": "Gulshan, Dhaka",
+    "content": [
+      {
+        "type": "text",
+        "text": "BNP has officially instructed its activists to campaign for a 'Yes' vote in the upcoming referendum, which aims to decentralize power and limit prime ministerial terms."
+      },
+      {
+        "type": "text",
+        "text": "The party highlighted that many of the proposed reforms, including the creation of an Upper House of Parliament, were originally part of the BNP's 31-point state repair outline."
+      },
+      {
+        "type": "quote",
+        "text": "We are voting 'Yes' because we believe in a system of checks and balances where no single individual can ever become an autocrat again.",
+        "author": "Mahdi Amin, Adviser to BNP Chairman"
+      }
+    ]
+  },
+  {
     "id": "bnp-sylhet-kickoff-2026",
     "slug": "bnp-sylhet-kickoff-2026",
     "category": "ELECTION CAMPAIGN",
@@ -80,33 +107,7 @@
       }
     ]
   },
-  {
-    "id": "bnp-referendum-support",
-    "slug": "bnp-referendum-support",
-    "category": "STATE REFORM",
-    "date": "January 22, 2026",
-    "eventDate": "2026-02-12T08:00:00",
-    "title": "BNP to Support 'Yes' Vote in February 12 Referendum",
-    "excerpt": "Aligning with its 31-point reform agenda, the BNP officially announces support for the constitutional referendum held alongside the general election.",
-    "featuredImage": "https://www.thedailystar.net/sites/default/files/styles/big_1/public/media/api_images/2022/08/29/BNP%20logo.jpg",
-    "candidate": "Mr. Tarique Rahman",
-    "location": "Gulshan, Dhaka",
-    "content": [
-      {
-        "type": "text",
-        "text": "BNP has officially instructed its activists to campaign for a 'Yes' vote in the upcoming referendum, which aims to decentralize power and limit prime ministerial terms."
-      },
-      {
-        "type": "text",
-        "text": "The party highlighted that many of the proposed reforms, including the creation of an Upper House of Parliament, were originally part of the BNP's 31-point state repair outline."
-      },
-      {
-        "type": "quote",
-        "text": "We are voting 'Yes' because we believe in a system of checks and balances where no single individual can ever become an autocrat again.",
-        "author": "Mahdi Amin, Adviser to BNP Chairman"
-      }
-    ]
-  },
+  
   {
     "id": "bnp-korail-housing-pledge",
     "slug": "bnp-korail-housing-pledge",
