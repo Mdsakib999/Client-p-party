@@ -1,249 +1,136 @@
 [
   {
-    "id": "tarique-youth-rally",
-    "slug": "tarique-youth-rally",
-    "category": "YOUTH RALLY",
-    "date": "November 27, 2025",
-    "eventDate": "2026-02-12T15:00:00",
-    "title": "Grand Youth Rally: Shaping Tomorrow",
-    "excerpt": "Join Chairman Tarique Rahman in Chattogram for a historic gathering of Bangladesh's future leaders.",
-    "featuredImage": "/activity-5.jpg",
+    "id": "bnp-sylhet-kickoff-2026",
+    "slug": "bnp-sylhet-kickoff-2026",
+    "category": "ELECTION CAMPAIGN",
+    "date": "January 22, 2026",
+    "eventDate": "2026-01-22T10:00:00",
+    "title": "Tarique Rahman Launches National Campaign from Sylhet",
+    "excerpt": "Upholding a decades-old party tradition, BNP Chairman Tarique Rahman begins the 13th Parliamentary Election campaign from the land of 360 saints.",
+    "featuredImage": "https://ecdn.dhakatribune.net/contents/cache/images/1100x618x1/uploads/media/2026/01/21/c797326811a4f4c1b7bfa7b3d18ae071-6971128a3f64f.jpg?jadewits_media_id=58571",
     "candidate": "Mr. Tarique Rahman",
-    "location": "Chattogram, Bangladesh",
-    "content": [
-      {
-        "type": "text",
-        "text": "BNP Chairman Tarique Rahman addressed a massive youth rally in Chittagong, focusing on technology-driven development and youth empowerment."
-      },
-      {
-        "type": "text",
-        "text": "The rally attracted thousands of young people who expressed enthusiasm for BNP's vision of a digitally advanced Bangladesh with ample job opportunities."
-      },
-      {
-        "type": "quote",
-        "text": "Our youth are the future leaders of Bangladesh. We will create an environment where young people can innovate, create jobs, and build a prosperous nation.",
-        "author": "Tarique Rahman, BNP Acting Chairman"
-      },
-      {
-        "type": "text",
-        "text": "The event featured interactive sessions on digital entrepreneurship and modern governance."
-      }
-    ]
-  },
-  {
-    "id": "women-empowerment-drive",
-    "slug": "women-empowerment-drive",
-    "category": "WOMEN'S RIGHTS",
-    "date": "November 30, 2025",
-    "eventDate": "2025-11-30T10:00:00",
-    "title": "Women's March for Rights & Democracy",
-    "excerpt": "A nationwide mobilization of women demanding equal rights, security, and political representation.",
-    "featuredImage": "/activity-10.jpg",
-    "candidate": "BNP Women's Wing",
-    "location": "Dhaka, Bangladesh",
-    "content": [
-      {
-        "type": "text",
-        "text": "BNP Women's Wing leaders have intensified their campaign efforts, organizing events and meetings to engage female voters across the country."
-      },
-      {
-        "type": "text",
-        "text": "The campaign focuses on women's rights, economic empowerment, and increasing female representation in politics."
-      },
-      {
-        "type": "quote",
-        "text": "Women are not just voters; they are leaders, decision-makers, and the future of Bangladesh. We will ensure their voices are heard and valued.",
-        "author": "BNP Women's Wing Leader"
-      },
-      {
-        "type": "text",
-        "text": "The initiative has seen increased participation from women in campaign activities and policy discussions."
-      }
-    ]
-  },
-  {
-    "id": "bnp-campaign-launch-2026",
-    "slug": "bnp-campaign-launch-2026",
-    "category": "OFFICIAL LAUNCH",
-    "date": "December 15, 2025",
-    "eventDate": "2025-12-15T09:00:00",
-    "title": "Nationwide Election Campaign Launch 2026",
-    "excerpt": "The official commencement of BNP's parliamentary election campaign led by Begum Khaleda Zia.",
-    "featuredImage": "/activity-10.jpg",
-    "candidate": "Begum Khaleda Zia",
-    "location": "Dhaka, Bangladesh",
-    "content": [
-      {
-        "type": "text",
-        "text": "The Bangladesh Nationalist Party (BNP) officially launched its nationwide election campaign for the 2026 parliamentary elections at a massive public rally in Dhaka."
-      },
-      {
-        "type": "text",
-        "text": "Party Chairperson Begum Khaleda Zia addressed thousands of supporters, outlining BNP's comprehensive plan for economic development, democratic reforms, and social welfare."
-      },
-      {
-        "type": "quote",
-        "text": "We are committed to restoring democracy and creating opportunities for every citizen of Bangladesh.",
-        "author": "Begum Khaleda Zia, BNP Chairperson"
-      },
-      {
-        "type": "text",
-        "text": "The campaign launch marks the beginning of an intensive grassroots mobilization effort across all constituencies."
-      }
-    ]
-  },
-  {
-    "id": "mirza-infrastructure-tour",
-    "slug": "mirza-infrastructure-tour",
-    "category": "INFRASTRUCTURE",
-    "date": "September 2025",
-    "eventDate": "2025-12-15T09:00:00",
-    "title": "Mirza Abbas Visits Infrastructure Projects in Sylhet",
-    "excerpt": "BNP Standing Committee Member Mirza Abbas tours ongoing and planned infrastructure projects, promising accelerated development under BNP government.",
-    "featuredImage": "/activity-3.jpg",
-    "candidate": "Mr. Mirza Abbas",
     "location": "Sylhet, Bangladesh",
     "content": [
       {
         "type": "text",
-        "text": "BNP Standing Committee Member Mirza Abbas conducted an extensive tour of infrastructure projects in Sylhet division, highlighting development priorities."
-      },
-      {
-        "type": "text",
-        "text": "The tour included visits to ongoing highway projects, bridge constructions, and urban development initiatives that have been delayed or stalled."
+        "text": "BNP Chairman Tarique Rahman formally launched the party's election campaign at the historic Alia Madrasa ground in Sylhet. Following the footsteps of Shaheed Ziaur Rahman and Begum Khaleda Zia, he began the journey by offering prayers at the shrines of Hazrat Shahjalal (R) and Hazrat Shah Paran (R)."
       },
       {
         "type": "quote",
-        "text": "Infrastructure development is the backbone of economic growth. Under BNP leadership, we will fast-track these crucial projects to connect communities and boost economic activity.",
-        "author": "Mirza Abbas, BNP Standing Committee Member"
+        "text": "We are starting this journey from this holy land to restore the people's right to vote. This election is not just about a change in power, but about returning the ownership of Bangladesh to its citizens.",
+        "author": "Tarique Rahman, BNP Chairman"
       },
       {
         "type": "text",
-        "text": "Local residents expressed hope that BNP's return to power would bring renewed focus on infrastructure development."
+        "text": "The rally saw a massive turnout, with supporters traveling from across the division to hear the Chairman's first public address outside Dhaka in over two decades."
       }
     ]
   },
   {
-    "id": "education-reform-seminar",
-    "slug": "education-reform-seminar",
-    "category": "EDUCATION",
-    "date": "September 2025",
-    "eventDate": "2025-12-15T09:00:00",
-    "title": "Khandaker Mosharraf Hosts Education Reform Seminar",
-    "excerpt": "BNP leader presents comprehensive education policy at Rajshahi seminar, focusing on quality improvement and access for all students.",
-    "featuredImage": "/activity-6.jpg",
-    "candidate": "Dr. Khandaker Mosharraf Hossain",
-    "location": "Rajshahi, Bangladesh",
-    "content": [
-      {
-        "type": "text",
-        "text": "Dr. Khandaker Mosharraf Hossain, BNP Standing Committee Member, hosted a major education reform seminar in Rajshahi, attended by educators, parents, and students."
-      },
-      {
-        "type": "text",
-        "text": "The seminar focused on BNP's comprehensive education policy, emphasizing quality improvement, technology integration, and equal access to education."
-      },
-      {
-        "type": "quote",
-        "text": "Education is the foundation of our nation's progress. We will invest in our children and ensure every student receives quality education regardless of their background.",
-        "author": "Dr. Khandaker Mosharraf Hossain, BNP Standing Committee Member"
-      },
-      {
-        "type": "text",
-        "text": "Participants discussed practical solutions for improving Bangladesh's education system."
-      }
-    ]
-  },
-  {
-    "id": "digital-campaign-launch",
-    "slug": "digital-campaign-launch",
-    "category": "DIGITAL INITIATIVE",
-    "date": "October 2025",
-    "eventDate": "2025-12-15T09:00:00",
-    "title": "Mirza Fakhrul Launches Digital Campaign Platform",
-    "excerpt": "BNP Secretary General unveils innovative digital tools for voter engagement and transparent campaign communication.",
-    "featuredImage": "/activity-1.jpg",
-    "candidate": "Mirza Fakhrul Islam Alamgir",
+    "id": "bnp-canal-digging-plan",
+    "slug": "bnp-canal-digging-plan",
+    "category": "ENVIRONMENT & INFRASTRUCTURE",
+    "date": "January 21, 2026",
+    "eventDate": "2026-01-21T14:00:00",
+    "title": "20,000km Canal Project: A New Vision for Water Management",
+    "excerpt": "Tarique Rahman pledges to revive the nationwide canal-digging program to combat waterlogging and boost agriculture.",
+    "featuredImage": "https://www.bssnews.net/assets/news_photos/2026/01/21/image-353181-1768936748.jpg",
+    "candidate": "Mr. Tarique Rahman",
     "location": "Dhaka, Bangladesh",
     "content": [
       {
         "type": "text",
-        "text": "BNP Secretary General Mirza Fakhrul Islam Alamgir launched the party's digital campaign platform, designed to revolutionize political engagement in Bangladesh."
+        "text": "Addressing a technical seminar, the BNP Chairman outlined a massive infrastructure plan to dig 20,000 kilometers of canals across the country to solve urban waterlogging and rural irrigation issues."
       },
       {
         "type": "text",
-        "text": "The platform features voter registration tools, campaign donation portals, live updates, and interactive policy discussions."
+        "text": "The plan also includes a 'Green Revolution' goal to plant 250 million trees over the next five years to restore the country's ecological balance."
       },
       {
         "type": "quote",
-        "text": "Politics must meet people where they are. Our digital platform will make democracy more accessible and transparent for all citizens.",
-        "author": "Mirza Fakhrul Islam Alamgir, BNP Secretary General"
-      },
-      {
-        "type": "text",
-        "text": "The launch event demonstrated various features of the platform and trained volunteers on its use."
+        "text": "My father, Ziaur Rahman, showed that voluntary labor and canal digging can transform a nation's landscape. We will modernize this vision to tackle 21st-century climate challenges.",
+        "author": "Tarique Rahman, BNP Chairman"
       }
     ]
   },
   {
-    "id": "agricultural-policy-meeting",
-    "slug": "agricultural-policy-meeting",
-    "category": "AGRICULTURE",
-    "date": "August 2025",
-    "eventDate": "2025-12-15T09:00:00",
-    "title": "Salahuddin Ahmed Meets Farmers in Khulna",
-    "excerpt": "BNP Standing Committee Member engages with farmers to develop agriculture-focused policies for rural economic development.",
-    "featuredImage": "/activity-4.jpg",
-    "candidate": "Salahuddin Ahmed",
-    "location": "Khulna, Bangladesh",
+    "id": "bnp-digital-entrepreneurship",
+    "slug": "bnp-digital-entrepreneurship",
+    "category": "YOUTH & TECHNOLOGY",
+    "date": "January 20, 2026",
+    "eventDate": "2026-01-20T11:30:00",
+    "title": "Global Connectivity: PayPal and IT Parks for All",
+    "excerpt": "BNP promises to integrate Bangladesh into the global digital economy by bringing PayPal and providing free workspace for freelancers.",
+    "featuredImage": "https://d2u0ktu8omkpf6.cloudfront.net/42510d58900a24569a1442d675b1bb1a8e61552bd09a5ae8.jpg",
+    "candidate": "Mr. Tarique Rahman",
+    "location": "Dhaka-17 Constituency",
     "content": [
       {
         "type": "text",
-        "text": "BNP Standing Committee Member Salahuddin Ahmed conducted extensive meetings with farmers across Khulna division to understand their challenges and aspirations."
+        "text": "During an interaction with Gen-Z voters in his Dhaka-17 constituency, Tarique Rahman promised to remove barriers for freelancers by finally bringing platforms like PayPal to Bangladesh."
       },
       {
         "type": "text",
-        "text": "Farmers shared concerns about market access, fair pricing, irrigation facilities, and climate-resilient farming practices."
+        "text": "The proposal includes establishing specialized IT parks with free Wi-Fi and working spaces, funded through a unique advertisement-supported model."
       },
       {
         "type": "quote",
-        "text": "Our farmers are the backbone of Bangladesh's economy. BNP will implement policies that ensure fair prices, modern farming techniques, and sustainable agriculture.",
-        "author": "Salahuddin Ahmed, BNP Standing Committee Member"
-      },
-      {
-        "type": "text",
-        "text": "The meetings formed the basis for BNP's comprehensive agricultural development plan."
+        "text": "Our youth shouldn't just be job seekers; they should be global earners. We will provide the tools, the internet, and the banking access they need to compete with the world.",
+        "author": "Tarique Rahman, BNP Chairman"
       }
     ]
   },
   {
-    "id": "economic-vision-presentation",
-    "slug": "economic-vision-presentation",
-    "category": "ECONOMIC POLICY",
-    "date": "October 2025",
-    "eventDate": "2025-12-15T09:00:00",
-    "title": "BNP Presents Economic Vision for 2026-2031",
-    "excerpt": "Party leaders unveil comprehensive economic plan focusing on job creation, industrialization, and sustainable development.",
-    "featuredImage": "/activity-12.jpg",
-    "candidate": "BNP Economic Team",
-    "location": "Dhaka, Bangladesh",
+    "id": "bnp-referendum-support",
+    "slug": "bnp-referendum-support",
+    "category": "STATE REFORM",
+    "date": "January 22, 2026",
+    "eventDate": "2026-02-12T08:00:00",
+    "title": "BNP to Support 'Yes' Vote in February 12 Referendum",
+    "excerpt": "Aligning with its 31-point reform agenda, the BNP officially announces support for the constitutional referendum held alongside the general election.",
+    "featuredImage": "https://www.thedailystar.net/sites/default/files/styles/big_1/public/media/api_images/2022/08/29/BNP%20logo.jpg",
+    "candidate": "Mr. Tarique Rahman",
+    "location": "Gulshan, Dhaka",
     "content": [
       {
         "type": "text",
-        "text": "BNP presented its comprehensive economic vision for Bangladesh's development over the next five years, focusing on inclusive growth and job creation."
+        "text": "BNP has officially instructed its activists to campaign for a 'Yes' vote in the upcoming referendum, which aims to decentralize power and limit prime ministerial terms."
       },
       {
         "type": "text",
-        "text": "The plan includes strategies for industrialization, export promotion, digital economy development, and social safety nets."
+        "text": "The party highlighted that many of the proposed reforms, including the creation of an Upper House of Parliament, were originally part of the BNP's 31-point state repair outline."
       },
       {
         "type": "quote",
-        "text": "We will create an economy that works for everyone, ensuring prosperity reaches every corner of Bangladesh and every segment of our society.",
-        "author": "BNP Economic Affairs Secretary"
+        "text": "We are voting 'Yes' because we believe in a system of checks and balances where no single individual can ever become an autocrat again.",
+        "author": "Mahdi Amin, Adviser to BNP Chairman"
+      }
+    ]
+  },
+  {
+    "id": "bnp-korail-housing-pledge",
+    "slug": "bnp-korail-housing-pledge",
+    "category": "SOCIAL WELFARE",
+    "date": "January 20, 2026",
+    "eventDate": "2026-01-20T16:00:00",
+    "title": "From Shanty to Safety: Permanent Housing for Urban Poor",
+    "excerpt": "Tarique Rahman visits Korail slum, promising high-rise apartments and legal ownership for long-term residents.",
+    "featuredImage": "https://ecdn.dhakatribune.net/contents/cache/images/1200x630x1xxxxx1x694528/uploads/media/2026/01/20/cd28271f47bc846b6d5f00cd207eb256-696f7c7f33db2.jpg?watermark=media%2F2023%2F05%2F28%2F1280px-Dhaka_Tribune_Logo.svg-1-a9e61c86dded62d74300fef48fee558f.png",
+    "candidate": "Mr. Tarique Rahman",
+    "location": "Mohakhali, Dhaka",
+    "content": [
+      {
+        "type": "text",
+        "text": "In a targeted campaign stop at Mohakhali, Tarique Rahman addressed the residents of Korail, promising to replace makeshift shanties with permanent high-rise apartment buildings."
       },
       {
         "type": "text",
-        "text": "The presentation was attended by business leaders, economists, and development experts."
+        "text": "The plan involves registering small apartments in the names of current dwellers, ensuring they have legal title to their homes and access to basic utilities."
+      },
+      {
+        "type": "quote",
+        "text": "I am a son of this area. I have seen your struggles. If elected, we will ensure that the people of Korail no longer live in fear of eviction, but in the dignity of their own homes.",
+        "author": "Tarique Rahman, BNP Chairman"
       }
     ]
   }
