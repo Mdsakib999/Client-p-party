@@ -123,7 +123,7 @@ export default function AddActivity() {
                                 type="text"
                                 id="category"
                                 {...register("category", { required: "Category is required" })}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
                                 placeholder="Enter activity category"
                             />
                             {errors.category && (
@@ -198,7 +198,7 @@ export default function AddActivity() {
                                 id="content"
                                 rows={6}
                                 {...register("content", { required: "Content is required" })}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition resize-none"
                                 placeholder="Enter activity content"
                             />
                             {errors.content && (
@@ -225,7 +225,7 @@ export default function AddActivity() {
                                         message: "Please enter a valid URL",
                                     },
                                 })}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
                                 placeholder="https://youtube.com..."
                             />
                             {errors.videoLink && (

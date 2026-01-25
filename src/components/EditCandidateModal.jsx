@@ -84,7 +84,7 @@ const EditCandidateModal = ({ candidate, onClose, onSuccess }) => {
           {/* Basic Information */}
           <div className="bg-gray-50 p-4 rounded-lg space-y-4">
             <h3 className="text-lg font-semibold">Basic Information</h3>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-1">
@@ -212,7 +212,7 @@ const EditCandidateModal = ({ candidate, onClose, onSuccess }) => {
               {candidate.designations?.map((item, idx) => (
                 <span
                   key={idx}
-                  className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                  className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
                 >
                   {item}
                 </span>
@@ -233,7 +233,7 @@ const EditCandidateModal = ({ candidate, onClose, onSuccess }) => {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex-1 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              className="flex-1 bg-green-500 hover:bg-green-600 disabled:bg-green-300 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               {isLoading ? "Updating..." : "Update Candidate"}
             </button>

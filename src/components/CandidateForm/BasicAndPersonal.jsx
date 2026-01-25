@@ -1,80 +1,105 @@
 const BasicAndPersonal = ({
   formData,
+  errors,
   handleInputChange,
   handleNestedChange,
-  arrayInputs,
-  handleArrayInputChange,
-  addNestedArrayItem,
+  handleNestedDynamicArrayChange,
+  addNestedDynamicArrayItem,
+  removeNestedDynamicArrayItem,
 }) => {
-  const removeWebsiteOrSocial = (idx) => {
-    const updated = formData.personal_info.website_or_social.filter(
-      (_, i) => i !== idx
-    );
-    handleNestedChange("personal_info", "website_or_social", updated);
-  };
+  const inputClass = (
+    error
+  ) => `w-full p-2.5 border rounded-lg transition-colors focus:outline-none focus:ring-2 ${error
+    ? "border-red-500 focus:ring-red-200"
+    : "border-gray-200 focus:border-green-500 focus:ring-green-100"
+  }`;
+
+  const labelClass = "block text-sm font-semibold text-gray-700 mb-1.5";
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Basic Information */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">Basic Information</h3>
-        <div className="grid grid-cols-2 gap-4">
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Basic Information
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium">Name *</label>
+            <label className={labelClass}>
+              Full Name <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="name"
-              value={formData.name}
+              placeholder="e.g. John Doe"
+              value={formData?.name || ""}
               onChange={handleInputChange}
-              required
-              className="w-full p-2 border rounded"
+              className={inputClass(errors?.name)}
             />
+            {errors?.name && (
+              <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+            )}
           </div>
           <div>
-            <label className="block text-sm font-medium">Position *</label>
+            <label className={labelClass}>
+              Current Position <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="position"
-              value={formData.position}
+              placeholder="e.g. Secretary General"
+              value={formData?.position || ""}
               onChange={handleInputChange}
-              required
-              className="w-full p-2 border rounded"
+              className={inputClass(errors?.position)}
             />
+            {errors?.position && (
+              <p className="text-red-500 text-xs mt-1">{errors.position}</p>
+            )}
           </div>
           <div>
-            <label className="block text-sm font-medium">Category *</label>
+            <label className={labelClass}>
+              Category/Role <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="category"
-              value={formData.category}
+              placeholder="e.g. Senior Leader"
+              value={formData?.category || ""}
               onChange={handleInputChange}
-              required
-              className="w-full p-2 border rounded"
+              className={inputClass(errors?.category)}
             />
+            {errors?.category && (
+              <p className="text-red-500 text-xs mt-1">{errors.category}</p>
+            )}
           </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium">Life Activities</label>
-            <input
-              type="text"
+          <div className="md:col-span-2">
+            <label className={labelClass}>Life Activities</label>
+            <textarea
               name="life_activities"
-              value={formData.life_activities}
+              rows={3}
+              placeholder="Brief description of life activities..."
+              value={formData?.life_activities || ""}
               onChange={handleInputChange}
-              className="w-full p-2 border rounded"
+              className={inputClass()}
             />
           </div>
         </div>
       </div>
 
       {/* Personal Information */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">Personal Information</h3>
-        <div className="grid grid-cols-2 gap-4">
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Personal Information
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium">Birth Date</label>
+            <label className={labelClass}>Date of Birth</label>
             <input
               type="text"
               placeholder="e.g., 15 August 1945"
-              value={formData.personal_info.birth_date}
+              value={formData?.personal_info?.birth_date || ""}
               onChange={(e) =>
                 handleNestedChange(
                   "personal_info",
@@ -82,14 +107,15 @@ const BasicAndPersonal = ({
                   e.target.value
                 )
               }
-              className="w-full p-2 border rounded"
+              className={inputClass()}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Birth Place</label>
+            <label className={labelClass}>Birth Place</label>
             <input
               type="text"
-              value={formData.personal_info.birth_place}
+              placeholder="e.g. Dhaka"
+              value={formData?.personal_info?.birth_place || ""}
               onChange={(e) =>
                 handleNestedChange(
                   "personal_info",
@@ -97,14 +123,15 @@ const BasicAndPersonal = ({
                   e.target.value
                 )
               }
-              className="w-full p-2 border rounded"
+              className={inputClass()}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Nationality</label>
+            <label className={labelClass}>Nationality</label>
             <input
               type="text"
-              value={formData.personal_info.nationality}
+              placeholder="e.g. Bangladeshi"
+              value={formData?.personal_info?.nationality || ""}
               onChange={(e) =>
                 handleNestedChange(
                   "personal_info",
@@ -112,48 +139,53 @@ const BasicAndPersonal = ({
                   e.target.value
                 )
               }
-              className="w-full p-2 border rounded"
+              className={inputClass()}
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium">Website/Social</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Add link"
-                value={arrayInputs.website_or_social}
-                onChange={(e) =>
-                  handleArrayInputChange("website_or_social", e.target.value)
-                }
-                className="flex-1 p-2 border rounded"
-              />
-              <button
-                type="button"
-                onClick={() =>
-                  addNestedArrayItem("personal_info", "website_or_social")
-                }
-                className="bg-blue-500 text-white px-3 py-2 rounded"
-              >
-                Add
-              </button>
-            </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {formData.personal_info.website_or_social.map((item, idx) => (
-                <span
-                  key={idx}
-                  className="bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-                >
-                  {item}
+          <div className="md:col-span-2">
+            <label className={labelClass}>Websites / Social Profiles</label>
+            <div className="space-y-3">
+              {formData?.personal_info?.website_or_social?.map((item, idx) => (
+                <div key={idx} className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="https://..."
+                    value={item}
+                    onChange={(e) =>
+                      handleNestedDynamicArrayChange(
+                        "personal_info",
+                        "website_or_social",
+                        idx,
+                        e.target.value
+                      )
+                    }
+                    className={inputClass()}
+                  />
                   <button
                     type="button"
-                    onClick={() => removeWebsiteOrSocial(idx)}
-                    className="text-red-600 font-bold"
+                    onClick={() =>
+                      removeNestedDynamicArrayItem(
+                        "personal_info",
+                        "website_or_social",
+                        idx
+                      )
+                    }
+                    className="text-red-500 hover:text-red-700 px-2"
                   >
-                    ✕
+                    Remove
                   </button>
-                </span>
+                </div>
               ))}
             </div>
+            <button
+              type="button"
+              onClick={() =>
+                addNestedDynamicArrayItem("personal_info", "website_or_social")
+              }
+              className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
+            >
+              + Add Profile Link
+            </button>
           </div>
         </div>
       </div>

@@ -1,97 +1,93 @@
 const DetailsAndPortfolio = ({
   formData,
-  arrayInputs,
-  handleArrayInputChange,
-  addArrayItem,
-  removeArrayItem,
-  addPortfolioItem,
-  handleNestedArrayInput,
-  addElectionConstituency,
-  removeElectionConstituency,
+  handleDynamicArrayChange,
+  addDynamicArrayItem,
+  removeDynamicArrayItem,
 }) => {
+  const inputClass =
+    "w-full p-2.5 border border-gray-200 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:border-green-500 focus:ring-green-100";
+  const labelClass = "block text-sm font-semibold text-gray-700 mb-1.5";
+
   return (
-    <div className="space-y-6">
-      {/* Portfolio */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">Portfolio</h3>
-        <div className="flex gap-2 mb-2">
-          <input
-            type="text"
-            placeholder="Add portfolio item"
-            value={arrayInputs.portfolio}
-            onChange={(e) =>
-              handleArrayInputChange("portfolio", e.target.value)
-            }
-            className="flex-1 p-2 border rounded"
-          />
+    <div className="space-y-8">
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Portfolio
+        </h3>
+        <div>
+          <label className={labelClass}>Portfolio Items</label>
+          <div className="space-y-3">
+            {formData?.portfolio?.map((item, idx) => (
+              <div key={idx} className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="e.g. Led a clear water initiative"
+                  value={item}
+                  onChange={(e) =>
+                    handleDynamicArrayChange("portfolio", idx, e.target.value)
+                  }
+                  className={inputClass}
+                />
+                <button
+                  type="button"
+                  onClick={() => removeDynamicArrayItem("portfolio", idx)}
+                  className="text-red-500 hover:text-red-700 px-2"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
           <button
             type="button"
-            onClick={addPortfolioItem}
-            className="bg-blue-500 text-white px-3 py-2 rounded"
+            onClick={() => addDynamicArrayItem("portfolio")}
+            className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
           >
-            Add
+            + Add Portfolio Item
           </button>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {formData.portfolio.map((item, idx) => (
-            <span
-              key={idx}
-              className="bg-indigo-100 text-indigo-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-            >
-              {item}
-              <button
-                type="button"
-                onClick={() => removeArrayItem("portfolio", idx)}
-                className="text-red-600 font-bold"
-              >
-                ✕
-              </button>
-            </span>
-          ))}
         </div>
       </div>
 
       {/* Designations */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">Designations</h3>
-        <div className="flex gap-2 mb-2">
-          <input
-            type="text"
-            placeholder="Add designation"
-            value={arrayInputs.designations}
-            onChange={(e) =>
-              handleArrayInputChange("designations", e.target.value)
-            }
-            className="flex-1 p-2 border rounded"
-          />
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Designations
+        </h3>
+        <div>
+          <label className={labelClass}>Designations</label>
+          <div className="space-y-3">
+            {formData?.designations?.map((item, idx) => (
+              <div key={idx} className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="e.g. Former MP"
+                  value={item}
+                  onChange={(e) =>
+                    handleDynamicArrayChange("designations", idx, e.target.value)
+                  }
+                  className={inputClass}
+                />
+                <button
+                  type="button"
+                  onClick={() => removeDynamicArrayItem("designations", idx)}
+                  className="text-red-500 hover:text-red-700 px-2"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
           <button
             type="button"
-            onClick={() => addArrayItem("designations")}
-            className="bg-blue-500 text-white px-3 py-2 rounded"
+            onClick={() => addDynamicArrayItem("designations")}
+            className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
           >
-            Add
+            + Add Designation
           </button>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {formData.designations.map((item, idx) => (
-            <span
-              key={idx}
-              className="bg-orange-100 text-orange-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-            >
-              {item}
-              <button
-                type="button"
-                onClick={() => removeArrayItem("designations", idx)}
-                className="text-red-600 font-bold"
-              >
-                ✕
-              </button>
-            </span>
-          ))}
-        </div>
       </div>
-
-
     </div>
   );
 };

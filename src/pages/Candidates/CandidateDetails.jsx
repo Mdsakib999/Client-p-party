@@ -60,7 +60,7 @@
 //                   </span>
 //                 )}
 //                 {candidate.category && (
-//                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+//                   <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
 //                     {candidate.category}
 //                   </span>
 //                 )}
@@ -254,7 +254,7 @@
 //                   <h2 className="text-2xl font-bold mb-4">
 //                     Current Activities
 //                   </h2>
-//                   <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+//                   <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
 //                     <p>
 //                       {candidate.life_activities ||
 //                         "No recent activity recorded."}
@@ -287,7 +287,7 @@
 //                             href={link}
 //                             target="_blank"
 //                             rel="noreferrer"
-//                             className="px-4 py-2 border rounded-lg text-blue-600 hover:bg-blue-50"
+//                             className="px-4 py-2 border rounded-lg text-green-600 hover:bg-green-50"
 //                           >
 //                             Visit Website
 //                           </a>
@@ -338,8 +338,8 @@ export default function CandidateDetails() {
             alt={candidate.name}
             className="w-full md:w-80 h-80 object-cover rounded-xl shadow-md"
             onError={(e) =>
-              (e.currentTarget.src =
-                "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
+            (e.currentTarget.src =
+              "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
             }
           />
 
@@ -387,10 +387,9 @@ export default function CandidateDetails() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-4 text-sm font-semibold transition
-                  ${
-                    activeTab === tab
-                      ? "bg-white text-green-700 border-b-2 border-green-700"
-                      : "text-gray-600 hover:text-gray-800"
+                  ${activeTab === tab
+                    ? "bg-white text-green-700 border-b-2 border-green-700"
+                    : "text-gray-600 hover:text-gray-800"
                   }`}
               >
                 {tab === "details"

@@ -24,9 +24,8 @@ const UpcomingCampaigns = ({ campaigns }) => {
           return (
             <div key={campaign.id} className="group relative pl-12">
               <div
-                className={`absolute left-[11px] top-1 w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 ${
-                  daysAway <= 5 ? "bg-red-500" : "bg-green-500"
-                }`}
+                className={`absolute left-[11px] top-1 w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 ${daysAway <= 5 ? "bg-red-500" : "bg-green-500"
+                  }`}
               />
 
               <div className="flex flex-wrap justify-between items-start mb-2 gap-2">
@@ -34,11 +33,10 @@ const UpcomingCampaigns = ({ campaigns }) => {
                   {campaign.category}
                 </span>
                 <span
-                  className={`px-2 py-1 rounded text-[10px] font-bold uppercase flex items-center gap-1 ${
-                    daysAway <= 5
+                  className={`px-2 py-1 rounded text-[10px] font-bold uppercase flex items-center gap-1 ${daysAway <= 5
                       ? "bg-red-100 text-red-700"
-                      : "bg-blue-100 text-blue-700"
-                  }`}
+                      : "bg-green-100 text-green-700"
+                    }`}
                 >
                   <Clock size={10} />
                   {daysAway <= 0 ? "Campaign closed" : `${daysAway} Days`}
