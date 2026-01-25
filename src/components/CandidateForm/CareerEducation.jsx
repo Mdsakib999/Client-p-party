@@ -1,276 +1,302 @@
 const CareerEducation = ({
   formData,
-  arrayInputs,
-  handleArrayInputChange,
   handleNestedChange,
-  addNestedArrayItem,
-  addArrayItem,
-  removeArrayItem,
+  handleDynamicArrayChange,
+  addDynamicArrayItem,
+  removeDynamicArrayItem,
+  handleNestedDynamicArrayChange,
+  addNestedDynamicArrayItem,
+  removeNestedDynamicArrayItem,
   addPoliticalCareer,
   removePoliticalCareer,
-  handleNestedArrayInput,
+  handlePoliticalCareerChange,
 }) => {
-  const removeSchool = (idx) => {
-    const updated = formData.academic_career.schools.filter(
-      (_, i) => i !== idx
-    );
-    handleNestedChange("academic_career", "schools", updated);
-  };
-
-  const removeUniversity = (idx) => {
-    const updated = formData.academic_career.university.filter(
-      (_, i) => i !== idx
-    );
-    handleNestedChange("academic_career", "university", updated);
-  };
-
-  const removeDegree = (idx) => {
-    const updated = formData.academic_career.degree.filter((_, i) => i !== idx);
-    handleNestedChange("academic_career", "degree", updated);
-  };
+  const inputClass =
+    "w-full p-2.5 border border-gray-200 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:border-green-500 focus:ring-green-100";
+  const labelClass = "block text-sm font-semibold text-gray-700 mb-1.5";
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Academic Career */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">Academic Career</h3>
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium">Schools</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Add school"
-                value={arrayInputs.schools}
-                onChange={(e) =>
-                  handleArrayInputChange("schools", e.target.value)
-                }
-                className="flex-1 p-2 border rounded"
-              />
-              <button
-                type="button"
-                onClick={() => addNestedArrayItem("academic_career", "schools")}
-                className="bg-blue-500 text-white px-3 py-2 rounded"
-              >
-                Add
-              </button>
-            </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {formData.academic_career.schools.map((item, idx) => (
-                <span
-                  key={idx}
-                  className="bg-green-100 text-green-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-                >
-                  {item}
-                  <button
-                    type="button"
-                    onClick={() => removeSchool(idx)}
-                    className="text-red-600 font-bold"
-                  >
-                    ✕
-                  </button>
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium">College</label>
-            <input
-              type="text"
-              value={formData.academic_career.college}
-              onChange={(e) =>
-                handleNestedChange("academic_career", "college", e.target.value)
-              }
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium">University</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Add university"
-                value={arrayInputs.university}
-                onChange={(e) =>
-                  handleArrayInputChange("university", e.target.value)
-                }
-                className="flex-1 p-2 border rounded"
-              />
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Academic Career
+        </h3>
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className={labelClass}>Schools</label>
+              <div className="space-y-3">
+                {formData?.academic_career?.schools?.map((item, idx) => (
+                  <div key={idx} className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder="e.g. Dhaka Residential Model College"
+                      value={item}
+                      onChange={(e) =>
+                        handleNestedDynamicArrayChange(
+                          "academic_career",
+                          "schools",
+                          idx,
+                          e.target.value
+                        )
+                      }
+                      className={inputClass}
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeNestedDynamicArrayItem(
+                          "academic_career",
+                          "schools",
+                          idx
+                        )
+                      }
+                      className="text-red-500 hover:text-red-700 px-2"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
               <button
                 type="button"
                 onClick={() =>
-                  addNestedArrayItem("academic_career", "university")
+                  addNestedDynamicArrayItem("academic_career", "schools")
                 }
-                className="bg-blue-500 text-white px-3 py-2 rounded"
+                className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
               >
-                Add
+                + Add School
               </button>
             </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {formData.academic_career.university.map((item, idx) => (
-                <span
-                  key={idx}
-                  className="bg-purple-100 text-purple-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-                >
-                  {item}
-                  <button
-                    type="button"
-                    onClick={() => removeUniversity(idx)}
-                    className="text-red-600 font-bold"
-                  >
-                    ✕
-                  </button>
-                </span>
-              ))}
+
+            <div>
+              <label className={labelClass}>College</label>
+              <input
+                type="text"
+                value={formData?.academic_career?.college || ""}
+                onChange={(e) =>
+                  handleNestedChange(
+                    "academic_career",
+                    "college",
+                    e.target.value
+                  )
+                }
+                className={inputClass}
+              />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium">Degree</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Add degree"
-                value={arrayInputs.degree}
-                onChange={(e) =>
-                  handleArrayInputChange("degree", e.target.value)
-                }
-                className="flex-1 p-2 border rounded"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className={labelClass}>University</label>
+              <div className="space-y-3">
+                {formData?.academic_career?.university?.map((item, idx) => (
+                  <div key={idx} className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder="e.g. Dhaka University"
+                      value={item}
+                      onChange={(e) =>
+                        handleNestedDynamicArrayChange(
+                          "academic_career",
+                          "university",
+                          idx,
+                          e.target.value
+                        )
+                      }
+                      className={inputClass}
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeNestedDynamicArrayItem(
+                          "academic_career",
+                          "university",
+                          idx
+                        )
+                      }
+                      className="text-red-500 hover:text-red-700 px-2"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
               <button
                 type="button"
-                onClick={() => addNestedArrayItem("academic_career", "degree")}
-                className="bg-blue-500 text-white px-3 py-2 rounded"
+                onClick={() =>
+                  addNestedDynamicArrayItem("academic_career", "university")
+                }
+                className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
               >
-                Add
+                + Add University
               </button>
             </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {formData.academic_career.degree.map((item, idx) => (
-                <span
-                  key={idx}
-                  className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-                >
-                  {item}
-                  <button
-                    type="button"
-                    onClick={() => removeDegree(idx)}
-                    className="text-red-600 font-bold"
-                  >
-                    ✕
-                  </button>
-                </span>
-              ))}
+
+            <div>
+              <label className={labelClass}>Degrees</label>
+              <div className="space-y-3">
+                {formData?.academic_career?.degree?.map((item, idx) => (
+                  <div key={idx} className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder="e.g. BSC in CST"
+                      value={item}
+                      onChange={(e) =>
+                        handleNestedDynamicArrayChange(
+                          "academic_career",
+                          "degree",
+                          idx,
+                          e.target.value
+                        )
+                      }
+                      className={inputClass}
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeNestedDynamicArrayItem(
+                          "academic_career",
+                          "degree",
+                          idx
+                        )
+                      }
+                      className="text-red-500 hover:text-red-700 px-2"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  addNestedDynamicArrayItem("academic_career", "degree")
+                }
+                className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
+              >
+                + Add Degree
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       {/* Professional Career */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">
-          Business/Income/Professional Career
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Business / Professional Career
         </h3>
-        <div className="flex gap-2 mb-2">
-          <input
-            type="text"
-            placeholder="Add career"
-            value={arrayInputs.business_income}
-            onChange={(e) =>
-              handleArrayInputChange("business_income", e.target.value)
-            }
-            className="flex-1 p-2 border rounded"
-          />
+        <div>
+          <label className={labelClass}>Careers / Business Sources</label>
+          <div className="space-y-3">
+            {formData?.business_income_source_professional_career?.map(
+              (item, idx) => (
+                <div key={idx} className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="e.g. Managing Director at ABC Corp"
+                    value={item}
+                    onChange={(e) =>
+                      handleDynamicArrayChange(
+                        "business_income_source_professional_career",
+                        idx,
+                        e.target.value
+                      )
+                    }
+                    className={inputClass}
+                  />
+                  <button
+                    type="button"
+                    onClick={() =>
+                      removeDynamicArrayItem(
+                        "business_income_source_professional_career",
+                        idx
+                      )
+                    }
+                    className="text-red-500 hover:text-red-700 px-2"
+                  >
+                    Remove
+                  </button>
+                </div>
+              )
+            )}
+          </div>
           <button
             type="button"
             onClick={() =>
-              addArrayItem("business_income_source_professional_career")
+              addDynamicArrayItem("business_income_source_professional_career")
             }
-            className="bg-blue-500 text-white px-3 py-2 rounded"
+            className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
           >
-            Add
+            + Add Career Source
           </button>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {formData.business_income_source_professional_career.map(
-            (item, idx) => (
-              <span
-                key={idx}
-                className="bg-red-100 text-red-800 px-2 py-1 rounded flex items-center gap-2 text-sm"
-              >
-                {item}
-                <button
-                  type="button"
-                  onClick={() =>
-                    removeArrayItem(
-                      "business_income_source_professional_career",
-                      idx
-                    )
-                  }
-                  className="text-red-600 font-bold"
-                >
-                  ✕
-                </button>
-              </span>
-            )
-          )}
         </div>
       </div>
 
       {/* Political Career */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="text-lg font-semibold mb-4">Political Career</h3>
-        <div className="grid grid-cols-2 gap-2 mb-2">
-          <input
-            type="text"
-            placeholder="Year/Period"
-            value={arrayInputs.political_career.year}
-            onChange={(e) =>
-              handleNestedArrayInput("political_career", "year", e.target.value)
-            }
-            className="p-2 border rounded"
-          />
-          <input
-            type="text"
-            placeholder="Event"
-            value={arrayInputs.political_career.event}
-            onChange={(e) =>
-              handleNestedArrayInput(
-                "political_career",
-                "event",
-                e.target.value
-              )
-            }
-            className="p-2 border rounded"
-          />
-        </div>
-        <button
-          type="button"
-          onClick={addPoliticalCareer}
-          className="bg-blue-500 text-white px-3 py-2 rounded mb-2"
-        >
-          Add
-        </button>
-        <div className="space-y-2">
-          {formData.political_career.map((item, idx) => (
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Political Career
+        </h3>
+        <div className="space-y-4">
+          <label className={labelClass}>History</label>
+          {formData?.political_career?.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border rounded p-2 flex justify-between items-center"
+              className="bg-gray-50 border border-gray-100 rounded-lg p-4 relative group"
             >
-              <span className="text-sm">
-                {item.year} - {item.event}
-              </span>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="md:col-span-1">
+                  <label className="text-xs text-gray-500 mb-1 block">
+                    Year
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="2010-2015"
+                    value={item?.year || ""}
+                    onChange={(e) =>
+                      handlePoliticalCareerChange(idx, "year", e.target.value)
+                    }
+                    className={inputClass}
+                  />
+                </div>
+                <div className="md:col-span-3">
+                  <label className="text-xs text-gray-500 mb-1 block">
+                    Event
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Elected as General Secretary"
+                    value={item?.event || ""}
+                    onChange={(e) =>
+                      handlePoliticalCareerChange(idx, "event", e.target.value)
+                    }
+                    className={inputClass}
+                  />
+                </div>
+              </div>
               <button
                 type="button"
                 onClick={() => removePoliticalCareer(idx)}
-                className="text-red-600 font-bold text-lg"
+                className="absolute -top-3 -right-2 bg-red-100 text-red-600 rounded-full w-6 h-6 flex items-center justify-center shadow-sm hover:bg-red-200"
               >
-                ✕
+                ×
               </button>
             </div>
           ))}
+
+          <button
+            type="button"
+            onClick={addPoliticalCareer}
+            className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
+          >
+            + Add Political Career Event
+          </button>
         </div>
       </div>
     </div>

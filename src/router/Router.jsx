@@ -32,6 +32,8 @@ import CampaignDetail from "../pages/CampaignDetail/page.jsx";
 import TermsAndConditions from "../pages/TermsAndConditions/page.jsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy/page.jsx";
 import Vision from "../pages/Vision/page.jsx";
+import FrameEditor from "../pages/FrameEditor/page.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -97,6 +99,10 @@ const router = createBrowserRouter([
       {
         path: "/vision",
         Component: Vision,
+      },
+      {
+        path: "/frame-editor",
+        Component: FrameEditor,
       },
       {
         path: "/privacy-policy",
