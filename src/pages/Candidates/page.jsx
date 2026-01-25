@@ -104,7 +104,7 @@ const Candidates = () => {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-8">
-            Our nominees for the <br /> 2026 elections
+            Meet Our Candidates for the <br /> 2026 Electoral Journey
           </h2>
 
           {/* Search Box */}
@@ -112,13 +112,13 @@ const Candidates = () => {
             ref={containerRef}
             className="w-full max-w-5xl bg-white rounded-full shadow-2xl p-2 relative"
           >
-            <div className="flex flex-col md:flex-row items-center">
+            <div className="flex flex-row items-center gap-2 md:gap-0">
               {/* Search */}
               <div
-                className="flex-1 px-5 py-3 w-full"
+                className="flex-1 px-4 md:px-5 py-3 w-full"
                 onClick={() => setActiveSection(null)}
               >
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
                   Search
                 </label>
                 <input
@@ -126,57 +126,70 @@ const Candidates = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search candidate"
-                  className="w-full outline-none text-sm text-gray-700"
+                  className="w-full outline-none text-sm text-gray-700 bg-transparent"
                 />
               </div>
 
-              {/* Division */}
+              {/* Divider for desktop */}
+              <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+
+              {/* Division - Desktop only */}
               <div
                 onClick={() => setActiveSection("division")}
-                className="flex-1 px-5 py-3 w-full cursor-pointer hover:bg-gray-50 rounded-full"
+                className="hidden md:flex flex-1 px-5 py-3 w-full cursor-pointer hover:bg-gray-50 rounded-full transition-colors"
               >
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
-                  Division
-                </label>
-                <div className="text-sm text-gray-600 truncate">
-                  {selectedDivision?.name || "Select division"}
+                <div className="w-full">
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    Division
+                  </label>
+                  <div className="text-sm text-gray-600 truncate">
+                    {selectedDivision?.name || "Select division"}
+                  </div>
                 </div>
               </div>
 
-              {/* District */}
+              {/* Divider for desktop */}
+              <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+
+              {/* District - Desktop only */}
               <div
                 onClick={() => selectedDivision && setActiveSection("district")}
-                className={`flex-1 px-5 py-3 w-full rounded-full ${
+                className={`hidden md:flex flex-1 px-5 py-3 w-full rounded-full transition-colors ${
                   selectedDivision
                     ? "cursor-pointer hover:bg-gray-50"
                     : "opacity-50 cursor-not-allowed"
                 }`}
               >
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
-                  District
-                </label>
-                <div className="text-sm text-gray-600 truncate">
-                  {selectedDistrict?.name || "Select district"}
+                <div className="w-full">
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    District
+                  </label>
+                  <div className="text-sm text-gray-600 truncate">
+                    {selectedDistrict?.name || "Select district"}
+                  </div>
                 </div>
               </div>
 
-              <div className="hidden md:flex items-center justify-center px-6">
-                <Search />
-              </div>
+              {/* Search Button */}
+              <button className="flex items-center justify-center w-12 h-12 bg-gray-400 hover:bg-gray-600 rounded-full md:mx-2 transition-colors flex-shrink-0">
+                <Search className="text-white" size={20} />
+              </button>
             </div>
 
             {/* Dropdown */}
             {activeSection && (
-              <div className="absolute left-0 right-0 top-full mt-4 bg-white rounded-2xl shadow-2xl p-6 z-50">
+              <div className="absolute left-0 right-0 top-full mt-2 md:mt-4 bg-white rounded-2xl shadow-2xl p-4 md:p-6 z-50 max-h-[70vh] overflow-y-auto">
                 {activeSection === "division" && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                     {divisions.map((d) => (
                       <button
                         key={d.id}
                         onClick={() => handleDivisionClick(d)}
-                        className="p-4 border rounded-xl text-left hover:bg-gray-50 transition"
+                        className="p-3 md:p-4 border border-gray-200 rounded-xl text-left hover:bg-gray-50 hover:border-blue-300 transition-all active:scale-95"
                       >
-                        <div className="font-semibold">{d.name}</div>
+                        <div className="font-semibold text-sm md:text-base">
+                          {d.name}
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -186,19 +199,21 @@ const Candidates = () => {
                   <>
                     <button
                       onClick={() => setActiveSection("division")}
-                      className="flex items-center gap-2 mb-4 text-sm font-medium text-gray-600"
+                      className="flex items-center gap-2 mb-4 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
                     >
-                      <ChevronLeft size={18} /> Back
+                      <ChevronLeft size={18} /> Back to Divisions
                     </button>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                       {districts.map((d) => (
                         <button
                           key={d.id}
                           onClick={() => handleDistrictClick(d)}
-                          className="p-4 border rounded-xl text-left hover:bg-gray-50 transition"
+                          className="p-3 md:p-4 border border-gray-200 rounded-xl text-left hover:bg-gray-50 hover:border-blue-300 transition-all active:scale-95"
                         >
-                          <div className="font-semibold">{d.name}</div>
+                          <div className="font-semibold text-sm md:text-base">
+                            {d.name}
+                          </div>
                         </button>
                       ))}
                     </div>

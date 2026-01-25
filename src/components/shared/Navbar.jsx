@@ -66,11 +66,11 @@ export default function Navbar() {
                 Bangladesh
               </div>
               <div className="font-bold leading-tight text-gray-900">
-                Nationalist Party - BNP
+                Nationalist Party - (Candidates)
               </div>
             </div>
             <div className="lg:hidden">
-              <div className="text-sm font-bold text-gray-900">BNP</div>
+              <div className="text-sm font-bold text-gray-900">BNP Candidates</div>
             </div>
           </Link>
 
@@ -98,7 +98,7 @@ export default function Navbar() {
               Candidates
             </NavLink>
             <NavLink
-              to="/news"
+              to="/vision"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
                   ? "text-green-700 border-b-2 border-green-700 pb-1"
@@ -106,7 +106,7 @@ export default function Navbar() {
                 }`
               }
             >
-              News
+              Vision
             </NavLink>
             <NavLink
               to="/activities"
@@ -270,7 +270,7 @@ export default function Navbar() {
               Candidates
             </NavLink>
             <NavLink
-              to="/news"
+              to="/vision"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
@@ -279,7 +279,7 @@ export default function Navbar() {
                 }`
               }
             >
-              News
+              Vision
             </NavLink>
             <NavLink
               to="/activities"
