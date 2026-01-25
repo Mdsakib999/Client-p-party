@@ -4,23 +4,17 @@ import LeaderCard from "./LeaderCard";
 
 export const Candidates = () => {
   const candidates = [
+    
     {
       id: 1,
-      name: "Begum Khaleda Zia",
-      position: "Chairperson",
-      image: "https://api.bnpbd.org/api/upload/images/begum-khaleda-599985.jpg",
-      highlight: false,
-    },
-    {
-      id: 2,
       name: "Mr. Tarique Rahman",
-      position: "Acting Chairman",
+      position: "Chairman",
       image:
-        "https://www.aljazeera.com/wp-content/uploads/2024/01/349B2U6-highres-1704353492.jpg?resize=1800%2C1800",
+        "https://sgp1.digitaloceanspaces.com/dc2/news/TZ8F90UQut3CyaX2i2ooybLGUedSfZqfwuISKfaT.jpg",
       highlight: true,
     },
     {
-      id: 5,
+      id: 2,
       name: "Mirza Fakhrul Islam Alamgir",
       position: "Secretary General - BNP",
       image:
@@ -37,9 +31,16 @@ export const Candidates = () => {
     },
     {
       id: 4,
+      name: "Mirza Abbas Uddin Ahmed",
+      position: "Member of National Standing Committee - BNP",
+      image: "https://www.bssnews.net/assets/news_photos/2025/10/28/image-325864-1761651827.jpg",
+      highlight: false,
+    },
+    {
+      id: 5,
       name: "Mr. Amir Khosru Chowdhury",
       position: "Member of National Standing Committee - BNP",
-      image: "https://api.bnpbd.org/api/upload/images/13-1037d.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZicoZBVLiVJL-iEFshJGb-chJZxBeb9_Y4A&s",
       highlight: false,
     },
   ];
@@ -64,6 +65,28 @@ export const Candidates = () => {
             Leaders dedicated to representing the voices of the people
           </p>
 
+          
+        </div>
+
+        {/* Candidates Grid */}
+
+        <div className="max-w-5xl mx-auto mb-16">
+          {/* TOP ROW – 2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 max-w-xl mx-auto">
+            {candidates.slice(0, 2).map((c) => (
+              <LeaderCard key={c.id} candidate={c} />
+            ))}
+          </div>
+
+          {/* BOTTOM ROW – 3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {candidates.slice(2, 5).map((c) => (
+              <LeaderCard key={c.id} candidate={c} />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex justify-center">
           <div className="flex items-center justify-center gap-6">
             {/* OUTLINE BUTTON */}
             <Link
@@ -100,37 +123,11 @@ export const Candidates = () => {
       focus:ring-4 focus:ring-green-300
     "
             >
-              Our Leadership
+              View All
               <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
-        </div>
-
-        {/* Candidates Grid */}
-
-        <div className="max-w-5xl mx-auto mb-16">
-          {/* TOP ROW – 2 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 max-w-xl mx-auto">
-            {candidates.slice(0, 2).map((c) => (
-              <LeaderCard key={c.id} candidate={c} />
-            ))}
-          </div>
-
-          {/* BOTTOM ROW – 3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {candidates.slice(2, 5).map((c) => (
-              <LeaderCard key={c.id} candidate={c} />
-            ))}
-          </div>
-        </div>
-
-        <div className="flex justify-center">
-          <Link
-            to="/candidates"
-            className="flex items-center gap-2 bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-800 transition-colors font-medium text-lg"
-          >
-            View All <HiArrowRight className="w-5 h-5" />
-          </Link>
+          
         </div>
       </div>
     </section>

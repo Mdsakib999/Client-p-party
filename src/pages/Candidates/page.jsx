@@ -104,7 +104,7 @@ const Candidates = () => {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-8">
-            Our nominees for the <br /> 2026 elections
+            Meet Our Candidates for the <br /> 2026 Electoral Journey
           </h2>
 
           {/* Search Box */}
