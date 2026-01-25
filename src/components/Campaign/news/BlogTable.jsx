@@ -135,7 +135,7 @@ export default function BlogTable() {
                     <div className="flex gap-2 justify-end">
                       <button
                         onClick={() => handleEdit(blog)}
-                        className="cursor-pointer p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors shadow-sm"
+                        className="cursor-pointer p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors shadow-sm"
                         title="Edit article"
                       >
                         <Pencil size={16} />

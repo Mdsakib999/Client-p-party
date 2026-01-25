@@ -57,7 +57,7 @@ export default function ActivityTable({ activities }) {
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                             {item.category}
                                         </span>
                                     </td>
@@ -67,7 +67,7 @@ export default function ActivityTable({ activities }) {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <button
                                             onClick={() => setSelectedActivity(item)}
-                                            className="cursor-pointer text-blue-600 hover:text-blue-900 mr-4 transition"
+                                            className="cursor-pointer text-green-600 hover:text-green-900 mr-4 transition"
                                         >
                                             <Edit className="w-5 h-5" />
                                         </button>
