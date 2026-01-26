@@ -188,6 +188,8 @@ const Contact = () => {
                     info@bnpcandidates.com
                     <br />
                     support@bnpcandidates.com
+                    <br />
+                    campaign@bnpcandidates.com
                   </p>
                 </div>
               </div>
