@@ -92,8 +92,8 @@ export default function CandidateDetails() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-4 font-semibold ${activeTab === tab
-                    ? "bg-gray-100 text-gray-700"
-                    : "text-gray-600"
+                  ? "bg-gray-100 text-gray-700"
+                  : "text-gray-600"
                   }`}
               >
                 {tab === "details"
@@ -140,20 +140,12 @@ export default function CandidateDetails() {
                           </div>
                         </div>
                       )}
-
-                      {candidate.personal_info.mobileNo && (
-                        <p>
-                          <strong>Mobile:</strong>{" "}
-                          {candidate.personal_info.mobileNo}
-                        </p>
-                      )}
-
-                      {candidate.personal_info.nationality && (
+                      {/* {candidate.personal_info.nationality && (
                         <p>
                           <strong>Nationality:</strong>{" "}
                           {candidate.personal_info.nationality}
                         </p>
-                      )}
+                      )} */}
                     </div>
                   </section>
                 )}

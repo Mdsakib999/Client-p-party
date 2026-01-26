@@ -13,6 +13,7 @@ const Candidates = () => {
   const candidates = candidatesData?.data || [];
   // FOR JSON FORMAT
   // const candidates = candidatesData || [];
+  console.log("candidates", candidates)
 
   const [divisions, setDivisions] = useState([]);
   const [districts, setDistricts] = useState([]);
@@ -232,18 +233,7 @@ const Candidates = () => {
             .map((candidate) => (
               <CandidateCard
                 key={candidate._id}
-                candidate={{
-                  _id: candidate._id,
-                  name: candidate.name,
-                  position: candidate.position,
-                  category: candidate.category,
-                  photo:
-                    candidate.photos?.[0]?.url ||
-                    candidate.photos?.[0]?.secure_url ||
-                    candidate.photos?.[0],
-                }}
-              // FOR JSON
-              // candidate={candidate}
+                candidate={candidate}
               />
             ))}
         </section>
