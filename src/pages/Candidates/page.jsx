@@ -1,4 +1,5 @@
-import candidatesBanner from "../../assets/candidates-banner.jpg";
+import candidatesBanner from "../../assets/bg.png";
+// import candidatesBanner from "../../assets/candidates-banner.jpg";
 import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, Search } from "lucide-react";
 import CandidateCard from "../../components/CandidateCard";
@@ -94,13 +95,13 @@ const Candidates = () => {
   return (
     <div className="min-h-screen w-full bg-gray-50">
       {/* Banner */}
-      <div className="relative h-[410px]">
+      <div className="relative h-[470px]">
         <img
           src={candidatesBanner}
           alt="Candidates"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/20" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-8">

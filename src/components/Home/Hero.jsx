@@ -16,7 +16,20 @@ const Hero = () => {
     },
     {
       id: 2,
+      image: "https://thegoodmorning.net/wp-content/uploads/2025/09/1758208905-51dadc14080debc806e862c05a3f8039.jpg",
+      quote: "Together, let's build Bangladesh into a democratic and developed nation",
+      objectPosition: "32% 40%"
+    },
+    {
+      id: 2,
       image: bnpBanner,
+      // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
+      quote: "Empowering citizens, strengthening democracy, ensuring prosperity for all",
+      objectPosition: "center"
+    },
+    {
+      id: 5,
+      image: "https://www.bssnews.net/assets/news_photos/2025/06/06/image-280804-1749228202.jpg",
       // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
       quote: "Empowering citizens, strengthening democracy, ensuring prosperity for all",
       objectPosition: "center"

@@ -8,7 +8,7 @@ const About = () => {
           {/* Left - Image */}
           <div className="relative">
             <img
-              src={about}
+              src="https://morenewsbd.com/storage/posts/2025/12/8287c938ebae1b6e5eff99f98e6f62fd13e0.jpg"
               alt="Champion of Democracy in Bangladesh"
               className="w-full h-[500px] md:h-[550px] object-cover rounded-md shadow-xl"
             />

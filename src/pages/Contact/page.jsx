@@ -26,9 +26,9 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="relative h-64 md:h-80 lg:min-h-[72vh]">
+      <div className="relative h-64 md:h-80 lg:min-h-[64vh]">
         <img
-          src="./src/assets/hero-banner.jpg"
+          src="./src/assets/bg.png"
           alt="Contact Us Banner"
           className="w-full h-full object-cover"
         />
@@ -160,7 +160,7 @@ const Contact = () => {
                 </div>
               </div> */}
 
-              <div className="flex items-start gap-4">
+              {/* <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                   <HiPhone className="w-6 h-6 text-green-600" />
                 </div>
@@ -174,7 +174,7 @@ const Contact = () => {
                     +880 1234-567891 (Emergency)
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
@@ -188,6 +188,8 @@ const Contact = () => {
                     info@bnpcandidates.com
                     <br />
                     support@bnpcandidates.com
+                    <br />
+                    campaign@bnpcandidates.com
                   </p>
                 </div>
               </div>
