@@ -39,9 +39,12 @@ export default function Footer() {
             <li>
               <Link to="/candidates">Candidates</Link>
             </li>
-            <li>
-              <Link to="/news">News</Link>
+            <li className="hover:text-white cursor-pointer transition">
+              <Link to="/vision">Our Vision</Link>
             </li>
+            {/* <li>
+              <Link to="/news">News</Link>
+            </li> */}
             <li>
               <Link to="/contact">Contact</Link>
             </li>
@@ -57,9 +60,7 @@ export default function Footer() {
             <li className="hover:text-white cursor-pointer transition">
               <Link to="/campaigns">Our Campaigns</Link>
             </li>
-            <li className="hover:text-white cursor-pointer transition">
-              <Link to="/vision">Our Vision</Link>
-            </li>
+            
             <li className="hover:text-white cursor-pointer transition">
               <Link to="/privacy-policy">Privacy Policy</Link>
             </li>

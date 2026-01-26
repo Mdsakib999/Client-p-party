@@ -6,7 +6,7 @@ export default function CandidateCard({ candidate }) {
     <Link
       state={candidate}
       to={`${candidate._id}`}
-      className="block w-full max-w-96 mx-auto"
+      className="block w-full max-w-80 mx-auto"
     >
       <div className="rounded-lg overflow-hidden bg-white shadow hover:shadow-lg transition-shadow duration-200 h-full flex flex-col">
         <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">

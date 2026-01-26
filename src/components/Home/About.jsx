@@ -25,10 +25,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-700 text-lg leading-relaxed">
-              Local Government Faces Criticism Over New Policies as thousands
-              took to the streets to oppose recent policy changes, leading to
-              clashes with law enforcement and a state of emergency declared in
-              several cities.
+              Local Government Faces Criticism Over New Policies as Thousands Take to the Streets to Oppose Recent Policy Changes, Leading to Clashes with Law Enforcement and a State of Emergency Declared in Several Cities.
             </p>
           </div>
         </div>

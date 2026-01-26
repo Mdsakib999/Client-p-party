@@ -47,7 +47,8 @@ const Contact = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center
+         ">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Send us a Message
@@ -141,7 +142,7 @@ const Contact = () => {
               Get in Touch
             </h2>
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
+              {/* <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                   <HiLocationMarker className="w-6 h-6 text-green-600" />
                 </div>
@@ -157,7 +158,7 @@ const Contact = () => {
                     Dhaka, Bangladesh 1000
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
@@ -184,14 +185,14 @@ const Contact = () => {
                     Email Address
                   </h3>
                   <p className="text-gray-600">
-                    info@bnp.org
+                    info@bnpcandidates.com
                     <br />
-                    support@bnp.org
+                    support@bnpcandidates.com
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              {/* <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                   <HiClock className="w-6 h-6 text-green-600" />
                 </div>
@@ -207,7 +208,7 @@ const Contact = () => {
                     Sunday: Closed
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="mt-12">
@@ -218,7 +219,7 @@ const Contact = () => {
                 <a
                   href="https://www.facebook.com/bnpbd.org/"
                   target="_blank"
-                  className="w-10 h-10 bg-gray-200 hover:bg-green-400 group rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-200 hover:bg-blue-500 group rounded-full flex items-center justify-center transition-colors"
                 >
                   <FaFacebookF className="text-gray-600 group-hover:text-white w-5 h-5" />
                 </a>
