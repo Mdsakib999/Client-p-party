@@ -218,7 +218,7 @@ const ManageCandidates = () => {
       {/* View Details Modal */}
       {selectedCandidate && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedCandidate(null)}
         >
           <div
@@ -402,7 +402,7 @@ const ManageCandidates = () => {
                   setSelectedCandidate(null);
                   handleEdit(selectedCandidate);
                 }}
-                className="flex-1 bg-amber-500 hover:bg-amber-600 text-white px-4 py-3 rounded-lg transition-colors font-medium shadow-sm"
+                className="flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors font-medium shadow-sm"
               >
                 Edit Candidate
               </button>

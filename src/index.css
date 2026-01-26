@@ -1,8 +1,13 @@
 @import "tailwindcss";
-
 @import "froala-editor/css/froala_editor.pkgd.min.css";
 @import "froala-editor/css/froala_style.min.css";
 @import "froala-editor/css/themes/gray.min.css";
+
+/* canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+} */
 
 .scrollbar-hide {
   -ms-overflow-style: none;
