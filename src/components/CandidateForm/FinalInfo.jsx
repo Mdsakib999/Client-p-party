@@ -378,7 +378,7 @@ const FinalInfo = ({
               {existingPhotos.map((photo, idx) => (
                 <div key={idx} className="relative group">
                   <img
-                    src={photo.secure_url || photo.url}
+                    src={photo?.secure_url || photo?.url}
                     alt={`Existing ${idx + 1}`}
                     className="h-24 w-24 object-cover rounded-lg border-2 border-gray-200"
                   />

@@ -1,56 +1,83 @@
-import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
 
-const frames = [
-    { id: 1, src: "src/assets/frame1.png", name: "Classic BN" },
-    { id: 2, src: "src/assets/frame2.png", name: "Golden" },
-    { id: 3, src: "src/assets/frame3.png", name: "Circle Wheat" },
-    { id: 4, src: "src/assets/frame4.png", name: "Modern Flat" },
-    { id: 5, src: "src/assets/frame5.png", name: "Artistic" },
-];
+const FrameSelector = ({ onSelectFrame, mediaType }) => {
+    const profileFrames = [
+        { id: 1, src: "/frames/profile/profile2.png", name: "Profile Frame 2" },
+        { id: 2, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
+        { id: 3, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
+        { id: 4, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
+    ];
 
-const FrameSelector = ({ onSelectFrame }) => {
-    const [selectedId, setSelectedId] = useState(1);
+    const postFrames = [
+        { id: 6, src: "/frames/posts/post1.png", name: "Post Frame 1" },
+        { id: 7, src: "/frames/posts/post2.png", name: "Post Frame 2" },
+    ];
+
+    const frames = mediaType === "profile" ? profileFrames : postFrames;
+    const [selectedId, setSelectedId] = useState(frames[0].id);
+    const scrollRef = useRef(null);
+
+    // Update selected frame when media type changes
+    useEffect(() => {
+        const firstFrame = frames[0];
+        setSelectedId(firstFrame.id);
+        onSelectFrame(firstFrame.src);
+    }, [mediaType]);
 
     const handleSelect = (frame) => {
         setSelectedId(frame.id);
         onSelectFrame(frame.src);
     };
 
+    const scroll = (direction) => {
+        if (scrollRef.current) {
+            const scrollAmount = 120;
+            scrollRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
-        <div className="w-full mt-6">
-            <div className="flex items-center justify-between mb-2">
-                <h3 className="text-gray-700 font-semibold text-center w-full">Select Frame</h3>
-            </div>
+        <div className="relative">
+            <button
+                onClick={() => scroll('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-green-700 transition"
+            >
+                ←
+            </button>
 
-            <div className="relative flex items-center justify-center gap-2 px-2">
-                <button className="p-2 rounded-full bg-gray-200 hover:bg-green-100 text-gray-600 hover:text-green-700 transition">
-                    <FaChevronLeft />
-                </button>
-
-                <div className="flex gap-3 overflow-x-auto pb-4 pt-2 px-2 scrollbar-hide snap-x justify-center flex-wrap">
-                    {frames.map((frame) => (
+            <div
+                ref={scrollRef}
+                className="flex gap-4 overflow-x-auto pb-2 px-12 scrollbar-hide snap-x"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+                {frames.map((frame) => (
+                    <div
+                        key={frame.id}
+                        onClick={() => handleSelect(frame)}
+                        className={`snap-center flex-shrink-0 cursor-pointer transition-all duration-300 ${selectedId === frame.id ? "scale-110" : "opacity-60 hover:opacity-100"
+                            }`}
+                    >
                         <div
-                            key={frame.id}
-                            className={`snap-center flex-shrink-0 cursor-pointer transition-all duration-300 relative group ${selectedId === frame.id ? "transform scale-110" : "opacity-70 hover:opacity-100"
+                            className={`w-20 h-${mediaType === "profile" ? "20" : "24"} rounded-xl overflow-hidden border-4 ${selectedId === frame.id
+                                ? "border-white shadow-xl ring-4 ring-white/30"
+                                : "border-white/30"
                                 }`}
-                            onClick={() => handleSelect(frame)}
                         >
-                            <div className={`w-20 h-20 rounded-lg overflow-hidden border-2 bg-white ${selectedId === frame.id ? "border-green-600 shadow-md ring-2 ring-green-100" : "border-gray-200"
-                                }`}>
-                                <img src={frame.src} alt={frame.name} className="w-full h-full object-cover" />
-                            </div>
-                            {selectedId === frame.id && (
-                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-600 rounded-full"></div>
-                            )}
+                            <img src={frame.src} alt={frame.name} className="w-full h-full object-cover" />
                         </div>
-                    ))}
-                </div>
-
-                <button className="p-2 rounded-full bg-gray-200 hover:bg-green-100 text-gray-600 hover:text-green-700 transition">
-                    <FaChevronRight />
-                </button>
+                    </div>
+                ))}
             </div>
+
+            <button
+                onClick={() => scroll('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-green-700 transition"
+            >
+                →
+            </button>
         </div>
     );
 };
