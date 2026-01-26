@@ -39,11 +39,11 @@ const Home = () => {
       <About />
       <Candidates />
       <Highlights />
-      <Activity />
-      <NewsSection
+      {/* <Activity /> */}
+      {/* <NewsSection
         newsArticles={newsArticles?.data}
         articleLoader={isLoading}
-      />
+      /> */}
     </div>
     </>
   );
