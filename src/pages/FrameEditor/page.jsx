@@ -11,7 +11,6 @@ const FrameEditor = () => {
     const [selectedMediaType, setSelectedMediaType] = useState("profile");
     const [hasPhoto, setHasPhoto] = useState(false);
 
-    // Load default frame on mount and when media type changes
     useEffect(() => {
         const defaultFrame = selectedMediaType === "profile"
             ? "/frames/profile/profile2.png"
@@ -80,61 +79,61 @@ const FrameEditor = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8 px-4">
-            <div className="max-w-6xl mx-auto">
+        <div className="min-h-screen bg-green-50 py-8 px-4 flex flex-col items-center">
+            <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-                        Start Future Bangladesh
-                        <br />
-                        <span className="text-green-600">With One Click</span>
+                    <h1 className="text-3xl font-bold text-gray-800 mb-2">
+                        Create Your Photo Frame
                     </h1>
-                    <p className="text-gray-600 text-lg">
-                        Transform your support into digital power with BNP frames
-                    </p>
+                    <p className="text-green-600 font-medium">With One Click</p>
                 </div>
 
                 {/* Media Type Selector */}
-                <MediaTypeSelector selectedType={selectedMediaType} onSelect={handleMediaTypeChange} />
+                <div className="mb-6">
+                    <MediaTypeSelector selectedType={selectedMediaType} onSelect={handleMediaTypeChange} />
+                </div>
 
-                {/* Main Editor Card */}
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                    {/* Decorative Elements */}
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
-
-                    <div className="relative z-10">
-                        {/* Canvas */}
-                        <div className="flex justify-center mb-8">
-                            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden cursor-pointer" onClick={handleCanvasClick}>
-                                <FrameCanvas ref={canvasRef} mediaType={selectedMediaType} onCanvasClick={handleCanvasClick} />
+                <div className="w-full flex flex-col items-center pb-12">
+                    <div className="relative mb-8 shadow-2xl rounded-2xl overflow-hidden group">
+                        <div
+                            className={`relative ${!hasPhoto ? 'cursor-pointer' : 'cursor-default'}`}
+                            style={{
+                                width: selectedMediaType === 'profile' ? '300px' : '300px',
+                                height: selectedMediaType === 'profile' ? '300px' : '375px'
+                            }}
+                        >
+                            <FrameCanvas ref={canvasRef} mediaType={selectedMediaType} onCanvasClick={handleCanvasClick} />
+                            {!hasPhoto && (
                                 <div
                                     id="placeholder-text"
-                                    className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-gray-400"
+                                    className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-gray-400 bg-gray-50/50 hover:bg-gray-50/80 transition-colors"
                                 >
-                                    <Upload className="w-20 h-20 mb-3 opacity-40" />
-                                    <span className="font-medium">Click to upload your photo</span>
+                                    <Upload className="w-12 h-12 mb-3 opacity-40 text-green-500" />
+                                    <span className="text-xs text-green-600 px-4 text-center">Click to upload your photo</span>
                                 </div>
-                            </div>
+                            )}
                         </div>
+                    </div>
 
-                        {/* Hidden file input */}
-                        <input
-                            ref={fileInputRef}
-                            type="file"
-                            accept="image/*"
-                            onChange={handleFileChange}
-                            className="hidden"
-                        />
+                    {/* Hidden file input */}
+                    <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        className="hidden"
+                    />
 
-                        {/* Frame Selector */}
-                        <div className="mb-8">
-                            <h3 className="text-white text-center mb-4 font-medium text-lg">Choose Your Frame</h3>
+                    {/* Selector & Controls */}
+                    <div className="w-full max-w-md space-y-8">
+                        <div className="p-6 rounded-3xl shadow-lg border border-green-100">
+                            <h3 className="text-gray-800 text-center mb-2 font-semibold text-lg">Choose Your Frame</h3>
                             <FrameSelector onSelectFrame={handleSelectFrame} mediaType={selectedMediaType} />
                         </div>
 
                         {/* Control Panel */}
-                        <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                        <div className="p-6 rounded-3xl shadow-lg border border-green-100">
                             <ControlPanel
                                 onUploadPhoto={handleUploadPhoto}
                                 onZoomChange={handleZoomChange}
@@ -148,7 +147,7 @@ const FrameEditor = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-8 text-center text-gray-500 text-sm">
+                <div className="text-center text-gray-400 text-xs px-4">
                     <p>Show your support for BNP | Share on social media</p>
                 </div>
             </div>
