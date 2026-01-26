@@ -10,14 +10,14 @@
       "Barishal-6"
     ],
     "Bhola": ["Bhola-1", "Bhola-2", "Bhola-3", "Bhola-4"],
-    "Jhalokathi": [],
+    "Jhalokati": ["Jhalokati-1", "Jhalokati-2"],
     "Patuakhali": [
       "Patuakhali-1",
       "Patuakhali-2",
       "Patuakhali-3",
       "Patuakhali-4"
     ],
-    "Pirojpur": ["Pirojpur-1", "Pirojpur-2", "Pirojpur-3", "Pirojpur-4"]
+    "Pirojpur": ["Pirojpur-1", "Pirojpur-2", "Pirojpur-3"]
   },
 
   "Chattogram": {
@@ -74,7 +74,7 @@
       "Cumilla-10",
       "Cumilla-11"
     ],
-    "Feni": [],
+    "Feni": ["Feni-1", "Feni-2", "Feni-3"],
     "Khagrachari": ["Khagrachari"],
     "Lakshmipur": [
       "Lakshmipur-1",
@@ -116,14 +116,13 @@
       "Dhaka-19",
       "Dhaka-20"
     ],
-    "Faridpur": [],
+    "Faridpur": ["Faridpur-1", "Faridpur-2", "Faridpur-3", "Faridpur-4"],
     "Gazipur": [
       "Gazipur-1",
       "Gazipur-2",
       "Gazipur-3",
       "Gazipur-4",
-      "Gazipur-5",
-      "Gazipur-6"
+      "Gazipur-5"
     ],
     "Gopalganj": ["Gopalganj-1", "Gopalganj-2", "Gopalganj-3"],
     "Kishoreganj": [
@@ -134,7 +133,7 @@
       "Kishoreganj-5",
       "Kishoreganj-6"
     ],
-    "Madaripur": [],
+    "Madaripur": ["Madaripur-1","Madaripur-2","Madaripur-3"],
     "Manikganj": ["Manikganj-1", "Manikganj-2", "Manikganj-3"],
     "Munshiganj": ["Munshiganj-1", "Munshiganj-2", "Munshiganj-3"],
     "Narayanganj": [
@@ -153,11 +152,11 @@
     ],
     "Rajbari": ["Rajbari-1", "Rajbari-2"],
     "Shariatpur": ["Shariatpur-1", "Shariatpur-2", "Shariatpur-3"],
-    "Tangail": []
+    "Tangail": ["Tangail-1","Tangail-2","Tangail-3","Tangail-4","Tangail-5","Tangail-6","Tangail-7","Tangail-8"]
   },
 
   "Khulna": {
-    "Bagerhat": ["Bagerhat-1", "Bagerhat-2", "Bagerhat-3"],
+    "Bagerhat": ["Bagerhat-1", "Bagerhat-2", "Bagerhat-3","Bagerhat-4"],
     "Chuadanga": ["Chuadanga-1", "Chuadanga-2"],
     "Jashore": [
       "Jashore-1",
@@ -167,7 +166,7 @@
       "Jashore-5",
       "Jashore-6"
     ],
-    "Jhenaidah": [],
+    "Jhenaidah": ["Jhenaidah-1","Jhenaidah-2","Jhenaidah-3","Jhenaidah-4"],
     "Khulna": [
       "Khulna-1",
       "Khulna-2",
@@ -176,10 +175,10 @@
       "Khulna-5",
       "Khulna-6"
     ],
-    "Kushtia": [],
-    "Magura": [],
+    "Kushtia": ["Kushtia-1","Kushtia-2","Kushtia-3","Kushtia-4"],
+    "Magura": ["Magura-1","Magura-2"],
     "Meherpur": ["Meherpur-1", "Meherpur-2"],
-    "Narail": [],
+    "Narail": ["Narail-1","Narail-2"],
     "Satkhira": ["Satkhira-1", "Satkhira-2", "Satkhira-3", "Satkhira-4"]
   },
 
@@ -215,22 +214,22 @@
   },
 
   "Rajshahi": {
-    "Bogra": [
-      "Bogra-1",
-      "Bogra-2",
-      "Bogra-3",
-      "Bogra-4",
-      "Bogra-5",
-      "Bogra-6",
-      "Bogra-7"
+    "Bogura": [
+      "Bogura-1",
+      "Bogura-2",
+      "Bogura-3",
+      "Bogura-4",
+      "Bogura-5",
+      "Bogura-6",
+      "Bogura-7"
     ],
     "Chapainawabganj": [
-      "Chapai Nawabganj-1",
-      "Chapai Nawabganj-2",
-      "Chapai Nawabganj-3"
+      "Chapainawabganj-1",
+      "Chapainawabganj-2",
+      "Chapainawabganj-3"
     ],
-    "Joypurhat": ["Jaipurhat-1", "Jaipurhat-2"],
-    "Naogaon": [],
+    "Joypurhat": ["Jaypurhat-1", "Jaypurhat-2"],
+    "Naogaon": ["Naogaon-1","Naogaon-2","Naogaon-3","Naogaon-4","Naogaon-5","Naogaon-6"],
     "Natore": ["Natore-1", "Natore-2", "Natore-3", "Natore-4"],
     "Pabna": ["Pabna-1", "Pabna-2", "Pabna-3", "Pabna-4", "Pabna-5"],
     "Rajshahi": [
@@ -258,12 +257,7 @@
       "Dinajpur-3",
       "Dinajpur-4",
       "Dinajpur-5",
-      "Dinajpur-6",
-      "Dinajpur-7",
-      "Dinajpur-8",
-      "Dinajpur-9",
-      "Dinajpur-10",
-      "Dinajpur-11"
+      "Dinajpur-6"
     ],
     "Gaibandha": [
       "Gaibandha-1",
@@ -276,17 +270,15 @@
     "Lalmonirhat": [
       "Lalmonirhat-1",
       "Lalmonirhat-2",
-      "Lalmonirhat-3",
-      "Lalmonirhat-4"
+      "Lalmonirhat-3"
     ],
     "Nilphamari": [
       "Nilphamari-1",
       "Nilphamari-2",
       "Nilphamari-3",
-      "Nilphamari-4",
-      "Nilphamari-5"
+      "Nilphamari-4"
     ],
-    "Panchagarh": ["Panchagarh-1", "Panchagarh-2", "Panchagarh-3"],
+    "Panchagarh": ["Panchagarh-1", "Panchagarh-2"],
     "Rangpur": [
       "Rangpur-1",
       "Rangpur-2",
@@ -295,7 +287,7 @@
       "Rangpur-5",
       "Rangpur-6"
     ],
-    "Thakurgaon": []
+    "Thakurgaon": ["Thakurgaon-1","Thakurgaon-2","Thakurgaon-3"]
   },
 
   "Sylhet": {
@@ -313,6 +305,6 @@
       "Sunamganj-4",
       "Sunamganj-5"
     ],
-    "Sylhet": ["Sylhet-1", "Sylhet-2", "Sylhet-3", "Sylhet-4"]
+    "Sylhet": ["Sylhet-1", "Sylhet-2", "Sylhet-3", "Sylhet-4","Sylhet-5","Sylhet-6"]
   }
 }
