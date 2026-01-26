@@ -4,14 +4,14 @@ import { ChevronLeft, Search } from "lucide-react";
 import CandidateCard from "../../components/CandidateCard";
 import Pagination from "../../components/Pagination";
 import areasData from "../../data/areas.json";
-// import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
-// import BNPLoader from "../../utils/BNPLoader";
-import candidatesData from "../../data/candidates3.json";
+import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
+import BNPLoader from "../../utils/BNPLoader";
 
 const Candidates = () => {
-  // const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
-  // const candidates = candidatesData?.data || [];
-  const candidates = candidatesData || [];
+  const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
+  const candidates = candidatesData?.data || [];
+  // FOR JSON FORMAT
+  // const candidates = candidatesData || [];
 
   const [divisions, setDivisions] = useState([]);
   const [districts, setDistricts] = useState([]);
@@ -89,7 +89,7 @@ const Candidates = () => {
 
   const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
 
-  // if (isLoading) return <BNPLoader />;
+  if (isLoading) return <BNPLoader />;
 
   return (
     <div className="min-h-screen w-full bg-gray-50">
@@ -154,11 +154,10 @@ const Candidates = () => {
               {/* District - Desktop only */}
               <div
                 onClick={() => selectedDivision && setActiveSection("district")}
-                className={`hidden md:flex flex-1 px-5 py-3 w-full rounded-full transition-colors ${
-                  selectedDivision
-                    ? "cursor-pointer hover:bg-gray-50"
-                    : "opacity-50 cursor-not-allowed"
-                }`}
+                className={`hidden md:flex flex-1 px-5 py-3 w-full rounded-full transition-colors ${selectedDivision
+                  ? "cursor-pointer hover:bg-gray-50"
+                  : "opacity-50 cursor-not-allowed"
+                  }`}
               >
                 <div className="w-full">
                   <label className="block text-xs font-semibold text-gray-700 mb-1">
@@ -232,17 +231,18 @@ const Candidates = () => {
             .map((candidate) => (
               <CandidateCard
                 key={candidate._id}
-                // candidate={{
-                //   _id: candidate._id,
-                //   name: candidate.name,
-                //   position: candidate.position,
-                //   category: candidate.category,
-                //   photo:
-                //     candidate.photos?.[0]?.url ||
-                //     candidate.photos?.[0]?.secure_url ||
-                //     candidate.photos?.[0],
-                // }}
-                candidate={candidate}
+                candidate={{
+                  _id: candidate._id,
+                  name: candidate.name,
+                  position: candidate.position,
+                  category: candidate.category,
+                  photo:
+                    candidate.photos?.[0]?.url ||
+                    candidate.photos?.[0]?.secure_url ||
+                    candidate.photos?.[0],
+                }}
+              // FOR JSON
+              // candidate={candidate}
               />
             ))}
         </section>

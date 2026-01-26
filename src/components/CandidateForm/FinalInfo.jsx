@@ -12,6 +12,8 @@ const FinalInfo = ({
   handleDynamicArrayChange,
   addDynamicArrayItem,
   removeDynamicArrayItem,
+  existingPhotos,
+  handleRemoveExistingPhoto,
 }) => {
   const [selectedDivision, setSelectedDivision] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -36,15 +38,6 @@ const FinalInfo = ({
   const handleAddConstituency = () => {
     if (!selectedConstituency || !electionAreaName.trim()) {
       alert("Please select a constituency and enter the election area name");
-      return;
-    }
-
-    const exists = formData.election_constituencies.some(
-      (c) => c.actual_place_name === selectedConstituency
-    );
-
-    if (exists) {
-      alert("This constituency has already been added");
       return;
     }
 
@@ -106,7 +99,7 @@ const FinalInfo = ({
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
           <div className="md:col-span-4">
-            <label className={labelClass}>Division</label>
+            <label className={labelClass}>Division <span className="text-red-500">*</span></label>
             <select
               value={selectedDivision}
               onChange={(e) => {
@@ -126,7 +119,7 @@ const FinalInfo = ({
           </div>
 
           <div className="md:col-span-4">
-            <label className={labelClass}>District</label>
+            <label className={labelClass}>District <span className="text-red-500">*</span></label>
             <select
               value={selectedDistrict}
               onChange={(e) => {
@@ -196,7 +189,7 @@ const FinalInfo = ({
       <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
         <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
           <span className="w-1 h-6 bg-green-500 rounded-full"></span>
-          Election Constituencies
+          Election Constituencies <span className="text-red-500">*</span>
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
@@ -316,6 +309,9 @@ const FinalInfo = ({
             </div>
           ))}
         </div>
+        {errors?.election_constituencies && (
+          <p className="text-red-500 text-xs mt-2 text-center">{errors.election_constituencies}</p>
+        )}
       </div>
 
       {/* Other Information */}
@@ -364,38 +360,6 @@ const FinalInfo = ({
             </button>
           </div>
 
-          <div>
-            <label className={labelClass}>Social Links</label>
-            <div className="space-y-3">
-              {formData?.social_links?.map((item, idx) => (
-                <div key={idx} className="flex gap-2">
-                  <input
-                    type="text"
-                    placeholder="Add social link"
-                    value={item}
-                    onChange={(e) =>
-                      handleDynamicArrayChange("social_links", idx, e.target.value)
-                    }
-                    className={inputClass()}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeDynamicArrayItem("social_links", idx)}
-                    className="text-red-500 hover:text-red-700 px-2"
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={() => addDynamicArrayItem("social_links")}
-              className="mt-3 text-sm text-green-600 font-semibold hover:text-green-700 flex items-center gap-1"
-            >
-              + Add Link
-            </button>
-          </div>
         </div>
       </div>
 
@@ -405,8 +369,37 @@ const FinalInfo = ({
           <span className="w-1 h-6 bg-green-500 rounded-full"></span>
           Photos
         </h3>
+
+        {/* Existing Photos */}
+        {existingPhotos && existingPhotos.length > 0 && (
+          <div className="mb-6">
+            <label className={labelClass}>Current Photos</label>
+            <div className="flex gap-4 flex-wrap mt-2">
+              {existingPhotos.map((photo, idx) => (
+                <div key={idx} className="relative group">
+                  <img
+                    src={photo.secure_url || photo.url}
+                    alt={`Existing ${idx + 1}`}
+                    className="h-24 w-24 object-cover rounded-lg border-2 border-gray-200"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveExistingPhoto(idx)}
+                    className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+                    title="Remove Photo"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <label className={labelClass}>
-          Upload Photo <span className="text-red-500">*</span>
+          Upload New Photos <span className="text-gray-400 font-normal">(Optional)</span>
         </label>
         <div className="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-green-500 transition-colors bg-gray-50 hover:bg-green-50 group cursor-pointer relative">
           <input
@@ -423,7 +416,7 @@ const FinalInfo = ({
               </svg>
             </div>
             <div className="flex text-sm text-gray-600 justify-center">
-              <span className="font-medium text-green-600 hover:text-green-500">Upload a file</span>
+              <span className="font-medium text-green-600 hover:text-green-500">Upload new files</span>
               <p className="pl-1">or drag and drop</p>
             </div>
             <p className="text-xs text-gray-500">
@@ -442,7 +435,7 @@ const FinalInfo = ({
               📸
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-900">{formData.photos.length} file(s) selected</p>
+              <p className="text-sm font-medium text-gray-900">{formData.photos.length} new file(s) selected</p>
               <p className="text-xs text-gray-500">Ready to upload</p>
             </div>
           </div>

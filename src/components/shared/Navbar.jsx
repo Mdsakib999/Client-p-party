@@ -108,7 +108,7 @@ export default function Navbar() {
             >
               Vision
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/activities"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
@@ -118,7 +118,7 @@ export default function Navbar() {
               }
             >
               Activities
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/campaigns"
               className={({ isActive }) =>
@@ -281,7 +281,7 @@ export default function Navbar() {
             >
               Vision
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/activities"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
@@ -292,7 +292,7 @@ export default function Navbar() {
               }
             >
               Activities
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/campaigns"
               onClick={() => setIsOpen(false)}
