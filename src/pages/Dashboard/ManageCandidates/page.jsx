@@ -5,16 +5,14 @@ import {
   useDeleteCandidateMutation,
 } from "../../../redux/features/candidate/candidate.api";
 import { FiEdit2, FiTrash2, FiEye } from "react-icons/fi";
-import EditCandidateModal from "../../../components/EditCandidateModal";
 import BNPLoader from "../../../utils/BNPLoader";
 
 const ManageCandidates = () => {
   const navigate = useNavigate();
-  const { data, isLoading, error, refetch } = useGetAllCandidatesQuery();
+  const { data, isLoading, error } = useGetAllCandidatesQuery();
   const [deleteCandidate, { isLoading: isDeleting }] =
     useDeleteCandidateMutation();
   const [selectedCandidate, setSelectedCandidate] = useState(null);
-  const [editingCandidate, setEditingCandidate] = useState(null);
 
   const handleDelete = async (id, name) => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
@@ -29,7 +27,7 @@ const ManageCandidates = () => {
   };
 
   const handleEdit = (candidate) => {
-    setEditingCandidate(candidate);
+    navigate(`/dashboard/edit-candidate/${candidate._id}`);
   };
 
   if (isLoading) {
@@ -86,10 +84,10 @@ const ManageCandidates = () => {
                     Name
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Position
+                    Position/Designation
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Category
+                    Role/Profession
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Districts
@@ -116,12 +114,12 @@ const ManageCandidates = () => {
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-sm text-gray-900">
-                        {candidate.position}
+                        {candidate.designation}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-emerald-100 text-emerald-800">
-                        {candidate.category}
+                        {candidate.profession}
                       </span>
                     </td>
                     <td className="px-6 py-4">
@@ -175,9 +173,9 @@ const ManageCandidates = () => {
                     <h3 className="text-lg font-semibold text-gray-900 truncate">
                       {candidate.name}
                     </h3>
-                    <p className="text-sm text-gray-600 truncate">{candidate.position}</p>
+                    <p className="text-sm text-gray-600 truncate">{candidate.designation}</p>
                     <span className="inline-block mt-1 px-2 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800">
-                      {candidate.category}
+                      {candidate.profession}
                     </span>
                   </div>
                 </div>
@@ -224,96 +222,199 @@ const ManageCandidates = () => {
           onClick={() => setSelectedCandidate(null)}
         >
           <div
-            className="bg-white rounded-lg p-4 md:p-6 max-w-2xl w-full max-h-[85vh] overflow-y-auto"
+            className="bg-white rounded-lg p-4 md:p-6 max-w-4xl w-full max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-800">{selectedCandidate.name}</h3>
+            <div className="flex justify-between items-start mb-6">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                  {selectedCandidate.name}
+                </h3>
+                <p className="text-emerald-600 font-medium">
+                  {selectedCandidate.designation || selectedCandidate.position}
+                </p>
+              </div>
               <button
                 onClick={() => setSelectedCandidate(null)}
-                className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
+                className="text-gray-400 hover:text-gray-600 text-3xl leading-none"
               >
-                ×
+                &times;
               </button>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex gap-4 flex-wrap">
-                {selectedCandidate.photos?.map((photo, idx) => (
-                  <img
-                    key={idx}
-                    src={photo.secure_url}
-                    alt={`${selectedCandidate.name} ${idx + 1}`}
-                    className="h-24 w-24 md:h-32 md:w-32 object-cover rounded-lg"
-                  />
-                ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Left Column */}
+              <div className="space-y-6">
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Personal Information
+                  </h4>
+                  <div className="space-y-2 text-gray-600">
+                    <p>
+                      <span className="font-medium text-gray-700">Category:</span>{" "}
+                      {selectedCandidate.profession || selectedCandidate.category}
+                    </p>
+                    <p>
+                      <span className="font-medium text-gray-700">Birth Date:</span>{" "}
+                      {selectedCandidate.personal_info?.birth_date}
+                    </p>
+                    <p>
+                      <span className="font-medium text-gray-700">
+                        Birth Place:
+                      </span>{" "}
+                      {selectedCandidate.personal_info?.birth_place}
+                    </p>
+                    <p>
+                      <span className="font-medium text-gray-700">
+                        Nationality:
+                      </span>{" "}
+                      {selectedCandidate.personal_info?.nationality}
+                    </p>
+                    <p>
+                      <span className="font-medium text-gray-700">
+                        Mobile No:
+                      </span>{" "}
+                      {selectedCandidate.personal_info?.mobileNo || "N/A"}
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Contact & Social
+                  </h4>
+                  <ul className="space-y-1 text-gray-600">
+                    {selectedCandidate.personal_info?.website_or_social?.length > 0 ? (
+                      selectedCandidate.personal_info.website_or_social.map((link, idx) => (
+                        <li key={idx}>
+                          <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{link}</a>
+                        </li>
+                      ))
+                    ) : (
+                      <li>No social links provided</li>
+                    )}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Locations
+                  </h4>
+                  <p className="text-gray-600">
+                    <span className="font-medium text-gray-700">Districts:</span>{" "}
+                    {selectedCandidate.district?.join(", ") || "N/A"}
+                  </p>
+                  <p className="text-gray-600 mt-2">
+                    <span className="font-medium text-gray-700">Divisions:</span>{" "}
+                    {selectedCandidate.division?.join(", ") || "N/A"}
+                  </p>
+                </div>
               </div>
 
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-1">Position:</h4>
-                <p className="text-gray-600">{selectedCandidate.position}</p>
-              </div>
+              {/* Right Column */}
+              <div className="space-y-6">
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Photos
+                  </h4>
+                  <div className="flex gap-4 flex-wrap">
+                    {selectedCandidate.photos?.map((photo, idx) => (
+                      <img
+                        key={idx}
+                        src={photo.secure_url}
+                        alt={`${selectedCandidate.name} ${idx + 1}`}
+                        className="h-24 w-24 md:h-32 md:w-32 object-cover rounded-lg shadow-sm"
+                      />
+                    ))}
+                  </div>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-1">Category:</h4>
-                <p className="text-gray-600">{selectedCandidate.category}</p>
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Portfolio & Designations
+                  </h4>
+                  <div className="mb-4">
+                    <p className="font-medium text-gray-700 mb-1">Portfolio:</p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      {selectedCandidate.portfolio?.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      )) || <li>N/A</li>}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-700 mb-1">Previous Designations:</p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      {selectedCandidate.previous_designations?.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      )) || <li>N/A</li>}
+                    </ul>
+                  </div>
+                </div>
               </div>
+            </div>
 
+            <div className="mt-8 space-y-6">
               <div>
-                <h4 className="font-semibold text-gray-700 mb-1">Portfolio:</h4>
-                <ul className="list-disc list-inside text-gray-600">
-                  {selectedCandidate.portfolio?.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-1">Districts:</h4>
-                <p className="text-gray-600">{selectedCandidate.district?.join(", ")}</p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-1">Divisions:</h4>
-                <p className="text-gray-600">{selectedCandidate.division?.join(", ")}</p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-1">Summary:</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                  Summary
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
                   {selectedCandidate.overall_summary}
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 mt-6 pt-4 border-t">
-                <button
-                  onClick={() => {
-                    setSelectedCandidate(null);
-                    handleEdit(selectedCandidate);
-                  }}
-                  className="flex-1 bg-amber-500 hover:bg-amber-600 text-white px-4 py-3 rounded-lg transition-colors font-medium"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => setSelectedCandidate(null)}
-                  className="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg transition-colors font-medium"
-                >
-                  Close
-                </button>
-              </div>
+              {selectedCandidate.political_career?.length > 0 && (
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Political Career
+                  </h4>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {selectedCandidate.political_career.map((career, idx) => (
+                      <div key={idx} className="bg-gray-50 p-3 rounded">
+                        <span className="font-bold block text-emerald-600">{career.year}</span>
+                        <span className="text-gray-700">{career.event}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selectedCandidate.election_constituencies?.length > 0 && (
+                <div>
+                  <h4 className="border-b pb-2 text-lg font-semibold text-gray-800 mb-3">
+                    Election Constituencies
+                  </h4>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {selectedCandidate.election_constituencies.map((ec, idx) => (
+                      <div key={idx} className="bg-gray-50 p-3 rounded">
+                        <span className="font-bold block text-emerald-600">{ec.election_area_name}</span>
+                        <span className="text-gray-700">{ec.actual_place_name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t">
+              <button
+                onClick={() => {
+                  setSelectedCandidate(null);
+                  handleEdit(selectedCandidate);
+                }}
+                className="flex-1 bg-amber-500 hover:bg-amber-600 text-white px-4 py-3 rounded-lg transition-colors font-medium shadow-sm"
+              >
+                Edit Candidate
+              </button>
+              <button
+                onClick={() => setSelectedCandidate(null)}
+                className="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg transition-colors font-medium shadow-sm"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
-      )}
-
-      {/* Edit Candidate Modal */}
-      {editingCandidate && (
-        <EditCandidateModal
-          candidate={editingCandidate}
-          onClose={() => setEditingCandidate(null)}
-          onSuccess={refetch}
-        />
       )}
     </div>
   );

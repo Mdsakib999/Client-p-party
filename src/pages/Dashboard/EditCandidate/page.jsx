@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router";
 import {
-  useGetCandidateQuery,
+  useGetCandidateByIdQuery,
   useUpdateCandidateMutation,
 } from "../../../redux/features/candidate/candidate.api";
 import BasicAndPersonal from "../../../components/CandidateForm/BasicAndPersonal";
@@ -9,26 +9,29 @@ import CareerEducation from "../../../components/CandidateForm/CareerEducation";
 import DetailsAndPortfolio from "../../../components/CandidateForm/DetailsAndPortfolio";
 import FinalInfo from "../../../components/CandidateForm/FinalInfo";
 import BNPLoader from "../../../utils/BNPLoader";
+import toast from "react-hot-toast";
 
 const EditCandidate = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { data: candidateData, isLoading: isFetching } = useGetCandidateQuery(id);
+  const { data: candidateData, isLoading: isFetching } = useGetCandidateByIdQuery(id);
   const [updateCandidate, { isLoading: isUpdating }] = useUpdateCandidateMutation();
 
   const [currentStep, setCurrentStep] = useState(0);
   const [errors, setErrors] = useState({});
+  const [existingPhotos, setExistingPhotos] = useState([]);
 
   const [formData, setFormData] = useState({
     name: "",
-    position: "",
-    category: "",
+    designation: "",
+    profession: "",
     portfolio: [],
-    designations: [],
+    previous_designations: [],
     personal_info: {
       birth_date: "",
       birth_place: "",
       nationality: "",
+      mobileNo: "",
       website_or_social: [],
     },
     academic_career: {
@@ -42,28 +45,30 @@ const EditCandidate = () => {
     election_constituencies: [],
     life_activities: "",
     other_income_sources: [],
-    social_links: [],
     photos: null,
     overall_summary: "",
     district: [],
     division: [],
   });
 
-  // No arrayInputs needed!
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentStep]);
 
   useEffect(() => {
     if (candidateData?.data) {
       const data = candidateData.data;
       setFormData({
         name: data.name || "",
-        position: data.position || "",
-        category: data.category || "",
+        designation: data.designation || "",
+        profession: data.profession || "",
         portfolio: data.portfolio || [],
-        designations: data.designations || [],
+        previous_designations: data.previous_designations || [],
         personal_info: {
           birth_date: data.personal_info?.birth_date || "",
           birth_place: data.personal_info?.birth_place || "",
           nationality: data.personal_info?.nationality || "",
+          mobileNo: data.personal_info?.mobileNo || "",
           website_or_social: data.personal_info?.website_or_social || [],
         },
         academic_career: {
@@ -78,33 +83,101 @@ const EditCandidate = () => {
         election_constituencies: data.election_constituencies || [],
         life_activities: data.life_activities || "",
         other_income_sources: data.other_income_sources || [],
-        social_links: data.social_links || [],
-        photos: null, // Don't preload files, only new files if updated
+        photos: null,
         overall_summary: data.overall_summary || "",
         district: data.district || [],
         division: data.division || [],
       });
+      if (data.photos && Array.isArray(data.photos)) {
+        setExistingPhotos(data.photos);
+      }
     }
   }, [candidateData]);
 
-  // --- Handlers (Copied from CreateCandidate & adapted) ---
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleNestedChange = (parent, field, value) => {
     setFormData((prev) => ({
       ...prev,
-      [parent]: { ...prev[parent], [field]: value },
+      [parent]: {
+        ...prev[parent],
+        [field]: value,
+      },
     }));
-    if (errors[`${parent}.${field}`])
+    if (errors[`${parent}.${field}`]) {
       setErrors((prev) => ({ ...prev, [`${parent}.${field}`]: "" }));
+    }
   };
 
-  // Dynamic Array Handlers
+  const addElectionConstituency = (constituencyData) => {
+    if (constituencyData) {
+      setFormData((prev) => ({
+        ...prev,
+        election_constituencies: [
+          ...prev.election_constituencies,
+          constituencyData,
+        ],
+      }));
+    }
+  };
+
+  const handleAddLocation = (division, district) => {
+    setFormData((prev) => {
+      const newDivisions = prev.division.includes(division)
+        ? prev.division
+        : [...prev.division, division];
+
+      const newDistricts = prev.district.includes(district)
+        ? prev.district
+        : [...prev.district, district];
+
+      return {
+        ...prev,
+        division: newDivisions,
+        district: newDistricts,
+      };
+    });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      photos: e.target.files,
+    }));
+    if (errors.photos) {
+      setErrors((prev) => ({ ...prev, photos: "" }));
+    }
+  };
+
+  const handleRemoveExistingPhoto = (index) => {
+    setExistingPhotos((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const removePoliticalCareer = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      political_career: prev.political_career.filter((_, i) => i !== index),
+    }));
+  };
+
+  const removeElectionConstituency = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      election_constituencies: prev.election_constituencies.filter(
+        (_, i) => i !== index
+      ),
+    }));
+  };
+
   const handleDynamicArrayChange = (field, index, value) => {
     setFormData((prev) => {
       const updatedArray = [...prev[field]];
@@ -153,6 +226,7 @@ const EditCandidate = () => {
     });
   };
 
+  // Political Career Specific
   const handlePoliticalCareerChange = (index, field, value) => {
     setFormData((prev) => {
       const updated = [...prev.political_career];
@@ -161,61 +235,12 @@ const EditCandidate = () => {
     });
   };
 
+  // Replaces the old addPoliticalCareer
   const addPoliticalCareer = () => {
     setFormData((prev) => ({
       ...prev,
       political_career: [...prev.political_career, { year: "", event: "" }],
     }));
-  };
-
-  const removePoliticalCareer = (index) => {
-    setFormData((prev) => ({
-      ...prev,
-      political_career: prev.political_career.filter((_, i) => i !== index),
-    }));
-  };
-
-  const addElectionConstituency = (constituencyData) => {
-    setFormData((prev) => ({
-      ...prev,
-      election_constituencies: [
-        ...prev.election_constituencies,
-        constituencyData,
-      ],
-    }));
-  };
-
-  const removeElectionConstituency = (index) => {
-    setFormData((prev) => ({
-      ...prev,
-      election_constituencies: prev.election_constituencies.filter(
-        (_, i) => i !== index
-      ),
-    }));
-  };
-
-  const handleAddLocation = (division, district) => {
-    setFormData((prev) => {
-      const newDivisions = prev.division.includes(division)
-        ? prev.division
-        : [...prev.division, division];
-      const newDistricts = prev.district.includes(district)
-        ? prev.district
-        : [...prev.district, district];
-      return {
-        ...prev,
-        division: newDivisions,
-        district: newDistricts,
-      };
-    });
-  };
-
-  const handleFileChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      photos: e.target.files,
-    }));
-    if (errors.photos) setErrors((prev) => ({ ...prev, photos: "" }));
   };
 
   // Validation
@@ -225,25 +250,37 @@ const EditCandidate = () => {
 
     if (step === 0) {
       if (!formData?.name?.trim()) newErrors.name = "Name is required";
-      if (!formData?.position?.trim()) newErrors.position = "Position is required";
-      if (!formData?.category?.trim()) newErrors.category = "Category is required";
+      if (!formData?.personal_info?.birth_place?.trim()) newErrors["personal_info.birth_place"] = "Birth place is required";
     }
 
     if (step === 3) { // Final Step
       if (!formData?.overall_summary?.trim()) newErrors.overall_summary = "Overall summary is required";
-      // Photos not required on edit if already exist (logic handled in backend usually? or we check if data.photos exist)
-      // Actually if user doesn't upload new photos, existing ones are kept. 
-      // So detailed validation skipped for photos here unless we want to enforce it always.
+      if (!formData?.district || formData?.district?.length === 0) newErrors.district = "At least one district is required";
+      if (!formData?.division || formData?.division?.length === 0) newErrors.division = "At least one division is required";
+      if (!formData?.election_constituencies || formData?.election_constituencies?.length === 0) {
+        newErrors.election_constituencies = "At least one election constituency is required";
+      }
     }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       isValid = false;
+
+      setTimeout(() => {
+        const firstErrorField = Object.keys(newErrors)[0];
+        const element = document.querySelector(`[name="${firstErrorField}"]`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+          element.focus();
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 100);
     }
     return isValid;
   };
 
-  // Steps Definition
+  // Define steps
   const steps = [
     {
       name: "Basic & Personal Info",
@@ -253,6 +290,9 @@ const EditCandidate = () => {
           errors={errors}
           handleInputChange={handleInputChange}
           handleNestedChange={handleNestedChange}
+          handleDynamicArrayChange={handleDynamicArrayChange}
+          addDynamicArrayItem={addDynamicArrayItem}
+          removeDynamicArrayItem={removeDynamicArrayItem}
           handleNestedDynamicArrayChange={handleNestedDynamicArrayChange}
           addNestedDynamicArrayItem={addNestedDynamicArrayItem}
           removeNestedDynamicArrayItem={removeNestedDynamicArrayItem}
@@ -264,7 +304,6 @@ const EditCandidate = () => {
       component: (
         <CareerEducation
           formData={formData}
-          errors={errors}
           handleNestedChange={handleNestedChange}
           handleDynamicArrayChange={handleDynamicArrayChange}
           addDynamicArrayItem={addDynamicArrayItem}
@@ -306,19 +345,27 @@ const EditCandidate = () => {
           handleDynamicArrayChange={handleDynamicArrayChange}
           addDynamicArrayItem={addDynamicArrayItem}
           removeDynamicArrayItem={removeDynamicArrayItem}
+          existingPhotos={existingPhotos}
+          handleRemoveExistingPhoto={handleRemoveExistingPhoto}
         />
       ),
     },
   ];
 
-  const handleNextStep = () => {
+  const handleNextStep = (e) => {
+    e.preventDefault();
     if (validateStep(currentStep)) {
-      if (currentStep < steps.length - 1) setCurrentStep(currentStep + 1);
+      if (currentStep < steps.length - 1) {
+        setCurrentStep(currentStep + 1);
+      }
     }
   };
 
-  const handlePreviousStep = () => {
-    if (currentStep > 0) setCurrentStep(currentStep - 1);
+  const handlePreviousStep = (e) => {
+    e.preventDefault();
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -329,23 +376,26 @@ const EditCandidate = () => {
       const submitData = new FormData();
       // Add basic fields
       submitData.append("name", formData.name);
-      submitData.append("position", formData.position);
-      submitData.append("category", formData.category);
+      submitData.append("designation", formData.designation);
+      submitData.append("profession", formData.profession);
       submitData.append("life_activities", formData.life_activities);
       submitData.append("overall_summary", formData.overall_summary);
 
       // Add nested objects
       submitData.append("portfolio", JSON.stringify(formData.portfolio));
-      submitData.append("designations", JSON.stringify(formData.designations));
+      submitData.append("previous_designations", JSON.stringify(formData.previous_designations));
       submitData.append("personal_info", JSON.stringify(formData.personal_info));
       submitData.append("academic_career", JSON.stringify(formData.academic_career));
       submitData.append("business_income_source_professional_career", JSON.stringify(formData.business_income_source_professional_career));
       submitData.append("political_career", JSON.stringify(formData.political_career));
       submitData.append("election_constituencies", JSON.stringify(formData.election_constituencies));
       submitData.append("other_income_sources", JSON.stringify(formData.other_income_sources));
-      submitData.append("social_links", JSON.stringify(formData.social_links));
+      // submitData.append("social_links", JSON.stringify(formData.social_links));
       submitData.append("district", JSON.stringify(formData.district));
       submitData.append("division", JSON.stringify(formData.division));
+
+      // Pass existing photos as JSON
+      submitData.append("existing_photos", JSON.stringify(existingPhotos));
 
       // Add photos ONLY if selected
       if (formData.photos && formData.photos.length > 0) {
@@ -354,12 +404,16 @@ const EditCandidate = () => {
         }
       }
 
-      await updateCandidate({ id, data: submitData }).unwrap();
-      alert("Candidate updated successfully");
-      navigate("/dashboard/all-candidate");
+      await updateCandidate({ id, updatedData: submitData }).unwrap();
+      toast.success("Candidate updated successfully");
+      navigate("/dashboard/manage-candidates");
     } catch (error) {
       console.error("Error updating candidate:", error);
-      alert(error?.data?.message || "Error updating candidate");
+      const errorMessage =
+        error?.data?.message ||
+        error?.message ||
+        "Error updating candidate";
+      toast.error(errorMessage);
     }
   };
 
