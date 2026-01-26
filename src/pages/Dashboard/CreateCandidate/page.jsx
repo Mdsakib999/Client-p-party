@@ -11,14 +11,15 @@ const CreateCandidate = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
-    position: "",
-    category: "",
+    designation: "",
+    profession: "",
     portfolio: [],
-    designations: [],
+    previous_designations: [],
     personal_info: {
       birth_date: "",
       birth_place: "",
       nationality: "",
+      mobileNo: "",
       website_or_social: [],
     },
     academic_career: {
@@ -202,13 +203,24 @@ const CreateCandidate = () => {
 
     if (step === 0) {
       if (!formData?.name?.trim()) newErrors.name = "Name is required";
-      if (!formData?.position?.trim()) newErrors.position = "Position is required";
-      if (!formData?.category?.trim()) newErrors.category = "Category is required";
+      if (!formData?.personal_info?.birth_place?.trim()) newErrors["personal_info.birth_place"] = "Birth place is required";
     }
+
+    // if (step === 2) { // Details & Portfolio
+    //    if (!formData?.election_constituencies || formData?.election_constituencies?.length === 0) {
+    //       newErrors.election_constituencies = "At least one election constituency is required";
+    //    }
+    // }
 
     if (step === 3) { // Final Step
       if (!formData?.overall_summary?.trim()) newErrors.overall_summary = "Overall summary is required";
-      if (!formData?.photos || formData?.photos?.length === 0) newErrors.photos = "At least one photo is required";
+      if (!formData?.district || formData?.district?.length === 0) newErrors.district = "At least one district is required";
+      if (!formData?.division || formData?.division?.length === 0) newErrors.division = "At least one division is required";
+      if (!formData?.election_constituencies || formData?.election_constituencies?.length === 0) {
+        newErrors.election_constituencies = "At least one election constituency is required";
+      }
+      // Photos are now optional
+      // if (!formData?.photos || formData?.photos?.length === 0) newErrors.photos = "At least one photo is required";
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -318,12 +330,12 @@ const CreateCandidate = () => {
       const submitData = new FormData();
 
       submitData.append("name", formData.name);
-      submitData.append("position", formData.position);
-      submitData.append("category", formData.category);
+      submitData.append("designation", formData.designation);
+      submitData.append("profession", formData.profession);
       submitData.append("life_activities", formData.life_activities);
       submitData.append("overall_summary", formData.overall_summary);
       submitData.append("portfolio", JSON.stringify(formData.portfolio));
-      submitData.append("designations", JSON.stringify(formData.designations));
+      submitData.append("previous_designations", JSON.stringify(formData.previous_designations));
       submitData.append(
         "personal_info",
         JSON.stringify(formData.personal_info)
@@ -348,7 +360,7 @@ const CreateCandidate = () => {
         "other_income_sources",
         JSON.stringify(formData.other_income_sources)
       );
-      submitData.append("social_links", JSON.stringify(formData.social_links));
+      // submitData.append("social_links", JSON.stringify(formData.social_links)); // Merged in backend
       submitData.append("district", JSON.stringify(formData.district));
       submitData.append("division", JSON.stringify(formData.division));
 
@@ -367,7 +379,7 @@ const CreateCandidate = () => {
         error?.data?.message ||
         error?.message ||
         "Error creating candidate. Check console for details.";
-      alert(errorMessage);
+      toast.error(errorMessage);
     }
   };
 
@@ -375,14 +387,15 @@ const CreateCandidate = () => {
     setErrors({});
     setFormData({
       name: "",
-      position: "",
-      category: "",
+      designation: "",
+      profession: "",
       portfolio: [],
-      designations: [],
+      previous_designations: [],
       personal_info: {
         birth_date: "",
         birth_place: "",
         nationality: "",
+        mobileNo: "",
         website_or_social: [],
       },
       academic_career: {
@@ -396,7 +409,7 @@ const CreateCandidate = () => {
       election_constituencies: [],
       life_activities: "",
       other_income_sources: [],
-      social_links: [],
+      // social_links removed as it is part of personal_info
       photos: null,
       overall_summary: "",
       district: [],
@@ -408,8 +421,6 @@ const CreateCandidate = () => {
   return (
     <div className="p-6 max-w-4xl mx-auto" >
       <h2 className="text-3xl font-bold mb-8">Create New Candidate</h2>
-
-      {/* Step Indicator */}
       <div className="mb-8" >
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-medium text-gray-600">

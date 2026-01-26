@@ -43,34 +43,34 @@ const BasicAndPersonal = ({
           </div>
           <div>
             <label className={labelClass}>
-              Current Position <span className="text-red-500">*</span>
+              Current Designation
             </label>
             <input
               type="text"
-              name="position"
+              name="designation"
               placeholder="e.g. Secretary General"
-              value={formData?.position || ""}
+              value={formData?.designation || ""}
               onChange={handleInputChange}
-              className={inputClass(errors?.position)}
+              className={inputClass(errors?.designation)}
             />
-            {errors?.position && (
-              <p className="text-red-500 text-xs mt-1">{errors.position}</p>
+            {errors?.designation && (
+              <p className="text-red-500 text-xs mt-1">{errors.designation}</p>
             )}
           </div>
           <div>
             <label className={labelClass}>
-              Category/Role <span className="text-red-500">*</span>
+              Profession
             </label>
             <input
               type="text"
-              name="category"
+              name="profession"
               placeholder="e.g. Senior Leader"
-              value={formData?.category || ""}
+              value={formData?.profession || ""}
               onChange={handleInputChange}
-              className={inputClass(errors?.category)}
+              className={inputClass(errors?.profession)}
             />
-            {errors?.category && (
-              <p className="text-red-500 text-xs mt-1">{errors.category}</p>
+            {errors?.profession && (
+              <p className="text-red-500 text-xs mt-1">{errors.profession}</p>
             )}
           </div>
           <div className="md:col-span-2">
@@ -111,7 +111,7 @@ const BasicAndPersonal = ({
             />
           </div>
           <div>
-            <label className={labelClass}>Birth Place</label>
+            <label className={labelClass}>Birth Place <span className="text-red-500">*</span></label>
             <input
               type="text"
               placeholder="e.g. Dhaka"
@@ -123,8 +123,11 @@ const BasicAndPersonal = ({
                   e.target.value
                 )
               }
-              className={inputClass()}
+              className={inputClass(errors && errors["personal_info.birth_place"])}
             />
+            {errors && errors["personal_info.birth_place"] && (
+              <p className="text-red-500 text-xs mt-1">{errors["personal_info.birth_place"]}</p>
+            )}
           </div>
           <div>
             <label className={labelClass}>Nationality</label>
@@ -136,6 +139,22 @@ const BasicAndPersonal = ({
                 handleNestedChange(
                   "personal_info",
                   "nationality",
+                  e.target.value
+                )
+              }
+              className={inputClass()}
+            />
+          </div>
+          <div>
+            <label className={labelClass}>Mobile No</label>
+            <input
+              type="text"
+              placeholder="e.g. 01700000000"
+              value={formData?.personal_info?.mobileNo || ""}
+              onChange={(e) =>
+                handleNestedChange(
+                  "personal_info",
+                  "mobileNo",
                   e.target.value
                 )
               }

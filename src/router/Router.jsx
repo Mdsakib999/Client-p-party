@@ -33,7 +33,7 @@ import TermsAndConditions from "../pages/TermsAndConditions/page.jsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy/page.jsx";
 import Vision from "../pages/Vision/page.jsx";
 import FrameEditor from "../pages/FrameEditor/page.jsx";
-
+import EditCandidate from "../pages/dashboard/EditCandidate/page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -143,6 +143,10 @@ const router = createBrowserRouter([
           {
             path: "manage-candidates",
             Component: withAuth(ManageCandidates, ["SUPER_ADMIN", "ADMIN"]),
+          },
+          {
+            path: "edit-candidate/:id",
+            Component: withAuth(EditCandidate, ["SUPER_ADMIN", "ADMIN"]),
           },
           {
             path: "manage-news-articles",
