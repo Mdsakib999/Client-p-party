@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCreateCandidateMutation } from "../../../redux/features/candidate/candidate.api";
 import BasicAndPersonal from "../../../components/CandidateForm/BasicAndPersonal";
 import CareerEducation from "../../../components/CandidateForm/CareerEducation";
@@ -40,6 +40,15 @@ const CreateCandidate = () => {
   });
 
   const [errors, setErrors] = useState({});
+
+  // Scroll to top when step changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [currentStep]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -205,6 +214,12 @@ const CreateCandidate = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       isValid = false;
+      // Scroll to top to show validation errors
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
     }
 
     return isValid;

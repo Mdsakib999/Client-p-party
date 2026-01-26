@@ -8,6 +8,7 @@ import BasicAndPersonal from "../../../components/CandidateForm/BasicAndPersonal
 import CareerEducation from "../../../components/CandidateForm/CareerEducation";
 import DetailsAndPortfolio from "../../../components/CandidateForm/DetailsAndPortfolio";
 import FinalInfo from "../../../components/CandidateForm/FinalInfo";
+import BNPLoader from "../../../utils/BNPLoader";
 
 const EditCandidate = () => {
   const { id } = useParams();
@@ -355,14 +356,14 @@ const EditCandidate = () => {
 
       await updateCandidate({ id, data: submitData }).unwrap();
       alert("Candidate updated successfully");
-      navigate("/dashboard/all-candidate"); // Navigate back to list
+      navigate("/dashboard/all-candidate");
     } catch (error) {
       console.error("Error updating candidate:", error);
       alert(error?.data?.message || "Error updating candidate");
     }
   };
 
-  if (isFetching) return <div className="p-10 text-center">Loading candidate data...</div>;
+  if (isFetching) return <BNPLoader />
 
   return (
     <div className="p-6 max-w-4xl mx-auto">

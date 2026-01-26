@@ -130,7 +130,7 @@ export default function Navbar() {
             >
               Campaigns
             </NavLink>
-            {/* <NavLink
+            <NavLink
               to="/frame-editor"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
@@ -140,7 +140,7 @@ export default function Navbar() {
               }
             >
               Frame Editor
-            </NavLink> */}
+            </NavLink>
           </div>
 
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
@@ -305,7 +305,7 @@ export default function Navbar() {
             >
               Campaigns
             </NavLink>
-            {/* <NavLink
+            <NavLink
               to="/frame-editor"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
@@ -316,7 +316,7 @@ export default function Navbar() {
               }
             >
               Frame Editor
-            </NavLink> */}
+            </NavLink>
 
             <div className="pt-4 space-y-2">
               <button className="w-full flex items-center gap-2 bg-green-700 text-white px-5 py-3 rounded-lg hover:bg-green-800 transition-colors font-medium shadow-sm">
