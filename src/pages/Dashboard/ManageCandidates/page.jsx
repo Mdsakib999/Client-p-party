@@ -6,6 +6,7 @@ import {
 } from "../../../redux/features/candidate/candidate.api";
 import { FiEdit2, FiTrash2, FiEye } from "react-icons/fi";
 import EditCandidateModal from "../../../components/EditCandidateModal";
+import BNPLoader from "../../../utils/BNPLoader";
 
 const ManageCandidates = () => {
   const navigate = useNavigate();
@@ -33,11 +34,7 @@ const ManageCandidates = () => {
 
   if (isLoading) {
     return (
-      <div className="p-4 md:p-6">
-        <div className="flex justify-center items-center h-64">
-          <div className="text-lg">Loading candidates...</div>
-        </div>
-      </div>
+      <BNPLoader />
     );
   }
 

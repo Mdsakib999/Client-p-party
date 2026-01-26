@@ -261,7 +261,7 @@ const FinalInfo = ({
         </div>
 
         {selectedConstituency && (
-          <div className="mb-4 p-4 bg-green-50 rounded-lg border border-green-100">
+          <div className="mb-4 p-4 bg-white rounded-lg border border-gray-200">
             <label className={labelClass}>
               Election Area Name <span className="text-red-500">*</span>
             </label>

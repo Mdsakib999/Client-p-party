@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { useUserInfoQuery } from "../../redux/features/auth/auth.api";
 import { SquareActivity, SquareKanban } from "lucide-react";
+import ScrollToTop from "../../ScrollToTop";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
+      <ScrollToTop />
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
@@ -63,8 +65,8 @@ const Dashboard = () => {
               to={item.path}
               onClick={() => setIsSidebarOpen(false)}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all ${location.pathname === item.path
-                  ? "bg-emerald-100 text-emerald-700 shadow-sm"
-                  : "text-gray-700 hover:bg-emerald-50 hover:text-emerald-700"
+                ? "bg-emerald-100 text-emerald-700 shadow-sm"
+                : "text-gray-700 hover:bg-emerald-50 hover:text-emerald-700"
                 }`}
             >
               <item.Icon size={20} />
@@ -87,7 +89,6 @@ const Dashboard = () => {
           <h2 className="text-xl font-bold text-gray-800">Dashboard</h2>
         </header>
 
-        {/* Page content */}
         <main className="p-4 lg:p-8 min-h-screen bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <Outlet />
