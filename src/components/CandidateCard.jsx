@@ -30,9 +30,12 @@ export default function CandidateCard({ candidate }) {
         <div className="p-4 flex flex-col gap-2">
           <h3 className="font-semibold text-base sm:text-lg text-gray-900 leading-snug line-clamp-2">
             {candidate?.name}
+            <p className="text-emerald-700 font-semibold text-sm line-clamp-1">
+              {candidate?.designation}
+            </p>
+
             {candidate?.election_constituencies?.length > 0 && (
               <span className="text-sm font-normal text-gray-500">
-                {" "}
                 (
                 {candidate.election_constituencies
                   .map(area => area.actual_place_name)
@@ -42,9 +45,6 @@ export default function CandidateCard({ candidate }) {
             )}
           </h3>
 
-          <p className="text-emerald-700 font-semibold text-sm line-clamp-1">
-            {candidate?.designation}
-          </p>
         </div>
       </div>
     </Link>

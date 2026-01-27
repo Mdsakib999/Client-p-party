@@ -79,7 +79,7 @@ const FrameEditor = () => {
     };
 
     return (
-        <div className="min-h-screen bg-green-50 py-8 px-4 flex flex-col items-center">
+        <div className="min-h-screen bg-white py-8 px-4 flex flex-col items-center">
             <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
                 {/* Header */}
                 <div className="text-center mb-8">
@@ -127,13 +127,13 @@ const FrameEditor = () => {
 
                     {/* Selector & Controls */}
                     <div className="w-full max-w-md space-y-8">
-                        <div className="p-6 rounded-3xl shadow-lg border border-green-100">
+                        <div className="p-6 rounded-3xl shadow-lg border border-green-100 bg-green-100">
                             <h3 className="text-gray-800 text-center mb-2 font-semibold text-lg">Choose Your Frame</h3>
                             <FrameSelector onSelectFrame={handleSelectFrame} mediaType={selectedMediaType} />
                         </div>
 
                         {/* Control Panel */}
-                        <div className="p-6 rounded-3xl shadow-lg border border-green-100">
+                        <div className="p-6 rounded-3xl shadow-lg border border-green-100 bg-green-50">
                             <ControlPanel
                                 onUploadPhoto={handleUploadPhoto}
                                 onZoomChange={handleZoomChange}
