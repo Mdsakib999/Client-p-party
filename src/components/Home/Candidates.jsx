@@ -15,7 +15,7 @@ export const Candidates = () => {
     {
       id: "6977f60d315fd66776c74e8d",
       name: "Mirza Fakhrul Islam Alamgir",
-      position: "Secretary General - BNP",
+      position: "Secretary General",
       image:
         "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
       highlight: false,
@@ -23,7 +23,7 @@ export const Candidates = () => {
     {
       id: "6977f60d315fd66776c74e90",
       name: "Salauddin Ahmed",
-      position: "Member of National Standing Committee - BNP",
+      position: "Member of National Standing Committee",
       image:
         "https://i0.wp.com/asiatimes.com/wp-content/uploads/2025/11/Bangladesh-Salahuddin-Ahmed.jpg?fit=1200%2C800&quality=89&ssl=1",
       highlight: false,

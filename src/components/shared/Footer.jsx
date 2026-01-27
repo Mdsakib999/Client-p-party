@@ -17,7 +17,7 @@ export default function Footer() {
                 Bangladesh
               </div>
               <div className="font-semibold leading-tight text-white">
-                Nationalist Party - BNP
+                Nationalist Party <br /> Candidates
               </div>
             </div>
           </div>
