@@ -18,12 +18,26 @@ const Highlights = () => {
             change and reflect the aspirations of the people.
           </p>
 
+
+
           <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-green-700 text-white px-6 py-2.5 rounded hover:bg-green-800 transition-colors font-medium"
-          >
-            Contact Us <HiArrowRight className="w-5 h-5" />
-          </Link>
+              to="/contact"
+              className="
+      group inline-flex items-center gap-2
+      px-7 py-3
+      rounded-full
+      bg-gradient-to-r from-green-700 to-green-600
+      text-white font-semibold
+      shadow-lg shadow-green-700/30
+      transition-all duration-300
+      hover:from-green-800 hover:to-green-700
+      hover:shadow-xl hover:-translate-y-0.5
+      focus:ring-4 focus:ring-green-300
+    "
+            >
+              Contact Us
+              <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
         </div>
 
         <HighlightCard />

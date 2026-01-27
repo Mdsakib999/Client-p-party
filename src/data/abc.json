@@ -1,3 +1,1189 @@
 [
+{
+  "name": "Abdus Salam Pintu",
+  "designation": "Former State Minister",
+  "profession": "Politician",
+  "portfolio": [
+    "Education",
+    "Industries",
+    "Information"
+  ],
+  "previous_designations": [
+    "Member of Parliament",
+    "State Minister for Education",
+    "State Minister for Industries",
+    "State Minister for Information",
+    "Vice Chairman, Bangladesh Nationalist Party"
+  ],
+  "personal_info": {
+    "birth_date": "1955-01-01",
+    "birth_place": "Tangail District, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801831651216",
+    "website_or_social": []
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "1991",
+      "event": "Elected Member of Parliament for Tangail-2"
+    },
+    {
+      "year": "1996",
+      "event": "Re-elected Member of Parliament"
+    },
+    {
+      "year": "2001",
+      "event": "Elected Member of Parliament and appointed State Minister"
+    },
+    {
+      "year": "2001–2003",
+      "event": "State Minister for Education"
+    },
+    {
+      "year": "2003–2006",
+      "event": "State Minister for Industries"
+    },
+    {
+      "year": "2006",
+      "event": "State Minister for Information"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Gopalpur and Bhuapur Upazilas, Tangail",
+      "election_area_name": "Tangail-2"
+    }
+  ],
+  "life_activities": "Active in national politics, parliamentary governance, and party leadership within the Bangladesh Nationalist Party.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Abdus Salam Pintu is a senior Bangladeshi politician of the Bangladesh Nationalist Party (BNP). He served multiple terms as a Member of Parliament from Tangail-2 and held responsibilities as State Minister for Education, Industries, and Information.",
+  "district": ["Tangail"],
+  "division": ["Dhaka"]
+},
+
+
+{
+  "name": "SM Obaidul Haque Nasir",
+  "designation": "Prospective Parliamentary Candidate",
+  "profession": "Politician",
+  "portfolio": [
+    "Constituency Development and Public Engagement",
+    "Local Governance and Community Welfare",
+    "Youth and Social Development Initiatives"
+  ],
+  "previous_designations": [
+    "Local Political Organizer",
+    "Community Leader"
+  ],
+  "personal_info": {
+    "birth_date": "05-03-1979",
+    "birth_place": "Village: Sobujbagh, Ghatail Municipality, Ghatail, Tangail, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801711321221",
+    "website_or_social": []
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [
+      "University of Dhaka",
+      "Southeast University"
+    ],
+    "degree": [
+      "MSS (Public Administration), University of Dhaka",
+      "BSS (Honours), University of Dhaka",
+      "PGD (Japanese Studies), University of Dhaka",
+      "LL.B, Southeast University"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Ghatail Upazila, Tangail",
+      "election_area_name": "Tangail-3"
+    }
+  ],
+  "life_activities": "Engaged in local political activities, community development, youth initiatives, and public engagement in Ghatail Upazila of Tangail district.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "SM Obaidul Haque Nasir is a Bangladeshi political figure and a prospective parliamentary candidate for the Tangail-3 constituency, which comprises Ghatail Upazila of Tangail District. He holds advanced academic qualifications in public administration, social sciences, Japanese studies, and law.",
+  "district": ["Tangail"],
+  "division": ["Dhaka"]
+},
+
+{
+  "name": "Md. Lutfur Rahman Matin",
+  "designation": "National Parliament Candidate",
+  "profession": "",
+  "portfolio": [],
+  "previous_designations": [],
+  "personal_info": {
+    "birth_date": "",
+    "birth_place": "Rajbari",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01711-566719",
+    "website_or_social": []
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Associated with political activities in Tangail-4 (Kalihati Upazila)"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Kalihati Upazila",
+      "election_area_name": "Tangail-4"
+    }
+  ],
+  "life_activities": "",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Md. Lutfur Rahman Matin is a National Parliament candidate from Tangail-4 (Kalihati Upazila).",
+  "district": ["Tangail"],
+  "division": ["Dhaka"]
+},
+
+{
+  "name": "Md. Rabiul Awal Lablu",
+  "designation": "Parliamentary Candidate",
+  "profession": "Politician",
+  "portfolio": [
+    "BNP Active Member",
+    "Parliamentary Candidate for Tangail-6 (2026 General Election)",
+    "Local Party Leader in Nagarpur and Delduar Upazilas"
+  ],
+  "previous_designations": [
+    "Local BNP Unit Secretary",
+    "Nagarpur Upazila BNP Committee Member",
+    "Delduar Upazila BNP Committee Member"
+  ],
+  "personal_info": {
+    "birth_date": "1967-01-01",
+    "birth_place": "Nagarpur",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01733-501911",
+    "website_or_social": ["robiul.awal.lovelu@gmail.com"]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": ["University of Dhaka"],
+    "degree": ["Graduate, Political Science"]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "2025",
+      "event": "Nominated by the Bangladesh Nationalist Party (BNP) as candidate for Tangail-6 for the 2026 general election"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Nagarpur and Delduar Upazilas",
+      "election_area_name": "Tangail-6"
+    }
+  ],
+  "life_activities": "Active in grassroots political work, community engagement, and local development initiatives in Nagarpur and Delduar Upazilas. Longtime BNP activist working to strengthen party presence and connect with constituents.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Md. Rabiul Awal Lablu is the BNP-nominated candidate for Tangail-6 (Nagarpur & Delduar) in the upcoming 2026 national election.",
+  "district": ["Tangail"],
+  "division": ["Dhaka"]
+},
+
+{
+  "name": "Abul Kalam Azad Siddique",
+  "designation": "Former Member of Parliament",
+  "profession": "Politician",
+  "portfolio": [
+    "President of Mirzapur Upazila BNP",
+    "Child Affairs Secretary of BNP Central Executive Committee"
+  ],
+  "previous_designations": [
+    "MP for Tangail-7 (Sixth Jatiya Sangsad, 1996)",
+    "MP for Tangail-7 (Seventh Jatiya Sangsad, 1996)"
+  ],
+  "personal_info": {
+    "birth_date": "1964-10-31",
+    "birth_place": "Gorail, Mirzapur, Tangail",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01711824411",
+    "website_or_social": ["akazad.siddique@gmail.com"]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "Mirzapur Degree College",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "1996",
+      "event": "Elected as Member of Parliament for Tangail-7 in the Sixth Jatiya Sangsad"
+    },
+    {
+      "year": "1996",
+      "event": "Elected as Member of Parliament for Tangail-7 in the Seventh Jatiya Sangsad"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Mirzapur Upazila",
+      "election_area_name": "Tangail-7"
+    }
+  ],
+  "life_activities": "Active in local politics and party leadership, focused on youth and child affairs in the BNP, and involved in community development in Mirzapur.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Abul Kalam Azad Siddique is a BNP politician and former MP for Tangail-7, active in local leadership and youth/child affairs.",
+  "district": ["Tangail"],
+  "division": ["Dhaka"]
+},
+
+{
+  "name": "Ahmed Azam Khan",
+  "designation": "Politician",
+  "profession": "Advocate",
+  "portfolio": [
+    "Legal Practice",
+    "Public Representation",
+    "Grassroots Political Activities",
+    "Social Welfare Work"
+  ],
+  "previous_designations": [
+    "Senior Advocate",
+    "Political Organizer",
+    "Social Worker"
+  ],
+  "personal_info": {
+    "birth_date": "14-01-1957",
+    "birth_place": "Basail, Tangail",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801883924539",
+    "website_or_social": [
+      "aazamkhanaoociates@gmail.com"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [
+    "Legal practice (Advocacy)"
+  ],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Active involvement in constituency-based and national political activities"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Basail Upazila",
+      "election_area_name": "Tangail-8"
+    },
+    {
+      "actual_place_name": "Sakhipur Upazila",
+      "election_area_name": "Tangail-8"
+    }
+  ],
+  "life_activities": "Engaged in legal service, public service, political organization, and social welfare activities.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Ahmed Azam Khan is a Bangladeshi politician and advocate from Basail, Tangail, associated with the Tangail-8 constituency.",
+  "district": [
+    "Tangail"
+  ],
+  "division": [
+    "Dhaka"
+  ]
+},
+
+{
+  "name": "M. Rashiduzzaman Millat",
+  "designation": "Former Member of Parliament (Jamalpur-1)",
+  "profession": "Politician",
+  "portfolio": [
+    "Member of Parliament (Jamalpur-1)",
+    "Treasurer of Bangladesh Nationalist Party (BNP)"
+  ],
+  "previous_designations": [
+    "President of Dewanganj Upazila BNP",
+    "Former District BNP President (Jamalpur)"
+  ],
+  "personal_info": {
+    "birth_date": "14 January 1961",
+    "birth_place": "Dewanganj, Jamalpur, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801711562323",
+    "website_or_social": [
+      "https://web.facebook.com/rashiduzzaman.millat"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "universities": [],
+    "degrees": [
+      "Master’s in Islamic Studies",
+      "Bachelor of Business Administration (BBA)"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "2001",
+      "event": "Elected as Member of Parliament from Jamalpur-1 (Dewanganj–Baksiganj)"
+    },
+    {
+      "year": "",
+      "event": "Served as Treasurer of Bangladesh Nationalist Party (BNP)"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Dewanganj–Baksiganj, Jamalpur",
+      "election_area_name": "Jamalpur-1"
+    }
+  ],
+  "life_activities": "Veteran political organizer involved in national party finance management, constituency-level development initiatives, and long-term grassroots political leadership.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "M. Rashiduzzaman Millat is a senior Bangladeshi politician of the Bangladesh Nationalist Party, former Member of Parliament for Jamalpur-1, and currently serving as the party’s Treasurer with decades of political experience.",
+  "district": [
+    "Jamalpur"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+
+{
+  "name": "Sultan Mahmud Babu",
+  "designation": "Former Member of Parliament",
+  "profession": "Politician",
+  "portfolio": [
+    "Member of Parliament (Jamalpur-2)"
+  ],
+  "previous_designations": [
+    "President, BNP Islampur Upazila Committee",
+    "Vice President, BNP Jamalpur District Committee",
+    "Member, BNP National Executive Committee"
+  ],
+  "personal_info": {
+    "birth_date": "31 March 1955",
+    "birth_place": "Islampur, Jamalpur, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01715188630",
+    "email": "smbabu19@gmail.com",
+    "website_or_social": []
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [
+      "University of Dhaka",
+      "Darul Ihsan University",
+      "American Bangladesh University"
+    ],
+    "degree": [
+      "BSc in Chemistry",
+      "BA (Honours) in English Literature",
+      "MA in English Literature",
+      "MBA"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "1991",
+      "event": "Contested parliamentary election from Jamalpur-2"
+    },
+    {
+      "year": "1996",
+      "event": "Elected Member of Parliament from Jamalpur-2 (BNP)"
+    },
+    {
+      "year": "2001",
+      "event": "Re-elected Member of Parliament from Jamalpur-2 (BNP)"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Jamalpur-2",
+      "election_area_name": "Islampur"
+    }
+  ],
+  "life_activities": "Longtime grassroots political leader of Bangladesh Nationalist Party (BNP), actively involved in local development, party organization, and democratic movements in Jamalpur district.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Sultan Mahmud Babu is a senior Bangladeshi politician of the Bangladesh Nationalist Party (BNP). He served as a Member of Parliament from Jamalpur-2 in 1996 and 2001 and has held several important leadership roles within the party at local, district, and national levels.",
+  "district": [
+    "Jamalpur"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+
+{
+  "name": "Mustafizur Rahman Babul",
+  "designation": "Assistant Secretary, BNP National Executive Committee",
+  "profession": "Politician",
+  "portfolio": [
+    "Bangladesh Nationalist Party (BNP)"
+  ],
+  "previous_designations": [
+    "Central Student Leader (1990s)"
+  ],
+  "personal_info": {
+    "birth_date": "03 February 1961",
+    "birth_place": "Jamalpur, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801711629084",
+    "email": "mmrbabul961@gmail.com",
+    "website_or_social": [
+      "https://www.facebook.com/MustafizurRahmanBabulJamalpur/"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [
+      ""
+    ],
+    "degree": [
+      "Master of Social Science (MSS) in Public Administration",
+      "Bachelor of Social Science (BSS) in Public Administration"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "1990s",
+      "event": "Active involvement in national student politics"
+    },
+    {
+      "year": "",
+      "event": "Assistant Secretary, BNP National Executive Committee"
+    },
+    {
+      "year": "",
+      "event": "BNP nominated candidate for Jamalpur-3 constituency"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Melandah and Madarganj Upazila",
+      "election_area_name": "Jamalpur-3"
+    }
+  ],
+  "life_activities": "Engaged in political movements, public rallies, and organizational activities of the Bangladesh Nationalist Party, with strong involvement in grassroots leadership and public service in Jamalpur district.",
+  "other_income_sources": [],
+  "photos": [
+    "Facebook public photos and campaign images"
+  ],
+  "overall_summary": "Mustafizur Rahman Babul is a senior leader of the Bangladesh Nationalist Party (BNP) and a member of its National Executive Committee. Born in Jamalpur in 1961, he holds both BSS and MSS degrees in Public Administration from the University of Dhaka and has remained actively involved in national and local political movements, representing the Jamalpur-3 constituency.",
+  "district": [
+    "Jamalpur"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+{
+  "name": "Md. Faridul Kabir Talukdar Shamim",
+  "designation": "Local Leader",
+  "profession": "Politics",
+  "portfolio": [
+    "Community Development",
+    "Social Welfare Activities",
+    "Grassroots Political Organization"
+  ],
+  "previous_designations": [
+    {
+      "designation": "Local Leader",
+      "organization": "Bangladesh Nationalist Party (BNP)",
+      "from_year": "",
+      "to_year": ""
+    }
+  ],
+  "personal_info": {
+    "birth_date": "17 January 1967",
+    "birth_place": "Mulbari",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01732005862",
+    "website_or_social": [
+      "https://www.facebook.com/share/17Tae8JEY9/"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [],
+    "degree": [
+      "BA (Pass)"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Associated with Bangladesh Nationalist Party (BNP)"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Sarishabari Upazila",
+      "election_area_name": "Jamalpur-4"
+    }
+  ],
+  "life_activities": "Actively involved in social welfare, community development, and grassroots-level political engagement.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Md. Faridul Kabir Talukdar Shamim is a Bangladeshi local political leader associated with the Bangladesh Nationalist Party (BNP) from Jamalpur-4 constituency under Sarishabari Upazila, actively engaged in social welfare and grassroots political activities.",
+  "district": ["Jamalpur"],
+  "division": ["Mymensingh"]
+},
+
+{
+  "name": "Shah Md. Wares Ali Mamun",
+  "designation": "Assistant Organizing Secretary, BNP (Central Committee)",
+  "profession": "Politician",
+  "portfolio": [
+    "Former Mayor (2 Times), Jamalpur Pourashava",
+    "Assistant Organizing Secretary, BNP Central Committee",
+    "General Secretary (4 Times), BNP Jamalpur District",
+    "Former President (2 Times), City BNP, Jamalpur",
+    "Former Member, BNP Central Committee"
+  ],
+  "previous_designations": [
+    "Mayor, Jamalpur Pourashava",
+    "President, City BNP Jamalpur",
+    "General Secretary, BNP Jamalpur District",
+    "Member, BNP Central Committee"
+  ],
+  "personal_info": {
+    "birth_date": "02-01-1968",
+    "birth_place": "Jamalpur, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801711662824",
+    "website_or_social": [
+      "mailto:waresalimamun7755@gmail.com"
+    ]
+  },
+  "academic_career": {},
+  "business_income_source_professional_career": [
+    "Legal Profession (Advocate)"
+  ],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Elected Mayor of Jamalpur Pourashava (First Term)"
+    },
+    {
+      "year": "",
+      "event": "Re-elected Mayor of Jamalpur Pourashava (Second Term)"
+    },
+    {
+      "year": "",
+      "event": "Served as General Secretary, BNP Jamalpur District (Four Terms)"
+    },
+    {
+      "year": "",
+      "event": "Served as President, City BNP Jamalpur (Two Terms)"
+    },
+    {
+      "year": "",
+      "event": "Served as Assistant Organizing Secretary, BNP Central Committee"
+    },
+    {
+      "year": "",
+      "event": "Served as Member, BNP Central Committee"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Jamalpur Sadar",
+      "election_area_name": "Jamalpur-5"
+    }
+  ],
+  "life_activities": "Dedicated to public service, democratic political movements, local governance, and grassroots organizational development in Jamalpur district.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Shah Md. Wares Ali Mamun is a senior leader of the Bangladesh Nationalist Party (BNP), a two-time former Mayor of Jamalpur Pourashava, and an experienced organizer with long-standing contributions at local, district, and central party levels.",
+  "district": ["Jamalpur"],
+  "division": ["Mymensingh"]
+},
+
+{
+  "name": "Dr. Sunsila Zebrin Priyanka",
+  "designation": "Former Parliamentary Candidate",
+  "profession": "Doctor",
+  "portfolio": [
+    "Healthcare",
+    "Public Health Awareness",
+    "Youth & Women Empowerment",
+    "Political & Social Development"
+  ],
+  "previous_designations": [
+    "Lecturer, Department of Microbiology, Anwer Khan Modern Medical College"
+  ],
+  "personal_info": {
+    "birth_date": "1993-06-22",
+    "birth_place": "Sherpur, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801886240897",
+    "website_or_social": [
+      "https://www.facebook.com/share/1FB7LJim1a/"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [
+      "Anwer Khan Modern Medical College"
+    ],
+    "degree": [
+      "MBBS",
+      "Microbiology"
+    ]
+  },
+  "business_income_source_professional_career": [
+    "Medical profession",
+    "Academic teaching (Microbiology)"
+  ],
+  "political_career": [
+    {
+      "year": "2018",
+      "event": "Nominated as BNP candidate for Jatiya Sangsad election and recognized as the youngest parliamentary candidate in Bangladesh"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Sherpur Sadar",
+      "election_area_name": "Sherpur-1"
+    }
+  ],
+  "life_activities": "Active in healthcare advocacy, political engagement, youth leadership, and public service.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Dr. Sunsila Zebrin Priyanka is a Bangladeshi doctor, academic, and former parliamentary candidate who gained national recognition in 2018 as the youngest BNP nominee from Sherpur-1. She is known for her involvement in healthcare, youth empowerment, and public service.",
+  "district": [
+    "Sherpur"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+
+{
+  "name": "Mohammad Fahim Chowdhury",
+  "designation": "Parliamentary Election Candidate",
+  "profession": "Politician and Social Worker",
+  "portfolio": [
+    "Parliamentary Election Candidate – Sherpur-2",
+    "Public Service and Constituency Development",
+    "Youth and Community Engagement",
+    "Local Governance and Policy Advocacy",
+    "Education and Social Welfare Initiatives"
+  ],
+  "previous_designations": [
+    "Party Activist",
+    "Constituency-Level Organizer"
+  ],
+  "personal_info": {
+    "birth_date": "05-07-1978",
+    "birth_place": "Chorbabna",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801756211327",
+    "website_or_social": [
+      "https://www.facebook.com/p/Fahim-Chowdhury-100068812046305/"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [
+      "Swinburne University of Technology, Melbourne, Australia",
+      "University of Sydney, Australia"
+    ],
+    "degree": [
+      "Bachelor of Computer Science and Software Engineering (2003)",
+      "Master of Computer Science and Software Engineering (Continuing)"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "2024–2025",
+      "event": "Active political involvement and nomination process for the National Parliamentary Election in Sherpur-2 constituency"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Sherpur-2",
+      "election_area_name": "Nakla Upazila and Nalitabari Upazila"
+    }
+  ],
+  "life_activities": "Engaged in social, political, and community-based activities with a focus on development, governance, and public welfare in the Sherpur district.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Mohammad Fahim Chowdhury is a Bangladeshi parliamentary election candidate representing the Sherpur-2 constituency. He holds a Bachelor’s degree in Computer Science and Software Engineering and is currently pursuing a Master’s degree in the same field. His focus areas include public welfare, youth empowerment, constituency development, and transparent governance.",
+  "district": [
+    "Sherpur"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+{
+  "name": "Mahmudul Haque Rubel",
+  "designation": "Former Member of Parliament",
+  "profession": "Politician",
+  "portfolio": [
+    "Legislative Representation",
+    "Constituency Development",
+    "Political Organization"
+  ],
+  "previous_designations": [
+    "Member of Parliament (Sherpur-3)"
+  ],
+  "personal_info": {
+    "birth_date": "21-09-1971",
+    "birth_place": "Sherpur District, Bangladesh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801732622227",
+    "email": "rubelhoque1971@icloud.com",
+    "website_or_social": [
+      "https://www.facebook.com/mhrubelofficial"
+    ]
+  },
+  "academic_career": {
+    "schools": [
+      "Local Government School, Sherpur"
+    ],
+    "college": "Sherpur Government College",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [
+    "Agriculture-based business",
+    "Local trade and investment activities"
+  ],
+  "political_career": [
+    {
+      "year": "2000",
+      "event": "Joined active politics through Bangladesh Nationalist Party (BNP)"
+    },
+    {
+      "year": "2008",
+      "event": "Elected as Member of Parliament from Sherpur-3 constituency"
+    },
+    {
+      "year": "2010–Present",
+      "event": "Involved in party organization, political movements, and constituency-level leadership"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Sherpur District",
+      "election_area_name": "Sherpur-3"
+    }
+  ],
+  "life_activities": "Engaged in political leadership, social welfare initiatives, constituency development programs, and public advocacy.",
+  "other_income_sources": [
+    "Private investments"
+  ],
+  "photos": [],
+  "overall_summary": "Mahmudul Haque Rubel is a Bangladeshi politician and former Member of Parliament from the Sherpur-3 constituency. He is associated with the Bangladesh Nationalist Party (BNP) and is known for his involvement in political movements, constituency development, and grassroots leadership.",
+  "district": [
+    "Sherpur"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+{
+  "name": "Syed Emran Saleh Prince",
+  "designation": "Joint Secretary General",
+  "profession": "Politician",
+  "portfolio": [
+    "Joint Secretary General, Bangladesh Nationalist Party (BNP)",
+    "Central Leader, Bangladesh Nationalist Party",
+    "Former Organizational Secretary, BNP (Mymensingh Division)",
+    "BNP Parliamentary Election Candidate (Mymensingh-1)",
+    "Political Organizer and Public Speaker"
+  ],
+  "previous_designations": [
+    "Organizational Secretary, BNP (Mymensingh Division)"
+  ],
+  "personal_info": {
+    "birth_date": "29-10-1967",
+    "birth_place": "Dhara Mian Bari",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801711641443",
+    "website_or_social": [
+      "emransaleh@gmail.com"
+    ]
+  },
+  "academic_career": {
+    "schools": [
+      "Local primary and secondary educational institutions in Mymensingh"
+    ],
+    "college": "Government college in Mymensingh region",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [
+    "Full-time political leadership and party organizational activities",
+    "Public service and political engagement"
+  ],
+  "political_career": [
+    {
+      "year": "1980s",
+      "event": "Began involvement in student and grassroots politics"
+    },
+    {
+      "year": "1990s",
+      "event": "Participated in democratic movements under Bangladesh Nationalist Party (BNP)"
+    },
+    {
+      "year": "2010s",
+      "event": "Served as Organizational Secretary of BNP, Mymensingh Division"
+    },
+    {
+      "year": "2020s",
+      "event": "Appointed Joint Secretary General of Bangladesh Nationalist Party (BNP)"
+    },
+    {
+      "year": "2024–2025",
+      "event": "BNP candidate and campaign leader for Mymensingh-1 parliamentary constituency"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Haluaghat–Dhobaura",
+      "election_area_name": "Mymensingh-1"
+    }
+  ],
+  "life_activities": "Engaged in political leadership, party organization, democratic movements, public advocacy, and constituency-level development initiatives.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Syed Emran Saleh Prince is a senior leader of the Bangladesh Nationalist Party (BNP), currently serving as its Joint Secretary General. He is a long-time political activist known for his organizational leadership, involvement in democratic movements, and active participation in national and constituency-level politics, particularly in the Mymensingh region.",
+  "district": [
+    "Mymensingh"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+},
+
+{
+  "name": "Motahar Hossain Talukder",
+  "designation": "Political Leader",
+  "profession": "Politician",
+  "portfolio": [
+    "Bangladesh Nationalist Party (BNP) local-level political activities",
+    "Community engagement and grassroots political coordination",
+    "Participation in public meetings, rallies, and political programs",
+    "Constituency-level political representation activities (Mymensingh-2)"
+  ],
+  "previous_designations": [
+    "Local-level political leader, Bangladesh Nationalist Party (BNP)",
+    "Constituency-level coordinator and community organizer, BNP"
+  ],
+  "personal_info": {
+    "birth_date": "01/01/1969",
+    "birth_place": "Valki",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801711372887",
+    "website_or_social": [
+      "https://www.facebook.com/motahar.hossaintalukder/"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "Nasirabad College, Mymensingh",
+    "university": [
+      "Govt. Ananda Mohan College, Mymensingh",
+      "Mymensingh Law College"
+    ],
+    "degree": []
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Involved in political activities and public engagement under Bangladesh Nationalist Party (BNP)"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Mymensingh-2",
+      "election_area_name": "Fulpur–Tarakanda"
+    }
+  ],
+  "life_activities": "Active in local political programs, public meetings, and community-based political activities.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Motahar Hossain Talukder is a Bangladeshi political figure associated with the Bangladesh Nationalist Party (BNP), known for his involvement in constituency-level political activities in the Mymensingh-2 (Fulpur–Tarakanda) area.",
+  "district": ["Mymensingh"],
+  "division": ["Mymensingh"]
+},
+
+{
+  "name": "Engr. M. Iqbal Hossain",
+  "designation": "Political Candidate",
+  "profession": "Engineer / Businessman",
+  "portfolio": [
+    "BNP National Executive Committee Member",
+    "Candidate for Mymensingh-3 (Gauripur) Parliamentary Seat",
+    "Political Organizer in Gauripur Upazila"
+  ],
+  "previous_designations": [
+    "BNP Local Committee Member, Gauripur Upazila",
+    "Political Organizer in Gauripur Upazila",
+    "Business Owner / Engineer in Mechanical Sector"
+  ],
+  "personal_info": {
+    "birth_date": "17-10-1950",
+    "birth_place": "Tatrakanda, Sidhla Union, Gauripur, Mymensingh",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01711539036",
+    "website_or_social": ["iqbalhossain1950@gmail.com"]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": ["BSc in Mechanical Engineering"],
+    "degree": ["BSc in Mechanical Engineering"]
+  },
+  "business_income_source_professional_career": [
+    "Business activities",
+    "Engineering profession"
+  ],
+  "political_career": [
+    {
+      "year": "2024-2025",
+      "event": "Nominated as BNP candidate for Mymensingh-3 (Gauripur) constituency"
+    },
+    {
+      "year": "2025",
+      "event": "Active in political activities and public rallies in Gauripur area"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Gauripur, Mymensingh",
+      "election_area_name": "Mymensingh-3"
+    }
+  ],
+  "life_activities": "Active in politics, engineering profession, and business ventures",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Engr. M. Iqbal Hossain is a Bangladeshi mechanical engineer, businessman, and BNP political leader, currently contesting in Mymensingh-3 (Gauripur) constituency.",
+  "district": ["Mymensingh"],
+  "division": ["Mymensingh"]
+},
+
+{
+  "name": "Mohammed Zakir Hossain",
+  "designation": "Political Leader",
+  "profession": "Politician",
+  "portfolio": [
+    "BNP Local Leader, Muktagachha Upazila",
+    "BNP Candidate for Mymensingh-5 Constituency"
+  ],
+  "previous_designations": [
+    "BNP Local Leader, Muktagachha Upazila (prior to 2023)",
+    "BNP Election Campaign Organizer, Muktagachha Upazila"
+  ],
+  "personal_info": {
+    "birth_date": "01-01-1967",
+    "birth_place": "Kandigaon",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01711-520531",
+    "website_or_social": [
+      "hosszakir@gmail.com"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "2023",
+      "event": "Submitted nomination for Mymensingh-5 constituency as BNP candidate"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Muktagachha Upazila, Mymensingh",
+      "election_area_name": "Mymensingh-5"
+    }
+  ],
+  "life_activities": "Active in local politics, engages with community events, promotes religious harmony, and participates in election campaigns.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Mohammed Zakir Hossain is a BNP political leader from Muktagachha Upazila, Mymensingh, known for his active role in local politics and electoral campaigns.",
+  "district": ["Mymensingh"],
+  "division": ["Mymensingh"]
+},
+
+{
+  "name": "MD Akhtarul Alam",
+  "designation": "Local Political Leader / Community Representative",
+  "profession": "Politician",
+  "portfolio": [
+    "Community Development",
+    "Local Infrastructure & Services",
+    "Agriculture & Farmers’ Support",
+    "Social Welfare Initiatives"
+  ],
+  "previous_designations": [
+    "Local community leader, Bashdi village",
+    "Member of local development committee, Mymensingh",
+    "Political representative in local civic activities"
+  ],
+  "personal_info": {
+    "birth_date": "03-11-1963",
+    "birth_place": "Vill: Bashdi",
+    "nationality": "Bangladeshi",
+    "mobileNo": "+8801755555877",
+    "website_or_social": [
+      "https://www.facebook.com/md.akhtarul.alam.499452"
+    ]
+  },
+  "academic_career": {
+    "schools": [
+        "Bashdi High School"
+    ],
+    "college": "Mymensingh College",
+    "university": [
+        "Bangladesh Agricultural University"
+    ],
+    "degree": [
+        "Bachelor's in Agriculture",
+        "Master's in Agricultural Science"
+    ]
+  },
+  "business_income_source_professional_career": [],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Active in local political/community activities in Mymensingh region"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Mymensingh",
+      "election_area_name": "Mymensingh-6 (Fulbaria)"
+    }
+  ],
+  "life_activities": "Community engagement and local development activities in Mymensingh",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "MD Akhtarul Alam is a Bangladeshi political figure and community activist, publicly active in Mymensingh-6 area. Detailed biographical and professional information is not fully publicly available.",
+  "district": ["Mymensingh"],
+  "division": ["Mymensingh"]
+},
+
+{
+  "name": "Dr. Md. Mahbubur Rahman",
+  "designation": "Politician",
+  "profession": "Physician",
+  "portfolio": [
+    "Healthcare and Public Health Development",
+    "Social Welfare and Community Service",
+    "Local Infrastructure and Rural Development",
+    "Education and Youth Development",
+    "Disaster Management and Relief Activities"
+  ],
+  "previous_designations": [
+    {
+      "title": "Medical Officer",
+      "organization": "Private Medical Practice",
+      "from_year": "",
+      "to_year": ""
+    },
+    {
+      "title": "Social Worker",
+      "organization": "Local Community Organizations",
+      "from_year": "",
+      "to_year": ""
+    }
+  ],
+  "personal_info": {
+    "birth_date": "23-10-1963",
+    "birth_place": "Dhaka",
+    "nationality": "Bangladeshi",
+    "mobileNo": "01713015390",
+    "website_or_social": [
+      "rahman.mahbubur.dr@gmail.com"
+    ]
+  },
+  "academic_career": {
+    "schools": [],
+    "college": "",
+    "university": [],
+    "degree": []
+  },
+  "business_income_source_professional_career": [
+    "Medical practice"
+  ],
+  "political_career": [
+    {
+      "year": "",
+      "event": "Active involvement in local and national level politics in the Mymensingh-7 constituency"
+    }
+  ],
+  "election_constituencies": [
+    {
+      "actual_place_name": "Trishal Upazila, Mymensingh",
+      "election_area_name": "Mymensingh-7"
+    }
+  ],
+  "life_activities": "Actively involved in social service, healthcare awareness programs, and community development initiatives in Trishal.",
+  "other_income_sources": [],
+  "photos": [],
+  "overall_summary": "Dr. Md. Mahbubur Rahman is a Bangladeshi physician and political figure associated with the Mymensingh-7 (Trishal) constituency, recognized for his dedication to healthcare, social welfare, and community development.",
+  "district": [
+    "Mymensingh"
+  ],
+  "division": [
+    "Mymensingh"
+  ]
+}
 
 ]
