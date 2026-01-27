@@ -11,11 +11,7 @@ const Legacy = () => {
 
         {/* Description */}
         <p className="text-center text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          From the founding vision of Ziaur Rahman to the courage and resilience
-          of Khaleda Zia, and the leadership of Tarique Rahman, the Zia family
-          has steered BNP through decades of democratic struggle, sacrifice and
-          hope. Their legacy inspires today's BNP to uphold nationalism, freedom
-          and the voice of the people.
+          From the founding vision of Ziaur Rahman to the courage and resilience of Khaleda Zia, and onward to the leadership of Tarique Rahman, the Zia family has guided the BNP through decades of democratic struggle, sacrifice, and hope. Their enduring legacy continues to inspire today’s BNP to uphold nationalism, freedom, and the true voice of the people.
         </p>
 
         {/* Carousel */}

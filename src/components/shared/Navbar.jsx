@@ -97,6 +97,19 @@ export default function Navbar() {
             >
               Candidates
             </NavLink>
+
+            <NavLink
+              to="/frame-editor"
+              className={({ isActive }) =>
+                `font-medium transition-colors  ${isActive
+                  ? "text-green-700  border-green-700 pb-1"
+                  : "text-gray-700 hover:text-green-700"
+                }`
+              }
+            >
+              Picture Frame
+            </NavLink>
+
             <NavLink
               to="/vision"
               className={({ isActive }) =>
@@ -130,17 +143,7 @@ export default function Navbar() {
             >
               Campaigns
             </NavLink>
-            <NavLink
-              to="/frame-editor"
-              className={({ isActive }) =>
-                `font-medium transition-colors ${isActive
-                  ? "text-green-700  border-green-700 pb-1"
-                  : "text-gray-700 hover:text-green-700"
-                }`
-              }
-            >
-              Photo Frame 
-            </NavLink>
+            
           </div>
 
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
@@ -249,7 +252,7 @@ export default function Navbar() {
               to="/"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                `block px-4 py-2 rounded-lg font-medium transition-colors ${isActive
                   ? "bg-green-50 text-green-700"
                   : "text-gray-700 hover:bg-gray-50"
                 }`
@@ -261,7 +264,7 @@ export default function Navbar() {
               to="/candidates"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                `block px-4 py-2 rounded-lg font-medium transition-colors ${isActive
                   ? "bg-green-50 text-green-700"
                   : "text-gray-700 hover:bg-gray-50"
                 }`
@@ -269,11 +272,25 @@ export default function Navbar() {
             >
               Candidates
             </NavLink>
+
+             <NavLink
+              to="/frame-editor"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-2 rounded-lg font-medium transition-colors  ${isActive
+                  ? "bg-green-50 text-green-700"
+                  : "text-gray-700 hover:bg-gray-50"
+                }`
+              }
+            >
+             Picture Frame
+            </NavLink>
+
             <NavLink
               to="/vision"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                `block px-4 py-2 rounded-lg font-medium transition-colors ${isActive
                   ? "bg-green-50 text-green-700"
                   : "text-gray-700 hover:bg-gray-50"
                 }`
@@ -297,7 +314,7 @@ export default function Navbar() {
               to="/campaigns"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                `block px-4 py-2 rounded-lg font-medium transition-colors ${isActive
                   ? "bg-green-50 text-green-700"
                   : "text-gray-700 hover:bg-gray-50"
                 }`
@@ -305,18 +322,7 @@ export default function Navbar() {
             >
               Campaigns
             </NavLink>
-            <NavLink
-              to="/frame-editor"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive
-                  ? "bg-green-50 text-green-700"
-                  : "text-gray-700 hover:bg-gray-50"
-                }`
-              }
-            >
-             Photo Frame
-            </NavLink>
+           
 
             <div className="pt-4 space-y-2">
               <button className="w-full flex items-center gap-2 bg-green-700 text-white px-5 py-3 rounded-lg hover:bg-green-800 transition-colors font-medium shadow-sm">

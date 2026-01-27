@@ -25,7 +25,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-700 text-lg leading-relaxed">
-              Local Government Faces Criticism Over New Policies as Thousands Take to the Streets to Oppose Recent Policy Changes, Leading to Clashes with Law Enforcement and a State of Emergency Declared in Several Cities.
+              Khaleda Zia stands as an enduring symbol of democratic leadership in Bangladesh, whose political journey reflects a lifelong struggle for democracy, national sovereignty, and the rights of the people. Through years of leadership, resistance, and personal sacrifice, she has demonstrated resilience and unwavering commitment to democratic values, leaving a legacy shaped by courage, perseverance, and dedication to the will of the nation.
             </p>
           </div>
         </div>
