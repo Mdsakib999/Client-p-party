@@ -16,7 +16,7 @@ export const Candidates = () => {
     {
       id: 2,
       name: "Mirza Fakhrul Islam Alamgir",
-      position: "Secretary General - BNP",
+      position: "Secretary General",
       image:
         "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
       highlight: false,
@@ -24,7 +24,7 @@ export const Candidates = () => {
     {
       id: 3,
       name: "Salauddin Ahmed",
-      position: "Member of National Standing Committee - BNP",
+      position: "Member of National Standing Committee",
       image:
         "https://i0.wp.com/asiatimes.com/wp-content/uploads/2025/11/Bangladesh-Salahuddin-Ahmed.jpg?fit=1200%2C800&quality=89&ssl=1",
       highlight: false,
@@ -32,14 +32,14 @@ export const Candidates = () => {
     {
       id: 4,
       name: "Mirza Abbas Uddin Ahmed",
-      position: "Member of National Standing Committee - BNP",
+      position: "Member of National Standing Committee",
       image: "https://www.bssnews.net/assets/news_photos/2025/10/28/image-325864-1761651827.jpg",
       highlight: false,
     },
     {
       id: 5,
       name: "Mr. Amir Khosru Chowdhury",
-      position: "Member of National Standing Committee - BNP",
+      position: "Member of National Standing Committee",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZicoZBVLiVJL-iEFshJGb-chJZxBeb9_Y4A&s",
       highlight: false,
     },
