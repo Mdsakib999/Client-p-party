@@ -87,9 +87,6 @@ const ManageCandidates = () => {
                     Position/Designation
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Role/Profession
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Districts
                   </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -107,20 +104,15 @@ const ManageCandidates = () => {
                         className="h-12 w-12 rounded-full object-cover"
                       />
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">
+                    <td className="px-6 py-4">
+                      <div className="text-sm font-medium text-gray-900 max-w-32">
                         {candidate.name}
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm text-gray-900">
+                      <div className="text-sm text-gray-900 max-w-40">
                         {candidate.designation}
                       </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-emerald-100 text-emerald-800">
-                        {candidate.profession}
-                      </span>
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-sm text-gray-900">
