@@ -13,7 +13,7 @@ const ManageCandidates = () => {
   const [deleteCandidate, { isLoading: isDeleting }] =
     useDeleteCandidateMutation();
   const [selectedCandidate, setSelectedCandidate] = useState(null);
-
+  console.log("data", data)
   const handleDelete = async (id, name) => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
       try {
@@ -87,6 +87,9 @@ const ManageCandidates = () => {
                     Position/Designation
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Election constituencies
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Districts
                   </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -112,6 +115,11 @@ const ManageCandidates = () => {
                     <td className="px-6 py-4">
                       <div className="text-sm text-gray-900 max-w-40">
                         {candidate.designation}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="text-sm text-gray-900 max-w-40">
+                        {candidate.election_constituencies.map(area => area.actual_place_name) || "N/A"}
                       </div>
                     </td>
                     <td className="px-6 py-4">
