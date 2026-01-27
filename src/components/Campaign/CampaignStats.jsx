@@ -12,23 +12,23 @@ const CampaignStats = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">150+</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
             <div className="text-green-100">Campaign Events</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">300+</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">230+</div>
             <div className="text-green-100">Constituencies Covered</div>
           </div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
             <div className="text-green-100">People Engaged</div>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold mb-2">180</div>
             <div className="text-green-100">Days to Election</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

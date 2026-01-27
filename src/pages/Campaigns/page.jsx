@@ -20,12 +20,12 @@ const page = () => {
             <UpcomingCampaigns campaigns={upcomingCampaigns} />
           </div>
         </div>
-        <div className="mb-16">
+        <div className="my-16 ">
           <CampaignStats />
         </div>
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <CampaignActivities campaignActivities={recentCampaigns} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
