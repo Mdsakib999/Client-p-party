@@ -51,9 +51,9 @@ export const Candidates = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+          <Link to='/candidates' className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             Candidates
-          </span>
+          </Link>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
             Meet Our Candidates

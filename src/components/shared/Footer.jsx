@@ -98,8 +98,8 @@ export default function Footer() {
 
       {/* ✅ Bottom Bar */}
       <div className="border-t border-gray-800 text-center py-4 text-xs sm:text-sm text-gray-400 px-4">
-        © {new Date().getFullYear()} Bangladesh Nationalist Party - BNP. All
-        rights reserved.
+        © {new Date().getFullYear()} Bnpcandidates.com. All
+        rights reserved. <span className="hover:text-green-500">Design & Develop by SM IT Solution</span>
       </div>
     </footer>
   );
