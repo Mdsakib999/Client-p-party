@@ -346,9 +346,9 @@ export default function VisionPage() {
             Together, we can create communities that thrive in the face of
             adversity
           </p>
-          <Link to="/activities">
+          <Link to="/contact">
             <button className="cursor-pointer bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all shadow-lg hover:shadow-xl">
-              Learn More About Our Initiatives
+              Contact Us
             </button>
           </Link>
         </div>

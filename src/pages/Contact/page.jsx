@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HiLocationMarker, HiPhone, HiMail, HiClock } from "react-icons/hi";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import candidatesBanner from "../../assets/bg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <div className="relative h-64 md:h-80 lg:min-h-[64vh]">
         <img
-          src="./src/assets/bg.png"
+          src={candidatesBanner}
           alt="Contact Us Banner"
           className="w-full h-full object-cover"
         />

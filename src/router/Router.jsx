@@ -65,20 +65,20 @@ const router = createBrowserRouter([
         path: "/campaigns/:slug",
         Component: CampaignDetail,
       },
-      {
-        index: true,
-        path: "/news",
-        Component: AllNews,
-      },
-      {
-        path: "/news/:slug",
-        Component: NewsDetail,
-      },
-      {
-        index: true,
-        path: "/activities",
-        Component: Activities,
-      },
+      // {
+      //   index: true,
+      //   path: "/news",
+      //   Component: AllNews,
+      // },
+      // {
+      //   path: "/news/:slug",
+      //   Component: NewsDetail,
+      // },
+      // {
+      //   index: true,
+      //   path: "/activities",
+      //   Component: Activities,
+      // },
       {
         path: "/activities/:slug",
         Component: ActivityDetails,
