@@ -79,7 +79,7 @@ export default function Navbar() {
               to="/"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  ? "text-green-700  border-green-700 pb-1"
                   : "text-gray-700 hover:text-green-700"
                 }`
               }
@@ -90,7 +90,7 @@ export default function Navbar() {
               to="/candidates"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  ? "text-green-700  border-green-700 pb-1"
                   : "text-gray-700 hover:text-green-700"
                 }`
               }
@@ -101,7 +101,7 @@ export default function Navbar() {
               to="/vision"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  ? "text-green-700  border-green-700 pb-1"
                   : "text-gray-700 hover:text-green-700"
                 }`
               }
@@ -112,7 +112,7 @@ export default function Navbar() {
               to="/activities"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  ? "text-green-700  border-green-700 pb-1"
                   : "text-gray-700 hover:text-green-700"
                 }`
               }
@@ -123,7 +123,7 @@ export default function Navbar() {
               to="/campaigns"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  ? "text-green-700  border-green-700 pb-1"
                   : "text-gray-700 hover:text-green-700"
                 }`
               }
@@ -134,12 +134,12 @@ export default function Navbar() {
               to="/frame-editor"
               className={({ isActive }) =>
                 `font-medium transition-colors ${isActive
-                  ? "text-green-700 border-b-2 border-green-700 pb-1"
+                  ? "text-green-700  border-green-700 pb-1"
                   : "text-gray-700 hover:text-green-700"
                 }`
               }
             >
-              Frame Editor
+              Photo Frame 
             </NavLink>
           </div>
 
@@ -315,7 +315,7 @@ export default function Navbar() {
                 }`
               }
             >
-              Frame Editor
+             Photo Frame
             </NavLink>
 
             <div className="pt-4 space-y-2">
