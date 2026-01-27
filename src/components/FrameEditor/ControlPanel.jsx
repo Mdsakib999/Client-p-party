@@ -46,7 +46,7 @@ const ControlPanel = ({
     };
 
     return (
-        <div className="space-y-6 rounded-2xl bg-white/90 p-5 shadow-xl border border-emerald-100">
+        <div className="space-y-6 rounded-2xl p-5 shadow-xl border border-emerald-100 bg-white">
             {/* Upload */}
             <div>
                 <label

@@ -72,7 +72,7 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
                         ref={(el) => (itemRefs.current[frame.id] = el)}
                         onClick={() => handleSelect(frame)}
                         className={`snap-center flex-shrink-0 cursor-pointer transition-all duration-300
-    ${selectedId === frame.id
+                            ${selectedId === frame.id
                                 ? "scale-110"
                                 : "opacity-60 hover:opacity-100"
                             }`}
