@@ -5,14 +5,14 @@ import { Candidates } from "../../components/Home/Candidates";
 import Hero from "../../components/Home/Hero";
 import Legacy from "../../components/Home/Legacy";
 import Highlights from "../../components/Home/Highlights";
-import NewsSection from "../../components/Home/NewsSection";
-import { useGetAllNewsArticlesQuery } from "../../redux/features/newsArticle/newsArticle.api";
+// import NewsSection from "../../components/Home/NewsSection";
+// import { useGetAllNewsArticlesQuery } from "../../redux/features/newsArticle/newsArticle.api";
 import TimedPopup from "../../components/Campaign/TimedPopup";
 
 const Home = () => {
-  const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
-    limit: 4,
-  });
+  // const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
+  //   limit: 4,
+  // });
 
   const [showPopup, setShowPopup] = useState(false);
 
@@ -31,20 +31,20 @@ const Home = () => {
 
   return (
     <>
-    {showPopup && <TimedPopup onClose={() => setShowPopup(false)} />}
+      {showPopup && <TimedPopup onClose={() => setShowPopup(false)} />}
 
-    <div>
-      <Hero />
-      <Legacy />
-      <About />
-      <Candidates />
-      <Highlights />
-      {/* <Activity /> */}
-      {/* <NewsSection
+      <div>
+        <Hero />
+        <Legacy />
+        <About />
+        <Candidates />
+        <Highlights />
+        {/* <Activity /> */}
+        {/* <NewsSection
         newsArticles={newsArticles?.data}
         articleLoader={isLoading}
       /> */}
-    </div>
+      </div>
     </>
   );
 };

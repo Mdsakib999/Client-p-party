@@ -1,5 +1,6 @@
 import {
     forwardRef,
+    useCallback,
     useEffect,
     useImperativeHandle,
     useRef,
@@ -15,12 +16,35 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
     const initialPhotoStateRef = useRef(null);
     const isDraggingRef = useRef(false);
 
-    const CANVAS_WIDTH = mediaType === "profile" ? 1080 : 1500;
-    const CANVAS_HEIGHT = mediaType === "profile" ? 1080 : 1875;
+    // Dynamic Dimensions Logic
+    const getDimensions = () => {
+        if (mediaType === "profile") return { width: 1080, height: 1080 };
+        if (mediaType === "post") return { width: 1500, height: 1875 };
+        if (mediaType === "cover") return { width: 851, height: 315 };
+        return { width: 1080, height: 1080 };
+    };
 
-    // =========================
-    // INIT CANVAS (ONCE)
-    // =========================
+    const { width: CANVAS_WIDTH, height: CANVAS_HEIGHT } = getDimensions();
+
+    const resizeCanvas = useCallback(() => {
+        if (!containerRef.current || !fabricCanvasRef.current) return;
+
+        const containerWidth = containerRef.current.clientWidth;
+        const canvas = fabricCanvasRef.current;
+
+        canvas.setDimensions({
+            width: containerWidth,
+            height: containerWidth * (CANVAS_HEIGHT / CANVAS_WIDTH),
+        }, { cssOnly: true });
+
+        canvas.setDimensions({
+            width: CANVAS_WIDTH,
+            height: CANVAS_HEIGHT
+        }, { backstoreOnly: true });
+
+        canvas.requestRenderAll();
+    }, [CANVAS_WIDTH, CANVAS_HEIGHT]);
+
     useEffect(() => {
         if (fabricCanvasRef.current) return;
 
@@ -52,46 +76,25 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
             }
         });
 
-        const resizeCanvas = () => {
-            if (!containerRef.current || !fabricCanvasRef.current) return;
-
-            const containerWidth = containerRef.current.clientWidth;
-            const canvas = fabricCanvasRef.current;
-
-            // Maintain high-resolution buffer, scale visually with CSS
-            canvas.setDimensions({
-                width: containerWidth,
-                height: containerWidth * (CANVAS_HEIGHT / CANVAS_WIDTH),
-            }, { cssOnly: true });
-
-            canvas.setDimensions({
-                width: CANVAS_WIDTH,
-                height: CANVAS_HEIGHT
-            }, { backstoreOnly: true });
-
-            canvas.requestRenderAll();
-        };
-
-        resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
-
         return () => {
-            window.removeEventListener("resize", resizeCanvas);
             canvas.dispose();
             fabricCanvasRef.current = null;
         };
     }, []);
 
-    // =========================
-    // MEDIA TYPE CHANGE
-    // =========================
+    // Handle Resize Listener separately to avoid stale closures
+    useEffect(() => {
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+        return () => {
+            window.removeEventListener("resize", resizeCanvas);
+        };
+    }, [resizeCanvas]);
+
     useEffect(() => {
         if (!fabricCanvasRef.current) return;
-
-
         const canvas = fabricCanvasRef.current;
 
-        // Clean up everything except the photo to prevent frames from stacking
         const objects = [...canvas.getObjects()];
         objects.forEach(obj => {
             if (obj !== photoRef.current) {
@@ -100,10 +103,8 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
         });
         frameRef.current = null;
 
-        canvas.setDimensions({
-            width: CANVAS_WIDTH,
-            height: CANVAS_HEIGHT,
-        });
+        // Force resize update
+        resizeCanvas();
 
         if (photoRef.current && initialPhotoStateRef.current) {
             const img = photoRef.current;
@@ -131,16 +132,8 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
             };
         }
 
-        if (containerRef.current) {
-            const w = containerRef.current.clientWidth;
-            canvas.setDimensions({
-                width: w,
-                height: w * (CANVAS_HEIGHT / CANVAS_WIDTH),
-            }, { cssOnly: true });
-        }
-
         canvas.renderAll();
-    }, [mediaType, CANVAS_WIDTH, CANVAS_HEIGHT]);
+    }, [mediaType, CANVAS_WIDTH, CANVAS_HEIGHT, resizeCanvas]);
 
     const loadFrame = (url) => {
         const canvas = fabricCanvasRef.current;
@@ -243,17 +236,28 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
 
         hasPhoto: () => !!photoRef.current,
 
+        clearPhoto: () => {
+            if (photoRef.current) {
+                fabricCanvasRef.current.remove(photoRef.current);
+                photoRef.current = null;
+                initialPhotoStateRef.current = null;
+                fabricCanvasRef.current.renderAll();
+            }
+        },
+
         exportImage: () => {
             const canvas = fabricCanvasRef.current;
             if (!canvas) return null;
 
             const zoom = canvas.getZoom();
-            const w = canvas.width;
-            const h = canvas.height;
             const vpt = canvas.viewportTransform.slice();
 
+            // Reset zoom/viewport logic if needed, but relying on backstore should be fine.
+            // However, to ensure clean export in case of any transforms:
             canvas.setZoom(1);
             canvas.viewportTransform = [1, 0, 0, 1, 0, 0];
+
+            // Ensure dimensions are set to full resolution (backstore)
             canvas.setDimensions({
                 width: CANVAS_WIDTH,
                 height: CANVAS_HEIGHT,
@@ -261,18 +265,19 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
 
             const data = canvas.toDataURL({ format: "png", quality: 1 });
 
-            canvas.setDimensions({ width: w, height: h });
+            // Restore state
             canvas.setZoom(zoom);
             canvas.viewportTransform = vpt;
+
+            // Critical fix: Resize canvas back to responsive CSS dimensions
+            resizeCanvas();
+
             canvas.renderAll();
 
             return data;
         },
     }));
 
-    // =========================
-    // RENDER
-    // =========================
     return (
         <div ref={containerRef} className="w-full max-w-6xl mx-auto">
             <canvas ref={canvasRef} style={{ width: '100%', height: 'auto', display: 'block' }} />
@@ -281,4 +286,5 @@ const FrameCanvas = forwardRef(({ mediaType, onCanvasClick }, ref) => {
 });
 
 FrameCanvas.displayName = "FrameCanvas";
+
 export default FrameCanvas;

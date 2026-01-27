@@ -51,7 +51,7 @@ const ControlPanel = ({
             <div>
                 <label
                     htmlFor="photo-upload"
-                    className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl cursor-pointer 
+                    className="flex items-center justify-center text-xs md:text-md gap-2 w-full py-3 px-4 rounded-xl cursor-pointer 
           bg-emerald-50 hover:bg-emerald-100 border border-emerald-200
           text-emerald-700 font-semibold transition"
                 >
@@ -69,7 +69,7 @@ const ControlPanel = ({
 
             {/* Zoom */}
             <div className="space-y-2">
-                <label className="text-sm font-semibold text-emerald-700">
+                <label className="text-sm mb-2 md:mb-0 font-semibold text-emerald-700">
                     Zoom / Resize
                 </label>
 
@@ -115,7 +115,7 @@ const ControlPanel = ({
             <div className="grid grid-cols-2 gap-3">
                 <button
                     onClick={() => onRotate(-90)}
-                    className="py-3 rounded-xl border border-emerald-200
+                    className="py-3 text-xs md:text-md rounded-xl border border-emerald-200
           bg-emerald-50 hover:bg-emerald-100
           text-emerald-700 font-semibold transition
           flex items-center justify-center gap-2"
@@ -126,7 +126,7 @@ const ControlPanel = ({
 
                 <button
                     onClick={() => onRotate(90)}
-                    className="py-3 rounded-xl border border-emerald-200
+                    className="py-3 text-xs md:text-md rounded-xl border border-emerald-200
           bg-emerald-50 hover:bg-emerald-100
           text-emerald-700 font-semibold transition
           flex items-center justify-center gap-2"
@@ -139,7 +139,7 @@ const ControlPanel = ({
             {/* Reset */}
             <button
                 onClick={onReset}
-                className="w-full py-3 rounded-xl border border-emerald-300
+                className="w-full py-3 text-xs md:text-md rounded-xl border border-emerald-300
         bg-white hover:bg-emerald-50
         text-emerald-700 font-semibold transition
         flex items-center justify-center gap-2"
@@ -151,10 +151,10 @@ const ControlPanel = ({
             {/* Download */}
             <button
                 onClick={onDownload}
-                className="w-full py-4 rounded-xl
+                className="w-full py-4 text-xs md:text-md rounded-xl
         bg-gradient-to-r from-emerald-500 to-emerald-600
         hover:from-emerald-600 hover:to-emerald-700
-        text-white font-bold text-lg
+        text-white font-bold
         shadow-lg hover:shadow-xl transition
         flex items-center justify-center gap-2"
             >
