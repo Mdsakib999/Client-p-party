@@ -4,9 +4,8 @@ import LeaderCard from "./LeaderCard";
 
 export const Candidates = () => {
   const candidates = [
-    
     {
-      id: 1,
+      id: "6977f60d315fd66776c74e8c",
       name: "Mr. Tarique Rahman",
       position: "Chairman",
       image:
@@ -14,7 +13,7 @@ export const Candidates = () => {
       highlight: true,
     },
     {
-      id: 2,
+      id: "6977f60d315fd66776c74e8d",
       name: "Mirza Fakhrul Islam Alamgir",
       position: "Secretary General",
       image:
@@ -22,7 +21,7 @@ export const Candidates = () => {
       highlight: false,
     },
     {
-      id: 3,
+      id: "6977f60d315fd66776c74e90",
       name: "Salauddin Ahmed",
       position: "Member of National Standing Committee",
       image:
@@ -30,17 +29,19 @@ export const Candidates = () => {
       highlight: false,
     },
     {
-      id: 4,
+      id: "6977f60d315fd66776c74e8e",
       name: "Mirza Abbas Uddin Ahmed",
-      position: "Member of National Standing Committee",
-      image: "https://www.bssnews.net/assets/news_photos/2025/10/28/image-325864-1761651827.jpg",
+      position: "Member of National Standing Committee - BNP",
+      image:
+        "https://www.bssnews.net/assets/news_photos/2025/10/28/image-325864-1761651827.jpg",
       highlight: false,
     },
     {
-      id: 5,
+      id: "6977f60d315fd66776c74e8f",
       name: "Mr. Amir Khosru Chowdhury",
-      position: "Member of National Standing Committee",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZicoZBVLiVJL-iEFshJGb-chJZxBeb9_Y4A&s",
+      position: "Member of National Standing Committee - BNP",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZicoZBVLiVJL-iEFshJGb-chJZxBeb9_Y4A&s",
       highlight: false,
     },
   ];
@@ -51,83 +52,47 @@ export const Candidates = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-            </svg>
             Candidates
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
             Meet Our Candidates
           </h2>
 
-          <p className="text-gray-600 text-lg mb-6">
+          <p className="text-gray-600 text-lg">
             Leaders dedicated to representing the voices of the people
           </p>
-
-          
         </div>
 
         {/* Candidates Grid */}
-
         <div className="max-w-5xl mx-auto mb-16">
           {/* TOP ROW – 2 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 max-w-xl mx-auto">
             {candidates.slice(0, 2).map((c) => (
-              <LeaderCard key={c.id} candidate={c} />
+              <Link key={c.id} to={`/candidates/${c.id}`}>
+                <LeaderCard candidate={c} />
+              </Link>
             ))}
           </div>
 
           {/* BOTTOM ROW – 3 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {candidates.slice(2, 5).map((c) => (
-              <LeaderCard key={c.id} candidate={c} />
+              <Link key={c.id} to={`/candidates/${c.id}`}>
+                <LeaderCard candidate={c} />
+              </Link>
             ))}
           </div>
         </div>
 
         <div className="flex justify-center">
-          <div className="flex items-center justify-center gap-6">
-            {/* OUTLINE BUTTON */}
-            <Link
-              to="/news"
-              className="
-      group flex items-center gap-2
-      px-6 py-2.5
-      rounded-full
-      border-2 border-green-700
-      text-green-800 font-medium
-      bg-white/70 backdrop-blur
-      transition-all duration-300
-      hover:bg-green-50 hover:border-green-800
-      hover:shadow-md hover:-translate-y-0.5
-    "
-            >
-              Learn More
-              <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-
-            {/* PRIMARY BUTTON */}
-            <Link
-              to="/candidates"
-              className="
-      group flex items-center gap-2
-      px-7 py-3
-      rounded-full
-      bg-gradient-to-r from-green-700 to-green-600
-      text-white font-semibold
-      shadow-lg shadow-green-700/30
-      transition-all duration-300
-      hover:from-green-800 hover:to-green-700
-      hover:shadow-xl hover:-translate-y-0.5
-      focus:ring-4 focus:ring-green-300
-    "
-            >
-              View All
-              <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </div>
-          
+          <Link
+            to="/candidates"
+            className="group flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-green-700 to-green-600 text-white font-semibold shadow-lg transition-all"
+          >
+            View All
+            <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

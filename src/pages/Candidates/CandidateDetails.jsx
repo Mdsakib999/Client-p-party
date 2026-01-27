@@ -7,15 +7,21 @@ import {
   User,
 } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { useGetCandidateByIdQuery } from "../../redux/features/candidate/candidate.api";
+import BNPLoader from "../../utils/BNPLoader";
 
 export default function CandidateDetails() {
   const { state: details } = useLocation();
   const [activeTab, setActiveTab] = useState("details");
+  const { id } = useParams();
 
-  const { data: candidateRes } = useGetCandidateByIdQuery(details?._id);
+  const { data: candidateRes, isLoading } = useGetCandidateByIdQuery(id);
   const candidate = candidateRes?.data || details;
+
+  if (isLoading) {
+    return <BNPLoader />
+  }
 
   if (!candidate) {
     return (

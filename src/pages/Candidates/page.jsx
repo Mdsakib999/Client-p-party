@@ -11,8 +11,6 @@ import BNPLoader from "../../utils/BNPLoader";
 const Candidates = () => {
   const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
   const candidates = candidatesData?.data || [];
-  // FOR JSON FORMAT
-  // const candidates = candidatesData || [];
   console.log("candidates", candidates)
 
   const [divisions, setDivisions] = useState([]);
