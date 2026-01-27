@@ -3,12 +3,9 @@
 @import "froala-editor/css/froala_style.min.css";
 @import "froala-editor/css/themes/gray.min.css";
 
-/* canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-} */
-
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

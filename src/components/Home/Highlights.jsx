@@ -1,46 +1,56 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router";
 
-import HighlightCard from "./HighlightCard";
-
 const Highlights = () => {
   return (
-    <section className="py-12 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold  mb-6 tracking-tight">
-            Movements, Messages, Momentum
-          </h2>
+    <section className="relative py-24 px-4 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://d2u0ktu8omkpf6.cloudfront.net/40648b7361ef32173c48751f3168bc70fe69e32ed7f63d56.jpg')",
+        }}
+      />
 
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            Capturing the voices, initiatives, and collective actions that drive
-            change and reflect the aspirations of the people.
-          </p>
+      {/* Green overlay */}
+      <div className="absolute inset-0 bg-green-900/70" />
 
+      <div className="relative max-w-7xl mx-auto text-center text-white">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          Movements. Messages. Momentum.
+        </h2>
 
+        {/* Description */}
+        <p className="text-lg md:text-xl text-green-100 max-w-3xl mx-auto mb-10">
+          Reflecting the aspirations of the people and the collective strength
+          behind a democratic, sovereign, and just Bangladesh.
+        </p>
 
-          <Link
-              to="/contact"
-              className="
-      group inline-flex items-center gap-2
-      px-7 py-3
-      rounded-full
-      bg-gradient-to-r from-green-700 to-green-600
-      text-white font-semibold
-      shadow-lg shadow-green-700/30
-      transition-all duration-300
-      hover:from-green-800 hover:to-green-700
-      hover:shadow-xl hover:-translate-y-0.5
-      focus:ring-4 focus:ring-green-300
-    "
-            >
-              Contact Us
-              <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-        </div>
+        {/* CTA */}
+        <Link
+          to="/contact"
+          className="
+            inline-flex items-center gap-3
+            px-10 py-4
+            rounded-full
+            bg-white text-green-800
+            text-lg font-semibold
+            shadow-lg
+            transition-all duration-300
+            hover:bg-green-50
+            hover:-translate-y-0.5
+            focus:ring-4 focus:ring-white/40
+          "
+        >
+          Contact Us
+          <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
 
-        <HighlightCard />
+        {/* Subtext */}
+        <p className="mt-8 text-sm text-green-50">
+          Reach out to share ideas, concerns, and support the movement.
+        </p>
       </div>
     </section>
   );
