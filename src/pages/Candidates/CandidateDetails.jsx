@@ -16,7 +16,10 @@ export default function CandidateDetails() {
   const [activeTab, setActiveTab] = useState("details");
   const { id } = useParams();
 
-  const { data: candidateRes, isLoading } = useGetCandidateByIdQuery(id);
+  const { data: candidateRes, isLoading } = useGetCandidateByIdQuery(id, {
+    refetchOnMountOrArgChange: false,
+    skip: !id,
+  });
   const candidate = candidateRes?.data || details;
 
   if (isLoading) {

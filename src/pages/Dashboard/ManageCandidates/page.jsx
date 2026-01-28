@@ -1,19 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import {
   useGetAllCandidatesQuery,
   useDeleteCandidateMutation,
 } from "../../../redux/features/candidate/candidate.api";
-import { FiEdit2, FiTrash2, FiEye } from "react-icons/fi";
+import { FiEdit2, FiTrash2, FiEye, FiSearch } from "react-icons/fi";
 import BNPLoader from "../../../utils/BNPLoader";
+import Pagination from "../../../components/Pagination";
+import areasData from "../../../data/areas.json";
 
 const ManageCandidates = () => {
   const navigate = useNavigate();
-  const { data, isLoading, error } = useGetAllCandidatesQuery();
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 20;
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [divisions, setDivisions] = useState([]);
+  const [districts, setDistricts] = useState([]);
+  const [selectedDivision, setSelectedDivision] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+
+  useEffect(() => {
+    const divs = Object.keys(areasData).map((d) => ({
+      name: d,
+    }));
+    setDivisions(divs);
+  }, []);
+
+  const { data, isLoading, error } = useGetAllCandidatesQuery(undefined, {
+    refetchOnMountOrArgChange: true,
+  });
   const [deleteCandidate, { isLoading: isDeleting }] =
     useDeleteCandidateMutation();
   const [selectedCandidate, setSelectedCandidate] = useState(null);
-  console.log("data", data)
+
   const handleDelete = async (id, name) => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
       try {
@@ -48,13 +69,52 @@ const ManageCandidates = () => {
 
   const candidates = data?.data || [];
 
+  const handleDivisionChange = (e) => {
+    const divName = e.target.value;
+    setSelectedDivision(divName);
+    setSelectedDistrict("");
+    setCurrentPage(1);
+
+    if (divName) {
+      const divisionDistricts = areasData[divName]
+        ? Object.keys(areasData[divName])
+        : [];
+      setDistricts(divisionDistricts.map(d => ({ name: d })));
+    } else {
+      setDistricts([]);
+    }
+  };
+
+  const filteredCandidates = candidates.filter((c) => {
+    const matchSearch = searchTerm
+      ? c.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      c.designation?.toLowerCase().includes(searchTerm.toLowerCase())
+      : true;
+
+    const matchDivision = selectedDivision
+      ? c.division?.includes(selectedDivision)
+      : true;
+
+    const matchDistrict = selectedDistrict
+      ? c.district?.includes(selectedDistrict)
+      : true;
+
+    return matchSearch && matchDivision && matchDistrict;
+  });
+
+  const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
+  const paginatedCandidates = filteredCandidates.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
-    <div className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
+    <div className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto overflow-auto">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Manage Candidates</h2>
         <button
           onClick={() => navigate("/dashboard/create-candidate")}
-          className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
+          className="cursor-pointer w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
         >
           + Add New Candidate
         </button>
@@ -72,152 +132,215 @@ const ManageCandidates = () => {
         </div>
       ) : (
         <>
-          {/* Desktop Table View */}
-          <div className="hidden md:block bg-white rounded-lg shadow overflow-hidden">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    No
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Photo
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Position/Designation
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Election constituencies
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Districts
-                  </th>
-                  <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {candidates.map((candidate, index) => (
-                  <tr key={candidate._id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {index + 1}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+          {/* Search and Filters */}
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Search */}
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search candidates..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+              />
+              <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            </div>
+
+            {/* Division Filter */}
+            <div className="relative">
+              <select
+                value={selectedDivision}
+                onChange={handleDivisionChange}
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 bg-white text-sm text-gray-600"
+              >
+                <option value="">All Divisions</option>
+                {divisions.map((div) => (
+                  <option key={div.name} value={div.name}>
+                    {div.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* District Filter */}
+            <div className="relative">
+              <select
+                value={selectedDistrict}
+                onChange={(e) => {
+                  setSelectedDistrict(e.target.value);
+                  setCurrentPage(1);
+                }}
+                disabled={!selectedDivision}
+                className={`w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 bg-white text-sm text-gray-600 ${!selectedDivision ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+              >
+                <option value="">All Districts</option>
+                {districts.map((dist) => (
+                  <option key={dist.name} value={dist.name}>
+                    {dist.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {filteredCandidates.length === 0 && (
+            <div className="bg-white border border-gray-200 rounded-lg p-8 text-center text-gray-500">
+              No candidates found matching your specific search.
+            </div>
+          )}
+
+          {filteredCandidates.length > 0 && (
+            <>
+              {/* Desktop Table View */}
+              <div className="hidden md:block bg-white rounded-lg shadow overflow-hidden">
+
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        No
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Photo
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Name
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Position/Designation
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Election constituencies
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Districts
+                      </th>
+                      <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Actions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {paginatedCandidates.map((candidate, index) => (
+                      <tr key={candidate._id} className="hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {index + 1}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <img
+                            src={candidate.photos?.[0]?.secure_url || "/placeholder.png"}
+                            alt={candidate.name}
+                            className="h-12 w-12 rounded-full object-cover"
+                          />
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm font-medium text-gray-900 max-w-32">
+                            {candidate.name}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-gray-900 max-w-40">
+                            {candidate.designation}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-gray-900 max-w-40">
+                            {candidate.election_constituencies.map(area => area.actual_place_name) || "N/A"}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-gray-900">
+                            {candidate.district?.join(", ") || "N/A"}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <div className="flex justify-end gap-2">
+                            <button
+                              onClick={() => setSelectedCandidate(candidate)}
+                              className="text-emerald-600 hover:text-emerald-900 p-2 hover:bg-emerald-50 rounded transition-colors"
+                              title="View Details"
+                            >
+                              <FiEye size={18} />
+                            </button>
+                            <button
+                              onClick={() => handleEdit(candidate)}
+                              className="text-amber-600 hover:text-amber-900 p-2 hover:bg-amber-50 rounded transition-colors"
+                              title="Edit"
+                            >
+                              <FiEdit2 size={18} />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(candidate._id, candidate.name)}
+                              disabled={isDeleting}
+                              className="text-red-600 hover:text-red-900 p-2 hover:bg-red-50 rounded transition-colors disabled:opacity-50"
+                              title="Delete"
+                            >
+                              <FiTrash2 size={18} />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Card View */}
+              <div className="md:hidden space-y-4">
+                {paginatedCandidates.map((candidate) => (
+                  <div key={candidate._id} className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+                    <div className="flex items-start gap-4 mb-3">
                       <img
                         src={candidate.photos?.[0]?.secure_url || "/placeholder.png"}
                         alt={candidate.name}
-                        className="h-12 w-12 rounded-full object-cover"
+                        className="h-16 w-16 rounded-full object-cover flex-shrink-0"
                       />
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-sm font-medium text-gray-900 max-w-32">
-                        {candidate.name}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-semibold text-gray-900 truncate">
+                          {candidate.name}
+                        </h3>
+                        <p className="text-sm text-gray-600 truncate">{candidate.designation}</p>
+                        <span className="inline-block mt-1 px-2 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800">
+                          {candidate.profession}
+                        </span>
                       </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-sm text-gray-900 max-w-40">
-                        {candidate.designation}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-sm text-gray-900 max-w-40">
-                        {candidate.election_constituencies.map(area => area.actual_place_name) || "N/A"}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-sm text-gray-900">
-                        {candidate.district?.join(", ") || "N/A"}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <div className="flex justify-end gap-2">
-                        <button
-                          onClick={() => setSelectedCandidate(candidate)}
-                          className="text-emerald-600 hover:text-emerald-900 p-2 hover:bg-emerald-50 rounded transition-colors"
-                          title="View Details"
-                        >
-                          <FiEye size={18} />
-                        </button>
-                        <button
-                          onClick={() => handleEdit(candidate)}
-                          className="text-amber-600 hover:text-amber-900 p-2 hover:bg-amber-50 rounded transition-colors"
-                          title="Edit"
-                        >
-                          <FiEdit2 size={18} />
-                        </button>
-                        <button
-                          onClick={() => handleDelete(candidate._id, candidate.name)}
-                          disabled={isDeleting}
-                          className="text-red-600 hover:text-red-900 p-2 hover:bg-red-50 rounded transition-colors disabled:opacity-50"
-                          title="Delete"
-                        >
-                          <FiTrash2 size={18} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                    </div>
 
-          {/* Mobile Card View */}
-          <div className="md:hidden space-y-4">
-            {candidates.map((candidate) => (
-              <div key={candidate._id} className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4 mb-3">
-                  <img
-                    src={candidate.photos?.[0]?.secure_url || "/placeholder.png"}
-                    alt={candidate.name}
-                    className="h-16 w-16 rounded-full object-cover flex-shrink-0"
-                  />
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-semibold text-gray-900 truncate">
-                      {candidate.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 truncate">{candidate.designation}</p>
-                    <span className="inline-block mt-1 px-2 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800">
-                      {candidate.profession}
-                    </span>
+                    <div className="mb-3">
+                      <p className="text-sm text-gray-600">
+                        <span className="font-medium">Districts:</span> {candidate.district?.join(", ") || "N/A"}
+                      </p>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => setSelectedCandidate(candidate)}
+                        className="flex-1 flex items-center justify-center gap-2 text-emerald-600 hover:text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-4 py-2 rounded-lg transition-colors font-medium"
+                      >
+                        <FiEye size={16} />
+                        View
+                      </button>
+                      <button
+                        onClick={() => handleEdit(candidate)}
+                        className="flex-1 flex items-center justify-center gap-2 text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-lg transition-colors font-medium"
+                      >
+                        <FiEdit2 size={16} />
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => handleDelete(candidate._id, candidate.name)}
+                        disabled={isDeleting}
+                        className="flex items-center justify-center gap-2 text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-lg transition-colors font-medium disabled:opacity-50"
+                      >
+                        <FiTrash2 size={16} />
+                      </button>
+                    </div>
                   </div>
-                </div>
-
-                <div className="mb-3">
-                  <p className="text-sm text-gray-600">
-                    <span className="font-medium">Districts:</span> {candidate.district?.join(", ") || "N/A"}
-                  </p>
-                </div>
-
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => setSelectedCandidate(candidate)}
-                    className="flex-1 flex items-center justify-center gap-2 text-emerald-600 hover:text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-4 py-2 rounded-lg transition-colors font-medium"
-                  >
-                    <FiEye size={16} />
-                    View
-                  </button>
-                  <button
-                    onClick={() => handleEdit(candidate)}
-                    className="flex-1 flex items-center justify-center gap-2 text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-lg transition-colors font-medium"
-                  >
-                    <FiEdit2 size={16} />
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete(candidate._id, candidate.name)}
-                    disabled={isDeleting}
-                    className="flex items-center justify-center gap-2 text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-lg transition-colors font-medium disabled:opacity-50"
-                  >
-                    <FiTrash2 size={16} />
-                  </button>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          )}
         </>
       )}
 
@@ -422,6 +545,16 @@ const ManageCandidates = () => {
           </div>
         </div>
       )}
+      {totalPages > 1 && (
+        <div className="mt-10">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </div>
+      )}
+
     </div>
   );
 };

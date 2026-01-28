@@ -8,7 +8,6 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
         { id: 2, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
         { id: 3, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
         { id: 4, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
-        { id: 5, src: "/frames/profile/profile6.png", name: "Profile Frame 6" },
     ];
 
     const postFrames = [
@@ -58,11 +57,32 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
         handleSelect(frames[(currentIndex - 1 + frames.length) % frames.length]);
     };
 
+    const handleKeyDown = (e, frame) => {
+        switch (e.key) {
+            case "Enter":
+            case " ":
+                e.preventDefault();
+                handleSelect(frame);
+                break;
+            case "ArrowLeft":
+                e.preventDefault();
+                handlePrev();
+                break;
+            case "ArrowRight":
+                e.preventDefault();
+                handleNext();
+                break;
+        }
+    };
+
     const showArrows = frames.length > 1;
 
     return (
-        <div className="relative bg-white/80 rounded-2xl p-4 border border-emerald-100 shadow-lg flex justify-center">
-            {/* Left Arrow */}
+        <div
+            className="relative bg-white/80 rounded-2xl p-4 border border-emerald-100 shadow-lg flex justify-center"
+            role="radiogroup"
+            aria-label="Frame selection"
+        >
             {showArrows && (
                 <button
                     onClick={handlePrev}
@@ -70,6 +90,7 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
                     w-10 h-10 rounded-full bg-white border border-emerald-200
                     shadow hover:bg-emerald-50 text-emerald-600 transition
                     flex items-center justify-center"
+                    aria-label="Previous frame"
                 >
                     ←
                 </button>
@@ -83,24 +104,31 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
                     const isProfile = mediaType === "profile";
                     const isPost = mediaType === "post";
                     const isCover = mediaType === "cover";
+                    const isSelected = selectedId === frame.id;
 
                     return (
                         <div
                             key={frame.id}
                             ref={(el) => (itemRefs.current[frame.id] = el)}
                             onClick={() => handleSelect(frame)}
+                            onKeyDown={(e) => handleKeyDown(e, frame)}
+                            tabIndex={0}
+                            role="radio"
+                            aria-checked={isSelected}
+                            aria-label={frame.name}
                             className={`snap-center flex-shrink-0 cursor-pointer transition-all duration-300
-                                ${selectedId === frame.id
+                                ${isSelected
                                     ? "scale-110"
                                     : "opacity-60 hover:opacity-100"
-                                }`}
+                                }
+                                focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-xl`}
                         >
                             <div
                                 className={`relative rounded-xl overflow-hidden border
                                 ${isProfile && "w-20 h-20"}
                                 ${isPost && "w-20 h-24"}
                                 ${isCover && "w-36 h-20"}
-                                ${selectedId === frame.id
+                                ${isSelected
                                         ? "border-emerald-500 ring-4 ring-emerald-300/40 shadow-xl"
                                         : "border-emerald-100"
                                     }`}
@@ -109,9 +137,10 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
                                     src={frame.src}
                                     alt={frame.name}
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
 
-                                {/* Badge */}
+                                {/* Badge for cover photos */}
                                 {isCover && (
                                     <span className="absolute bottom-1 left-1
                                     text-[10px] px-2 py-0.5 rounded-full
@@ -120,7 +149,8 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
                                     </span>
                                 )}
 
-                                {selectedId === frame.id && (
+                                {/* Selected checkmark */}
+                                {isSelected && (
                                     <div className="absolute top-1 right-1 w-5 h-5 rounded-full
                                     bg-emerald-500 text-white text-xs font-bold
                                     flex items-center justify-center shadow">
@@ -141,6 +171,7 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
                     w-10 h-10 rounded-full bg-white border border-emerald-200
                     shadow hover:bg-emerald-50 text-emerald-600 transition
                     flex items-center justify-center"
+                    aria-label="Next frame"
                 >
                     →
                 </button>

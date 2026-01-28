@@ -77,7 +77,7 @@ const Dashboard = () => {
       </aside>
 
       {/* Main content area */}
-      <div className="flex-1 lg:ml-64">
+      <div className="flex-1 lg:ml-64 min-w-0">
         {/* Mobile header */}
         <header className="lg:hidden bg-white shadow-sm sticky top-0 z-30 flex items-center gap-4 p-4">
           <button
@@ -86,7 +86,7 @@ const Dashboard = () => {
           >
             <FaBars size={24} />
           </button>
-          <h2 className="text-xl font-bold text-gray-800">Dashboard</h2>
+          <h2 className="text-xl font-bold text-gray-800">Admin Dashboard</h2>
         </header>
 
         <main className="p-4 lg:p-8 min-h-screen bg-gray-50">
