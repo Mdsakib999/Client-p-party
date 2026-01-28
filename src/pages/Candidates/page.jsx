@@ -113,7 +113,7 @@ const Candidates = () => {
             <div className="flex flex-row items-center gap-2 md:gap-0">
               {/* Search */}
               <div
-                className="flex-1 px-4 md:px-5 py-3 w-full"
+                className="flex-1 px-3 md:px-5 py-3 w-full min-w-0"
                 onClick={() => setActiveSection(null)}
               >
                 <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
@@ -128,48 +128,49 @@ const Candidates = () => {
                 />
               </div>
 
-              {/* Divider for desktop */}
-              <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+              {/* Divider */}
+              <div className="w-px h-8 md:h-12 bg-gray-200"></div>
 
-              {/* Division - Desktop only */}
+              {/* Division */}
               <div
                 onClick={() => setActiveSection("division")}
-                className="hidden md:flex flex-1 px-5 py-3 w-full cursor-pointer hover:bg-gray-50 rounded-full transition-colors"
+                className="flex-1 px-3 md:px-5 py-3 w-full min-w-0 cursor-pointer hover:bg-gray-50 rounded-full transition-colors"
               >
                 <div className="w-full">
-                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
                     Division
                   </label>
-                  <div className="text-sm text-gray-600 truncate">
-                    {selectedDivision?.name || "Select division"}
+                  <div className="text-xs md:text-sm text-gray-600 truncate">
+                    {selectedDivision?.name || "Division Select"}
                   </div>
                 </div>
               </div>
 
-              {/* Divider for desktop */}
-              <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+              {/* Divider */}
+              <div className="w-px h-8 md:h-12 bg-gray-200"></div>
 
-              {/* District - Desktop only */}
+              {/* District */}
               <div
                 onClick={() => selectedDivision && setActiveSection("district")}
-                className={`hidden md:flex flex-1 px-5 py-3 w-full rounded-full transition-colors ${selectedDivision
-                  ? "cursor-pointer hover:bg-gray-50"
-                  : "opacity-50 cursor-not-allowed"
-                  }`}
+                className={`flex-1 px-3 md:px-5 py-3 w-full min-w-0 rounded-full transition-colors ${
+                  selectedDivision
+                    ? "cursor-pointer hover:bg-gray-50"
+                    : "opacity-50 cursor-not-allowed"
+                }`}
               >
                 <div className="w-full">
-                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
                     District
                   </label>
-                  <div className="text-sm text-gray-600 truncate">
-                    {selectedDistrict?.name || "Select district"}
+                  <div className="text-xs md:text-sm text-gray-600 truncate">
+                    {selectedDistrict?.name || "District Select"}
                   </div>
                 </div>
               </div>
 
               {/* Search Button */}
-              <button className="flex items-center justify-center w-12 h-12 bg-gray-400 hover:bg-gray-600 rounded-full md:mx-2 transition-colors flex-shrink-0">
-                <Search className="text-white" size={20} />
+              <button className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-gray-400 hover:bg-gray-600 rounded-full md:mx-2 transition-colors flex-shrink-0">
+                <Search className="text-white" size={18} />
               </button>
             </div>
 
@@ -227,10 +228,7 @@ const Candidates = () => {
           {filteredCandidates
             .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
             .map((candidate) => (
-              <CandidateCard
-                key={candidate._id}
-                candidate={candidate}
-              />
+              <CandidateCard key={candidate._id} candidate={candidate} />
             ))}
         </section>
 
