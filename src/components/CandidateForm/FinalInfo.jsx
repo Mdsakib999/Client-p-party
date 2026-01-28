@@ -1,5 +1,6 @@
 import { useState } from "react";
 import areasData from "../../data/areas.json";
+import toast from "react-hot-toast"
 
 const FinalInfo = ({
   formData,
@@ -37,7 +38,7 @@ const FinalInfo = ({
 
   const handleAddConstituency = () => {
     if (!selectedConstituency || !electionAreaName.trim()) {
-      alert("Please select a constituency and enter the election area name");
+      toast("Please select a constituency and enter the election area name");
       return;
     }
 

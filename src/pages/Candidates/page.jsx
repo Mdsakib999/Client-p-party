@@ -1,5 +1,4 @@
 import candidatesBanner from "../../assets/bg.png";
-// import candidatesBanner from "../../assets/candidates-banner.jpg";
 import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, Search } from "lucide-react";
 import CandidateCard from "../../components/CandidateCard";

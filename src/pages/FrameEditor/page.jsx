@@ -10,32 +10,72 @@ const FrameEditor = () => {
     const fileInputRef = useRef(null);
     const [selectedMediaType, setSelectedMediaType] = useState("profile");
     const [hasPhoto, setHasPhoto] = useState(false);
+    const [imageSrc, setImageSrc] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
+        // DON'T clear photo when changing media type - just change the frame
+        setError(null);
+
         const defaultFrame =
             selectedMediaType === "profile"
                 ? "/frames/profile/profile2.png"
-                : "/frames/posts/post1.png";
+                : selectedMediaType === "post"
+                    ? "/frames/posts/post1.png"
+                    : "/frames/cover/cover1.png";
 
-        if (canvasRef.current) {
-            canvasRef.current.changeFrame(defaultFrame);
-        }
+        canvasRef.current?.changeFrame(defaultFrame);
     }, [selectedMediaType]);
 
     const handleUploadPhoto = (file) => {
-        if (canvasRef.current) {
-            canvasRef.current.uploadPhoto(file);
-            setHasPhoto(true);
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+            setError("Please upload a valid image file (JPG, PNG, etc.)");
+            return;
         }
+
+        // Check file size (max 10MB)
+        if (file.size > 10 * 1024 * 1024) {
+            setError("Image file is too large. Please upload an image smaller than 10MB.");
+            return;
+        }
+
+        setIsLoading(true);
+        setError(null);
+
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            // Clear the existing photo first to allow new photo to load
+            canvasRef.current?.clearPhoto();
+
+            // Small delay to ensure clearPhoto completes before setting new image
+            setTimeout(() => {
+                setImageSrc(e.target.result);
+                setHasPhoto(true);
+                setIsLoading(false);
+            }, 50);
+        };
+
+        reader.onerror = () => {
+            setError("Failed to read the image file. Please try again.");
+            setIsLoading(false);
+        };
+
+        reader.readAsDataURL(file);
     };
 
     const handleCanvasClick = useCallback(() => {
-        fileInputRef.current?.click();
-    }, []);
+        if (!isLoading) {
+            fileInputRef.current?.click();
+        }
+    }, [isLoading]);
 
     const handleFileChange = (e) => {
         const file = e.target.files?.[0];
-        if (file && file.type.startsWith("image/")) {
+        if (file) {
             handleUploadPhoto(file);
         }
     };
@@ -59,25 +99,44 @@ const FrameEditor = () => {
     const handleDownload = () => {
         const imageData = canvasRef.current?.exportImage();
         if (!imageData) {
-            alert("Please upload a photo first!");
+            setError("Please upload a photo first!");
             return;
         }
 
-        const link = document.createElement("a");
-        link.href = imageData;
-        link.download = `bnp-${selectedMediaType}-frame-${Date.now()}.png`;
-        link.click();
+        try {
+            const link = document.createElement("a");
+            link.href = imageData;
+            link.download = `bnp-${selectedMediaType}-frame-${Date.now()}.png`;
 
-        // Reset after download
-        setTimeout(() => {
-            canvasRef.current?.clearPhoto();
-            setHasPhoto(false);
-            if (fileInputRef.current) fileInputRef.current.value = "";
-        }, 1000); // Small delay to ensure download starts
+            // Add event listener for successful download
+            link.addEventListener('click', () => {
+                // Reset after a delay to ensure download starts
+                setTimeout(() => {
+                    canvasRef.current?.clearPhoto();
+                    setHasPhoto(false);
+                    setImageSrc(null);
+                    setError(null);
+                    if (fileInputRef.current) {
+                        fileInputRef.current.value = "";
+                    }
+                }, 1500);
+            });
+
+            link.click();
+        } catch (err) {
+            setError("Failed to download the image. Please try again.");
+            console.error("Download error:", err);
+        }
     };
 
     const handleMediaTypeChange = (type) => {
         setSelectedMediaType(type);
+        setError(null);
+    };
+
+    const handleImageLoadError = (errorMessage) => {
+        setError(errorMessage);
+        setIsLoading(false);
     };
 
     return (
@@ -90,48 +149,51 @@ const FrameEditor = () => {
                     <p className="text-green-600 font-medium">With One Click</p>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6 w-full">
                     <MediaTypeSelector
                         selectedType={selectedMediaType}
                         onSelect={handleMediaTypeChange}
                     />
                 </div>
 
-                {/* MAIN CONTENT */}
-                <div className="w-full flex flex-col lg:flex-row items-center gap-10 my-12">
-                    <div className="flex flex-col items-center space-y-8">
-                        <div className="relative shadow-2xl rounded-2xl overflow-hidden group">
-                            <div
-                                className={`relative ${!hasPhoto ? "cursor-pointer" : "cursor-default"
-                                    }`}
-                                style={{
-                                    width: selectedMediaType === "cover" ? "500px" : "300px",
-                                    height: selectedMediaType === "profile"
-                                        ? "300px"
-                                        : selectedMediaType === "post"
-                                            ? "375px"
-                                            : "185px", // 500 * (315/851) ≈ 185
-                                }}
-                            >
-                                <FrameCanvas
-                                    ref={canvasRef}
-                                    mediaType={selectedMediaType}
-                                    onCanvasClick={handleCanvasClick}
-                                />
+                {/* Error Message */}
+                {error && (
+                    <div className="w-full max-w-2xl mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
+                        <strong>Error:</strong> {error}
+                    </div>
+                )}
 
-                                {!hasPhoto && (
-                                    <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center bg-gray-50/50">
-                                        <Upload className="w-12 h-12 mb-3 opacity-40 text-green-500" />
-                                        <span className="text-xs text-green-600 px-4 text-center">
-                                            Click to upload your photo
-                                        </span>
-                                    </div>
-                                )}
-                            </div>
+                {/* MAIN CONTENT */}
+                <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 my-8 lg:my-12">
+                    <div className="flex flex-col items-center space-y-6 lg:space-y-8 w-full lg:w-auto">
+                        <div className="relative shadow-2xl rounded-2xl group w-full max-w-md lg:max-w-none">
+                            <FrameCanvas
+                                ref={canvasRef}
+                                mediaType={selectedMediaType}
+                                imageSrc={imageSrc}
+                                onCanvasClick={handleCanvasClick}
+                                onLoadError={handleImageLoadError}
+                            />
+
+                            {!hasPhoto && !isLoading && (
+                                <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center">
+                                    <Upload className="w-12 h-12 mb-3 opacity-40 text-green-500" />
+                                    <span className="text-xs text-green-600 px-4 text-center">
+                                        Click to upload your photo
+                                    </span>
+                                </div>
+                            )}
+
+                            {isLoading && (
+                                <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center bg-white/50">
+                                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-green-500 border-t-transparent"></div>
+                                    <span className="text-xs text-green-600 mt-3">Loading...</span>
+                                </div>
+                            )}
                         </div>
 
-                        <div className="w-full max-w-xs md:max-w-md p-2 md:p-6 rounded-3xl shadow-lg border border-green-100 bg-green-100">
-                            <h3 className="text-gray-800 text-xs md:text-sm text-center mb-2 font-semibold">
+                        <div className="w-full max-w-md p-3 md:p-6 rounded-3xl shadow-lg border border-green-100 bg-green-100">
+                            <h3 className="text-gray-800 text-xs md:text-sm text-center mb-3 font-semibold">
                                 Choose Your Frame
                             </h3>
                             <FrameSelector
@@ -141,8 +203,8 @@ const FrameEditor = () => {
                         </div>
                     </div>
 
-                    <div className="flex justify-center">
-                        <div className="w-full max-w-md p-6 rounded-3xl shadow-lg border border-green-100 bg-green-50">
+                    <div className="flex justify-center w-full lg:w-auto">
+                        <div className="w-full max-w-md p-4 md:p-6 rounded-3xl shadow-lg border border-green-100 bg-green-50">
                             <ControlPanel
                                 onUploadPhoto={handleUploadPhoto}
                                 onZoomChange={handleZoomChange}
@@ -150,6 +212,7 @@ const FrameEditor = () => {
                                 onReset={handleReset}
                                 onDownload={handleDownload}
                                 hasPhoto={hasPhoto}
+                                isLoading={isLoading}
                             />
                         </div>
                     </div>
@@ -162,6 +225,8 @@ const FrameEditor = () => {
                     accept="image/*"
                     onChange={handleFileChange}
                     className="hidden"
+                    aria-label="Upload photo"
+                    disabled={isLoading}
                 />
 
                 {/* Footer */}

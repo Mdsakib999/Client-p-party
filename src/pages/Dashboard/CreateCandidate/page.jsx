@@ -219,14 +219,11 @@ const CreateCandidate = () => {
       if (!formData?.election_constituencies || formData?.election_constituencies?.length === 0) {
         newErrors.election_constituencies = "At least one election constituency is required";
       }
-      // Photos are now optional
-      // if (!formData?.photos || formData?.photos?.length === 0) newErrors.photos = "At least one photo is required";
     }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       isValid = false;
-      // Scroll to top to show validation errors
       window.scrollTo({
         top: 0,
         left: 0,
@@ -379,7 +376,7 @@ const CreateCandidate = () => {
         error?.data?.message ||
         error?.message ||
         "Error creating candidate. Check console for details.";
-      toast.error(errorMessage);
+      toast.error(<h1 className="font-semibold">{errorMessage}</h1>);
     }
   };
 
