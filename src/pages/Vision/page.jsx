@@ -19,12 +19,36 @@ export default function VisionPage() {
   const [activeTab, setActiveTab] = useState("vision");
 
   const coreValues = [
-    { icon: <Scale />, title: "Democracy", desc: "Upholding free, fair, and transparent governance." },
-    { icon: <ShieldCheck />, title: "Integrity", desc: "Fighting corruption and serving with honesty." },
-    { icon: <Users />, title: "People First", desc: "Putting citizens' rights and voices at the center." },
-    { icon: <Gavel />, title: "Justice & Equality", desc: "Ensuring fairness and opportunity for all." },
-    { icon: <Users />, title: "National Unity", desc: "Strengthening harmony across all communities." },
-    { icon: <TrendingUp />, title: "Progress", desc: "Driving sustainable economic growth." },
+    {
+      icon: <Scale />,
+      title: "Democracy",
+      desc: "Upholding free, fair, and transparent governance.",
+    },
+    {
+      icon: <ShieldCheck />,
+      title: "Integrity",
+      desc: "Fighting corruption and serving with honesty.",
+    },
+    {
+      icon: <Users />,
+      title: "People First",
+      desc: "Putting citizens' rights and voices at the center.",
+    },
+    {
+      icon: <Gavel />,
+      title: "Justice & Equality",
+      desc: "Ensuring fairness and opportunity for all.",
+    },
+    {
+      icon: <Users />,
+      title: "National Unity",
+      desc: "Strengthening harmony across all communities.",
+    },
+    {
+      icon: <TrendingUp />,
+      title: "Progress",
+      desc: "Driving sustainable economic growth.",
+    },
   ];
 
   const goals = [
@@ -61,7 +85,7 @@ export default function VisionPage() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-green-50 via-white to-green-50 min-h-screen">
+    <div className="bg-gradient-to-b from-green-50 via-white pt-20 to-green-50 min-h-screen">
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <img
@@ -76,9 +100,11 @@ export default function VisionPage() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl" />
 
         <div className="relative z-10 text-center max-w-5xl px-6">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-2 rounded-full my-8">
             <Sparkles className="w-4 h-4 text-green-300" />
-            <span className="text-green-100 font-medium">Building Tomorrow, Together</span>
+            <span className="text-green-100 font-medium">
+              Building Tomorrow, Together
+            </span>
           </div>
 
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
@@ -92,8 +118,8 @@ export default function VisionPage() {
 
           <div className="inline-block relative">
             <div className="absolute inset-0 bg-white/20 blur-xl rounded-full" />
-            <div className="relative border-2 border-white/60 bg-white/10 backdrop-blur-md px-10 py-5 rounded-full">
-              <p className="text-3xl font-bold text-white tracking-wide">
+            <div className="relative border-2 border-white/60 bg-white/10 backdrop-blur-md px-10 py-2.5 md:py-5 rounded-full">
+              <p className="md:text-3xl font-bold text-white tracking-wide">
                 "জনতার ক্ষমতা, রাষ্ট্রের শক্তি।"
               </p>
             </div>
@@ -108,10 +134,11 @@ export default function VisionPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`py-5 px-4 font-semibold capitalize border-b-3 transition-all whitespace-nowrap ${activeTab === tab
-                ? "border-green-600 text-green-600 scale-105"
-                : "border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300"
-                }`}
+              className={`py-5 px-4 font-semibold capitalize border-b-3 transition-all whitespace-nowrap ${
+                activeTab === tab
+                  ? "border-green-600 text-green-600 scale-105"
+                  : "border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300"
+              }`}
             >
               {tab}
             </button>
@@ -135,9 +162,9 @@ export default function VisionPage() {
 
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-10 shadow-sm border border-green-100">
               <p className="text-lg text-green-700">
-                To transform Bangladesh into a peaceful, stable, and democratic nation
-                where economic self-reliance is secured and every citizen lives with
-                dignity, freedom, and opportunity.
+                To transform Bangladesh into a peaceful, stable, and democratic
+                nation where economic self-reliance is secured and every citizen
+                lives with dignity, freedom, and opportunity.
               </p>
             </div>
 
@@ -146,13 +173,18 @@ export default function VisionPage() {
                 "Accountable democratic institutions",
                 "Economic opportunities for youth, farmers & workers",
                 "Inclusive society across all communities",
-                "Global respect rooted in national identity"
+                "Global respect rooted in national identity",
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4 bg-gradient-to-br from-green-700 via-emerald-600 to-emerald-700 rounded-2xl p-6 shadow hover:shadow-lg transition-shadow">
+                <div
+                  key={i}
+                  className="flex items-start gap-4 bg-gradient-to-br from-green-700 via-emerald-600 to-emerald-700 rounded-2xl p-6 shadow hover:shadow-lg transition-shadow"
+                >
                   <div className="w-8 h-8 flex items-center justify-center bg-emerald-50 text-emerald-600 rounded-lg flex-shrink-0 mt-1">
                     <span className="text-lg font-bold">✓</span>
                   </div>
-                  <p className="text-lg text-white leading-relaxed mt-1">{item}</p>
+                  <p className="text-lg text-white leading-relaxed mt-1">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>
@@ -175,20 +207,32 @@ export default function VisionPage() {
               <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl blur opacity-20" />
               <div className="relative bg-white rounded-3xl p-10 shadow-lg border border-gray-100">
                 <p className="text-2xl text-gray-600">
-                  To restore genuine democratic governance, uphold sovereignty, fight
-                  corruption, and empower all citizens through justice, participation,
-                  and economic progress — leaving no one behind.
+                  To restore genuine democratic governance, uphold sovereignty,
+                  fight corruption, and empower all citizens through justice,
+                  participation, and economic progress — leaving no one behind.
                 </p>
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mt-12">
               {[
-                { title: "Democratic Governance", desc: "Free, fair, and transparent" },
-                { title: "Economic Empowerment", desc: "Opportunities for all citizens" },
-                { title: "Social Justice", desc: "Equality and dignity for everyone" }
+                {
+                  title: "Democratic Governance",
+                  desc: "Free, fair, and transparent",
+                },
+                {
+                  title: "Economic Empowerment",
+                  desc: "Opportunities for all citizens",
+                },
+                {
+                  title: "Social Justice",
+                  desc: "Equality and dignity for everyone",
+                },
               ].map((item, i) => (
-                <div key={i} className="bg-gradient-to-br from-green-700 via-emerald-600 to-emerald-700 rounded-2xl p-8 text-white shadow-lg hover:scale-105 transition-transform">
+                <div
+                  key={i}
+                  className="bg-gradient-to-br from-green-700 via-emerald-600 to-emerald-700 rounded-2xl p-8 text-white shadow-lg hover:scale-105 transition-transform"
+                >
                   <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                   <p className="text-green-50">{item.desc}</p>
                 </div>
@@ -216,7 +260,9 @@ export default function VisionPage() {
                   <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-green-600 to-emerald-600 text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg">
                     {React.cloneElement(v.icon, { className: "w-8 h-8" })}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-800">{v.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                    {v.title}
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">{v.desc}</p>
                 </div>
               ))}
@@ -247,7 +293,9 @@ export default function VisionPage() {
                       {React.cloneElement(g.icon, { className: "w-7 h-7" })}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3 text-gray-800">{g.title}</h3>
+                      <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                        {g.title}
+                      </h3>
                       <p className="text-gray-600 leading-relaxed">{g.desc}</p>
                     </div>
                   </div>
@@ -276,18 +324,22 @@ export default function VisionPage() {
           <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-green-300 to-transparent mx-auto mb-8" />
 
           <p className="text-xl md:text-2xl leading-relaxed mb-12 text-green-50 font-light max-w-3xl mx-auto">
-            By 2030, BNP envisions a democratic, economically strong, and socially just
-            Bangladesh where every citizen lives with dignity, hope, and opportunity.
+            By 2030, BNP envisions a democratic, economically strong, and
+            socially just Bangladesh where every citizen lives with dignity,
+            hope, and opportunity.
           </p>
 
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Share Your Dreams with Us</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Share Your Dreams with Us
+            </h3>
             <p className="text-green-100 mb-6">
-              Your voice matters. Share your aspirations for Bangladesh and be part of building our nation's future.
+              Your voice matters. Share your aspirations for Bangladesh and be
+              part of building our nation's future.
             </p>
 
             <Link to="/contact">
-              <button className="cursor-pointer group bg-white text-green-700 px-10 py-5 rounded-full font-bold text-lg hover:bg-green-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-3 mx-auto">
+              <button className="cursor-pointer group bg-white text-green-700 px-6 md:px-10 py-2.5 md:py-5 rounded-full font-bold text-lg hover:bg-green-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-3 mx-auto">
                 Share Your Vision
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>

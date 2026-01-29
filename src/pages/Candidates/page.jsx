@@ -90,7 +90,7 @@ const Candidates = () => {
   if (isLoading) return <BNPLoader />;
 
   return (
-    <div className="min-h-screen w-full bg-gray-50">
+    <div className="min-h-screen w-full bg-gray-50 py-20">
       {/* Banner */}
       <div className="relative h-[470px]">
         <img

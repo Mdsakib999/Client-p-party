@@ -3,16 +3,15 @@ import { Link } from "react-router";
 
 const Highlights = () => {
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
+    <section className="relative py-44 px-4 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat object-contain"
         style={{
           backgroundImage:
-            "url('https://d2u0ktu8omkpf6.cloudfront.net/40648b7361ef32173c48751f3168bc70fe69e32ed7f63d56.jpg')",
+            "url('https://res.cloudinary.com/dvwhbp6vw/image/upload/v1769676535/tr_q6fsmz.jpg')",
         }}
       />
 
-      {/* Green overlay */}
       <div className="absolute inset-0 bg-green-900/70" />
 
       <div className="relative max-w-7xl mx-auto text-center text-white">
@@ -38,7 +37,8 @@ const Highlights = () => {
             text-lg font-semibold
             shadow-lg
             transition-all duration-300
-            hover:bg-green-50
+            hover:bg-gradient-to-r from-green-600 via-green-700 to-green-700 hover:text-white
+            transform
             hover:-translate-y-0.5
             focus:ring-4 focus:ring-white/40
           "

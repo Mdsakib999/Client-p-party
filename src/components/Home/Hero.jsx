@@ -10,36 +10,45 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      image: "https://pbs.twimg.com/media/G_byZPtakAA6spH?format=png&name=900x900",
-      quote: "Together, let's build Bangladesh into a democratic and developed nation",
-      objectPosition: "32% 40%"
+      image:
+        "https://pbs.twimg.com/media/G_byZPtakAA6spH?format=png&name=900x900",
+      quote:
+        "Together, let's build Bangladesh into a democratic and developed nation",
+      objectPosition: "32% 40%",
     },
     {
       id: 2,
-      image: "https://thegoodmorning.net/wp-content/uploads/2025/09/1758208905-51dadc14080debc806e862c05a3f8039.jpg",
-      quote: "Together, let's build Bangladesh into a democratic and developed nation",
-      objectPosition: "32% 40%"
+      image:
+        "https://thegoodmorning.net/wp-content/uploads/2025/09/1758208905-51dadc14080debc806e862c05a3f8039.jpg",
+      quote:
+        "Together, let's build Bangladesh into a democratic and developed nation",
+      objectPosition: "32% 40%",
     },
     {
       id: 2,
       image: bnpBanner,
       // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
-      quote: "Empowering citizens, strengthening democracy, ensuring prosperity for all",
-      objectPosition: "center"
+      quote:
+        "Empowering citizens, strengthening democracy, ensuring prosperity for all",
+      objectPosition: "center",
     },
     {
       id: 5,
-      image: "https://www.bssnews.net/assets/news_photos/2025/06/06/image-280804-1749228202.jpg",
+      image:
+        "https://www.bssnews.net/assets/news_photos/2025/06/06/image-280804-1749228202.jpg",
       // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
-      quote: "Empowering citizens, strengthening democracy, ensuring prosperity for all",
-      objectPosition: "center"
+      quote:
+        "Empowering citizens, strengthening democracy, ensuring prosperity for all",
+      objectPosition: "center",
     },
     {
       id: 3,
-      image: "https://images.moneycontrol.com/static-mcnews/2025/12/20251225130659_BNP-1.jpg?impolicy=website&width=770&height=431",
-      quote: "A vision of progress, a promise of change, a commitment to our people",
-      objectPosition: "center"
-    }
+      image:
+        "https://www.bssnews.net/assets/news_photos/2026/01/25/image-354508-1769322211.jpg",
+      quote:
+        "A vision of progress, a promise of change, a commitment to our people",
+      objectPosition: "center",
+    },
   ];
 
   // Auto-slide every 5 seconds
@@ -55,7 +64,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full h-[500px] md:h-[600px] lg:h-[550px] max-w-7xl mx-auto overflow-hidden p-4 relative mb-12">
+    <section className="w-full h-[500px] md:h-[600px] lg:h-[550px] max-w-7xl mx-auto overflow-hidden pt-24 p-4 relative mb-12">
       {/* Slides Container */}
       <div className="relative w-full h-full rounded-md overflow-hidden">
         {/* Slides */}
@@ -73,7 +82,7 @@ const Hero = () => {
               className="w-full h-full object-cover"
               style={{ objectPosition: slide.objectPosition }}
             />
-            
+
             {/* Content */}
             <div className="absolute top-0 md:top-32 inset-0 flex flex-col md:flex-row items-center justify-end md:justify-end mb-12 ">
               <div className="text-center text-green-900 px-6 max-w-3xl">

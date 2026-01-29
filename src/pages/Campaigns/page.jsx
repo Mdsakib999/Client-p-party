@@ -7,10 +7,9 @@ import campaignActivities from "../../data/campaignActivities.json";
 const page = () => {
   const heroCampaign = campaignActivities[0];
   const upcomingCampaigns = campaignActivities.slice(1, 4);
-  const recentCampaigns = campaignActivities.slice(4);
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2">

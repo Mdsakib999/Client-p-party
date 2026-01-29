@@ -27,7 +27,7 @@ export default function CreateNewsArticle() {
       toast.error(
         <p className="text-center font-serif">
           Maximum <span className="font-mono">4</span> images allowed
-        </p>
+        </p>,
       );
       return;
     }
@@ -75,7 +75,7 @@ export default function CreateNewsArticle() {
       toast.error(
         <p className="text-center font-serif">
           Please upload at least one image
-        </p>
+        </p>,
       );
       return;
     }
@@ -93,7 +93,7 @@ export default function CreateNewsArticle() {
     try {
       const res = await createNewsArticle(formData).unwrap();
       toast.success(
-        <p className="text-center font-serif">Article created successfully!</p>
+        <p className="text-center font-serif">Article created successfully!</p>,
       );
       console.log("Server response:", res);
 
@@ -108,7 +108,7 @@ export default function CreateNewsArticle() {
       toast.error(
         <p className="text-center font-serif">
           {err?.data?.message || err?.message || "Failed to publish article"}
-        </p>
+        </p>,
       );
     }
   };
@@ -175,8 +175,8 @@ export default function CreateNewsArticle() {
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="max-w-6xl mx-auto px-4">
         <div className="bg-white rounded-xl shadow-lg p-8">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 mb-8">
+            <h1 className="md:text-3xl font-bold text-gray-900">
               Create News Article
             </h1>
             <div className="flex gap-3">
@@ -184,12 +184,13 @@ export default function CreateNewsArticle() {
                 onClick={() => setIsPreview(true)}
                 className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
               >
-                <Eye className="w-4 h-4" /> Preview
+                <Eye className="w-4 h-4" />{" "}
+                <span className="text-sm md:text-base">Preview</span>
               </button>
               <button
                 disabled={isLoading}
                 onClick={handlePublish}
-                className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                className="px-6 py-2 bg-emerald-600 text-white text-sm md:text-base rounded-lg hover:bg-emerald-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
               >
                 {isLoading ? "Publishing..." : "Publish"}
               </button>
@@ -293,7 +294,7 @@ export default function CreateNewsArticle() {
             <label className="flex items-center gap-2 text-sm font-semibold mb-2 text-gray-700">
               <Tag className="w-4 h-4" /> Tags
             </label>
-            <div className="flex gap-2 mb-3">
+            <div className="flex flex-col md:flex-row gap-2 mb-3">
               <input
                 type="text"
                 value={tagInput}
@@ -304,7 +305,7 @@ export default function CreateNewsArticle() {
               />
               <button
                 onClick={addTag}
-                className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 flex items-center gap-2 transition-colors"
+                className="flex items-center justify-center px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 gap-2 transition-colors"
               >
                 <Plus className="w-4 h-4" /> Add
               </button>
