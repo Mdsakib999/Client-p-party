@@ -23,7 +23,7 @@ export default function CandidateDetails() {
   const candidate = candidateRes?.data || details;
 
   if (isLoading) {
-    return <BNPLoader />
+    return <BNPLoader />;
   }
 
   if (!candidate) {
@@ -42,9 +42,9 @@ export default function CandidateDetails() {
     "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg";
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       {/* HEADER */}
-      <div className="bg-white mt-10">
+      <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <img
@@ -52,8 +52,8 @@ export default function CandidateDetails() {
               alt={candidate.name}
               className="w-full md:w-96 h-96 object-cover rounded-xl shadow"
               onError={(e) =>
-              (e.currentTarget.src =
-                "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
+                (e.currentTarget.src =
+                  "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
               }
             />
 
@@ -95,15 +95,16 @@ export default function CandidateDetails() {
       {/* TABS */}
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="bg-white rounded-xl">
-          <div className="flex border-b shadow">
+          <div className="flex shadow shadow-green-200">
             {["details", "political", "activities"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex-1 py-4 font-semibold ${activeTab === tab
-                  ? "bg-gray-100 text-gray-700"
-                  : "text-gray-600"
-                  }`}
+                className={`cursor-pointer flex-1 py-4 font-semibold ${
+                  activeTab === tab
+                    ? "bg-green-200 text-green-800 shadow-sm shadow-green-300"
+                    : "text-gray-600"
+                }`}
               >
                 {tab === "details"
                   ? "Details"
@@ -227,7 +228,7 @@ export default function CandidateDetails() {
             {activeTab === "political" && (
               <div className="space-y-6">
                 {Array.isArray(candidate.political_career) &&
-                  candidate.political_career.length > 0 ? (
+                candidate.political_career.length > 0 ? (
                   <section>
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <Briefcase className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
@@ -272,10 +273,10 @@ export default function CandidateDetails() {
                 </section>
 
                 {Array.isArray(
-                  candidate.business_income_source_professional_career
+                  candidate.business_income_source_professional_career,
                 ) &&
                   candidate.business_income_source_professional_career.length >
-                  0 && (
+                    0 && (
                     <section>
                       <h2 className="text-xl font-bold mb-3">
                         Business / Income Sources
@@ -284,20 +285,16 @@ export default function CandidateDetails() {
                         {candidate.business_income_source_professional_career.map(
                           (s, idx) => (
                             <li key={idx}>{s}</li>
-                          )
+                          ),
                         )}
                       </ul>
                     </section>
                   )}
 
-                {Array.isArray(
-                  candidate.personal_info?.website_or_social
-                ) &&
+                {Array.isArray(candidate.personal_info?.website_or_social) &&
                   candidate.personal_info.website_or_social.length > 0 && (
                     <section>
-                      <h2 className="text-xl font-bold mb-3">
-                        Web Presence
-                      </h2>
+                      <h2 className="text-xl font-bold mb-3">Web Presence</h2>
                       <div className="flex flex-wrap gap-3">
                         {candidate.personal_info.website_or_social.map(
                           (link, idx) => (
@@ -310,7 +307,7 @@ export default function CandidateDetails() {
                             >
                               Visit Website
                             </a>
-                          )
+                          ),
                         )}
                       </div>
                     </section>
