@@ -58,10 +58,10 @@ const ManageAccount = ({ userData }) => {
   }, [userData, reset]);
 
   const hasCredentialAuth = userData?.auths?.some(
-    (auth) => auth.provider === "credential"
+    (auth) => auth.provider === "credential",
   );
   const hasGoogleAuth = userData?.auths?.some(
-    (auth) => auth.provider === "google"
+    (auth) => auth.provider === "google",
   );
 
   const showChangePassword = hasCredentialAuth;
@@ -128,7 +128,7 @@ const ManageAccount = ({ userData }) => {
           </h1>,
           {
             position: "top-right",
-          }
+          },
         );
       }
 
@@ -166,7 +166,7 @@ const ManageAccount = ({ userData }) => {
           toast.success(
             <h1 className="font-serif text-center">
               Password set successfully! please login again
-            </h1>
+            </h1>,
           );
           await logout();
           dispatch(authApi.util.resetApiState());
@@ -181,7 +181,7 @@ const ManageAccount = ({ userData }) => {
           toast.success(
             <h1 className="font-serif text-center">
               Password changed successfully! please login again
-            </h1>
+            </h1>,
           );
           await logout();
           dispatch(authApi.util.resetApiState());
@@ -192,7 +192,7 @@ const ManageAccount = ({ userData }) => {
       toast.error(
         <h1 className="text-center font-serif">
           {err?.data?.message || "Failed to set/change password"}
-        </h1>
+        </h1>,
       );
       throw err;
     }
@@ -207,8 +207,8 @@ const ManageAccount = ({ userData }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1000px] mx-auto">
+    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+      <>
         <div className="mb-6">
           <h1 className="text-2xl font-semibold text-slate-900">
             Account Settings
@@ -373,7 +373,7 @@ const ManageAccount = ({ userData }) => {
                   <button
                     onClick={() =>
                       handlePasswordModalOpen(
-                        showChangePassword ? "change" : "set"
+                        showChangePassword ? "change" : "set",
                       )
                     }
                     className="w-full flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:border-slate-300 hover:bg-slate-50 transition-all group"
@@ -498,7 +498,7 @@ const ManageAccount = ({ userData }) => {
             </div>
           </div>
         </div>
-      </div>
+      </>
 
       {/* Password Modal */}
       <PasswordModal

@@ -1,7 +1,19 @@
 import { useState } from "react";
-import { HiLocationMarker, HiPhone, HiMail, HiClock } from "react-icons/hi";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Send,
+  User,
+  AtSign,
+  MessageSquare,
+} from "lucide-react";
 import candidatesBanner from "../../assets/bg.png";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,241 +24,313 @@ const Contact = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for your message. We will get back to you soon!");
+    toast.success(
+      <p className="text-green-700 text-center font-serif">
+        Thank you for your message. We will get back to you soon!
+      </p>,
+      {
+        duration: 2000,
+      },
+    );
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
-    <div className="min-h-screen">
-      <div className="relative h-64 md:h-80 lg:min-h-[64vh]">
-        <img
-          src={candidatesBanner}
-          alt="Contact Us Banner"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Contact Us
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto">
-              Get in touch with Bangladesh Nationalist Party. We're here to
-              listen and serve.
-            </p>
-          </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Banner Section - KEEPING AS IS */}
+      <div
+        className="relative h-96 bg-cover bg-center"
+        style={{ backgroundImage: `url(${candidatesBanner})` }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            Contact Us
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl">
+            Get in touch with Bangladesh Nationalist Party. We're here to listen
+            and serve.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center
-         ">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Send us a Message
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
+      {/* NEW DESIGN STARTS HERE */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10 pb-20">
+        {/* Contact Info Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {/* Address Card */}
+          <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-green-600">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mb-4">
+                <MapPin className="w-8 h-8 text-white" />
               </div>
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  placeholder="What's this about?"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
-                  placeholder="Tell us how we can help you..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-              >
-                Send Message
-              </button>
-            </form>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Central Office
+              </h3>
+              <p className="text-gray-600 text-sm">
+                BNP Central Office
+                <br />
+                Nayapaltan
+                <br />
+                Dhaka-1000
+                <br />
+                Bangladesh
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Get in Touch
-            </h2>
-            <div className="space-y-8">
-              {/* <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <HiLocationMarker className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Our Address
-                  </h3>
-                  <p className="text-gray-600">
-                    Bangladesh Nationalist Party Headquarters
-                    <br />
-                    123 Political Avenue
-                    <br />
-                    Dhaka, Bangladesh 1000
-                  </p>
-                </div>
-              </div> */}
+          {/* Email Card */}
+          <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-green-600">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mb-4">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                General Inquiries
+              </h3>
+              <a
+                href="mailto:info@bnpbd.org"
+                className="text-green-600 hover:text-green-700 font-semibold"
+              >
+                info@bnpbd.org
+              </a>
+              <p className="text-gray-500 text-sm mt-1">Send us an email</p>
+            </div>
+          </div>
 
-              {/* <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <HiPhone className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Phone Number
-                  </h3>
-                  <p className="text-gray-600">
-                    +880 1234-567890
-                    <br />
-                    +880 1234-567891 (Emergency)
-                  </p>
-                </div>
-              </div> */}
+          {/* Press Card */}
+          <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-green-600">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mb-4">
+                <Phone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Media & Press
+              </h3>
+              <a
+                href="mailto:press@bnpbd.org"
+                className="text-green-600 hover:text-green-700 font-semibold"
+              >
+                press@bnpbd.org
+              </a>
+              <p className="text-gray-500 text-sm mt-1">For media inquiries</p>
+            </div>
+          </div>
+        </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <HiMail className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Email Address
-                  </h3>
-                  <p className="text-gray-600">
-                    info@bnpcandidates.com
-                    <br />
-                    support@bnpcandidates.com
-                    <br />
-                    campaign@bnpcandidates.com
-                  </p>
-                </div>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Contact Form - Takes 2 columns */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                  Send Us a Message
+                </h2>
+                <p className="text-gray-600">
+                  Have a question or feedback? Fill out the form below and we'll
+                  get back to you as soon as possible.
+                </p>
               </div>
 
-              {/* <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <HiClock className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Office Hours
-                  </h3>
-                  <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 6:00 PM
-                    <br />
-                    Saturday: 9:00 AM - 2:00 PM
-                    <br />
-                    Sunday: Closed
-                  </p>
-                </div>
-              </div> */}
-            </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Name Input */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <User className="h-5 w-5 text-gray-400" />
+                      </div>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="John Doe"
+                        className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
+                      />
+                    </div>
+                  </div>
 
-            <div className="mt-12">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Follow Us
-              </h3>
-              <div className="flex gap-4">
+                  {/* Email Input */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <AtSign className="h-5 w-5 text-gray-400" />
+                      </div>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="john@example.com"
+                        className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Subject Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <MessageSquare className="h-5 w-5 text-gray-400" />
+                    </div>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      placeholder="What is this regarding?"
+                      className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Message Textarea */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Your Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="6"
+                    placeholder="Write your message here..."
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none resize-none"
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="cursor-pointer w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                >
+                  <Send className="w-5 h-5" />
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Sidebar - Social Media & Info */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* Social Media Card */}
+            <div className="bg-gradient-to-br from-green-600 via-green-700 to-green-800 rounded-2xl shadow-xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-2">Follow Us</h3>
+              <p className="text-green-100 mb-6 text-sm">
+                Stay connected with our latest updates and news
+              </p>
+
+              <div className="space-y-3">
                 <a
                   href="https://www.facebook.com/bnpbd.org/"
                   target="_blank"
-                  className="w-10 h-10 bg-gray-200 hover:bg-blue-500 group rounded-full flex items-center justify-center transition-colors"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
                 >
-                  <FaFacebookF className="text-gray-600 group-hover:text-white w-5 h-5" />
+                  <div className="w-12 h-12 bg-white/20 group-hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                    <Facebook className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-sm">Facebook</p>
+                    <p className="text-xs text-green-100">@bnpbd.org</p>
+                  </div>
                 </a>
+
                 <a
                   href="https://x.com/bdbnp78?lang=en"
                   target="_blank"
-                  className="w-10 h-10 bg-gray-200 hover:bg-cyan-400 group rounded-full flex items-center justify-center transition-colors"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
                 >
-                  <FaTwitter className="text-gray-600 group-hover:text-white w-5 h-5" />
+                  <div className="w-12 h-12 bg-white/20 group-hover:bg-sky-500 rounded-lg flex items-center justify-center transition-colors">
+                    <Twitter className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-sm">Twitter</p>
+                    <p className="text-xs text-green-100">@bdbnp78</p>
+                  </div>
                 </a>
+
                 <a
                   href="https://www.instagram.com/bnpbd/?hl=en"
                   target="_blank"
-                  className="w-10 h-10 bg-gray-200 hover:bg-gradient-to-br from-purple-600 via-rose-600 to-amber-500 group rounded-full flex items-center justify-center transition-colors"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
                 >
-                  <FaInstagram className="text-gray-600 group-hover:text-white w-5 h-5" />
+                  <div className="w-12 h-12 bg-white/20 group-hover:bg-pink-600 rounded-lg flex items-center justify-center transition-colors">
+                    <Instagram className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-sm">Instagram</p>
+                    <p className="text-xs text-green-100">@bnpbd</p>
+                  </div>
                 </a>
+
                 <a
                   href="https://www.youtube.com/@bdbnp"
                   target="_blank"
-                  className="w-10 h-10 bg-gray-200 hover:bg-red-600 group rounded-full flex items-center justify-center transition-colors"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
                 >
-                  <FaYoutube className="text-gray-600 group-hover:text-white w-5 h-5" />
+                  <div className="w-12 h-12 bg-white/20 group-hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors">
+                    <Youtube className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-sm">YouTube</p>
+                    <p className="text-xs text-green-100">@bdbnp</p>
+                  </div>
                 </a>
+              </div>
+            </div>
+
+            {/* Quick Info Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Get Involved
+              </h3>
+              <div className="space-y-4 text-sm text-gray-600">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
+                  <p>
+                    Join our movement for a democratic and prosperous
+                    Bangladesh.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
+                  <p>
+                    Stay informed about our latest campaigns, events, and
+                    initiatives.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
+                  <p>
+                    Volunteer with us and make a difference in your community.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
