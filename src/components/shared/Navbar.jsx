@@ -69,7 +69,7 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/candidates", label: "Candidates" },
-    { path: "/frame-editor", label: "Picture Frame" },
+    { path: "/frame-editor", label: "Photo Frame" },
     { path: "/vision", label: "Vision" },
     { path: "/campaigns", label: "Campaigns" },
   ];
@@ -174,7 +174,7 @@ export default function Navbar() {
                         onClick={() => setShowUserMenu(false)}
                       >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-green-700 transition-colors" />
-                        <span className="font-medium">Dashboard</span>
+                        <span className="font-medium">BNP</span>
                       </Link>
                       <button
                         onClick={handleLogout}

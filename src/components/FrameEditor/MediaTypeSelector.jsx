@@ -5,14 +5,14 @@ const MediaTypeSelector = ({ selectedType, onSelect }) => {
     {
       id: "profile",
       icon: User,
-      title: "Profile Frame",
+      title: "Photo Frame",
       description: "Facebook Profile Picture",
       dimensions: "1080 × 1080",
     },
     {
       id: "post",
       icon: Image,
-      title: "Post Frame",
+      title: "Create Frame",
       description: "Facebook Post / Banner",
       dimensions: "1500 × 1875",
     },
