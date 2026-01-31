@@ -5,7 +5,7 @@ import CandidateCard from "../../components/CandidateCard";
 import Pagination from "../../components/Pagination";
 import areasData from "../../data/areas.json";
 import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
-import BNPLoader from "../../utils/BNPLoader";
+import CandidateSkeleton from "../../utils/CandidateSkeleton";
 
 const Candidates = () => {
   const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
@@ -87,7 +87,7 @@ const Candidates = () => {
 
   const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
 
-  if (isLoading) return <BNPLoader />;
+  if (isLoading) return <CandidateSkeleton />;
 
   return (
     <div className="min-h-screen w-full bg-gray-50 py-20">
