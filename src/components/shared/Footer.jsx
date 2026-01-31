@@ -24,6 +24,10 @@ export default function Footer() {
                 <div className="font-bold text-base leading-tight text-green-500">
                   Nationalist Party
                 </div>
+                <div className="font-bold text-base leading-tight text-green-500">
+                  Candidates
+
+                </div>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-gray-400 max-w-xs mx-auto md:mx-0">
