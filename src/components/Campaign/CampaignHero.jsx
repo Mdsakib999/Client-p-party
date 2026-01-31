@@ -56,7 +56,7 @@ const CampaignHero = ({ campaign }) => {
             {campaign.title}
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-8 items-start md:items-end">
+          <div className="flex flex-col md:flex-row items-center md:gap-12">
             {/* Countdown Timer */}
             <div className="flex gap-4">
               {[
@@ -78,7 +78,7 @@ const CampaignHero = ({ campaign }) => {
               ))}
             </div>
 
-            <div className="flex gap-4 w-full md:w-auto">
+            <div className="flex gap-4 w-full md:w-auto mt-3">
               <Link
                 to={`/campaigns/${campaign.slug}`}
                 className="flex-1 md:flex-none bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold transition-all hover:shadow-green-500/30 hover:shadow-lg flex items-center justify-center gap-2"
