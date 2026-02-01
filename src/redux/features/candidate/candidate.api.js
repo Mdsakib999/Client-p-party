@@ -12,12 +12,21 @@ export const candidateApi = baseApi.injectEndpoints({
       invalidatesTags: ["CANDIDATE_LIST"],
     }),
 
-    // ✅ GET ALL
     getAllCandidates: builder.query({
-      query: () => ({
-        url: "/candidates",
-        method: "GET",
-      }),
+      query: ({ page = 1, limit = 9, division, district, search }) => {
+        const params = new URLSearchParams();
+
+        params.append("page", page);
+        params.append("limit", limit);
+        if (division) params.append("division", division);
+        if (district) params.append("district", district);
+        if (search) params.append("search", search);
+
+        return {
+          url: `/candidates?${params.toString()}`,
+          method: "GET",
+        };
+      },
       providesTags: ["CANDIDATE_LIST"],
     }),
 
