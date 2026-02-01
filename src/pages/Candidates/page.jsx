@@ -1,5 +1,5 @@
 import candidatesBanner from "../../assets/bg.png";
-import { useEffect, useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, Search } from "lucide-react";
 import CandidateCard from "../../components/CandidateCard";
 import Pagination from "../../components/Pagination";
@@ -7,10 +7,9 @@ import areasData from "../../data/areas.json";
 import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
 import CandidateSkeleton from "../../utils/CandidateSkeleton";
 
-const Candidates = () => {
-  const { data: candidatesData, isLoading } = useGetAllCandidatesQuery();
-  const candidates = candidatesData?.data || [];
+const ITEMS_PER_PAGE = 9;
 
+const Candidates = () => {
   const [divisions, setDivisions] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [selectedDivision, setSelectedDivision] = useState(null);
@@ -20,9 +19,17 @@ const Candidates = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const containerRef = useRef(null);
-  const searchInputRef = useRef(null);
 
-  const itemsPerPage = 9;
+  const { data, isLoading } = useGetAllCandidatesQuery({
+    page: currentPage,
+    limit: ITEMS_PER_PAGE,
+    division: selectedDivision?.name,
+    district: selectedDistrict?.name,
+    search: searchTerm || undefined,
+  });
+
+  const candidates = data?.data?.data || [];
+  const totalPages = Math.ceil((data?.data?.total || 0) / ITEMS_PER_PAGE);
 
   useEffect(() => {
     const divs = Object.keys(areasData).map((d) => ({
@@ -63,29 +70,18 @@ const Candidates = () => {
     setActiveSection("district");
   };
 
+  // ✅ DISTRICT CLICK
   const handleDistrictClick = (district) => {
     setSelectedDistrict(district);
-    setActiveSection(null);
     setCurrentPage(1);
+    setActiveSection(null);
   };
 
-  const filteredCandidates = candidates.filter((c) => {
-    const matchDivision = selectedDivision
-      ? c.division?.includes(selectedDivision.name)
-      : true;
-
-    const matchDistrict = selectedDistrict
-      ? c.district?.includes(selectedDistrict.name)
-      : true;
-
-    const matchSearch = searchTerm
-      ? c.name?.toLowerCase().includes(searchTerm.toLowerCase())
-      : true;
-
-    return matchDivision && matchDistrict && matchSearch;
-  });
-
-  const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
+  // ✅ PAGE CHANGE
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0 });
+  };
 
   if (isLoading) return <CandidateSkeleton />;
 
@@ -112,82 +108,59 @@ const Candidates = () => {
           >
             <div className="flex flex-row items-center gap-2 md:gap-0">
               {/* Search */}
-              <div
-                className="flex-1 px-3 md:px-5 py-3 w-full min-w-0"
-                onClick={() => setActiveSection(null)}
-              >
-                <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
-                  Search
-                </label>
+              <div className="flex-1 px-3 md:px-5 py-3">
                 <input
-                  ref={searchInputRef}
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentPage(1);
+                  }}
                   placeholder="Search candidate"
-                  className="w-full outline-none text-sm text-gray-700 bg-transparent"
+                  className="w-full outline-none bg-transparent"
                 />
               </div>
 
-              {/* Divider */}
-              <div className="w-px h-8 md:h-12 bg-gray-200"></div>
+              <div className="w-px h-10 bg-gray-200" />
 
               {/* Division */}
               <div
                 onClick={() => setActiveSection("division")}
-                className="flex-1 px-3 md:px-5 py-3 w-full min-w-0 cursor-pointer hover:bg-gray-50 rounded-full transition-colors"
+                className="flex-1 px-5 py-3 cursor-pointer"
               >
-                <div className="w-full">
-                  <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
-                    Division
-                  </label>
-                  <div className="text-xs md:text-sm text-gray-600 truncate">
-                    {selectedDivision?.name || "Division Select"}
-                  </div>
-                </div>
+                {selectedDivision?.name || "Division Select"}
               </div>
 
-              {/* Divider */}
-              <div className="w-px h-8 md:h-12 bg-gray-200"></div>
+              <div className="w-px h-10 bg-gray-200" />
 
               {/* District */}
               <div
                 onClick={() => selectedDivision && setActiveSection("district")}
-                className={`flex-1 px-3 md:px-5 py-3 w-full min-w-0 rounded-full transition-colors ${
+                className={`flex-1 px-5 py-3 ${
                   selectedDivision
-                    ? "cursor-pointer hover:bg-gray-50"
+                    ? "cursor-pointer"
                     : "opacity-50 cursor-not-allowed"
                 }`}
               >
-                <div className="w-full">
-                  <label className="hidden md:block text-xs font-semibold text-gray-700 mb-1">
-                    District
-                  </label>
-                  <div className="text-xs md:text-sm text-gray-600 truncate">
-                    {selectedDistrict?.name || "District Select"}
-                  </div>
-                </div>
+                {selectedDistrict?.name || "District Select"}
               </div>
 
-              {/* Search Button */}
-              <button className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-gray-400 hover:bg-gray-600 rounded-full md:mx-2 transition-colors flex-shrink-0">
+              <button className="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center">
                 <Search className="text-white" size={18} />
               </button>
             </div>
 
             {/* Dropdown */}
             {activeSection && (
-              <div className="absolute left-0 right-0 top-full mt-2 md:mt-4 bg-white rounded-2xl shadow-2xl p-4 md:p-6 z-50 max-h-[70vh] overflow-y-auto">
+              <div className="absolute left-0 right-0 top-full mt-4 bg-white rounded-2xl shadow-2xl p-6 z-50">
                 {activeSection === "division" && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-emerald-50 p-4 rounded-lg">
                     {divisions.map((d) => (
                       <button
+                        className="shadow bg-emerald-100 text-emerald-700 font-semibold md:p-2 rounded-2xl cursor-pointer hover:bg-emerald-200 transition-colors"
                         key={d.id}
                         onClick={() => handleDivisionClick(d)}
-                        className="p-3 md:p-4 border border-gray-200 rounded-xl text-left hover:bg-gray-50 hover:border-blue-300 transition-all active:scale-95"
                       >
-                        <div className="font-semibold text-sm md:text-base">
-                          {d.name}
-                        </div>
+                        {d.name}
                       </button>
                     ))}
                   </div>
@@ -197,21 +170,19 @@ const Candidates = () => {
                   <>
                     <button
                       onClick={() => setActiveSection("division")}
-                      className="flex items-center gap-2 mb-4 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                      className="flex items-center gap-2 mb-4 cursor-pointer"
                     >
-                      <ChevronLeft size={18} /> Back to Divisions
+                      <ChevronLeft size={18} /> Back
                     </button>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-emerald-50 p-4 rounded-lg">
                       {districts.map((d) => (
                         <button
                           key={d.id}
                           onClick={() => handleDistrictClick(d)}
-                          className="p-3 md:p-4 border border-gray-200 rounded-xl text-left hover:bg-gray-50 hover:border-blue-300 transition-all active:scale-95"
+                          className="shadow bg-emerald-100 text-emerald-700 font-semibold md:p-2 rounded-2xl cursor-pointer hover:bg-emerald-200 transition-colors"
                         >
-                          <div className="font-semibold text-sm md:text-base">
-                            {d.name}
-                          </div>
+                          {d.name}
                         </button>
                       ))}
                     </div>
@@ -222,24 +193,21 @@ const Candidates = () => {
           </div>
         </div>
       </div>
+
       {/* Candidate List */}
       <div className="max-w-7xl mx-auto px-4 py-14">
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCandidates
-            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-            .map((candidate) => (
-              <CandidateCard key={candidate._id} candidate={candidate} />
-            ))}
+          {candidates.map((candidate) => (
+            <CandidateCard key={candidate._id} candidate={candidate} />
+          ))}
         </section>
 
         {totalPages > 1 && (
-          <div className="mt-10">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         )}
       </div>
     </div>
