@@ -31,7 +31,7 @@ export const Candidates = () => {
     {
       id: "6977f60d315fd66776c74e8e",
       name: "Mirza Abbas Uddin Ahmed",
-      position: "Member of National Standing Committee - BNP",
+      position: "Member of National Standing Committee",
       image:
         "https://www.bssnews.net/assets/news_photos/2025/10/28/image-325864-1761651827.jpg",
       highlight: false,
@@ -39,7 +39,7 @@ export const Candidates = () => {
     {
       id: "6977f60d315fd66776c74e8f",
       name: "Mr. Amir Khosru Chowdhury",
-      position: "Member of National Standing Committee - BNP",
+      position: "Member of National Standing Committee",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZicoZBVLiVJL-iEFshJGb-chJZxBeb9_Y4A&s",
       highlight: false,
