@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import logo from "../../assets/BNP-logo.png";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           {/* Company Info - Enhanced */}
           <div className="space-y-6 text-center md:text-left lg:col-span-1">
             <div className="flex items-center gap-4 justify-center md:justify-start">
-              <img src="./logo.png" className="w-28" alt="" srcset="" />
+              <img src={logo} className="w-32 md:w-46" alt="" srcset="" />
             </div>
             <p className="text-sm leading-relaxed text-gray-400 max-w-xs mx-auto md:mx-0">
               Committed to democratic values, national unity, and the welfare of
