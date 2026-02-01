@@ -8,6 +8,7 @@ import {
 } from "../../redux/features/auth/auth.api";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
+import logo from "../../assets/BNP-logo.png";
 
 export default function Navbar() {
   const { data: userInfo } = useUserInfoQuery();
@@ -88,12 +89,12 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
             <div className="hidden sm:block">
               <div className="text-base sm:text-lg font-bold leading-tight tracking-widest text-gray-900 group-hover:text-green-700 transition-colors">
-                <img src="./logo.png" className="w-28" alt="" srcset="" />
+                <img src={logo} className="w-32" alt="" srcset="" />
               </div>
             </div>
             <div className="sm:hidden">
               <div className="text-sm font-bold text-gray-900 tracking-widest group-hover:text-green-700 transition-colors">
-                <img src="./logo.png" className="w-28" alt="" srcset="" />
+                <img src={logo} className="w-28" alt="" srcset="" />
               </div>
             </div>
           </Link>
