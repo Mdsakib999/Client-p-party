@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import bnpBanner from "../../assets/hero-banner.jpg";
+import tarak from "../../assets/tarak.png";
+import tarak2 from "../../assets/tarak2.png";
+import fakrul from "../../assets/fakhrul.png";
+import salauddin from "../../assets/salauddin.png";
 import { Link } from "react-router";
 
 const Hero = () => {
@@ -10,45 +14,42 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      image:
-        "https://pbs.twimg.com/media/G_byZPtakAA6spH?format=png&name=900x900",
+      image: tarak,
       quote:
-        "Together, let's build Bangladesh into a democratic and developed nation",
+        "A vision of progress, a promise of change, a commitment to our people",
       objectPosition: "32% 40%",
     },
     {
       id: 2,
-      image:
-        "https://thegoodmorning.net/wp-content/uploads/2025/09/1758208905-51dadc14080debc806e862c05a3f8039.jpg",
+      image: fakrul,
       quote:
         "Together, let's build Bangladesh into a democratic and developed nation",
       objectPosition: "32% 40%",
-    },
-    {
-      id: 2,
-      image: bnpBanner,
-      // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
-      quote:
-        "Empowering citizens, strengthening democracy, ensuring prosperity for all",
-      objectPosition: "center",
-    },
-    {
-      id: 5,
-      image:
-        "https://www.bssnews.net/assets/news_photos/2025/06/06/image-280804-1749228202.jpg",
-      // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
-      quote:
-        "Empowering citizens, strengthening democracy, ensuring prosperity for all",
-      objectPosition: "center",
     },
     {
       id: 3,
-      image:
-        "https://www.bssnews.net/assets/news_photos/2026/01/25/image-354508-1769322211.jpg",
+      image: tarak2,
       quote:
-        "A vision of progress, a promise of change, a commitment to our people",
+        "Introducing Family Cards for female household to provide direct support and economic independence.",
       objectPosition: "center",
     },
+    // {
+    //   id: 4,
+    //   image: bnpBanner,
+    //   // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
+    //   quote:
+    //     "Empowering citizens, strengthening democracy, ensuring prosperity for all",
+    //   objectPosition: "center",
+    // },
+    {
+      id: 5,
+      image: salauddin,
+      // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
+      quote:
+        "Empowering citizens, strengthening democracy, ensuring prosperity for all",
+      objectPosition: "center",
+    },
+    
   ];
 
   // Auto-slide every 5 seconds
@@ -85,8 +86,8 @@ const Hero = () => {
 
             {/* Content */}
             <div className="absolute top-0 md:top-32 inset-0 flex flex-col md:flex-row items-center justify-end md:justify-end mb-12 ">
-              <div className="text-center text-green-900 px-6 max-w-3xl">
-                <blockquote className="text-2xl md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight mb-8 bg-white/60 p-4 rounded mt-0 md:mt-42">
+              <div className="text-center text-green-800 px-6 max-w-3xl ">
+                <blockquote className="text-lg md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight mb-8 bg-white/60 p-4 rounded t-10 md:mt-42">
                   <FaQuoteLeft className="inline mr-2 " />
                   {slide.quote}
                   <FaQuoteRight className="inline ml-2" />

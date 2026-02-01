@@ -69,7 +69,7 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/candidates", label: "Candidates" },
-    { path: "/frame-editor", label: "Picture Frame" },
+    { path: "/frame-editor", label: "Photo Frame" },
     { path: "/vision", label: "Vision" },
     { path: "/campaigns", label: "Campaigns" },
   ];
@@ -86,27 +86,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
-            <div className="relative">
-              <img
-                src="/logo.png"
-                alt="BNP Logo"
-                className="w-14 h-14 sm:w-16 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
             <div className="hidden sm:block">
-              <div className="text-base sm:text-lg font-bold leading-tight text-gray-900 group-hover:text-green-700 transition-colors">
-                Bangladesh
-              </div>
-              <div className="text-xs sm:text-sm font-medium text-green-700">
-                Nationalist Party (Candidates)
+              <div className="text-base sm:text-lg font-bold leading-tight tracking-widest text-gray-900 group-hover:text-green-700 transition-colors">
+                bnpcandidates
               </div>
             </div>
             <div className="sm:hidden">
-              <div className="text-sm font-bold text-gray-900 group-hover:text-green-700 transition-colors">
-                BNP
-              </div>
-              <div className="text-xs text-green-700 font-semibold">
-                Candidates
+              <div className="text-sm font-bold text-gray-900 tracking-widest group-hover:text-green-700 transition-colors">
+                bnpcandidates
               </div>
             </div>
           </Link>
@@ -174,7 +161,7 @@ export default function Navbar() {
                         onClick={() => setShowUserMenu(false)}
                       >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-green-700 transition-colors" />
-                        <span className="font-medium">Dashboard</span>
+                        <span className="font-medium">BNP</span>
                       </Link>
                       <button
                         onClick={handleLogout}
