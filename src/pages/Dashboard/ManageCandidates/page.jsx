@@ -28,9 +28,19 @@ const ManageCandidates = () => {
     setDivisions(divs);
   }, []);
 
-  const { data, isLoading, error } = useGetAllCandidatesQuery(undefined, {
-    refetchOnMountOrArgChange: true,
-  });
+  const { data, isLoading, error } = useGetAllCandidatesQuery(
+    {
+      page: currentPage,
+      limit: itemsPerPage,
+      search: searchTerm || undefined,
+      division: selectedDivision || undefined,
+      district: selectedDistrict || undefined,
+    },
+    {
+      refetchOnMountOrArgChange: true,
+    },
+  );
+
   const [deleteCandidate, { isLoading: isDeleting }] =
     useDeleteCandidateMutation();
   const [selectedCandidate, setSelectedCandidate] = useState(null);
@@ -65,8 +75,6 @@ const ManageCandidates = () => {
     );
   }
 
-  const candidates = data?.data || [];
-
   const handleDivisionChange = (e) => {
     const divName = e.target.value;
     setSelectedDivision(divName);
@@ -83,28 +91,10 @@ const ManageCandidates = () => {
     }
   };
 
-  const filteredCandidates = candidates.filter((c) => {
-    const matchSearch = searchTerm
-      ? c.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        c.designation?.toLowerCase().includes(searchTerm.toLowerCase())
-      : true;
+  const candidates = data?.data?.data || [];
+  const totalPages = Math.ceil((data?.data?.total || 0) / itemsPerPage);
 
-    const matchDivision = selectedDivision
-      ? c.division?.includes(selectedDivision)
-      : true;
-
-    const matchDistrict = selectedDistrict
-      ? c.district?.includes(selectedDistrict)
-      : true;
-
-    return matchSearch && matchDivision && matchDistrict;
-  });
-
-  const totalPages = Math.ceil(filteredCandidates.length / itemsPerPage);
-  const paginatedCandidates = filteredCandidates.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
-  );
+  const paginatedCandidates = candidates;
 
   return (
     <div className="p-4 md:p-6 lg:p-8 w-full mx-auto">
@@ -187,13 +177,13 @@ const ManageCandidates = () => {
             </div>
           </div>
 
-          {filteredCandidates.length === 0 && (
+          {candidates.length === 0 && (
             <div className="bg-white border border-gray-200 rounded-lg p-8 text-center text-gray-500">
               No candidates found matching your specific search.
             </div>
           )}
 
-          {filteredCandidates.length > 0 && (
+          {candidates.length > 0 && (
             <>
               {/* Desktop Table View */}
               <div className="hidden md:block bg-white rounded-lg shadow overflow-x-auto scrollbar-hide">
