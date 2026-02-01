@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 import { useLocation, useParams } from "react-router";
 import { useGetCandidateByIdQuery } from "../../redux/features/candidate/candidate.api";
-import BNPLoader from "../../utils/BNPLoader";
+import CandidateDetailsSkeleton from "../../utils/CandidateDetailsSkeleton";
 
 export default function CandidateDetails() {
   const { state: details } = useLocation();
@@ -23,7 +23,7 @@ export default function CandidateDetails() {
   const candidate = candidateRes?.data || details;
 
   if (isLoading) {
-    return <BNPLoader />;
+    return <CandidateDetailsSkeleton />;
   }
 
   if (!candidate) {
@@ -42,7 +42,7 @@ export default function CandidateDetails() {
     "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg";
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-24">
       {/* HEADER */}
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-8">

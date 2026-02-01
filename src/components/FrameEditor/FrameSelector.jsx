@@ -4,19 +4,19 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
   const itemRefs = useRef({});
 
   const profileFrames = [
-    { id: 1, src: "/frames/profile/profile2.png", name: "Profile Frame 2" },
-    { id: 2, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
-    { id: 3, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
-    { id: 4, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
+    { id: 1, src: "/frames/profile/profile1.png", name: "Profile Frame 1" },
+    { id: 2, src: "/frames/profile/profile2.png", name: "Profile Frame 2" },
+    { id: 3, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
+    { id: 4, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
   ];
 
   const postFrames = [
-    { id: 6, src: "/frames/posts/post1.png", name: "Post Frame 1" },
-    { id: 7, src: "/frames/posts/post2.png", name: "Post Frame 2" },
+    { id: 5, src: "/frames/posts/post1.png", name: "Post Frame 1" },
+    { id: 6, src: "/frames/posts/post2.png", name: "Post Frame 2" },
   ];
 
   const coverPhotoFrames = [
-    { id: 8, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
+    { id: 7, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
   ];
 
   const frames =

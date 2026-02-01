@@ -19,7 +19,7 @@ const FrameEditor = () => {
 
     const defaultFrame =
       selectedMediaType === "profile"
-        ? "/frames/profile/profile2.png"
+        ? "/frames/profile/profile1.png"
         : selectedMediaType === "post"
           ? "/frames/posts/post1.png"
           : "/frames/cover/cover1.png";
@@ -138,7 +138,7 @@ const FrameEditor = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-28 px-4 flex flex-col items-center">
+    <div className="min-h-screen bg-white pt-36 pb-16 px-4 flex flex-col items-center">
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">

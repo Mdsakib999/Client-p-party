@@ -2,8 +2,8 @@ const CandidatesSkeleton = () => {
   return (
     <div className="min-h-screen bg-white py-20">
       {/* ===== Banner Skeleton ===== */}
-      <div className="relative h-56 bg-green-700 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-800 via-green-700 to-green-800" />
+      <div className="relative bg-green-100 overflow-hidden h-[470px]">
+        <div className="absolute inset-0 bg-gradient-to-r from-green-100 via-green-100 to-green-50" />
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
           <div className="h-6 w-64 bg-white/40 rounded mb-4 animate-pulse" />
