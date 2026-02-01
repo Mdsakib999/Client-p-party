@@ -30,7 +30,7 @@ export default function RegisterPage() {
           <h1 className="text-center font-serif">Registration successful!</h1>,
           {
             position: "top-right",
-          }
+          },
         );
 
         sessionStorage.setItem(
@@ -38,7 +38,7 @@ export default function RegisterPage() {
           JSON.stringify({
             email: result?.data?.email,
             name: result?.data?.name,
-          })
+          }),
         );
 
         navigate("/verify");
@@ -49,18 +49,18 @@ export default function RegisterPage() {
           </h1>,
           {
             position: "top-right",
-          }
+          },
         );
       }
     } catch (error) {
       toast.error(
-        error?.data?.message || "Registration failed. Please try again."
+        error?.data?.message || "Registration failed. Please try again.",
       );
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50 py-28 px-4">
       <div className="max-w-7xl mx-auto mt-10">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="lg:sticky lg:top-8">
