@@ -218,6 +218,32 @@ export default function CandidateDetails() {
                           {candidate.academic_career.degree.join(", ")}
                         </p>
                       )}
+                      {Array.isArray(
+                        candidate.personal_info?.website_or_social,
+                      ) &&
+                        candidate.personal_info.website_or_social.length >
+                          0 && (
+                          <section>
+                            <h2 className="text-xl font-bold my-6">
+                              Web Presence
+                            </h2>
+                            <div className="flex flex-wrap gap-3">
+                              {candidate.personal_info.website_or_social.map(
+                                (link, idx) => (
+                                  <a
+                                    key={idx}
+                                    href={link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="px-4 py-2 border rounded-lg text-green-600 hover:bg-green-50"
+                                  >
+                                    Visit Website
+                                  </a>
+                                ),
+                              )}
+                            </div>
+                          </section>
+                        )}
                     </div>
                   </section>
                 )}
@@ -288,28 +314,6 @@ export default function CandidateDetails() {
                           ),
                         )}
                       </ul>
-                    </section>
-                  )}
-
-                {Array.isArray(candidate.personal_info?.website_or_social) &&
-                  candidate.personal_info.website_or_social.length > 0 && (
-                    <section>
-                      <h2 className="text-xl font-bold mb-3">Web Presence</h2>
-                      <div className="flex flex-wrap gap-3">
-                        {candidate.personal_info.website_or_social.map(
-                          (link, idx) => (
-                            <a
-                              key={idx}
-                              href={link}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="px-4 py-2 border rounded-lg text-green-600 hover:bg-green-50"
-                            >
-                              Visit Website
-                            </a>
-                          ),
-                        )}
-                      </div>
                     </section>
                   )}
               </div>
