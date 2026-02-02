@@ -74,11 +74,8 @@ const Contact = () => {
                 Central Office
               </h3>
               <p className="text-gray-600 text-sm">
-                BNP Central Office
-                <br />
-                Nayapaltan
-                <br />
-                Dhaka-1000
+                
+                Dhaka
                 <br />
                 Bangladesh
               </p>
@@ -95,10 +92,10 @@ const Contact = () => {
                 General Inquiries
               </h3>
               <a
-                href="mailto:info@bnpbd.org"
+                href="mailto:info@bnpcandidates.com"
                 className="text-green-600 hover:text-green-700 font-semibold"
               >
-                info@bnpbd.org
+                info@bnpcandidates.com
               </a>
               <p className="text-gray-500 text-sm mt-1">Send us an email</p>
             </div>
@@ -114,10 +111,10 @@ const Contact = () => {
                 Media & Press
               </h3>
               <a
-                href="mailto:press@bnpbd.org"
+                href="mailto:campaign@bnpcandidates.com"
                 className="text-green-600 hover:text-green-700 font-semibold"
               >
-                press@bnpbd.org
+                campaign@bnpcandidates.com
               </a>
               <p className="text-gray-500 text-sm mt-1">For media inquiries</p>
             </div>
@@ -244,7 +241,7 @@ const Contact = () => {
 
               <div className="space-y-3">
                 <a
-                  href="https://www.facebook.com/bnpbd.org/"
+                  href="https://www.facebook.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
@@ -254,12 +251,12 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-sm">Facebook</p>
-                    <p className="text-xs text-green-100">@bnpbd.org</p>
+                    {/* <p className="text-xs text-green-100">@bnpbd.org</p> */}
                   </div>
                 </a>
 
                 <a
-                  href="https://x.com/bdbnp78?lang=en"
+                  href="https://x.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
@@ -269,12 +266,12 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-sm">Twitter</p>
-                    <p className="text-xs text-green-100">@bdbnp78</p>
+                    {/* <p className="text-xs text-green-100">@bdbnp78</p> */}
                   </div>
                 </a>
 
                 <a
-                  href="https://www.instagram.com/bnpbd/?hl=en"
+                  href="https://www.instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
@@ -284,12 +281,12 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-sm">Instagram</p>
-                    <p className="text-xs text-green-100">@bnpbd</p>
+                    {/* <p className="text-xs text-green-100">@bnpbd</p> */}
                   </div>
                 </a>
 
-                <a
-                  href="https://www.youtube.com/@bdbnp"
+                {/* <a
+                  href="https://www.youtube.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
@@ -301,7 +298,7 @@ const Contact = () => {
                     <p className="font-semibold text-sm">YouTube</p>
                     <p className="text-xs text-green-100">@bdbnp</p>
                   </div>
-                </a>
+                </a> */}
               </div>
             </div>
 

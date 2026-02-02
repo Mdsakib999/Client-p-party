@@ -26,7 +26,7 @@ const About = () => {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Champion of Democracy in Bangladesh
+              Mother of Democracy in Bangladesh
             </h2>
 
             <div className="w-16 sm:w-20 h-1 bg-green-700 rounded-full"></div>
