@@ -12,6 +12,7 @@ import {
   AtSign,
   MessageSquare,
 } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 import candidatesBanner from "../../assets/bg.png";
 import toast from "react-hot-toast";
 
@@ -241,7 +242,7 @@ const Contact = () => {
 
               <div className="space-y-3">
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/people/BNPcandidatescom/61587275225560/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
@@ -261,8 +262,8 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 bg-white/20 group-hover:bg-sky-500 rounded-lg flex items-center justify-center transition-colors">
-                    <Twitter className="w-6 h-6" />
+                  <div className="w-12 h-12 bg-white/20 group-hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors">
+                    <FaXTwitter className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-sm">Twitter</p>

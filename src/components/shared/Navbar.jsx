@@ -161,7 +161,7 @@ export default function Navbar() {
                         onClick={() => setShowUserMenu(false)}
                       >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-green-700 transition-colors" />
-                        <span className="font-medium">BNP</span>
+                        <span className="font-medium">Dashboard</span>
                       </Link>
                       <button
                         onClick={handleLogout}
