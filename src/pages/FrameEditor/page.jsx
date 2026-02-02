@@ -13,6 +13,7 @@ const FrameEditor = () => {
   const [imageSrc, setImageSrc] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeFrame, setActiveFrame] = useState(null);
 
   useEffect(() => {
     setError(null);
@@ -24,8 +25,13 @@ const FrameEditor = () => {
           ? "/frames/posts/post1.png"
           : "/frames/cover/cover1.png";
 
-    canvasRef.current?.changeFrame(defaultFrame);
+    setActiveFrame(defaultFrame);
   }, [selectedMediaType]);
+
+  useEffect(() => {
+    if (!activeFrame) return;
+    canvasRef.current?.changeFrame(activeFrame);
+  }, [activeFrame]);
 
   const handleUploadPhoto = (file) => {
     if (!file) return;
@@ -48,13 +54,7 @@ const FrameEditor = () => {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      canvasRef.current?.clearPhoto();
-
-      setTimeout(() => {
-        setImageSrc(e.target.result);
-        setHasPhoto(true);
-        setIsLoading(false);
-      }, 50);
+      setImageSrc(e.target.result);
     };
 
     reader.onerror = () => {
@@ -86,9 +86,9 @@ const FrameEditor = () => {
     canvasRef.current?.rotate(angle);
   };
 
-  const handleSelectFrame = (frameUrl) => {
-    canvasRef.current?.changeFrame(frameUrl);
-  };
+  const handleSelectFrame = useCallback((frameUrl) => {
+    setActiveFrame(frameUrl);
+  }, []);
 
   const handleReset = () => {
     canvasRef.current?.reset();
@@ -173,6 +173,10 @@ const FrameEditor = () => {
                 imageSrc={imageSrc}
                 onCanvasClick={handleCanvasClick}
                 onLoadError={handleImageLoadError}
+                onPhotoLoaded={() => {
+                  setHasPhoto(true);
+                  setIsLoading(false);
+                }}
               />
 
               {!hasPhoto && !isLoading && (
