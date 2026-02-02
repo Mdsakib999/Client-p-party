@@ -1,12 +1,14 @@
 import {
-    forwardRef,
-    useEffect,
-    useImperativeHandle,
-    useRef,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useCallback,
 } from "react";
 import { Canvas, FabricImage } from "fabric";
 
-const FrameCanvas = forwardRef(({ mediaType, imageSrc, onCanvasClick, onLoadError }, ref) => {
+const FrameCanvas = forwardRef(
+  ({ mediaType, imageSrc, onCanvasClick, onLoadError, onPhotoLoaded }, ref) => {
     const canvasElRef = useRef(null);
     const containerRef = useRef(null);
     const fabricRef = useRef(null);
@@ -15,290 +17,229 @@ const FrameCanvas = forwardRef(({ mediaType, imageSrc, onCanvasClick, onLoadErro
     const frameRef = useRef(null);
     const initialPhotoStateRef = useRef(null);
 
-    // Track loading operations to prevent race conditions
+    const lastFrameUrlRef = useRef(null);
     const photoLoadingIdRef = useRef(0);
     const frameLoadingIdRef = useRef(0);
+    const resizeRafRef = useRef(null);
 
-    // ===== DIMENSIONS =====
     const getDimensions = () => {
-        if (mediaType === "profile") return { w: 1080, h: 1080 };
-        if (mediaType === "post") return { w: 1500, h: 1875 };
-        if (mediaType === "cover") return { w: 851, h: 315 };
-        return { w: 1080, h: 1080 };
+      if (mediaType === "profile") return { w: 1080, h: 1080 };
+      if (mediaType === "post") return { w: 1500, h: 1875 };
+      if (mediaType === "cover") return { w: 851, h: 315 };
+      return { w: 1080, h: 1080 };
     };
 
     const { w: WIDTH, h: HEIGHT } = getDimensions();
 
-    // ===== INIT CANVAS (ONLY ONCE) =====
-    useEffect(() => {
-        if (fabricRef.current) return; // Don't recreate canvas
-
-        const canvas = new Canvas(canvasElRef.current, {
-            width: WIDTH,
-            height: HEIGHT,
-            backgroundColor: "#fff",
-            selection: false,
-            preserveObjectStacking: true,
-        });
-
-        canvas.on("mouse:down", (e) => {
-            if (!e.target && !photoRef.current) {
-                onCanvasClick?.();
-            }
-        });
-
-        fabricRef.current = canvas;
-        resizeCanvas();
-
-        const handleResize = () => resizeCanvas();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-            if (fabricRef.current) {
-                fabricRef.current.dispose();
-                fabricRef.current = null;
-            }
-            photoRef.current = null;
-            frameRef.current = null;
-            initialPhotoStateRef.current = null;
-        };
-    }, []);
-
-    // ===== UPDATE CANVAS DIMENSIONS ON MEDIA TYPE CHANGE =====
-    useEffect(() => {
-        if (!fabricRef.current) return;
-
-        fabricRef.current.setDimensions({ width: WIDTH, height: HEIGHT });
-
-        // Reposition photo to new center if exists
-        if (photoRef.current && initialPhotoStateRef.current) {
-            const scale = Math.min(WIDTH / photoRef.current.width, HEIGHT / photoRef.current.height) * 0.9;
-            photoRef.current.set({
-                left: WIDTH / 2,
-                top: HEIGHT / 2,
-                scaleX: scale,
-                scaleY: scale,
-            });
-
-            initialPhotoStateRef.current = {
-                left: photoRef.current.left,
-                top: photoRef.current.top,
-                scaleX: photoRef.current.scaleX,
-                scaleY: photoRef.current.scaleY,
-                angle: photoRef.current.angle || 0,
-            };
-        }
-
-        fabricRef.current.requestRenderAll();
-        resizeCanvas();
+    const resizeCanvas = useCallback(() => {
+      if (!containerRef.current || !fabricRef.current) return;
+      const cw = containerRef.current.clientWidth;
+      const ratio = HEIGHT / WIDTH;
+      fabricRef.current.setDimensions(
+        { width: cw, height: cw * ratio },
+        { cssOnly: true },
+      );
+      fabricRef.current.requestRenderAll();
     }, [WIDTH, HEIGHT]);
 
-    // ===== RESPONSIVE =====
-    const resizeCanvas = () => {
-        if (!containerRef.current || !fabricRef.current) return;
-
-        const containerWidth = containerRef.current.clientWidth;
-        const ratio = HEIGHT / WIDTH;
-
-        fabricRef.current.setDimensions(
-            {
-                width: containerWidth,
-                height: containerWidth * ratio,
-            },
-            { cssOnly: true }
-        );
-
-        fabricRef.current.setDimensions(
-            {
-                width: WIDTH,
-                height: HEIGHT,
-            },
-            { backstoreOnly: true }
-        );
-
-        fabricRef.current.requestRenderAll();
-    };
-
-    // ===== LOAD PHOTO (BEHIND FRAME) =====
+    // INIT
     useEffect(() => {
-        const canvas = fabricRef.current;
-        if (!canvas) return;
+      if (fabricRef.current) return;
 
-        if (!imageSrc) {
-            if (photoRef.current) {
-                canvas.remove(photoRef.current);
-                photoRef.current = null;
-                initialPhotoStateRef.current = null;
-                canvas.requestRenderAll();
-            }
-            return;
+      const canvas = new Canvas(canvasElRef.current, {
+        width: WIDTH,
+        height: HEIGHT,
+        backgroundColor: "#fff",
+        selection: false,
+        preserveObjectStacking: true,
+      });
+
+      canvas.on("mouse:down", (e) => {
+        if (!e.target && !photoRef.current) onCanvasClick?.();
+      });
+
+      fabricRef.current = canvas;
+      resizeCanvas();
+
+      const onResize = () => {
+        if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current);
+        resizeRafRef.current = requestAnimationFrame(resizeCanvas);
+      };
+      window.addEventListener("resize", onResize);
+
+      return () => {
+        window.removeEventListener("resize", onResize);
+        if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current);
+        canvas.dispose();
+        fabricRef.current = null;
+        photoRef.current = null;
+        frameRef.current = null;
+        initialPhotoStateRef.current = null;
+      };
+    }, [resizeCanvas, WIDTH, HEIGHT, onCanvasClick]);
+
+    // LOAD PHOTO
+    useEffect(() => {
+      const canvas = fabricRef.current;
+      if (!canvas) return;
+
+      if (!imageSrc) {
+        if (photoRef.current) {
+          canvas.remove(photoRef.current);
+          photoRef.current = null;
+          initialPhotoStateRef.current = null;
+          canvas.requestRenderAll();
         }
+        return;
+      }
 
-        // Allow reloading even if photo exists (for photo changes)
-        const currentLoadingId = ++photoLoadingIdRef.current;
+      const id = ++photoLoadingIdRef.current;
 
-        FabricImage.fromURL(imageSrc, { crossOrigin: "anonymous" })
-            .then((img) => {
-                if (currentLoadingId !== photoLoadingIdRef.current) return;
-                if (!fabricRef.current) return;
+      FabricImage.fromURL(imageSrc, { crossOrigin: "anonymous" })
+        .then((img) => {
+          if (id !== photoLoadingIdRef.current || !fabricRef.current) return;
 
-                const scale = Math.min(WIDTH / img.width, HEIGHT / img.height) * 0.9;
+          const scale = Math.min(WIDTH / img.width, HEIGHT / img.height) * 0.9;
 
-                img.scale(scale);
-                img.set({
-                    left: WIDTH / 2,
-                    top: HEIGHT / 2,
-                    originX: "center",
-                    originY: "center",
-                    selectable: true,
-                    hasControls: false,
-                    hasBorders: false,
-                });
+          img.set({
+            originX: "center",
+            originY: "center",
+            left: WIDTH / 2,
+            top: HEIGHT / 2,
+            scaleX: scale,
+            scaleY: scale,
+            selectable: true,
+            hasControls: false,
+            hasBorders: false,
+          });
 
-                if (photoRef.current) {
-                    fabricRef.current.remove(photoRef.current);
+          requestAnimationFrame(() => {
+            if (!fabricRef.current) return;
+
+            if (photoRef.current) fabricRef.current.remove(photoRef.current);
+            fabricRef.current.add(img);
+            fabricRef.current.sendObjectToBack(img);
+            photoRef.current = img;
+
+            // FORCE FRAME BACK AFTER PHOTO LOAD
+            if (lastFrameUrlRef.current) {
+              requestAnimationFrame(() => {
+                if (fabricRef.current) {
+                  loadFrame(lastFrameUrlRef.current);
                 }
+              });
+            }
 
-                fabricRef.current.add(img);
-                photoRef.current = img;
+            initialPhotoStateRef.current = {
+              left: img.left,
+              top: img.top,
+              scaleX: img.scaleX,
+              scaleY: img.scaleY,
+              angle: 0,
+            };
 
-                initialPhotoStateRef.current = {
-                    left: img.left,
-                    top: img.top,
-                    scaleX: img.scaleX,
-                    scaleY: img.scaleY,
-                    angle: 0,
-                };
+            fabricRef.current.requestRenderAll();
+            onPhotoLoaded?.();
+          });
+        })
+        .catch(() => {
+          if (id === photoLoadingIdRef.current) {
+            onLoadError?.("Failed to load photo");
+          }
+        });
+    }, [imageSrc, WIDTH, HEIGHT, onLoadError, onPhotoLoaded]);
 
-                // Photo BEHIND frame
-                fabricRef.current.sendObjectToBack(img);
-                if (frameRef.current) {
-                    fabricRef.current.bringObjectToFront(frameRef.current);
-                }
-
-                fabricRef.current.requestRenderAll();
-            })
-            .catch((err) => {
-                console.error("Failed to load photo:", err);
-                if (currentLoadingId === photoLoadingIdRef.current) {
-                    onLoadError?.("Failed to load photo. Please try another image.");
-                }
-            });
-    }, [imageSrc, WIDTH, HEIGHT, onLoadError]);
-
-    // ===== LOAD FRAME (ON TOP) =====
+    // LOAD FRAME
     const loadFrame = (url) => {
-        const canvas = fabricRef.current;
-        if (!canvas) return;
+      lastFrameUrlRef.current = url;
+      const canvas = fabricRef.current;
+      if (!canvas) return;
 
-        const currentLoadingId = ++frameLoadingIdRef.current;
+      const id = ++frameLoadingIdRef.current;
 
-        FabricImage.fromURL(url, { crossOrigin: "anonymous" })
-            .then((frame) => {
-                if (currentLoadingId !== frameLoadingIdRef.current) return;
-                if (!fabricRef.current) return;
+      FabricImage.fromURL(url, { crossOrigin: "anonymous" })
+        .then((frame) => {
+          if (id !== frameLoadingIdRef.current || !fabricRef.current) return;
 
-                if (frameRef.current) {
-                    fabricRef.current.remove(frameRef.current);
-                }
+          requestAnimationFrame(() => {
+            if (!fabricRef.current) return;
 
-                const scaleX = WIDTH / frame.width;
-                const scaleY = HEIGHT / frame.height;
+            if (frameRef.current) fabricRef.current.remove(frameRef.current);
 
-                frame.set({
-                    left: 0,
-                    top: 0,
-                    scaleX: scaleX,
-                    scaleY: scaleY,
-                    selectable: false,
-                    evented: false,
-                    originX: 'left',
-                    originY: 'top',
-                });
-
-                fabricRef.current.add(frame);
-                frameRef.current = frame;
-
-                // Frame ON TOP of photo
-                if (photoRef.current) {
-                    fabricRef.current.sendObjectToBack(photoRef.current);
-                    fabricRef.current.bringObjectToFront(frame);
-                }
-
-                fabricRef.current.requestRenderAll();
-            })
-            .catch((err) => {
-                console.error("Failed to load frame:", err);
-                if (currentLoadingId === frameLoadingIdRef.current) {
-                    onLoadError?.("Failed to load frame. Please try again.");
-                }
+            frame.set({
+              originX: "left",
+              originY: "top",
+              left: 0,
+              top: 0,
+              scaleX: WIDTH / frame.width,
+              scaleY: HEIGHT / frame.height,
+              selectable: false,
+              evented: false,
             });
+
+            fabricRef.current.add(frame);
+            fabricRef.current.bringObjectToFront(frame);
+            frameRef.current = frame;
+
+            fabricRef.current.requestRenderAll();
+          });
+        })
+        .catch(() => {
+          if (id === frameLoadingIdRef.current) {
+            onLoadError?.("Failed to load frame");
+          }
+        });
     };
 
-    // ===== API =====
+    // API
     useImperativeHandle(ref, () => ({
-        changeFrame: loadFrame,
-
-        setZoom: (value) => {
-            if (!photoRef.current || !initialPhotoStateRef.current) return;
-            photoRef.current.scaleX = initialPhotoStateRef.current.scaleX * value;
-            photoRef.current.scaleY = initialPhotoStateRef.current.scaleY * value;
-            fabricRef.current?.requestRenderAll();
-        },
-
-        rotate: (angle) => {
-            if (!photoRef.current) return;
-            photoRef.current.rotate((photoRef.current.angle || 0) + angle);
-            fabricRef.current?.requestRenderAll();
-        },
-
-        reset: () => {
-            if (!photoRef.current || !initialPhotoStateRef.current) return;
-            photoRef.current.set({ ...initialPhotoStateRef.current, angle: 0 });
-            fabricRef.current?.requestRenderAll();
-        },
-
-        clearPhoto: () => {
-            if (photoRef.current && fabricRef.current) {
-                fabricRef.current.remove(photoRef.current);
-                photoRef.current = null;
-                initialPhotoStateRef.current = null;
-                fabricRef.current.requestRenderAll();
-            }
-        },
-
-        exportImage: () => {
-            if (!fabricRef.current) return null;
-            try {
-                return fabricRef.current.toDataURL({ format: "png", quality: 1 });
-            } catch (err) {
-                console.error("Failed to export image:", err);
-                onLoadError?.("Failed to export image. Please try again.");
-                return null;
-            }
-        },
+      changeFrame: loadFrame,
+      setZoom: (v) => {
+        if (!photoRef.current || !initialPhotoStateRef.current) return;
+        photoRef.current.set({
+          scaleX: initialPhotoStateRef.current.scaleX * v,
+          scaleY: initialPhotoStateRef.current.scaleY * v,
+        });
+        fabricRef.current?.requestRenderAll();
+      },
+      rotate: (a) => {
+        if (!photoRef.current) return;
+        photoRef.current.rotate((photoRef.current.angle || 0) + a);
+        fabricRef.current?.requestRenderAll();
+      },
+      reset: () => {
+        if (!photoRef.current || !initialPhotoStateRef.current) return;
+        photoRef.current.set({ ...initialPhotoStateRef.current, angle: 0 });
+        fabricRef.current?.requestRenderAll();
+      },
+      clearPhoto: () => {
+        if (photoRef.current && fabricRef.current) {
+          fabricRef.current.remove(photoRef.current);
+          photoRef.current = null;
+          initialPhotoStateRef.current = null;
+          fabricRef.current.requestRenderAll();
+        }
+      },
+      exportImage: () => {
+        if (!fabricRef.current) return null;
+        return fabricRef.current.toDataURL({ format: "png", quality: 1 });
+      },
     }));
 
     return (
-        <div
-            ref={containerRef}
-            className="w-full max-w-[min(90vw,500px)]"
-        >
-            <canvas
-                ref={canvasElRef}
-                style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                    maxWidth: "100%"
-                }}
-                role="img"
-                aria-label="Photo frame canvas"
-            />
-        </div>
+      <div
+        ref={containerRef}
+        className="relative w-full max-w-[500px] mx-auto overflow-hidden"
+        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+      >
+        <canvas
+          ref={canvasElRef}
+          className="absolute inset-0 w-full h-full block"
+        />
+      </div>
     );
-});
+  },
+);
 
 FrameCanvas.displayName = "FrameCanvas";
 export default FrameCanvas;

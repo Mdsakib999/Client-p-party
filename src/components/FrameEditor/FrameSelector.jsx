@@ -1,41 +1,60 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
+
+const PROFILE_FRAMES = [
+  { id: 1, src: "/frames/profile/profile1.png", name: "Profile Frame 1" },
+  { id: 2, src: "/frames/profile/profile2.png", name: "Profile Frame 2" },
+  { id: 3, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
+  { id: 4, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
+  { id: 5, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
+];
+
+const POST_FRAMES = [
+  { id: 6, src: "/frames/posts/post1.png", name: "Post Frame 1" },
+  { id: 7, src: "/frames/posts/post2.png", name: "Post Frame 2" },
+];
+
+const COVER_PHOTO_FRAMES = [
+  { id: 8, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
+];
 
 const FrameSelector = ({ onSelectFrame, mediaType }) => {
   const itemRefs = useRef({});
+  const initializedRef = useRef(false);
 
-  const profileFrames = [
-    { id: 1, src: "/frames/profile/profile1.png", name: "Profile Frame 1" },
-    { id: 2, src: "/frames/profile/profile2.png", name: "Profile Frame 2" },
-    { id: 3, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
-    { id: 4, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
-  ];
-
-  const postFrames = [
-    { id: 5, src: "/frames/posts/post1.png", name: "Post Frame 1" },
-    { id: 6, src: "/frames/posts/post2.png", name: "Post Frame 2" },
-  ];
-
-  const coverPhotoFrames = [
-    { id: 7, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
-  ];
-
-  const frames =
-    mediaType === "profile"
-      ? profileFrames
+  const frames = useMemo(() => {
+    return mediaType === "profile"
+      ? PROFILE_FRAMES
       : mediaType === "post"
-        ? postFrames
-        : coverPhotoFrames;
+        ? POST_FRAMES
+        : COVER_PHOTO_FRAMES;
+  }, [mediaType]);
 
   const [selectedId, setSelectedId] = useState(frames[0].id);
 
   useEffect(() => {
-    const firstFrame = frames[0];
-    setSelectedId(firstFrame.id);
-    onSelectFrame(firstFrame.src);
-  }, [mediaType]);
+    frames.forEach((f) => {
+      const img = new Image();
+      img.src = f.src;
+      img.decoding = "async";
+      img.loading = "eager";
+    });
+  }, [frames]);
+
+  useEffect(() => {
+    if (!frames.length) return;
+
+    // Only reset when mediaType actually changes
+    if (!initializedRef.current) {
+      const firstFrame = frames[0];
+      setSelectedId(firstFrame.id);
+      onSelectFrame(firstFrame.src);
+      initializedRef.current = true;
+    }
+  }, [frames, onSelectFrame]);
 
   const handleSelect = (frame) => {
     setSelectedId(frame.id);
+
     onSelectFrame(frame.src);
 
     requestAnimationFrame(() => {
