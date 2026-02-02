@@ -20,7 +20,7 @@ const Candidates = () => {
 
   const containerRef = useRef(null);
 
-  const { data, isLoading } = useGetAllCandidatesQuery({
+  const { data, isLoading, isFetching } = useGetAllCandidatesQuery({
     page: currentPage,
     limit: ITEMS_PER_PAGE,
     division: selectedDivision?.name,
@@ -197,12 +197,37 @@ const Candidates = () => {
       {/* Candidate List */}
       <div className="max-w-7xl mx-auto px-4 py-14">
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {candidates.map((candidate) => (
-            <CandidateCard key={candidate._id} candidate={candidate} />
-          ))}
+          {isFetching ? (
+            Array.from({ length: 9 }).map((_, index) => (
+              <div
+                key={index}
+                className="border border-green-200 rounded-xl p-4 bg-white shadow-sm animate-pulse"
+              >
+                {/* Image */}
+                <div className="h-40 w-full bg-green-100 rounded-lg mb-4" />
+
+                {/* Name */}
+                <div className="h-4 w-3/4 bg-green-200 rounded mb-2" />
+
+                {/* Position */}
+                <div className="h-3 w-1/2 bg-green-100 rounded mb-1" />
+
+                {/* Location */}
+                <div className="h-3 w-2/3 bg-green-100 rounded" />
+              </div>
+            ))
+          ) : candidates.length > 0 ? (
+            candidates.map((candidate) => (
+              <CandidateCard key={candidate.id} candidate={candidate} />
+            ))
+          ) : (
+            <div className="col-span-full text-center py-10">
+              <p className="text-gray-500">No candidates found</p>
+            </div>
+          )}
         </section>
 
-        {totalPages > 1 && (
+        {totalPages > 1 && !isFetching && (
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
