@@ -76,7 +76,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex min-h-screen max-w-7xl mx-auto pt-6">
+    <div className="flex min-h-screen max-w-[1450px] mx-auto pt-6">
       <ScrollToTop />
       {isSidebarOpen && (
         <div
