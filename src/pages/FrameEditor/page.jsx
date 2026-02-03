@@ -4,6 +4,7 @@ import FrameCanvas from "../../components/FrameEditor/FrameCanvas";
 import FrameSelector from "../../components/FrameEditor/FrameSelector";
 import ControlPanel from "../../components/FrameEditor/ControlPanel";
 import { Upload } from "lucide-react";
+import CountingNumber from "../../components/FrameEditor/CountingNumber";
 
 const FrameEditor = () => {
   const canvasRef = useRef(null);
@@ -250,9 +251,12 @@ const FrameEditor = () => {
           disabled={isLoading}
         />
 
+        {/* Counting div number */}
+        <CountingNumber></CountingNumber>
+
         {/* Footer */}
         <div className="text-center text-gray-400 text-xs px-4">
-          <p>Show your support for BNP | Share on social media</p>
+          <p>Show your support for BNP || Share on social media</p>
         </div>
       </div>
     </div>
