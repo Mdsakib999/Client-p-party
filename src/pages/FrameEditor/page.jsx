@@ -8,7 +8,7 @@ import { Upload } from "lucide-react";
 const FrameEditor = () => {
   const canvasRef = useRef(null);
   const fileInputRef = useRef(null);
-  const [selectedMediaType, setSelectedMediaType] = useState("profile");
+  const [selectedMediaType, setSelectedMediaType] = useState("post");
   const [hasPhoto, setHasPhoto] = useState(false);
   const [imageSrc, setImageSrc] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

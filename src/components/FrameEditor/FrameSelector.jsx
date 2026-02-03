@@ -8,15 +8,18 @@ const PROFILE_FRAMES = [
   { id: 5, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
   { id: 6, src: "/frames/profile/profile6.png", name: "Profile Frame 6" },
   { id: 7, src: "/frames/profile/profile7.png", name: "Profile Frame 7" },
+  { id: 8, src: "/frames/profile/profile8.png", name: "Profile Frame 8" },
+  { id: 9, src: "/frames/profile/profile9.png", name: "Profile Frame 9" },
+  { id: 10, src: "/frames/profile/profile10.png", name: "Profile Frame 10" },
 ];
 
 const POST_FRAMES = [
-  { id: 8, src: "/frames/posts/post1.png", name: "Post Frame 1" },
-  { id: 9, src: "/frames/posts/post2.png", name: "Post Frame 2" },
+  { id: 11, src: "/frames/posts/post1.png", name: "Post Frame 1" },
+  { id: 12, src: "/frames/posts/post2.png", name: "Post Frame 2" },
 ];
 
 const COVER_PHOTO_FRAMES = [
-  { id: 10, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
+  { id: 13, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
 ];
 
 const FrameSelector = ({ onSelectFrame, mediaType }) => {
