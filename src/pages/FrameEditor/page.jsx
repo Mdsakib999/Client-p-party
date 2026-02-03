@@ -179,14 +179,29 @@ const FrameEditor = () => {
                 }}
               />
 
-              {!hasPhoto && !isLoading && (
+              {/* {!hasPhoto && !isLoading && (
                 <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center">
-                  <Upload className="w-12 h-12 mb-3 opacity-40 text-green-500" />
-                  <span className="text-xs text-green-600 px-4 text-center">
+                  <Upload
+                    className={`${selectedMediaType === "profile"
+                      ? "w-16 h-16 mb-3"
+                      : selectedMediaType === "post"
+                        ? "w-12 h-12 mb-3"
+                        : "w-8 h-8 mb-2"
+                      } text-green-600 drop-shadow-lg`}
+                  />
+                  <span
+                    className={`${selectedMediaType === "cover"
+                      ? "text-xs"
+                      : "text-sm"
+                      } font-semibold text-green-600 text-center px-4`}
+                    style={{
+                      textShadow: '0 0 10px rgba(255,255,255,0.95), 0 0 6px rgba(255,255,255,0.9), 0 2px 4px rgba(255,255,255,0.8)'
+                    }}
+                  >
                     Click to upload your photo
                   </span>
                 </div>
-              )}
+              )} */}
 
               {isLoading && (
                 <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center bg-white/50">
