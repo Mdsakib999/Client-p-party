@@ -1,7 +1,7 @@
 export default function TermsAndConditions() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-14 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12">
+      <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12 mt-12">
         <h1 className="text-3xl md:text-4xl font-extrabold text-center text-green-800 mb-4">
           Terms and Conditions
         </h1>
