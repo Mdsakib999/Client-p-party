@@ -6,15 +6,17 @@ const PROFILE_FRAMES = [
   { id: 3, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
   { id: 4, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
   { id: 5, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
+  { id: 6, src: "/frames/profile/profile6.png", name: "Profile Frame 6" },
+  { id: 7, src: "/frames/profile/profile7.png", name: "Profile Frame 7" },
 ];
 
 const POST_FRAMES = [
-  { id: 6, src: "/frames/posts/post1.png", name: "Post Frame 1" },
-  { id: 7, src: "/frames/posts/post2.png", name: "Post Frame 2" },
+  { id: 8, src: "/frames/posts/post1.png", name: "Post Frame 1" },
+  { id: 9, src: "/frames/posts/post2.png", name: "Post Frame 2" },
 ];
 
 const COVER_PHOTO_FRAMES = [
-  { id: 8, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
+  { id: 10, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
 ];
 
 const FrameSelector = ({ onSelectFrame, mediaType }) => {
@@ -136,11 +138,10 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
               aria-checked={isSelected}
               aria-label={frame.name}
               className={`snap-center shrink-0 cursor-pointer transition-all duration-300
-                                ${
-                                  isSelected
-                                    ? "scale-110"
-                                    : "opacity-60 hover:opacity-100"
-                                }
+                                ${isSelected
+                  ? "scale-110"
+                  : "opacity-60 hover:opacity-100"
+                }
                                 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-xl`}
             >
               <div
@@ -148,11 +149,10 @@ const FrameSelector = ({ onSelectFrame, mediaType }) => {
               ${isProfile && "w-20 h-20"}
               ${isPost && "w-20 h-24"}
               ${isCover && "w-36 h-20"}
-              ${
-                isSelected
-                  ? "border-emerald-500 ring-4 ring-emerald-300/40 shadow-xl"
-                  : "border-emerald-100"
-              }`}
+              ${isSelected
+                    ? "border-emerald-500 ring-4 ring-emerald-300/40 shadow-xl"
+                    : "border-emerald-100"
+                  }`}
               >
                 <img
                   src={frame.src}
