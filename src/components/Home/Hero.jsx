@@ -30,7 +30,7 @@ const Hero = () => {
       id: 3,
       image: tarak2,
       quote:
-        "Introducing Family Cards for female household to provide direct support and economic independence.",
+        "Introducing Family Cards for female household to provide direct economic support.",
       objectPosition: "center",
     },
     // {
