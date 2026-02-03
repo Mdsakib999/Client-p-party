@@ -3,18 +3,18 @@ import { Image, User, RectangleHorizontal } from "lucide-react";
 const MediaTypeSelector = ({ selectedType, onSelect }) => {
   const mediaTypes = [
     {
-      id: "profile",
-      icon: User,
-      title: "Photo Frame",
-      description: "Facebook Profile Picture",
-      dimensions: "1080 × 1080",
-    },
-    {
       id: "post",
       icon: Image,
       title: "Create Frame",
       description: "Facebook Post / Banner",
       dimensions: "1500 × 1875",
+    },
+    {
+      id: "profile",
+      icon: User,
+      title: "Photo Frame",
+      description: "Facebook Profile Picture",
+      dimensions: "1080 × 1080",
     },
     {
       id: "cover",
@@ -53,20 +53,18 @@ const MediaTypeSelector = ({ selectedType, onSelect }) => {
             aria-label={`${type.title} - ${type.dimensions}`}
             className={`relative flex-1 cursor-pointer rounded-2xl border transition-all duration-300
                         flex flex-col items-center gap-4 p-6
-                        ${
-                          isSelected
-                            ? "border-emerald-500 bg-emerald-50 shadow-2xl scale-[1.03]"
-                            : "bg-white border-emerald-100 hover:border-emerald-300 hover:shadow-lg"
-                        }
+                        ${isSelected
+                ? "border-emerald-500 bg-emerald-50 shadow-2xl scale-[1.03]"
+                : "bg-white border-emerald-100 hover:border-emerald-300 hover:shadow-lg"
+              }
                         focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2`}
           >
             <div
               className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center
-                            ${
-                              isSelected
-                                ? "bg-emerald-500 text-white shadow-md"
-                                : "bg-emerald-50 text-emerald-400"
-                            }`}
+                            ${isSelected
+                  ? "bg-emerald-500 text-white shadow-md"
+                  : "bg-emerald-50 text-emerald-400"
+                }`}
             >
               <Icon className="w-5 h-5" />
             </div>
