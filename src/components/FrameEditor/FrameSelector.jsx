@@ -16,10 +16,11 @@ const PROFILE_FRAMES = [
 const POST_FRAMES = [
   { id: 11, src: "/frames/posts/post1.png", name: "Post Frame 1" },
   { id: 12, src: "/frames/posts/post2.png", name: "Post Frame 2" },
+  { id: 13, src: "/frames/posts/post3.png", name: "Post Frame 3" },
 ];
 
 const COVER_PHOTO_FRAMES = [
-  { id: 13, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
+  { id: 14, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
 ];
 
 const FrameSelector = ({ onSelectFrame, mediaType }) => {
