@@ -5,9 +5,9 @@ const CountingNumber = () => {
     const [stats, setStats] = useState(() => {
         const savedStats = localStorage.getItem('counting_stats');
         return savedStats ? JSON.parse(savedStats) : {
-            photoDownload: 2000,
-            coverCreate: 2000,
-            frameCreate: 5000
+            photoDownload: 2780,
+            coverCreate: 2459,
+            frameCreate: 5608
         };
     });
 
