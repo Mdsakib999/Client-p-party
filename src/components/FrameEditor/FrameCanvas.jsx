@@ -54,9 +54,9 @@ const FrameCanvas = forwardRef(
         preserveObjectStacking: true,
       });
 
-      canvas.on("mouse:down", (e) => {
-        if (!e.target && !photoRef.current) onCanvasClick?.();
-      });
+      // canvas.on("mouse:down", (e) => {
+      //   if (!e.target && !photoRef.current) onCanvasClick?.();
+      // });
 
       fabricRef.current = canvas;
       resizeCanvas();
