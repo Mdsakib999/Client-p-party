@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import bnpBanner from "../../assets/hero-banner.jpg";
+// import bnpBanner from "../../assets/hero-banner.jpg";
 import tarak from "../../assets/tarak.png";
 import tarak2 from "../../assets/tarak2.png";
 import fakrul from "../../assets/fakhrul.png";
