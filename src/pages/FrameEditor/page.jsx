@@ -180,29 +180,60 @@ const FrameEditor = () => {
                 }}
               />
 
-              {/* {!hasPhoto && !isLoading && (
-                <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center">
-                  <Upload
-                    className={`${selectedMediaType === "profile"
-                      ? "w-16 h-16 mb-3"
+              {/* Clickable area overlay - only on transparent circle */}
+              {!hasPhoto && !isLoading && (
+                <div
+                  onClick={handleCanvasClick}
+                  className={`absolute cursor-pointer z-10
+      ${selectedMediaType === "profile"
+                      ? "inset-[15%] rounded-full"
                       : selectedMediaType === "post"
-                        ? "w-12 h-12 mb-3"
-                        : "w-8 h-8 mb-2"
-                      } text-green-600 drop-shadow-lg`}
-                  />
+                        ? "top-[12%] left-[25%] right-[25%] aspect-square rounded-full"
+                        : "top-[25%] bottom-[25%] left-[35%] right-[35%] rounded-full"
+                    }`}
+                  style={{
+                    background: 'transparent',
+                  }}
+                  aria-label="Click to upload photo"
+                />
+              )}
+
+              {!hasPhoto && !isLoading && (
+                <div
+                  className={`absolute pointer-events-none flex flex-col items-center justify-center
+                    ${selectedMediaType === "profile"
+                      ? "inset-0"
+                      : selectedMediaType === "post"
+                        ? "top-[12%] left-[25%] right-[25%] h-[30%]"
+                        : "top-0 bottom-0 left-[20%] right-[20%]"
+                    }`}
+                >
+                  {selectedMediaType !== "cover" && (
+                    <Upload
+                      className={`${selectedMediaType === "profile"
+                        ? "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-2 md:mb-3"
+                        : "w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-2 md:mb-3"
+                        } text-green-600 drop-shadow-lg`}
+                    />
+                  )}
                   <span
                     className={`${selectedMediaType === "cover"
-                      ? "text-xs"
-                      : "text-sm"
-                      } font-semibold text-green-600 text-center px-4`}
+                      ? "text-[10px] sm:text-xs"
+                      : selectedMediaType === "post"
+                        ? "text-xs sm:text-sm md:text-base"
+                        : "text-sm sm:text-base md:text-lg"
+                      } font-semibold text-green-600 text-center px-2 sm:px-4 leading-tight`}
                     style={{
                       textShadow: '0 0 10px rgba(255,255,255,0.95), 0 0 6px rgba(255,255,255,0.9), 0 2px 4px rgba(255,255,255,0.8)'
                     }}
                   >
-                    Click to upload your photo
+                    {selectedMediaType === "cover"
+                      ? "Click to upload"
+                      : "Click to upload your photo"
+                    }
                   </span>
                 </div>
-              )} */}
+              )}
 
               {isLoading && (
                 <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center bg-white/50">

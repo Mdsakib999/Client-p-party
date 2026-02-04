@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { X, Menu, ChevronDown, LogOut, LayoutDashboard } from "lucide-react";
+import { X, Menu, ChevronDown, LogOut, LayoutDashboard, Globe } from "lucide-react";
 import { Link, NavLink } from "react-router";
+import { useTranslation } from "react-i18next";
 import {
   authApi,
   useLogoutMutation,
@@ -11,6 +12,7 @@ import { useDispatch } from "react-redux";
 import logo from "../../assets/BNP-logo.png";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const { data: userInfo } = useUserInfoQuery();
   const user = userInfo?.data;
 
@@ -64,23 +66,28 @@ export default function Navbar() {
       },
     );
     setShowUserMenu(false);
+    setShowUserMenu(false);
+  };
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "bn" : "en";
+    i18n.changeLanguage(newLang);
   };
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/candidates", label: "Candidates" },
-    { path: "/frame-editor", label: "Photo Frame" },
-    { path: "/vision", label: "Vision" },
-    { path: "/campaigns", label: "Campaigns" },
+    { path: "/", label: t("nav_home") },
+    { path: "/candidates", label: t("nav_candidates") },
+    { path: "/frame-editor", label: t("nav_photo_frame") },
+    { path: "/vision", label: t("nav_vision") },
+    { path: "/campaigns", label: t("nav_campaigns") },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white shadow-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-white/95 backdrop-blur-md shadow-lg"
+        : "bg-white shadow-sm"
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -105,10 +112,9 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 font-medium text-sm xl:text-base transition-all duration-200 rounded-lg group ${
-                    isActive
-                      ? "text-green-700"
-                      : "text-gray-700 hover:text-green-700 hover:bg-green-50"
+                  `relative px-4 py-2 font-medium text-sm xl:text-base transition-all duration-200 rounded-lg group ${isActive
+                    ? "text-green-700"
+                    : "text-gray-700 hover:text-green-700 hover:bg-green-50"
                   }`
                 }
               >
@@ -138,10 +144,18 @@ export default function Navbar() {
                     </div>
                   )}
                   <ChevronDown
-                    className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${
-                      showUserMenu ? "rotate-180" : ""
-                    }`}
+                    className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${showUserMenu ? "rotate-180" : ""
+                      }`}
                   />
+                </button>
+
+                {/* Language Switcher */}
+                <button
+                  onClick={toggleLanguage}
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium"
+                >
+                  <Globe size={18} />
+                  <span>{i18n.language === "en" ? "BN" : "EN"}</span>
                 </button>
 
                 {showUserMenu && (
@@ -161,14 +175,14 @@ export default function Navbar() {
                         onClick={() => setShowUserMenu(false)}
                       >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-green-700 transition-colors" />
-                        <span className="font-medium">Dashboard</span>
+                        <span className="font-medium">{t("nav_dashboard")}</span>
                       </Link>
                       <button
                         onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-5 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors group"
                       >
                         <LogOut className="w-5 h-5 text-red-400 group-hover:text-red-600 transition-colors" />
-                        <span className="font-medium">Logout</span>
+                        <span className="font-medium">{t("nav_logout")}</span>
                       </button>
                     </div>
                   </div>
@@ -179,7 +193,7 @@ export default function Navbar() {
                 to="/login"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                Login
+                {t("nav_login")}
               </Link>
             )}
           </div>
@@ -196,6 +210,13 @@ export default function Navbar() {
               <Menu className="w-6 h-6 text-gray-900" />
             )}
           </button>
+
+          {/* <button
+            onClick={toggleLanguage}
+            className="lg:hidden p-2 mr-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 font-bold"
+          >
+            {i18n.language === "en" ? "BN" : "EN"}
+          </button> */}
         </div>
       </nav>
 
@@ -234,10 +255,9 @@ export default function Navbar() {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                    isActive
-                      ? "bg-gradient-to-r from-green-50 to-green-100 text-green-700 shadow-sm"
-                      : "text-gray-700 hover:bg-gray-50"
+                  `block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${isActive
+                    ? "bg-gradient-to-r from-green-50 to-green-100 text-green-700 shadow-sm"
+                    : "text-gray-700 hover:bg-gray-50"
                   }`
                 }
               >
@@ -254,7 +274,7 @@ export default function Navbar() {
                   className="flex items-center gap-3 w-full px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200"
                 >
                   <LayoutDashboard className="w-5 h-5 text-gray-400" />
-                  Dashboard
+                  {t("nav_dashboard")}
                 </Link>
                 <button
                   onClick={() => {
@@ -264,7 +284,7 @@ export default function Navbar() {
                   className="flex items-center gap-3 w-full px-4 py-3 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-all duration-200"
                 >
                   <LogOut className="w-5 h-5 text-red-400" />
-                  Logout
+                  {t("nav_logout")}
                 </button>
               </div>
             ) : (
@@ -274,7 +294,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-green-800 transition-all duration-200 font-medium shadow-md"
                 >
-                  Login
+                  {t("nav_login")}
                 </Link>
               </div>
             )}
@@ -313,6 +333,6 @@ export default function Navbar() {
           animation: slideDown 0.3s ease-out;
         }
       `}</style>
-    </header>
+    </header >
   );
 }
