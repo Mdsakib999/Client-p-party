@@ -35,21 +35,21 @@ const CountingNumber = () => {
     const statsData = [
         {
             icon: Download,
-            value: stats.photoDownload,
+            value: stats.frameCreate,
             label: 'Photo Downloads',
             gradient: 'from-emerald-400 to-green-500'
         },
         {
-            icon: Image,
-            value: stats.coverCreate,
-            label: 'Covers Created',
-            gradient: 'from-green-400 to-emerald-600'
-        },
-        {
             icon: Frame,
-            value: stats.frameCreate,
+            value: stats.coverCreate,
             label: 'Frames Created',
             gradient: 'from-teal-400 to-green-500'
+        },
+        {
+            icon: Image,
+            value: stats.photoDownload,
+            label: 'Covers Created',
+            gradient: 'from-green-400 to-emerald-600'
         }
     ];
 
