@@ -4,7 +4,6 @@ import FrameCanvas from "../../components/FrameEditor/FrameCanvas";
 import FrameSelector from "../../components/FrameEditor/FrameSelector";
 import ControlPanel from "../../components/FrameEditor/ControlPanel";
 import { Upload } from "lucide-react";
-import CountingNumber from "../../components/FrameEditor/CountingNumber";
 
 const FrameEditor = () => {
   const canvasRef = useRef(null);
@@ -107,9 +106,7 @@ const FrameEditor = () => {
       link.href = imageData;
       link.download = `bnp-${selectedMediaType}-frame-${Date.now()}.png`;
 
-      // Add event listener for successful download
       link.addEventListener("click", () => {
-        // Reset after a delay to ensure download starts
         setTimeout(() => {
           canvasRef.current?.clearPhoto();
           setHasPhoto(false);
@@ -157,14 +154,12 @@ const FrameEditor = () => {
           />
         </div>
 
-        {/* Error Message */}
         {error && (
           <div className="w-full max-w-2xl mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
             <strong>Error:</strong> {error}
           </div>
         )}
 
-        {/* MAIN CONTENT */}
         <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 my-8 lg:my-12">
           <div className="flex flex-col items-center space-y-6 lg:space-y-8 w-full lg:w-auto">
             <div className="relative shadow-2xl rounded-2xl group w-full max-w-md lg:max-w-none">
@@ -180,12 +175,11 @@ const FrameEditor = () => {
                 }}
               />
 
-              {/* Clickable area overlay - only on transparent circle */}
               {!hasPhoto && !isLoading && (
                 <div
                   onClick={handleCanvasClick}
                   className={`absolute cursor-pointer z-10
-      ${selectedMediaType === "profile"
+                      ${selectedMediaType === "profile"
                       ? "inset-[15%] rounded-full"
                       : selectedMediaType === "post"
                         ? "top-[12%] left-[25%] right-[25%] aspect-square rounded-full"
@@ -271,7 +265,6 @@ const FrameEditor = () => {
           </div>
         </div>
 
-        {/* Hidden file input */}
         <input
           ref={fileInputRef}
           type="file"
@@ -282,12 +275,8 @@ const FrameEditor = () => {
           disabled={isLoading}
         />
 
-        {/* Counting div number */}
-        <CountingNumber></CountingNumber>
-
-        {/* Footer */}
         <div className="text-center text-gray-400 text-xs px-4">
-          <p>Show your support for BNP || Share on social media</p>
+          <p>Show your support for BNP | Share on social media</p>
         </div>
       </div>
     </div>
