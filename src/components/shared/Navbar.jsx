@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { X, Menu, ChevronDown, LogOut, LayoutDashboard, Globe } from "lucide-react";
 import { Link, NavLink } from "react-router";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import {
   authApi,
   useLogoutMutation,
@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import logo from "../../assets/BNP-logo.png";
 
 export default function Navbar() {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
   const { data: userInfo } = useUserInfoQuery();
   const user = userInfo?.data;
 
@@ -69,17 +69,17 @@ export default function Navbar() {
     setShowUserMenu(false);
   };
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "bn" : "en";
-    i18n.changeLanguage(newLang);
-  };
+  // const toggleLanguage = () => {
+  //   const newLang = i18n.language === "en" ? "bn" : "en";
+  //   i18n.changeLanguage(newLang);
+  // };
 
   const navLinks = [
-    { path: "/", label: t("nav_home") },
-    { path: "/candidates", label: t("nav_candidates") },
-    { path: "/frame-editor", label: t("nav_photo_frame") },
-    { path: "/vision", label: t("nav_vision") },
-    { path: "/campaigns", label: t("nav_campaigns") },
+    { path: "/", label: "Home" },
+    { path: "/candidates", label: "Candidates" },
+    { path: "/frame-editor", label: "Photo Frame" },
+    { path: "/vision", label: "Vision" },
+    { path: "/campaigns", label: "Campaigns" },
   ];
 
   return (
@@ -150,13 +150,13 @@ export default function Navbar() {
                 </button>
 
                 {/* Language Switcher */}
-                <button
+                {/* <button
                   onClick={toggleLanguage}
                   className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium"
                 >
                   <Globe size={18} />
                   <span>{i18n.language === "en" ? "BN" : "EN"}</span>
-                </button>
+                </button> */}
 
                 {showUserMenu && (
                   <div className="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fadeIn">
@@ -175,14 +175,14 @@ export default function Navbar() {
                         onClick={() => setShowUserMenu(false)}
                       >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-green-700 transition-colors" />
-                        <span className="font-medium">{t("nav_dashboard")}</span>
+                        <span className="font-medium">Dashboard</span>
                       </Link>
                       <button
                         onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-5 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors group"
                       >
                         <LogOut className="w-5 h-5 text-red-400 group-hover:text-red-600 transition-colors" />
-                        <span className="font-medium">{t("nav_logout")}</span>
+                        <span className="font-medium">Logout</span>
                       </button>
                     </div>
                   </div>
@@ -193,7 +193,7 @@ export default function Navbar() {
                 to="/login"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                {t("nav_login")}
+                Login
               </Link>
             )}
           </div>
@@ -274,7 +274,7 @@ export default function Navbar() {
                   className="flex items-center gap-3 w-full px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200"
                 >
                   <LayoutDashboard className="w-5 h-5 text-gray-400" />
-                  {t("nav_dashboard")}
+                  Dashboard
                 </Link>
                 <button
                   onClick={() => {
@@ -284,7 +284,7 @@ export default function Navbar() {
                   className="flex items-center gap-3 w-full px-4 py-3 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-all duration-200"
                 >
                   <LogOut className="w-5 h-5 text-red-400" />
-                  {t("nav_logout")}
+                  Logout
                 </button>
               </div>
             ) : (
@@ -294,7 +294,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-green-800 transition-all duration-200 font-medium shadow-md"
                 >
-                  {t("nav_login")}
+                  Login
                 </Link>
               </div>
             )}
