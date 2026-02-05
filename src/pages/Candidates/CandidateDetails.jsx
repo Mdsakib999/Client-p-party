@@ -7,11 +7,13 @@ import {
   User,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useParams } from "react-router";
 import { useGetCandidateByIdQuery } from "../../redux/features/candidate/candidate.api";
 import CandidateDetailsSkeleton from "../../utils/CandidateDetailsSkeleton";
 
 export default function CandidateDetails() {
+  const { t } = useTranslation();
   const { state: details } = useLocation();
   const [activeTab, setActiveTab] = useState("details");
   const { id } = useParams();
@@ -52,8 +54,8 @@ export default function CandidateDetails() {
               alt={candidate.name}
               className="w-full md:w-96 h-96 object-cover rounded-xl shadow"
               onError={(e) =>
-                (e.currentTarget.src =
-                  "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
+              (e.currentTarget.src =
+                "https://img.freepik.com/premium-vector/user-icon-vector_1272330-86.jpg")
               }
             />
 
@@ -100,17 +102,16 @@ export default function CandidateDetails() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`cursor-pointer flex-1 py-4 font-semibold ${
-                  activeTab === tab
-                    ? "bg-green-200 text-green-800 shadow-sm shadow-green-300"
-                    : "text-gray-600"
-                }`}
+                className={`cursor-pointer flex-1 py-4 font-semibold ${activeTab === tab
+                  ? "bg-green-200 text-green-800 shadow-sm shadow-green-300"
+                  : "text-gray-600"
+                  }`}
               >
                 {tab === "details"
-                  ? "Details"
+                  ? t('candidate_tab_details')
                   : tab === "political"
-                    ? "Political Career"
-                    : "Activity Highlights"}
+                    ? t('candidate_tab_political')
+                    : t('candidate_tab_activities')}
               </button>
             ))}
           </div>
@@ -123,7 +124,7 @@ export default function CandidateDetails() {
                   <section>
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <User className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
-                      Personal Information
+                      {t('candidate_personal_info')}
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -131,7 +132,7 @@ export default function CandidateDetails() {
                         <div className="flex gap-3">
                           <Calendar className="w-10 h-10 bg-green-700 text-white p-2 rounded-md" />
                           <div>
-                            <p className="text-sm text-gray-500">Birth Date</p>
+                            <p className="text-sm text-gray-500">{t('candidate_birth_date')}</p>
                             <p className="font-medium">
                               {candidate.personal_info.birth_date}
                             </p>
@@ -143,19 +144,13 @@ export default function CandidateDetails() {
                         <div className="flex gap-3">
                           <MapPin className="w-10 h-10 bg-green-700 text-white p-2 rounded-md" />
                           <div>
-                            <p className="text-sm text-gray-500">Birth Place</p>
+                            <p className="text-sm text-gray-500">{t('candidate_birth_place')}</p>
                             <p className="font-medium">
                               {candidate.personal_info.birth_place}
                             </p>
                           </div>
                         </div>
                       )}
-                      {/* {candidate.personal_info.nationality && (
-                        <p>
-                          <strong>Nationality:</strong>{" "}
-                          {candidate.personal_info.nationality}
-                        </p>
-                      )} */}
                     </div>
                   </section>
                 )}
@@ -165,7 +160,7 @@ export default function CandidateDetails() {
                     <section>
                       <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                         <Map className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
-                        Election Constituencies
+                        {t('candidate_constituencies')}
                       </h2>
 
                       <div className="space-y-4 md:w-1/2">
@@ -190,31 +185,31 @@ export default function CandidateDetails() {
                   <section>
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <GraduationCap className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
-                      Education
+                      {t('candidate_education')}
                     </h2>
 
                     <div className="space-y-2">
                       {candidate.academic_career.schools?.length > 0 && (
                         <p>
-                          <strong>Schools:</strong>{" "}
+                          <strong>{t('candidate_schools')}:</strong>{" "}
                           {candidate.academic_career.schools.join(", ")}
                         </p>
                       )}
                       {candidate.academic_career.college && (
                         <p>
-                          <strong>College:</strong>{" "}
+                          <strong>{t('candidate_college')}:</strong>{" "}
                           {candidate.academic_career.college}
                         </p>
                       )}
                       {candidate.academic_career.university?.length > 0 && (
                         <p>
-                          <strong>University:</strong>{" "}
+                          <strong>{t('candidate_university')}:</strong>{" "}
                           {candidate.academic_career.university.join(", ")}
                         </p>
                       )}
                       {candidate.academic_career.degree?.length > 0 && (
                         <p>
-                          <strong>Degree:</strong>{" "}
+                          <strong>{t('candidate_degree')}:</strong>{" "}
                           {candidate.academic_career.degree.join(", ")}
                         </p>
                       )}
@@ -222,10 +217,10 @@ export default function CandidateDetails() {
                         candidate.personal_info?.website_or_social,
                       ) &&
                         candidate.personal_info.website_or_social.length >
-                          0 && (
+                        0 && (
                           <section>
                             <h2 className="text-xl font-bold my-6">
-                              Web Presence
+                              {t('candidate_web_presence')}
                             </h2>
                             <div className="flex flex-wrap gap-3">
                               {candidate.personal_info.website_or_social.map(
@@ -237,7 +232,7 @@ export default function CandidateDetails() {
                                     rel="noreferrer"
                                     className="px-4 py-2 border rounded-lg text-green-600 hover:bg-green-50"
                                   >
-                                    Visit Website
+                                    {t('candidate_visit_website')}
                                   </a>
                                 ),
                               )}
@@ -254,11 +249,11 @@ export default function CandidateDetails() {
             {activeTab === "political" && (
               <div className="space-y-6">
                 {Array.isArray(candidate.political_career) &&
-                candidate.political_career.length > 0 ? (
+                  candidate.political_career.length > 0 ? (
                   <section>
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <Briefcase className="w-10 h-10 text-green-800 bg-green-50 p-2 rounded-full" />
-                      Political Journey
+                      {t('candidate_political_journey')}
                     </h2>
 
                     <div className="space-y-4">
@@ -277,7 +272,7 @@ export default function CandidateDetails() {
                   </section>
                 ) : (
                   <p className="text-gray-600">
-                    No political career information available.
+                    {t('candidate_no_political_info')}
                   </p>
                 )}
               </div>
@@ -288,12 +283,12 @@ export default function CandidateDetails() {
               <div className="space-y-6">
                 <section>
                   <h2 className="text-2xl font-bold mb-4">
-                    Current Activities
+                    {t('candidate_current_activities')}
                   </h2>
                   <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
                     <p>
                       {candidate.life_activities ||
-                        "No recent activity recorded."}
+                        t('candidate_no_activity')}
                     </p>
                   </div>
                 </section>
@@ -302,10 +297,10 @@ export default function CandidateDetails() {
                   candidate.business_income_source_professional_career,
                 ) &&
                   candidate.business_income_source_professional_career.length >
-                    0 && (
+                  0 && (
                     <section>
                       <h2 className="text-xl font-bold mb-3">
-                        Business / Income Sources
+                        {t('candidate_business_income')}
                       </h2>
                       <ul className="list-disc list-inside space-y-2">
                         {candidate.business_income_source_professional_career.map(

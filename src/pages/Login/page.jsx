@@ -59,7 +59,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    <div className="min-h-screen relative flex items-center justify-center py-28 p-4 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
       <div className="relative w-full max-w-5xl grid lg:grid-cols-2 gap-8">
         <div className="hidden lg:block text-center">
           <img

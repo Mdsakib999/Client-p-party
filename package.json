@@ -16,6 +16,8 @@
     "fabric": "^7.1.0",
     "framer-motion": "^12.23.21",
     "froala-editor": "^4.7.0",
+    "i18next": "^25.8.0",
+    "i18next-browser-languagedetector": "^8.2.0",
     "lucide-react": "^0.544.0",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
