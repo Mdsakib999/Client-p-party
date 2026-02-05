@@ -8,6 +8,7 @@ import {
     ZoomOut,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const ControlPanel = ({
     onUploadPhoto,
@@ -18,6 +19,7 @@ const ControlPanel = ({
     hasPhoto,
     isLoading = false,
 }) => {
+    const { t } = useTranslation();
     const [zoom, setZoom] = useState(1);
 
     const handleFileChange = (e) => {
@@ -59,7 +61,7 @@ const ControlPanel = ({
                     aria-disabled={isLoading}
                 >
                     <Upload className="w-5 h-5" />
-                    {isLoading ? "Loading..." : hasPhoto ? "Change Photo" : "Upload Photo"}
+                    {isLoading ? t('frame_loading') : hasPhoto ? t('frame_change_btn') : t('frame_upload_btn')}
                 </label>
                 <input
                     id="photo-upload"

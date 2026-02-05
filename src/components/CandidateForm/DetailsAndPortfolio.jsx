@@ -3,6 +3,7 @@ const DetailsAndPortfolio = ({
   handleDynamicArrayChange,
   addDynamicArrayItem,
   removeDynamicArrayItem,
+  handleAutoTranslate,
 }) => {
   const inputClass =
     "w-full p-2.5 border border-gray-200 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:border-green-500 focus:ring-green-100";

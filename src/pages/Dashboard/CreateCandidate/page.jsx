@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCreateCandidateMutation } from "../../../redux/features/candidate/candidate.api";
+import { translateToBangla } from "../../../utils/translator";
 import BasicAndPersonal from "../../../components/CandidateForm/BasicAndPersonal";
 import CareerEducation from "../../../components/CandidateForm/CareerEducation";
 import DetailsAndPortfolio from "../../../components/CandidateForm/DetailsAndPortfolio";
@@ -11,22 +12,30 @@ const CreateCandidate = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
+    name_bn: "",
     designation: "",
+    designation_bn: "",
     profession: "",
+    profession_bn: "",
     portfolio: [],
     previous_designations: [],
     personal_info: {
       birth_date: "",
       birth_place: "",
       nationality: "",
+      nationality_bn: "",
       mobileNo: "",
       website_or_social: [],
     },
     academic_career: {
       schools: [],
+      schools_bn: [],
       college: "",
+      college_bn: "",
       university: [],
+      university_bn: [],
       degree: [],
+      degree_bn: [],
     },
     business_income_source_professional_career: [],
     political_career: [],
@@ -36,8 +45,11 @@ const CreateCandidate = () => {
     social_links: [],
     photos: null,
     overall_summary: "",
+    overall_summary_bn: "",
     district: [],
+    district_bn: [],
     division: [],
+    division_bn: [],
   });
 
   const [errors, setErrors] = useState({});
@@ -196,6 +208,39 @@ const CreateCandidate = () => {
     }));
   };
 
+  const handleAutoTranslate = async (text, targetField, nestedParent = null, index = null) => {
+    if (!text) {
+      toast.error("Please enter English text first");
+      return;
+    }
+    const toastId = toast.loading("Translating...");
+    const translated = await translateToBangla(text);
+    toast.dismiss(toastId);
+
+    if (translated) {
+      if (nestedParent) {
+        if (index !== null) {
+          // Logic handled by components usually, but if central:
+          // For simplicity, we just return the value and let component handle update
+          // Or better: pass a setter callback. 
+          // Let's keep it simple: Components call this to get text, then they update state.
+          // Actually, parent has setFormData. 
+        } else {
+          // Nested object field
+          handleNestedChange(nestedParent, targetField, translated);
+        }
+      } else {
+        // Top level field
+        handleInputChange({ target: { name: targetField, value: translated } });
+      }
+      toast.success("Translated!");
+      return translated;
+    } else {
+      toast.error("Translation failed");
+      return "";
+    }
+  };
+
   // Validation
   const validateStep = (step) => {
     const newErrors = {};
@@ -250,6 +295,7 @@ const CreateCandidate = () => {
           handleNestedDynamicArrayChange={handleNestedDynamicArrayChange}
           addNestedDynamicArrayItem={addNestedDynamicArrayItem}
           removeNestedDynamicArrayItem={removeNestedDynamicArrayItem}
+          handleAutoTranslate={handleAutoTranslate}
         />
       ),
     },
@@ -268,6 +314,7 @@ const CreateCandidate = () => {
           addPoliticalCareer={addPoliticalCareer}
           removePoliticalCareer={removePoliticalCareer}
           handlePoliticalCareerChange={handlePoliticalCareerChange}
+          handleAutoTranslate={handleAutoTranslate}
         />
       ),
     },
@@ -282,6 +329,7 @@ const CreateCandidate = () => {
           removeDynamicArrayItem={removeDynamicArrayItem}
           addElectionConstituency={addElectionConstituency}
           removeElectionConstituency={removeElectionConstituency}
+          handleAutoTranslate={handleAutoTranslate}
         />
       ),
     },
@@ -331,6 +379,10 @@ const CreateCandidate = () => {
       submitData.append("profession", formData.profession);
       submitData.append("life_activities", formData.life_activities);
       submitData.append("overall_summary", formData.overall_summary);
+      submitData.append("name_bn", formData.name_bn);
+      submitData.append("designation_bn", formData.designation_bn);
+      submitData.append("profession_bn", formData.profession_bn);
+      submitData.append("overall_summary_bn", formData.overall_summary_bn);
       submitData.append("portfolio", JSON.stringify(formData.portfolio));
       submitData.append("previous_designations", JSON.stringify(formData.previous_designations));
       submitData.append(

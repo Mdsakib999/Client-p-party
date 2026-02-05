@@ -6,10 +6,13 @@ import Pagination from "../../components/Pagination";
 import areasData from "../../data/areas.json";
 import { useGetAllCandidatesQuery } from "../../redux/features/candidate/candidate.api";
 import CandidateSkeleton from "../../utils/CandidateSkeleton";
+import { translateArea } from "../../utils/areaTranslator";
+import { useTranslation } from "react-i18next";
 
 const ITEMS_PER_PAGE = 9;
 
 const Candidates = () => {
+  const { t, i18n } = useTranslation();
   const [divisions, setDivisions] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [selectedDivision, setSelectedDivision] = useState(null);
@@ -98,7 +101,7 @@ const Candidates = () => {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-8">
-            Meet Our Candidates for the <br /> 2026 Electoral Journey
+            {t('candidates_banner_title')}
           </h2>
 
           {/* Search Box */}
@@ -115,7 +118,7 @@ const Candidates = () => {
                     setSearchTerm(e.target.value);
                     setCurrentPage(1);
                   }}
-                  placeholder="Search candidate"
+                  placeholder={t('search_placeholder')}
                   className="w-full outline-none bg-transparent"
                 />
               </div>
@@ -127,7 +130,7 @@ const Candidates = () => {
                 onClick={() => setActiveSection("division")}
                 className="flex-1 px-5 py-3 cursor-pointer"
               >
-                {selectedDivision?.name || "Division Select"}
+                {translateArea(selectedDivision?.name, i18n.language) || t('division_select')}
               </div>
 
               <div className="w-px h-10 bg-gray-200" />
@@ -135,13 +138,12 @@ const Candidates = () => {
               {/* District */}
               <div
                 onClick={() => selectedDivision && setActiveSection("district")}
-                className={`flex-1 px-5 py-3 ${
-                  selectedDivision
-                    ? "cursor-pointer"
-                    : "opacity-50 cursor-not-allowed"
-                }`}
+                className={`flex-1 px-5 py-3 ${selectedDivision
+                  ? "cursor-pointer"
+                  : "opacity-50 cursor-not-allowed"
+                  }`}
               >
-                {selectedDistrict?.name || "District Select"}
+                {translateArea(selectedDistrict?.name, i18n.language) || t('district_select')}
               </div>
 
               <button className="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center">
@@ -160,7 +162,7 @@ const Candidates = () => {
                         key={d.id}
                         onClick={() => handleDivisionClick(d)}
                       >
-                        {d.name}
+                        {translateArea(d.name, i18n.language)}
                       </button>
                     ))}
                   </div>
@@ -182,7 +184,7 @@ const Candidates = () => {
                           onClick={() => handleDistrictClick(d)}
                           className="shadow bg-emerald-100 text-emerald-700 font-semibold md:p-2 rounded-2xl cursor-pointer hover:bg-emerald-200 transition-colors"
                         >
-                          {d.name}
+                          {translateArea(d.name, i18n.language)}
                         </button>
                       ))}
                     </div>
@@ -222,7 +224,7 @@ const Candidates = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-10">
-              <p className="text-gray-500">No candidates found</p>
+              <p className="text-gray-500">{t('no_candidates')}</p>
             </div>
           )}
         </section>

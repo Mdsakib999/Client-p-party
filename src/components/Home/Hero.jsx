@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import bnpBanner from "../../assets/hero-banner.jpg";
+import { useTranslation } from "react-i18next";
 import tarak from "../../assets/tarak.png";
 import tarak2 from "../../assets/tarak2.png";
 import fakrul from "../../assets/fakhrul.png";
 import salauddin from "../../assets/salauddin.png";
-import { Link } from "react-router";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Hero slides data
@@ -15,22 +15,19 @@ const Hero = () => {
     {
       id: 1,
       image: tarak,
-      quote:
-        "A vision of progress, a promise of change, a commitment to our people",
+      quote: t('hero_quote_1'),
       objectPosition: "32% 40%",
     },
     {
       id: 2,
       image: fakrul,
-      quote:
-        "Together, let's build Bangladesh into a democratic and developed nation",
+      quote: t('hero_quote_2'),
       objectPosition: "32% 40%",
     },
     {
       id: 3,
       image: tarak2,
-      quote:
-        "Introducing Family Cards for female household to provide direct economic support.",
+      quote: t('hero_quote_3'),
       objectPosition: "center",
     },
     // {
@@ -45,11 +42,9 @@ const Hero = () => {
       id: 5,
       image: salauddin,
       // image: "https://thediplomat.com/wp-content/uploads/2025/12/sizes/medium_large/thediplomat_2025-12-26-163515.jpg",
-      quote:
-        "Empowering citizens, strengthening democracy, ensuring prosperity for all",
+      quote: t('hero_quote_4'),
       objectPosition: "center",
     },
-    
   ];
 
   // Auto-slide every 5 seconds
@@ -72,9 +67,8 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
           >
             {/* Background Image */}
             <img
@@ -103,11 +97,10 @@ const Hero = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`transition-all duration-300 rounded-full ${
-                index === currentSlide
-                  ? "w-8 h-2 bg-emerald-600"
-                  : "w-2 h-2 bg-white/60 hover:bg-white/80"
-              }`}
+              className={`transition-all duration-300 rounded-full ${index === currentSlide
+                ? "w-8 h-2 bg-emerald-600"
+                : "w-2 h-2 bg-white/60 hover:bg-white/80"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
