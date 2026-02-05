@@ -126,13 +126,13 @@ export default function Navbar() {
           {/* Desktop User Section */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             {/* Language Switcher - Always Visible */}
-            <button
+            {/* <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium border border-gray-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium border border-gray-200 "
             >
               <Globe size={18} />
               <span className="text-sm">{i18n.language === "en" ? "বাংলা" : "English"}</span>
-            </button>
+            </button> */}
 
             {user ? (
               <div className="relative" ref={userMenuRef}>
@@ -189,11 +189,17 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
+              // <Link
+              //   to="/login"
+              //   className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              // >
+              //   {t('nav_login')}
+              // </Link>
               <Link
-                to="/login"
+                to="/contact"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                {t('nav_login')}
+                Contact 
               </Link>
             )}
           </div>
