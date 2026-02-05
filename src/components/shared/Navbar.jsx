@@ -208,12 +208,12 @@ export default function Navbar() {
           {/* Mobile Buttons (Right Side) */}
           <div className="lg:hidden flex items-center gap-2">
             {/* Language Switcher */}
-            <button
+            {/* <button
               onClick={toggleLanguage}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 font-bold border border-gray-200"
             >
               {i18n.language === "en" ? "বাং" : "EN"}
-            </button>
+            </button> */}
 
             {/* Menu Toggle */}
             <button
@@ -302,11 +302,11 @@ export default function Navbar() {
             ) : (
               <div className="pt-4 border-t border-gray-200 mt-4">
                 <Link
-                  to="/login"
+                  to="/contact"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-green-800 transition-all duration-200 font-medium shadow-md"
                 >
-                  Login
+                  Contact
                 </Link>
               </div>
             )}
