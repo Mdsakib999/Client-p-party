@@ -222,7 +222,12 @@ const FrameCanvas = forwardRef(
       },
       exportImage: () => {
         if (!fabricRef.current) return null;
-        return fabricRef.current.toDataURL({ format: "png", quality: 1 });
+
+        return new Promise((resolve) => {
+          fabricRef.current
+            .toCanvasElement()
+            .toBlob((blob) => resolve(blob), "image/png", 1);
+        });
       },
     }));
 

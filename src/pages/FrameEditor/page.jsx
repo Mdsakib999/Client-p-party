@@ -95,36 +95,29 @@ const FrameEditor = () => {
     canvasRef.current?.reset();
   };
 
-  const handleDownload = () => {
-    const imageData = canvasRef.current?.exportImage();
-    if (!imageData) {
-      setError(t('frame_error_no_photo'));
+  const handleDownload = async () => {
+  try {
+    const blob = await canvasRef.current?.exportImage();
+    if (!blob) {
+      setError("Please upload a photo first!");
       return;
     }
 
-    try {
-      const link = document.createElement("a");
-      link.href = imageData;
-      link.download = `bnp-${selectedMediaType}-frame-${Date.now()}.png`;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `bnp-${selectedMediaType}-frame-${Date.now()}.png`;
 
-      link.addEventListener("click", () => {
-        setTimeout(() => {
-          canvasRef.current?.clearPhoto();
-          setHasPhoto(false);
-          setImageSrc(null);
-          setError(null);
-          if (fileInputRef.current) {
-            fileInputRef.current.value = "";
-          }
-        }, 1500);
-      });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
-      link.click();
-    } catch (err) {
-      setError(t('frame_error_download'));
-      console.error("Download error:", err);
-    }
-  };
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch (err) {
+    console.error(err);
+    setError("Failed to download the image. Please try again.");
+  }
+};
 
   const handleMediaTypeChange = (type) => {
     setSelectedMediaType(type);

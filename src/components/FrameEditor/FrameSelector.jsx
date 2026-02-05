@@ -1,26 +1,29 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 
+// const BASE_URL = "http://localhost:5173/";
+const BASE_URL = "https://bnpcandidates.com";
+
 const PROFILE_FRAMES = [
-  { id: 1, src: "/frames/profile/profile1.png", name: "Profile Frame 1" },
-  { id: 2, src: "/frames/profile/profile2.png", name: "Profile Frame 2" },
-  { id: 3, src: "/frames/profile/profile3.png", name: "Profile Frame 3" },
-  { id: 4, src: "/frames/profile/profile4.png", name: "Profile Frame 4" },
-  { id: 5, src: "/frames/profile/profile5.png", name: "Profile Frame 5" },
-  { id: 6, src: "/frames/profile/profile6.png", name: "Profile Frame 6" },
-  { id: 7, src: "/frames/profile/profile7.png", name: "Profile Frame 7" },
-  { id: 8, src: "/frames/profile/profile8.png", name: "Profile Frame 8" },
-  { id: 9, src: "/frames/profile/profile9.png", name: "Profile Frame 9" },
-  { id: 10, src: "/frames/profile/profile10.png", name: "Profile Frame 10" },
+  { id: 1, src: `${BASE_URL}/frames/profile/profile1.png`, name: "Profile Frame 1" },
+  { id: 2, src: `${BASE_URL}/frames/profile/profile2.png`, name: "Profile Frame 2" },
+  { id: 3, src: `${BASE_URL}/frames/profile/profile3.png`, name: "Profile Frame 3" },
+  { id: 4, src: `${BASE_URL}/frames/profile/profile4.png`, name: "Profile Frame 4" },
+  { id: 5, src: `${BASE_URL}/frames/profile/profile5.png`, name: "Profile Frame 5" },
+  { id: 6, src: `${BASE_URL}/frames/profile/profile6.png`, name: "Profile Frame 6" },
+  { id: 7, src: `${BASE_URL}/frames/profile/profile7.png`, name: "Profile Frame 7" },
+  { id: 8, src: `${BASE_URL}/frames/profile/profile8.png`, name: "Profile Frame 8" },
+  { id: 9, src: `${BASE_URL}/frames/profile/profile9.png`, name: "Profile Frame 9" },
+  { id: 10, src: `${BASE_URL}/frames/profile/profile10.png`, name: "Profile Frame 10" },
 ];
 
 const POST_FRAMES = [
-  { id: 11, src: "/frames/posts/post1.png", name: "Post Frame 1" },
-  { id: 12, src: "/frames/posts/post2.png", name: "Post Frame 2" },
-  { id: 13, src: "/frames/posts/post3.png", name: "Post Frame 3" },
+  { id: 11, src: `${BASE_URL}/frames/posts/post1.png`, name: "Post Frame 1" },
+  { id: 12, src: `${BASE_URL}/frames/posts/post2.png`, name: "Post Frame 2" },
+  { id: 13, src: `${BASE_URL}/frames/posts/post3.png`, name: "Post Frame 3" },
 ];
 
 const COVER_PHOTO_FRAMES = [
-  { id: 14, src: "/frames/cover/cover1.png", name: "Cover Frame 1" },
+  { id: 14, src: `${BASE_URL}/frames/cover/cover1.png`, name: "Cover Frame 1" },
 ];
 
 const FrameSelector = ({ onSelectFrame, mediaType }) => {
