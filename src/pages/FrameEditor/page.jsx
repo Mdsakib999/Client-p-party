@@ -5,6 +5,7 @@ import FrameCanvas from "../../components/FrameEditor/FrameCanvas";
 import FrameSelector from "../../components/FrameEditor/FrameSelector";
 import ControlPanel from "../../components/FrameEditor/ControlPanel";
 import { Upload } from "lucide-react";
+import CountingNumber from "../../components/FrameEditor/CountingNumber";
 
 const FrameEditor = () => {
   const { t } = useTranslation();
@@ -274,6 +275,9 @@ const FrameEditor = () => {
           aria-label="Upload photo"
           disabled={isLoading}
         />
+
+        {/* counting div */}
+        <CountingNumber></CountingNumber>
 
         <div className="text-center text-gray-400 text-xs px-4">
           <p>Show your support for BNP | Share on social media</p>

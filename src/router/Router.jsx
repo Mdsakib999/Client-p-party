@@ -79,10 +79,10 @@ const router = createBrowserRouter([
       //   path: "/activities",
       //   Component: Activities,
       // },
-      {
-        path: "/activities/:slug",
-        Component: ActivityDetails,
-      },
+      // {
+      //   path: "/activities/:slug",
+      //   Component: ActivityDetails,
+      // },
       {
         index: true,
         path: "/campaigns",

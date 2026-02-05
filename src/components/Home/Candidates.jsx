@@ -11,7 +11,7 @@ export const Candidates = () => {
       name: "Mr. Tarique Rahman",
       position: "Chairman",
       image:
-        "https://sgp1.digitaloceanspaces.com/dc2/news/TZ8F90UQut3CyaX2i2ooybLGUedSfZqfwuISKfaT.jpg",
+        "https://i.ibb.co.com/Cs7bbfvy/tarak.jpg",
       highlight: true,
     },
     {
@@ -19,7 +19,7 @@ export const Candidates = () => {
       name: "Mirza Fakhrul Islam Alamgir",
       position: "Secretary General",
       image:
-        "https://api.bnpbd.org/api/upload/images/bnp-press-release-4--6726.jpg",
+        "https://i.ibb.co.com/Rp0bY4Rk/fakrul.jpg",
       highlight: false,
     },
     {
@@ -27,7 +27,7 @@ export const Candidates = () => {
       name: "Salauddin Ahmed",
       position: "Member of National Standing Committee",
       image:
-        "https://i0.wp.com/asiatimes.com/wp-content/uploads/2025/11/Bangladesh-Salahuddin-Ahmed.jpg?fit=1200%2C800&quality=89&ssl=1",
+        "https://i.ibb.co.com/gbz2WjMV/salauddin.webp",
       highlight: false,
     },
     {
@@ -35,7 +35,7 @@ export const Candidates = () => {
       name: "Mirza Abbas Uddin Ahmed",
       position: "Member of National Standing Committee",
       image:
-        "https://www.bssnews.net/assets/news_photos/2025/10/28/image-325864-1761651827.jpg",
+        "https://i.ibb.co.com/qMgCB92N/abbaas.webp",
       highlight: false,
     },
     {
@@ -43,7 +43,7 @@ export const Candidates = () => {
       name: "Mr. Amir Khosru Chowdhury",
       position: "Member of National Standing Committee",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZicoZBVLiVJL-iEFshJGb-chJZxBeb9_Y4A&s",
+        "https://i.ibb.co.com/whrm3QZh/amir-Kusro.jpg",
       highlight: false,
     },
   ];
