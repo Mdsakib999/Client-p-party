@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   MapPin,
   Phone,
@@ -17,6 +18,7 @@ import candidatesBanner from "../../assets/bg.png";
 import toast from "react-hot-toast";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,7 +35,7 @@ const Contact = () => {
     console.log("Form submitted:", formData);
     toast.success(
       <p className="text-green-700 text-center font-serif">
-        Thank you for your message. We will get back to you soon!
+        {t('contact_success_message')}
       </p>,
       {
         duration: 2000,
@@ -52,11 +54,10 @@ const Contact = () => {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Contact Us
+            {t('contact_banner_title')}
           </h1>
           <p className="text-xl text-white/90 max-w-2xl">
-            Get in touch with Bangladesh Nationalist Party. We're here to listen
-            and serve.
+            {t('contact_banner_desc')}
           </p>
         </div>
       </div>
@@ -72,10 +73,10 @@ const Contact = () => {
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Central Office
+                {t('contact_office_title')}
               </h3>
               <p className="text-gray-600 text-sm">
-                
+
                 Dhaka
                 <br />
                 Bangladesh
@@ -90,7 +91,7 @@ const Contact = () => {
                 <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                General Inquiries
+                {t('contact_inquiries_title')}
               </h3>
               <a
                 href="mailto:info@bnpcandidates.com"
@@ -98,7 +99,7 @@ const Contact = () => {
               >
                 info@bnpcandidates.com
               </a>
-              <p className="text-gray-500 text-sm mt-1">Send us an email</p>
+              <p className="text-gray-500 text-sm mt-1">{t('contact_send_email')}</p>
             </div>
           </div>
 
@@ -109,7 +110,7 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Media & Press
+                {t('contact_press_title')}
               </h3>
               <a
                 href="mailto:campaign@bnpcandidates.com"
@@ -117,7 +118,7 @@ const Contact = () => {
               >
                 campaign@bnpcandidates.com
               </a>
-              <p className="text-gray-500 text-sm mt-1">For media inquiries</p>
+              <p className="text-gray-500 text-sm mt-1">{t('contact_media_inquiries')}</p>
             </div>
           </div>
         </div>
@@ -129,11 +130,10 @@ const Contact = () => {
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  Send Us a Message
+                  {t('contact_form_title')}
                 </h2>
                 <p className="text-gray-600">
-                  Have a question or feedback? Fill out the form below and we'll
-                  get back to you as soon as possible.
+                  {t('contact_form_desc')}
                 </p>
               </div>
 
@@ -142,7 +142,7 @@ const Contact = () => {
                   {/* Name Input */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Full Name *
+                      {t('contact_name_label')}
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -154,7 +154,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="John Doe"
+                        placeholder={t('contact_name_placeholder')}
                         className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
                       />
                     </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                   {/* Email Input */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
+                      {t('contact_email_label')}
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -175,7 +175,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="john@example.com"
+                        placeholder={t('contact_email_placeholder')}
                         className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
                       />
                     </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                 {/* Subject Input */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Subject *
+                    {t('contact_subject_label')}
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -197,7 +197,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      placeholder="What is this regarding?"
+                      placeholder={t('contact_subject_placeholder')}
                       className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
                     />
                   </div>
@@ -206,7 +206,7 @@ const Contact = () => {
                 {/* Message Textarea */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Message *
+                    {t('contact_message_label')}
                   </label>
                   <textarea
                     name="message"
@@ -214,7 +214,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows="6"
-                    placeholder="Write your message here..."
+                    placeholder={t('contact_message_placeholder')}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none resize-none"
                   ></textarea>
                 </div>
@@ -225,7 +225,7 @@ const Contact = () => {
                   className="cursor-pointer w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
-                  Send Message
+                  {t('contact_send_button')}
                 </button>
               </form>
             </div>
@@ -235,9 +235,9 @@ const Contact = () => {
           <div className="lg:col-span-1 space-y-6">
             {/* Social Media Card */}
             <div className="bg-gradient-to-br from-green-600 via-green-700 to-green-800 rounded-2xl shadow-xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-2">Follow Us</h3>
+              <h3 className="text-2xl font-bold mb-2">{t('contact_follow_us')}</h3>
               <p className="text-green-100 mb-6 text-sm">
-                Stay connected with our latest updates and news
+                {t('contact_follow_desc')}
               </p>
 
               <div className="space-y-3">
@@ -306,27 +306,25 @@ const Contact = () => {
             {/* Quick Info Card */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Get Involved
+                {t('contact_get_involved')}
               </h3>
               <div className="space-y-4 text-sm text-gray-600">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <p>
-                    Join our movement for a democratic and prosperous
-                    Bangladesh.
+                    {t('contact_get_involved_1')}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <p>
-                    Stay informed about our latest campaigns, events, and
-                    initiatives.
+                    {t('contact_get_involved_2')}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <p>
-                    Volunteer with us and make a difference in your community.
+                    {t('contact_get_involved_3')}
                   </p>
                 </div>
               </div>

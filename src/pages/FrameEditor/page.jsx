@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import MediaTypeSelector from "../../components/FrameEditor/MediaTypeSelector";
 import FrameCanvas from "../../components/FrameEditor/FrameCanvas";
 import FrameSelector from "../../components/FrameEditor/FrameSelector";
@@ -7,6 +8,7 @@ import { Upload } from "lucide-react";
 import CountingNumber from "../../components/FrameEditor/CountingNumber";
 
 const FrameEditor = () => {
+  const { t } = useTranslation();
   const canvasRef = useRef(null);
   const fileInputRef = useRef(null);
   const [selectedMediaType, setSelectedMediaType] = useState("post");
@@ -38,14 +40,12 @@ const FrameEditor = () => {
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
-      setError("Please upload a valid image file (JPG, PNG, etc.)");
+      setError(t('frame_error_invalid_file'));
       return;
     }
 
     if (file.size > 10 * 1024 * 1024) {
-      setError(
-        "Image file is too large. Please upload an image smaller than 10MB.",
-      );
+      setError(t('frame_error_file_size'));
       return;
     }
 
@@ -98,7 +98,7 @@ const FrameEditor = () => {
   const handleDownload = () => {
     const imageData = canvasRef.current?.exportImage();
     if (!imageData) {
-      setError("Please upload a photo first!");
+      setError(t('frame_error_no_photo'));
       return;
     }
 
@@ -121,7 +121,7 @@ const FrameEditor = () => {
 
       link.click();
     } catch (err) {
-      setError("Failed to download the image. Please try again.");
+      setError(t('frame_error_download'));
       console.error("Download error:", err);
     }
   };
@@ -141,10 +141,10 @@ const FrameEditor = () => {
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Design Your Photo with a Leaders Frame
+            {t('frame_title')}
           </h1>
           <p className="text-green-600 font-medium">
-            Upload, adjust, and generate in minutes
+            {t('frame_subtitle')}
           </p>{" "}
         </div>
 

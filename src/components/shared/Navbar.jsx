@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { X, Menu, ChevronDown, LogOut, LayoutDashboard, Globe } from "lucide-react";
 import { Link, NavLink } from "react-router";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import {
   authApi,
   useLogoutMutation,
@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import logo from "../../assets/BNP-logo.png";
 
 export default function Navbar() {
-  // const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data: userInfo } = useUserInfoQuery();
   const user = userInfo?.data;
 
@@ -69,17 +69,17 @@ export default function Navbar() {
     setShowUserMenu(false);
   };
 
-  // const toggleLanguage = () => {
-  //   const newLang = i18n.language === "en" ? "bn" : "en";
-  //   i18n.changeLanguage(newLang);
-  // };
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "bn" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/candidates", label: "Candidates" },
-    { path: "/frame-editor", label: "Photo Frame" },
-    { path: "/vision", label: "Vision" },
-    { path: "/campaigns", label: "Campaigns" },
+    { path: "/", label: t('nav_home') },
+    { path: "/candidates", label: t('nav_candidates') },
+    { path: "/frame-editor", label: t('nav_photo_frame') },
+    { path: "/vision", label: t('nav_vision') },
+    { path: "/campaigns", label: t('nav_campaigns') },
   ];
 
   return (
@@ -125,6 +125,15 @@ export default function Navbar() {
 
           {/* Desktop User Section */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+            {/* Language Switcher - Always Visible */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium border border-gray-200"
+            >
+              <Globe size={18} />
+              <span className="text-sm">{i18n.language === "en" ? "বাংলা" : "English"}</span>
+            </button>
+
             {user ? (
               <div className="relative" ref={userMenuRef}>
                 <button
@@ -149,15 +158,6 @@ export default function Navbar() {
                   />
                 </button>
 
-                {/* Language Switcher */}
-                {/* <button
-                  onClick={toggleLanguage}
-                  className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium"
-                >
-                  <Globe size={18} />
-                  <span>{i18n.language === "en" ? "BN" : "EN"}</span>
-                </button> */}
-
                 {showUserMenu && (
                   <div className="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fadeIn">
                     <div className="bg-gradient-to-r from-green-600 to-green-700 px-5 py-4 text-white">
@@ -175,14 +175,14 @@ export default function Navbar() {
                         onClick={() => setShowUserMenu(false)}
                       >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-green-700 transition-colors" />
-                        <span className="font-medium">Dashboard</span>
+                        <span className="font-medium">{t('nav_dashboard')}</span>
                       </Link>
                       <button
                         onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-5 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors group"
                       >
                         <LogOut className="w-5 h-5 text-red-400 group-hover:text-red-600 transition-colors" />
-                        <span className="font-medium">Logout</span>
+                        <span className="font-medium">{t('nav_logout')}</span>
                       </button>
                     </div>
                   </div>
@@ -193,30 +193,36 @@ export default function Navbar() {
                 to="/login"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                Login
+                {t('nav_login')}
               </Link>
             )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="w-6 h-6 text-gray-900" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-900" />
-            )}
-          </button>
 
-          {/* <button
-            onClick={toggleLanguage}
-            className="lg:hidden p-2 mr-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 font-bold"
-          >
-            {i18n.language === "en" ? "BN" : "EN"}
-          </button> */}
+          {/* Mobile Buttons (Right Side) */}
+          <div className="lg:hidden flex items-center gap-2">
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 font-bold border border-gray-200"
+            >
+              {i18n.language === "en" ? "বাং" : "EN"}
+            </button>
+
+            {/* Menu Toggle */}
+            <button
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6 text-gray-900" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-900" />
+              )}
+            </button>
+          </div>
+
         </div>
       </nav>
 

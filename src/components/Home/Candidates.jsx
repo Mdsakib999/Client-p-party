@@ -1,8 +1,10 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 import LeaderCard from "./LeaderCard";
 
 export const Candidates = () => {
+  const { t } = useTranslation();
   const candidates = [
     {
       id: "6977f60d315fd66776c74e8c",
@@ -52,15 +54,15 @@ export const Candidates = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <Link to='/candidates' className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-            Candidates
+            {t('home_candidates_badge')}
           </Link>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
-            Meet Our Candidates
+            {t('home_candidates_title')}
           </h2>
 
           <p className="text-gray-600 text-lg">
-            Leaders dedicated to representing the voices of the people
+            {t('home_candidates_subtitle')}
           </p>
         </div>
 
@@ -90,7 +92,7 @@ export const Candidates = () => {
             to="/candidates"
             className="group flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-green-700 to-green-600 text-white font-semibold shadow-lg transition-all"
           >
-            View All
+            {t('home_candidates_view_all')}
             <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

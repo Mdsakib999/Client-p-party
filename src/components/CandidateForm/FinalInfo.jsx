@@ -1,6 +1,7 @@
 import { useState } from "react";
 import areasData from "../../data/areas.json";
 import toast from "react-hot-toast"
+import { translateToBangla } from "../../utils/translator";
 
 const FinalInfo = ({
   formData,
@@ -15,7 +16,25 @@ const FinalInfo = ({
   removeDynamicArrayItem,
   existingPhotos,
   handleRemoveExistingPhoto,
+
 }) => {
+  const handleAutoTranslate = async (sourceField, targetField) => {
+    const text = formData[sourceField];
+    if (!text) {
+      toast.error("Please enter English text first");
+      return;
+    }
+    const toastId = toast.loading("Translating...");
+    const translated = await translateToBangla(text);
+    toast.dismiss(toastId);
+
+    if (translated) {
+      handleInputChange({ target: { name: targetField, value: translated } });
+      toast.success("Translated!");
+    } else {
+      toast.error("Translation failed");
+    }
+  };
   const [selectedDivision, setSelectedDivision] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedConstituency, setSelectedConstituency] = useState("");
@@ -464,6 +483,25 @@ const FinalInfo = ({
         {errors?.overall_summary && (
           <p className="text-red-500 text-xs mt-1">{errors.overall_summary}</p>
         )}
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mt-6">
+        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+          Overall Summary (Bangla)
+        </h3>
+        <div className="flex justify-between items-center mb-1.5">
+          <label className="block text-sm font-semibold text-gray-700"> Candidate Summary (Bangla) </label>
+          <button type="button" onClick={() => handleAutoTranslate('overall_summary', 'overall_summary_bn')} className="text-xs text-green-600 hover:underline">Auto Translate</button>
+        </div>
+        <textarea
+          name="overall_summary_bn"
+          value={formData.overall_summary_bn || ""}
+          onChange={handleInputChange}
+          rows="5"
+          className={inputClass(errors?.overall_summary)}
+          placeholder="প্রার্থীর পটভূমি, দৃষ্টি এবং লক্ষ্যগুলির একটি বিস্তৃত সারাংশ প্রদান করুন..."
+        />
       </div>
     </div>
   );

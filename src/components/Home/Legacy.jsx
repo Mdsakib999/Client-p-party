@@ -1,17 +1,20 @@
+import { useTranslation } from "react-i18next";
 import Leaders from "../../utils/Leaders";
 
 const Legacy = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-12 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 tracking-tight">
-          Legacy of Leadership
+          {t('legacy_title')}
         </h2>
 
         {/* Description */}
         <p className="text-center text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          From the founding vision of Ziaur Rahman to the courage and resilience of Khaleda Zia, and onward to the leadership of Tarique Rahman, the Zia family has guided the BNP through decades of democratic struggle, sacrifice, and hope. Their enduring legacy continues to inspire today’s BNP to uphold nationalism, freedom, and the true voice of the people.
+          {t('legacy_desc')}
         </p>
 
         {/* Carousel */}

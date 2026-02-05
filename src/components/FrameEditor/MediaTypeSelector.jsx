@@ -1,26 +1,28 @@
 import { Image, User, RectangleHorizontal } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const MediaTypeSelector = ({ selectedType, onSelect }) => {
+  const { t } = useTranslation();
   const mediaTypes = [
     {
       id: "post",
       icon: Image,
-      title: "Create Frame",
-      description: "Facebook Post / Banner",
+      title: t('frame_type_post_title'),
+      description: t('frame_type_post_desc'),
       dimensions: "1500 × 1875",
     },
     {
       id: "profile",
       icon: User,
-      title: "Photo Frame",
-      description: "Facebook Profile Picture",
+      title: t('frame_type_profile_title'),
+      description: t('frame_type_profile_desc'),
       dimensions: "1080 × 1080",
     },
     {
       id: "cover",
       icon: RectangleHorizontal,
-      title: "Cover Photo",
-      description: "Facebook Cover Photo",
+      title: t('frame_type_cover_title'),
+      description: t('frame_type_cover_desc'),
       dimensions: "851 × 315",
     },
   ];

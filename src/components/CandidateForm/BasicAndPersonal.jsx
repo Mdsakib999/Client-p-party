@@ -1,3 +1,6 @@
+import { translateToBangla } from "../../utils/translator";
+import toast from "react-hot-toast";
+
 const BasicAndPersonal = ({
   formData,
   errors,
@@ -6,7 +9,26 @@ const BasicAndPersonal = ({
   handleNestedDynamicArrayChange,
   addNestedDynamicArrayItem,
   removeNestedDynamicArrayItem,
+
 }) => {
+  const handleAutoTranslate = async (sourceField, targetField) => {
+    const text = formData[sourceField];
+    if (!text) {
+      toast.error("Please enter English text first");
+      return;
+    }
+    const toastId = toast.loading("Translating...");
+    const translated = await translateToBangla(text);
+    toast.dismiss(toastId);
+
+    if (translated) {
+      handleInputChange({ target: { name: targetField, value: translated } });
+      toast.success("Translated!");
+    } else {
+      toast.error("Translation failed");
+    }
+  };
+
   const inputClass = (
     error
   ) => `w-full p-2.5 border rounded-lg transition-colors focus:outline-none focus:ring-2 ${error
@@ -42,6 +64,20 @@ const BasicAndPersonal = ({
             )}
           </div>
           <div>
+            <div className="flex justify-between items-center mb-1.5">
+              <label className="block text-sm font-semibold text-gray-700"> Name (Bangla) </label>
+              <button type="button" onClick={() => handleAutoTranslate('name', 'name_bn')} className="text-xs text-green-600 hover:underline">Auto Translate</button>
+            </div>
+            <input
+              type="text"
+              name="name_bn"
+              placeholder="নাম (বাংলা)"
+              value={formData?.name_bn || ""}
+              onChange={handleInputChange}
+              className={inputClass(errors?.name)}
+            />
+          </div>
+          <div>
             <label className={labelClass}>
               Current Designation
             </label>
@@ -58,6 +94,20 @@ const BasicAndPersonal = ({
             )}
           </div>
           <div>
+            <div className="flex justify-between items-center mb-1.5">
+              <label className="block text-sm font-semibold text-gray-700"> Designation (Bangla) </label>
+              <button type="button" onClick={() => handleAutoTranslate('designation', 'designation_bn')} className="text-xs text-green-600 hover:underline">Auto Translate</button>
+            </div>
+            <input
+              type="text"
+              name="designation_bn"
+              placeholder="পদবী (বাংলা)"
+              value={formData?.designation_bn || ""}
+              onChange={handleInputChange}
+              className={inputClass(errors?.designation)}
+            />
+          </div>
+          <div>
             <label className={labelClass}>
               Profession
             </label>
@@ -72,6 +122,20 @@ const BasicAndPersonal = ({
             {errors?.profession && (
               <p className="text-red-500 text-xs mt-1">{errors.profession}</p>
             )}
+          </div>
+          <div>
+            <div className="flex justify-between items-center mb-1.5">
+              <label className="block text-sm font-semibold text-gray-700"> Profession (Bangla) </label>
+              <button type="button" onClick={() => handleAutoTranslate('profession', 'profession_bn')} className="text-xs text-green-600 hover:underline">Auto Translate</button>
+            </div>
+            <input
+              type="text"
+              name="profession_bn"
+              placeholder="পেশা (বাংলা)"
+              value={formData?.profession_bn || ""}
+              onChange={handleInputChange}
+              className={inputClass(errors?.profession)}
+            />
           </div>
           <div className="md:col-span-2">
             <label className={labelClass}>Life Activities</label>
