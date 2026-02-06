@@ -34,6 +34,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/page.jsx";
 import Vision from "../pages/Vision/page.jsx";
 import FrameEditor from "../pages/FrameEditor/page.jsx";
 import EditCandidate from "../pages/dashboard/EditCandidate/page.jsx";
+import PhotoFrame from "../pages/PhotoFrame.jsx";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/CreateFrame",
+        Component: PhotoFrame,
       },
       {
         path: "/about",
