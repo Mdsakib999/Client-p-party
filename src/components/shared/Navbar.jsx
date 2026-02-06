@@ -12,7 +12,8 @@ import { useDispatch } from "react-redux";
 import logo from "../../assets/BNP-logo.png";
 
 export default function Navbar() {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { data: userInfo } = useUserInfoQuery();
   const user = userInfo?.data;
 
@@ -69,10 +70,10 @@ export default function Navbar() {
     setShowUserMenu(false);
   };
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "bn" : "en";
-    i18n.changeLanguage(newLang);
-  };
+  // const toggleLanguage = () => {
+  //   const newLang = i18n.language === "en" ? "bn" : "en";
+  //   i18n.changeLanguage(newLang);
+  // };
 
   const navLinks = [
     { path: "/", label: t('nav_home') },
@@ -80,7 +81,7 @@ export default function Navbar() {
     { path: "/frame-editor", label: t('nav_photo_frame') },
     { path: "/vision", label: t('nav_vision') },
     // { path: "/campaigns", label: t('nav_campaigns') },
-    { path: "/CreateFrame", label: 'Create Frame' },
+    { path: "/CreateFrame", label: t('create_frame') },
   ];
 
   return (
@@ -200,7 +201,7 @@ export default function Navbar() {
                 to="/contact"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                Contact 
+                Contact
               </Link>
             )}
           </div>
