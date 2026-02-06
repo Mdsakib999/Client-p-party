@@ -88,7 +88,7 @@ const Hero = () => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            {/* Background Image */}
+            {/* Background Image () */}
             <img
               src={isMobile ? slide.mobileImage : slide.image}
               alt={`Bangladesh National Party Hero Banner ${slide.id}`}
