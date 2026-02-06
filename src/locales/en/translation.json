@@ -236,5 +236,6 @@
   "contact_banner_desc": "Get in touch with Bangladesh Nationalist Party. We're here to listen and serve.",
   "frame_upload_btn": "Upload Photo",
   "frame_change_btn": "Change Photo",
-  "frame_loading": "Loading..."
+  "frame_loading": "Loading...",
+  "create_frame": "Create Frame"
 }

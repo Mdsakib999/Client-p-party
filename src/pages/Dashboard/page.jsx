@@ -69,6 +69,12 @@ const Dashboard = () => {
       Icon: FaNewspaper,
       roles: ["SUPER_ADMIN", "ADMIN"],
     },
+    {
+      path: "/dashboard/manage-frames",
+      label: "Manage Frames",
+      Icon: SquareKanban,
+      roles: ["SUPER_ADMIN", "ADMIN"],
+    },
   ];
 
   const sidebarItems = allSidebarItems.filter((item) =>
@@ -85,9 +91,8 @@ const Dashboard = () => {
         />
       )}
       <aside
-        className={`fixed inset-y-0 left-0 bg-white z-50 w-72 shadow-lg transform transition-transform duration-300 lg:translate-x-0 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } flex flex-col`}
+        className={`fixed inset-y-0 left-0 bg-white z-50 w-72 shadow-lg transform transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          } flex flex-col`}
       >
         <div className="flex items-center justify-between p-6 shadow-sm">
           <h1 className="text-2xl font-bold text-emerald-700">Dashboard</h1>
@@ -105,11 +110,10 @@ const Dashboard = () => {
               key={item.path}
               to={item.path}
               onClick={() => setIsSidebarOpen(false)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all ${
-                location.pathname === item.path
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all ${location.pathname === item.path
                   ? "bg-emerald-100 text-emerald-700 shadow-sm"
                   : "text-gray-700 hover:bg-emerald-50 hover:text-emerald-700"
-              }`}
+                }`}
             >
               <item.Icon size={20} />
               {item.label}

@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
+
 import {
   Upload,
   Download,
@@ -9,6 +10,19 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { useGetPhotoFramesQuery } from "../redux/features/photoFrame/photoFrame.api";
+
+// Move to top level
+const divisions = [
+  "Dhaka",
+  "Chattogram",
+  "Barishal",
+  "Khulna",
+  "Mymensingh",
+  "Rajshahi",
+  "Rangpur",
+  "Sylhet",
+];
 
 const PhotoFrame = () => {
   const [selectedDivision, setSelectedDivision] = useState("Dhaka");
@@ -19,156 +33,32 @@ const PhotoFrame = () => {
   const fabricCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
 
-  const divisions = [
-    "Dhaka",
-    "Chattogram",
-    "Barishal",
-    "Khulna",
-    "Mymensingh",
-    "Rajshahi",
-    "Rangpur",
-    "Sylhet",
-  ];
 
-  // Frame data for each division
-  const frames = {
-    Dhaka: [
-      {
-        id: 1,
-        name: "Profile Frame 1",
-        url: "https://i.ibb.co.com/DPNgDRMk/profile1.png",
-      },
-      {
-        id: 2,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Dhaka+Frame+2",
-      },
-      {
-        id: 3,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Dhaka+Frame+3",
-      },
-    ],
-    Chattogram: [
-      {
-        id: 4,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Chattogram+1",
-      },
-      {
-        id: 5,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Chattogram+2",
-      },
-      {
-        id: 6,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Chattogram+3",
-      },
-    ],
-    Barishal: [
-      {
-        id: 7,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Barishal+1",
-      },
-      {
-        id: 8,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Barishal+2",
-      },
-      {
-        id: 9,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Barishal+3",
-      },
-    ],
-    Khulna: [
-      {
-        id: 10,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Khulna+1",
-      },
-      {
-        id: 11,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Khulna+2",
-      },
-      {
-        id: 12,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Khulna+3",
-      },
-    ],
-    Mymensingh: [
-      {
-        id: 13,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Mymensingh+1",
-      },
-      {
-        id: 14,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Mymensingh+2",
-      },
-      {
-        id: 15,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Mymensingh+3",
-      },
-    ],
-    Rajshahi: [
-      {
-        id: 16,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Rajshahi+1",
-      },
-      {
-        id: 17,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Rajshahi+2",
-      },
-      {
-        id: 18,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Rajshahi+3",
-      },
-    ],
-    Rangpur: [
-      {
-        id: 19,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Rangpur+1",
-      },
-      {
-        id: 20,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Rangpur+2",
-      },
-      {
-        id: 21,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Rangpur+3",
-      },
-    ],
-    Sylhet: [
-      {
-        id: 22,
-        name: "Profile Frame 1",
-        url: "https://via.placeholder.com/600x800/D4AF37/006A4E?text=Sylhet+1",
-      },
-      {
-        id: 23,
-        name: "Profile Frame 2",
-        url: "https://via.placeholder.com/600x800/006A4E/D4AF37?text=Sylhet+2",
-      },
-      {
-        id: 24,
-        name: "Profile Frame 3",
-        url: "https://via.placeholder.com/600x800/8B4513/228B22?text=Sylhet+3",
-      },
-    ],
-  };
+  /* 
+   * FETCH FRAMES FROM API
+   */
+  const { data: framesData, isLoading: isFramesLoading } =
+    useGetPhotoFramesQuery({ division: selectedDivision });
+  console.log("framesData==>", framesData);
+  const frames = useMemo(() => {
+    const grouped = {};
+    // Initialize all divisions with empty array
+    divisions.forEach((div) => (grouped[div] = []));
+
+    if (framesData?.data) {
+      framesData.data.forEach((frame, index) => {
+        if (grouped[frame.division]) {
+          grouped[frame.division].push({
+            id: frame._id,
+            name: `Frame ${index + 1}`,
+            url: frame.url,
+            ...frame,
+          });
+        }
+      });
+    }
+    return grouped;
+  }, [framesData]);
 
   useEffect(() => {
     setCurrentFrameIndex(0);
@@ -288,6 +178,8 @@ const PhotoFrame = () => {
     }
   };
 
+
+
   const downloadImage = async () => {
     if (!uploadedImage || !frames[selectedDivision]) return;
 
@@ -356,14 +248,14 @@ const PhotoFrame = () => {
         fontFamily: "'Hind Siliguri', 'Noto Sans Bengali', sans-serif",
       }}
     >
-         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Design Your Photo with a Leaders Frame
-          </h1>
-          <p className="text-green-600 font-medium">
-            Upload, adjust, and generate in minutes
-          </p>{" "}
-        </div>
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          Design Your Photo with a Leaders Frame
+        </h1>
+        <p className="text-green-600 font-medium">
+          Upload, adjust, and generate in minutes
+        </p>{" "}
+      </div>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
@@ -431,60 +323,69 @@ const PhotoFrame = () => {
         >
           {/* Left Section - Frame Preview */}
           <div>
-            <div
-              className="frame-preview-wrapper"
-              style={{
-                position: "relative",
-                width: "470px",
-                height: "500px",
-                margin: "0 auto",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-                borderRadius: "8px",
-                overflow: "hidden",
-                background: "#fff",
-              }}
-            >
-              <canvas className="frame-preview-canvas" ref={canvasRef} />
-              <img
-                src={frames[selectedDivision][currentFrameIndex].url}
-                alt="Frame overlay"
+            {/* Frame Preview Area */}
+            {isFramesLoading ? (
+              <div className="flex justify-center items-center h-[500px] w-[470px] bg-gray-100 rounded-lg">
+                <p>Loading frames...</p>
+              </div>
+            ) : (
+              <div
+                className="frame-preview-wrapper"
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  pointerEvents: "none",
-                  objectFit: "cover",
+                  position: "relative",
+                  width: "470px",
+                  height: "500px",
+                  margin: "0 auto",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  background: "#fff",
                 }}
-              />
-              {!uploadedImage && (
-                <div
-                  onClick={() => fileInputRef.current?.click()}
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    textAlign: "center",
-                    color: "#2E7D32",
-                    cursor: "pointer",
-                    zIndex: 20,
-                    padding: "1rem",
-                  }}
-                >
-                  <Upload size={48} style={{ margin: "0 auto 1rem" }} />
-                  <p
+              >
+                <canvas className="frame-preview-canvas" ref={canvasRef} />
+                {frames[selectedDivision]?.length > 0 && frames[selectedDivision][currentFrameIndex] && (
+                  <img
+                    src={frames[selectedDivision][currentFrameIndex].url}
+                    alt="Frame overlay"
                     style={{
-                      fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
-                      fontWeight: "500",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      pointerEvents: "none",
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
+                {!uploadedImage && (
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      textAlign: "center",
+                      color: "#2E7D32",
+                      cursor: "pointer",
+                      zIndex: 20,
+                      padding: "1rem",
                     }}
                   >
-                    Click to upload your photo
-                  </p>
-                </div>
-              )}
-            </div>
+                    <Upload size={48} style={{ margin: "0 auto 1rem" }} />
+                    <p
+                      style={{
+                        fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      Click to upload your photo
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Frame Slider */}
             <div
