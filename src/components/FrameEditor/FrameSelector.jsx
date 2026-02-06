@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 
-const BASE_URL = "http://localhost:5173/";
-// const BASE_URL = "https://bnpcandidates.com";
+// const BASE_URL = "http://localhost:5173/";
+const BASE_URL = "https://bnpcandidates.com";
 
 const PROFILE_FRAMES = [
   { id: 1, src: `${BASE_URL}/frames/profile/profile1.png`, name: "Profile Frame 1" },
