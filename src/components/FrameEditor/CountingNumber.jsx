@@ -7,7 +7,7 @@ const CountingNumber = () => {
         const savedStats = localStorage.getItem('counting_stats');
         return savedStats ? JSON.parse(savedStats) : {
             photoDownload: 22725,
-            coverCreate: 19389,
+            coverCreate: 25389,
             frameCreate: 28758
         };
     });
