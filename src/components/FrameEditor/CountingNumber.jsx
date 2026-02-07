@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Download, Image, Frame } from 'lucide-react';
+import { Link } from 'react-router';
 
 const CountingNumber = () => {
     const [stats, setStats] = useState(() => {
@@ -58,9 +59,9 @@ const CountingNumber = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full mb-4">
-                        <TrendingUp className="w-4 h-4 text-green-600" />
-                        <span className="text-sm font-semibold text-green-700">Live Statistics</span>
+                    <div className="inline-flex items-center gap-2 px-5 py-3 bg-green-100 hover:bg-green-50 rounded-full mb-4">
+                        <TrendingUp className="w-5 h-5 text-green-600" />
+                        <Link to="/CreateFrame" className=" font-semibold text-green-700">VIEW ALL FRAMES</Link>
                     </div>
                    
                 </div>
