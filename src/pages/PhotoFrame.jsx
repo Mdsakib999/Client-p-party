@@ -9,6 +9,7 @@ import {
   ZoomOut,
   ChevronLeft,
   ChevronRight,
+  Loader,
 } from "lucide-react";
 import { useGetPhotoFramesQuery } from "../redux/features/photoFrame/photoFrame.api";
 
@@ -27,22 +28,19 @@ const divisions = [
 const PhotoFrame = () => {
   const [selectedDivision, setSelectedDivision] = useState("Dhaka");
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
+  const [aspectRatio, setAspectRatio] = useState(465 / 620);
+
   const [uploadedImage, setUploadedImage] = useState(null);
   const [zoom, setZoom] = useState(100);
   const canvasRef = useRef(null);
   const fabricCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
 
-
-  /* 
-   * FETCH FRAMES FROM API
-   */
   const { data: framesData, isLoading: isFramesLoading } =
     useGetPhotoFramesQuery({ division: selectedDivision });
-  console.log("framesData==>", framesData);
+
   const frames = useMemo(() => {
     const grouped = {};
-    // Initialize all divisions with empty array
     divisions.forEach((div) => (grouped[div] = []));
 
     if (framesData?.data) {
@@ -84,7 +82,7 @@ const PhotoFrame = () => {
     if (!window.fabric || fabricCanvasRef.current) return;
 
     // Calculate responsive canvas size
-    const canvasWidth = Math.min(465, window.innerWidth - 32); // 32px for padding
+    const canvasWidth = Math.min(465, window.innerWidth - 32);
     const canvasHeight = Math.round(canvasWidth * (620 / 465)); // Maintain aspect ratio
 
     const canvas = new window.fabric.Canvas(canvasRef.current, {
@@ -240,7 +238,7 @@ const PhotoFrame = () => {
 
   return (
     <div
-      className=" mt-20"
+      className="mt-20"
       style={{
         minHeight: "100vh",
         background: "",
@@ -336,6 +334,7 @@ const PhotoFrame = () => {
                   width: "470px",
                   height: "500px",
                   margin: "0 auto",
+                  aspectRatio: aspectRatio,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                   borderRadius: "8px",
                   overflow: "hidden",
@@ -347,6 +346,10 @@ const PhotoFrame = () => {
                   <img
                     src={frames[selectedDivision][currentFrameIndex].url}
                     alt="Frame overlay"
+                    onLoad={(e) => {
+                      const img = e.target;
+                      setAspectRatio(img.naturalWidth / img.naturalHeight);
+                    }}
                     style={{
                       position: "absolute",
                       top: 0,
@@ -354,7 +357,7 @@ const PhotoFrame = () => {
                       width: "100%",
                       height: "100%",
                       pointerEvents: "none",
-                      objectFit: "cover",
+                      objectFit: "fill",
                     }}
                   />
                 )}
@@ -446,40 +449,45 @@ const PhotoFrame = () => {
                     justifyContent: "center",
                   }}
                 >
-                  {frames[selectedDivision].map((frame, index) => (
-                    <div
-                      key={frame.id}
-                      onClick={() => setCurrentFrameIndex(index)}
-                      className="frame-thumbnail"
-                      style={{
-                        width: "80px",
-                        height: "100px",
-                        borderRadius: "8px",
-                        overflow: "hidden",
-                        cursor: "pointer",
-                        border:
-                          currentFrameIndex === index
-                            ? "3px solid #4CAF50"
-                            : "3px solid transparent",
-                        boxShadow:
-                          currentFrameIndex === index
-                            ? "0 4px 12px rgba(76, 175, 80, 0.4)"
-                            : "0 2px 6px rgba(0,0,0,0.1)",
-                        transition: "all 0.3s ease",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <img
-                        src={frame.url}
-                        alt={frame.name}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
+                  {isFramesLoading ? (
+                    <div style={{ textAlign: "center", width: "100%" }}>
+                      <p className="flex justify-center" style={{ color: "#2E7D32" }}><Loader className="animate-spin" size={24} /></p>
                     </div>
-                  ))}
+                  ) : frames[selectedDivision]?.length === 0 ? (
+                    <div style={{ textAlign: "center", width: "100%" }}>
+                      <p style={{ color: "#999" }}>No frames available</p>
+                    </div>
+                  ) : (
+                    frames[selectedDivision].map((frame, index) => (
+                      <div
+                        key={frame.id}
+                        onClick={() => setCurrentFrameIndex(index)}
+                        className="frame-thumbnail"
+                        style={{
+                          width: "80px",
+                          height: "100px",
+                          borderRadius: "8px",
+                          overflow: "hidden",
+                          cursor: "pointer",
+                          border:
+                            currentFrameIndex === index
+                              ? "3px solid #4CAF50"
+                              : "3px solid transparent",
+                          boxShadow:
+                            currentFrameIndex === index
+                              ? "0 4px 12px rgba(76, 175, 80, 0.4)"
+                              : "0 2px 6px rgba(0,0,0,0.1)",
+                        }}
+                      >
+                        <img
+                          src={frame.url}
+                          alt={frame.name}
+                          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        />
+                      </div>
+                    ))
+                  )}
+
                 </div>
 
                 <button
