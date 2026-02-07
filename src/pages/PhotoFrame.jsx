@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useMemo } from "react";
-
 import {
   Upload,
   Download,
@@ -13,7 +12,6 @@ import {
 } from "lucide-react";
 import { useGetPhotoFramesQuery } from "../redux/features/photoFrame/photoFrame.api";
 
-// Move to top level
 const divisions = [
   "Dhaka",
   "Chattogram",
@@ -32,7 +30,9 @@ const PhotoFrame = () => {
 
   const [uploadedImage, setUploadedImage] = useState(null);
   const [zoom, setZoom] = useState(100);
-  const canvasRef = useRef(null);
+  const [rotation, setRotation] = useState(0);
+  const [fabricLoaded, setFabricLoaded] = useState(false);
+  const containerRef = useRef(null);
   const fabricCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
 
@@ -63,47 +63,112 @@ const PhotoFrame = () => {
   }, [selectedDivision]);
 
   useEffect(() => {
+    if (window.fabric) {
+      setFabricLoaded(true);
+      return;
+    }
     const script = document.createElement("script");
     script.src =
       "https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js";
     script.async = true;
-    script.onload = initializeFabric;
+    script.onload = () => setFabricLoaded(true);
     document.body.appendChild(script);
 
     return () => {
-      if (fabricCanvasRef.current) {
-        fabricCanvasRef.current.dispose();
-      }
       document.body.removeChild(script);
     };
   }, []);
 
-  const initializeFabric = () => {
-    if (!window.fabric || fabricCanvasRef.current) return;
-
-    // Calculate responsive canvas size
-    const canvasWidth = Math.min(465, window.innerWidth - 32);
-    const canvasHeight = Math.round(canvasWidth * (620 / 465)); // Maintain aspect ratio
-
-    const canvas = new window.fabric.Canvas(canvasRef.current, {
-      width: canvasWidth,
-      height: canvasHeight,
-      backgroundColor: "#fff",
-    });
-    fabricCanvasRef.current = canvas;
-
-    // Handle window resize
+  useEffect(() => {
     const handleResize = () => {
-      const newWidth = Math.min(465, window.innerWidth - 32);
-      const newHeight = Math.round(newWidth * (620 / 465));
+      if (fabricCanvasRef.current) {
+        const canvas = fabricCanvasRef.current;
+        const newWidth = Math.min(465, window.innerWidth - 32);
+        const newHeight = Math.round(newWidth * (620 / 465));
 
-      if (canvas.width !== newWidth) {
-        canvas.setDimensions({ width: newWidth, height: newHeight });
-        canvas.renderAll();
+        if (canvas.width !== newWidth) {
+          canvas.setDimensions({ width: newWidth, height: newHeight });
+          canvas.renderAll();
+        }
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    if (fabricLoaded && !isFramesLoading) {
+      initializeFabric();
+      window.addEventListener("resize", handleResize);
+    }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (fabricCanvasRef.current) {
+        fabricCanvasRef.current.dispose();
+        fabricCanvasRef.current = null;
+      }
+    };
+  }, [fabricLoaded, isFramesLoading]);
+
+  // Persistent image rendering
+  useEffect(() => {
+    if (fabricCanvasRef.current) {
+      const canvas = fabricCanvasRef.current;
+      if (uploadedImage) {
+        window.fabric.Image.fromURL(
+          uploadedImage,
+          (img) => {
+            canvas.clear();
+            const canvasWidth = canvas.getWidth();
+            const canvasHeight = canvas.getHeight();
+
+            const baseScale = Math.max(
+              canvasWidth / img.width,
+              canvasHeight / img.height,
+            );
+            const finalScale = baseScale * (zoom / 100);
+
+            img.set({
+              scaleX: finalScale,
+              scaleY: finalScale,
+              angle: rotation,
+              left: canvasWidth / 2,
+              top: canvasHeight / 2,
+              originX: "center",
+              originY: "center",
+              selectable: true,
+              hasControls: true,
+            });
+
+            canvas.add(img);
+            canvas.setActiveObject(img);
+            canvas.renderAll();
+          },
+          { crossOrigin: "anonymous" },
+        );
+      } else {
+        canvas.clear();
+        canvas.renderAll();
+      }
+    }
+  }, [uploadedImage, fabricLoaded, isFramesLoading, zoom, rotation]);
+
+  const initializeFabric = () => {
+    if (!window.fabric || fabricCanvasRef.current || !containerRef.current)
+      return;
+
+    // Reset container and create canvas element
+    containerRef.current.innerHTML = "";
+    const canvasElement = document.createElement("canvas");
+    canvasElement.className = "frame-preview-canvas";
+    containerRef.current.appendChild(canvasElement);
+
+    // Calculate responsive canvas size
+    const canvasWidth = Math.min(465, window.innerWidth - 32);
+    const canvasHeight = Math.round(canvasWidth * (620 / 465));
+
+    const canvas = new window.fabric.Canvas(canvasElement, {
+      width: canvasWidth,
+      height: canvasHeight,
+      backgroundColor: "transparent",
+    });
+    fabricCanvasRef.current = canvas;
   };
 
   const handleImageUpload = (e) => {
@@ -112,29 +177,7 @@ const PhotoFrame = () => {
       const reader = new FileReader();
       reader.onload = (event) => {
         setUploadedImage(event.target.result);
-        window.fabric.Image.fromURL(event.target.result, (img) => {
-          fabricCanvasRef.current.clear();
-
-          const canvasWidth = fabricCanvasRef.current.width;
-          const canvasHeight = fabricCanvasRef.current.height;
-
-          const scale = Math.max(
-            canvasWidth / img.width,
-            canvasHeight / img.height,
-          );
-
-          img.scale(scale);
-          img.set({
-            left: canvasWidth / 2,
-            top: canvasHeight / 2,
-            originX: "center",
-            originY: "center",
-          });
-
-          fabricCanvasRef.current.add(img);
-          fabricCanvasRef.current.setActiveObject(img);
-          fabricCanvasRef.current.renderAll();
-        });
+        // Drawing is now handled by useEffect
       };
       reader.readAsDataURL(file);
     }
@@ -142,38 +185,15 @@ const PhotoFrame = () => {
 
   const handleZoomChange = (newZoom) => {
     setZoom(newZoom);
-    const activeObject = fabricCanvasRef.current?.getActiveObject();
-    if (activeObject) {
-      const scale = newZoom / 100;
-      activeObject.scale(scale);
-      fabricCanvasRef.current.renderAll();
-    }
   };
 
   const handleRotate = (direction) => {
-    const activeObject = fabricCanvasRef.current?.getActiveObject();
-    if (activeObject) {
-      const currentAngle = activeObject.angle || 0;
-      activeObject.rotate(currentAngle + (direction === "left" ? -90 : 90));
-      fabricCanvasRef.current.renderAll();
-    }
+    setRotation((prev) => prev + (direction === "left" ? -90 : 90));
   };
 
   const handleReset = () => {
-    const activeObject = fabricCanvasRef.current?.getActiveObject();
-    if (activeObject) {
-      activeObject.set({
-        left: fabricCanvasRef.current.width / 2,
-        top: fabricCanvasRef.current.height / 2,
-        originX: "center",
-        originY: "center",
-        angle: 0,
-        scaleX: 1,
-        scaleY: 1,
-      });
-      setZoom(100);
-      fabricCanvasRef.current.renderAll();
-    }
+    setZoom(100);
+    setRotation(0);
   };
 
   const downloadImage = async () => {
@@ -219,6 +239,12 @@ const PhotoFrame = () => {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+
+      // Reset state after download
+      setUploadedImage(null);
+      setZoom(100);
+      setRotation(0);
+      if (fileInputRef.current) fileInputRef.current.value = "";
     }, "image/png");
   };
 
@@ -329,17 +355,21 @@ const PhotoFrame = () => {
                 className="frame-preview-wrapper"
                 style={{
                   position: "relative",
-                  width: "470px",
-                  height: "500px",
+                  width: "100%",
+                  maxWidth: "470px",
                   margin: "0 auto",
                   aspectRatio: aspectRatio,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                   borderRadius: "8px",
                   overflow: "hidden",
-                  background: "#fff",
+                  background: "transparent",
                 }}
               >
-                <canvas className="frame-preview-canvas" ref={canvasRef} />
+                <div
+                  className="frame-preview-canvas-container"
+                  ref={containerRef}
+                  style={{ width: "100%", height: "100%", zIndex: 1 }}
+                />
                 {frames[selectedDivision]?.length > 0 &&
                   frames[selectedDivision][currentFrameIndex] && (
                     <img
@@ -357,6 +387,7 @@ const PhotoFrame = () => {
                         height: "100%",
                         pointerEvents: "none",
                         objectFit: "fill",
+                        zIndex: 5,
                       }}
                     />
                   )}
