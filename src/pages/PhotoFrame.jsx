@@ -32,11 +32,9 @@ const PhotoFrame = () => {
 
   const [uploadedImage, setUploadedImage] = useState(null);
   const [zoom, setZoom] = useState(100);
-  const [isFabricReady, setIsFabricReady] = useState(false);
   const canvasRef = useRef(null);
   const fabricCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
-  const pendingImageRef = useRef(null);
 
   const { data: framesData, isLoading: isFramesLoading } =
     useGetPhotoFramesQuery({ division: selectedDivision });
@@ -76,19 +74,9 @@ const PhotoFrame = () => {
       if (fabricCanvasRef.current) {
         fabricCanvasRef.current.dispose();
       }
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+      document.body.removeChild(script);
     };
   }, []);
-
-  // Effect to handle pending image upload after Fabric is ready
-  useEffect(() => {
-    if (isFabricReady && pendingImageRef.current && fabricCanvasRef.current) {
-      loadImageToCanvas(pendingImageRef.current);
-      pendingImageRef.current = null;
-    }
-  }, [isFabricReady]);
 
   const initializeFabric = () => {
     if (!window.fabric || fabricCanvasRef.current) return;
@@ -103,7 +91,6 @@ const PhotoFrame = () => {
       backgroundColor: "#fff",
     });
     fabricCanvasRef.current = canvas;
-    setIsFabricReady(true);
 
     // Handle window resize
     const handleResize = () => {
@@ -119,53 +106,38 @@ const PhotoFrame = () => {
     window.addEventListener("resize", handleResize);
   };
 
-  const loadImageToCanvas = (imageDataUrl) => {
-    if (!fabricCanvasRef.current || !window.fabric) return;
-
-    window.fabric.Image.fromURL(imageDataUrl, (img) => {
-      fabricCanvasRef.current.clear();
-
-      const canvasWidth = fabricCanvasRef.current.width;
-      const canvasHeight = fabricCanvasRef.current.height;
-
-      const scale = Math.max(
-        canvasWidth / img.width,
-        canvasHeight / img.height,
-      );
-
-      img.scale(scale);
-      img.set({
-        left: canvasWidth / 2,
-        top: canvasHeight / 2,
-        originX: "center",
-        originY: "center",
-      });
-
-      fabricCanvasRef.current.add(img);
-      fabricCanvasRef.current.setActiveObject(img);
-      fabricCanvasRef.current.renderAll();
-      setZoom(100);
-    });
-  };
-
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
+    if (file && fabricCanvasRef.current) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setUploadedImage(event.target.result);
+        window.fabric.Image.fromURL(event.target.result, (img) => {
+          fabricCanvasRef.current.clear();
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const imageDataUrl = event.target.result;
-      setUploadedImage(imageDataUrl);
+          const canvasWidth = fabricCanvasRef.current.width;
+          const canvasHeight = fabricCanvasRef.current.height;
 
-      if (isFabricReady && fabricCanvasRef.current) {
-        // Fabric is ready, load immediately
-        loadImageToCanvas(imageDataUrl);
-      } else {
-        // Fabric not ready yet, store for later
-        pendingImageRef.current = imageDataUrl;
-      }
-    };
-    reader.readAsDataURL(file);
+          const scale = Math.max(
+            canvasWidth / img.width,
+            canvasHeight / img.height,
+          );
+
+          img.scale(scale);
+          img.set({
+            left: canvasWidth / 2,
+            top: canvasHeight / 2,
+            originX: "center",
+            originY: "center",
+          });
+
+          fabricCanvasRef.current.add(img);
+          fabricCanvasRef.current.setActiveObject(img);
+          fabricCanvasRef.current.renderAll();
+        });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleZoomChange = (newZoom) => {
@@ -212,17 +184,13 @@ const PhotoFrame = () => {
     downloadCanvas.height = 1080;
     const ctx = downloadCanvas.getContext("2d");
 
-    // Fill with white background
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, 1080, 1080);
-
     const scaleX = 1080 / fabricCanvasRef.current.width;
     const scaleY = 1080 / fabricCanvasRef.current.height;
 
     const userImageData = fabricCanvasRef.current.toDataURL({
       format: "png",
       quality: 1,
-      multiplier: Math.max(scaleX, scaleY),
+      multiplier: Math.min(scaleX, scaleY),
     });
 
     const userImg = new Image();
@@ -231,7 +199,7 @@ const PhotoFrame = () => {
       userImg.src = userImageData;
     });
 
-    ctx.drawImage(userImg, 0, 0, 1080, 1080);
+    ctx.drawImage(userImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
 
     const frameImg = new Image();
     frameImg.crossOrigin = "anonymous";
@@ -240,7 +208,7 @@ const PhotoFrame = () => {
       frameImg.src = frames[selectedDivision][currentFrameIndex].url;
     });
 
-    ctx.drawImage(frameImg, 0, 0, 1080, 1080);
+    ctx.drawImage(frameImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
 
     downloadCanvas.toBlob((blob) => {
       const url = URL.createObjectURL(blob);
@@ -296,18 +264,19 @@ const PhotoFrame = () => {
           
           .frame-preview-wrapper {
             width: 100% !important;
-            max-width: 100% !important;
+            max-width: 465px !important;
             height: auto !important;
           }
           
           .frame-preview-canvas {
             width: 100% !important;
             height: auto !important;
+            aspect-ratio: 465/620;
           }
           
           .frame-slider-wrapper {
             width: 100% !important;
-            max-width: 100% !important;
+            max-width: 465px !important;
           }
           
           .division-tabs {
@@ -352,29 +321,25 @@ const PhotoFrame = () => {
           <div>
             {/* Frame Preview Area */}
             {isFramesLoading ? (
-              <div className="flex justify-center items-center h-[500px] bg-gray-100 rounded-lg"
-                style={{
-                  width: "100%",
-                  maxWidth: "465px",
-                  margin: "0 auto",
-                }}>
-                <Loader className="animate-spin" size={32} />
+              <div className="flex justify-center items-center h-[500px] w-[470px] bg-gray-100 rounded-lg">
+                <p>Loading frames...</p>
               </div>
             ) : (
               <div
                 className="frame-preview-wrapper"
                 style={{
                   position: "relative",
-                  width: "100%",
-                  maxWidth: "465px",
+                  width: "470px",
+                  height: "500px",
                   margin: "0 auto",
+                  aspectRatio: aspectRatio,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                   borderRadius: "8px",
                   overflow: "hidden",
                   background: "#fff",
                 }}
               >
-                <canvas className="frame-preview-canvas" ref={canvasRef} style={{ display: 'block', width: '100%', height: 'auto' }} />
+                <canvas className="frame-preview-canvas" ref={canvasRef} />
                 {frames[selectedDivision]?.length > 0 &&
                   frames[selectedDivision][currentFrameIndex] && (
                     <img
@@ -382,8 +347,7 @@ const PhotoFrame = () => {
                       alt="Frame overlay"
                       onLoad={(e) => {
                         const img = e.target;
-                        const ratio = img.naturalWidth / img.naturalHeight;
-                        setAspectRatio(ratio);
+                        setAspectRatio(img.naturalWidth / img.naturalHeight);
                       }}
                       style={{
                         position: "absolute",
@@ -392,7 +356,7 @@ const PhotoFrame = () => {
                         width: "100%",
                         height: "100%",
                         pointerEvents: "none",
-                        objectFit: "contain",
+                        objectFit: "fill",
                       }}
                     />
                   )}
@@ -433,8 +397,7 @@ const PhotoFrame = () => {
                 borderRadius: "12px",
                 padding: "clamp(1rem, 2.5vw, 1.5rem)",
                 marginTop: "1.5rem",
-                width: "100%",
-                maxWidth: "465px",
+                width: "465px",
                 margin: "1.5rem auto 0",
               }}
             >
