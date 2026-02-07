@@ -32,9 +32,11 @@ const PhotoFrame = () => {
 
   const [uploadedImage, setUploadedImage] = useState(null);
   const [zoom, setZoom] = useState(100);
+  const [isFabricReady, setIsFabricReady] = useState(false);
   const canvasRef = useRef(null);
   const fabricCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
+  const pendingImageRef = useRef(null);
 
   const { data: framesData, isLoading: isFramesLoading } =
     useGetPhotoFramesQuery({ division: selectedDivision });
@@ -74,9 +76,19 @@ const PhotoFrame = () => {
       if (fabricCanvasRef.current) {
         fabricCanvasRef.current.dispose();
       }
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
+
+  // Effect to handle pending image upload after Fabric is ready
+  useEffect(() => {
+    if (isFabricReady && pendingImageRef.current && fabricCanvasRef.current) {
+      loadImageToCanvas(pendingImageRef.current);
+      pendingImageRef.current = null;
+    }
+  }, [isFabricReady]);
 
   const initializeFabric = () => {
     if (!window.fabric || fabricCanvasRef.current) return;
@@ -91,6 +103,7 @@ const PhotoFrame = () => {
       backgroundColor: "#fff",
     });
     fabricCanvasRef.current = canvas;
+    setIsFabricReady(true);
 
     // Handle window resize
     const handleResize = () => {
@@ -106,38 +119,53 @@ const PhotoFrame = () => {
     window.addEventListener("resize", handleResize);
   };
 
+  const loadImageToCanvas = (imageDataUrl) => {
+    if (!fabricCanvasRef.current || !window.fabric) return;
+
+    window.fabric.Image.fromURL(imageDataUrl, (img) => {
+      fabricCanvasRef.current.clear();
+
+      const canvasWidth = fabricCanvasRef.current.width;
+      const canvasHeight = fabricCanvasRef.current.height;
+
+      const scale = Math.max(
+        canvasWidth / img.width,
+        canvasHeight / img.height,
+      );
+
+      img.scale(scale);
+      img.set({
+        left: canvasWidth / 2,
+        top: canvasHeight / 2,
+        originX: "center",
+        originY: "center",
+      });
+
+      fabricCanvasRef.current.add(img);
+      fabricCanvasRef.current.setActiveObject(img);
+      fabricCanvasRef.current.renderAll();
+      setZoom(100);
+    });
+  };
+
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file && fabricCanvasRef.current) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setUploadedImage(event.target.result);
-        window.fabric.Image.fromURL(event.target.result, (img) => {
-          fabricCanvasRef.current.clear();
+    if (!file) return;
 
-          const canvasWidth = fabricCanvasRef.current.width;
-          const canvasHeight = fabricCanvasRef.current.height;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const imageDataUrl = event.target.result;
+      setUploadedImage(imageDataUrl);
 
-          const scale = Math.max(
-            canvasWidth / img.width,
-            canvasHeight / img.height,
-          );
-
-          img.scale(scale);
-          img.set({
-            left: canvasWidth / 2,
-            top: canvasHeight / 2,
-            originX: "center",
-            originY: "center",
-          });
-
-          fabricCanvasRef.current.add(img);
-          fabricCanvasRef.current.setActiveObject(img);
-          fabricCanvasRef.current.renderAll();
-        });
-      };
-      reader.readAsDataURL(file);
-    }
+      if (isFabricReady && fabricCanvasRef.current) {
+        // Fabric is ready, load immediately
+        loadImageToCanvas(imageDataUrl);
+      } else {
+        // Fabric not ready yet, store for later
+        pendingImageRef.current = imageDataUrl;
+      }
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleZoomChange = (newZoom) => {
@@ -176,8 +204,6 @@ const PhotoFrame = () => {
     }
   };
 
-
-
   const downloadImage = async () => {
     if (!uploadedImage || !frames[selectedDivision]) return;
 
@@ -186,13 +212,17 @@ const PhotoFrame = () => {
     downloadCanvas.height = 1080;
     const ctx = downloadCanvas.getContext("2d");
 
+    // Fill with white background
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, 1080, 1080);
+
     const scaleX = 1080 / fabricCanvasRef.current.width;
     const scaleY = 1080 / fabricCanvasRef.current.height;
 
     const userImageData = fabricCanvasRef.current.toDataURL({
       format: "png",
       quality: 1,
-      multiplier: Math.min(scaleX, scaleY),
+      multiplier: Math.max(scaleX, scaleY),
     });
 
     const userImg = new Image();
@@ -201,7 +231,7 @@ const PhotoFrame = () => {
       userImg.src = userImageData;
     });
 
-    ctx.drawImage(userImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
+    ctx.drawImage(userImg, 0, 0, 1080, 1080);
 
     const frameImg = new Image();
     frameImg.crossOrigin = "anonymous";
@@ -210,7 +240,7 @@ const PhotoFrame = () => {
       frameImg.src = frames[selectedDivision][currentFrameIndex].url;
     });
 
-    ctx.drawImage(frameImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
+    ctx.drawImage(frameImg, 0, 0, 1080, 1080);
 
     downloadCanvas.toBlob((blob) => {
       const url = URL.createObjectURL(blob);
@@ -324,7 +354,7 @@ const PhotoFrame = () => {
             {/* Frame Preview Area */}
             {isFramesLoading ? (
               <div className="flex justify-center items-center h-[500px] w-[470px] bg-gray-100 rounded-lg">
-                <p>Loading frames...</p>
+                <Loader className="animate-spin" size={32} />
               </div>
             ) : (
               <div
@@ -477,6 +507,8 @@ const PhotoFrame = () => {
                             currentFrameIndex === index
                               ? "0 4px 12px rgba(76, 175, 80, 0.4)"
                               : "0 2px 6px rgba(0,0,0,0.1)",
+                          transition: "all 0.3s ease",
+                          flexShrink: 0,
                         }}
                       >
                         <img
