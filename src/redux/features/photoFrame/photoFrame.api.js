@@ -8,7 +8,16 @@ const photoFrameApi = baseApi.injectEndpoints({
         method: "GET",
         params: params,
       }),
-      providesTags: ["PHOTO_FRAME"],
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.data.map(({ _id }) => ({
+                type: "PHOTO_FRAME",
+                id: _id,
+              })),
+              { type: "PHOTO_FRAME", id: "LIST" },
+            ]
+          : [{ type: "PHOTO_FRAME", id: "LIST" }],
     }),
     addPhotoFrame: builder.mutation({
       query: (formData) => ({
@@ -16,14 +25,17 @@ const photoFrameApi = baseApi.injectEndpoints({
         method: "POST",
         data: formData,
       }),
-      invalidatesTags: ["PHOTO_FRAME"],
+      invalidatesTags: [{ type: "PHOTO_FRAME", id: "LIST" }],
     }),
     deletePhotoFrame: builder.mutation({
       query: (id) => ({
         url: `/photo-frames/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["PHOTO_FRAME"],
+      invalidatesTags: (result, error, id) => [
+        { type: "PHOTO_FRAME", id },
+        { type: "PHOTO_FRAME", id: "LIST" },
+      ],
     }),
     updatePhotoFrame: builder.mutation({
       query: ({ id, data }) => ({
@@ -31,7 +43,10 @@ const photoFrameApi = baseApi.injectEndpoints({
         method: "PUT",
         data: data,
       }),
-      invalidatesTags: ["PHOTO_FRAME"],
+      invalidatesTags: (result, error, { id }) => [
+        { type: "PHOTO_FRAME", id },
+        { type: "PHOTO_FRAME", id: "LIST" },
+      ],
     }),
   }),
 });
