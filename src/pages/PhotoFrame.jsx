@@ -32,11 +32,9 @@ const PhotoFrame = () => {
 
   const [uploadedImage, setUploadedImage] = useState(null);
   const [zoom, setZoom] = useState(100);
-  const [isFabricReady, setIsFabricReady] = useState(false);
   const canvasRef = useRef(null);
   const fabricCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
-  const pendingImageRef = useRef(null);
 
   const { data: framesData, isLoading: isFramesLoading } =
     useGetPhotoFramesQuery({ division: selectedDivision });
@@ -76,19 +74,9 @@ const PhotoFrame = () => {
       if (fabricCanvasRef.current) {
         fabricCanvasRef.current.dispose();
       }
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+      document.body.removeChild(script);
     };
   }, []);
-
-  // Effect to handle pending image upload after Fabric is ready
-  useEffect(() => {
-    if (isFabricReady && pendingImageRef.current && fabricCanvasRef.current) {
-      loadImageToCanvas(pendingImageRef.current);
-      pendingImageRef.current = null;
-    }
-  }, [isFabricReady]);
 
   const initializeFabric = () => {
     if (!window.fabric || fabricCanvasRef.current) return;
@@ -103,7 +91,6 @@ const PhotoFrame = () => {
       backgroundColor: "#fff",
     });
     fabricCanvasRef.current = canvas;
-    setIsFabricReady(true);
 
     // Handle window resize
     const handleResize = () => {
@@ -119,53 +106,38 @@ const PhotoFrame = () => {
     window.addEventListener("resize", handleResize);
   };
 
-  const loadImageToCanvas = (imageDataUrl) => {
-    if (!fabricCanvasRef.current || !window.fabric) return;
-
-    window.fabric.Image.fromURL(imageDataUrl, (img) => {
-      fabricCanvasRef.current.clear();
-
-      const canvasWidth = fabricCanvasRef.current.width;
-      const canvasHeight = fabricCanvasRef.current.height;
-
-      const scale = Math.max(
-        canvasWidth / img.width,
-        canvasHeight / img.height,
-      );
-
-      img.scale(scale);
-      img.set({
-        left: canvasWidth / 2,
-        top: canvasHeight / 2,
-        originX: "center",
-        originY: "center",
-      });
-
-      fabricCanvasRef.current.add(img);
-      fabricCanvasRef.current.setActiveObject(img);
-      fabricCanvasRef.current.renderAll();
-      setZoom(100);
-    });
-  };
-
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
+    if (file && fabricCanvasRef.current) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setUploadedImage(event.target.result);
+        window.fabric.Image.fromURL(event.target.result, (img) => {
+          fabricCanvasRef.current.clear();
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const imageDataUrl = event.target.result;
-      setUploadedImage(imageDataUrl);
+          const canvasWidth = fabricCanvasRef.current.width;
+          const canvasHeight = fabricCanvasRef.current.height;
 
-      if (isFabricReady && fabricCanvasRef.current) {
-        // Fabric is ready, load immediately
-        loadImageToCanvas(imageDataUrl);
-      } else {
-        // Fabric not ready yet, store for later
-        pendingImageRef.current = imageDataUrl;
-      }
-    };
-    reader.readAsDataURL(file);
+          const scale = Math.max(
+            canvasWidth / img.width,
+            canvasHeight / img.height,
+          );
+
+          img.scale(scale);
+          img.set({
+            left: canvasWidth / 2,
+            top: canvasHeight / 2,
+            originX: "center",
+            originY: "center",
+          });
+
+          fabricCanvasRef.current.add(img);
+          fabricCanvasRef.current.setActiveObject(img);
+          fabricCanvasRef.current.renderAll();
+        });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleZoomChange = (newZoom) => {
@@ -212,17 +184,13 @@ const PhotoFrame = () => {
     downloadCanvas.height = 1080;
     const ctx = downloadCanvas.getContext("2d");
 
-    // Fill with white background
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, 1080, 1080);
-
     const scaleX = 1080 / fabricCanvasRef.current.width;
     const scaleY = 1080 / fabricCanvasRef.current.height;
 
     const userImageData = fabricCanvasRef.current.toDataURL({
       format: "png",
       quality: 1,
-      multiplier: Math.max(scaleX, scaleY),
+      multiplier: Math.min(scaleX, scaleY),
     });
 
     const userImg = new Image();
@@ -231,7 +199,7 @@ const PhotoFrame = () => {
       userImg.src = userImageData;
     });
 
-    ctx.drawImage(userImg, 0, 0, 1080, 1080);
+    ctx.drawImage(userImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
 
     const frameImg = new Image();
     frameImg.crossOrigin = "anonymous";
@@ -240,7 +208,7 @@ const PhotoFrame = () => {
       frameImg.src = frames[selectedDivision][currentFrameIndex].url;
     });
 
-    ctx.drawImage(frameImg, 0, 0, 1080, 1080);
+    ctx.drawImage(frameImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
 
     downloadCanvas.toBlob((blob) => {
       const url = URL.createObjectURL(blob);
@@ -354,7 +322,7 @@ const PhotoFrame = () => {
             {/* Frame Preview Area */}
             {isFramesLoading ? (
               <div className="flex justify-center items-center h-[500px] w-[470px] bg-gray-100 rounded-lg">
-                <Loader className="animate-spin" size={32} />
+                <p>Loading frames...</p>
               </div>
             ) : (
               <div
@@ -372,25 +340,26 @@ const PhotoFrame = () => {
                 }}
               >
                 <canvas className="frame-preview-canvas" ref={canvasRef} />
-                {frames[selectedDivision]?.length > 0 && frames[selectedDivision][currentFrameIndex] && (
-                  <img
-                    src={frames[selectedDivision][currentFrameIndex].url}
-                    alt="Frame overlay"
-                    onLoad={(e) => {
-                      const img = e.target;
-                      setAspectRatio(img.naturalWidth / img.naturalHeight);
-                    }}
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      pointerEvents: "none",
-                      objectFit: "fill",
-                    }}
-                  />
-                )}
+                {frames[selectedDivision]?.length > 0 &&
+                  frames[selectedDivision][currentFrameIndex] && (
+                    <img
+                      src={frames[selectedDivision][currentFrameIndex].url}
+                      alt="Frame overlay"
+                      onLoad={(e) => {
+                        const img = e.target;
+                        setAspectRatio(img.naturalWidth / img.naturalHeight);
+                      }}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        pointerEvents: "none",
+                        objectFit: "fill",
+                      }}
+                    />
+                  )}
                 {!uploadedImage && (
                   <div
                     onClick={() => fileInputRef.current?.click()}
@@ -474,52 +443,68 @@ const PhotoFrame = () => {
                 <div
                   style={{
                     flex: 1,
-                    display: "flex",
-                    gap: "clamp(0.3rem, 1vw, 0.5rem)",
-                    justifyContent: "center",
+                    overflow: "hidden",
+                    position: "relative",
                   }}
                 >
-                  {isFramesLoading ? (
-                    <div style={{ textAlign: "center", width: "100%" }}>
-                      <p className="flex justify-center" style={{ color: "#2E7D32" }}><Loader className="animate-spin" size={24} /></p>
-                    </div>
-                  ) : frames[selectedDivision]?.length === 0 ? (
-                    <div style={{ textAlign: "center", width: "100%" }}>
-                      <p style={{ color: "#999" }}>No frames available</p>
-                    </div>
-                  ) : (
-                    frames[selectedDivision].map((frame, index) => (
-                      <div
-                        key={frame.id}
-                        onClick={() => setCurrentFrameIndex(index)}
-                        className="frame-thumbnail"
-                        style={{
-                          width: "80px",
-                          height: "100px",
-                          borderRadius: "8px",
-                          overflow: "hidden",
-                          cursor: "pointer",
-                          border:
-                            currentFrameIndex === index
-                              ? "3px solid #4CAF50"
-                              : "3px solid transparent",
-                          boxShadow:
-                            currentFrameIndex === index
-                              ? "0 4px 12px rgba(76, 175, 80, 0.4)"
-                              : "0 2px 6px rgba(0,0,0,0.1)",
-                          transition: "all 0.3s ease",
-                          flexShrink: 0,
-                        }}
-                      >
-                        <img
-                          src={frame.url}
-                          alt={frame.name}
-                          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                        />
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "clamp(0.3rem, 1vw, 0.5rem)",
+                      transition: "transform 0.3s ease-in-out",
+                      transform: `translateX(-${currentFrameIndex * (80 + 8)}px)`,
+                    }}
+                  >
+                    {isFramesLoading ? (
+                      <div style={{ textAlign: "center", width: "100%" }}>
+                        <p
+                          className="flex justify-center"
+                          style={{ color: "#2E7D32" }}
+                        >
+                          <Loader className="animate-spin" size={24} />
+                        </p>
                       </div>
-                    ))
-                  )}
-
+                    ) : frames[selectedDivision]?.length === 0 ? (
+                      <div style={{ textAlign: "center", width: "100%" }}>
+                        <p style={{ color: "#999" }}>No frames available</p>
+                      </div>
+                    ) : (
+                      frames[selectedDivision].map((frame, index) => (
+                        <div
+                          key={frame.id}
+                          onClick={() => setCurrentFrameIndex(index)}
+                          className="frame-thumbnail"
+                          style={{
+                            width: "80px",
+                            height: "100px",
+                            borderRadius: "8px",
+                            overflow: "hidden",
+                            cursor: "pointer",
+                            border:
+                              currentFrameIndex === index
+                                ? "3px solid #4CAF50"
+                                : "3px solid transparent",
+                            boxShadow:
+                              currentFrameIndex === index
+                                ? "0 4px 12px rgba(76, 175, 80, 0.4)"
+                                : "0 2px 6px rgba(0,0,0,0.1)",
+                            transition: "all 0.3s ease",
+                            flexShrink: 0,
+                          }}
+                        >
+                          <img
+                            src={frame.url}
+                            alt={frame.name}
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                            }}
+                          />
+                        </div>
+                      ))
+                    )}
+                  </div>
                 </div>
 
                 <button
