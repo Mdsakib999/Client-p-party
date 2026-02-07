@@ -18,11 +18,11 @@ const CampaignStats = () => {
             <div className="text-green-100">Campaign Events</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">220+</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">250+</div>
             <div className="text-green-100">Constituencies Covered</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">500K+</div>
             <div className="text-green-100">People Engaged</div>
           </div>
         </div>

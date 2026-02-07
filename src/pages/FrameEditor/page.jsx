@@ -235,7 +235,7 @@ const FrameEditor = () => {
 
             <div className="w-full max-w-md p-3 md:p-6 rounded-3xl shadow-lg border border-green-100 bg-green-100">
               <h3 className="text-gray-800 text-xs md:text-sm text-center mb-3 font-semibold">
-                Choose Your Frame
+                {t('frame_choose')}
               </h3>
               <FrameSelector
                 onSelectFrame={handleSelectFrame}
@@ -273,7 +273,7 @@ const FrameEditor = () => {
         <CountingNumber></CountingNumber>
 
         <div className="text-center text-gray-400 text-xs px-4">
-          <p>Show your support for BNP | Share on social media</p>
+          <p>{t('frame_footer')}</p>
         </div>
       </div>
     </div>

@@ -12,8 +12,8 @@ import { useDispatch } from "react-redux";
 import logo from "../../assets/BNP-logo.png";
 
 export default function Navbar() {
-  // const { t, i18n } = useTranslation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  // const { t } = useTranslation();
   const { data: userInfo } = useUserInfoQuery();
   const user = userInfo?.data;
 
@@ -70,10 +70,10 @@ export default function Navbar() {
     setShowUserMenu(false);
   };
 
-  // const toggleLanguage = () => {
-  //   const newLang = i18n.language === "en" ? "bn" : "en";
-  //   i18n.changeLanguage(newLang);
-  // };
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "bn" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   const navLinks = [
     { path: "/", label: t('nav_home') },
@@ -128,13 +128,13 @@ export default function Navbar() {
           {/* Desktop User Section */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             {/* Language Switcher - Always Visible */}
-            {/* <button
+            <button
               onClick={toggleLanguage}
               className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 text-gray-700 font-medium border border-gray-200 "
             >
               <Globe size={18} />
               <span className="text-sm">{i18n.language === "en" ? "বাংলা" : "English"}</span>
-            </button> */}
+            </button>
 
             {user ? (
               <div className="relative" ref={userMenuRef}>
@@ -201,7 +201,7 @@ export default function Navbar() {
                 to="/contact"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                Contact
+                {t('nav_contact')}
               </Link>
             )}
           </div>
@@ -210,12 +210,12 @@ export default function Navbar() {
           {/* Mobile Buttons (Right Side) */}
           <div className="lg:hidden flex items-center gap-2">
             {/* Language Switcher */}
-            {/* <button
+            <button
               onClick={toggleLanguage}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 font-bold border border-gray-200"
+              className="px-2 py-1 text-sm rounded-lg hover:bg-gray-100 transition-colors text-gray-700 font-bold border border-gray-200"
             >
               {i18n.language === "en" ? "বাং" : "EN"}
-            </button> */}
+            </button>
 
             {/* Menu Toggle */}
             <button

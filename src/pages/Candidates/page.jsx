@@ -100,9 +100,9 @@ const Candidates = () => {
         <div className="absolute inset-0 bg-black/20" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-8">
-            {/* {t('candidates_banner_title')} */}
-            Meet Our Candidates for the <br /> 2026 Electoral Journey
+          <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-8 md:w-[50%]">
+            {t('candidates_banner_title')}
+            {/* Meet Our Candidates for the <br /> 2026 Electoral Journey */}
           </h2>
 
           {/* Search Box */}

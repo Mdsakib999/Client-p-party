@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Download, Image, Frame } from 'lucide-react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const CountingNumber = () => {
+    const { t, i18n } = useTranslation();
     const [stats, setStats] = useState(() => {
         const savedStats = localStorage.getItem('counting_stats');
         return savedStats ? JSON.parse(savedStats) : {
@@ -61,7 +63,7 @@ const CountingNumber = () => {
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center gap-2 px-5 py-3 bg-green-100 hover:bg-green-50 rounded-full mb-4">
                         <TrendingUp className="w-5 h-5 text-green-600" />
-                        <Link to="/CreateFrame" className=" font-semibold text-green-700">VIEW ALL FRAMES</Link>
+                        <Link to="/CreateFrame" className=" font-semibold text-green-700"> {t('view_all_Frame')}</Link>
                     </div>
                    
                 </div>
