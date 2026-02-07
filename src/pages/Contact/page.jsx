@@ -53,10 +53,10 @@ const Contact = () => {
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-6xl font-bold text-white mb-4">
             {t('contact_banner_title')}
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl">
+          <p className="text-lg text-white/90 max-w-2xl">
             {t('contact_banner_desc')}
           </p>
         </div>

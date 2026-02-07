@@ -1,8 +1,11 @@
 import { Link } from "react-router";
 import logo from "../../assets/BNP-logo.png";
 import { FaXTwitter } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300">
       {/* Main Footer Content */}
@@ -14,8 +17,7 @@ export default function Footer() {
               <img src={logo} className="w-32 md:w-46" alt="" srcset="" />
             </div>
             <p className="text-sm leading-relaxed text-gray-400 max-w-xs mx-auto md:mx-0">
-              Committed to democratic values, national unity, and the welfare of
-              the people of Bangladesh.
+             {t('footer_title_text')}
             </p>
 
             {/* Social Icons */}
@@ -64,18 +66,20 @@ export default function Footer() {
             </div>
           </div>
 
+          
+
           {/* Quick Links */}
           <div className="space-y-5">
             <h4 className="text-lg font-bold text-white uppercase tracking-wider relative inline-block ">
-              Quick Links
+              {t('footer_quick')}
               <span className="absolute -bottom-1 left-0 w-12 h-1 bg-green-600 rounded-full mt-2"></span>
             </h4>
             <ul className="space-y-3">
               {[
-                { to: "/", label: "Home" },
-                { to: "/candidates", label: "Candidates" },
-                { to: "/vision", label: "Our Vision" },
-                { to: "/contact", label: "Contact Us" },
+                { to: "/", label: t('nav_home') },
+                { to: "/candidates", label: t('nav_candidates') },
+                { to: "/vision", label: t('nav_vision') },
+                { to: "/contact", label: t('nav_contact') },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
@@ -93,14 +97,14 @@ export default function Footer() {
           {/* Resources */}
           <div className="space-y-5">
             <h4 className="text-lg font-bold text-white uppercase tracking-wider relative inline-block">
-              Resources
+              {t('footer_Resources')}
               <span className="absolute -bottom-1 left-0 w-12 h-1 bg-green-600 rounded-full"></span>
             </h4>
             <ul className="space-y-3">
               {[
-                { to: "/campaigns", label: "Our Campaigns" },
-                { to: "/privacy-policy", label: "Privacy Policy" },
-                { to: "/terms-and-conditions", label: "Terms & Conditions" },
+                { to: "/campaigns", label: t('nav_campaigns') },
+                { to: "/privacy-policy", label: t('footer_privacy') },
+                { to: "/terms-and-conditions", label: t('footer_terms') },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
@@ -118,11 +122,11 @@ export default function Footer() {
           {/* Newsletter */}
           <div className="space-y-5 ">
             <h4 className="text-lg font-bold text-white uppercase tracking-wider relative inline-block">
-              Stay Connected
+              {t('footer_stay')}
               <span className="absolute -bottom-1 left-0 w-12 h-1 bg-green-600 rounded-full"></span>
             </h4>
             <p className="text-sm text-gray-400">
-              Subscribe to receive updates on campaigns and initiatives.
+              {t('footer_stay_text')}
             </p>
 
             <form className="space-y-3">

@@ -11,6 +11,7 @@ import {
   Loader,
 } from "lucide-react";
 import { useGetPhotoFramesQuery } from "../redux/features/photoFrame/photoFrame.api";
+import { useTranslation } from "react-i18next";
 
 const divisions = [
   "Dhaka",
@@ -24,6 +25,7 @@ const divisions = [
 ];
 
 const PhotoFrame = () => {
+  const { t } = useTranslation();
   const [selectedDivision, setSelectedDivision] = useState("Dhaka");
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
   const [aspectRatio, setAspectRatio] = useState(465 / 620);
@@ -81,9 +83,10 @@ const PhotoFrame = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (fabricCanvasRef.current) {
+      if (fabricCanvasRef.current && containerRef.current) {
         const canvas = fabricCanvasRef.current;
-        const newWidth = Math.min(465, window.innerWidth - 32);
+        const containerWidth = containerRef.current.clientWidth;
+        const newWidth = Math.min(465, containerWidth);
         const newHeight = Math.round(newWidth * (620 / 465));
 
         if (canvas.width !== newWidth) {
@@ -96,9 +99,21 @@ const PhotoFrame = () => {
     if (fabricLoaded && !isFramesLoading) {
       initializeFabric();
       window.addEventListener("resize", handleResize);
+      // Force initial resize check
+      setTimeout(() => {
+        handleResize();
+        window.dispatchEvent(new Event("resize"));
+      }, 100);
     }
+
+    const handleScreenResize = () => {
+      setIsSmallScreen(window.innerWidth <= 480);
+    };
+    window.addEventListener("resize", handleScreenResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleScreenResize);
       if (fabricCanvasRef.current) {
         fabricCanvasRef.current.dispose();
         fabricCanvasRef.current = null;
@@ -160,7 +175,8 @@ const PhotoFrame = () => {
     containerRef.current.appendChild(canvasElement);
 
     // Calculate responsive canvas size
-    const canvasWidth = Math.min(465, window.innerWidth - 32);
+    const containerWidth = containerRef.current.clientWidth;
+    const canvasWidth = Math.min(465, containerWidth);
     const canvasHeight = Math.round(canvasWidth * (620 / 465));
 
     const canvas = new window.fabric.Canvas(canvasElement, {
@@ -248,6 +264,9 @@ const PhotoFrame = () => {
     }, "image/png");
   };
 
+  // Screen size tracking for responsive calculations
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 480);
+
   const nextFrame = () => {
     setCurrentFrameIndex((prev) =>
       prev < frames[selectedDivision].length - 1 ? prev + 1 : 0,
@@ -272,10 +291,10 @@ const PhotoFrame = () => {
     >
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Design Your Photo with a Leaders Frame
+          {t('frame_title')}
         </h1>
         <p className="text-green-600 font-medium">
-          Upload, adjust, and generate in minutes
+          {t('frame_subtitle')}
         </p>{" "}
       </div>
 
@@ -284,7 +303,7 @@ const PhotoFrame = () => {
         
         @media (max-width: 768px) {
           .main-grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: minmax(0, 1fr) !important;
             gap: 1.5rem !important;
           }
           
@@ -315,20 +334,9 @@ const PhotoFrame = () => {
           }
         }
         
-        @media (max-width: 480px) {
           .division-tab {
             padding: 0.4rem 0.75rem !important;
             font-size: 0.8rem !important;
-          }
-          
-          .frame-thumbnail {
-            width: 65px !important;
-            height: 85px !important;
-          }
-          
-          .arrow-btn {
-            width: 35px !important;
-            height: 35px !important;
           }
         }
       `}</style>
@@ -338,16 +346,19 @@ const PhotoFrame = () => {
           className="main-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
             gap: "2rem",
             alignItems: "start",
+            width: "100%",
+            maxWidth: "100%",
+            overflowX: "hidden", // Prevent horizontal scroll
           }}
         >
           {/* Left Section - Frame Preview */}
-          <div>
+          <div style={{ minWidth: 0 }}>
             {/* Frame Preview Area */}
             {isFramesLoading ? (
-              <div className="flex justify-center items-center h-[500px] w-[470px] bg-gray-100 rounded-lg">
+              <div className="flex justify-center items-center h-[500px] w-full max-w-[470px] bg-gray-100 rounded-lg">
                 <p>Loading frames...</p>
               </div>
             ) : (
@@ -426,10 +437,15 @@ const PhotoFrame = () => {
               style={{
                 background: "rgba(200, 230, 201, 0.5)",
                 borderRadius: "12px",
-                padding: "clamp(1rem, 2.5vw, 1.5rem)",
+                padding: isSmallScreen
+                  ? "0.75rem 0.5rem"
+                  : "clamp(1rem, 2.5vw, 1.5rem)",
                 marginTop: "1.5rem",
-                width: "465px",
+                width: "100%",
+                maxWidth: "100%", // Strict constraint
                 margin: "1.5rem auto 0",
+                boxSizing: "border-box",
+                overflow: "hidden", // Ensure no spillover
               }}
             >
               <h3
@@ -441,7 +457,7 @@ const PhotoFrame = () => {
                   fontWeight: "600",
                 }}
               >
-                Choose Your Frame
+                {t('frame_choose')}
               </h3>
               <div
                 style={{
@@ -457,8 +473,8 @@ const PhotoFrame = () => {
                     background: "#4CAF50",
                     border: "none",
                     borderRadius: "50%",
-                    width: "40px",
-                    height: "40px",
+                    width: isSmallScreen ? "35px" : "40px",
+                    height: isSmallScreen ? "35px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -476,14 +492,16 @@ const PhotoFrame = () => {
                     flex: 1,
                     overflow: "hidden",
                     position: "relative",
+                    minWidth: 0, // CRITICAL: Allows flex child to shrink below content size
                   }}
                 >
                   <div
                     style={{
                       display: "flex",
-                      gap: "clamp(0.3rem, 1vw, 0.5rem)",
+                      gap: isSmallScreen ? "0.75rem" : "clamp(0.3rem, 1vw, 0.5rem)",
                       transition: "transform 0.3s ease-in-out",
-                      transform: `translateX(-${currentFrameIndex * (80 + 8)}px)`,
+                      transform: `translateX(-${currentFrameIndex * (isSmallScreen ? 65 + 12 : 80 + 8)
+                        }px)`,
                     }}
                   >
                     {isFramesLoading ? (
@@ -506,8 +524,8 @@ const PhotoFrame = () => {
                           onClick={() => setCurrentFrameIndex(index)}
                           className="frame-thumbnail"
                           style={{
-                            width: "80px",
-                            height: "100px",
+                            width: isSmallScreen ? "65px" : "80px",
+                            height: isSmallScreen ? "85px" : "100px",
                             borderRadius: "8px",
                             overflow: "hidden",
                             cursor: "pointer",
@@ -545,8 +563,8 @@ const PhotoFrame = () => {
                     background: "#4CAF50",
                     border: "none",
                     borderRadius: "50%",
-                    width: "40px",
-                    height: "40px",
+                    width: isSmallScreen ? "35px" : "40px",
+                    height: isSmallScreen ? "35px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -569,6 +587,7 @@ const PhotoFrame = () => {
               borderRadius: "16px",
               padding: "clamp(1rem, 3vw, 2rem)",
               border: "1px solid rgba(76, 175, 80, 0.2)",
+              minWidth: 0,
             }}
           >
             {/* Division Tabs */}
@@ -626,7 +645,7 @@ const PhotoFrame = () => {
               }}
             >
               <Upload size={20} />
-              Upload Photo
+               {t('frame_upload_btn')}
             </button>
 
             <input

@@ -81,7 +81,7 @@ export default function Navbar() {
     { path: "/frame-editor", label: t('nav_photo_frame') },
     { path: "/vision", label: t('nav_vision') },
     // { path: "/campaigns", label: t('nav_campaigns') },
-    { path: "/CreateFrame", label: t('create_frame') },
+    { path: "/CreateFrame", label: t('frame_type_post_title') },
   ];
 
   return (
@@ -308,7 +308,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-green-800 transition-all duration-200 font-medium shadow-md"
                 >
-                  Contact
+                  {t('nav_contact')}
                 </Link>
               </div>
             )}

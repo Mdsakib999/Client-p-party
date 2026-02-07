@@ -120,7 +120,7 @@ const Candidates = () => {
                     setCurrentPage(1);
                   }}
                   placeholder={t('search_placeholder')}
-                  className="w-full outline-none bg-transparent"
+                  className="w-full outline-none bg-transparent text-sm md:text-base"
                 />
               </div>
 
@@ -129,7 +129,7 @@ const Candidates = () => {
               {/* Division */}
               <div
                 onClick={() => setActiveSection("division")}
-                className="flex-1 px-5 py-3 cursor-pointer"
+                className="flex-1 px-5 py-3 cursor-pointer text-sm md:text-base"
               >
                 {translateArea(selectedDivision?.name, i18n.language) || t('division_select')}
               </div>
@@ -139,7 +139,7 @@ const Candidates = () => {
               {/* District */}
               <div
                 onClick={() => selectedDivision && setActiveSection("district")}
-                className={`flex-1 px-5 py-3 ${selectedDivision
+                className={`flex-1 text-sm md:text-base px-5 py-3 ${selectedDivision
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
                   }`}

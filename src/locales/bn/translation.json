@@ -221,7 +221,7 @@
   "home_candidates_badge": "প্রার্থীরা",
   "home_candidates_title": "আমাদের প্রার্থীদের সঙ্গে পরিচিত হন",
   "home_candidates_subtitle": "জনগণের কণ্ঠস্বর প্রতিনিধিত্বে নিবেদিত নেতৃবৃন্দ",
-  "home_candidates_view_all": "সব দেখুন",
+  "home_candidates_view_all": "সব প্রার্থী দেখুন",
 
   "frame_type_post_title": "ফ্রেম তৈরি করুন",
   "frame_type_post_desc": "ফেসবুক পোস্ট / ব্যানার",
@@ -251,5 +251,12 @@
   "contact_get_involved_1": "গণতান্ত্রিক ও সমৃদ্ধ বাংলাদেশের আন্দোলনে যুক্ত হোন।",
   "contact_get_involved_2": "আমাদের সর্বশেষ ক্যাম্পেইন, আয়োজন ও উদ্যোগ সম্পর্কে জানুন।",
   "contact_get_involved_3": "স্বেচ্ছাসেবক হিসেবে যুক্ত হয়ে আপনার কমিউনিটিতে পরিবর্তন আনুন।",
-  "create_frame": "ফ্রেম তৈরি করুন"
+  "create_frame": "ফ্রেম তৈরি করুন",
+  "footer_title_text": "গণতান্ত্রিক মূল্যবোধ, জাতীয় ঐক্য এবং বাংলাদেশের মানুষের কল্যাণে প্রতিশ্রুতিবদ্ধ।",
+"footer_quick": "দ্রুত লিংক",
+"footer_Resources": "রিসোর্স",
+"footer_privacy": "গোপনীয়তা নীতি",
+"footer_terms": "শর্তাবলী",
+"footer_stay": "সংযুক্ত থাকুন",
+"footer_stay_text": "প্রচারণা ও উদ্যোগের আপডেট পেতে সাবস্ক্রাইব করুন।"
 }
