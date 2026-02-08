@@ -220,13 +220,15 @@ const PhotoFrame = () => {
     downloadCanvas.height = 1080;
     const ctx = downloadCanvas.getContext("2d");
 
-    const scaleX = 1080 / fabricCanvasRef.current.width;
-    const scaleY = 1080 / fabricCanvasRef.current.height;
+    // Calculate the proper multiplier to maintain exact aspect ratio
+    const canvasWidth = fabricCanvasRef.current.width;
+    const canvasHeight = fabricCanvasRef.current.height;
+    const multiplier = 1080 / Math.max(canvasWidth, canvasHeight);
 
     const userImageData = fabricCanvasRef.current.toDataURL({
       format: "png",
       quality: 1,
-      multiplier: Math.min(scaleX, scaleY),
+      multiplier: multiplier,
     });
 
     const userImg = new Image();
@@ -235,7 +237,24 @@ const PhotoFrame = () => {
       userImg.src = userImageData;
     });
 
-    ctx.drawImage(userImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
+    // Center the image if aspect ratios don't match
+    const imgAspect = userImg.width / userImg.height;
+    const canvasAspect = downloadCanvas.width / downloadCanvas.height;
+    
+    let drawWidth = downloadCanvas.width;
+    let drawHeight = downloadCanvas.height;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (imgAspect > canvasAspect) {
+      drawHeight = drawWidth / imgAspect;
+      offsetY = (downloadCanvas.height - drawHeight) / 2;
+    } else {
+      drawWidth = drawHeight * imgAspect;
+      offsetX = (downloadCanvas.width - drawWidth) / 2;
+    }
+
+    ctx.drawImage(userImg, offsetX, offsetY, drawWidth, drawHeight);
 
     const frameImg = new Image();
     frameImg.crossOrigin = "anonymous";
@@ -255,7 +274,6 @@ const PhotoFrame = () => {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-
       // Reset state after download
       setUploadedImage(null);
       setZoom(100);
