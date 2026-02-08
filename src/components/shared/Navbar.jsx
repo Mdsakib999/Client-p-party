@@ -77,7 +77,7 @@ export default function Navbar() {
 
   const navLinks = [
     { path: "/", label: t('nav_home') },
-    { path: "/candidates", label: t('nav_candidates') },
+    // { path: "/candidates", label: t('nav_candidates') },
     { path: "/frame-editor", label: t('nav_photo_frame') },
     { path: "/vision", label: t('nav_vision') },
     // { path: "/campaigns", label: t('nav_campaigns') },
