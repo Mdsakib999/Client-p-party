@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import {
   Upload,
   Download,
@@ -60,6 +60,17 @@ const PhotoFrame = () => {
     return grouped;
   }, [framesData]);
 
+  /* Ref to track aspect ratio without triggering effect re-runs for event listeners */
+  const aspectRatioRef = useRef(aspectRatio);
+
+  useEffect(() => {
+    aspectRatioRef.current = aspectRatio;
+    // Trigger manual resize when aspect ratio changes to ensure canvas matches frame
+    if (fabricCanvasRef.current && containerRef.current) {
+      handleResize();
+    }
+  }, [aspectRatio]);
+
   useEffect(() => {
     setCurrentFrameIndex(0);
   }, [selectedDivision]);
@@ -81,21 +92,24 @@ const PhotoFrame = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (fabricCanvasRef.current && containerRef.current) {
-        const canvas = fabricCanvasRef.current;
-        const containerWidth = containerRef.current.clientWidth;
-        const newWidth = Math.min(465, containerWidth);
-        const newHeight = Math.round(newWidth * (620 / 465));
+  const handleResize = useCallback(() => {
+    if (fabricCanvasRef.current && containerRef.current) {
+      const canvas = fabricCanvasRef.current;
+      const containerWidth = containerRef.current.clientWidth;
+      const newWidth = Math.min(465, containerWidth);
+      // Use the current aspect ratio (width/height) to calculate height
+      // height = width / aspectRatio
+      const ratio = aspectRatioRef.current || (465 / 620);
+      const newHeight = Math.round(newWidth / ratio);
 
-        if (canvas.width !== newWidth) {
-          canvas.setDimensions({ width: newWidth, height: newHeight });
-          canvas.renderAll();
-        }
+      if (canvas.width !== newWidth || canvas.height !== newHeight) {
+        canvas.setDimensions({ width: newWidth, height: newHeight });
+        canvas.renderAll();
       }
-    };
+    }
+  }, []);
 
+  useEffect(() => {
     if (fabricLoaded && !isFramesLoading) {
       initializeFabric();
       window.addEventListener("resize", handleResize);
@@ -119,7 +133,7 @@ const PhotoFrame = () => {
         fabricCanvasRef.current = null;
       }
     };
-  }, [fabricLoaded, isFramesLoading]);
+  }, [fabricLoaded, isFramesLoading, handleResize]);
 
   // Persistent image rendering
   useEffect(() => {
@@ -162,7 +176,9 @@ const PhotoFrame = () => {
         canvas.renderAll();
       }
     }
-  }, [uploadedImage, fabricLoaded, isFramesLoading, zoom, rotation]);
+  }, [uploadedImage, fabricLoaded, isFramesLoading, zoom, rotation]); // Note: aspectRatio change triggers resize, but not necessarily this effect unless needed?
+  // Ideally, if dimensions change drastically, we might want to re-center, but usually user adjusts.
+  // We'll leave this separate to avoid resetting user's manual adjustments on minor resizes.
 
   const initializeFabric = () => {
     if (!window.fabric || fabricCanvasRef.current || !containerRef.current)
@@ -177,7 +193,10 @@ const PhotoFrame = () => {
     // Calculate responsive canvas size
     const containerWidth = containerRef.current.clientWidth;
     const canvasWidth = Math.min(465, containerWidth);
-    const canvasHeight = Math.round(canvasWidth * (620 / 465));
+
+    // Use dynamic aspect ratio for height
+    const ratio = aspectRatioRef.current || (465 / 620);
+    const canvasHeight = Math.round(canvasWidth / ratio);
 
     const canvas = new window.fabric.Canvas(canvasElement, {
       width: canvasWidth,
@@ -215,20 +234,32 @@ const PhotoFrame = () => {
   const downloadImage = async () => {
     if (!uploadedImage || !frames[selectedDivision]) return;
 
+    // Load the frame image first to get its natural dimensions
+    const frameUrl = frames[selectedDivision][currentFrameIndex].url;
+    const frameImg = new Image();
+    frameImg.crossOrigin = "anonymous";
+
+    await new Promise((resolve, reject) => {
+      frameImg.onload = resolve;
+      frameImg.onerror = reject;
+      frameImg.src = frameUrl;
+    });
+
+    // Create canvas with frame's natural dimensions
     const downloadCanvas = document.createElement("canvas");
-    downloadCanvas.width = 1080;
-    downloadCanvas.height = 1080;
+    downloadCanvas.width = frameImg.naturalWidth;
+    downloadCanvas.height = frameImg.naturalHeight;
     const ctx = downloadCanvas.getContext("2d");
 
-    // Calculate the proper multiplier to maintain exact aspect ratio
-    const canvasWidth = fabricCanvasRef.current.width;
-    const canvasHeight = fabricCanvasRef.current.height;
-    const multiplier = 1080 / Math.max(canvasWidth, canvasHeight);
+    // Calculate scale factor to match fabric canvas to the frame's natural size
+    // We can use either width or height since the aspect ratios should match
+    // properly due to the resize logic in useEffect
+    const scaleFactor = frameImg.naturalWidth / fabricCanvasRef.current.width;
 
     const userImageData = fabricCanvasRef.current.toDataURL({
       format: "png",
       quality: 1,
-      multiplier: multiplier,
+      multiplier: scaleFactor,
     });
 
     const userImg = new Image();
@@ -237,32 +268,10 @@ const PhotoFrame = () => {
       userImg.src = userImageData;
     });
 
-    // Center the image if aspect ratios don't match
-    const imgAspect = userImg.width / userImg.height;
-    const canvasAspect = downloadCanvas.width / downloadCanvas.height;
-    
-    let drawWidth = downloadCanvas.width;
-    let drawHeight = downloadCanvas.height;
-    let offsetX = 0;
-    let offsetY = 0;
+    // Draw user image first (background)
+    ctx.drawImage(userImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
 
-    if (imgAspect > canvasAspect) {
-      drawHeight = drawWidth / imgAspect;
-      offsetY = (downloadCanvas.height - drawHeight) / 2;
-    } else {
-      drawWidth = drawHeight * imgAspect;
-      offsetX = (downloadCanvas.width - drawWidth) / 2;
-    }
-
-    ctx.drawImage(userImg, offsetX, offsetY, drawWidth, drawHeight);
-
-    const frameImg = new Image();
-    frameImg.crossOrigin = "anonymous";
-    await new Promise((resolve) => {
-      frameImg.onload = resolve;
-      frameImg.src = frames[selectedDivision][currentFrameIndex].url;
-    });
-
+    // Draw frame overlay on top
     ctx.drawImage(frameImg, 0, 0, downloadCanvas.width, downloadCanvas.height);
 
     downloadCanvas.toBlob((blob) => {
@@ -274,6 +283,7 @@ const PhotoFrame = () => {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+
       // Reset state after download
       setUploadedImage(null);
       setZoom(100);
@@ -281,6 +291,7 @@ const PhotoFrame = () => {
       if (fileInputRef.current) fileInputRef.current.value = "";
     }, "image/png");
   };
+
 
   // Screen size tracking for responsive calculations
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 480);
@@ -663,7 +674,7 @@ const PhotoFrame = () => {
               }}
             >
               <Upload size={20} />
-               {t('frame_upload_btn')}
+              {t('frame_upload_btn')}
             </button>
 
             <input
