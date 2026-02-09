@@ -8,6 +8,7 @@ import Highlights from "../../components/Home/Highlights";
 // import NewsSection from "../../components/Home/NewsSection";
 // import { useGetAllNewsArticlesQuery } from "../../redux/features/newsArticle/newsArticle.api";
 import TimedPopup from "../../components/Campaign/TimedPopup";
+import AutoPlayAudio from "../../components/AutoPlayAudio";
 
 const Home = () => {
   // const { data: newsArticles, isLoading } = useGetAllNewsArticlesQuery({
@@ -35,6 +36,7 @@ const Home = () => {
 
       <div>
         <Hero />
+        <AutoPlayAudio></AutoPlayAudio>
         <Legacy />
         <About />
         <Candidates />
