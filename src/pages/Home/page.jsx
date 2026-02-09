@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      {showPopup && <TimedPopup onClose={() => setShowPopup(false)} />}
+      {/* {showPopup && <TimedPopup onClose={() => setShowPopup(false)} />} */}
 
       <div>
         <Hero />
