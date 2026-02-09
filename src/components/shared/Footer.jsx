@@ -77,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { to: "/", label: t('nav_home') },
-                { to: "/candidates", label: t('nav_candidates') },
+                // { to: "/candidates", label: t('nav_candidates') },
                 { to: "/vision", label: t('nav_vision') },
                 { to: "/contact", label: t('nav_contact') },
               ].map((item) => (

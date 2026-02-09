@@ -89,7 +89,7 @@ export const Candidates = () => {
 
         <div className="flex justify-center">
           <Link
-            to="/candidates"
+            to="/"
             className="group flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-green-700 to-green-600 text-white font-semibold shadow-lg transition-all"
           >
             {t('home_candidates_view_all')}
