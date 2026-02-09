@@ -34,9 +34,9 @@ export default function CandidateCard({ candidate }) {
         <div className="p-4 flex flex-col gap-2">
           <h3 className="font-semibold text-base sm:text-lg text-gray-900 leading-snug line-clamp-2">
             {name}
-            <p className="text-emerald-700 font-semibold text-sm line-clamp-1">
+            {/* <p className="text-emerald-700 font-semibold text-sm line-clamp-1">
               {designation}
-            </p>
+            </p> */}
 
             {candidate?.election_constituencies?.length > 0 && (
               <span className="text-sm font-normal text-gray-500">
