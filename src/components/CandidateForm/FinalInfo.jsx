@@ -469,13 +469,14 @@ const FinalInfo = ({
           Overall Summary
         </h3>
         <label className={labelClass}>
-          Candidate Summary <span className="text-red-500">*</span>
+          Candidate Summary
+          {/* <span className="text-red-500">*</span> */}
         </label>
         <textarea
           name="overall_summary"
           value={formData.overall_summary}
           onChange={handleInputChange}
-          required
+          // required
           rows="5"
           className={inputClass(errors?.overall_summary)}
           placeholder="Provide a comprehensive summary of the candidate's background, vision, and goals..."

@@ -174,7 +174,7 @@ const BasicAndPersonal = ({
             />
           </div>
           <div>
-            <label className={labelClass}>Birth Place <span className="text-red-500">*</span></label>
+            <label className={labelClass}>Birth Place</label>
             <input
               type="text"
               placeholder="e.g. Dhaka"

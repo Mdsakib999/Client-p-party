@@ -250,11 +250,11 @@ const EditCandidate = () => {
 
     if (step === 0) {
       if (!formData?.name?.trim()) newErrors.name = "Name is required";
-      if (!formData?.personal_info?.birth_place?.trim()) newErrors["personal_info.birth_place"] = "Birth place is required";
+      // if (!formData?.personal_info?.birth_place?.trim()) newErrors["personal_info.birth_place"] = "Birth place is required";
     }
 
     if (step === 3) { // Final Step
-      if (!formData?.overall_summary?.trim()) newErrors.overall_summary = "Overall summary is required";
+      // if (!formData?.overall_summary?.trim()) newErrors.overall_summary = "Overall summary is required";
       if (!formData?.district || formData?.district?.length === 0) newErrors.district = "At least one district is required";
       if (!formData?.division || formData?.division?.length === 0) newErrors.division = "At least one division is required";
       if (!formData?.election_constituencies || formData?.election_constituencies?.length === 0) {
