@@ -12,7 +12,6 @@ export default function CandidateCard({ candidate }) {
       className="block w-full max-w-80 mx-auto group"
     >
       <div className="h-full rounded-2xl overflow-hidden bg-white border border-emerald-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-
         {/* Image */}
         <div className="relative w-full aspect-[4/3] overflow-hidden bg-emerald-50">
           <img
@@ -38,17 +37,18 @@ export default function CandidateCard({ candidate }) {
               {designation}
             </p> */}
 
-            {candidate?.election_constituencies?.length > 0 && (
-              <span className="text-sm font-normal text-gray-500">
-                (
-                {candidate.election_constituencies
-                  .map(area => getLangField(area, "actual_place_name"))
-                  .join(", ")}
-                )
-              </span>
-            )}
+            <p>
+              {candidate?.election_constituencies?.length > 0 && (
+                <span className="text-sm font-normal text-gray-500">
+                  (
+                  {candidate.election_constituencies
+                    .map((area) => getLangField(area, "actual_place_name"))
+                    .join(", ")}
+                  )
+                </span>
+              )}
+            </p>
           </h3>
-
         </div>
       </div>
     </Link>
