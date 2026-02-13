@@ -23,7 +23,7 @@ const FrameEditor = () => {
 
     const defaultFrame =
       selectedMediaType === "profile"
-        ? "/frames/profile/profile1.png"
+        ? "/frames/profile/Congratulations.png"
         : selectedMediaType === "post"
           ? "/frames/posts/post1.png"
           : "/frames/cover/cover1.png";

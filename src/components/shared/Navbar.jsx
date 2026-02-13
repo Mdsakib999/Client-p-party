@@ -81,7 +81,7 @@ export default function Navbar() {
     { path: "/frame-editor", label: t('nav_photo_frame') },
     { path: "/vision", label: t('nav_vision') },
     // { path: "/campaigns", label: t('nav_campaigns') },
-    { path: "/CreateFrame", label: t('frame_type_post_title') },
+    // { path: "/CreateFrame", label: t('frame_type_post_title') },
   ];
 
   return (
