@@ -22,9 +22,14 @@ const PROFILE_FRAMES = [
 ];
 
 const POST_FRAMES = [
-  { id: 11, src: `/frames/posts/post1.png`, name: "Post Frame 1" },
-  { id: 12, src: `/frames/posts/post2.png`, name: "Post Frame 2" },
-  { id: 13, src: `/frames/posts/post3.png`, name: "Post Frame 3" },
+  { id: 11, src: `/frames/posts/Congrets-post.png`, name: "Post Frame 1" },
+  { id: 12, src: `/frames/posts/Congratulations-tarak-ban.png`, name: "Post Frame 2" },
+  { id: 13, src: `/frames/posts/Congratulations-tarak-eng.png`, name: "Post Frame 3" },
+  { id: 14, src: `/frames/posts/Congratulations-fakrul-eng.png`, name: "Post Frame 4" },
+  { id: 15, src: `/frames/posts/Congratulations-fakrul-ban.png`, name: "Post Frame 5" },
+  // { id: 11, src: `/frames/posts/post1.png`, name: "Post Frame 1" },
+  // { id: 12, src: `/frames/posts/post2.png`, name: "Post Frame 2" },
+  // { id: 13, src: `/frames/posts/post3.png`, name: "Post Frame 3" },
 ];
 
 const COVER_PHOTO_FRAMES = [

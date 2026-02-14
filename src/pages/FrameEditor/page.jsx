@@ -25,7 +25,7 @@ const FrameEditor = () => {
       selectedMediaType === "profile"
         ? "/frames/profile/Congratulations.png"
         : selectedMediaType === "post"
-          ? "/frames/posts/post1.png"
+          ? "/frames/posts/Congrets-post.png"
           : "/frames/cover/cover1.png";
 
     setActiveFrame(defaultFrame);
@@ -188,11 +188,11 @@ const FrameEditor = () => {
 
               {!hasPhoto && !isLoading && (
                 <div
-                  className={`absolute pointer-events-none flex flex-col items-center justify-center
+                  className={`absolute pointer-events-none flex flex-col items-center justify-center 
                     ${selectedMediaType === "profile"
                       ? "inset-0"
                       : selectedMediaType === "post"
-                        ? "top-[12%] left-[25%] right-[25%] h-[30%]"
+                        ? "top-[30%] left-[25%] right-[25%] h-[30%] "
                         : "top-0 bottom-0 left-[20%] right-[20%]"
                     }`}
                 >
@@ -200,7 +200,7 @@ const FrameEditor = () => {
                     <Upload
                       className={`${selectedMediaType === "profile"
                         ? "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-2 md:mb-3"
-                        : "w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-2 md:mb-3"
+                        : "w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-2 md:mb-3 "
                         } text-green-600 drop-shadow-lg`}
                     />
                   )}
