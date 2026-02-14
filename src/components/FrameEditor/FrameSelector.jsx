@@ -1,22 +1,22 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 
 // const PROFILE_FRAMES = [
-//   { id: 1, src: `/frames/profile/profile1.png`, name: "Profile Frame 1" },
-//   { id: 2, src: `/frames/profile/profile2.png`, name: "Profile Frame 2" },
-//   { id: 3, src: `/frames/profile/profile3.png`, name: "Profile Frame 3" },
-//   { id: 4, src: `/frames/profile/profile4.png`, name: "Profile Frame 4" },
-//   { id: 5, src: `/frames/profile/profile5.png`, name: "Profile Frame 5" },
-//   { id: 6, src: `/frames/profile/profile6.png`, name: "Profile Frame 6" },
-//   { id: 7, src: `/frames/profile/profile7.png`, name: "Profile Frame 7" },
-//   { id: 8, src: `/frames/profile/profile8.png`, name: "Profile Frame 8" },
+//   { id: 1, src: `/frames/profile/profile.png`, name: "Profile Frame 1" },
+//   { id: 2, src: `/frames/profile/profile.png`, name: "Profile Frame 2" },
+//   { id: 3, src: `/frames/profile/profile.png`, name: "Profile Frame 3" },
+//   { id: 4, src: `/frames/profile/profile.png`, name: "Profile Frame 4" },
+//   { id: 5, src: `/frames/profile/profile.png`, name: "Profile Frame 5" },
+//   { id: 6, src: `/frames/profile/profile.png`, name: "Profile Frame 6" },
+//   { id: 7, src: `/frames/profile/profile.png`, name: "Profile Frame 7" },
+//   { id: 8, src: `/frames/profile/profile.png`, name: "Profile Frame 8" },
 //   { id: 9, src: `/frames/profile/profile9.png`, name: "Profile Frame 9" },
 //   { id: 10, src: `/frames/profile/profile10.png`, name: "Profile Frame 10" },
 // ];
 
 const PROFILE_FRAMES = [
   { id: 1, src: `/frames/profile/Congratulations.png`, name: "Profile Frame 1" },
-  { id: 2, src: `/frames/profile/Congratulations-tarak-ban.png`, name: "Profile Frame 2" },
-  { id: 3, src: `/frames/profile/Congratulations-tarak-eng.png`, name: "Profile Frame 3" },
+  { id: 2, src: `/frames/profile/tarak-Congratulat-eng.png`, name: "Profile Frame 2" },
+  { id: 3, src: `/frames/profile/tarak-Congratulations-ban.png`, name: "Profile Frame 3" },
   { id: 4, src: `/frames/profile/Congratulations-fakrul-eng.png`, name: "Profile Frame 4" },
   { id: 5, src: `/frames/profile/Congratulations-fakrul-ban.png`, name: "Profile Frame 5" },
 ];
